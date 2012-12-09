@@ -113,9 +113,8 @@ public class MoveTest {
 	public void negativeTest() {
 		File negPath = new File("A:\\Test\\");
 
-		Assert.assertFalse(
-				dirOps.Move(source.getAbsolutePath(),
-						negPath.getAbsolutePath()),
+		Assert.assertFalse(dirOps.Move(source.getAbsolutePath(),
+				negPath.getAbsolutePath()),
 				"Move to negative path appears to be successful");
 		Assert.assertFalse(negPath.exists(),
 				"The negative path wasn't supposed to exist");
@@ -133,9 +132,8 @@ public class MoveTest {
 
 		File negPath = new File(longFileName);
 
-		Assert.assertFalse(
-				dirOps.Move(source.getAbsolutePath(),
-						negPath.getAbsolutePath()),
+		Assert.assertFalse(dirOps.Move(source.getAbsolutePath(),
+				negPath.getAbsolutePath()),
 				"Move to negative path appears to be successful");
 		Assert.assertFalse(negPath.exists(),
 				"The negative path wasn't supposed to exist");

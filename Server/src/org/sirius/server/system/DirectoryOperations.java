@@ -5,7 +5,7 @@ package org.sirius.server.system;
 
 /**
  * @author KaNoN
- *
+ * 
  */
 public class DirectoryOperations {
 
@@ -82,7 +82,7 @@ public class DirectoryOperations {
 	 * @param recurcive
 	 * @return
 	 */
-	public String[] GetContents(String path,boolean recurcive) {
+	public String[] GetContents(String path, boolean recurcive) {
 		return null;
 	}
 

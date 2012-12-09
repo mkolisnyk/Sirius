@@ -28,8 +28,7 @@ public class CreateTest {
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "dir" })
 	public void baseScenario() {
-		Assert.assertTrue(dirOps.Create(dirName),
-				"Failed to create test dir");
+		Assert.assertTrue(dirOps.Create(dirName), "Failed to create test dir");
 		Assert.assertTrue(dir.exists(),
 				"The dir wasn't actually created though create method showed success");
 	}
