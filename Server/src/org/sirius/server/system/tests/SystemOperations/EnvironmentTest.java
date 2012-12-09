@@ -3,8 +3,6 @@ package org.sirius.server.system.tests.SystemOperations;
 import org.sirius.server.system.SystemOperations;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.AfterMethod;
 
 public class EnvironmentTest {
 

@@ -1,12 +1,8 @@
 package org.sirius.server.system.tests.SystemOperations;
 
-import java.util.Date;
-
-import javax.print.attribute.standard.DateTimeAtCompleted;
-
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 public class DateTest {
 	@Test
