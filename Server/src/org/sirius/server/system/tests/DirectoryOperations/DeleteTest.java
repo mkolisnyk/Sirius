@@ -39,13 +39,13 @@ public class DeleteTest {
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "dir" })
 	public void negativeTest() {
-		File nonExisting = new File(".\\NonExisting.txt");
+		File nonExisting = new File(".\\NonExisting\\");
 		if (nonExisting.exists()) {
 			nonExisting.delete();
 		}
-		Assert.assertTrue(dirOps.Delete(source.getAbsolutePath()),
+		Assert.assertTrue(dirOps.Delete(nonExisting.getAbsolutePath()),
 				"Delete operation returned fault code");
-		Assert.assertFalse(source.exists(),
+		Assert.assertFalse(nonExisting.exists(),
 				"The dir to remove is still present");
 	}
 }

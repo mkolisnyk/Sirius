@@ -3,6 +3,7 @@
  */
 package org.sirius.server.system;
 
+import java.io.IOException;
 import java.util.Date;
 
 /**
@@ -16,15 +17,15 @@ public class SystemOperations {
 	 * @return
 	 */
 	public String GetMachineName() {
-		return null;
+		return System.getenv("ComputerName");
 	}
 
 	/**
 	 * 
 	 * @return
 	 */
-	public int GetFreeMemory() {
-		return -1;
+	public long GetFreeMemory() {
+		return Runtime.getRuntime().freeMemory();
 	}
 
 	/**
@@ -64,7 +65,7 @@ public class SystemOperations {
 	 * @return
 	 */
 	public String GetCurrentUser() {
-		return null;
+		return System.getenv("USERNAME");
 	}
 
 	/**
@@ -73,7 +74,7 @@ public class SystemOperations {
 	 * @return
 	 */
 	public String GetEnvironmentVariable(String variableName) {
-		return null;
+		return System.getenv(variableName);
 	}
 
 	/**
@@ -81,8 +82,10 @@ public class SystemOperations {
 	 * @param variableName
 	 * @param value
 	 * @return
+	 * @throws IOException 
 	 */
-	public boolean SetEnvironmentVariable(String variableName, String value) {
+	public boolean SetEnvironmentVariable(String variableName, String value) throws IOException {
+		// TODO Add implementation
 		return false;
 	}
 

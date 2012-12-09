@@ -10,9 +10,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class MoveTest {
-	protected String sourcePath = ".\\Test.txt";
-	protected String destinationPath = ".\\Test2.txt";
-	protected String longDestinationPath = ".\\Test\\Test3.txt";
+	protected String sourcePath = ".\\Test\\";
+	protected String destinationPath = ".\\Test2\\";
+	protected String longDestinationPath = ".\\Test3\\Test3\\";
 
 	protected File source = null;
 	protected File destination = null;
@@ -27,7 +27,7 @@ public class MoveTest {
 
 		source.delete();
 		if (!source.exists()) {
-			source.mkdir();
+			source.getAbsoluteFile().mkdir();
 		}
 		if (destination.exists()) {
 			destination.delete();
@@ -50,7 +50,7 @@ public class MoveTest {
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "dir" })
-	public void baseMoveTest() {
+	public void baseMoveTest() throws IOException {
 
 		Assert.assertTrue(
 				dirOps.Move(source.getAbsolutePath(),
@@ -95,7 +95,7 @@ public class MoveTest {
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "dir" })
-	public void moveLongPathDirectory() {
+	public void moveLongPathDirectory() throws IOException {
 		File destFolder = longDestination.getParentFile();
 		File expPath = new File(destFolder.getAbsolutePath()
 				+ File.pathSeparator + source.getName());
@@ -110,7 +110,7 @@ public class MoveTest {
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "dir" })
-	public void negativeTest() {
+	public void negativeTest() throws IOException {
 		File negPath = new File("A:\\Test\\");
 
 		Assert.assertFalse(dirOps.Move(source.getAbsolutePath(),
@@ -124,7 +124,7 @@ public class MoveTest {
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "dir" })
-	public void negativeLongPathTest() {
+	public void negativeLongPathTest() throws IOException {
 		String longFileName = "." + File.pathSeparator;
 		for (int i = 0; i < 100; i++) {
 			longFileName += "test" + i + File.pathSeparator;

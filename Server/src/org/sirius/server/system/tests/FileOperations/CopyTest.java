@@ -52,7 +52,7 @@ public class CopyTest {
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
-	public void baseCopyTest() {
+	public void baseCopyTest() throws IOException {
 
 		Assert.assertTrue(
 				fileOps.Copy(source.getAbsolutePath(),
@@ -102,7 +102,7 @@ public class CopyTest {
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
-	public void copyLongPathDirectory() {
+	public void copyLongPathDirectory() throws IOException {
 		File destFolder = longDestination.getParentFile();
 		File expPath = new File(destFolder.getAbsolutePath()
 				+ File.pathSeparator + source.getName());
@@ -116,7 +116,7 @@ public class CopyTest {
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
-	public void negativeTest() {
+	public void negativeTest() throws IOException {
 		File negPath = new File("A:\\Test\\");
 
 		Assert.assertFalse(
@@ -129,7 +129,7 @@ public class CopyTest {
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
-	public void negativeLongPathTest() {
+	public void negativeLongPathTest() throws IOException {
 		String longFileName = "." + File.pathSeparator;
 		for (int i = 0; i < 100; i++) {
 			longFileName += "test" + i + File.pathSeparator;

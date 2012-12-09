@@ -51,7 +51,7 @@ public class MoveTest {
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
-	public void baseMoveTest() {
+	public void baseMoveTest() throws IOException {
 
 		Assert.assertTrue(
 				fileOps.Move(source.getAbsolutePath(),
@@ -108,10 +108,10 @@ public class MoveTest {
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
-	public void moveLongPathDirectory() {
+	public void moveLongPathDirectory() throws IOException {
 		File destFolder = longDestination.getParentFile();
 		File expPath = new File(destFolder.getAbsolutePath()
-				+ File.pathSeparator + source.getName());
+				+ File.separator + source.getName());
 
 		Assert.assertTrue(
 				fileOps.Move(source.getAbsolutePath(),
@@ -123,7 +123,7 @@ public class MoveTest {
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
-	public void negativeTest() {
+	public void negativeTest() throws IOException {
 		File negPath = new File("A:\\Test\\");
 
 		Assert.assertFalse(
@@ -138,10 +138,10 @@ public class MoveTest {
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
-	public void negativeLongPathTest() {
-		String longFileName = "." + File.pathSeparator;
+	public void negativeLongPathTest() throws IOException {
+		String longFileName = "." + File.separator;
 		for (int i = 0; i < 100; i++) {
-			longFileName += "test" + i + File.pathSeparator;
+			longFileName += "test" + i + File.separator;
 		}
 
 		File negPath = new File(longFileName);

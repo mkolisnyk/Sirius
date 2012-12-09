@@ -1,5 +1,6 @@
 package org.sirius.server.system.tests.FileOperations;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -20,7 +21,7 @@ public class GetContentsTest {
 
 	@BeforeMethod
 	public void beforeMethod() throws IOException {
-		nonExSource = new File(sourcePath);
+		nonExSource = new File(nonExSourcePath);
 		if (nonExSource.exists()) {
 			nonExSource.delete();
 		}
@@ -31,15 +32,23 @@ public class GetContentsTest {
 		}
 		source.createNewFile();
 		FileWriter writer = new FileWriter(source.getAbsoluteFile());
-		for (String line : contents) {
-			writer.append(line);
+		/*for (String line : contents) {
+			writer.append(line+System.lineSeparator());
+		}*/
+		BufferedWriter bw = new BufferedWriter(writer);
+
+		for(int i=0;i<contents.length-1;i++){
+			bw.write(contents[i]);
+			bw.newLine();
 		}
+		bw.write(contents[contents.length-1]);
+		bw.close();
 		writer.close();
 	}
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
-	public void getContentsTest() {
+	public void getContentsTest() throws IOException {
 		String result[] = fileOps.GetContents(source.getAbsolutePath());
 		Assert.assertNotNull(result, "The returned content is unexpectly null");
 		for (int i = 0; i < contents.length; i++) {
@@ -50,7 +59,7 @@ public class GetContentsTest {
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
-	public void getContentsNonExistingFileTest() {
+	public void getContentsNonExistingFileTest() throws IOException {
 		String result[] = fileOps.GetContents(nonExSource.getAbsolutePath());
 		Assert.assertNull(result,
 				"Non-existing file returned non-empty content");
@@ -58,11 +67,11 @@ public class GetContentsTest {
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
-	public void getContentsIndexTest() {
+	public void getContentsIndexTest() throws IOException {
 		String result[] = fileOps.GetContents(source.getAbsolutePath(), 2);
 		Assert.assertNotNull(result, "The returned content is unexpectly null");
 		for (int i = 2; i < contents.length; i++) {
-			Assert.assertEquals(result[i], contents[i],
+			Assert.assertEquals(result[i-2], contents[i],
 					"The file contents on the line " + i + "is unexpected");
 		}
 
@@ -71,7 +80,7 @@ public class GetContentsTest {
 		Assert.assertEquals(result.length, 2,
 				"The number of returned lines is incorrect");
 		for (int i = 2; i < 4; i++) {
-			Assert.assertEquals(result[i], contents[i],
+			Assert.assertEquals(result[i-2], contents[i],
 					"The file contents on the line " + i + "is unexpected");
 		}
 
@@ -89,14 +98,14 @@ public class GetContentsTest {
 		Assert.assertEquals(result.length, 2,
 				"The number of returned lines is incorrect for Tail method");
 		for (int i = contents.length - 2; i < contents.length; i++) {
-			Assert.assertEquals(result[i], contents[i],
+			Assert.assertEquals(result[i-contents.length + 2], contents[i],
 					"The file contents on the line " + i + "is unexpected");
 		}
 	}
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
-	public void outOfTheBoundariesTest() {
+	public void outOfTheBoundariesTest() throws IOException {
 		String result[] = fileOps.GetContents(source.getAbsolutePath(),
 				contents.length);
 		Assert.assertNotNull(result, "The returned content is unexpectly null");
@@ -110,7 +119,7 @@ public class GetContentsTest {
 				"The number of returned lines is incorrect");
 
 		for (int i = contents.length - 2; i < contents.length; i++) {
-			Assert.assertEquals(result[i], contents[i],
+			Assert.assertEquals(result[i-contents.length+2], contents[i],
 					"The file contents on the line " + i + "is unexpected");
 		}
 

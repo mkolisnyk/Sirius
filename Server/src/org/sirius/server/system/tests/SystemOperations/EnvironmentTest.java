@@ -1,5 +1,7 @@
 package org.sirius.server.system.tests.SystemOperations;
 
+import java.io.IOException;
+
 import org.sirius.server.system.SystemOperations;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -26,7 +28,7 @@ public class EnvironmentTest {
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "sysop" })
-	public void setVariableTest() {
+	public void setVariableTest() throws IOException {
 		String var = SysOps.GetEnvironmentVariable("Path");
 
 		SysOps.SetEnvironmentVariable("Path", var + ";.\\Test");

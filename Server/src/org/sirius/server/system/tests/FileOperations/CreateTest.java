@@ -72,7 +72,7 @@ public class CreateTest {
 			altFile.getParentFile().delete();
 		}
 
-		Assert.assertTrue(altFile.exists(), "Pre-condition failed. File exists");
+		Assert.assertFalse(altFile.exists(), "Pre-condition failed. File exists");
 
 		Assert.assertTrue(fileOps.Create(longLoc), "Failed to create test file");
 		Assert.assertTrue(altFile.exists(),
