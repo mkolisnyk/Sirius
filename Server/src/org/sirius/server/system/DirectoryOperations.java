@@ -9,4 +9,13 @@ package org.sirius.server.system;
  */
 public class DirectoryOperations {
 
+	/**
+	 * 
+	 * @param path
+	 * @return
+	 */
+	public boolean Create(String path)
+	{
+		return false;
+	}
 }
