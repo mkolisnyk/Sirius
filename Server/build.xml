@@ -21,11 +21,16 @@
 		
     <target name="init">
         <mkdir dir="bin"/>
-        <copy includeemptydirs="false" todir="bin">
+    	<copy includeemptydirs="false" todir="bin">
             <fileset dir="src">
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
+    	<delete dir="Test" />
+    	<delete dir="publish" />
+	  	<mkdir dir="publish" />
+    	<mkdir dir="publish/doc" />
+    	<mkdir dir="publish/packages" />
     </target>
     <target name="clean">
         <delete dir="bin"/>
@@ -92,6 +97,7 @@
 		<taskdef resource="checkstyletask.properties"
 		         classpath="lib/stylecheck/checkstyle-5.6-all.jar"/>
 		
+		
 		<checkstyle config="lib/stylecheck/sun_checks.xml" classpathref="Checkstyle.classpath" 
 			failOnViolation="false" >
 		  <fileset dir="src" includes="**/*.java"/>
@@ -109,7 +115,10 @@
 			     <name name="**/*.class"/>
 			     <archives>
 			       <zips>
-			         <fileset dir="./lib" includes="**/*.jar"/>
+			       	<fileset dir="./lib" casesensitive="yes">
+			       	  <include name="**/*.jar"/>
+			       	  <exclude name="**/stylecheck/*.jar"/>
+			       	</fileset>
 			       </zips>
 			     </archives>
 			    </restrict>
