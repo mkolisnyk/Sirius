@@ -107,7 +107,7 @@
 	</target>
 	
 	<target depends="checkstyle,test,javadoc" name="package">
-		<jar destfile="publish/packages/sirius-server-0.0.jar" basedir="./bin" >
+		<jar destfile="publish/packages/sirius-server-0.0.${package.version}.jar" basedir="./bin" >
 			<fileset dir="./bin">
 			<exclude name="**/*Test.class"/>
 			            </fileset>
