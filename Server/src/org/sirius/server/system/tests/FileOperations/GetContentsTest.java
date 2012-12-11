@@ -32,16 +32,17 @@ public class GetContentsTest {
 		}
 		source.createNewFile();
 		FileWriter writer = new FileWriter(source.getAbsoluteFile());
-		/*for (String line : contents) {
-			writer.append(line+System.lineSeparator());
-		}*/
+		/*
+		 * for (String line : contents) {
+		 * writer.append(line+System.lineSeparator()); }
+		 */
 		BufferedWriter bw = new BufferedWriter(writer);
 
-		for(int i=0;i<contents.length-1;i++){
+		for (int i = 0; i < contents.length - 1; i++) {
 			bw.write(contents[i]);
 			bw.newLine();
 		}
-		bw.write(contents[contents.length-1]);
+		bw.write(contents[contents.length - 1]);
 		bw.close();
 		writer.close();
 	}
@@ -71,7 +72,7 @@ public class GetContentsTest {
 		String result[] = fileOps.GetContents(source.getAbsolutePath(), 2);
 		Assert.assertNotNull(result, "The returned content is unexpectly null");
 		for (int i = 2; i < contents.length; i++) {
-			Assert.assertEquals(result[i-2], contents[i],
+			Assert.assertEquals(result[i - 2], contents[i],
 					"The file contents on the line " + i + "is unexpected");
 		}
 
@@ -80,7 +81,7 @@ public class GetContentsTest {
 		Assert.assertEquals(result.length, 2,
 				"The number of returned lines is incorrect");
 		for (int i = 2; i < 4; i++) {
-			Assert.assertEquals(result[i-2], contents[i],
+			Assert.assertEquals(result[i - 2], contents[i],
 					"The file contents on the line " + i + "is unexpected");
 		}
 
@@ -98,7 +99,7 @@ public class GetContentsTest {
 		Assert.assertEquals(result.length, 2,
 				"The number of returned lines is incorrect for Tail method");
 		for (int i = contents.length - 2; i < contents.length; i++) {
-			Assert.assertEquals(result[i-contents.length + 2], contents[i],
+			Assert.assertEquals(result[i - contents.length + 2], contents[i],
 					"The file contents on the line " + i + "is unexpected");
 		}
 	}
@@ -119,7 +120,7 @@ public class GetContentsTest {
 				"The number of returned lines is incorrect");
 
 		for (int i = contents.length - 2; i < contents.length; i++) {
-			Assert.assertEquals(result[i-contents.length+2], contents[i],
+			Assert.assertEquals(result[i - contents.length + 2], contents[i],
 					"The file contents on the line " + i + "is unexpected");
 		}
 

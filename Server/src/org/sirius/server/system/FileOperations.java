@@ -15,10 +15,13 @@ import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.util.ArrayList;
 
+import javax.jws.WebService;
+
 /**
  * @author KaNoN
  * 
  */
+@WebService
 public class FileOperations {
 
 	/**
@@ -214,7 +217,8 @@ public class FileOperations {
 		int counter = 0;
 
 		while ((line = br.readLine()) != null) {
-			if ((long)counter >= (long)start && (long)counter < ((long)start + (long)number)) {
+			if ((long) counter >= (long) start
+					&& (long) counter < ((long) start + (long) number)) {
 				content.add(line);
 			}
 			counter++;
@@ -242,7 +246,7 @@ public class FileOperations {
 	 * @param origin
 	 * @param destination
 	 * @return
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	public boolean Move(String origin, String destination) throws IOException {
 		return Move(origin, destination, false);
@@ -254,28 +258,37 @@ public class FileOperations {
 	 * @param destination
 	 * @param overwrite
 	 * @return
-	 * @throws IOException 
+	 * @throws IOException
 	 */
-	public boolean Move(String origin, String destination, boolean overwrite) throws IOException {
+	public boolean Move(String origin, String destination, boolean overwrite)
+			throws IOException {
 		File source = new File(origin);
 		File dest = new File(destination);
-		
-		if(dest.getAbsolutePath().length()>255){return false;}
-		
-		if(dest.exists()&&dest.isFile()){
-			if(!overwrite){return false;}
-			else {dest.delete();}
+
+		if (dest.getAbsolutePath().length() > 255) {
+			return false;
 		}
-		if(!dest.getAbsoluteFile().getParentFile().exists()){
-			try {
-			dest.getAbsoluteFile().getParentFile().mkdirs();
+
+		if (dest.exists() && dest.isFile()) {
+			if (!overwrite) {
+				return false;
+			} else {
+				dest.delete();
 			}
-			catch(Exception e){return false;}
 		}
-		
+		if (!dest.getAbsoluteFile().getParentFile().exists()) {
+			try {
+				dest.getAbsoluteFile().getParentFile().mkdirs();
+			} catch (Exception e) {
+				return false;
+			}
+		}
+
 		try {
-		Files.move(source.toPath(), dest.toPath());}
-		catch(NoSuchFileException e ){return false;}
+			Files.move(source.toPath(), dest.toPath());
+		} catch (NoSuchFileException e) {
+			return false;
+		}
 		return true;
 	}
 
@@ -297,10 +310,10 @@ public class FileOperations {
 	 * @param path
 	 * @param lines
 	 * @return
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	public String[] Tail(String path, int lines) throws IOException {
-		
+
 		File file = new File(path);
 
 		if (!file.exists() || !file.isFile()) {
@@ -315,7 +328,9 @@ public class FileOperations {
 
 		while ((line = br.readLine()) != null) {
 			content.add(line);
-			if(content.size()>lines){content.remove(0);}
+			if (content.size() > lines) {
+				content.remove(0);
+			}
 		}
 
 		String result[] = new String[content.size()];

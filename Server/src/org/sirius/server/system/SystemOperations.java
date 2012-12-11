@@ -6,10 +6,13 @@ package org.sirius.server.system;
 import java.io.IOException;
 import java.util.Date;
 
+import javax.jws.WebService;
+
 /**
  * @author KaNoN
  * 
  */
+@WebService
 public class SystemOperations {
 
 	/**
@@ -82,9 +85,10 @@ public class SystemOperations {
 	 * @param variableName
 	 * @param value
 	 * @return
-	 * @throws IOException 
+	 * @throws IOException
 	 */
-	public boolean SetEnvironmentVariable(String variableName, String value) throws IOException {
+	public boolean SetEnvironmentVariable(String variableName, String value)
+			throws IOException {
 		// TODO Add implementation
 		return false;
 	}

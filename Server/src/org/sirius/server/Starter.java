@@ -20,13 +20,20 @@ public class Starter {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Endpoint.publish("http://localhost:21212/system/directory",
+		String host = "localhost";
+		String port = "21212";
+
+		Endpoint.publish(
+				String.format("http://%1$:%2$/system/directory", host, port),
 				new DirectoryOperations());
-		Endpoint.publish("http://localhost:21212/system/file",
+		Endpoint.publish(
+				String.format("http://%1$:%2$/system/file", host, port),
 				new FileOperations());
-		Endpoint.publish("http://localhost:21212/system/process",
+		Endpoint.publish(
+				String.format("http://%1$:%2$/system/process", host, port),
 				new ProcessOperations());
-		Endpoint.publish("http://localhost:21212/system/system",
+		Endpoint.publish(
+				String.format("http://%1$:%2$/system/system", host, port),
 				new SystemOperations());
 		System.out.println("Done.");
 	}

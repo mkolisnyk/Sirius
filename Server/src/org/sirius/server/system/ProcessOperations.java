@@ -3,10 +3,13 @@
  */
 package org.sirius.server.system;
 
+import javax.jws.WebService;
+
 /**
  * @author KaNoN
  * 
  */
+@WebService
 public class ProcessOperations {
 
 	public class ProcessInfo {

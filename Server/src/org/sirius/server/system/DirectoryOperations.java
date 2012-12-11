@@ -12,10 +12,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 
+import javax.jws.WebService;
+
 /**
  * @author KaNoN
  * 
  */
+@WebService
 public class DirectoryOperations {
 
 	/**
@@ -23,7 +26,7 @@ public class DirectoryOperations {
 	 * @param origin
 	 * @param destination
 	 * @return
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	public boolean Copy(String origin, String destination) throws IOException {
 		return Copy(origin, destination, false);
@@ -79,7 +82,7 @@ public class DirectoryOperations {
 	 * @return
 	 */
 	public boolean Create(String path) {
-		return Create(path,false);
+		return Create(path, false);
 	}
 
 	/**
@@ -90,17 +93,18 @@ public class DirectoryOperations {
 	 */
 	public boolean Create(String path, boolean overwrite) {
 		File dir = new File(path);
-		if(dir.getAbsolutePath().length()>255){return false;}
-		if(dir.exists() && dir.isDirectory()){
-			if(overwrite){
+		if (dir.getAbsolutePath().length() > 255) {
+			return false;
+		}
+		if (dir.exists() && dir.isDirectory()) {
+			if (overwrite) {
 				dir.delete();
-			}
-			else {
+			} else {
 				return false;
 			}
 		}
 		dir.mkdirs();
-		
+
 		return dir.exists() && dir.isDirectory();
 	}
 
@@ -111,10 +115,10 @@ public class DirectoryOperations {
 	 */
 	public boolean Delete(String path) {
 		File dir = new File(path);
-		if(dir.exists()&&dir.isDirectory()){
+		if (dir.exists() && dir.isDirectory()) {
 			dir.delete();
 		}
-		return !(dir.exists()&&dir.isDirectory());
+		return !(dir.exists() && dir.isDirectory());
 	}
 
 	/**
@@ -151,10 +155,10 @@ public class DirectoryOperations {
 	 * @param origin
 	 * @param destination
 	 * @return
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	public boolean Move(String origin, String destination) throws IOException {
-		return Move(origin, destination,false);
+		return Move(origin, destination, false);
 	}
 
 	/**
@@ -163,26 +167,38 @@ public class DirectoryOperations {
 	 * @param destination
 	 * @param overwrite
 	 * @return
-	 * @throws IOException 
+	 * @throws IOException
 	 */
-	public boolean Move(String origin, String destination, boolean overwrite) throws IOException {
+	public boolean Move(String origin, String destination, boolean overwrite)
+			throws IOException {
 		File source = new File(origin);
 		File dest = new File(destination);
-		
-		if(!source.exists()) {return false;}
-		if(!source.isDirectory()){return false;}
-		
-		if(dest.getAbsolutePath().length() > 255){return false;}
-		if(dest.exists()){
-			if(overwrite){dest.delete();}
-			else {return false;}
+
+		if (!source.exists()) {
+			return false;
+		}
+		if (!source.isDirectory()) {
+			return false;
+		}
+
+		if (dest.getAbsolutePath().length() > 255) {
+			return false;
+		}
+		if (dest.exists()) {
+			if (overwrite) {
+				dest.delete();
+			} else {
+				return false;
+			}
 		}
 		dest.getAbsoluteFile().mkdirs();
-		try{
-		Files.move(source.toPath(), dest.toPath());
+		try {
+			Files.move(source.toPath(), dest.toPath());
+		} catch (NoSuchFileException e) {
+			return false;
 		}
-		catch(NoSuchFileException e){return false;}
-		return dest.exists() && dest.isDirectory() && !(source.exists() && source.isDirectory());
+		return dest.exists() && dest.isDirectory()
+				&& !(source.exists() && source.isDirectory());
 	}
 
 }
