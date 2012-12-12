@@ -1,135 +1,138 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- WARNING: Eclipse auto-generated file.
-              Any modifications will be overwritten.
-              To include a user specific buildfile here, simply create one in the same
-              directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. -->
-<project basedir="." default="package" name="Server" >
-    <property environment="env"/>
-    <property name="ECLIPSE_HOME" value="../../../../eclipse"/>
-    <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="1.7"/>
-    <property name="source" value="1.7"/>
-    <path id="Server.classpath">
-        <pathelement location="bin"/>
-        <pathelement location="lib/testng-6.8.jar"/>
-    </path>
-	
-	<path id="Checkstyle.classpath">
-	        <pathelement location="lib/stylecheck/*.jar"/>
+<!-- WARNING: Eclipse auto-generated file. Any modifications will be overwritten. 
+	To include a user specific buildfile here, simply create one in the same 
+	directory with the processing instruction <?eclipse.ant.import?> as the first 
+	entry and export the buildfile again. -->
+<project basedir="." default="package" name="Server">
+	<property environment="env" />
+	<property name="ECLIPSE_HOME" value="../../../../eclipse" />
+	<property name="debuglevel" value="source,lines,vars" />
+	<property name="target" value="1.7" />
+	<property name="source" value="1.7" />
+	<path id="Server.classpath">
+		<pathelement location="bin" />
+		<pathelement location="lib/testng-6.8.jar" />
 	</path>
-		
-    <target name="init">
-        <mkdir dir="bin"/>
-    	<copy includeemptydirs="false" todir="bin">
-            <fileset dir="src">
-                <exclude name="**/*.java"/>
-            </fileset>
-        </copy>
-    	<delete dir="Test" />
-    	<delete dir="publish" />
-	  	<mkdir dir="publish" />
-    	<mkdir dir="publish/doc" />
-    	<mkdir dir="publish/packages" />
-    </target>
-    <target name="clean">
-        <delete dir="bin"/>
-    </target>
-    <target depends="clean" name="cleanall"/>
-    <target depends="build-subprojects,build-project" name="build"/>
-    <target name="build-subprojects"/>
-    <target depends="init" name="build-project">
-        <echo message="${ant.project.name}: ${ant.file}"/>
-        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
-            <src path="src"/>
-            <classpath refid="Server.classpath"/>
-        </javac>
-    </target>
-    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
-    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
-        <copy todir="${ant.library.dir}">
-            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
-        </copy>
-        <unzip dest="${ant.library.dir}">
-            <patternset includes="jdtCompilerAdapter.jar"/>
-            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
-        </unzip>
-    </target>
-    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
-        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
-        <antcall target="build"/>
-    </target>
-              	
-	
-    <target depends="build" name="javadoc">
-    	<javadoc
-    	           destdir="publish/doc"
-    	           author="true"
-    	           version="true"
-    	           use="true"
-    	           windowtitle="Server Side API reference">
 
-    	    <packageset dir="src" defaultexcludes="yes">
-    	      <include name="org/sirius/server/**"/>
-    	      <exclude name="org/sirius/server/system/tests/**"/>
-    	    </packageset>
+	<path id="Checkstyle.classpath">
+		<pathelement location="lib/stylecheck/*.jar" />
+	</path>
 
-    	    <doctitle><![CDATA[<h1>Server Side API reference</h1>]]></doctitle>
-    	    <bottom><![CDATA[<i>Copyright &#169; 2000 Dummy Corp. All Rights Reserved.</i>]]></bottom>
-    	    <tag name="todo" scope="all" description="To do:"/>
-    	    <group title="Group 1 Packages" packages="com.dummy.test.a*"/>
-    	    <group title="Group 2 Packages" packages="com.dummy.test.b*:com.dummy.test.c*"/>
-    	    <link offline="true" href="http://download.oracle.com/javase/6/docs/api/" packagelistLoc="C:\tmp"/>
-    	    <link href="http://developer.java.sun.com/developer/products/xml/docs/api/"/>
-    	  </javadoc>
-    </target>
-	
+	<target name="init">
+		<mkdir dir="bin" />
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="src">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+		<delete dir="Test" />
+		<delete dir="publish" />
+		<mkdir dir="publish" />
+		<mkdir dir="publish/doc" />
+		<mkdir dir="publish/packages" />
+	</target>
+	<target name="clean">
+		<delete dir="bin" />
+	</target>
+	<target depends="clean" name="cleanall" />
+	<target depends="build-subprojects,build-project" name="build" />
+	<target name="build-subprojects" />
+	<target depends="init" name="build-project">
+		<echo message="${ant.project.name}: ${ant.file}" />
+		<javac debug="true" debuglevel="${debuglevel}" destdir="bin"
+			includeantruntime="false" source="${source}" target="${target}">
+			<src path="src" />
+			<classpath refid="Server.classpath" />
+		</javac>
+	</target>
+	<target
+		description="Build all projects which reference this project. Useful to propagate changes."
+		name="build-refprojects" />
+	<target description="copy Eclipse compiler jars to ant lib directory"
+		name="init-eclipse-compiler">
+		<copy todir="${ant.library.dir}">
+			<fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar" />
+		</copy>
+		<unzip dest="${ant.library.dir}">
+			<patternset includes="jdtCompilerAdapter.jar" />
+			<fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar" />
+		</unzip>
+	</target>
+	<target description="compile project with Eclipse compiler"
+		name="build-eclipse-compiler">
+		<property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter" />
+		<antcall target="build" />
+	</target>
+
+
+	<target depends="build" name="javadoc">
+		<javadoc destdir="publish/doc" author="true" version="true"
+			use="true" windowtitle="Server Side API reference">
+
+			<packageset dir="src" defaultexcludes="yes">
+				<include name="org/sirius/server/**" />
+				<exclude name="org/sirius/server/system/tests/**" />
+			</packageset>
+
+			<doctitle><![CDATA[<h1>Server Side API reference</h1>]]></doctitle>
+			<bottom><![CDATA[<i>Copyright &#169; 2000 Dummy Corp. All Rights Reserved.</i>]]></bottom>
+			<tag name="todo" scope="all" description="To do:" />
+			<group title="Group 1 Packages" packages="com.dummy.test.a*" />
+			<group title="Group 2 Packages" packages="com.dummy.test.b*:com.dummy.test.c*" />
+			<link offline="true" href="http://download.oracle.com/javase/6/docs/api/"
+				packagelistLoc="C:\tmp" />
+			<link
+				href="http://developer.java.sun.com/developer/products/xml/docs/api/" />
+		</javadoc>
+	</target>
+
 	<target depends="build" name="test">
-		<taskdef name="testng" classname="com.beust.testng.TestNGAntTask" classpath="lib/testng-6.8.jar" />
-		<testng classpathref="Server.classpath"
-		        outputDir="test-output"
-		        haltOnFailure="false" verbose="2">
-		    <classfileset dir="bin/org/sirius/server/system/tests" includes="**/*Test.class" />
+		<taskdef name="testng" classname="com.beust.testng.TestNGAntTask"
+			classpath="lib/testng-6.8.jar" />
+		<testng classpathref="Server.classpath" outputDir="test-output"
+			haltOnFailure="false" verbose="2">
+			<classfileset dir="bin/org/sirius/server/system/tests"
+				includes="**/*Test.class" />
 		</testng>
 	</target>
-	
+
 	<target depends="build" name="checkstyle">
-		<taskdef resource="checkstyletask.properties"
-		         classpath="lib/stylecheck/checkstyle-5.6-all.jar"/>
-		
-		
-		<checkstyle config="lib/stylecheck/sun_checks.xml" classpathref="Checkstyle.classpath" 
-			failOnViolation="false" >
-		  <fileset dir="src" includes="**/*.java"/>
-		  <formatter type="plain"/>
-		  <formatter type="xml" toFile="publish/checkstyle_errors.xml"/>
+		<taskdef resource="checkstyletask.properties" classpath="lib/stylecheck/checkstyle-5.6-all.jar" />
+
+
+		<checkstyle config="lib/stylecheck/sun_checks.xml"
+			classpathref="Checkstyle.classpath" failOnViolation="false">
+			<fileset dir="src" includes="**/*.java" />
+			<formatter type="plain" />
+			<formatter type="xml" toFile="publish/checkstyle_errors.xml" />
 		</checkstyle>
 	</target>
-	
+
 	<target depends="checkstyle,test,javadoc" name="package">
-		<jar destfile="publish/packages/sirius-server-0.0.${package.version}.jar" basedir="./bin" >
+		<jar destfile="publish/packages/sirius-server-${package.version}.jar"
+			basedir="./bin">
 			<fileset dir="./bin">
-			<exclude name="**/*Test.class"/>
-			            </fileset>
-			    <restrict>
-			     <name name="**/*.class"/>
-			     <archives>
-			       <zips>
-			       	<fileset dir="./lib" casesensitive="yes">
-			       	  <include name="**/*.jar"/>
-			       	  <exclude name="**/stylecheck/*.jar"/>
-			       	</fileset>
-			       </zips>
-			     </archives>
-			    </restrict>
-		    <manifest>
-		      <attribute name="Built-By" value="${user.name}"/>
-		      <attribute name="Implementation-Vendor" value="Sirius Org."/>
-		      <attribute name="Implementation-Title" value="Sirius"/>
-		      <attribute name="Implementation-Version" value="0.1 alpha"/>
-		      <attribute name="Main-Class" value="org.sirius.server.Starter"/>
-		    </manifest>
-		  </jar>
-		</target>
+				<exclude name="**/*Test.class" />
+			</fileset>
+			<restrict>
+				<name name="**/*.class" />
+				<archives>
+					<zips>
+						<fileset dir="./lib" casesensitive="yes">
+							<include name="**/*.jar" />
+							<exclude name="**/stylecheck/*.jar" />
+						</fileset>
+					</zips>
+				</archives>
+			</restrict>
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Implementation-Vendor" value="Sirius Org." />
+				<attribute name="Implementation-Title" value="Sirius" />
+				<attribute name="Implementation-Version" value="0.1 alpha" />
+				<attribute name="Main-Class" value="org.sirius.server.Starter" />
+			</manifest>
+		</jar>
+	</target>
 
 </project>

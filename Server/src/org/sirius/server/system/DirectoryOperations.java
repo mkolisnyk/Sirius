@@ -112,12 +112,27 @@ public class DirectoryOperations {
 	 * 
 	 * @param path
 	 * @return
+	 * @throws IOException 
 	 */
-	public boolean Delete(String path) {
+	public boolean Delete(String path) throws IOException {
 		File dir = new File(path);
-		if (dir.exists() && dir.isDirectory()) {
-			dir.delete();
+		
+		String[] names = dir.list();
+		
+		try {
+		if(names != null){
+			for(String name:names){
+				if( !Delete(path + File.separator + name) ){
+					return false;
+				}
+			}
 		}
+		}
+		catch(Exception e){
+			return false;
+		}
+		
+		Files.deleteIfExists(dir.toPath());
 		return !(dir.exists() && dir.isDirectory());
 	}
 

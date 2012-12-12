@@ -2,6 +2,7 @@ package org.sirius.server.system.tests.DirectoryOperations;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 
 import org.sirius.server.system.DirectoryOperations;
 import org.testng.Assert;
@@ -17,11 +18,10 @@ public class DeleteTest {
 	protected DirectoryOperations dirOps = new DirectoryOperations();
 
 	@BeforeTest
-	@AfterTest
+	//@AfterTest
 	public void beforeTest() throws IOException {
 		source = new File(sourcePath);
 
-		source.delete();
 		if (!source.exists()) {
 			source.mkdir();
 		}
@@ -29,7 +29,7 @@ public class DeleteTest {
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "dir" })
-	public void baseTest() {
+	public void baseTest() throws IOException {
 		Assert.assertTrue(dirOps.Delete(source.getAbsolutePath()),
 				"Delete operation returned fault code");
 		Assert.assertFalse(source.exists(),
@@ -38,7 +38,7 @@ public class DeleteTest {
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "dir" })
-	public void negativeTest() {
+	public void negativeTest() throws IOException {
 		File nonExisting = new File(".\\NonExisting\\");
 		if (nonExisting.exists()) {
 			nonExisting.delete();

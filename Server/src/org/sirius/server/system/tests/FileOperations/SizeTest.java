@@ -3,24 +3,27 @@ package org.sirius.server.system.tests.FileOperations;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
 
 import org.sirius.server.system.FileOperations;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class SizeTest {
 
-	protected String sourcePath = ".\\Test.txt";
+	protected String sourcePath = ".\\TestSize.txt";
 	protected File source = null;
 	protected FileOperations fileOps = new FileOperations();
 
 	@BeforeMethod
+	@AfterMethod
 	public void beforeMethod() throws IOException {
 		source = new File(sourcePath);
 
 		if (source.exists()) {
-			source.delete();
+			fileOps.Delete(sourcePath);
 		}
 	}
 

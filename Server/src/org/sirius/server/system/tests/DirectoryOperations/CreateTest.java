@@ -3,6 +3,7 @@ package org.sirius.server.system.tests.DirectoryOperations;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 
 import org.sirius.server.system.DirectoryOperations;
 import org.testng.Assert;
@@ -18,9 +19,13 @@ public class CreateTest {
 	File dir = null;
 	DirectoryOperations dirOps = null;
 
-	@BeforeTest
-	@AfterTest
+	@BeforeMethod
+	@AfterMethod
 	public void beforeTest() throws IOException {
+		Files.deleteIfExists((new File(".\\Test\\Test1\\Test2\\")).toPath());
+		Files.deleteIfExists((new File(".\\Test\\Test1\\Test2.txt")).toPath());
+		Files.deleteIfExists((new File(".\\Test\\Test1\\")).toPath());
+		Files.deleteIfExists((new File(".\\Test\\")).toPath());
 		dir = new File(dirName);
 		dirOps = new DirectoryOperations();
 		Files.deleteIfExists(dir.toPath());

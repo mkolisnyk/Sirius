@@ -2,6 +2,7 @@ package org.sirius.server.system.tests.DirectoryOperations;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 
 import org.sirius.server.system.DirectoryOperations;
 import org.testng.Assert;
@@ -10,28 +11,32 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class ExistsTest {
-	protected String sourcePath = ".\\Test\\";
-	protected String nonExSourcePath = ".\\Test2\\";
+	protected String sourcePath = ".\\TestEx\\";
+	protected String nonExSourcePath = ".\\TestNonEx\\";
 
 	protected File source = null;
 	protected File nonExSource = null;
 	protected DirectoryOperations dirOps = new DirectoryOperations();
 
 	@BeforeTest
-	@AfterTest
 	public void beforeTest() throws IOException {
 		source = new File(sourcePath);
 
-		source.delete();
 		if (!source.exists()) {
-			source.mkdir();
+			source.mkdirs();
 		}
 
 		nonExSource = new File(nonExSourcePath);
 
 		nonExSource.delete();
 	}
-
+	
+	@AfterTest
+	public void afterTest() throws IOException {
+		Files.deleteIfExists(source.toPath());
+		Files.deleteIfExists(nonExSource.toPath());
+	}
+	
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "dir" })
 	public void baseTest() {

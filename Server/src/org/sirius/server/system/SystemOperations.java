@@ -3,6 +3,7 @@
  */
 package org.sirius.server.system;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 
@@ -35,8 +36,9 @@ public class SystemOperations {
 	 * 
 	 * @return
 	 */
-	public int GetFreeDiskSpace() {
-		return -1;
+	public long GetFreeDiskSpace(String path) {
+		File file = new File(path);
+		return file.getUsableSpace();
 	}
 
 	/**
