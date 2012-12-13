@@ -26,8 +26,8 @@ public class EnvironmentTest {
 				"Non existing environment variable should result with null");
 	}
 
-//	@Test(groups = { "all", "server", "core", "server_core", "system",
-//			"server_system", "sysop" })
+	// @Test(groups = { "all", "server", "core", "server_core", "system",
+	// "server_system", "sysop" })
 	public void setVariableTest() throws IOException {
 		String var = SysOps.GetEnvironmentVariable("Path");
 

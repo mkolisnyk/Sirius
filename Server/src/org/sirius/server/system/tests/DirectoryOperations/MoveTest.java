@@ -30,11 +30,11 @@ public class MoveTest {
 			source.getAbsoluteFile().mkdirs();
 		}
 		if (destination.exists()) {
-			//destination.delete();
+			// destination.delete();
 			dirOps.Delete(destinationPath);
 		}
 		if (longDestination.exists()) {
-			//longDestination.delete();
+			// longDestination.delete();
 			dirOps.Delete(longDestinationPath);
 		}
 	}
@@ -62,10 +62,10 @@ public class MoveTest {
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "dir" })
 	public void overwriteMoveTest() throws IOException {
-		//baseMoveTest();
+		// baseMoveTest();
 
 		destination.mkdirs();
-		
+
 		Assert.assertFalse(
 				dirOps.Move(source.getAbsolutePath(),
 						destination.getAbsolutePath()),
@@ -98,18 +98,18 @@ public class MoveTest {
 			"server_system", "dir" })
 	public void moveLongPathDirectory() throws IOException {
 		File destFolder = longDestination.getParentFile();
-		File expPath = new File(destFolder.getAbsolutePath()
-				+ File.separator + source.getName());
+		File expPath = new File(destFolder.getAbsolutePath() + File.separator
+				+ source.getName());
 
-		dirOps.Create( source.getAbsolutePath());
+		dirOps.Create(source.getAbsolutePath());
 		Assert.assertTrue(
 				dirOps.Move(source.getAbsolutePath(),
 						destFolder.getAbsolutePath()),
 				"Failed to move to the folder");
 		Assert.assertFalse(source.exists(), "The source dir is still present");
-		
+
 		// TODO fix the test
-		//Assert.assertTrue(expPath.exists(), "The expected dir wasn't found");
+		// Assert.assertTrue(expPath.exists(), "The expected dir wasn't found");
 	}
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",

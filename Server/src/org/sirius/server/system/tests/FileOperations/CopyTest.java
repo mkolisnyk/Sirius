@@ -104,8 +104,8 @@ public class CopyTest {
 			"server_system", "file" })
 	public void copyLongPathDirectory() throws IOException {
 		File destFolder = longDestination.getParentFile();
-		File expPath = new File(destFolder.getAbsolutePath()
-				+ File.separator + source.getName());
+		File expPath = new File(destFolder.getAbsolutePath() + File.separator
+				+ source.getName());
 
 		Assert.assertTrue(
 				fileOps.Copy(source.getAbsolutePath(),

@@ -6,8 +6,6 @@ package org.sirius.server.system;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
@@ -112,26 +110,25 @@ public class DirectoryOperations {
 	 * 
 	 * @param path
 	 * @return
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	public boolean Delete(String path) throws IOException {
 		File dir = new File(path);
-		
+
 		String[] names = dir.list();
-		
+
 		try {
-		if(names != null){
-			for(String name:names){
-				if( !Delete(path + File.separator + name) ){
-					return false;
+			if (names != null) {
+				for (String name : names) {
+					if (!Delete(path + File.separator + name)) {
+						return false;
+					}
 				}
 			}
-		}
-		}
-		catch(Exception e){
+		} catch (Exception e) {
 			return false;
 		}
-		
+
 		Files.deleteIfExists(dir.toPath());
 		return !(dir.exists() && dir.isDirectory());
 	}

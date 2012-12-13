@@ -112,8 +112,9 @@ public class MoveTest {
 						destFolder.getAbsolutePath()),
 				"Failed to move to the folder");
 
-		//TODO: fix the test
-		//Assert.assertTrue(expPath.exists(), "The expected file wasn't found");
+		// TODO: fix the test
+		// Assert.assertTrue(expPath.exists(),
+		// "The expected file wasn't found");
 		Assert.assertFalse(source.exists(), "The source file is still present");
 	}
 

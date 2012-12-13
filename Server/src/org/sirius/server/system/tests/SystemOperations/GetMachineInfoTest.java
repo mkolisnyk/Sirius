@@ -21,11 +21,9 @@ public class GetMachineInfoTest {
 			"server_system", "sysop" })
 	public void getFreeSpaceTest() {
 		File file = (new File(".\\"));
-		
-		Assert.assertEquals(
-				sysOps.GetFreeDiskSpace(file.getAbsolutePath()), 
-				file.getUsableSpace(), 
-				"Invalid free disk space");
+
+		Assert.assertEquals(sysOps.GetFreeDiskSpace(file.getAbsolutePath()),
+				file.getUsableSpace(), "Invalid free disk space");
 	}
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",

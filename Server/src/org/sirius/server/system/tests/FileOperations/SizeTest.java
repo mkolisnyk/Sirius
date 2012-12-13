@@ -3,7 +3,6 @@ package org.sirius.server.system.tests.FileOperations;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
 
 import org.sirius.server.system.FileOperations;
 import org.testng.Assert;

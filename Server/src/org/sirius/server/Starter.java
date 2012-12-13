@@ -3,6 +3,8 @@
  */
 package org.sirius.server;
 
+import java.util.HashMap;
+
 import javax.xml.ws.Endpoint;
 
 import org.sirius.server.system.DirectoryOperations;
@@ -22,6 +24,14 @@ public class Starter {
 	public static void main(String[] args) {
 		String host = "localhost";
 		String port = "21212";
+
+		HashMap<String, String> params = new HashMap<String, String>();
+
+		for (int i = 0; i < args.length; i += 2) {
+			if (i < args.length - 1) {
+				params.put(args[i], args[i - 1]);
+			}
+		}
 
 		Endpoint.publish(
 				String.format("http://%1$:%2$/system/directory", host, port),

@@ -5,15 +5,10 @@ package org.sirius.server.system;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.CopyOption;
 import java.nio.file.FileSystemException;
 import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
 import java.util.ArrayList;
 
 import javax.jws.WebService;
@@ -280,7 +275,7 @@ public class FileOperations {
 
 		dest.getAbsoluteFile().mkdirs();
 		dest.delete();
-		
+
 		try {
 			Files.move(source.toPath(), dest.toPath());
 		} catch (FileSystemException e) {

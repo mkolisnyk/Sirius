@@ -30,13 +30,13 @@ public class ExistsTest {
 
 		nonExSource.delete();
 	}
-	
+
 	@AfterTest
 	public void afterTest() throws IOException {
 		Files.deleteIfExists(source.toPath());
 		Files.deleteIfExists(nonExSource.toPath());
 	}
-	
+
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "dir" })
 	public void baseTest() {
