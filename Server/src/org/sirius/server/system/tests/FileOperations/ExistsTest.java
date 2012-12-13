@@ -17,9 +17,9 @@ public class ExistsTest {
 	protected File nonExSource = null;
 	protected FileOperations fileOps = new FileOperations();
 
-	@BeforeTest
-	@AfterTest
-	public void beforeTest() throws IOException {
+	@Test(groups = { "all", "server", "core", "server_core", "system",
+			"server_system", "file" })
+	public void baseTest() throws IOException {
 		source = new File(sourcePath);
 
 		source.delete();
@@ -30,11 +30,6 @@ public class ExistsTest {
 		nonExSource = new File(nonExSourcePath);
 
 		nonExSource.delete();
-	}
-
-	@Test(groups = { "all", "server", "core", "server_core", "system",
-			"server_system", "file" })
-	public void baseTest() {
 		Assert.assertTrue(fileOps.Exists(sourcePath),
 				"The existing path wasn't found");
 		Assert.assertFalse(fileOps.Exists(nonExSourcePath),

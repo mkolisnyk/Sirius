@@ -19,6 +19,7 @@
 	</path>
 
 	<target name="init">
+		<delete dir="bin" />
 		<mkdir dir="bin" />
 		<copy includeemptydirs="false" todir="bin">
 			<fileset dir="src">
@@ -104,7 +105,7 @@
 			classpathref="Checkstyle.classpath" failOnViolation="false">
 			<fileset dir="src" includes="**/*.java" />
 			<formatter type="plain" />
-			<formatter type="xml" toFile="publish/checkstyle_errors.xml" />
+			<formatter type="xml" toFile="publish/checkstyle-result.xml" />
 		</checkstyle>
 	</target>
 

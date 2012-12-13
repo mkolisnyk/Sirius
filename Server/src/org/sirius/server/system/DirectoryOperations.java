@@ -201,12 +201,13 @@ public class DirectoryOperations {
 		}
 		if (dest.exists()) {
 			if (overwrite) {
-				dest.delete();
+				Delete(dest.getAbsolutePath());
 			} else {
 				return false;
 			}
 		}
 		dest.getAbsoluteFile().mkdirs();
+		dest.delete();
 		try {
 			Files.move(source.toPath(), dest.toPath());
 		} catch (NoSuchFileException e) {

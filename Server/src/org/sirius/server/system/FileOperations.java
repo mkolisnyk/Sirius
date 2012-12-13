@@ -11,6 +11,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.CopyOption;
+import java.nio.file.FileSystemException;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.util.ArrayList;
@@ -276,17 +277,13 @@ public class FileOperations {
 				dest.delete();
 			}
 		}
-		if (!dest.getAbsoluteFile().getParentFile().exists()) {
-			try {
-				dest.getAbsoluteFile().getParentFile().mkdirs();
-			} catch (Exception e) {
-				return false;
-			}
-		}
 
+		dest.getAbsoluteFile().mkdirs();
+		dest.delete();
+		
 		try {
 			Files.move(source.toPath(), dest.toPath());
-		} catch (NoSuchFileException e) {
+		} catch (FileSystemException e) {
 			return false;
 		}
 		return true;
