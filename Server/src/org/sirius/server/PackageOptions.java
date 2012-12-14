@@ -1,20 +1,36 @@
 /**
- * 
+ * .
  */
 package org.sirius.server;
 
 /**
  * @author KaNoN
- *
+ * .
  */
 public class PackageOptions {
+	/**
+	 * .
+	 */
 	private String _endPoint = null;
-	private String _className = null; 
+	/**
+	 * .
+	 */
+	private String _className = null;
+	/**
+	 * .
+	 */
 	private String _packageLocation = null;
-	
-	public PackageOptions(String endPoint,String className,String packageLocation){
+
+	/**
+	 * .
+	 * @param endPoint
+	 * @param className
+	 * @param packageLocation
+	 */
+	public PackageOptions(String endPoint, String className,
+			String packageLocation) {
 		_endPoint = endPoint;
-		_className = className; 
+		_className = className;
 		_packageLocation = packageLocation;
 	}
 

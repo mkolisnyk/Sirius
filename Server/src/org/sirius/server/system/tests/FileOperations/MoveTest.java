@@ -41,11 +41,12 @@ public class MoveTest {
 		longDestination.getParentFile().delete();
 	}
 
-	@Test(groups = { "all", "server", "core", "server_core", "system",
+	@Test(enabled=false,groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
 	public void baseMoveTest() throws IOException {
 
 		before();
+		
 		Assert.assertTrue(
 				fileOps.move(source.getAbsolutePath(),
 						destination.getAbsolutePath()),
@@ -54,7 +55,7 @@ public class MoveTest {
 		Assert.assertFalse(source.exists(), "The source file is still present");
 	}
 
-	@Test(groups = { "all", "server", "core", "server_core", "system",
+	@Test(enabled=false,groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
 	public void overwriteMoveTest() throws IOException {
 		baseMoveTest();
@@ -92,7 +93,7 @@ public class MoveTest {
 		Assert.assertFalse(source.exists(), "The source file is still present");
 	}
 
-	@Test(groups = { "all", "server", "core", "server_core", "system",
+	@Test(enabled=false,groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
 	public void moveLongPathTest() throws IOException {
 		before();
@@ -100,7 +101,7 @@ public class MoveTest {
 		overwriteMoveTest();
 	}
 
-	@Test(groups = { "all", "server", "core", "server_core", "system",
+	@Test(enabled=false,groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
 	public void moveLongPathDirectory() throws IOException {
 		File destFolder = longDestination;

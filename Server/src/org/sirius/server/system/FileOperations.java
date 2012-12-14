@@ -70,19 +70,21 @@ public class FileOperations {
 			return false;
 		}
 
-		if(dest.getAbsoluteFile().exists()){
+		if (dest.getAbsoluteFile().exists()) {
+			if (dest.getAbsoluteFile().isDirectory()) {
+				dest = new File(dest.getAbsolutePath() + File.separator + source.getName());
+			}
 			if (dest.getAbsoluteFile().isFile()) {
-				if(overwrite){
+				if (overwrite) {
 					dest.delete();
-				}
-				else {
+				} else {
 					return false;
 				}
 			}
-		}
-		else {
-			dest.getAbsoluteFile().mkdirs();
-			dest = new File(dest.getAbsoluteFile() + File.separator + source.getName() );
+		} else {
+			dest = new File(dest.getAbsoluteFile() + File.separator
+					+ source.getName());
+			dest.getAbsoluteFile().getParentFile().mkdirs();
 		}
 		/*
 		 * if (!dest.getAbsoluteFile().getParentFile().mkdirs()) { return false;
@@ -271,17 +273,22 @@ public class FileOperations {
 			return false;
 		}
 
-		if (dest.exists() && dest.isFile()) {
-			if (!overwrite) {
-				return false;
-			} else {
-				dest.delete();
+		if (dest.exists()) {
+			if (dest.isFile()) {
+				if (!overwrite) {
+					return false;
+				} else {
+					dest.delete();
+				}
+			}
+			else {
+				;
 			}
 		}
-
-		dest.getAbsoluteFile().mkdirs();
-		dest.delete();
-
+		else {
+			dest.getAbsoluteFile().getParentFile().mkdirs();
+		}
+		
 		try {
 			Files.move(source.toPath(), dest.toPath());
 		} catch (FileSystemException e) {
