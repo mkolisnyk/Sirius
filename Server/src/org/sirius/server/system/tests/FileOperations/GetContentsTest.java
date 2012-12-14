@@ -50,7 +50,7 @@ public class GetContentsTest {
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
 	public void getContentsTest() throws IOException {
-		String result[] = fileOps.GetContents(source.getAbsolutePath());
+		String result[] = fileOps.getContents(source.getAbsolutePath());
 		Assert.assertNotNull(result, "The returned content is unexpectly null");
 		for (int i = 0; i < contents.length; i++) {
 			Assert.assertEquals(result[i], contents[i],
@@ -61,7 +61,7 @@ public class GetContentsTest {
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
 	public void getContentsNonExistingFileTest() throws IOException {
-		String result[] = fileOps.GetContents(nonExSource.getAbsolutePath());
+		String result[] = fileOps.getContents(nonExSource.getAbsolutePath());
 		Assert.assertNull(result,
 				"Non-existing file returned non-empty content");
 	}
@@ -69,14 +69,14 @@ public class GetContentsTest {
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
 	public void getContentsIndexTest() throws IOException {
-		String result[] = fileOps.GetContentsEx(source.getAbsolutePath(), 2);
+		String result[] = fileOps.getContentsEx(source.getAbsolutePath(), 2);
 		Assert.assertNotNull(result, "The returned content is unexpectly null");
 		for (int i = 2; i < contents.length; i++) {
 			Assert.assertEquals(result[i - 2], contents[i],
 					"The file contents on the line " + i + "is unexpected");
 		}
 
-		result = fileOps.GetContentsEx2(source.getAbsolutePath(), 2, 2);
+		result = fileOps.getContentsEx2(source.getAbsolutePath(), 2, 2);
 		Assert.assertNotNull(result, "The returned content is unexpectly null");
 		Assert.assertEquals(result.length, 2,
 				"The number of returned lines is incorrect");
@@ -85,7 +85,7 @@ public class GetContentsTest {
 					"The file contents on the line " + i + "is unexpected");
 		}
 
-		result = fileOps.Head(source.getAbsolutePath(), 2);
+		result = fileOps.head(source.getAbsolutePath(), 2);
 		Assert.assertNotNull(result, "The returned content is unexpectly null");
 		Assert.assertEquals(result.length, 2,
 				"The number of returned lines is incorrect for Head method");
@@ -94,7 +94,7 @@ public class GetContentsTest {
 					"The file contents on the line " + i + "is unexpected");
 		}
 
-		result = fileOps.Tail(source.getAbsolutePath(), 2);
+		result = fileOps.tail(source.getAbsolutePath(), 2);
 		Assert.assertNotNull(result, "The returned content is unexpectly null");
 		Assert.assertEquals(result.length, 2,
 				"The number of returned lines is incorrect for Tail method");
@@ -107,13 +107,13 @@ public class GetContentsTest {
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
 	public void outOfTheBoundariesTest() throws IOException {
-		String result[] = fileOps.GetContentsEx(source.getAbsolutePath(),
+		String result[] = fileOps.getContentsEx(source.getAbsolutePath(),
 				contents.length);
 		Assert.assertNotNull(result, "The returned content is unexpectly null");
 		Assert.assertEquals(result.length, 0,
 				"The number of returned lines is incorrect");
 
-		result = fileOps.GetContentsEx2(source.getAbsolutePath(),
+		result = fileOps.getContentsEx2(source.getAbsolutePath(),
 				contents.length - 2, 10);
 		Assert.assertNotNull(result, "The returned content is unexpectly null");
 		Assert.assertEquals(result.length, 2,
@@ -124,26 +124,26 @@ public class GetContentsTest {
 					"The file contents on the line " + i + "is unexpected");
 		}
 
-		result = fileOps.Head(source.getAbsolutePath(), contents.length);
+		result = fileOps.head(source.getAbsolutePath(), contents.length);
 		Assert.assertNotNull(result, "The returned content is unexpectly null");
 		for (int i = 0; i < contents.length; i++) {
 			Assert.assertEquals(result[i], contents[i],
 					"The file contents on the line " + i + "is unexpected");
 		}
 
-		result = fileOps.Tail(source.getAbsolutePath(), contents.length);
+		result = fileOps.tail(source.getAbsolutePath(), contents.length);
 		Assert.assertNotNull(result, "The returned content is unexpectly null");
 		for (int i = 0; i < contents.length; i++) {
 			Assert.assertEquals(result[i], contents[i],
 					"The file contents on the line " + i + "is unexpected");
 		}
 
-		result = fileOps.Head(source.getAbsolutePath(), -1);
+		result = fileOps.head(source.getAbsolutePath(), -1);
 		Assert.assertNotNull(result, "The returned content is unexpectly null");
 		Assert.assertEquals(result.length, 0,
 				"The number of returned lines is incorrect");
 
-		result = fileOps.Tail(source.getAbsolutePath(), -1);
+		result = fileOps.tail(source.getAbsolutePath(), -1);
 		Assert.assertNotNull(result, "The returned content is unexpectly null");
 		Assert.assertEquals(result.length, 0,
 				"The number of returned lines is incorrect");

@@ -30,7 +30,7 @@ public class DeleteTest {
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
 	public void baseTest() {
-		Assert.assertTrue(fileOps.Delete(source.getAbsolutePath()),
+		Assert.assertTrue(fileOps.delete(source.getAbsolutePath()),
 				"Delete operation returned fault code");
 		Assert.assertFalse(source.exists(),
 				"The file to remove is still present");
@@ -43,7 +43,7 @@ public class DeleteTest {
 		if (nonExisting.exists()) {
 			nonExisting.delete();
 		}
-		Assert.assertTrue(fileOps.Delete(source.getAbsolutePath()),
+		Assert.assertTrue(fileOps.delete(source.getAbsolutePath()),
 				"Delete operation returned fault code");
 		Assert.assertFalse(source.exists(),
 				"The file to remove is still present");

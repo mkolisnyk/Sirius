@@ -22,7 +22,7 @@ public class SizeTest {
 		source = new File(sourcePath);
 
 		if (source.exists()) {
-			fileOps.Delete(sourcePath);
+			fileOps.delete(sourcePath);
 		}
 	}
 
@@ -31,19 +31,19 @@ public class SizeTest {
 	public void sizeTest() throws IOException {
 		String text = "Test Text";
 		source.createNewFile();
-		Assert.assertEquals(fileOps.Size(source.getAbsolutePath()), 0,
+		Assert.assertEquals(fileOps.size(source.getAbsolutePath()), 0,
 				"Empty file doesn't return the 0 size");
 
 		FileWriter writer = new FileWriter(source);
 		writer.write(text);
 		writer.close();
 
-		Assert.assertEquals(fileOps.Size(source.getAbsolutePath()),
+		Assert.assertEquals(fileOps.size(source.getAbsolutePath()),
 				text.length(),
 				"Non-Empty file doesn't return the non-zero size");
 
 		source.delete();
-		Assert.assertEquals(fileOps.Size(source.getAbsolutePath()), -1,
+		Assert.assertEquals(fileOps.size(source.getAbsolutePath()), -1,
 				"Non-existing file should return -1 size");
 
 	}

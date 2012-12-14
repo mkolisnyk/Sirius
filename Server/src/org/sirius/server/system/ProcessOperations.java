@@ -101,7 +101,7 @@ public class ProcessOperations {
 	 * 
 	 * @return
 	 */
-	public ProcessInfo[] List() {
+	public ProcessInfo[] listAll() {
 		return null;
 	}
 
@@ -110,7 +110,7 @@ public class ProcessOperations {
 	 * @param mask
 	 * @return
 	 */
-	public ProcessInfo[] List(String mask) {
+	public ProcessInfo[] ListByMask(String mask) {
 		return null;
 	}
 
@@ -119,7 +119,7 @@ public class ProcessOperations {
 	 * @param filter
 	 * @return
 	 */
-	public ProcessInfo[] List(ProcessInfo filter) {
+	public ProcessInfo[] ListByFilter(ProcessInfo filter) {
 		return null;
 	}
 
@@ -128,7 +128,7 @@ public class ProcessOperations {
 	 * @param command
 	 * @return
 	 */
-	public boolean Start(String command) {
+	public boolean start(String command) {
 		return false;
 	}
 
@@ -138,7 +138,7 @@ public class ProcessOperations {
 	 * @param args
 	 * @return
 	 */
-	public boolean Start(String command, String... args) {
+	public boolean startEx(String command, String... args) {
 		return false;
 	}
 
@@ -147,7 +147,7 @@ public class ProcessOperations {
 	 * @param command
 	 * @return
 	 */
-	public int Run(String command) {
+	public int run(String command) {
 		return -1;
 	}
 
@@ -157,7 +157,7 @@ public class ProcessOperations {
 	 * @param args
 	 * @return
 	 */
-	public int Run(String command, String... args) {
+	public int runEx(String command, String... args) {
 		return -1;
 	}
 
@@ -166,7 +166,7 @@ public class ProcessOperations {
 	 * @param processName
 	 * @return
 	 */
-	public boolean Kill(String processName) {
+	public boolean kill(String processName) {
 		return false;
 	}
 
@@ -175,7 +175,7 @@ public class ProcessOperations {
 	 * @param pid
 	 * @return
 	 */
-	public int Wait(int pid) {
+	public int waitProcessCloseById(int pid) {
 		return -1;
 	}
 
@@ -185,7 +185,7 @@ public class ProcessOperations {
 	 * @param timeout
 	 * @return
 	 */
-	public int Wait(int pid, int timeout) {
+	public int waitProcessCloseByIdEx(int pid, int timeout) {
 		return -1;
 	}
 
@@ -194,7 +194,7 @@ public class ProcessOperations {
 	 * @param process
 	 * @return
 	 */
-	public int Wait(String process) {
+	public int waitProcessClose(String process) {
 		return -1;
 	}
 
@@ -204,7 +204,7 @@ public class ProcessOperations {
 	 * @param timeout
 	 * @return
 	 */
-	public int Wait(String process, int timeout) {
+	public int waitProcessCloseEx(String process, int timeout) {
 		return -1;
 	}
 }

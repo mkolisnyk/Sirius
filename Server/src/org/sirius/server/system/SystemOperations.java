@@ -20,7 +20,7 @@ public class SystemOperations {
 	 * 
 	 * @return
 	 */
-	public String GetMachineName() {
+	public String getMachineName() {
 		return System.getenv("ComputerName");
 	}
 
@@ -28,7 +28,7 @@ public class SystemOperations {
 	 * 
 	 * @return
 	 */
-	public long GetFreeMemory() {
+	public long getFreeMemory() {
 		return Runtime.getRuntime().freeMemory();
 	}
 
@@ -36,7 +36,7 @@ public class SystemOperations {
 	 * 
 	 * @return
 	 */
-	public long GetFreeDiskSpace(String path) {
+	public long getFreeDiskSpace(String path) {
 		File file = new File(path);
 		return file.getUsableSpace();
 	}
@@ -44,7 +44,7 @@ public class SystemOperations {
 	/**
 	 * 
 	 */
-	public Object GetSystemMetrics() {
+	public Object getSystemMetrics() {
 		return null;
 	}
 
@@ -52,7 +52,7 @@ public class SystemOperations {
 	 * 
 	 * @return
 	 */
-	public Date GetDate() {
+	public Date getDate() {
 		return null;
 	}
 
@@ -61,7 +61,7 @@ public class SystemOperations {
 	 * @param dt
 	 * @return
 	 */
-	public boolean SetDate(Date dt) {
+	public boolean setDate(Date dt) {
 		return false;
 	}
 
@@ -69,7 +69,7 @@ public class SystemOperations {
 	 * 
 	 * @return
 	 */
-	public String GetCurrentUser() {
+	public String getCurrentUser() {
 		return System.getenv("USERNAME");
 	}
 
@@ -78,7 +78,7 @@ public class SystemOperations {
 	 * @param variableName
 	 * @return
 	 */
-	public String GetEnvironmentVariable(String variableName) {
+	public String getEnvironmentVariable(String variableName) {
 		return System.getenv(variableName);
 	}
 
@@ -89,7 +89,7 @@ public class SystemOperations {
 	 * @return
 	 * @throws IOException
 	 */
-	public boolean SetEnvironmentVariable(String variableName, String value)
+	public boolean setEnvironmentVariable(String variableName, String value)
 			throws IOException {
 		// TODO Add implementation
 		return false;

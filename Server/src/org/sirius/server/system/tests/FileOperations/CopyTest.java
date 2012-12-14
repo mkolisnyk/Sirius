@@ -28,19 +28,19 @@ public class CopyTest {
 		longDestination = new File(longDestinationPath);
 
 		//source.delete();
-		fileOps.Delete(source.getAbsolutePath());
+		fileOps.delete(source.getAbsolutePath());
 		if (!source.exists()) {
 			source.createNewFile();
 		}
-		fileOps.Delete(destinationPath);
-		fileOps.Delete(longDestinationPath);
+		fileOps.delete(destinationPath);
+		fileOps.delete(longDestinationPath);
 	}
 
 	@AfterMethod
 	public void after() {
-		fileOps.Delete(source.getAbsolutePath());
-		fileOps.Delete(destinationPath);
-		fileOps.Delete(longDestinationPath);
+		fileOps.delete(source.getAbsolutePath());
+		fileOps.delete(destinationPath);
+		fileOps.delete(longDestinationPath);
 	}
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",
@@ -49,7 +49,7 @@ public class CopyTest {
 
 		before();
 		Assert.assertTrue(
-				fileOps.Copy(source.getAbsolutePath(),
+				fileOps.copy(source.getAbsolutePath(),
 						destination.getAbsolutePath()),
 				"Ordinary copy didn't returned successful result");
 		Assert.assertTrue(destination.exists(), "The source file wasn't copied");
@@ -66,21 +66,21 @@ public class CopyTest {
 		writer.close();
 
 		Assert.assertFalse(
-				fileOps.Copy(source.getAbsolutePath(),
+				fileOps.copy(source.getAbsolutePath(),
 						destination.getAbsolutePath()),
 				"Default copy operation should return error while trying to overwrite");
 		Assert.assertNotEquals(destination.length(), source.length(),
 				"Destination file appears to be equal to source. Copy was accidently occured");
 
 		Assert.assertFalse(
-				fileOps.CopyEx(source.getAbsolutePath(),
+				fileOps.copyEx(source.getAbsolutePath(),
 						destination.getAbsolutePath(), false),
 				"Copy with overwrite flag off should fail");
 		Assert.assertNotEquals(destination.length(), source.length(),
 				"Destination file appears to be equal to source. Copy was accidently occured");
 
 		Assert.assertTrue(
-				fileOps.CopyEx(source.getAbsolutePath(),
+				fileOps.copyEx(source.getAbsolutePath(),
 						destination.getAbsolutePath(), true),
 				"Copy with overwrite flag on should be successful");
 		Assert.assertEquals(destination.length(), source.length(),
@@ -102,7 +102,7 @@ public class CopyTest {
 				+ source.getName());
 
 		Assert.assertTrue(
-				fileOps.Copy(source.getAbsolutePath(),
+				fileOps.copy(source.getAbsolutePath(),
 						destFolder.getAbsolutePath()),
 				"Failed to copy to the folder");
 		Assert.assertTrue(expPath.exists(), "The expected file wasn't found");
@@ -114,7 +114,7 @@ public class CopyTest {
 		File negPath = new File("A:\\Test\\");
 
 		Assert.assertFalse(
-				fileOps.Copy(source.getAbsolutePath(),
+				fileOps.copy(source.getAbsolutePath(),
 						negPath.getAbsolutePath()),
 				"Copy to negative path appears to be successful");
 		Assert.assertFalse(negPath.exists(),
@@ -132,7 +132,7 @@ public class CopyTest {
 		File negPath = new File(longFileName);
 
 		Assert.assertFalse(
-				fileOps.Copy(source.getAbsolutePath(),
+				fileOps.copy(source.getAbsolutePath(),
 						negPath.getAbsolutePath()),
 				"Copy to negative path appears to be successful");
 		Assert.assertFalse(negPath.exists(),

@@ -26,11 +26,11 @@ public class MoveTest {
 		destination = new File(destinationPath);
 		longDestination = new File(longDestinationPath);
 
-		fileOps.Delete(sourcePath);
+		fileOps.delete(sourcePath);
 		fileOps.createFile(sourcePath);
 
-		fileOps.Delete(destinationPath);
-		fileOps.Delete(longDestinationPath);
+		fileOps.delete(destinationPath);
+		fileOps.delete(longDestinationPath);
 	}
 
 	@AfterMethod
@@ -47,7 +47,7 @@ public class MoveTest {
 
 		before();
 		Assert.assertTrue(
-				fileOps.Move(source.getAbsolutePath(),
+				fileOps.move(source.getAbsolutePath(),
 						destination.getAbsolutePath()),
 				"Ordinary move didn't returned successful result");
 		Assert.assertTrue(destination.exists(), "The source file wasn't copied");
@@ -66,7 +66,7 @@ public class MoveTest {
 		long size = source.length();
 
 		Assert.assertFalse(
-				fileOps.Move(source.getAbsolutePath(),
+				fileOps.move(source.getAbsolutePath(),
 						destination.getAbsolutePath()),
 				"Default move operation should return error while trying to overwrite");
 		Assert.assertTrue(source.exists(),
@@ -75,7 +75,7 @@ public class MoveTest {
 				"Destination file appears to be equal to source. Move was accidently occured");
 
 		Assert.assertFalse(
-				fileOps.MoveEx(source.getAbsolutePath(),
+				fileOps.moveEx(source.getAbsolutePath(),
 						destination.getAbsolutePath(), false),
 				"Move with overwrite flag off should fail");
 		Assert.assertTrue(source.exists(),
@@ -84,7 +84,7 @@ public class MoveTest {
 				"Destination file appears to be equal to source. Move was accidently occured");
 
 		Assert.assertTrue(
-				fileOps.MoveEx(source.getAbsolutePath(),
+				fileOps.moveEx(source.getAbsolutePath(),
 						destination.getAbsolutePath(), true),
 				"Move with overwrite flag on should be successful");
 		Assert.assertEquals(destination.length(), size,
@@ -108,7 +108,7 @@ public class MoveTest {
 				+ source.getName());
 
 		Assert.assertTrue(
-				fileOps.Move(source.getAbsolutePath(),
+				fileOps.move(source.getAbsolutePath(),
 						destFolder.getAbsolutePath()),
 				"Failed to move to the folder");
 
@@ -124,7 +124,7 @@ public class MoveTest {
 		File negPath = new File("A:\\Test\\");
 
 		Assert.assertFalse(
-				fileOps.Move(source.getAbsolutePath(),
+				fileOps.move(source.getAbsolutePath(),
 						negPath.getAbsolutePath()),
 				"Move to negative path appears to be successful");
 		Assert.assertFalse(negPath.exists(),
@@ -144,7 +144,7 @@ public class MoveTest {
 		File negPath = new File(longFileName);
 
 		Assert.assertFalse(
-				fileOps.Move(source.getAbsolutePath(),
+				fileOps.move(source.getAbsolutePath(),
 						negPath.getAbsolutePath()),
 				"Move to negative path appears to be successful");
 		Assert.assertFalse(negPath.exists(),

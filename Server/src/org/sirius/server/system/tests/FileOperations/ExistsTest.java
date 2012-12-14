@@ -28,9 +28,9 @@ public class ExistsTest {
 		nonExSource = new File(nonExSourcePath);
 
 		nonExSource.delete();
-		Assert.assertTrue(fileOps.Exists(sourcePath),
+		Assert.assertTrue(fileOps.exists(sourcePath),
 				"The existing path wasn't found");
-		Assert.assertFalse(fileOps.Exists(nonExSourcePath),
+		Assert.assertFalse(fileOps.exists(nonExSourcePath),
 				"The non-existing path was unexpectly found");
 	}
 }
