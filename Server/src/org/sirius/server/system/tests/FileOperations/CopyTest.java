@@ -27,33 +27,27 @@ public class CopyTest {
 		destination = new File(destinationPath);
 		longDestination = new File(longDestinationPath);
 
-		source.delete();
+		//source.delete();
+		fileOps.Delete(source.getAbsolutePath());
 		if (!source.exists()) {
 			source.createNewFile();
 		}
-		if (destination.exists()) {
-			destination.delete();
-		}
-		if (longDestination.exists()) {
-			longDestination.delete();
-		}
-		if (longDestination.getParentFile().exists()) {
-			longDestination.getParentFile().delete();
-		}
+		fileOps.Delete(destinationPath);
+		fileOps.Delete(longDestinationPath);
 	}
 
 	@AfterMethod
 	public void after() {
-		source.delete();
-		destination.delete();
-		longDestination.delete();
-		longDestination.getParentFile().delete();
+		fileOps.Delete(source.getAbsolutePath());
+		fileOps.Delete(destinationPath);
+		fileOps.Delete(longDestinationPath);
 	}
 
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
 	public void baseCopyTest() throws IOException {
 
+		before();
 		Assert.assertTrue(
 				fileOps.Copy(source.getAbsolutePath(),
 						destination.getAbsolutePath()),

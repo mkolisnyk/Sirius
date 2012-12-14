@@ -70,19 +70,25 @@ public class FileOperations {
 			return false;
 		}
 
-		if (dest.getAbsoluteFile().isFile() && dest.getAbsoluteFile().exists()
-				&& !overwrite) {
-			return false;
+		if(dest.getAbsoluteFile().exists()){
+			if (dest.getAbsoluteFile().isFile()) {
+				if(overwrite){
+					dest.delete();
+				}
+				else {
+					return false;
+				}
+			}
 		}
-
+		else {
+			dest.getAbsoluteFile().mkdirs();
+			dest = new File(dest.getAbsoluteFile() + File.separator + source.getName() );
+		}
 		/*
 		 * if (!dest.getAbsoluteFile().getParentFile().mkdirs()) { return false;
 		 * }
 		 */
 
-		if (overwrite) {
-			dest.delete();
-		}
 		if (dest.getAbsolutePath().length() > 255) {
 			return false;
 		}

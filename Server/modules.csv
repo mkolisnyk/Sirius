@@ -1,0 +1,5 @@
+Endpoint							,Class											,Package
+http://%1$:%2$/system/directory		,org.sirius.server.system.DirectoryOperations	,Local
+http://%1$:%2$/system/file			,org.sirius.server.system.FileOperations		,Local
+http://%1$:%2$/system/process		,org.sirius.server.system.ProcessOperations		,Local
+http://%1$:%2$/system/system		,org.sirius.server.system.SystemOperations		,Local
