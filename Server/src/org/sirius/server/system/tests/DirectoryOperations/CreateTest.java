@@ -31,7 +31,7 @@ public class CreateTest {
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "dir" })
 	public void baseScenario() {
-		Assert.assertTrue(dirOps.Create(dirName), "Failed to create test dir");
+		Assert.assertTrue(dirOps.createDirectory(dirName), "Failed to create test dir");
 		Assert.assertTrue(dir.exists(),
 				"The dir wasn't actually created though create method showed success");
 	}
@@ -40,11 +40,11 @@ public class CreateTest {
 			"server_system", "dir" })
 	public void overwriteScenario() throws IOException {
 		this.baseScenario();
-		Assert.assertFalse(dirOps.Create(dirName),
+		Assert.assertFalse(dirOps.createDirectory(dirName),
 				"The create operation showed success after trying overwriting existing dir");
-		Assert.assertFalse(dirOps.Create(dirName, false),
+		Assert.assertFalse(dirOps.createDirectoryEx(dirName, false),
 				"The overwrite flag set to false didn't break the create operation");
-		Assert.assertTrue(dirOps.Create(dirName, true),
+		Assert.assertTrue(dirOps.createDirectoryEx(dirName, true),
 				"The overwrite flag set to true wasn't successful");
 	}
 
@@ -64,7 +64,7 @@ public class CreateTest {
 
 		Assert.assertFalse(altdir.exists(), "Pre-condition failed. dir exists");
 
-		Assert.assertTrue(dirOps.Create(longLoc), "Failed to create test dir");
+		Assert.assertTrue(dirOps.createDirectory(longLoc), "Failed to create test dir");
 		Assert.assertTrue(altdir.exists(),
 				"The dir wasn't actually created though create method showed success");
 	}
@@ -73,12 +73,12 @@ public class CreateTest {
 			"server_system", "dir" })
 	public void negativeTest() throws IOException {
 		File negdir = new File("A:\\non-existing\\drive\\Test.txt");
-		Assert.assertFalse(dirOps.Create(negdir.getPath()),
+		Assert.assertFalse(dirOps.createDirectory(negdir.getPath()),
 				"The dir couldn't be created at the specified location");
 
 		negdir = new File(".\\*Test.txt");
 		Assert.assertFalse(
-				dirOps.Create(negdir.getPath()),
+				dirOps.createDirectory(negdir.getPath()),
 				"The dir couldn't be created at the specified location. The path contains special characters");
 
 	}

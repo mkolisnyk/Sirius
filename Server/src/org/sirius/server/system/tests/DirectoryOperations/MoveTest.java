@@ -31,11 +31,11 @@ public class MoveTest {
 		}
 		if (destination.exists()) {
 			// destination.delete();
-			dirOps.Delete(destinationPath);
+			dirOps.delete(destinationPath);
 		}
 		if (longDestination.exists()) {
 			// longDestination.delete();
-			dirOps.Delete(longDestinationPath);
+			dirOps.delete(longDestinationPath);
 		}
 	}
 
@@ -52,7 +52,7 @@ public class MoveTest {
 	public void baseMoveTest() throws IOException {
 
 		Assert.assertTrue(
-				dirOps.Move(source.getAbsolutePath(),
+				dirOps.moveDirectory(source.getAbsolutePath(),
 						destination.getAbsolutePath()),
 				"Ordinary move didn't returned successful result");
 		Assert.assertTrue(destination.exists(), "The source dir wasn't copied");
@@ -67,21 +67,21 @@ public class MoveTest {
 		destination.mkdirs();
 
 		Assert.assertFalse(
-				dirOps.Move(source.getAbsolutePath(),
+				dirOps.moveDirectory(source.getAbsolutePath(),
 						destination.getAbsolutePath()),
 				"Default move operation should return error while trying to overwrite");
 		Assert.assertTrue(source.exists(),
 				"The source dir was unexpectly removed");
 
 		Assert.assertFalse(
-				dirOps.Move(source.getAbsolutePath(),
+				dirOps.moveDirectoryEx(source.getAbsolutePath(),
 						destination.getAbsolutePath(), false),
 				"Move with overwrite flag off should fail");
 		Assert.assertTrue(source.exists(),
 				"The source dir was unexpectly removed");
 
 		Assert.assertTrue(
-				dirOps.Move(source.getAbsolutePath(),
+				dirOps.moveDirectoryEx(source.getAbsolutePath(),
 						destination.getAbsolutePath(), true),
 				"Move with overwrite flag on should be successful");
 		Assert.assertFalse(source.exists(), "The source dir is still present");
@@ -101,9 +101,9 @@ public class MoveTest {
 		File expPath = new File(destFolder.getAbsolutePath() + File.separator
 				+ source.getName());
 
-		dirOps.Create(source.getAbsolutePath());
+		dirOps.createDirectory(source.getAbsolutePath());
 		Assert.assertTrue(
-				dirOps.Move(source.getAbsolutePath(),
+				dirOps.moveDirectory(source.getAbsolutePath(),
 						destFolder.getAbsolutePath()),
 				"Failed to move to the folder");
 		Assert.assertFalse(source.exists(), "The source dir is still present");
@@ -117,7 +117,7 @@ public class MoveTest {
 	public void negativeTest() throws IOException {
 		File negPath = new File("A:\\Test\\");
 
-		Assert.assertFalse(dirOps.Move(source.getAbsolutePath(),
+		Assert.assertFalse(dirOps.moveDirectory(source.getAbsolutePath(),
 				negPath.getAbsolutePath()),
 				"Move to negative path appears to be successful");
 		Assert.assertFalse(negPath.exists(),
@@ -136,7 +136,7 @@ public class MoveTest {
 
 		File negPath = new File(longFileName);
 
-		Assert.assertFalse(dirOps.Move(source.getAbsolutePath(),
+		Assert.assertFalse(dirOps.moveDirectory(source.getAbsolutePath(),
 				negPath.getAbsolutePath()),
 				"Move to negative path appears to be successful");
 		Assert.assertFalse(negPath.exists(),

@@ -26,8 +26,8 @@ public class DirectoryOperations {
 	 * @return
 	 * @throws IOException
 	 */
-	public boolean Copy(String origin, String destination) throws IOException {
-		return Copy(origin, destination, false);
+	public boolean copy(String origin, String destination) throws IOException {
+		return copyEx(origin, destination, false);
 	}
 
 	/**
@@ -38,7 +38,7 @@ public class DirectoryOperations {
 	 * @return
 	 * @throws IOException
 	 */
-	public boolean Copy(String origin, String destination, boolean overwrite)
+	public boolean copyEx(String origin, String destination, boolean overwrite)
 			throws IOException {
 		File source = new File(origin);
 		File dest = new File(destination);
@@ -79,8 +79,8 @@ public class DirectoryOperations {
 	 * @param path
 	 * @return
 	 */
-	public boolean Create(String path) {
-		return Create(path, false);
+	public boolean createDirectory(String path) {
+		return createDirectoryEx(path, false);
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class DirectoryOperations {
 	 * @param overwrite
 	 * @return
 	 */
-	public boolean Create(String path, boolean overwrite) {
+	public boolean createDirectoryEx(String path, boolean overwrite) {
 		File dir = new File(path);
 		if (dir.getAbsolutePath().length() > 255) {
 			return false;
@@ -112,7 +112,7 @@ public class DirectoryOperations {
 	 * @return
 	 * @throws IOException
 	 */
-	public boolean Delete(String path) throws IOException {
+	public boolean delete(String path) throws IOException {
 		File dir = new File(path);
 
 		String[] names = dir.list();
@@ -120,7 +120,7 @@ public class DirectoryOperations {
 		try {
 			if (names != null) {
 				for (String name : names) {
-					if (!Delete(path + File.separator + name)) {
+					if (!delete(path + File.separator + name)) {
 						return false;
 					}
 				}
@@ -138,7 +138,7 @@ public class DirectoryOperations {
 	 * @param path
 	 * @return
 	 */
-	public boolean Exists(String path) {
+	public boolean exists(String path) {
 		File dir = new File(path);
 		return dir.exists() && dir.isDirectory();
 	}
@@ -148,7 +148,7 @@ public class DirectoryOperations {
 	 * @param path
 	 * @return
 	 */
-	public String[] GetContents(String path) {
+	public String[] getContents(String path) {
 		return null;
 	}
 
@@ -158,7 +158,7 @@ public class DirectoryOperations {
 	 * @param recurcive
 	 * @return
 	 */
-	public String[] GetContents(String path, boolean recurcive) {
+	public String[] getContentsEx(String path, boolean recurcive) {
 		return null;
 	}
 
@@ -169,8 +169,8 @@ public class DirectoryOperations {
 	 * @return
 	 * @throws IOException
 	 */
-	public boolean Move(String origin, String destination) throws IOException {
-		return Move(origin, destination, false);
+	public boolean moveDirectory(String origin, String destination) throws IOException {
+		return moveDirectoryEx(origin, destination, false);
 	}
 
 	/**
@@ -181,7 +181,7 @@ public class DirectoryOperations {
 	 * @return
 	 * @throws IOException
 	 */
-	public boolean Move(String origin, String destination, boolean overwrite)
+	public boolean moveDirectoryEx(String origin, String destination, boolean overwrite)
 			throws IOException {
 		File source = new File(origin);
 		File dest = new File(destination);
@@ -198,7 +198,7 @@ public class DirectoryOperations {
 		}
 		if (dest.exists()) {
 			if (overwrite) {
-				Delete(dest.getAbsolutePath());
+				delete(dest.getAbsolutePath());
 			} else {
 				return false;
 			}

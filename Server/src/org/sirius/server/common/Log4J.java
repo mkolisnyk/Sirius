@@ -21,8 +21,9 @@ public final class Log4J {
 	public static Logger log() {
 		Exception e = new Exception();
 		String className = e.getStackTrace()[1].getClassName();
-		DOMConfigurator.configure("log4j.xml");
-		logger = Logger.getLogger(className);
+		
+		DOMConfigurator.configure(".\\log4j.xml");
+		logger = Logger.getLogger(Log4J.class);
 		return logger;
 	}
 }

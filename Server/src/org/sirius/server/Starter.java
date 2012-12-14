@@ -42,6 +42,9 @@ public class Starter {
 		ArrayList<PackageOptions> options = new ArrayList<PackageOptions>();
 
 		while ((line = br.readLine()) != null) {
+			if(line.startsWith("#")){
+				continue;
+			}
 			String[] row = line.split(",");
 			if (row.length < 3) {
 				continue;
@@ -71,8 +74,11 @@ public class Starter {
 				// TODO: Add load class instructions
 			}
 			try {
-				Endpoint.publish(String.format(option.get_endPoint(), host,
-						port), Class.forName(option.get_className())
+				String endPoint = option.get_endPoint();
+				endPoint = endPoint.replaceAll("\\$\\{HOST}", host);
+				endPoint = endPoint.replaceAll("\\$\\{PORT}", port);
+				Log4J.log().info("Starting endpoint: " + endPoint);
+				Endpoint.publish(endPoint, Class.forName(option.get_className())
 						.newInstance());
 			} catch (InstantiationException | IllegalAccessException
 					| ClassNotFoundException e) {

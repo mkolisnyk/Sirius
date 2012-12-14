@@ -28,7 +28,7 @@ public class DeleteTest {
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "dir" })
 	public void baseTest() throws IOException {
-		Assert.assertTrue(dirOps.Delete(source.getAbsolutePath()),
+		Assert.assertTrue(dirOps.delete(source.getAbsolutePath()),
 				"Delete operation returned fault code");
 		Assert.assertFalse(source.exists(),
 				"The dir to remove is still present");
@@ -41,7 +41,7 @@ public class DeleteTest {
 		if (nonExisting.exists()) {
 			nonExisting.delete();
 		}
-		Assert.assertTrue(dirOps.Delete(nonExisting.getAbsolutePath()),
+		Assert.assertTrue(dirOps.delete(nonExisting.getAbsolutePath()),
 				"Delete operation returned fault code");
 		Assert.assertFalse(nonExisting.exists(),
 				"The dir to remove is still present");

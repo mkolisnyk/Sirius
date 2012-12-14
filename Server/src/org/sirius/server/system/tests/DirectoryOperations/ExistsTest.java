@@ -40,9 +40,9 @@ public class ExistsTest {
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "dir" })
 	public void baseTest() {
-		Assert.assertTrue(dirOps.Exists(sourcePath),
+		Assert.assertTrue(dirOps.exists(sourcePath),
 				"The existing path wasn't found");
-		Assert.assertFalse(dirOps.Exists(nonExSourcePath),
+		Assert.assertFalse(dirOps.exists(nonExSourcePath),
 				"The non-existing path was unexpectly found");
 	}
 }

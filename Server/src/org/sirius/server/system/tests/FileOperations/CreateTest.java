@@ -29,7 +29,7 @@ public class CreateTest {
 	@Test(groups = { "all", "server", "core", "server_core", "system",
 			"server_system", "file" })
 	public void baseScenario() {
-		Assert.assertTrue(fileOps.Create(fileName),
+		Assert.assertTrue(fileOps.createFile(fileName),
 				"Failed to create test file");
 		Assert.assertTrue(file.exists(),
 				"The file wasn't actually created though create method showed success");
@@ -39,11 +39,11 @@ public class CreateTest {
 			"server_system", "file" })
 	public void overwriteScenario() throws IOException {
 		this.baseScenario();
-		Assert.assertFalse(fileOps.Create(fileName),
+		Assert.assertFalse(fileOps.createFile(fileName),
 				"The create operation showed success after trying overwriting existing file");
-		Assert.assertFalse(fileOps.Create(fileName, false),
+		Assert.assertFalse(fileOps.createFileEx(fileName, false),
 				"The overwrite flag set to false didn't break the create operation");
-		Assert.assertTrue(fileOps.Create(fileName, true),
+		Assert.assertTrue(fileOps.createFileEx(fileName, true),
 				"The overwrite flag set to true wasn't successful");
 
 		FileWriter writer = new FileWriter(file);
@@ -52,7 +52,7 @@ public class CreateTest {
 		Assert.assertNotEquals(file.length(), 0,
 				"The file size wasn't changed after writing test string into it");
 
-		Assert.assertTrue(fileOps.Create(fileName, true),
+		Assert.assertTrue(fileOps.createFileEx(fileName, true),
 				"The overwrite flag set to true wasn't successful");
 		Assert.assertEquals(file.length(), 0,
 				"The file wasn't cleaned after repetitive create operation on existing file");
@@ -75,7 +75,7 @@ public class CreateTest {
 		Assert.assertFalse(altFile.exists(),
 				"Pre-condition failed. File exists");
 
-		Assert.assertTrue(fileOps.Create(longLoc), "Failed to create test file");
+		Assert.assertTrue(fileOps.createFile(longLoc), "Failed to create test file");
 		Assert.assertTrue(altFile.exists(),
 				"The file wasn't actually created though create method showed success");
 	}
@@ -84,12 +84,12 @@ public class CreateTest {
 			"server_system", "file" })
 	public void negativeTest() throws IOException {
 		File negFile = new File("A:\\non-existing\\drive\\Test.txt");
-		Assert.assertFalse(fileOps.Create(negFile.getPath()),
+		Assert.assertFalse(fileOps.createFile(negFile.getPath()),
 				"The file couldn't be created at the specified location");
 
 		negFile = new File(".\\*Test.txt");
 		Assert.assertFalse(
-				fileOps.Create(negFile.getPath()),
+				fileOps.createFile(negFile.getPath()),
 				"The file couldn't be created at the specified location. The path contains special characters");
 
 	}

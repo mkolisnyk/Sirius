@@ -3,7 +3,9 @@
  */
 package org.sirius.server.system;
 
+import javax.jws.WebParam;
 import javax.jws.WebService;
+import javax.jws.WebResult;
 
 /**
  * @author KaNoN

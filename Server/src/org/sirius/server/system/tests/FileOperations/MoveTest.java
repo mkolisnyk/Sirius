@@ -27,7 +27,7 @@ public class MoveTest {
 		longDestination = new File(longDestinationPath);
 
 		fileOps.Delete(sourcePath);
-		fileOps.Create(sourcePath);
+		fileOps.createFile(sourcePath);
 
 		fileOps.Delete(destinationPath);
 		fileOps.Delete(longDestinationPath);
@@ -75,7 +75,7 @@ public class MoveTest {
 				"Destination file appears to be equal to source. Move was accidently occured");
 
 		Assert.assertFalse(
-				fileOps.Move(source.getAbsolutePath(),
+				fileOps.MoveEx(source.getAbsolutePath(),
 						destination.getAbsolutePath(), false),
 				"Move with overwrite flag off should fail");
 		Assert.assertTrue(source.exists(),
@@ -84,7 +84,7 @@ public class MoveTest {
 				"Destination file appears to be equal to source. Move was accidently occured");
 
 		Assert.assertTrue(
-				fileOps.Move(source.getAbsolutePath(),
+				fileOps.MoveEx(source.getAbsolutePath(),
 						destination.getAbsolutePath(), true),
 				"Move with overwrite flag on should be successful");
 		Assert.assertEquals(destination.length(), size,

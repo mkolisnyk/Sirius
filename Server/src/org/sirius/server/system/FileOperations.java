@@ -36,7 +36,7 @@ public class FileOperations {
 	 * @param text
 	 * @return
 	 */
-	public boolean Append(String path, String text) {
+	public boolean AppendEx(String path, String text) {
 		return false;
 	}
 
@@ -48,7 +48,7 @@ public class FileOperations {
 	 * @throws IOException
 	 */
 	public boolean Copy(String origin, String destination) throws IOException {
-		return Copy(origin, destination, false);
+		return CopyEx(origin, destination, false);
 	}
 
 	/**
@@ -58,7 +58,7 @@ public class FileOperations {
 	 * @param overwrite
 	 * @return
 	 */
-	public boolean Copy(String origin, String destination, boolean overwrite)
+	public boolean CopyEx(String origin, String destination, boolean overwrite)
 			throws IOException {
 		File source = new File(origin);
 		File dest = new File(destination);
@@ -110,8 +110,8 @@ public class FileOperations {
 	 * @param fileName
 	 * @return
 	 */
-	public boolean Create(String fileName) {
-		return Create(fileName, false);
+	public boolean createFile(String fileName) {
+		return createFileEx(fileName, false);
 	}
 
 	/**
@@ -121,7 +121,7 @@ public class FileOperations {
 	 * @return
 	 * @throws IOException
 	 */
-	public boolean Create(String fileName, boolean overwrite) {
+	public boolean createFileEx(String fileName, boolean overwrite) {
 		File dest = new File(fileName);
 
 		if (dest.exists()) {
@@ -181,7 +181,7 @@ public class FileOperations {
 	 * @throws IOException
 	 */
 	public String[] GetContents(String path) throws IOException {
-		return GetContents(path, 0, Integer.MAX_VALUE);
+		return GetContentsEx2(path, 0, Integer.MAX_VALUE);
 	}
 
 	/**
@@ -191,8 +191,8 @@ public class FileOperations {
 	 * @return
 	 * @throws IOException
 	 */
-	public String[] GetContents(String path, int start) throws IOException {
-		return GetContents(path, start, Integer.MAX_VALUE);
+	public String[] GetContentsEx(String path, int start) throws IOException {
+		return GetContentsEx2(path, start, Integer.MAX_VALUE);
 	}
 
 	/**
@@ -203,7 +203,7 @@ public class FileOperations {
 	 * @return
 	 * @throws IOException
 	 */
-	public String[] GetContents(String path, int start, int number)
+	public String[] GetContentsEx2(String path, int start, int number)
 			throws IOException {
 		File file = new File(path);
 
@@ -240,7 +240,7 @@ public class FileOperations {
 	 * @throws IOException
 	 */
 	public String[] Head(String path, int lines) throws IOException {
-		return GetContents(path, 0, lines);
+		return GetContentsEx2(path, 0, lines);
 	}
 
 	/**
@@ -251,7 +251,7 @@ public class FileOperations {
 	 * @throws IOException
 	 */
 	public boolean Move(String origin, String destination) throws IOException {
-		return Move(origin, destination, false);
+		return MoveEx(origin, destination, false);
 	}
 
 	/**
@@ -262,7 +262,7 @@ public class FileOperations {
 	 * @return
 	 * @throws IOException
 	 */
-	public boolean Move(String origin, String destination, boolean overwrite)
+	public boolean MoveEx(String origin, String destination, boolean overwrite)
 			throws IOException {
 		File source = new File(origin);
 		File dest = new File(destination);
@@ -354,7 +354,7 @@ public class FileOperations {
 	 * @param text
 	 * @return
 	 */
-	public boolean Write(String path, String text) {
+	public boolean WriteEx(String path, String text) {
 		return false;
 	}
 }

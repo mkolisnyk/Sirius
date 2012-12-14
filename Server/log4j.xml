@@ -27,4 +27,9 @@
 		<!-- <appender-ref ref="fileAppender"/> -->
 	</logger>
 
+	<root>
+		<priority value="debug"></priority>
+		<!-- log all log entries on console -->
+		<appender-ref ref="consoleAppender" />
+	</root>
 </log4j:configuration>

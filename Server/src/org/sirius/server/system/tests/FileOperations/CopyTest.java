@@ -73,14 +73,14 @@ public class CopyTest {
 				"Destination file appears to be equal to source. Copy was accidently occured");
 
 		Assert.assertFalse(
-				fileOps.Copy(source.getAbsolutePath(),
+				fileOps.CopyEx(source.getAbsolutePath(),
 						destination.getAbsolutePath(), false),
 				"Copy with overwrite flag off should fail");
 		Assert.assertNotEquals(destination.length(), source.length(),
 				"Destination file appears to be equal to source. Copy was accidently occured");
 
 		Assert.assertTrue(
-				fileOps.Copy(source.getAbsolutePath(),
+				fileOps.CopyEx(source.getAbsolutePath(),
 						destination.getAbsolutePath(), true),
 				"Copy with overwrite flag on should be successful");
 		Assert.assertEquals(destination.length(), source.length(),
