@@ -12,6 +12,7 @@
 	<path id="Server.classpath">
 		<pathelement location="bin" />
 		<pathelement location="lib/testng-6.8.jar" />
+		<pathelement location="lib/log4j-1.2.9.jar" />
 	</path>
 
 	<path id="Checkstyle.classpath">
