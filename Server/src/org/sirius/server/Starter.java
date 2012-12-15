@@ -85,6 +85,12 @@ public class Starter {
 				Log4J.log().error("Failed publishing server endpoint", e);
 				
 			}
+			catch(Exception e){
+				Log4J.log().error("Failed publishing server endpoint", e);
+			}
+			finally {
+				Log4J.log().info("Done...");
+			}
 		}
 	}
 

@@ -17,39 +17,25 @@
 public interface SystemOperations
 {
     
-    // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/getEnvironmentVariableRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/getEnvironmentVariableResponse")]
-    [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-    getEnvironmentVariableResponse getEnvironmentVariable(getEnvironmentVariableRequest request);
-    
-    // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/setEnvironmentVariableRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/setEnvironmentVariableResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(system.server.sirius.org.IOException), Action="http://system.server.sirius.org/SystemOperations/setEnvironmentVariable/Fault/IOE" +
-        "xception", Name="IOException")]
-    [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-    setEnvironmentVariableResponse setEnvironmentVariable(setEnvironmentVariableRequest request);
-    
-    // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+    // CODEGEN: Параметр "machineName" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
     [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/getMachineNameRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/getMachineNameResponse")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+    [return: System.ServiceModel.MessageParameterAttribute(Name="machineName")]
     getMachineNameResponse getMachineName(getMachineNameRequest request);
     
-    // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+    // CODEGEN: Параметр "freeMemory" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
     [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/getFreeMemoryRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/getFreeMemoryResponse")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+    [return: System.ServiceModel.MessageParameterAttribute(Name="freeMemory")]
     getFreeMemoryResponse getFreeMemory(getFreeMemoryRequest request);
     
-    // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+    // CODEGEN: Параметр "freeSpace" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
     [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/getFreeDiskSpaceRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/getFreeDiskSpaceResponse")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+    [return: System.ServiceModel.MessageParameterAttribute(Name="freeSpace")]
     getFreeDiskSpaceResponse getFreeDiskSpace(getFreeDiskSpaceRequest request);
     
-    // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+    // CODEGEN: Параметр "metrics" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
     [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/getSystemMetricsRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/getSystemMetricsResponse")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
     [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeMemoryResponse))]
@@ -71,10 +57,10 @@ public interface SystemOperations
     [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IOException))]
     [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariableResponse))]
     [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariable))]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+    [return: System.ServiceModel.MessageParameterAttribute(Name="metrics")]
     getSystemMetricsResponse1 getSystemMetrics(getSystemMetricsRequest request);
     
-    // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+    // CODEGEN: Параметр "user" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
     [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/getCurrentUserRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/getCurrentUserResponse")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
     [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeMemoryResponse))]
@@ -96,10 +82,62 @@ public interface SystemOperations
     [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IOException))]
     [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariableResponse))]
     [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariable))]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+    [return: System.ServiceModel.MessageParameterAttribute(Name="user")]
     getCurrentUserResponse1 getCurrentUser(getCurrentUserRequest request);
     
-    // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+    // CODEGEN: Параметр "status" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/setEnvironmentVariableRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/setEnvironmentVariableResponse")]
+    [System.ServiceModel.FaultContractAttribute(typeof(system.server.sirius.org.IOException), Action="http://system.server.sirius.org/SystemOperations/setEnvironmentVariable/Fault/IOE" +
+        "xception", Name="IOException")]
+    [System.ServiceModel.XmlSerializerFormatAttribute()]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeMemoryResponse))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeMemory))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCurrentUserResponse))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCurrentUser))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeDiskSpaceResponse))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeDiskSpace))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEnvironmentVariableResponse))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEnvironmentVariable))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setDateResponse))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setDate))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDateResponse))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDate))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMachineNameResponse))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMachineName))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSystemMetricsResponse))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSystemMetrics))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IOException))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariableResponse))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariable))]
+    [return: System.ServiceModel.MessageParameterAttribute(Name="status")]
+    setEnvironmentVariableResponse1 setEnvironmentVariable(setEnvironmentVariableRequest request);
+    
+    // CODEGEN: Параметр "envVariable" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/getEnvironmentVariableRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/getEnvironmentVariableResponse")]
+    [System.ServiceModel.XmlSerializerFormatAttribute()]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeMemoryResponse))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeMemory))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCurrentUserResponse))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCurrentUser))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeDiskSpaceResponse))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeDiskSpace))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEnvironmentVariableResponse))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEnvironmentVariable))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setDateResponse))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setDate))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDateResponse))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDate))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMachineNameResponse))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMachineName))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSystemMetricsResponse))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSystemMetrics))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IOException))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariableResponse))]
+    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariable))]
+    [return: System.ServiceModel.MessageParameterAttribute(Name="envVariable")]
+    getEnvironmentVariableResponse1 getEnvironmentVariable(getEnvironmentVariableRequest request);
+    
+    // CODEGEN: Параметр "currentDate" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
     [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/getDateRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/getDateResponse")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
     [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeMemoryResponse))]
@@ -121,10 +159,10 @@ public interface SystemOperations
     [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IOException))]
     [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariableResponse))]
     [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariable))]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+    [return: System.ServiceModel.MessageParameterAttribute(Name="currentDate")]
     getDateResponse1 getDate(getDateRequest request);
     
-    // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+    // CODEGEN: Параметр "status" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
     [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/setDateRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/setDateResponse")]
     [System.ServiceModel.XmlSerializerFormatAttribute()]
     [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeMemoryResponse))]
@@ -146,97 +184,8 @@ public interface SystemOperations
     [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IOException))]
     [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariableResponse))]
     [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariable))]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+    [return: System.ServiceModel.MessageParameterAttribute(Name="status")]
     setDateResponse1 setDate(setDateRequest request);
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="getEnvironmentVariable", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class getEnvironmentVariableRequest
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string arg0;
-    
-    public getEnvironmentVariableRequest()
-    {
-    }
-    
-    public getEnvironmentVariableRequest(string arg0)
-    {
-        this.arg0 = arg0;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="getEnvironmentVariableResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class getEnvironmentVariableResponse
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string @return;
-    
-    public getEnvironmentVariableResponse()
-    {
-    }
-    
-    public getEnvironmentVariableResponse(string @return)
-    {
-        this.@return = @return;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="setEnvironmentVariable", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class setEnvironmentVariableRequest
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string arg0;
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=1)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string arg1;
-    
-    public setEnvironmentVariableRequest()
-    {
-    }
-    
-    public setEnvironmentVariableRequest(string arg0, string arg1)
-    {
-        this.arg0 = arg0;
-        this.arg1 = arg1;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="setEnvironmentVariableResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class setEnvironmentVariableResponse
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public bool @return;
-    
-    public setEnvironmentVariableResponse()
-    {
-    }
-    
-    public setEnvironmentVariableResponse(bool @return)
-    {
-        this.@return = @return;
-    }
 }
 
 [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -260,15 +209,15 @@ public partial class getMachineNameResponse
     
     [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string @return;
+    public string machineName;
     
     public getMachineNameResponse()
     {
     }
     
-    public getMachineNameResponse(string @return)
+    public getMachineNameResponse(string machineName)
     {
-        this.@return = @return;
+        this.machineName = machineName;
     }
 }
 
@@ -293,15 +242,15 @@ public partial class getFreeMemoryResponse
     
     [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public long @return;
+    public long freeMemory;
     
     public getFreeMemoryResponse()
     {
     }
     
-    public getFreeMemoryResponse(long @return)
+    public getFreeMemoryResponse(long freeMemory)
     {
-        this.@return = @return;
+        this.freeMemory = freeMemory;
     }
 }
 
@@ -314,15 +263,15 @@ public partial class getFreeDiskSpaceRequest
     
     [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string arg0;
+    public string path;
     
     public getFreeDiskSpaceRequest()
     {
     }
     
-    public getFreeDiskSpaceRequest(string arg0)
+    public getFreeDiskSpaceRequest(string path)
     {
-        this.arg0 = arg0;
+        this.path = path;
     }
 }
 
@@ -335,15 +284,15 @@ public partial class getFreeDiskSpaceResponse
     
     [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public long @return;
+    public long freeSpace;
     
     public getFreeDiskSpaceResponse()
     {
     }
     
-    public getFreeDiskSpaceResponse(long @return)
+    public getFreeDiskSpaceResponse(long freeSpace)
     {
-        this.@return = @return;
+        this.freeSpace = freeSpace;
     }
 }
 
@@ -356,19 +305,19 @@ public partial class getFreeDiskSpaceResponse
 public partial class getFreeMemoryResponse
 {
     
-    private long returnField;
+    private long freeMemoryField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public long @return
+    public long freeMemory
     {
         get
         {
-            return this.returnField;
+            return this.freeMemoryField;
         }
         set
         {
-            this.returnField = value;
+            this.freeMemoryField = value;
         }
     }
 }
@@ -392,19 +341,19 @@ public partial class getFreeMemory
 public partial class getCurrentUserResponse
 {
     
-    private string returnField;
+    private string userField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public string @return
+    public string user
     {
         get
         {
-            return this.returnField;
+            return this.userField;
         }
         set
         {
-            this.returnField = value;
+            this.userField = value;
         }
     }
 }
@@ -428,19 +377,19 @@ public partial class getCurrentUser
 public partial class getFreeDiskSpaceResponse
 {
     
-    private long returnField;
+    private long freeSpaceField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public long @return
+    public long freeSpace
     {
         get
         {
-            return this.returnField;
+            return this.freeSpaceField;
         }
         set
         {
-            this.returnField = value;
+            this.freeSpaceField = value;
         }
     }
 }
@@ -454,19 +403,19 @@ public partial class getFreeDiskSpaceResponse
 public partial class getFreeDiskSpace
 {
     
-    private string arg0Field;
+    private string pathField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public string arg0
+    public string path
     {
         get
         {
-            return this.arg0Field;
+            return this.pathField;
         }
         set
         {
-            this.arg0Field = value;
+            this.pathField = value;
         }
     }
 }
@@ -480,19 +429,19 @@ public partial class getFreeDiskSpace
 public partial class getEnvironmentVariableResponse
 {
     
-    private string returnField;
+    private string envVariableField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public string @return
+    public string envVariable
     {
         get
         {
-            return this.returnField;
+            return this.envVariableField;
         }
         set
         {
-            this.returnField = value;
+            this.envVariableField = value;
         }
     }
 }
@@ -506,19 +455,19 @@ public partial class getEnvironmentVariableResponse
 public partial class getEnvironmentVariable
 {
     
-    private string arg0Field;
+    private string nameField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public string arg0
+    public string name
     {
         get
         {
-            return this.arg0Field;
+            return this.nameField;
         }
         set
         {
-            this.arg0Field = value;
+            this.nameField = value;
         }
     }
 }
@@ -532,19 +481,19 @@ public partial class getEnvironmentVariable
 public partial class setDateResponse
 {
     
-    private bool returnField;
+    private bool statusField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public bool @return
+    public bool status
     {
         get
         {
-            return this.returnField;
+            return this.statusField;
         }
         set
         {
-            this.returnField = value;
+            this.statusField = value;
         }
     }
 }
@@ -558,35 +507,35 @@ public partial class setDateResponse
 public partial class setDate
 {
     
-    private System.DateTime arg0Field;
+    private System.DateTime dtField;
     
-    private bool arg0FieldSpecified;
+    private bool dtFieldSpecified;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public System.DateTime arg0
+    public System.DateTime dt
     {
         get
         {
-            return this.arg0Field;
+            return this.dtField;
         }
         set
         {
-            this.arg0Field = value;
+            this.dtField = value;
         }
     }
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool arg0Specified
+    public bool dtSpecified
     {
         get
         {
-            return this.arg0FieldSpecified;
+            return this.dtFieldSpecified;
         }
         set
         {
-            this.arg0FieldSpecified = value;
+            this.dtFieldSpecified = value;
         }
     }
 }
@@ -600,35 +549,35 @@ public partial class setDate
 public partial class getDateResponse
 {
     
-    private System.DateTime returnField;
+    private System.DateTime currentDateField;
     
-    private bool returnFieldSpecified;
+    private bool currentDateFieldSpecified;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public System.DateTime @return
+    public System.DateTime currentDate
     {
         get
         {
-            return this.returnField;
+            return this.currentDateField;
         }
         set
         {
-            this.returnField = value;
+            this.currentDateField = value;
         }
     }
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool returnSpecified
+    public bool currentDateSpecified
     {
         get
         {
-            return this.returnFieldSpecified;
+            return this.currentDateFieldSpecified;
         }
         set
         {
-            this.returnFieldSpecified = value;
+            this.currentDateFieldSpecified = value;
         }
     }
 }
@@ -652,19 +601,19 @@ public partial class getDate
 public partial class getMachineNameResponse
 {
     
-    private string returnField;
+    private string machineNameField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public string @return
+    public string machineName
     {
         get
         {
-            return this.returnField;
+            return this.machineNameField;
         }
         set
         {
-            this.returnField = value;
+            this.machineNameField = value;
         }
     }
 }
@@ -688,19 +637,19 @@ public partial class getMachineName
 public partial class getSystemMetricsResponse
 {
     
-    private object returnField;
+    private object metricsField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public object @return
+    public object metrics
     {
         get
         {
-            return this.returnField;
+            return this.metricsField;
         }
         set
         {
-            this.returnField = value;
+            this.metricsField = value;
         }
     }
 }
@@ -750,19 +699,19 @@ public partial class IOException
 public partial class setEnvironmentVariableResponse
 {
     
-    private bool returnField;
+    private bool statusField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public bool @return
+    public bool status
     {
         get
         {
-            return this.returnField;
+            return this.statusField;
         }
         set
         {
-            this.returnField = value;
+            this.statusField = value;
         }
     }
 }
@@ -776,35 +725,35 @@ public partial class setEnvironmentVariableResponse
 public partial class setEnvironmentVariable
 {
     
-    private string arg0Field;
+    private string nameField;
     
-    private string arg1Field;
+    private string valueField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public string arg0
+    public string name
     {
         get
         {
-            return this.arg0Field;
+            return this.nameField;
         }
         set
         {
-            this.arg0Field = value;
+            this.nameField = value;
         }
     }
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-    public string arg1
+    public string value
     {
         get
         {
-            return this.arg1Field;
+            return this.valueField;
         }
         set
         {
-            this.arg1Field = value;
+            this.valueField = value;
         }
     }
 }
@@ -830,15 +779,15 @@ public partial class getSystemMetricsResponse1
     
     [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public object @return;
+    public object metrics;
     
     public getSystemMetricsResponse1()
     {
     }
     
-    public getSystemMetricsResponse1(object @return)
+    public getSystemMetricsResponse1(object metrics)
     {
-        this.@return = @return;
+        this.metrics = metrics;
     }
 }
 
@@ -863,15 +812,104 @@ public partial class getCurrentUserResponse1
     
     [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string @return;
+    public string user;
     
     public getCurrentUserResponse1()
     {
     }
     
-    public getCurrentUserResponse1(string @return)
+    public getCurrentUserResponse1(string user)
     {
-        this.@return = @return;
+        this.user = user;
+    }
+}
+
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+[System.ServiceModel.MessageContractAttribute(WrapperName="setEnvironmentVariable", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+public partial class setEnvironmentVariableRequest
+{
+    
+    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+    public string name;
+    
+    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=1)]
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+    public string value;
+    
+    public setEnvironmentVariableRequest()
+    {
+    }
+    
+    public setEnvironmentVariableRequest(string name, string value)
+    {
+        this.name = name;
+        this.value = value;
+    }
+}
+
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+[System.ServiceModel.MessageContractAttribute(WrapperName="setEnvironmentVariableResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+public partial class setEnvironmentVariableResponse1
+{
+    
+    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+    public bool status;
+    
+    public setEnvironmentVariableResponse1()
+    {
+    }
+    
+    public setEnvironmentVariableResponse1(bool status)
+    {
+        this.status = status;
+    }
+}
+
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+[System.ServiceModel.MessageContractAttribute(WrapperName="getEnvironmentVariable", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+public partial class getEnvironmentVariableRequest
+{
+    
+    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+    public string name;
+    
+    public getEnvironmentVariableRequest()
+    {
+    }
+    
+    public getEnvironmentVariableRequest(string name)
+    {
+        this.name = name;
+    }
+}
+
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+[System.ServiceModel.MessageContractAttribute(WrapperName="getEnvironmentVariableResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+public partial class getEnvironmentVariableResponse1
+{
+    
+    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+    public string envVariable;
+    
+    public getEnvironmentVariableResponse1()
+    {
+    }
+    
+    public getEnvironmentVariableResponse1(string envVariable)
+    {
+        this.envVariable = envVariable;
     }
 }
 
@@ -896,15 +934,15 @@ public partial class getDateResponse1
     
     [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public System.DateTime @return;
+    public System.DateTime currentDate;
     
     public getDateResponse1()
     {
     }
     
-    public getDateResponse1(System.DateTime @return)
+    public getDateResponse1(System.DateTime currentDate)
     {
-        this.@return = @return;
+        this.currentDate = currentDate;
     }
 }
 
@@ -917,15 +955,15 @@ public partial class setDateRequest
     
     [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public System.DateTime arg0;
+    public System.DateTime dt;
     
     public setDateRequest()
     {
     }
     
-    public setDateRequest(System.DateTime arg0)
+    public setDateRequest(System.DateTime dt)
     {
-        this.arg0 = arg0;
+        this.dt = dt;
     }
 }
 
@@ -938,15 +976,15 @@ public partial class setDateResponse1
     
     [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public bool @return;
+    public bool status;
     
     public setDateResponse1()
     {
     }
     
-    public setDateResponse1(bool @return)
+    public setDateResponse1(bool status)
     {
-        this.@return = @return;
+        this.status = status;
     }
 }
 
@@ -985,35 +1023,6 @@ public partial class SystemOperationsClient : System.ServiceModel.ClientBase<Sys
     }
     
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    getEnvironmentVariableResponse SystemOperations.getEnvironmentVariable(getEnvironmentVariableRequest request)
-    {
-        return base.Channel.getEnvironmentVariable(request);
-    }
-    
-    public string getEnvironmentVariable(string arg0)
-    {
-        getEnvironmentVariableRequest inValue = new getEnvironmentVariableRequest();
-        inValue.arg0 = arg0;
-        getEnvironmentVariableResponse retVal = ((SystemOperations)(this)).getEnvironmentVariable(inValue);
-        return retVal.@return;
-    }
-    
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    setEnvironmentVariableResponse SystemOperations.setEnvironmentVariable(setEnvironmentVariableRequest request)
-    {
-        return base.Channel.setEnvironmentVariable(request);
-    }
-    
-    public bool setEnvironmentVariable(string arg0, string arg1)
-    {
-        setEnvironmentVariableRequest inValue = new setEnvironmentVariableRequest();
-        inValue.arg0 = arg0;
-        inValue.arg1 = arg1;
-        setEnvironmentVariableResponse retVal = ((SystemOperations)(this)).setEnvironmentVariable(inValue);
-        return retVal.@return;
-    }
-    
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     getMachineNameResponse SystemOperations.getMachineName(getMachineNameRequest request)
     {
         return base.Channel.getMachineName(request);
@@ -1023,7 +1032,7 @@ public partial class SystemOperationsClient : System.ServiceModel.ClientBase<Sys
     {
         getMachineNameRequest inValue = new getMachineNameRequest();
         getMachineNameResponse retVal = ((SystemOperations)(this)).getMachineName(inValue);
-        return retVal.@return;
+        return retVal.machineName;
     }
     
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1036,7 +1045,7 @@ public partial class SystemOperationsClient : System.ServiceModel.ClientBase<Sys
     {
         getFreeMemoryRequest inValue = new getFreeMemoryRequest();
         getFreeMemoryResponse retVal = ((SystemOperations)(this)).getFreeMemory(inValue);
-        return retVal.@return;
+        return retVal.freeMemory;
     }
     
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1045,12 +1054,12 @@ public partial class SystemOperationsClient : System.ServiceModel.ClientBase<Sys
         return base.Channel.getFreeDiskSpace(request);
     }
     
-    public long getFreeDiskSpace(string arg0)
+    public long getFreeDiskSpace(string path)
     {
         getFreeDiskSpaceRequest inValue = new getFreeDiskSpaceRequest();
-        inValue.arg0 = arg0;
+        inValue.path = path;
         getFreeDiskSpaceResponse retVal = ((SystemOperations)(this)).getFreeDiskSpace(inValue);
-        return retVal.@return;
+        return retVal.freeSpace;
     }
     
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1063,7 +1072,7 @@ public partial class SystemOperationsClient : System.ServiceModel.ClientBase<Sys
     {
         getSystemMetricsRequest inValue = new getSystemMetricsRequest();
         getSystemMetricsResponse1 retVal = ((SystemOperations)(this)).getSystemMetrics(inValue);
-        return retVal.@return;
+        return retVal.metrics;
     }
     
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1076,7 +1085,36 @@ public partial class SystemOperationsClient : System.ServiceModel.ClientBase<Sys
     {
         getCurrentUserRequest inValue = new getCurrentUserRequest();
         getCurrentUserResponse1 retVal = ((SystemOperations)(this)).getCurrentUser(inValue);
-        return retVal.@return;
+        return retVal.user;
+    }
+    
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    setEnvironmentVariableResponse1 SystemOperations.setEnvironmentVariable(setEnvironmentVariableRequest request)
+    {
+        return base.Channel.setEnvironmentVariable(request);
+    }
+    
+    public bool setEnvironmentVariable(string name, string value)
+    {
+        setEnvironmentVariableRequest inValue = new setEnvironmentVariableRequest();
+        inValue.name = name;
+        inValue.value = value;
+        setEnvironmentVariableResponse1 retVal = ((SystemOperations)(this)).setEnvironmentVariable(inValue);
+        return retVal.status;
+    }
+    
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    getEnvironmentVariableResponse1 SystemOperations.getEnvironmentVariable(getEnvironmentVariableRequest request)
+    {
+        return base.Channel.getEnvironmentVariable(request);
+    }
+    
+    public string getEnvironmentVariable(string name)
+    {
+        getEnvironmentVariableRequest inValue = new getEnvironmentVariableRequest();
+        inValue.name = name;
+        getEnvironmentVariableResponse1 retVal = ((SystemOperations)(this)).getEnvironmentVariable(inValue);
+        return retVal.envVariable;
     }
     
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1089,7 +1127,7 @@ public partial class SystemOperationsClient : System.ServiceModel.ClientBase<Sys
     {
         getDateRequest inValue = new getDateRequest();
         getDateResponse1 retVal = ((SystemOperations)(this)).getDate(inValue);
-        return retVal.@return;
+        return retVal.currentDate;
     }
     
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1098,12 +1136,12 @@ public partial class SystemOperationsClient : System.ServiceModel.ClientBase<Sys
         return base.Channel.setDate(request);
     }
     
-    public bool setDate(System.DateTime arg0)
+    public bool setDate(System.DateTime dt)
     {
         setDateRequest inValue = new setDateRequest();
-        inValue.arg0 = arg0;
+        inValue.dt = dt;
         setDateResponse1 retVal = ((SystemOperations)(this)).setDate(inValue);
-        return retVal.@return;
+        return retVal.status;
     }
 }
 namespace system.server.sirius.org
