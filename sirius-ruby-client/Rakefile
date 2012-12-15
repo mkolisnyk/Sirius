@@ -1,0 +1,19 @@
+require 'rubygems'
+
+  spec = Gem::Specification.new do |s|
+    s.platform = Gem::Platform::RUBY
+    s.summary = "Ruby based make-like utility."
+    s.name = 'sirius-client'
+    s.version = PKG_VERSION
+    s.requirements << 'none'
+    #s.require_path = 'lib'
+    s.autorequire = 'rake'
+    s.files = FileList["core/**/*.rb", "Rakefile"]
+    s.homepage = "http://github.com/mkolisnyk/Sirius"
+    s.description = ""
+  end
+
+  Rake::GemPackageTask.new(spec) do |pkg|
+    pkg.need_zip = true
+    pkg.need_tar = true
+  end
