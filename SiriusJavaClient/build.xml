@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file. Any modifications will be overwritten. 
+	To include a user specific buildfile here, simply create one in the same 
+	directory with the processing instruction <?eclipse.ant.import?> as the first 
+	entry and export the buildfile again. -->
+<project basedir="." default="package" name="JavaClient">
+	<property environment="env" />
+	<property name="ECLIPSE_HOME" value="../../../../eclipse" />
+	<property name="debuglevel" value="source,lines,vars" />
+	<property name="target" value="1.7" />
+	<property name="source" value="1.7" />
+	<path id="JavaClient.classpath">
+		<pathelement location="bin" />
+		<pathelement location="lib/axis.jar" />
+		<pathelement location="lib/commons-discovery-0.2.jar" />
+		<pathelement location="lib/javax.wsdl_1.6.2.v201012040545.jar" />
+		<pathelement location="lib/jaxrpc.jar" />
+		<pathelement location="lib/org.apache.commons.logging_1.1.1.v201101211721.jar" />
+		<pathelement location="lib/saaj.jar" />
+	</path>
+	<target name="init">
+		<mkdir dir="bin" />
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="src">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+	<target name="clean">
+		<delete dir="bin" />
+		
+		<delete dir="publish" />
+		<mkdir dir="publish" />
+		<mkdir dir="publish/doc" />
+		<mkdir dir="publish/packages" />
+	</target>
+	<target depends="clean" name="cleanall" />
+	<target depends="build-subprojects,build-project" name="build" />
+	<target name="build-subprojects" />
+	<target depends="init" name="build-project">
+		<echo message="${ant.project.name}: ${ant.file}" />
+		<javac debug="true" debuglevel="${debuglevel}" destdir="bin"
+			includeantruntime="false" source="${source}" target="${target}">
+			<src path="src" />
+			<classpath refid="JavaClient.classpath" />
+		</javac>
+	</target>
+	<target
+		description="Build all projects which reference this project. Useful to propagate changes."
+		name="build-refprojects" />
+	<target description="copy Eclipse compiler jars to ant lib directory"
+		name="init-eclipse-compiler">
+		<copy todir="${ant.library.dir}">
+			<fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar" />
+		</copy>
+		<unzip dest="${ant.library.dir}">
+			<patternset includes="jdtCompilerAdapter.jar" />
+			<fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar" />
+		</unzip>
+	</target>
+	<target description="compile project with Eclipse compiler"
+		name="build-eclipse-compiler">
+		<property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter" />
+		<antcall target="build" />
+	</target>
+
+	<target depends="build" name="javadoc">
+		<javadoc destdir="publish/doc" author="true" version="true"
+			use="true" windowtitle="Server Side API reference">
+
+			<packageset dir="src" defaultexcludes="yes">
+				<include name="org/sirius/client/**" />
+			</packageset>
+
+			<doctitle><![CDATA[<h1>Server Side API reference</h1>]]></doctitle>
+			<bottom><![CDATA[<i>Copyright &#169; 2000 Dummy Corp. All Rights Reserved.</i>]]></bottom>
+			<tag name="todo" scope="all" description="To do:" />
+			<group title="Group 1 Packages" packages="com.dummy.test.a*" />
+			<group title="Group 2 Packages" packages="com.dummy.test.b*:com.dummy.test.c*" />
+			<link offline="true" href="http://download.oracle.com/javase/6/docs/api/"
+				packagelistLoc="C:\tmp" />
+			<link
+				href="http://developer.java.sun.com/developer/products/xml/docs/api/" />
+		</javadoc>
+	</target>
+
+	<target depends="javadoc" name="package">
+		<jar destfile="publish/packages/sirius-client-${package.version}.jar"
+			basedir="./bin">
+			<fileset dir="./bin">
+				<exclude name="**/*Test.class" />
+			</fileset>
+			<restrict>
+				<name name="**/*.class" />
+				<archives>
+					<zips>
+						<fileset dir="./lib" casesensitive="yes">
+							<include name="**/*.jar" />
+						</fileset>
+					</zips>
+				</archives>
+			</restrict>
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Implementation-Vendor" value="Sirius Org." />
+				<attribute name="Implementation-Title" value="Sirius" />
+				<attribute name="Implementation-Version" value="${package.version}" />
+				<attribute name="Main-Class" value="org.sirius.server.Starter" />
+			</manifest>
+		</jar>
+	</target>
+
+</project>
