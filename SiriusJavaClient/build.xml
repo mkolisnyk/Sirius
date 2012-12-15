@@ -108,6 +108,9 @@
 				<attribute name="Main-Class" value="org.sirius.server.Starter" />
 			</manifest>
 		</jar>
+				<zip destfile="publish/packages/sirius-client-${package.version}-doc.zip"
+       basedir="publish/doc"  />
+
 	</target>
 
 </project>
