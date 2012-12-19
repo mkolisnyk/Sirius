@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiriusClient", "SiriusClient.csproj", "{666725AE-A44E-4E83-8314-BE186F223C0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirius.CSharp.Client", "Sirius.CSharp.Client\Sirius.CSharp.Client.csproj", "{AF3B4127-0491-4C08-B9CD-0BF8D2A45A3E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{666725AE-A44E-4E83-8314-BE186F223C0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{666725AE-A44E-4E83-8314-BE186F223C0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{666725AE-A44E-4E83-8314-BE186F223C0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF3B4127-0491-4C08-B9CD-0BF8D2A45A3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF3B4127-0491-4C08-B9CD-0BF8D2A45A3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF3B4127-0491-4C08-B9CD-0BF8D2A45A3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF3B4127-0491-4C08-B9CD-0BF8D2A45A3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

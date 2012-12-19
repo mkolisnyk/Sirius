@@ -309,7 +309,7 @@ public partial class getFreeMemoryResponse
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public long freeMemory
+    public long freeMemory 
     {
         get
         {

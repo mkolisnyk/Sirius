@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project ToolsVersion="4.0" DefaultTargets="Build;Package" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion Condition=" '$(ProductVersion)' == '' ">0.0.0</ProductVersion>
+  </PropertyGroup>
+  <Target Name="Build">
+    <MSBuild Projects="..\Sirius.Client.csproj" />
+  </Target>
+  <Target Name="Package">
+    <Exec Command="..\Sirius.CSharp.Client\BuildPublishPackage.cmd ${ProductVersion}" WorkingDirectory="..\Sirius.CSharp.Client" />
+  </Target>
+</Project>
