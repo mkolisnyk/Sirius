@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 
-import javax.jws.WebService;
+import javax.jws.*;
 
 /**
  * @author KaNoN
@@ -26,7 +26,11 @@ public class DirectoryOperations {
 	 * @return
 	 * @throws IOException
 	 */
-	public boolean copy(String origin, String destination) throws IOException {
+	@WebMethod(operationName = "copy")
+	@WebResult(name = "status")
+	public boolean copy(@WebParam(name = "origin") String origin,
+			@WebParam(name = "destination") String destination)
+			throws IOException {
 		return copyEx(origin, destination, false);
 	}
 
@@ -38,8 +42,11 @@ public class DirectoryOperations {
 	 * @return
 	 * @throws IOException
 	 */
-	public boolean copyEx(String origin, String destination, boolean overwrite)
-			throws IOException {
+	@WebMethod(operationName = "copyEx")
+	@WebResult(name = "status")
+	public boolean copyEx(@WebParam(name = "origin") String origin,
+			@WebParam(name = "destination") String destination,
+			@WebParam(name = "overwrite") boolean overwrite) throws IOException {
 		File source = new File(origin);
 		File dest = new File(destination);
 
@@ -79,7 +86,9 @@ public class DirectoryOperations {
 	 * @param path
 	 * @return
 	 */
-	public boolean createDirectory(String path) {
+	@WebMethod(operationName = "create")
+	@WebResult(name = "status")
+	public boolean createDirectory(@WebParam(name = "path") String path) {
 		return createDirectoryEx(path, false);
 	}
 
@@ -89,7 +98,10 @@ public class DirectoryOperations {
 	 * @param overwrite
 	 * @return
 	 */
-	public boolean createDirectoryEx(String path, boolean overwrite) {
+	@WebMethod(operationName = "createEx")
+	@WebResult(name = "status")
+	public boolean createDirectoryEx(@WebParam(name = "path") String path,
+			@WebParam(name = "overwrite") boolean overwrite) {
 		File dir = new File(path);
 		if (dir.getAbsolutePath().length() > 255) {
 			return false;
@@ -112,7 +124,10 @@ public class DirectoryOperations {
 	 * @return
 	 * @throws IOException
 	 */
-	public boolean delete(String path) throws IOException {
+	@WebMethod(operationName = "delete")
+	@WebResult(name = "status")
+	public boolean delete(@WebParam(name = "path") String path)
+			throws IOException {
 		File dir = new File(path);
 
 		String[] names = dir.list();
@@ -138,7 +153,9 @@ public class DirectoryOperations {
 	 * @param path
 	 * @return
 	 */
-	public boolean exists(String path) {
+	@WebMethod(operationName = "exists")
+	@WebResult(name = "status")
+	public boolean exists(@WebParam(name = "path") String path) {
 		File dir = new File(path);
 		return dir.exists() && dir.isDirectory();
 	}
@@ -148,8 +165,10 @@ public class DirectoryOperations {
 	 * @param path
 	 * @return
 	 */
-	public String[] getContents(String path) {
-		return null;
+	@WebMethod(operationName = "getContents")
+	@WebResult(name = "contents")
+	public String[] getContents(@WebParam(name = "path") String path) {
+		return getContentsEx(path,false);
 	}
 
 	/**
@@ -158,8 +177,13 @@ public class DirectoryOperations {
 	 * @param recurcive
 	 * @return
 	 */
-	public String[] getContentsEx(String path, boolean recurcive) {
-		return null;
+	@WebMethod(operationName = "getContentsEx")
+	@WebResult(name = "contents")
+	public String[] getContentsEx(@WebParam(name = "path") String path,
+			@WebParam(name = "recursive") boolean recurcive) {
+		File dir = new File(path);
+		
+		return dir.list();
 	}
 
 	/**
@@ -169,7 +193,11 @@ public class DirectoryOperations {
 	 * @return
 	 * @throws IOException
 	 */
-	public boolean moveDirectory(String origin, String destination) throws IOException {
+	@WebMethod(operationName = "moveDirectory")
+	@WebResult(name = "status")
+	public boolean moveDirectory(@WebParam(name = "origin") String origin,
+			@WebParam(name = "destination") String destination)
+			throws IOException {
 		return moveDirectoryEx(origin, destination, false);
 	}
 
@@ -181,8 +209,11 @@ public class DirectoryOperations {
 	 * @return
 	 * @throws IOException
 	 */
-	public boolean moveDirectoryEx(String origin, String destination, boolean overwrite)
-			throws IOException {
+	@WebMethod(operationName = "moveDirectoryEx")
+	@WebResult(name = "status")
+	public boolean moveDirectoryEx(@WebParam(name = "origin") String origin,
+			@WebParam(name = "destination") String destination,
+			@WebParam(name = "overwrite") boolean overwrite) throws IOException {
 		File source = new File(origin);
 		File dest = new File(destination);
 

@@ -3,9 +3,10 @@
  */
 package org.sirius.server.system;
 
-import javax.jws.WebParam;
-import javax.jws.WebService;
-import javax.jws.WebResult;
+import java.io.IOException;
+
+import javax.jws.*;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * @author KaNoN
@@ -14,7 +15,8 @@ import javax.jws.WebResult;
 @WebService
 public class ProcessOperations {
 
-	public class ProcessInfo {
+	@XmlType
+	public static class ProcessInfo {
 		private String ImageName = null;
 		private int PID = 0;
 		private String SessionName = null;
@@ -101,6 +103,7 @@ public class ProcessOperations {
 	 * 
 	 * @return
 	 */
+	@WebResult(name = "processList")
 	public ProcessInfo[] listAll() {
 		return null;
 	}
@@ -110,7 +113,8 @@ public class ProcessOperations {
 	 * @param mask
 	 * @return
 	 */
-	public ProcessInfo[] ListByMask(String mask) {
+	@WebResult(name = "processList")
+	public ProcessInfo[] ListByMask(@WebParam(name = "mask") String mask) {
 		return null;
 	}
 
@@ -119,7 +123,9 @@ public class ProcessOperations {
 	 * @param filter
 	 * @return
 	 */
-	public ProcessInfo[] ListByFilter(ProcessInfo filter) {
+	@WebResult(name = "processList")
+	public ProcessInfo[] ListByFilter(
+			@WebParam(name = "filter") ProcessInfo filter) {
 		return null;
 	}
 
@@ -127,9 +133,11 @@ public class ProcessOperations {
 	 * 
 	 * @param command
 	 * @return
+	 * @throws IOException
 	 */
-	public boolean start(String command) {
-		return false;
+	@WebResult(name = "status")
+	public boolean start(@WebParam(name = "command") String command) {
+		return startEx(command);
 	}
 
 	/**
@@ -138,8 +146,16 @@ public class ProcessOperations {
 	 * @param args
 	 * @return
 	 */
-	public boolean startEx(String command, String... args) {
-		return false;
+	@WebResult(name = "status")
+	public boolean startEx(@WebParam(name = "command") String command,
+			@WebParam(name = "args") String... args) {
+		try {
+			Runtime.getRuntime().exec(command, args);
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -147,8 +163,8 @@ public class ProcessOperations {
 	 * @param command
 	 * @return
 	 */
-	public int run(String command) {
-		return -1;
+	public int run(@WebParam(name = "command") String command) {
+		return runEx(command);
 	}
 
 	/**
@@ -156,9 +172,24 @@ public class ProcessOperations {
 	 * @param command
 	 * @param args
 	 * @return
+	 * @throws InterruptedException
 	 */
-	public int runEx(String command, String... args) {
-		return -1;
+	public int runEx(@WebParam(name = "command") String command,
+			@WebParam(name = "args") String... args) {
+		Process ps;
+		try {
+			ps = Runtime.getRuntime().exec(command, args);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+			return -1;
+		}
+		try {
+			return ps.waitFor();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+			return -1;
+		}
 	}
 
 	/**
@@ -166,7 +197,8 @@ public class ProcessOperations {
 	 * @param processName
 	 * @return
 	 */
-	public boolean kill(String processName) {
+	@WebResult(name = "status")
+	public boolean kill(@WebParam(name = "processName") String processName) {
 		return false;
 	}
 
@@ -175,7 +207,7 @@ public class ProcessOperations {
 	 * @param pid
 	 * @return
 	 */
-	public int waitProcessCloseById(int pid) {
+	public int waitProcessCloseById(@WebParam(name = "pid") int pid) {
 		return -1;
 	}
 
@@ -185,7 +217,8 @@ public class ProcessOperations {
 	 * @param timeout
 	 * @return
 	 */
-	public int waitProcessCloseByIdEx(int pid, int timeout) {
+	public int waitProcessCloseByIdEx(@WebParam(name = "pid") int pid,
+			@WebParam(name = "timeout") int timeout) {
 		return -1;
 	}
 
@@ -194,7 +227,7 @@ public class ProcessOperations {
 	 * @param process
 	 * @return
 	 */
-	public int waitProcessClose(String process) {
+	public int waitProcessClose(@WebParam(name = "process") String process) {
 		return -1;
 	}
 
@@ -204,7 +237,8 @@ public class ProcessOperations {
 	 * @param timeout
 	 * @return
 	 */
-	public int waitProcessCloseEx(String process, int timeout) {
+	public int waitProcessCloseEx(@WebParam(name = "process") String process,
+			@WebParam(name = "timeout") int timeout) {
 		return -1;
 	}
 }

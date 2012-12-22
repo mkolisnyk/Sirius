@@ -80,12 +80,7 @@ public class Starter {
 				Log4J.log().info("Starting endpoint: " + endPoint);
 				Endpoint.publish(endPoint, Class.forName(option.get_className())
 						.newInstance());
-			} catch (InstantiationException | IllegalAccessException
-					| ClassNotFoundException e) {
-				Log4J.log().error("Failed publishing server endpoint", e);
-				
-			}
-			catch(Exception e){
+			} catch(Exception e){
 				Log4J.log().error("Failed publishing server endpoint", e);
 			}
 			finally {

@@ -1,5 +1,5 @@
 Endpoint							,Class											,Package
 http://${HOST}:${PORT}/system/directory		,org.sirius.server.system.DirectoryOperations	,Local
 http://${HOST}:${PORT}/system/file			,org.sirius.server.system.FileOperations		,Local
-#http://${HOST}:${PORT}/system/process		,org.sirius.server.system.ProcessOperations		,Local
+http://${HOST}:${PORT}/system/process		,org.sirius.server.system.ProcessOperations		,Local
 http://${HOST}:${PORT}/system/system		,org.sirius.server.system.SystemOperations		,Local
