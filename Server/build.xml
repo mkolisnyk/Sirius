@@ -109,7 +109,7 @@
 		</checkstyle>
 	</target>
 
-	<target depends="checkstyle,test,javadoc" name="package">
+	<target depends="checkstyle,javadoc" name="package">
 		<jar destfile="publish/packages/sirius-server-${package.version}.jar"
 			basedir="./bin">
 			<fileset dir="./bin">
