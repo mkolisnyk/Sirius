@@ -8,1143 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Runtime.Serialization.ContractNamespaceAttribute("http://system.server.sirius.org/", ClrNamespace="system.server.sirius.org")]
+[assembly: System.Runtime.Serialization.ContractNamespaceAttribute("http://system.server.sirius.org/", ClrNamespace="Sirius.Client.Core.Sys.Sys")]
 
-
-
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ServiceModel.ServiceContractAttribute(Namespace="http://system.server.sirius.org/", ConfigurationName="SystemOperations")]
-public interface SystemOperations
-{
-    
-    // CODEGEN: Параметр "machineName" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/getMachineNameRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/getMachineNameResponse")]
-    [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="machineName")]
-    getMachineNameResponse getMachineName(getMachineNameRequest request);
-    
-    // CODEGEN: Параметр "freeMemory" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/getFreeMemoryRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/getFreeMemoryResponse")]
-    [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="freeMemory")]
-    getFreeMemoryResponse getFreeMemory(getFreeMemoryRequest request);
-    
-    // CODEGEN: Параметр "freeSpace" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/getFreeDiskSpaceRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/getFreeDiskSpaceResponse")]
-    [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="freeSpace")]
-    getFreeDiskSpaceResponse getFreeDiskSpace(getFreeDiskSpaceRequest request);
-    
-    // CODEGEN: Параметр "metrics" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/getSystemMetricsRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/getSystemMetricsResponse")]
-    [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeMemoryResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeMemory))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCurrentUserResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCurrentUser))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeDiskSpaceResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeDiskSpace))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEnvironmentVariableResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEnvironmentVariable))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setDateResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setDate))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDateResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDate))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMachineNameResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMachineName))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSystemMetricsResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSystemMetrics))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IOException))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariableResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariable))]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="metrics")]
-    getSystemMetricsResponse1 getSystemMetrics(getSystemMetricsRequest request);
-    
-    // CODEGEN: Параметр "user" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/getCurrentUserRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/getCurrentUserResponse")]
-    [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeMemoryResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeMemory))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCurrentUserResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCurrentUser))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeDiskSpaceResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeDiskSpace))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEnvironmentVariableResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEnvironmentVariable))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setDateResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setDate))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDateResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDate))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMachineNameResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMachineName))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSystemMetricsResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSystemMetrics))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IOException))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariableResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariable))]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="user")]
-    getCurrentUserResponse1 getCurrentUser(getCurrentUserRequest request);
-    
-    // CODEGEN: Параметр "status" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/setEnvironmentVariableRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/setEnvironmentVariableResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(system.server.sirius.org.IOException), Action="http://system.server.sirius.org/SystemOperations/setEnvironmentVariable/Fault/IOE" +
-        "xception", Name="IOException")]
-    [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeMemoryResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeMemory))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCurrentUserResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCurrentUser))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeDiskSpaceResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeDiskSpace))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEnvironmentVariableResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEnvironmentVariable))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setDateResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setDate))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDateResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDate))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMachineNameResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMachineName))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSystemMetricsResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSystemMetrics))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IOException))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariableResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariable))]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="status")]
-    setEnvironmentVariableResponse1 setEnvironmentVariable(setEnvironmentVariableRequest request);
-    
-    // CODEGEN: Параметр "envVariable" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/getEnvironmentVariableRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/getEnvironmentVariableResponse")]
-    [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeMemoryResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeMemory))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCurrentUserResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCurrentUser))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeDiskSpaceResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeDiskSpace))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEnvironmentVariableResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEnvironmentVariable))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setDateResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setDate))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDateResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDate))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMachineNameResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMachineName))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSystemMetricsResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSystemMetrics))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IOException))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariableResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariable))]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="envVariable")]
-    getEnvironmentVariableResponse1 getEnvironmentVariable(getEnvironmentVariableRequest request);
-    
-    // CODEGEN: Параметр "currentDate" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/getDateRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/getDateResponse")]
-    [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeMemoryResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeMemory))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCurrentUserResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCurrentUser))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeDiskSpaceResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeDiskSpace))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEnvironmentVariableResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEnvironmentVariable))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setDateResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setDate))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDateResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDate))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMachineNameResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMachineName))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSystemMetricsResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSystemMetrics))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IOException))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariableResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariable))]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="currentDate")]
-    getDateResponse1 getDate(getDateRequest request);
-    
-    // CODEGEN: Параметр "status" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/setDateRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/setDateResponse")]
-    [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeMemoryResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeMemory))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCurrentUserResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getCurrentUser))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeDiskSpaceResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getFreeDiskSpace))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEnvironmentVariableResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getEnvironmentVariable))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setDateResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setDate))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDateResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDate))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMachineNameResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getMachineName))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSystemMetricsResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getSystemMetrics))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(IOException))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariableResponse))]
-    [System.ServiceModel.ServiceKnownTypeAttribute(typeof(setEnvironmentVariable))]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="status")]
-    setDateResponse1 setDate(setDateRequest request);
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="getMachineName", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class getMachineNameRequest
-{
-    
-    public getMachineNameRequest()
-    {
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="getMachineNameResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class getMachineNameResponse
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string machineName;
-    
-    public getMachineNameResponse()
-    {
-    }
-    
-    public getMachineNameResponse(string machineName)
-    {
-        this.machineName = machineName;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="getFreeMemory", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class getFreeMemoryRequest
-{
-    
-    public getFreeMemoryRequest()
-    {
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="getFreeMemoryResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class getFreeMemoryResponse
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public long freeMemory;
-    
-    public getFreeMemoryResponse()
-    {
-    }
-    
-    public getFreeMemoryResponse(long freeMemory)
-    {
-        this.freeMemory = freeMemory;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="getFreeDiskSpace", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class getFreeDiskSpaceRequest
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string path;
-    
-    public getFreeDiskSpaceRequest()
-    {
-    }
-    
-    public getFreeDiskSpaceRequest(string path)
-    {
-        this.path = path;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="getFreeDiskSpaceResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class getFreeDiskSpaceResponse
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public long freeSpace;
-    
-    public getFreeDiskSpaceResponse()
-    {
-    }
-    
-    public getFreeDiskSpaceResponse(long freeSpace)
-    {
-        this.freeSpace = freeSpace;
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.1")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://system.server.sirius.org/")]
-public partial class getFreeMemoryResponse
-{
-    
-    private long freeMemoryField;
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public long freeMemory 
-    {
-        get
-        {
-            return this.freeMemoryField;
-        }
-        set
-        {
-            this.freeMemoryField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.1")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://system.server.sirius.org/")]
-public partial class getFreeMemory
-{
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.1")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://system.server.sirius.org/")]
-public partial class getCurrentUserResponse
-{
-    
-    private string userField;
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public string user
-    {
-        get
-        {
-            return this.userField;
-        }
-        set
-        {
-            this.userField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.1")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://system.server.sirius.org/")]
-public partial class getCurrentUser
-{
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.1")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://system.server.sirius.org/")]
-public partial class getFreeDiskSpaceResponse
-{
-    
-    private long freeSpaceField;
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public long freeSpace
-    {
-        get
-        {
-            return this.freeSpaceField;
-        }
-        set
-        {
-            this.freeSpaceField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.1")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://system.server.sirius.org/")]
-public partial class getFreeDiskSpace
-{
-    
-    private string pathField;
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public string path
-    {
-        get
-        {
-            return this.pathField;
-        }
-        set
-        {
-            this.pathField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.1")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://system.server.sirius.org/")]
-public partial class getEnvironmentVariableResponse
-{
-    
-    private string envVariableField;
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public string envVariable
-    {
-        get
-        {
-            return this.envVariableField;
-        }
-        set
-        {
-            this.envVariableField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.1")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://system.server.sirius.org/")]
-public partial class getEnvironmentVariable
-{
-    
-    private string nameField;
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public string name
-    {
-        get
-        {
-            return this.nameField;
-        }
-        set
-        {
-            this.nameField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.1")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://system.server.sirius.org/")]
-public partial class setDateResponse
-{
-    
-    private bool statusField;
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public bool status
-    {
-        get
-        {
-            return this.statusField;
-        }
-        set
-        {
-            this.statusField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.1")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://system.server.sirius.org/")]
-public partial class setDate
-{
-    
-    private System.DateTime dtField;
-    
-    private bool dtFieldSpecified;
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public System.DateTime dt
-    {
-        get
-        {
-            return this.dtField;
-        }
-        set
-        {
-            this.dtField = value;
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool dtSpecified
-    {
-        get
-        {
-            return this.dtFieldSpecified;
-        }
-        set
-        {
-            this.dtFieldSpecified = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.1")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://system.server.sirius.org/")]
-public partial class getDateResponse
-{
-    
-    private System.DateTime currentDateField;
-    
-    private bool currentDateFieldSpecified;
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public System.DateTime currentDate
-    {
-        get
-        {
-            return this.currentDateField;
-        }
-        set
-        {
-            this.currentDateField = value;
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool currentDateSpecified
-    {
-        get
-        {
-            return this.currentDateFieldSpecified;
-        }
-        set
-        {
-            this.currentDateFieldSpecified = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.1")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://system.server.sirius.org/")]
-public partial class getDate
-{
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.1")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://system.server.sirius.org/")]
-public partial class getMachineNameResponse
-{
-    
-    private string machineNameField;
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public string machineName
-    {
-        get
-        {
-            return this.machineNameField;
-        }
-        set
-        {
-            this.machineNameField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.1")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://system.server.sirius.org/")]
-public partial class getMachineName
-{
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.1")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://system.server.sirius.org/")]
-public partial class getSystemMetricsResponse
-{
-    
-    private object metricsField;
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public object metrics
-    {
-        get
-        {
-            return this.metricsField;
-        }
-        set
-        {
-            this.metricsField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.1")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://system.server.sirius.org/")]
-public partial class getSystemMetrics
-{
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.1")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://system.server.sirius.org/")]
-public partial class IOException
-{
-    
-    private string messageField;
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public string message
-    {
-        get
-        {
-            return this.messageField;
-        }
-        set
-        {
-            this.messageField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.1")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://system.server.sirius.org/")]
-public partial class setEnvironmentVariableResponse
-{
-    
-    private bool statusField;
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public bool status
-    {
-        get
-        {
-            return this.statusField;
-        }
-        set
-        {
-            this.statusField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.1")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://system.server.sirius.org/")]
-public partial class setEnvironmentVariable
-{
-    
-    private string nameField;
-    
-    private string valueField;
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-    public string name
-    {
-        get
-        {
-            return this.nameField;
-        }
-        set
-        {
-            this.nameField = value;
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-    public string value
-    {
-        get
-        {
-            return this.valueField;
-        }
-        set
-        {
-            this.valueField = value;
-        }
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="getSystemMetrics", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class getSystemMetricsRequest
-{
-    
-    public getSystemMetricsRequest()
-    {
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="getSystemMetricsResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class getSystemMetricsResponse1
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public object metrics;
-    
-    public getSystemMetricsResponse1()
-    {
-    }
-    
-    public getSystemMetricsResponse1(object metrics)
-    {
-        this.metrics = metrics;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="getCurrentUser", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class getCurrentUserRequest
-{
-    
-    public getCurrentUserRequest()
-    {
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="getCurrentUserResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class getCurrentUserResponse1
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string user;
-    
-    public getCurrentUserResponse1()
-    {
-    }
-    
-    public getCurrentUserResponse1(string user)
-    {
-        this.user = user;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="setEnvironmentVariable", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class setEnvironmentVariableRequest
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string name;
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=1)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string value;
-    
-    public setEnvironmentVariableRequest()
-    {
-    }
-    
-    public setEnvironmentVariableRequest(string name, string value)
-    {
-        this.name = name;
-        this.value = value;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="setEnvironmentVariableResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class setEnvironmentVariableResponse1
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public bool status;
-    
-    public setEnvironmentVariableResponse1()
-    {
-    }
-    
-    public setEnvironmentVariableResponse1(bool status)
-    {
-        this.status = status;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="getEnvironmentVariable", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class getEnvironmentVariableRequest
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string name;
-    
-    public getEnvironmentVariableRequest()
-    {
-    }
-    
-    public getEnvironmentVariableRequest(string name)
-    {
-        this.name = name;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="getEnvironmentVariableResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class getEnvironmentVariableResponse1
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string envVariable;
-    
-    public getEnvironmentVariableResponse1()
-    {
-    }
-    
-    public getEnvironmentVariableResponse1(string envVariable)
-    {
-        this.envVariable = envVariable;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="getDate", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class getDateRequest
-{
-    
-    public getDateRequest()
-    {
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="getDateResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class getDateResponse1
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public System.DateTime currentDate;
-    
-    public getDateResponse1()
-    {
-    }
-    
-    public getDateResponse1(System.DateTime currentDate)
-    {
-        this.currentDate = currentDate;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="setDate", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class setDateRequest
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public System.DateTime dt;
-    
-    public setDateRequest()
-    {
-    }
-    
-    public setDateRequest(System.DateTime dt)
-    {
-        this.dt = dt;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="setDateResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class setDateResponse1
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public bool status;
-    
-    public setDateResponse1()
-    {
-    }
-    
-    public setDateResponse1(bool status)
-    {
-        this.status = status;
-    }
-}
-
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-public interface SystemOperationsChannel : SystemOperations, System.ServiceModel.IClientChannel
-{
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-public partial class SystemOperationsClient : System.ServiceModel.ClientBase<SystemOperations>, SystemOperations
-{
-    
-    public SystemOperationsClient()
-    {
-    }
-    
-    public SystemOperationsClient(string endpointConfigurationName) : 
-            base(endpointConfigurationName)
-    {
-    }
-    
-    public SystemOperationsClient(string endpointConfigurationName, string remoteAddress) : 
-            base(endpointConfigurationName, remoteAddress)
-    {
-    }
-    
-    public SystemOperationsClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-            base(endpointConfigurationName, remoteAddress)
-    {
-    }
-    
-    public SystemOperationsClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-            base(binding, remoteAddress)
-    {
-    }
-    
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    getMachineNameResponse SystemOperations.getMachineName(getMachineNameRequest request)
-    {
-        return base.Channel.getMachineName(request);
-    }
-    
-    public string getMachineName()
-    {
-        getMachineNameRequest inValue = new getMachineNameRequest();
-        getMachineNameResponse retVal = ((SystemOperations)(this)).getMachineName(inValue);
-        return retVal.machineName;
-    }
-    
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    getFreeMemoryResponse SystemOperations.getFreeMemory(getFreeMemoryRequest request)
-    {
-        return base.Channel.getFreeMemory(request);
-    }
-    
-    public long getFreeMemory()
-    {
-        getFreeMemoryRequest inValue = new getFreeMemoryRequest();
-        getFreeMemoryResponse retVal = ((SystemOperations)(this)).getFreeMemory(inValue);
-        return retVal.freeMemory;
-    }
-    
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    getFreeDiskSpaceResponse SystemOperations.getFreeDiskSpace(getFreeDiskSpaceRequest request)
-    {
-        return base.Channel.getFreeDiskSpace(request);
-    }
-    
-    public long getFreeDiskSpace(string path)
-    {
-        getFreeDiskSpaceRequest inValue = new getFreeDiskSpaceRequest();
-        inValue.path = path;
-        getFreeDiskSpaceResponse retVal = ((SystemOperations)(this)).getFreeDiskSpace(inValue);
-        return retVal.freeSpace;
-    }
-    
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    getSystemMetricsResponse1 SystemOperations.getSystemMetrics(getSystemMetricsRequest request)
-    {
-        return base.Channel.getSystemMetrics(request);
-    }
-    
-    public object getSystemMetrics()
-    {
-        getSystemMetricsRequest inValue = new getSystemMetricsRequest();
-        getSystemMetricsResponse1 retVal = ((SystemOperations)(this)).getSystemMetrics(inValue);
-        return retVal.metrics;
-    }
-    
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    getCurrentUserResponse1 SystemOperations.getCurrentUser(getCurrentUserRequest request)
-    {
-        return base.Channel.getCurrentUser(request);
-    }
-    
-    public string getCurrentUser()
-    {
-        getCurrentUserRequest inValue = new getCurrentUserRequest();
-        getCurrentUserResponse1 retVal = ((SystemOperations)(this)).getCurrentUser(inValue);
-        return retVal.user;
-    }
-    
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    setEnvironmentVariableResponse1 SystemOperations.setEnvironmentVariable(setEnvironmentVariableRequest request)
-    {
-        return base.Channel.setEnvironmentVariable(request);
-    }
-    
-    public bool setEnvironmentVariable(string name, string value)
-    {
-        setEnvironmentVariableRequest inValue = new setEnvironmentVariableRequest();
-        inValue.name = name;
-        inValue.value = value;
-        setEnvironmentVariableResponse1 retVal = ((SystemOperations)(this)).setEnvironmentVariable(inValue);
-        return retVal.status;
-    }
-    
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    getEnvironmentVariableResponse1 SystemOperations.getEnvironmentVariable(getEnvironmentVariableRequest request)
-    {
-        return base.Channel.getEnvironmentVariable(request);
-    }
-    
-    public string getEnvironmentVariable(string name)
-    {
-        getEnvironmentVariableRequest inValue = new getEnvironmentVariableRequest();
-        inValue.name = name;
-        getEnvironmentVariableResponse1 retVal = ((SystemOperations)(this)).getEnvironmentVariable(inValue);
-        return retVal.envVariable;
-    }
-    
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    getDateResponse1 SystemOperations.getDate(getDateRequest request)
-    {
-        return base.Channel.getDate(request);
-    }
-    
-    public System.DateTime getDate()
-    {
-        getDateRequest inValue = new getDateRequest();
-        getDateResponse1 retVal = ((SystemOperations)(this)).getDate(inValue);
-        return retVal.currentDate;
-    }
-    
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    setDateResponse1 SystemOperations.setDate(setDateRequest request)
-    {
-        return base.Channel.setDate(request);
-    }
-    
-    public bool setDate(System.DateTime dt)
-    {
-        setDateRequest inValue = new setDateRequest();
-        inValue.dt = dt;
-        setDateResponse1 retVal = ((SystemOperations)(this)).setDate(inValue);
-        return retVal.status;
-    }
-}
-namespace system.server.sirius.org
+namespace Sirius.Client.Core.Sys.Sys
 {
     
     
@@ -1192,4 +58,630 @@ namespace system.server.sirius.org
             return typeName;
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://system.server.sirius.org/", ConfigurationName="Sirius.Client.Core.Sys.Sys.SystemOperations")]
+    public interface SystemOperations
+    {
+        
+        // CODEGEN: Контракт генерации сообщений с именем machine из пространства имен  не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/getMachineNameRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/getMachineNameResponse")]
+        Sirius.Client.Core.Sys.Sys.getMachineNameResponse getMachineName(Sirius.Client.Core.Sys.Sys.getMachineNameRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с пространством имен частей сообщения () не соответствует значению по умолчанию (http://system.server.sirius.org/).
+        [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/getFreeMemoryRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/getFreeMemoryResponse")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="freeMemory")]
+        Sirius.Client.Core.Sys.Sys.getFreeMemoryResponse getFreeMemory(Sirius.Client.Core.Sys.Sys.getFreeMemoryRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем arg0 из пространства имен  не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/getFreeDiskSpaceRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/getFreeDiskSpaceResponse")]
+        Sirius.Client.Core.Sys.Sys.getFreeDiskSpaceResponse getFreeDiskSpace(Sirius.Client.Core.Sys.Sys.getFreeDiskSpaceRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем userName из пространства имен  не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/getCurrentUserRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/getCurrentUserResponse")]
+        Sirius.Client.Core.Sys.Sys.getCurrentUserResponse getCurrentUser(Sirius.Client.Core.Sys.Sys.getCurrentUserRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем arg0 из пространства имен  не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/getEnvironmentVariableRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/getEnvironmentVariableResponse")]
+        Sirius.Client.Core.Sys.Sys.getEnvironmentVariableResponse getEnvironmentVariable(Sirius.Client.Core.Sys.Sys.getEnvironmentVariableRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем variableName из пространства имен  не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/setEnvironmentVariableRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/setEnvironmentVariableResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Sirius.Client.Core.Sys.Sys.IOException), Action="http://system.server.sirius.org/SystemOperations/setEnvironmentVariable/Fault/IOE" +
+            "xception", Name="IOException")]
+        Sirius.Client.Core.Sys.Sys.setEnvironmentVariableResponse setEnvironmentVariable(Sirius.Client.Core.Sys.Sys.setEnvironmentVariableRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с пространством имен частей сообщения () не соответствует значению по умолчанию (http://system.server.sirius.org/).
+        [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/SystemOperations/getDateRequest", ReplyAction="http://system.server.sirius.org/SystemOperations/getDateResponse")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="date")]
+        Sirius.Client.Core.Sys.Sys.getDateResponse getDate(Sirius.Client.Core.Sys.Sys.getDateRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getMachineNameRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getMachineName", Namespace="http://system.server.sirius.org/", Order=0)]
+        public Sirius.Client.Core.Sys.Sys.getMachineNameRequestBody Body;
+        
+        public getMachineNameRequest()
+        {
+        }
+        
+        public getMachineNameRequest(Sirius.Client.Core.Sys.Sys.getMachineNameRequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class getMachineNameRequestBody
+    {
+        
+        public getMachineNameRequestBody()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getMachineNameResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getMachineNameResponse", Namespace="http://system.server.sirius.org/", Order=0)]
+        public Sirius.Client.Core.Sys.Sys.getMachineNameResponseBody Body;
+        
+        public getMachineNameResponse()
+        {
+        }
+        
+        public getMachineNameResponse(Sirius.Client.Core.Sys.Sys.getMachineNameResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
+    public partial class getMachineNameResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string machine;
+        
+        public getMachineNameResponseBody()
+        {
+        }
+        
+        public getMachineNameResponseBody(string machine)
+        {
+            this.machine = machine;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getFreeMemory", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class getFreeMemoryRequest
+    {
+        
+        public getFreeMemoryRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getFreeMemoryResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class getFreeMemoryResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        public long freeMemory;
+        
+        public getFreeMemoryResponse()
+        {
+        }
+        
+        public getFreeMemoryResponse(long freeMemory)
+        {
+            this.freeMemory = freeMemory;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getFreeDiskSpaceRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getFreeDiskSpace", Namespace="http://system.server.sirius.org/", Order=0)]
+        public Sirius.Client.Core.Sys.Sys.getFreeDiskSpaceRequestBody Body;
+        
+        public getFreeDiskSpaceRequest()
+        {
+        }
+        
+        public getFreeDiskSpaceRequest(Sirius.Client.Core.Sys.Sys.getFreeDiskSpaceRequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
+    public partial class getFreeDiskSpaceRequestBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string arg0;
+        
+        public getFreeDiskSpaceRequestBody()
+        {
+        }
+        
+        public getFreeDiskSpaceRequestBody(string arg0)
+        {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getFreeDiskSpaceResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getFreeDiskSpaceResponse", Namespace="http://system.server.sirius.org/", Order=0)]
+        public Sirius.Client.Core.Sys.Sys.getFreeDiskSpaceResponseBody Body;
+        
+        public getFreeDiskSpaceResponse()
+        {
+        }
+        
+        public getFreeDiskSpaceResponse(Sirius.Client.Core.Sys.Sys.getFreeDiskSpaceResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
+    public partial class getFreeDiskSpaceResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public long freeDiskSpace;
+        
+        public getFreeDiskSpaceResponseBody()
+        {
+        }
+        
+        public getFreeDiskSpaceResponseBody(long freeDiskSpace)
+        {
+            this.freeDiskSpace = freeDiskSpace;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getCurrentUserRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getCurrentUser", Namespace="http://system.server.sirius.org/", Order=0)]
+        public Sirius.Client.Core.Sys.Sys.getCurrentUserRequestBody Body;
+        
+        public getCurrentUserRequest()
+        {
+        }
+        
+        public getCurrentUserRequest(Sirius.Client.Core.Sys.Sys.getCurrentUserRequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class getCurrentUserRequestBody
+    {
+        
+        public getCurrentUserRequestBody()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getCurrentUserResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getCurrentUserResponse", Namespace="http://system.server.sirius.org/", Order=0)]
+        public Sirius.Client.Core.Sys.Sys.getCurrentUserResponseBody Body;
+        
+        public getCurrentUserResponse()
+        {
+        }
+        
+        public getCurrentUserResponse(Sirius.Client.Core.Sys.Sys.getCurrentUserResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
+    public partial class getCurrentUserResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string userName;
+        
+        public getCurrentUserResponseBody()
+        {
+        }
+        
+        public getCurrentUserResponseBody(string userName)
+        {
+            this.userName = userName;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getEnvironmentVariableRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getEnvironmentVariable", Namespace="http://system.server.sirius.org/", Order=0)]
+        public Sirius.Client.Core.Sys.Sys.getEnvironmentVariableRequestBody Body;
+        
+        public getEnvironmentVariableRequest()
+        {
+        }
+        
+        public getEnvironmentVariableRequest(Sirius.Client.Core.Sys.Sys.getEnvironmentVariableRequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
+    public partial class getEnvironmentVariableRequestBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string arg0;
+        
+        public getEnvironmentVariableRequestBody()
+        {
+        }
+        
+        public getEnvironmentVariableRequestBody(string arg0)
+        {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getEnvironmentVariableResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getEnvironmentVariableResponse", Namespace="http://system.server.sirius.org/", Order=0)]
+        public Sirius.Client.Core.Sys.Sys.getEnvironmentVariableResponseBody Body;
+        
+        public getEnvironmentVariableResponse()
+        {
+        }
+        
+        public getEnvironmentVariableResponse(Sirius.Client.Core.Sys.Sys.getEnvironmentVariableResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
+    public partial class getEnvironmentVariableResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string value;
+        
+        public getEnvironmentVariableResponseBody()
+        {
+        }
+        
+        public getEnvironmentVariableResponseBody(string value)
+        {
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class setEnvironmentVariableRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="setEnvironmentVariable", Namespace="http://system.server.sirius.org/", Order=0)]
+        public Sirius.Client.Core.Sys.Sys.setEnvironmentVariableRequestBody Body;
+        
+        public setEnvironmentVariableRequest()
+        {
+        }
+        
+        public setEnvironmentVariableRequest(Sirius.Client.Core.Sys.Sys.setEnvironmentVariableRequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
+    public partial class setEnvironmentVariableRequestBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string variableName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string value;
+        
+        public setEnvironmentVariableRequestBody()
+        {
+        }
+        
+        public setEnvironmentVariableRequestBody(string variableName, string value)
+        {
+            this.variableName = variableName;
+            this.value = value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class setEnvironmentVariableResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="setEnvironmentVariableResponse", Namespace="http://system.server.sirius.org/", Order=0)]
+        public Sirius.Client.Core.Sys.Sys.setEnvironmentVariableResponseBody Body;
+        
+        public setEnvironmentVariableResponse()
+        {
+        }
+        
+        public setEnvironmentVariableResponse(Sirius.Client.Core.Sys.Sys.setEnvironmentVariableResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
+    public partial class setEnvironmentVariableResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool status;
+        
+        public setEnvironmentVariableResponseBody()
+        {
+        }
+        
+        public setEnvironmentVariableResponseBody(bool status)
+        {
+            this.status = status;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getDate", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class getDateRequest
+    {
+        
+        public getDateRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getDateResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class getDateResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        public System.DateTime date;
+        
+        public getDateResponse()
+        {
+        }
+        
+        public getDateResponse(System.DateTime date)
+        {
+            this.date = date;
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface SystemOperationsChannel : Sirius.Client.Core.Sys.Sys.SystemOperations, System.ServiceModel.IClientChannel
+    {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class SystemOperationsClient : System.ServiceModel.ClientBase<Sirius.Client.Core.Sys.Sys.SystemOperations>, Sirius.Client.Core.Sys.Sys.SystemOperations
+    {
+        
+        public SystemOperationsClient()
+        {
+        }
+        
+        public SystemOperationsClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName)
+        {
+        }
+        
+        public SystemOperationsClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress)
+        {
+        }
+        
+        public SystemOperationsClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress)
+        {
+        }
+        
+        public SystemOperationsClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress)
+        {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.Client.Core.Sys.Sys.getMachineNameResponse Sirius.Client.Core.Sys.Sys.SystemOperations.getMachineName(Sirius.Client.Core.Sys.Sys.getMachineNameRequest request)
+        {
+            return base.Channel.getMachineName(request);
+        }
+        
+        public string getMachineName()
+        {
+            Sirius.Client.Core.Sys.Sys.getMachineNameRequest inValue = new Sirius.Client.Core.Sys.Sys.getMachineNameRequest();
+            inValue.Body = new Sirius.Client.Core.Sys.Sys.getMachineNameRequestBody();
+            Sirius.Client.Core.Sys.Sys.getMachineNameResponse retVal = ((Sirius.Client.Core.Sys.Sys.SystemOperations)(this)).getMachineName(inValue);
+            return retVal.Body.machine;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.Client.Core.Sys.Sys.getFreeMemoryResponse Sirius.Client.Core.Sys.Sys.SystemOperations.getFreeMemory(Sirius.Client.Core.Sys.Sys.getFreeMemoryRequest request)
+        {
+            return base.Channel.getFreeMemory(request);
+        }
+        
+        public long getFreeMemory()
+        {
+            Sirius.Client.Core.Sys.Sys.getFreeMemoryRequest inValue = new Sirius.Client.Core.Sys.Sys.getFreeMemoryRequest();
+            Sirius.Client.Core.Sys.Sys.getFreeMemoryResponse retVal = ((Sirius.Client.Core.Sys.Sys.SystemOperations)(this)).getFreeMemory(inValue);
+            return retVal.freeMemory;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.Client.Core.Sys.Sys.getFreeDiskSpaceResponse Sirius.Client.Core.Sys.Sys.SystemOperations.getFreeDiskSpace(Sirius.Client.Core.Sys.Sys.getFreeDiskSpaceRequest request)
+        {
+            return base.Channel.getFreeDiskSpace(request);
+        }
+        
+        public long getFreeDiskSpace(string arg0)
+        {
+            Sirius.Client.Core.Sys.Sys.getFreeDiskSpaceRequest inValue = new Sirius.Client.Core.Sys.Sys.getFreeDiskSpaceRequest();
+            inValue.Body = new Sirius.Client.Core.Sys.Sys.getFreeDiskSpaceRequestBody();
+            inValue.Body.arg0 = arg0;
+            Sirius.Client.Core.Sys.Sys.getFreeDiskSpaceResponse retVal = ((Sirius.Client.Core.Sys.Sys.SystemOperations)(this)).getFreeDiskSpace(inValue);
+            return retVal.Body.freeDiskSpace;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.Client.Core.Sys.Sys.getCurrentUserResponse Sirius.Client.Core.Sys.Sys.SystemOperations.getCurrentUser(Sirius.Client.Core.Sys.Sys.getCurrentUserRequest request)
+        {
+            return base.Channel.getCurrentUser(request);
+        }
+        
+        public string getCurrentUser()
+        {
+            Sirius.Client.Core.Sys.Sys.getCurrentUserRequest inValue = new Sirius.Client.Core.Sys.Sys.getCurrentUserRequest();
+            inValue.Body = new Sirius.Client.Core.Sys.Sys.getCurrentUserRequestBody();
+            Sirius.Client.Core.Sys.Sys.getCurrentUserResponse retVal = ((Sirius.Client.Core.Sys.Sys.SystemOperations)(this)).getCurrentUser(inValue);
+            return retVal.Body.userName;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.Client.Core.Sys.Sys.getEnvironmentVariableResponse Sirius.Client.Core.Sys.Sys.SystemOperations.getEnvironmentVariable(Sirius.Client.Core.Sys.Sys.getEnvironmentVariableRequest request)
+        {
+            return base.Channel.getEnvironmentVariable(request);
+        }
+        
+        public string getEnvironmentVariable(string arg0)
+        {
+            Sirius.Client.Core.Sys.Sys.getEnvironmentVariableRequest inValue = new Sirius.Client.Core.Sys.Sys.getEnvironmentVariableRequest();
+            inValue.Body = new Sirius.Client.Core.Sys.Sys.getEnvironmentVariableRequestBody();
+            inValue.Body.arg0 = arg0;
+            Sirius.Client.Core.Sys.Sys.getEnvironmentVariableResponse retVal = ((Sirius.Client.Core.Sys.Sys.SystemOperations)(this)).getEnvironmentVariable(inValue);
+            return retVal.Body.value;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.Client.Core.Sys.Sys.setEnvironmentVariableResponse Sirius.Client.Core.Sys.Sys.SystemOperations.setEnvironmentVariable(Sirius.Client.Core.Sys.Sys.setEnvironmentVariableRequest request)
+        {
+            return base.Channel.setEnvironmentVariable(request);
+        }
+        
+        public bool setEnvironmentVariable(string variableName, string value)
+        {
+            Sirius.Client.Core.Sys.Sys.setEnvironmentVariableRequest inValue = new Sirius.Client.Core.Sys.Sys.setEnvironmentVariableRequest();
+            inValue.Body = new Sirius.Client.Core.Sys.Sys.setEnvironmentVariableRequestBody();
+            inValue.Body.variableName = variableName;
+            inValue.Body.value = value;
+            Sirius.Client.Core.Sys.Sys.setEnvironmentVariableResponse retVal = ((Sirius.Client.Core.Sys.Sys.SystemOperations)(this)).setEnvironmentVariable(inValue);
+            return retVal.Body.status;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.Client.Core.Sys.Sys.getDateResponse Sirius.Client.Core.Sys.Sys.SystemOperations.getDate(Sirius.Client.Core.Sys.Sys.getDateRequest request)
+        {
+            return base.Channel.getDate(request);
+        }
+        
+        public System.DateTime getDate()
+        {
+            Sirius.Client.Core.Sys.Sys.getDateRequest inValue = new Sirius.Client.Core.Sys.Sys.getDateRequest();
+            Sirius.Client.Core.Sys.Sys.getDateResponse retVal = ((Sirius.Client.Core.Sys.Sys.SystemOperations)(this)).getDate(inValue);
+            return retVal.date;
+        }
+    }
 }
+

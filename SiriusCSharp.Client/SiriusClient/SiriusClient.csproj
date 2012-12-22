@@ -44,11 +44,11 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sirius.Client\Core.System\DirectoryOperationsService.cs" />
-    <Compile Include="Sirius.Client\Core.System\FileOperationsService.cs" />
-    <Compile Include="Sirius.Client\Core.System\SystemOperationsService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="BuildScript\Sirius.Client.msbuild" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

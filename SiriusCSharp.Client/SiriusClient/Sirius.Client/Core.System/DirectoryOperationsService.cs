@@ -8,726 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Runtime.Serialization.ContractNamespaceAttribute("http://system.server.sirius.org/", ClrNamespace="system.server.sirius.org")]
+[assembly: System.Runtime.Serialization.ContractNamespaceAttribute("http://system.server.sirius.org/", ClrNamespace="Sirius.Client.Core.Sys.Dir")]
 
 
-
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ServiceModel.ServiceContractAttribute(Namespace="http://system.server.sirius.org/", ConfigurationName="DirectoryOperations")]
-public interface DirectoryOperations
-{
-    
-    // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/DirectoryOperations/moveDirectoryExRequest", ReplyAction="http://system.server.sirius.org/DirectoryOperations/moveDirectoryExResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(system.server.sirius.org.IOException), Action="http://system.server.sirius.org/DirectoryOperations/moveDirectoryEx/Fault/IOExcep" +
-        "tion", Name="IOException")]
-    [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-    moveDirectoryExResponse moveDirectoryEx(moveDirectoryExRequest request);
-    
-    // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/DirectoryOperations/moveDirectoryRequest", ReplyAction="http://system.server.sirius.org/DirectoryOperations/moveDirectoryResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(system.server.sirius.org.IOException), Action="http://system.server.sirius.org/DirectoryOperations/moveDirectory/Fault/IOExcepti" +
-        "on", Name="IOException")]
-    [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-    moveDirectoryResponse moveDirectory(moveDirectoryRequest request);
-    
-    // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/DirectoryOperations/getContentsExRequest", ReplyAction="http://system.server.sirius.org/DirectoryOperations/getContentsExResponse")]
-    [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-    getContentsExResponse getContentsEx(getContentsExRequest request);
-    
-    // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/DirectoryOperations/createDirectoryExRequest", ReplyAction="http://system.server.sirius.org/DirectoryOperations/createDirectoryExResponse")]
-    [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-    createDirectoryExResponse createDirectoryEx(createDirectoryExRequest request);
-    
-    // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/DirectoryOperations/copyExRequest", ReplyAction="http://system.server.sirius.org/DirectoryOperations/copyExResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(system.server.sirius.org.IOException), Action="http://system.server.sirius.org/DirectoryOperations/copyEx/Fault/IOException", Name="IOException")]
-    [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-    copyExResponse copyEx(copyExRequest request);
-    
-    // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/DirectoryOperations/copyRequest", ReplyAction="http://system.server.sirius.org/DirectoryOperations/copyResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(system.server.sirius.org.IOException), Action="http://system.server.sirius.org/DirectoryOperations/copy/Fault/IOException", Name="IOException")]
-    [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-    copyResponse copy(copyRequest request);
-    
-    // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/DirectoryOperations/deleteRequest", ReplyAction="http://system.server.sirius.org/DirectoryOperations/deleteResponse")]
-    [System.ServiceModel.FaultContractAttribute(typeof(system.server.sirius.org.IOException), Action="http://system.server.sirius.org/DirectoryOperations/delete/Fault/IOException", Name="IOException")]
-    [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-    deleteResponse delete(deleteRequest request);
-    
-    // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/DirectoryOperations/existsRequest", ReplyAction="http://system.server.sirius.org/DirectoryOperations/existsResponse")]
-    [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-    existsResponse exists(existsRequest request);
-    
-    // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/DirectoryOperations/createDirectoryRequest", ReplyAction="http://system.server.sirius.org/DirectoryOperations/createDirectoryResponse")]
-    [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-    createDirectoryResponse createDirectory(createDirectoryRequest request);
-    
-    // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-    [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/DirectoryOperations/getContentsRequest", ReplyAction="http://system.server.sirius.org/DirectoryOperations/getContentsResponse")]
-    [System.ServiceModel.XmlSerializerFormatAttribute()]
-    [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-    getContentsResponse getContents(getContentsRequest request);
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="moveDirectoryEx", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class moveDirectoryExRequest
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string arg0;
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=1)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string arg1;
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=2)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public bool arg2;
-    
-    public moveDirectoryExRequest()
-    {
-    }
-    
-    public moveDirectoryExRequest(string arg0, string arg1, bool arg2)
-    {
-        this.arg0 = arg0;
-        this.arg1 = arg1;
-        this.arg2 = arg2;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="moveDirectoryExResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class moveDirectoryExResponse
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public bool @return;
-    
-    public moveDirectoryExResponse()
-    {
-    }
-    
-    public moveDirectoryExResponse(bool @return)
-    {
-        this.@return = @return;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="moveDirectory", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class moveDirectoryRequest
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string arg0;
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=1)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string arg1;
-    
-    public moveDirectoryRequest()
-    {
-    }
-    
-    public moveDirectoryRequest(string arg0, string arg1)
-    {
-        this.arg0 = arg0;
-        this.arg1 = arg1;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="moveDirectoryResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class moveDirectoryResponse
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public bool @return;
-    
-    public moveDirectoryResponse()
-    {
-    }
-    
-    public moveDirectoryResponse(bool @return)
-    {
-        this.@return = @return;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="getContentsEx", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class getContentsExRequest
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string arg0;
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=1)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public bool arg1;
-    
-    public getContentsExRequest()
-    {
-    }
-    
-    public getContentsExRequest(string arg0, bool arg1)
-    {
-        this.arg0 = arg0;
-        this.arg1 = arg1;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="getContentsExResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class getContentsExResponse
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-    public string[] @return;
-    
-    public getContentsExResponse()
-    {
-    }
-    
-    public getContentsExResponse(string[] @return)
-    {
-        this.@return = @return;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="createDirectoryEx", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class createDirectoryExRequest
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string arg0;
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=1)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public bool arg1;
-    
-    public createDirectoryExRequest()
-    {
-    }
-    
-    public createDirectoryExRequest(string arg0, bool arg1)
-    {
-        this.arg0 = arg0;
-        this.arg1 = arg1;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="createDirectoryExResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class createDirectoryExResponse
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public bool @return;
-    
-    public createDirectoryExResponse()
-    {
-    }
-    
-    public createDirectoryExResponse(bool @return)
-    {
-        this.@return = @return;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="copyEx", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class copyExRequest
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string arg0;
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=1)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string arg1;
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=2)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public bool arg2;
-    
-    public copyExRequest()
-    {
-    }
-    
-    public copyExRequest(string arg0, string arg1, bool arg2)
-    {
-        this.arg0 = arg0;
-        this.arg1 = arg1;
-        this.arg2 = arg2;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="copyExResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class copyExResponse
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public bool @return;
-    
-    public copyExResponse()
-    {
-    }
-    
-    public copyExResponse(bool @return)
-    {
-        this.@return = @return;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="copy", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class copyRequest
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string arg0;
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=1)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string arg1;
-    
-    public copyRequest()
-    {
-    }
-    
-    public copyRequest(string arg0, string arg1)
-    {
-        this.arg0 = arg0;
-        this.arg1 = arg1;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="copyResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class copyResponse
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public bool @return;
-    
-    public copyResponse()
-    {
-    }
-    
-    public copyResponse(bool @return)
-    {
-        this.@return = @return;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="delete", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class deleteRequest
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string arg0;
-    
-    public deleteRequest()
-    {
-    }
-    
-    public deleteRequest(string arg0)
-    {
-        this.arg0 = arg0;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="deleteResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class deleteResponse
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public bool @return;
-    
-    public deleteResponse()
-    {
-    }
-    
-    public deleteResponse(bool @return)
-    {
-        this.@return = @return;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="exists", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class existsRequest
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string arg0;
-    
-    public existsRequest()
-    {
-    }
-    
-    public existsRequest(string arg0)
-    {
-        this.arg0 = arg0;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="existsResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class existsResponse
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public bool @return;
-    
-    public existsResponse()
-    {
-    }
-    
-    public existsResponse(bool @return)
-    {
-        this.@return = @return;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="createDirectory", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class createDirectoryRequest
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string arg0;
-    
-    public createDirectoryRequest()
-    {
-    }
-    
-    public createDirectoryRequest(string arg0)
-    {
-        this.arg0 = arg0;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="createDirectoryResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class createDirectoryResponse
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public bool @return;
-    
-    public createDirectoryResponse()
-    {
-    }
-    
-    public createDirectoryResponse(bool @return)
-    {
-        this.@return = @return;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="getContents", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class getContentsRequest
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string arg0;
-    
-    public getContentsRequest()
-    {
-    }
-    
-    public getContentsRequest(string arg0)
-    {
-        this.arg0 = arg0;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName="getContentsResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
-public partial class getContentsResponse
-{
-    
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
-    [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
-    public string[] @return;
-    
-    public getContentsResponse()
-    {
-    }
-    
-    public getContentsResponse(string[] @return)
-    {
-        this.@return = @return;
-    }
-}
-
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-public interface DirectoryOperationsChannel : DirectoryOperations, System.ServiceModel.IClientChannel
-{
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-public partial class DirectoryOperationsClient : System.ServiceModel.ClientBase<DirectoryOperations>, DirectoryOperations
-{
-    
-    public DirectoryOperationsClient()
-    {
-    }
-    
-    public DirectoryOperationsClient(string endpointConfigurationName) : 
-            base(endpointConfigurationName)
-    {
-    }
-    
-    public DirectoryOperationsClient(string endpointConfigurationName, string remoteAddress) : 
-            base(endpointConfigurationName, remoteAddress)
-    {
-    }
-    
-    public DirectoryOperationsClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-            base(endpointConfigurationName, remoteAddress)
-    {
-    }
-    
-    public DirectoryOperationsClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-            base(binding, remoteAddress)
-    {
-    }
-    
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    moveDirectoryExResponse DirectoryOperations.moveDirectoryEx(moveDirectoryExRequest request)
-    {
-        return base.Channel.moveDirectoryEx(request);
-    }
-    
-    public bool moveDirectoryEx(string arg0, string arg1, bool arg2)
-    {
-        moveDirectoryExRequest inValue = new moveDirectoryExRequest();
-        inValue.arg0 = arg0;
-        inValue.arg1 = arg1;
-        inValue.arg2 = arg2;
-        moveDirectoryExResponse retVal = ((DirectoryOperations)(this)).moveDirectoryEx(inValue);
-        return retVal.@return;
-    }
-    
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    moveDirectoryResponse DirectoryOperations.moveDirectory(moveDirectoryRequest request)
-    {
-        return base.Channel.moveDirectory(request);
-    }
-    
-    public bool moveDirectory(string arg0, string arg1)
-    {
-        moveDirectoryRequest inValue = new moveDirectoryRequest();
-        inValue.arg0 = arg0;
-        inValue.arg1 = arg1;
-        moveDirectoryResponse retVal = ((DirectoryOperations)(this)).moveDirectory(inValue);
-        return retVal.@return;
-    }
-    
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    getContentsExResponse DirectoryOperations.getContentsEx(getContentsExRequest request)
-    {
-        return base.Channel.getContentsEx(request);
-    }
-    
-    public string[] getContentsEx(string arg0, bool arg1)
-    {
-        getContentsExRequest inValue = new getContentsExRequest();
-        inValue.arg0 = arg0;
-        inValue.arg1 = arg1;
-        getContentsExResponse retVal = ((DirectoryOperations)(this)).getContentsEx(inValue);
-        return retVal.@return;
-    }
-    
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    createDirectoryExResponse DirectoryOperations.createDirectoryEx(createDirectoryExRequest request)
-    {
-        return base.Channel.createDirectoryEx(request);
-    }
-    
-    public bool createDirectoryEx(string arg0, bool arg1)
-    {
-        createDirectoryExRequest inValue = new createDirectoryExRequest();
-        inValue.arg0 = arg0;
-        inValue.arg1 = arg1;
-        createDirectoryExResponse retVal = ((DirectoryOperations)(this)).createDirectoryEx(inValue);
-        return retVal.@return;
-    }
-    
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    copyExResponse DirectoryOperations.copyEx(copyExRequest request)
-    {
-        return base.Channel.copyEx(request);
-    }
-    
-    public bool copyEx(string arg0, string arg1, bool arg2)
-    {
-        copyExRequest inValue = new copyExRequest();
-        inValue.arg0 = arg0;
-        inValue.arg1 = arg1;
-        inValue.arg2 = arg2;
-        copyExResponse retVal = ((DirectoryOperations)(this)).copyEx(inValue);
-        return retVal.@return;
-    }
-    
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    copyResponse DirectoryOperations.copy(copyRequest request)
-    {
-        return base.Channel.copy(request);
-    }
-    
-    public bool copy(string arg0, string arg1)
-    {
-        copyRequest inValue = new copyRequest();
-        inValue.arg0 = arg0;
-        inValue.arg1 = arg1;
-        copyResponse retVal = ((DirectoryOperations)(this)).copy(inValue);
-        return retVal.@return;
-    }
-    
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    deleteResponse DirectoryOperations.delete(deleteRequest request)
-    {
-        return base.Channel.delete(request);
-    }
-    
-    public bool delete(string arg0)
-    {
-        deleteRequest inValue = new deleteRequest();
-        inValue.arg0 = arg0;
-        deleteResponse retVal = ((DirectoryOperations)(this)).delete(inValue);
-        return retVal.@return;
-    }
-    
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    existsResponse DirectoryOperations.exists(existsRequest request)
-    {
-        return base.Channel.exists(request);
-    }
-    
-    public bool exists(string arg0)
-    {
-        existsRequest inValue = new existsRequest();
-        inValue.arg0 = arg0;
-        existsResponse retVal = ((DirectoryOperations)(this)).exists(inValue);
-        return retVal.@return;
-    }
-    
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    createDirectoryResponse DirectoryOperations.createDirectory(createDirectoryRequest request)
-    {
-        return base.Channel.createDirectory(request);
-    }
-    
-    public bool createDirectory(string arg0)
-    {
-        createDirectoryRequest inValue = new createDirectoryRequest();
-        inValue.arg0 = arg0;
-        createDirectoryResponse retVal = ((DirectoryOperations)(this)).createDirectory(inValue);
-        return retVal.@return;
-    }
-    
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    getContentsResponse DirectoryOperations.getContents(getContentsRequest request)
-    {
-        return base.Channel.getContents(request);
-    }
-    
-    public string[] getContents(string arg0)
-    {
-        getContentsRequest inValue = new getContentsRequest();
-        inValue.arg0 = arg0;
-        getContentsResponse retVal = ((DirectoryOperations)(this)).getContents(inValue);
-        return retVal.@return;
-    }
-}
-namespace system.server.sirius.org
+namespace Sirius.Client.Core.Sys.Dir
 {
     
     
@@ -773,6 +57,722 @@ namespace system.server.sirius.org
         {
             System.Runtime.Serialization.XmlSerializableServices.AddDefaultSchema(schemas, typeName);
             return typeName;
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://system.server.sirius.org/", ConfigurationName="Sirius.Client.Core.Sys.Dir.DirectoryOperations")]
+    public interface DirectoryOperations
+    {
+        
+        // CODEGEN: Параметр "status" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+        [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/DirectoryOperations/moveDirectoryRequest", ReplyAction="http://system.server.sirius.org/DirectoryOperations/moveDirectoryResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Sirius.Client.Core.Sys.Dir.IOException), Action="http://system.server.sirius.org/DirectoryOperations/moveDirectory/Fault/IOExcepti" +
+            "on", Name="IOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="status")]
+        Sirius.Client.Core.Sys.Dir.moveDirectoryResponse moveDirectory(Sirius.Client.Core.Sys.Dir.moveDirectoryRequest request);
+        
+        // CODEGEN: Параметр "status" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+        [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/DirectoryOperations/moveDirectoryExRequest", ReplyAction="http://system.server.sirius.org/DirectoryOperations/moveDirectoryExResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Sirius.Client.Core.Sys.Dir.IOException), Action="http://system.server.sirius.org/DirectoryOperations/moveDirectoryEx/Fault/IOExcep" +
+            "tion", Name="IOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="status")]
+        Sirius.Client.Core.Sys.Dir.moveDirectoryExResponse moveDirectoryEx(Sirius.Client.Core.Sys.Dir.moveDirectoryExRequest request);
+        
+        // CODEGEN: Параметр "contents" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+        [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/DirectoryOperations/getContentsExRequest", ReplyAction="http://system.server.sirius.org/DirectoryOperations/getContentsExResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="contents")]
+        Sirius.Client.Core.Sys.Dir.getContentsExResponse getContentsEx(Sirius.Client.Core.Sys.Dir.getContentsExRequest request);
+        
+        // CODEGEN: Параметр "status" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+        [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/DirectoryOperations/createExRequest", ReplyAction="http://system.server.sirius.org/DirectoryOperations/createExResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="status")]
+        Sirius.Client.Core.Sys.Dir.createExResponse createEx(Sirius.Client.Core.Sys.Dir.createExRequest request);
+        
+        // CODEGEN: Параметр "status" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+        [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/DirectoryOperations/copyExRequest", ReplyAction="http://system.server.sirius.org/DirectoryOperations/copyExResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Sirius.Client.Core.Sys.Dir.IOException), Action="http://system.server.sirius.org/DirectoryOperations/copyEx/Fault/IOException", Name="IOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="status")]
+        Sirius.Client.Core.Sys.Dir.copyExResponse copyEx(Sirius.Client.Core.Sys.Dir.copyExRequest request);
+        
+        // CODEGEN: Параметр "status" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+        [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/DirectoryOperations/copyRequest", ReplyAction="http://system.server.sirius.org/DirectoryOperations/copyResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Sirius.Client.Core.Sys.Dir.IOException), Action="http://system.server.sirius.org/DirectoryOperations/copy/Fault/IOException", Name="IOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="status")]
+        Sirius.Client.Core.Sys.Dir.copyResponse copy(Sirius.Client.Core.Sys.Dir.copyRequest request);
+        
+        // CODEGEN: Параметр "status" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+        [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/DirectoryOperations/deleteRequest", ReplyAction="http://system.server.sirius.org/DirectoryOperations/deleteResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Sirius.Client.Core.Sys.Dir.IOException), Action="http://system.server.sirius.org/DirectoryOperations/delete/Fault/IOException", Name="IOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="status")]
+        Sirius.Client.Core.Sys.Dir.deleteResponse delete(Sirius.Client.Core.Sys.Dir.deleteRequest request);
+        
+        // CODEGEN: Параметр "status" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+        [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/DirectoryOperations/existsRequest", ReplyAction="http://system.server.sirius.org/DirectoryOperations/existsResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="status")]
+        Sirius.Client.Core.Sys.Dir.existsResponse exists(Sirius.Client.Core.Sys.Dir.existsRequest request);
+        
+        // CODEGEN: Параметр "status" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+        [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/DirectoryOperations/createRequest", ReplyAction="http://system.server.sirius.org/DirectoryOperations/createResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="status")]
+        Sirius.Client.Core.Sys.Dir.createResponse create(Sirius.Client.Core.Sys.Dir.createRequest request);
+        
+        // CODEGEN: Параметр "contents" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+        [System.ServiceModel.OperationContractAttribute(Action="http://system.server.sirius.org/DirectoryOperations/getContentsRequest", ReplyAction="http://system.server.sirius.org/DirectoryOperations/getContentsResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="contents")]
+        Sirius.Client.Core.Sys.Dir.getContentsResponse getContents(Sirius.Client.Core.Sys.Dir.getContentsRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="moveDirectory", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class moveDirectoryRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string origin;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string destination;
+        
+        public moveDirectoryRequest()
+        {
+        }
+        
+        public moveDirectoryRequest(string origin, string destination)
+        {
+            this.origin = origin;
+            this.destination = destination;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="moveDirectoryResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class moveDirectoryResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool status;
+        
+        public moveDirectoryResponse()
+        {
+        }
+        
+        public moveDirectoryResponse(bool status)
+        {
+            this.status = status;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="moveDirectoryEx", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class moveDirectoryExRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string origin;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string destination;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool overwrite;
+        
+        public moveDirectoryExRequest()
+        {
+        }
+        
+        public moveDirectoryExRequest(string origin, string destination, bool overwrite)
+        {
+            this.origin = origin;
+            this.destination = destination;
+            this.overwrite = overwrite;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="moveDirectoryExResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class moveDirectoryExResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool status;
+        
+        public moveDirectoryExResponse()
+        {
+        }
+        
+        public moveDirectoryExResponse(bool status)
+        {
+            this.status = status;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getContentsEx", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class getContentsExRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string path;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool recursive;
+        
+        public getContentsExRequest()
+        {
+        }
+        
+        public getContentsExRequest(string path, bool recursive)
+        {
+            this.path = path;
+            this.recursive = recursive;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getContentsExResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class getContentsExResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("contents", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
+        public string[] contents;
+        
+        public getContentsExResponse()
+        {
+        }
+        
+        public getContentsExResponse(string[] contents)
+        {
+            this.contents = contents;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="createEx", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class createExRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string path;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool overwrite;
+        
+        public createExRequest()
+        {
+        }
+        
+        public createExRequest(string path, bool overwrite)
+        {
+            this.path = path;
+            this.overwrite = overwrite;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="createExResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class createExResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool status;
+        
+        public createExResponse()
+        {
+        }
+        
+        public createExResponse(bool status)
+        {
+            this.status = status;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="copyEx", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class copyExRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string origin;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string destination;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool overwrite;
+        
+        public copyExRequest()
+        {
+        }
+        
+        public copyExRequest(string origin, string destination, bool overwrite)
+        {
+            this.origin = origin;
+            this.destination = destination;
+            this.overwrite = overwrite;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="copyExResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class copyExResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool status;
+        
+        public copyExResponse()
+        {
+        }
+        
+        public copyExResponse(bool status)
+        {
+            this.status = status;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="copy", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class copyRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string origin;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string destination;
+        
+        public copyRequest()
+        {
+        }
+        
+        public copyRequest(string origin, string destination)
+        {
+            this.origin = origin;
+            this.destination = destination;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="copyResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class copyResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool status;
+        
+        public copyResponse()
+        {
+        }
+        
+        public copyResponse(bool status)
+        {
+            this.status = status;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="delete", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class deleteRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string path;
+        
+        public deleteRequest()
+        {
+        }
+        
+        public deleteRequest(string path)
+        {
+            this.path = path;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="deleteResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class deleteResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool status;
+        
+        public deleteResponse()
+        {
+        }
+        
+        public deleteResponse(bool status)
+        {
+            this.status = status;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="exists", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class existsRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string path;
+        
+        public existsRequest()
+        {
+        }
+        
+        public existsRequest(string path)
+        {
+            this.path = path;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="existsResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class existsResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool status;
+        
+        public existsResponse()
+        {
+        }
+        
+        public existsResponse(bool status)
+        {
+            this.status = status;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="create", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class createRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string path;
+        
+        public createRequest()
+        {
+        }
+        
+        public createRequest(string path)
+        {
+            this.path = path;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="createResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class createResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool status;
+        
+        public createResponse()
+        {
+        }
+        
+        public createResponse(bool status)
+        {
+            this.status = status;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getContents", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class getContentsRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string path;
+        
+        public getContentsRequest()
+        {
+        }
+        
+        public getContentsRequest(string path)
+        {
+            this.path = path;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getContentsResponse", WrapperNamespace="http://system.server.sirius.org/", IsWrapped=true)]
+    public partial class getContentsResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://system.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("contents", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true)]
+        public string[] contents;
+        
+        public getContentsResponse()
+        {
+        }
+        
+        public getContentsResponse(string[] contents)
+        {
+            this.contents = contents;
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface DirectoryOperationsChannel : Sirius.Client.Core.Sys.Dir.DirectoryOperations, System.ServiceModel.IClientChannel
+    {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class DirectoryOperationsClient : System.ServiceModel.ClientBase<Sirius.Client.Core.Sys.Dir.DirectoryOperations>, Sirius.Client.Core.Sys.Dir.DirectoryOperations
+    {
+        
+        public DirectoryOperationsClient()
+        {
+        }
+        
+        public DirectoryOperationsClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName)
+        {
+        }
+        
+        public DirectoryOperationsClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress)
+        {
+        }
+        
+        public DirectoryOperationsClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress)
+        {
+        }
+        
+        public DirectoryOperationsClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress)
+        {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.Client.Core.Sys.Dir.moveDirectoryResponse Sirius.Client.Core.Sys.Dir.DirectoryOperations.moveDirectory(Sirius.Client.Core.Sys.Dir.moveDirectoryRequest request)
+        {
+            return base.Channel.moveDirectory(request);
+        }
+        
+        public bool moveDirectory(string origin, string destination)
+        {
+            Sirius.Client.Core.Sys.Dir.moveDirectoryRequest inValue = new Sirius.Client.Core.Sys.Dir.moveDirectoryRequest();
+            inValue.origin = origin;
+            inValue.destination = destination;
+            Sirius.Client.Core.Sys.Dir.moveDirectoryResponse retVal = ((Sirius.Client.Core.Sys.Dir.DirectoryOperations)(this)).moveDirectory(inValue);
+            return retVal.status;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.Client.Core.Sys.Dir.moveDirectoryExResponse Sirius.Client.Core.Sys.Dir.DirectoryOperations.moveDirectoryEx(Sirius.Client.Core.Sys.Dir.moveDirectoryExRequest request)
+        {
+            return base.Channel.moveDirectoryEx(request);
+        }
+        
+        public bool moveDirectoryEx(string origin, string destination, bool overwrite)
+        {
+            Sirius.Client.Core.Sys.Dir.moveDirectoryExRequest inValue = new Sirius.Client.Core.Sys.Dir.moveDirectoryExRequest();
+            inValue.origin = origin;
+            inValue.destination = destination;
+            inValue.overwrite = overwrite;
+            Sirius.Client.Core.Sys.Dir.moveDirectoryExResponse retVal = ((Sirius.Client.Core.Sys.Dir.DirectoryOperations)(this)).moveDirectoryEx(inValue);
+            return retVal.status;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.Client.Core.Sys.Dir.getContentsExResponse Sirius.Client.Core.Sys.Dir.DirectoryOperations.getContentsEx(Sirius.Client.Core.Sys.Dir.getContentsExRequest request)
+        {
+            return base.Channel.getContentsEx(request);
+        }
+        
+        public string[] getContentsEx(string path, bool recursive)
+        {
+            Sirius.Client.Core.Sys.Dir.getContentsExRequest inValue = new Sirius.Client.Core.Sys.Dir.getContentsExRequest();
+            inValue.path = path;
+            inValue.recursive = recursive;
+            Sirius.Client.Core.Sys.Dir.getContentsExResponse retVal = ((Sirius.Client.Core.Sys.Dir.DirectoryOperations)(this)).getContentsEx(inValue);
+            return retVal.contents;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.Client.Core.Sys.Dir.createExResponse Sirius.Client.Core.Sys.Dir.DirectoryOperations.createEx(Sirius.Client.Core.Sys.Dir.createExRequest request)
+        {
+            return base.Channel.createEx(request);
+        }
+        
+        public bool createEx(string path, bool overwrite)
+        {
+            Sirius.Client.Core.Sys.Dir.createExRequest inValue = new Sirius.Client.Core.Sys.Dir.createExRequest();
+            inValue.path = path;
+            inValue.overwrite = overwrite;
+            Sirius.Client.Core.Sys.Dir.createExResponse retVal = ((Sirius.Client.Core.Sys.Dir.DirectoryOperations)(this)).createEx(inValue);
+            return retVal.status;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.Client.Core.Sys.Dir.copyExResponse Sirius.Client.Core.Sys.Dir.DirectoryOperations.copyEx(Sirius.Client.Core.Sys.Dir.copyExRequest request)
+        {
+            return base.Channel.copyEx(request);
+        }
+        
+        public bool copyEx(string origin, string destination, bool overwrite)
+        {
+            Sirius.Client.Core.Sys.Dir.copyExRequest inValue = new Sirius.Client.Core.Sys.Dir.copyExRequest();
+            inValue.origin = origin;
+            inValue.destination = destination;
+            inValue.overwrite = overwrite;
+            Sirius.Client.Core.Sys.Dir.copyExResponse retVal = ((Sirius.Client.Core.Sys.Dir.DirectoryOperations)(this)).copyEx(inValue);
+            return retVal.status;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.Client.Core.Sys.Dir.copyResponse Sirius.Client.Core.Sys.Dir.DirectoryOperations.copy(Sirius.Client.Core.Sys.Dir.copyRequest request)
+        {
+            return base.Channel.copy(request);
+        }
+        
+        public bool copy(string origin, string destination)
+        {
+            Sirius.Client.Core.Sys.Dir.copyRequest inValue = new Sirius.Client.Core.Sys.Dir.copyRequest();
+            inValue.origin = origin;
+            inValue.destination = destination;
+            Sirius.Client.Core.Sys.Dir.copyResponse retVal = ((Sirius.Client.Core.Sys.Dir.DirectoryOperations)(this)).copy(inValue);
+            return retVal.status;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.Client.Core.Sys.Dir.deleteResponse Sirius.Client.Core.Sys.Dir.DirectoryOperations.delete(Sirius.Client.Core.Sys.Dir.deleteRequest request)
+        {
+            return base.Channel.delete(request);
+        }
+        
+        public bool delete(string path)
+        {
+            Sirius.Client.Core.Sys.Dir.deleteRequest inValue = new Sirius.Client.Core.Sys.Dir.deleteRequest();
+            inValue.path = path;
+            Sirius.Client.Core.Sys.Dir.deleteResponse retVal = ((Sirius.Client.Core.Sys.Dir.DirectoryOperations)(this)).delete(inValue);
+            return retVal.status;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.Client.Core.Sys.Dir.existsResponse Sirius.Client.Core.Sys.Dir.DirectoryOperations.exists(Sirius.Client.Core.Sys.Dir.existsRequest request)
+        {
+            return base.Channel.exists(request);
+        }
+        
+        public bool exists(string path)
+        {
+            Sirius.Client.Core.Sys.Dir.existsRequest inValue = new Sirius.Client.Core.Sys.Dir.existsRequest();
+            inValue.path = path;
+            Sirius.Client.Core.Sys.Dir.existsResponse retVal = ((Sirius.Client.Core.Sys.Dir.DirectoryOperations)(this)).exists(inValue);
+            return retVal.status;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.Client.Core.Sys.Dir.createResponse Sirius.Client.Core.Sys.Dir.DirectoryOperations.create(Sirius.Client.Core.Sys.Dir.createRequest request)
+        {
+            return base.Channel.create(request);
+        }
+        
+        public bool create(string path)
+        {
+            Sirius.Client.Core.Sys.Dir.createRequest inValue = new Sirius.Client.Core.Sys.Dir.createRequest();
+            inValue.path = path;
+            Sirius.Client.Core.Sys.Dir.createResponse retVal = ((Sirius.Client.Core.Sys.Dir.DirectoryOperations)(this)).create(inValue);
+            return retVal.status;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.Client.Core.Sys.Dir.getContentsResponse Sirius.Client.Core.Sys.Dir.DirectoryOperations.getContents(Sirius.Client.Core.Sys.Dir.getContentsRequest request)
+        {
+            return base.Channel.getContents(request);
+        }
+        
+        public string[] getContents(string path)
+        {
+            Sirius.Client.Core.Sys.Dir.getContentsRequest inValue = new Sirius.Client.Core.Sys.Dir.getContentsRequest();
+            inValue.path = path;
+            Sirius.Client.Core.Sys.Dir.getContentsResponse retVal = ((Sirius.Client.Core.Sys.Dir.DirectoryOperations)(this)).getContents(inValue);
+            return retVal.contents;
         }
     }
 }
