@@ -8,68 +8,23 @@
 package org.sirius.client.core.system.file;
 
 public interface FileOperations extends java.rmi.Remote {
-	public java.lang.String[] getContentsEx(java.lang.String arg0, boolean arg1)
-			throws java.rmi.RemoteException,
-			org.sirius.client.core.system.file.IOException;
-
-	public boolean copyEx(java.lang.String arg0, java.lang.String arg1,
-			boolean arg2) throws java.rmi.RemoteException,
-			org.sirius.client.core.system.file.IOException;
-
-	public boolean createFile(java.lang.String arg0)
-			throws java.rmi.RemoteException;
-
-	public java.lang.String[] getContentsEx2(java.lang.String arg0, int arg1,
-			int arg2) throws java.rmi.RemoteException,
-			org.sirius.client.core.system.file.IOException;
-
-	public boolean appendEx(java.lang.String arg0, java.lang.String arg1)
-			throws java.rmi.RemoteException;
-
-	public boolean createFileEx(java.lang.String arg0, boolean arg1)
-			throws java.rmi.RemoteException;
-
-	public byte[] getAllBytes(java.lang.String arg0)
-			throws java.rmi.RemoteException;
-
-	public boolean moveEx(java.lang.String arg0, java.lang.String arg1,
-			boolean arg2) throws java.rmi.RemoteException,
-			org.sirius.client.core.system.file.IOException;
-
-	public boolean writeEx(java.lang.String arg0, java.lang.String arg1)
-			throws java.rmi.RemoteException;
-
-	public boolean append(java.lang.String arg0, byte[] arg1)
-			throws java.rmi.RemoteException;
-
-	public long size(java.lang.String arg0) throws java.rmi.RemoteException;
-
-	public boolean write(java.lang.String arg0, byte[] arg1)
-			throws java.rmi.RemoteException;
-
-	public boolean copy(java.lang.String arg0, java.lang.String arg1)
-			throws java.rmi.RemoteException,
-			org.sirius.client.core.system.file.IOException;
-
-	public boolean delete(java.lang.String arg0)
-			throws java.rmi.RemoteException;
-
-	public boolean exists(java.lang.String arg0)
-			throws java.rmi.RemoteException;
-
-	public java.lang.String[] head(java.lang.String arg0, int arg1)
-			throws java.rmi.RemoteException,
-			org.sirius.client.core.system.file.IOException;
-
-	public java.lang.String[] tail(java.lang.String arg0, int arg1)
-			throws java.rmi.RemoteException,
-			org.sirius.client.core.system.file.IOException;
-
-	public boolean move(java.lang.String arg0, java.lang.String arg1)
-			throws java.rmi.RemoteException,
-			org.sirius.client.core.system.file.IOException;
-
-	public java.lang.String[] getContents(java.lang.String arg0)
-			throws java.rmi.RemoteException,
-			org.sirius.client.core.system.file.IOException;
+    public boolean fileExists(java.lang.String fileName) throws java.rmi.RemoteException;
+    public boolean copyEx(java.lang.String origin, java.lang.String destination, boolean overwrite) throws java.rmi.RemoteException, org.sirius.client.core.system.file.IOException;
+    public boolean createFile(java.lang.String fileName) throws java.rmi.RemoteException;
+    public java.lang.String[] getFileContents(java.lang.String path) throws java.rmi.RemoteException, org.sirius.client.core.system.file.IOException;
+    public java.lang.String[] getFileContentsEx2(java.lang.String path, int start, int number) throws java.rmi.RemoteException, org.sirius.client.core.system.file.IOException;
+    public java.lang.String[] getFileContentsEx(java.lang.String path, int start) throws java.rmi.RemoteException, org.sirius.client.core.system.file.IOException;
+    public boolean appendEx(java.lang.String path, java.lang.String text) throws java.rmi.RemoteException, org.sirius.client.core.system.file.IOException;
+    public boolean createFileEx(java.lang.String fileName, boolean overwrite) throws java.rmi.RemoteException;
+    public boolean deleteFile(java.lang.String fileName) throws java.rmi.RemoteException;
+    public byte[] getAllBytes(java.lang.String fileName) throws java.rmi.RemoteException;
+    public boolean moveEx(java.lang.String origin, java.lang.String destination, boolean overwrite) throws java.rmi.RemoteException, org.sirius.client.core.system.file.IOException;
+    public boolean writeEx(java.lang.String path, java.lang.String text) throws java.rmi.RemoteException, org.sirius.client.core.system.file.IOException;
+    public boolean append(java.lang.String path, byte[] content) throws java.rmi.RemoteException, org.sirius.client.core.system.file.IOException;
+    public long size(java.lang.String fileName) throws java.rmi.RemoteException;
+    public boolean write(java.lang.String path, byte[] content) throws java.rmi.RemoteException, org.sirius.client.core.system.file.IOException;
+    public boolean copy(java.lang.String origin, java.lang.String destination) throws java.rmi.RemoteException, org.sirius.client.core.system.file.IOException;
+    public java.lang.String[] head(java.lang.String path, int lines) throws java.rmi.RemoteException, org.sirius.client.core.system.file.IOException;
+    public java.lang.String[] tail(java.lang.String path, int lines) throws java.rmi.RemoteException, org.sirius.client.core.system.file.IOException;
+    public boolean move(java.lang.String origin, java.lang.String destination) throws java.rmi.RemoteException, org.sirius.client.core.system.file.IOException;
 }
