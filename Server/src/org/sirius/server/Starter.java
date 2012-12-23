@@ -26,6 +26,8 @@ public class Starter {
 	private static final String DEFAULT_PORT = "21212";
 	private static final String DEFAULT_CONFIG = ".\\modules.csv";
 
+	static ArrayList<Endpoint> endpoints = new ArrayList<Endpoint>(); 
+	
 	/**
 	 * 
 	 * @param config
@@ -78,8 +80,9 @@ public class Starter {
 				endPoint = endPoint.replaceAll("\\$\\{HOST}", host);
 				endPoint = endPoint.replaceAll("\\$\\{PORT}", port);
 				Log4J.log().info("Starting endpoint: " + endPoint);
-				Endpoint.publish(endPoint, Class.forName(option.get_className())
+				Endpoint endpoint = Endpoint.publish(endPoint, Class.forName(option.get_className())
 						.newInstance());
+				endpoints.add(endpoint);
 			} catch(Exception e){
 				Log4J.log().error("Failed publishing server endpoint", e);
 			}
@@ -133,6 +136,15 @@ public class Starter {
 
 		Log4J.log().info("Reading configuration file...");
 		ArrayList<PackageOptions> options = starter.readConfig(config);
+		
+		Log4J.log().info("Starting interanl endpoint...");
+		try {
+		endpoints.add(Endpoint.publish("http://" + host + ":" + port + "/internal", new Internal()));
+		}
+		catch(Exception e){
+			Log4J.log().error("Failed to start interanl endpoint", e);
+		}
+		Log4J.log().info("Done...");
 		
 		Log4J.log().info("Starting endpoints...");
 		starter.startEndPoints(options, host, port);
