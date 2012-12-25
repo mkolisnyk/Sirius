@@ -107,7 +107,6 @@ module Sirius
             response = @client.request :sys, "fileExists" do
               soap.body = {
                 :file_name => file_name,
-
               }
             end
             response.to_hash[:file_exists_response][:status]
