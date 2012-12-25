@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>Sirius</groupId>
 	<artifactId>Sirius-Server</artifactId>
-	<version>0.0.1</version>
+	<version>${package.version}</version>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<resources>
