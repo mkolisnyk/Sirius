@@ -226,8 +226,3 @@ module Sirius
     end
   end
 end
-
-client = Sirius::Client::Core::System::File.new
-
-puts( client.exists?("D:\\Work\\Sirius\\BuildFlow.png") )
-puts( client.exists?("D:\\Work\\Sirius\\BuildFlow23.png") )

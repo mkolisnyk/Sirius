@@ -4,9 +4,9 @@ require 'rubygems/package_task'
     s.platform = Gem::Platform::RUBY
     s.summary = "Sirius Ruby client"
     s.name = "sirius-client"
-    s.version = "0.0"
+    s.version = 0.0
     s.requirements = "none"
-    s.files = FileList["core/**/*.rb", "Rakefile"]
+    s.files = FileList["**/*.rb", "Rakefile"]
     s.homepage = "http://github.com/mkolisnyk/Sirius"
     s.description = "The client for Sirius system"
     s.authors="Myk Kolisnyk"
