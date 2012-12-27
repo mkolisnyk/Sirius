@@ -1,14 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Project ToolsVersion="4.0" DefaultTargets="Build;Package" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion Condition=" '$(ProductVersion)' == '' ">0.0.0</ProductVersion>
+    <ProductVersion Condition="'$(ProductVersion)'==''">0.0.0</ProductVersion>
+    <SolutionDir>..</SolutionDir>
   </PropertyGroup>
-  <Target Name="Build">
-    <MSBuild Projects="..\Sirius.Client.csproj" />
+  <Target Name="Clean">
+    <ConvertToAbsolutePath Paths="$(SolutionDir)">
+      <Output TaskParameter="AbsolutePaths" PropertyName="SolutionDirAbs"/>
+    </ConvertToAbsolutePath>
+    
+    <RemoveDir Directories="$(SolutionDirAbs)\bin\$(Configuration)\" />
+
+    <CreateItem Include="$(SolutionDirAbs)\bin\$(Configuration)\*.*">
+      <Output TaskParameter="Include" ItemName="ClientBinaries"/>
+    </CreateItem>
+
+    <CreateItem Include="$(SolutionDirAbs)\Sirius.CSharp.Client.Package\*.nupkg">
+      <Output TaskParameter="Include" ItemName="Packages"/>
+    </CreateItem>
+
+    <Delete Files="@(ClientBinaries)" />
+    <RemoveDir Directories="$(SolutionDirAbs)\bin\$(Configuration)\" />
+
+    <Delete Files="@(Packages)" />
   </Target>
-  <Target Name="Package">
-    <Exec Command="..\Sirius.CSharp.Client\BuildPublishPackage.cmd ${ProductVersion}" WorkingDirectory="..\Sirius.CSharp.Client" />
+  <Target Name="Build"  DependsOnTargets="Clean">
+    <ConvertToAbsolutePath Paths="$(SolutionDir)">
+      <Output TaskParameter="AbsolutePaths" PropertyName="SolutionDirAbs"/>
+    </ConvertToAbsolutePath>
+    <MSBuild Projects="$(SolutionDirAbs)\SiriusClient.csproj" />
+
+    <CreateItem Include="$(SolutionDirAbs)\bin\$(Configuration)\*.*">
+      <Output TaskParameter="Include" ItemName="ClientBinaries"/>
+    </CreateItem>
+    <Copy SourceFiles="@(ClientBinaries)" DestinationFolder="$(SolutionDirAbs)\Sirius.CSharp.Client.Package\lib\%(ClientBinaries.RecursiveDir)" ContinueOnError="true"/>
+    
+    <Exec Command="$(SolutionDirAbs)\Sirius.CSharp.Client.Package\BuildPublishPackage.cmd $(ProductVersion)" WorkingDirectory="$(SolutionDirAbs)\Sirius.CSharp.Client.Package" />
   </Target>
 </Project>
