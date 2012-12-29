@@ -11,5 +11,11 @@
   		<version>3.7</version>
   		<scope>test</scope>
   	</dependency>
+  	<dependency>
+  		<groupId>Sirius</groupId>
+  		<artifactId>Sirius-Java-Client</artifactId>
+  		<version>LATEST</version>
+  		<scope>test</scope>
+  	</dependency>
   </dependencies>
 </project>
