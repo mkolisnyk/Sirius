@@ -1,9 +1,5 @@
-Given /the "(.*)" is (.*)/ do |path,available|
-  if available == "available"
-    When "I create the \"#{path}\" folder with overwrite" unless @dir_client.exists(path)
-  else
-    When "I delete the \"#{path}\" folder"
-  end
+Given /the "$path" folder doesn't exist/ do |path|
+  @dir_client.delete path
 end
 
 When /copy the "(.*)" folder to the "(.*)" location/ do |origin,destination|
@@ -34,8 +30,8 @@ When /move the "(.*)" folder to the "(.*)" location with(.*) overwrite/ do
   @dir_client.move_directory_ex(origin,destination,overwrite)
 end
 
-Then /the "(.*)" folder is(.*) available/ do |path,flag| 
-  @dir_client.exists(path)
+Then /the "(.*)" folder is {available|missing}/ do |path,flag| 
+  assert_equals( flag = "available", @dir_client.exists(path) )
 end
 
 Then /the "(.*)" folder contains the following entries:/ do |path,table|
