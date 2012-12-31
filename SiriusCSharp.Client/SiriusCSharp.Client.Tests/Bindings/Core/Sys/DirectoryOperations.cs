@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using TechTalk.SpecFlow;
 using Sirius.Client.Core.Sys.Dir;
+using NUnit.Framework;
 
-namespace SiriusCSharp.Client.Tests.Bindings.Core.System
+namespace SiriusCSharp.Client.Tests.Bindings.Core.Sys
 {
     [Binding]
     public class DirectoryOperations : DirectoryOperationsClient
@@ -47,27 +48,35 @@ namespace SiriusCSharp.Client.Tests.Bindings.Core.System
         
         public bool copyEx(string origin, string destination, bool overwrite)
         {
-            return copyEx(origin, destination, overwrite);
+            return base.copyEx(origin, destination, overwrite);
         }
         
         public bool copy(string origin, string destination)
         {
-            return copy(origin, destination);
+            return base.copy(origin, destination);
         }
 
+        [Given(@"the ""(.*)"" folder folder doesn't exist")]
         [When(@"delete the ""(.*)"" folder")]
-        public bool delete(string path)
+        public new bool delete(string path)
         {
             return base.delete(path);
         }
         
-        public bool exists(string path)
+        public new bool exists(string path)
         {
             return base.exists(path);
         }
 
+        [Then(@"I should see the ""(.*)"" folder is {available|missing}")]
+        [Then(@"the ""(.*)"" folder is {available|missing}")]
+        public void VerifyExists(String path, String available) 
+        {
+            Assert.AreEqual(available.Equals("available"), exists(path));
+        }
+
         [When(@"I create the ""(.*)"" folder")]
-        public bool create(string path)
+        public new bool create(string path)
         {
             return base.create(path);
         }
@@ -76,18 +85,5 @@ namespace SiriusCSharp.Client.Tests.Bindings.Core.System
         {
             return base.getContents(path);
         }
-
-        [Then(@"I should see the ""(.*)"" folder is available")]
-        public void ThenIShouldSeeTheFolderIsAvailable(string p0)
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"the ""(.*)"" folder is missing")]
-        public void ThenTheFolderIsMissing(string p0)
-        {
-            ScenarioContext.Current.Pending();
-        }
-
     }
 }

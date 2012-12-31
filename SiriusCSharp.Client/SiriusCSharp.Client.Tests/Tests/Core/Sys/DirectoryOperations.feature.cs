@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SiriusCSharp.Client.Tests.Tests.Core.System
+namespace SiriusCSharp.Client.Tests.Tests.Core.Sys
 {
     using TechTalk.SpecFlow;
     
@@ -72,12 +72,16 @@ namespace SiriusCSharp.Client.Tests.Tests.Core.System
 #line 3
  this.ScenarioSetup(scenarioInfo);
 #line 4
-  testRunner.When("I create the \"./Test\" folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.Given("the \"./Test\" folder folder doesn\'t exist", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 5
-  testRunner.And("delete the \"./Test1\" folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("the \"./Test1\" folder folder doesn\'t exist", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 6
-  testRunner.Then("I should see the \"./Test\" folder is available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.When("I create the \"./Test\" folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 7
+  testRunner.And("delete the \"./Test1\" folder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+  testRunner.Then("I should see the \"./Test\" folder is available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 9
   testRunner.But("the \"./Test1\" folder is missing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
 #line hidden
             this.ScenarioCleanup();

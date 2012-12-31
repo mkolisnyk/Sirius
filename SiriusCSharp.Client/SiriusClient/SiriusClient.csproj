@@ -52,7 +52,9 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="BuildScript\Sirius.Client.msbuild" />
+    <None Include="BuildScript\Sirius.Client.msbuild">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -8,3 +8,6 @@ SiriusCSharp.Client/SiriusClient/obj
 SiriusCSharp.Client/SiriusClient/Sirius.CSharp.Client.Package/obj
 SiriusCSharp.Client/SiriusCSharp.Client.Tests/obj
 SiriusCSharp.Client/SiriusClient/obj
+SiriusCSharp.Client/SiriusCSharp.Client.Tests/bin/*
+SiriusCSharp.Client/SiriusCSharp.Client.Tests/Packages/*
+SiriusCSharp.Client/SiriusClient/obj/*
