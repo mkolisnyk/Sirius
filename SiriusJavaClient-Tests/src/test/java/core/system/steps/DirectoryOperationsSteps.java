@@ -1,7 +1,7 @@
 /**
  * 
  */
-package core.system;
+package core.system.steps;
 
 import java.io.IOException;
 import java.rmi.RemoteException;
@@ -35,6 +35,7 @@ public class DirectoryOperationsSteps extends DirectoryOperationsProxy {
 	 * @see org.sirius.server.system.DirectoryOperations#copy(java.lang.String, java.lang.String)
 	 */
 	@Override
+	@When(value = "I copy the \"$origin\" folder to the \"$destination\" location")
 	public boolean copy(String origin,
 			String destination) throws org.sirius.client.core.system.dir.IOException, RemoteException {
 
@@ -44,12 +45,12 @@ public class DirectoryOperationsSteps extends DirectoryOperationsProxy {
 	/* (non-Javadoc)
 	 * @see org.sirius.server.system.DirectoryOperations#copyEx(java.lang.String, java.lang.String, boolean)
 	 */
-	@Override
-	public boolean copyEx(@WebParam(name = "origin") String arg0,
-			@WebParam(name = "destination") String arg1,
-			@WebParam(name = "overwrite") boolean arg2) throws org.sirius.client.core.system.dir.IOException, RemoteException {
+	@When(value = "I copy the \"$origin\" folder to the \"$destination\" location $with overwriting")
+	public boolean copyEx(String origin,
+			String destination,
+			String with) throws org.sirius.client.core.system.dir.IOException, RemoteException {
 		
-		return super.copyEx(arg0, arg1, arg2);
+		return super.copyEx(origin, destination, with.equals("with"));
 	}
 
 	/* (non-Javadoc)

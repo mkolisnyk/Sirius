@@ -1,7 +1,7 @@
 /**
  * 
  */
-package core.system;
+package core.system.steps;
 
 import java.io.IOException;
 
@@ -34,6 +34,7 @@ public class DirectoryOperationsSteps extends DirectoryOperations {
 	 * java.lang.String)
 	 */
 	@Override
+	@When(value = "I copy the \"$origin\" folder to the \"$destination\" path")
 	public boolean copy(String origin, String destination) throws IOException {
 
 		return super.copy(origin, destination);
@@ -62,7 +63,8 @@ public class DirectoryOperationsSteps extends DirectoryOperations {
 	 * .String)
 	 */
 	@When(value = "I create the \"$path\" folder")
-	public boolean createDirectory(@WebParam(name = "path") String path) {
+	@Aliases(values = { "create the \"$path\" folder" })
+	public boolean createDirectory(String path) {
 
 		return super.createDirectory(path);
 	}
@@ -74,11 +76,11 @@ public class DirectoryOperationsSteps extends DirectoryOperations {
 	 * org.sirius.server.system.DirectoryOperations#createDirectoryEx(java.lang
 	 * .String, boolean)
 	 */
-	@Override
-	public boolean createDirectoryEx(@WebParam(name = "path") String path,
-			@WebParam(name = "overwrite") boolean overwrite) {
+	@When(value = "I create the \"$path\" folder ($with overwrite)")
+	public boolean createDirectoryEx(String path,
+			String with) {
 
-		return super.createDirectoryEx(path, overwrite);
+		return super.createDirectoryEx(path, with.equals("with"));
 	}
 
 	/*
@@ -88,7 +90,7 @@ public class DirectoryOperationsSteps extends DirectoryOperations {
 	 * org.sirius.server.system.DirectoryOperations#delete(java.lang.String)
 	 */
 	@Override
-	@Given(value = "the \"$path\" folder folder doesn't exist")
+	@Given(value = "the \"$path\" folder doesn't exist")
 	@When(value = "I delete the \"$path\" folder")
 	@Aliases(values = { "delete the \"$path\" folder" })
 	public boolean delete(String path) throws IOException {
@@ -148,9 +150,9 @@ public class DirectoryOperationsSteps extends DirectoryOperations {
 	 * org.sirius.server.system.DirectoryOperations#moveDirectory(java.lang.
 	 * String, java.lang.String)
 	 */
-	@Override
-	public boolean moveDirectory(@WebParam(name = "origin") String origin,
-			@WebParam(name = "destination") String destination)
+	@When(value = "I move the \"$origin\" folder to the \"$destination\" path")
+	public boolean moveDirectory(String origin,
+			String destination)
 			throws IOException {
 
 		return super.moveDirectory(origin, destination);
