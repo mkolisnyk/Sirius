@@ -1,7 +1,7 @@
 /**
  * 
  */
-package common;
+package tests.common;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -17,7 +17,10 @@ import org.jbehave.core.reporters.StoryReporterBuilder;
 import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
 
-import core.system.steps.DirectoryOperationsSteps;
+import tests.core.system.steps.DirectoryOperationsSteps;
+
+
+
 
 /**
  * @author KaNoN
@@ -33,7 +36,8 @@ public class StoryCommon extends JUnitStory {
 
 		try {
 			storyURL = new URL("file://" + System.getProperty("user.dir")
-					+ "/src/test/java/stories/");
+					+ "/src/stories/");
+			System.out.println("Path:" + storyURL.toExternalForm());
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}

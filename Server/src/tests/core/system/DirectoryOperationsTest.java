@@ -1,10 +1,11 @@
 /**
  * 
  */
-package core.system;
+package tests.core.system;
 
-import common.StoryCommon;
-import core.system.steps.DirectoryOperationsSteps;
+import tests.common.StoryCommon;
+import tests.core.system.steps.DirectoryOperationsSteps;
+
 
 /**
  * @author KaNoN
