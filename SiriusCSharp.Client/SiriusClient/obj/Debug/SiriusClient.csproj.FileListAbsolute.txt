@@ -1,1 +1,6 @@
 D:\Work\SiriusDev\Sirius\SiriusCSharp.Client\SiriusClient\obj\Debug\ResolveAssemblyReference.cache
+D:\Work\SiriusDev\Sirius\SiriusCSharp.Client\SiriusClient\bin\Debug\SiriusClient.dll.config
+D:\Work\SiriusDev\Sirius\SiriusCSharp.Client\SiriusClient\bin\Debug\SiriusClient.dll
+D:\Work\SiriusDev\Sirius\SiriusCSharp.Client\SiriusClient\bin\Debug\SiriusClient.pdb
+D:\Work\SiriusDev\Sirius\SiriusCSharp.Client\SiriusClient\obj\Debug\SiriusClient.dll
+D:\Work\SiriusDev\Sirius\SiriusCSharp.Client\SiriusClient\obj\Debug\SiriusClient.pdb
