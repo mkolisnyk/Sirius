@@ -1,4 +1,38 @@
-======
-Sirius Ruby Client
+= Sirius Ruby Client Overview
 
-Here is the section dedicated to Ruby implementation of Sirius client
+This is the client library for Sirius test automation platform for Ruby programming language.
+
+= Installation
+
+Ruby client library is delivered as GEM package and can be installed using the following command:
+
+	`gem install sirius-client`
+	
+After that the library can be accessible and can be included using
+
+	`reguire 'sirius.rb'`
+	
+= Sample usage
+
+Once you have an access to Sirius Client classes you can use them as an ordinary code. 
+Typically you just have to initialize the connection to Sirius Server. It's done while creating new
+instance of any library object. For example:
+
+	`@file_client = Sirius::Client::Core::System::FileOperations.new`
+
+If you need to connect to specific instance of Sirius Server you can specify which host and port it listens to:
+
+	`@file_client = Sirius::Client::Core::System::FileOperations.new "my_host","8080"`
+  
+That instruction will connect to the server instance listening the http://my_host:8080 host.
+
+By default the connection is set up for the following URL: http://localhost:21212 
+
+= Authors
+
+Myk Kolisnyk (kolesnik.nickolay@gmail.com)
+
+== Links  
+
+{GitHub project}[https://github.com/mkolisnyk/Sirius]
+{Dedicated blog entries}[http://mkolisnyk.blogspot.co.uk/search/label/Sirius]
