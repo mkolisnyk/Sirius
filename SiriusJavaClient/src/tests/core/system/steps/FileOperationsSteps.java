@@ -1,7 +1,7 @@
 /**
  * 
  */
-package core.system.steps;
+package tests.core.system.steps;
 
 import java.rmi.RemoteException;
 
