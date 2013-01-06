@@ -1,4 +1,2 @@
 call mvn assembly:single -Dpackage.version=%1
-git add -f target/Sirius-%1-release.zip
-git commit -m "Publishing %1 release"
-git push
+.\..\Utils\GCUpload.exe -u:kolesnik.nickolay@gmail.com -p:%GC_PASS% -s:"Publishing %1 release" -f:target/Sirius-%1-release.zip -n:sirius-platform
