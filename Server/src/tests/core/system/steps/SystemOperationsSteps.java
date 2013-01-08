@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.util.Date;
 
 import org.jbehave.core.annotations.Then;
-import org.jbehave.core.annotations.When;
 import org.sirius.server.system.SystemOperations;
 
 /**

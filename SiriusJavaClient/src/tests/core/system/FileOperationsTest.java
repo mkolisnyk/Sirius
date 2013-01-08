@@ -8,7 +8,7 @@ import tests.core.system.steps.FileOperationsSteps;
 
 /**
  * @author KaNoN
- *
+ * 
  */
 public class FileOperationsTest extends StoryCommon {
 

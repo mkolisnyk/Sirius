@@ -8,7 +8,7 @@ import tests.core.system.steps.SystemOperationsSteps;
 
 /**
  * @author KaNoN
- *
+ * 
  */
 public class SystemOperationsTest extends StoryCommon {
 

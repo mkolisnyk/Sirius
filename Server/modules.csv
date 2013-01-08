@@ -3,3 +3,5 @@ http://${HOST}:${PORT}/system/directory		,org.sirius.server.system.DirectoryOper
 http://${HOST}:${PORT}/system/file			,org.sirius.server.system.FileOperations		,Local
 http://${HOST}:${PORT}/system/process		,org.sirius.server.system.ProcessOperations		,Local
 http://${HOST}:${PORT}/system/system		,org.sirius.server.system.SystemOperations		,Local
+http://${HOST}:${PORT}/win32/core/kernel32	,org.sirius.server.win32.core.Kernel32Lib		,Local
+http://${HOST}:${PORT}/win32/core/user32	,org.sirius.server.win32.core.User32Lib			,Local

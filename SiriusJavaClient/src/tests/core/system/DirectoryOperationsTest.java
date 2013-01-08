@@ -12,7 +12,7 @@ import tests.core.system.steps.DirectoryOperationsSteps;
  */
 public class DirectoryOperationsTest extends StoryCommon {
 
-	public DirectoryOperationsTest(){
+	public DirectoryOperationsTest() {
 		this.stepDefinitions.add(new DirectoryOperationsSteps());
 	}
 }

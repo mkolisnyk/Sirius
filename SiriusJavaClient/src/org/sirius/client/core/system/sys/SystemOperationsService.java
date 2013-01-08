@@ -8,9 +8,11 @@
 package org.sirius.client.core.system.sys;
 
 public interface SystemOperationsService extends javax.xml.rpc.Service {
-    public java.lang.String getSystemOperationsPortAddress();
+	public java.lang.String getSystemOperationsPortAddress();
 
-    public org.sirius.client.core.system.sys.SystemOperations getSystemOperationsPort() throws javax.xml.rpc.ServiceException;
+	public org.sirius.client.core.system.sys.SystemOperations getSystemOperationsPort()
+			throws javax.xml.rpc.ServiceException;
 
-    public org.sirius.client.core.system.sys.SystemOperations getSystemOperationsPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
+	public org.sirius.client.core.system.sys.SystemOperations getSystemOperationsPort(
+			java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
 }

@@ -5,7 +5,6 @@ package tests.common;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.LinkedList;
 
 import org.jbehave.core.configuration.Configuration;
@@ -17,17 +16,14 @@ import org.jbehave.core.reporters.StoryReporterBuilder;
 import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
 
-import tests.core.system.steps.DirectoryOperationsSteps;
-
-
 /**
  * @author KaNoN
- *
+ * 
  */
 public class StoryCommon extends JUnitStory {
 
-	public LinkedList<Object> stepDefinitions = new LinkedList<Object>(); 
-	
+	public LinkedList<Object> stepDefinitions = new LinkedList<Object>();
+
 	@Override
 	public Configuration configuration() {
 		URL storyURL = null;
@@ -53,7 +49,6 @@ public class StoryCommon extends JUnitStory {
 	@Override
 	public InjectableStepsFactory stepsFactory() {
 		// varargs, can have more that one steps classes
-		return new InstanceStepsFactory(configuration(),
-				this.stepDefinitions);
+		return new InstanceStepsFactory(configuration(), this.stepDefinitions);
 	}
 }
