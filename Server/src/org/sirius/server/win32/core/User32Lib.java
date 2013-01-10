@@ -107,8 +107,8 @@ public class User32Lib {
 	public boolean EnumWindows(WNDENUMPROC arg0, Pointer arg1) {
 
 		return user32.EnumWindows(arg0, arg1);
-	}*/
-
+	}
+	*/
 	public HWND FindWindow(String arg0, String arg1) {
 
 		return user32.FindWindow(arg0, arg1);
