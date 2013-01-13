@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>Sirius</groupId>
+	<groupId>Sirius-Client</groupId>
 	<artifactId>Sirius-Java-Client</artifactId>
 	<version>${package.version}</version>
 	<build>
@@ -126,7 +126,6 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	<name>Sirius Java Client</name>
 	<dependencies>
 		<dependency>
 			<groupId>axis</groupId>
@@ -138,18 +137,6 @@
 			<artifactId>javax.wsdl</artifactId>
 			<version>1.5.1</version>
 		</dependency>
-		<dependency>
-			<groupId>org.jbehave</groupId>
-			<artifactId>jbehave-core</artifactId>
-			<version>3.7</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.8.1</version>
-			<scope>test</scope>
-		</dependency>
 	</dependencies>
 	<reporting>
 		<plugins>
@@ -160,5 +147,6 @@
 			</plugin>
 		</plugins>
 	</reporting>
+	<name>Sirius Java Client</name>
 	<url>https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient</url>
 </project>

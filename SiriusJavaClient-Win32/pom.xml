@@ -1,12 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>Sirius-Server</groupId>
-	<artifactId>Sirius-Server-Engine</artifactId>
-	<version>${package.version}</version>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Sirius-Client</groupId>
+  <artifactId>Sirius-Client-Win32</artifactId>
+  	<version>${package.version}</version>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
-	    <testSourceDirectory>src/tests</testSourceDirectory>
 		<resources>
 			<resource>
 				<directory>src</directory>
@@ -62,7 +60,6 @@
 							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
 							<addExtensions>true</addExtensions>
 							<classpathLayoutType>repository</classpathLayoutType>
-							<mainClass>org.sirius.server.Starter</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -75,6 +72,7 @@
 					</descriptorRefs>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<executions>
@@ -86,15 +84,6 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>2.4</version>
-				<configuration>
-					<tagNameFormat>v@{project.version}</tagNameFormat>
-					<preparationGoals>package install:install-file</preparationGoals>
-				</configuration>
 			</plugin>
 		</plugins>
 		<pluginManagement>
@@ -136,12 +125,16 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	<name>Sirius Server</name>
 	<dependencies>
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.9</version>
+			<groupId>axis</groupId>
+			<artifactId>axis</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.birt.runtime.3_7_1</groupId>
+			<artifactId>javax.wsdl</artifactId>
+			<version>1.5.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jbehave</groupId>
@@ -155,11 +148,6 @@
 			<version>4.8.1</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>net.java.dev.jna</groupId>
-			<artifactId>platform</artifactId>
-			<version>3.5.1</version>
-		</dependency>
 	</dependencies>
 	<reporting>
 		<plugins>
@@ -170,6 +158,6 @@
 			</plugin>
 		</plugins>
 	</reporting>
-	<url>https://github.com/mkolisnyk/Sirius</url>
-	<description>Sirius is open source platform initially designed for test automation purpose. In general, it is delivered as as set of libraries and execution service which is responsible for actual commands execution.</description>
+
+  <name>SiriusJavaClient-Win32</name>
 </project>

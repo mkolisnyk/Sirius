@@ -4,8 +4,13 @@
 package org.sirius.server;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
+import java.io.FileFilter;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -61,21 +66,42 @@ public class Starter {
 		return options;
 	}
 
+	private String findMatchingFile(String filter){
+		File location = new File(filter);
+		
+		for(String file:location.getParentFile().list() ){
+			if(file.matches(location.getName())){
+				return file;
+			}
+		}
+		
+		return "";
+	}
+	
 	/**
 	 * 
 	 * @param options
 	 * @param host
 	 * @param port
+	 * @throws MalformedURLException 
 	 */
 	public void startEndPoints(ArrayList<PackageOptions> options, String host,
-			String port) {
+			String port) throws MalformedURLException {
 		for (PackageOptions option : options) {
+			ClassLoader loader;
 			if (!option.get_packageLocation().equals("Local")) {
 				Log4J.log()
 						.info("Uploading binary file:"
 								+ option.get_packageLocation());
 
-				// TODO: Add load class instructions
+				String packageFile = findMatchingFile(option.get_packageLocation());
+				File location = new File(packageFile);
+				
+				URL url[] = { location.getAbsoluteFile().toURI().toURL() };
+				loader = new URLClassLoader(url,this.getClass().getClassLoader());
+			}
+			else {
+				loader = this.getClass().getClassLoader();
 			}
 			try {
 				String endPoint = option.get_endPoint();
@@ -83,7 +109,7 @@ public class Starter {
 				endPoint = endPoint.replaceAll("\\$\\{PORT}", port);
 				Log4J.log().info("Starting endpoint: " + endPoint);
 				Endpoint endpoint = Endpoint.publish(endPoint,
-						Class.forName(option.get_className()).newInstance());
+						Class.forName(option.get_className(),true,loader).newInstance());
 				endpoints.add(endpoint);
 			} catch (Exception e) {
 				Log4J.log().error("Failed publishing server endpoint", e);
