@@ -12,14 +12,17 @@ import org.sirius.client.win32.core.types.Hwnd;
 import org.sirius.client.win32.core.types.Rect;
 import org.sirius.client.win32.types.Win32Locator;
 
+import com.sun.jna.platform.win32.WinUser;
+
 /**
  * @author Myk Kolisnyk
  * 
  */
-public class Window {
+public class Window implements WinUser {
 
 	protected Win32Client client;
 	protected Win32Locator locator;
+	protected Window parent;
 
 	/**
 	 * 
@@ -27,6 +30,15 @@ public class Window {
 	public Window(Win32Client client, Win32Locator locator) {
 		this.client = client;
 		this.locator = locator;
+	}
+
+	/**
+	 * 
+	 */
+	public Window(Win32Client client, Window parent, Win32Locator locator) {
+		this.client = client;
+		this.locator = locator;
+		this.parent = parent;
 	}
 
 	public void click() {

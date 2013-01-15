@@ -18,7 +18,13 @@ public class TopLevelWindow extends MovableWindow {
 	 */
 	public TopLevelWindow(Win32Client client, Win32Locator locator) {
 		super(client, locator);
-		// TODO Auto-generated constructor stub
 	}
 
+	public void setActive() throws Exception {
+		this.client.core().user32().setForegroundWindow(locator.getHwnd());
+	}
+	
+	public Menu getMenu(){
+		return null;
+	}
 }
