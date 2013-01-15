@@ -51,15 +51,15 @@ public class Kernel32LibProxy implements
 		return kernel32Lib;
 	}
 
-	public boolean closeHandle(org.sirius.client.win32.core.kernel.Handle arg0)
+	public boolean closeHandle(org.sirius.client.win32.core.types.Handle arg0)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
 		return kernel32Lib.closeHandle(arg0);
 	}
 
-	public org.sirius.client.win32.core.kernel.Pointer localFree(
-			org.sirius.client.win32.core.kernel.Pointer arg0)
+	public org.sirius.client.win32.core.types.Pointer localFree(
+			org.sirius.client.win32.core.types.Pointer arg0)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -73,10 +73,10 @@ public class Kernel32LibProxy implements
 		return kernel32Lib.deleteFile(arg0);
 	}
 
-	public org.sirius.client.win32.core.kernel.Handle createFile(
+	public org.sirius.client.win32.core.types.Handle createFile(
 			java.lang.String arg0, int arg1, int arg2,
-			org.sirius.client.win32.core.kernel.SecurityATTRIBUTES arg3,
-			int arg4, int arg5, org.sirius.client.win32.core.kernel.Handle arg6)
+			org.sirius.client.win32.core.types.SecurityATTRIBUTES arg3,
+			int arg4, int arg5, org.sirius.client.win32.core.types.Handle arg6)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -91,27 +91,27 @@ public class Kernel32LibProxy implements
 	}
 
 	public boolean moveFileEx(java.lang.String arg0, java.lang.String arg1,
-			org.sirius.client.win32.core.kernel.Dword arg2)
+			org.sirius.client.win32.core.types.Dword arg2)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
 		return kernel32Lib.moveFileEx(arg0, arg1, arg2);
 	}
 
-	public int setFileTime(org.sirius.client.win32.core.kernel.Handle arg0,
-			org.sirius.client.win32.core.kernel.Filetime arg1,
-			org.sirius.client.win32.core.kernel.Filetime arg2,
-			org.sirius.client.win32.core.kernel.Filetime arg3)
+	public int setFileTime(org.sirius.client.win32.core.types.Handle arg0,
+			org.sirius.client.win32.core.types.Filetime arg1,
+			org.sirius.client.win32.core.types.Filetime arg2,
+			org.sirius.client.win32.core.types.Filetime arg3)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
 		return kernel32Lib.setFileTime(arg0, arg1, arg2, arg3);
 	}
 
-	public org.sirius.client.win32.core.kernel.Handle createIoCompletionPort(
-			org.sirius.client.win32.core.kernel.Handle arg0,
-			org.sirius.client.win32.core.kernel.Handle arg1,
-			org.sirius.client.win32.core.kernel.Pointer arg2, int arg3)
+	public org.sirius.client.win32.core.types.Handle createIoCompletionPort(
+			org.sirius.client.win32.core.types.Handle arg0,
+			org.sirius.client.win32.core.types.Handle arg1,
+			org.sirius.client.win32.core.types.Pointer arg2, int arg3)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -119,10 +119,10 @@ public class Kernel32LibProxy implements
 	}
 
 	public boolean getQueuedCompletionStatus(
-			org.sirius.client.win32.core.kernel.Handle arg0,
-			org.sirius.client.win32.core.kernel.IntByReference arg1,
-			org.sirius.client.win32.core.kernel.UlongPTRByReference arg2,
-			org.sirius.client.win32.core.kernel.PointerByReference arg3,
+			org.sirius.client.win32.core.types.Handle arg0,
+			org.sirius.client.win32.core.types.IntByReference arg1,
+			org.sirius.client.win32.core.types.UlongPTRByReference arg2,
+			org.sirius.client.win32.core.types.PointerByReference arg3,
 			int arg4) throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -131,9 +131,9 @@ public class Kernel32LibProxy implements
 	}
 
 	public boolean postQueuedCompletionStatus(
-			org.sirius.client.win32.core.kernel.Handle arg0, int arg1,
-			org.sirius.client.win32.core.kernel.Pointer arg2,
-			org.sirius.client.win32.core.kernel.Overlapped arg3)
+			org.sirius.client.win32.core.types.Handle arg0, int arg1,
+			org.sirius.client.win32.core.types.Pointer arg2,
+			org.sirius.client.win32.core.types.Overlapped arg3)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -141,7 +141,7 @@ public class Kernel32LibProxy implements
 	}
 
 	public boolean createDirectory(java.lang.String arg0,
-			org.sirius.client.win32.core.kernel.SecurityATTRIBUTES arg1)
+			org.sirius.client.win32.core.types.SecurityATTRIBUTES arg1)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -156,9 +156,9 @@ public class Kernel32LibProxy implements
 	}
 
 	public int formatMessage(int arg0,
-			org.sirius.client.win32.core.kernel.Pointer arg1, int arg2,
-			int arg3, org.sirius.client.win32.core.kernel.Buffer arg4,
-			int arg5, org.sirius.client.win32.core.kernel.Pointer arg6)
+			org.sirius.client.win32.core.types.Pointer arg1, int arg2,
+			int arg3, org.sirius.client.win32.core.types.Buffer arg4,
+			int arg5, org.sirius.client.win32.core.types.Pointer arg6)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -166,14 +166,14 @@ public class Kernel32LibProxy implements
 				arg6);
 	}
 
-	public org.sirius.client.win32.core.kernel.Handle getCurrentProcess()
+	public org.sirius.client.win32.core.types.Handle getCurrentProcess()
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
 		return kernel32Lib.getCurrentProcess();
 	}
 
-	public org.sirius.client.win32.core.kernel.Handle getCurrentThread()
+	public org.sirius.client.win32.core.types.Handle getCurrentThread()
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -181,16 +181,16 @@ public class Kernel32LibProxy implements
 	}
 
 	public boolean setFileAttributes(java.lang.String arg0,
-			org.sirius.client.win32.core.kernel.Dword arg1)
+			org.sirius.client.win32.core.types.Dword arg1)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
 		return kernel32Lib.setFileAttributes(arg0, arg1);
 	}
 
-	public org.sirius.client.win32.core.kernel.Handle createFileMapping(
-			org.sirius.client.win32.core.kernel.Handle arg0,
-			org.sirius.client.win32.core.kernel.SecurityATTRIBUTES arg1,
+	public org.sirius.client.win32.core.types.Handle createFileMapping(
+			org.sirius.client.win32.core.types.Handle arg0,
+			org.sirius.client.win32.core.types.SecurityATTRIBUTES arg1,
 			int arg2, int arg3, int arg4, java.lang.String arg5)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
@@ -200,11 +200,11 @@ public class Kernel32LibProxy implements
 	}
 
 	public boolean deviceIoControl(
-			org.sirius.client.win32.core.kernel.Handle arg0, int arg1,
-			org.sirius.client.win32.core.kernel.Pointer arg2, int arg3,
-			org.sirius.client.win32.core.kernel.Pointer arg4, int arg5,
-			org.sirius.client.win32.core.kernel.IntByReference arg6,
-			org.sirius.client.win32.core.kernel.Pointer arg7)
+			org.sirius.client.win32.core.types.Handle arg0, int arg1,
+			org.sirius.client.win32.core.types.Pointer arg2, int arg3,
+			org.sirius.client.win32.core.types.Pointer arg4, int arg5,
+			org.sirius.client.win32.core.types.IntByReference arg6,
+			org.sirius.client.win32.core.types.Pointer arg7)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -213,10 +213,10 @@ public class Kernel32LibProxy implements
 	}
 
 	public boolean duplicateHandle(
-			org.sirius.client.win32.core.kernel.Handle arg0,
-			org.sirius.client.win32.core.kernel.Handle arg1,
-			org.sirius.client.win32.core.kernel.Handle arg2,
-			org.sirius.client.win32.core.kernel.HandleByReference arg3,
+			org.sirius.client.win32.core.types.Handle arg0,
+			org.sirius.client.win32.core.types.Handle arg1,
+			org.sirius.client.win32.core.types.Handle arg2,
+			org.sirius.client.win32.core.types.HandleByReference arg3,
 			int arg4, boolean arg5, int arg6) throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -225,9 +225,9 @@ public class Kernel32LibProxy implements
 	}
 
 	public int formatMessage2(int arg0,
-			org.sirius.client.win32.core.kernel.Pointer arg1, int arg2,
-			int arg3, org.sirius.client.win32.core.kernel.Pointer arg4,
-			int arg5, org.sirius.client.win32.core.kernel.Pointer arg6)
+			org.sirius.client.win32.core.types.Pointer arg1, int arg2,
+			int arg3, org.sirius.client.win32.core.types.Pointer arg4,
+			int arg5, org.sirius.client.win32.core.types.Pointer arg6)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -236,10 +236,10 @@ public class Kernel32LibProxy implements
 	}
 
 	public int formatMessage3(int arg0,
-			org.sirius.client.win32.core.kernel.Pointer arg1, int arg2,
+			org.sirius.client.win32.core.types.Pointer arg1, int arg2,
 			int arg3,
-			org.sirius.client.win32.core.kernel.PointerByReference arg4,
-			int arg5, org.sirius.client.win32.core.kernel.Pointer arg6)
+			org.sirius.client.win32.core.types.PointerByReference arg4,
+			int arg5, org.sirius.client.win32.core.types.Pointer arg6)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -248,7 +248,7 @@ public class Kernel32LibProxy implements
 	}
 
 	public boolean getComputerName(org.apache.axis.types.UnsignedShort[] arg0,
-			org.sirius.client.win32.core.kernel.IntByReference arg1)
+			org.sirius.client.win32.core.types.IntByReference arg1)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -268,15 +268,15 @@ public class Kernel32LibProxy implements
 	}
 
 	public boolean getExitCodeProcess(
-			org.sirius.client.win32.core.kernel.Handle arg0,
-			org.sirius.client.win32.core.kernel.IntByReference arg1)
+			org.sirius.client.win32.core.types.Handle arg0,
+			org.sirius.client.win32.core.types.IntByReference arg1)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
 		return kernel32Lib.getExitCodeProcess(arg0, arg1);
 	}
 
-	public org.sirius.client.win32.core.kernel.Hmodule getModuleHandle(
+	public org.sirius.client.win32.core.types.Hmodule getModuleHandle(
 			java.lang.String arg0) throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -298,7 +298,7 @@ public class Kernel32LibProxy implements
 	}
 
 	public boolean getVersionEx2(
-			org.sirius.client.win32.core.kernel.Osversioninfoex arg0)
+			org.sirius.client.win32.core.types.Osversioninfoex arg0)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -306,7 +306,7 @@ public class Kernel32LibProxy implements
 	}
 
 	public boolean globalMemoryStatusEx(
-			org.sirius.client.win32.core.kernel.Memorystatusex arg0)
+			org.sirius.client.win32.core.types.Memorystatusex arg0)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -314,16 +314,16 @@ public class Kernel32LibProxy implements
 	}
 
 	public boolean isWow64Process(
-			org.sirius.client.win32.core.kernel.Handle arg0,
-			org.sirius.client.win32.core.kernel.IntByReference arg1)
+			org.sirius.client.win32.core.types.Handle arg0,
+			org.sirius.client.win32.core.types.IntByReference arg1)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
 		return kernel32Lib.isWow64Process(arg0, arg1);
 	}
 
-	public org.sirius.client.win32.core.kernel.Pointer mapViewOfFile(
-			org.sirius.client.win32.core.kernel.Handle arg0, int arg1,
+	public org.sirius.client.win32.core.types.Pointer mapViewOfFile(
+			org.sirius.client.win32.core.types.Handle arg0, int arg1,
 			int arg2, int arg3, int arg4) throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -331,7 +331,7 @@ public class Kernel32LibProxy implements
 	}
 
 	public boolean setHandleInformation(
-			org.sirius.client.win32.core.kernel.Handle arg0, int arg1, int arg2)
+			org.sirius.client.win32.core.types.Handle arg0, int arg1, int arg2)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -339,7 +339,7 @@ public class Kernel32LibProxy implements
 	}
 
 	public boolean terminateProcess(
-			org.sirius.client.win32.core.kernel.Handle arg0, int arg1)
+			org.sirius.client.win32.core.types.Handle arg0, int arg1)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -347,7 +347,7 @@ public class Kernel32LibProxy implements
 	}
 
 	public boolean unmapViewOfFile(
-			org.sirius.client.win32.core.kernel.Pointer arg0)
+			org.sirius.client.win32.core.types.Pointer arg0)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -355,16 +355,16 @@ public class Kernel32LibProxy implements
 	}
 
 	public int waitForSingleObject(
-			org.sirius.client.win32.core.kernel.Handle arg0, int arg1)
+			org.sirius.client.win32.core.types.Handle arg0, int arg1)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
 		return kernel32Lib.waitForSingleObject(arg0, arg1);
 	}
 
-	public org.sirius.client.win32.core.kernel.Handle createToolhelp32Snapshot(
-			org.sirius.client.win32.core.kernel.Dword arg0,
-			org.sirius.client.win32.core.kernel.Dword arg1)
+	public org.sirius.client.win32.core.types.Handle createToolhelp32Snapshot(
+			org.sirius.client.win32.core.types.Dword arg0,
+			org.sirius.client.win32.core.types.Dword arg1)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -379,8 +379,8 @@ public class Kernel32LibProxy implements
 		return kernel32Lib.getEnvironmentVariable(arg0, arg1, arg2);
 	}
 
-	public org.sirius.client.win32.core.kernel.Dword getLogicalDriveStrings(
-			org.sirius.client.win32.core.kernel.Dword arg0,
+	public org.sirius.client.win32.core.types.Dword getLogicalDriveStrings(
+			org.sirius.client.win32.core.types.Dword arg0,
 			org.apache.axis.types.UnsignedShort[] arg1)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
@@ -396,7 +396,7 @@ public class Kernel32LibProxy implements
 	}
 
 	public int waitForMultipleObjects(int arg0,
-			org.sirius.client.win32.core.kernel.Handle[] arg1, boolean arg2,
+			org.sirius.client.win32.core.types.Handle[] arg1, boolean arg2,
 			int arg3) throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -410,8 +410,8 @@ public class Kernel32LibProxy implements
 		return kernel32Lib.copyFile(arg0, arg1, arg2);
 	}
 
-	public org.sirius.client.win32.core.kernel.Handle createEvent(
-			org.sirius.client.win32.core.kernel.SecurityATTRIBUTES arg0,
+	public org.sirius.client.win32.core.types.Handle createEvent(
+			org.sirius.client.win32.core.types.SecurityATTRIBUTES arg0,
 			boolean arg1, boolean arg2, java.lang.String arg3)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
@@ -419,7 +419,7 @@ public class Kernel32LibProxy implements
 		return kernel32Lib.createEvent(arg0, arg1, arg2, arg3);
 	}
 
-	public int getFileType(org.sirius.client.win32.core.kernel.Handle arg0)
+	public int getFileType(org.sirius.client.win32.core.types.Handle arg0)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -432,15 +432,15 @@ public class Kernel32LibProxy implements
 		return kernel32Lib.getLastError();
 	}
 
-	public int getProcessId(org.sirius.client.win32.core.kernel.Handle arg0)
+	public int getProcessId(org.sirius.client.win32.core.types.Handle arg0)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
 		return kernel32Lib.getProcessId(arg0);
 	}
 
-	public org.sirius.client.win32.core.kernel.Dword getTempPath(
-			org.sirius.client.win32.core.kernel.Dword arg0,
+	public org.sirius.client.win32.core.types.Dword getTempPath(
+			org.sirius.client.win32.core.types.Dword arg0,
 			org.apache.axis.types.UnsignedShort[] arg1)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
@@ -454,7 +454,7 @@ public class Kernel32LibProxy implements
 		return kernel32Lib.getTickCount();
 	}
 
-	public org.sirius.client.win32.core.kernel.Dword getVersion()
+	public org.sirius.client.win32.core.types.Dword getVersion()
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -462,22 +462,22 @@ public class Kernel32LibProxy implements
 	}
 
 	public boolean getVersionEx(
-			org.sirius.client.win32.core.kernel.Osversioninfo arg0)
+			org.sirius.client.win32.core.types.Osversioninfo arg0)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
 		return kernel32Lib.getVersionEx(arg0);
 	}
 
-	public org.sirius.client.win32.core.kernel.Pointer globalFree(
-			org.sirius.client.win32.core.kernel.Pointer arg0)
+	public org.sirius.client.win32.core.types.Pointer globalFree(
+			org.sirius.client.win32.core.types.Pointer arg0)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
 		return kernel32Lib.globalFree(arg0);
 	}
 
-	public org.sirius.client.win32.core.kernel.Pointer localAlloc(int arg0,
+	public org.sirius.client.win32.core.types.Pointer localAlloc(int arg0,
 			int arg1) throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -491,48 +491,48 @@ public class Kernel32LibProxy implements
 		return kernel32Lib.moveFile(arg0, arg1);
 	}
 
-	public org.sirius.client.win32.core.kernel.Handle openProcess(int arg0,
+	public org.sirius.client.win32.core.types.Handle openProcess(int arg0,
 			boolean arg1, int arg2) throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
 		return kernel32Lib.openProcess(arg0, arg1, arg2);
 	}
 
-	public org.sirius.client.win32.core.kernel.Handle openThread(int arg0,
+	public org.sirius.client.win32.core.types.Handle openThread(int arg0,
 			boolean arg1, int arg2) throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
 		return kernel32Lib.openThread(arg0, arg1, arg2);
 	}
 
-	public boolean pulseEvent(org.sirius.client.win32.core.kernel.Handle arg0)
+	public boolean pulseEvent(org.sirius.client.win32.core.types.Handle arg0)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
 		return kernel32Lib.pulseEvent(arg0);
 	}
 
-	public boolean readFile(org.sirius.client.win32.core.kernel.Handle arg0,
-			org.sirius.client.win32.core.kernel.Buffer arg1, int arg2,
-			org.sirius.client.win32.core.kernel.IntByReference arg3,
-			org.sirius.client.win32.core.kernel.Overlapped arg4)
+	public boolean readFile(org.sirius.client.win32.core.types.Handle arg0,
+			org.sirius.client.win32.core.types.Buffer arg1, int arg2,
+			org.sirius.client.win32.core.types.IntByReference arg3,
+			org.sirius.client.win32.core.types.Overlapped arg4)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
 		return kernel32Lib.readFile(arg0, arg1, arg2, arg3, arg4);
 	}
 
-	public boolean readFile2(org.sirius.client.win32.core.kernel.Handle arg0,
-			org.sirius.client.win32.core.kernel.Pointer arg1, int arg2,
-			org.sirius.client.win32.core.kernel.IntByReference arg3,
-			org.sirius.client.win32.core.kernel.Overlapped arg4)
+	public boolean readFile2(org.sirius.client.win32.core.types.Handle arg0,
+			org.sirius.client.win32.core.types.Pointer arg1, int arg2,
+			org.sirius.client.win32.core.types.IntByReference arg3,
+			org.sirius.client.win32.core.types.Overlapped arg4)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
 		return kernel32Lib.readFile2(arg0, arg1, arg2, arg3, arg4);
 	}
 
-	public boolean setEvent(org.sirius.client.win32.core.kernel.Handle arg0)
+	public boolean setEvent(org.sirius.client.win32.core.types.Handle arg0)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();
@@ -545,10 +545,10 @@ public class Kernel32LibProxy implements
 		kernel32Lib.setLastError(arg0);
 	}
 
-	public boolean writeFile(org.sirius.client.win32.core.kernel.Handle arg0,
+	public boolean writeFile(org.sirius.client.win32.core.types.Handle arg0,
 			byte[] arg1, int arg2,
-			org.sirius.client.win32.core.kernel.IntByReference arg3,
-			org.sirius.client.win32.core.kernel.Overlapped arg4)
+			org.sirius.client.win32.core.types.IntByReference arg3,
+			org.sirius.client.win32.core.types.Overlapped arg4)
 			throws java.rmi.RemoteException {
 		if (kernel32Lib == null)
 			_initKernel32LibProxy();

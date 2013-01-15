@@ -36,7 +36,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -45,7 +45,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/",
 						"intByReference"),
-				org.sirius.client.win32.core.user32.IntByReference.class,
+				org.sirius.client.win32.core.types.IntByReference.class,
 				false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
@@ -55,7 +55,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/",
 						"byteByReference"),
-				org.sirius.client.win32.core.user32.ByteByReference.class,
+				org.sirius.client.win32.core.types.ByteByReference.class,
 				false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
@@ -65,7 +65,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/",
 						"intByReference"),
-				org.sirius.client.win32.core.user32.IntByReference.class,
+				org.sirius.client.win32.core.types.IntByReference.class,
 				false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
@@ -84,7 +84,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -118,7 +118,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -127,7 +127,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/",
 						"intByReference"),
-				org.sirius.client.win32.core.user32.IntByReference.class,
+				org.sirius.client.win32.core.types.IntByReference.class,
 				false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
@@ -146,7 +146,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
@@ -164,7 +164,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hicon"),
-				org.sirius.client.win32.core.user32.Hicon.class, false, false);
+				org.sirius.client.win32.core.types.Hicon.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
@@ -195,7 +195,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "hwnd"));
-		oper.setReturnClass(org.sirius.client.win32.core.user32.Hwnd.class);
+		oper.setReturnClass(org.sirius.client.win32.core.types.Hwnd.class);
 		oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
 		oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
 		oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -208,7 +208,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -242,12 +242,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "hdc"));
-		oper.setReturnClass(org.sirius.client.win32.core.user32.Hdc.class);
+		oper.setReturnClass(org.sirius.client.win32.core.types.Hdc.class);
 		oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
 		oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
 		oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -260,7 +260,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "msg"),
-				org.sirius.client.win32.core.user32.Msg.class, false, false);
+				org.sirius.client.win32.core.types.Msg.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -268,7 +268,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -300,7 +300,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -308,12 +308,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "dword"),
-				org.sirius.client.win32.core.user32.Dword.class, false, false);
+				org.sirius.client.win32.core.types.Dword.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "hwnd"));
-		oper.setReturnClass(org.sirius.client.win32.core.user32.Hwnd.class);
+		oper.setReturnClass(org.sirius.client.win32.core.types.Hwnd.class);
 		oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
 		oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
 		oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -331,7 +331,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hinstance"),
-				org.sirius.client.win32.core.user32.Hinstance.class, false,
+				org.sirius.client.win32.core.types.Hinstance.class, false,
 				false);
 		param.setOmittable(true);
 		oper.addParameter(param);
@@ -345,7 +345,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "hicon"));
-		oper.setReturnClass(org.sirius.client.win32.core.user32.Hicon.class);
+		oper.setReturnClass(org.sirius.client.win32.core.types.Hicon.class);
 		oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
 		oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
 		oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -358,7 +358,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hinstance"),
-				org.sirius.client.win32.core.user32.Hinstance.class, false,
+				org.sirius.client.win32.core.types.Hinstance.class, false,
 				false);
 		param.setOmittable(true);
 		oper.addParameter(param);
@@ -400,7 +400,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "handle"));
-		oper.setReturnClass(org.sirius.client.win32.core.user32.Handle.class);
+		oper.setReturnClass(org.sirius.client.win32.core.types.Handle.class);
 		oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
 		oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
 		oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -413,7 +413,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -466,7 +466,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "msg"),
-				org.sirius.client.win32.core.user32.Msg.class, false, false);
+				org.sirius.client.win32.core.types.Msg.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -474,7 +474,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -513,7 +513,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -528,7 +528,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "wparam"),
-				org.sirius.client.win32.core.user32.Wparam.class, false, false);
+				org.sirius.client.win32.core.types.Wparam.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -536,7 +536,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "lparam"),
-				org.sirius.client.win32.core.user32.Lparam.class, false, false);
+				org.sirius.client.win32.core.types.Lparam.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
@@ -551,7 +551,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -560,7 +560,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				new javax.xml.namespace.QName(
 						"com.sun.jna.platform.win32.WinBase.PROCESS_INFORMATION",
 						"processInfoByReference"),
-				org.sirius.client.win32.core.user32.ProcessInfoByReference.class,
+				org.sirius.client.win32.core.types.ProcessInfoByReference.class,
 				false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
@@ -569,7 +569,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hrgn"),
-				org.sirius.client.win32.core.user32.Hrgn.class, false, false);
+				org.sirius.client.win32.core.types.Hrgn.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -577,7 +577,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "dword"),
-				org.sirius.client.win32.core.user32.Dword.class, false, false);
+				org.sirius.client.win32.core.types.Dword.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
@@ -595,7 +595,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -603,7 +603,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hdc"),
-				org.sirius.client.win32.core.user32.Hdc.class, false, false);
+				org.sirius.client.win32.core.types.Hdc.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
@@ -621,7 +621,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "dword"),
-				org.sirius.client.win32.core.user32.Dword.class, false, false);
+				org.sirius.client.win32.core.types.Dword.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -629,7 +629,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "input"),
-				org.sirius.client.win32.core.user32.Input[].class, false, false);
+				org.sirius.client.win32.core.types.Input[].class, false, false);
 		param.setOmittable(true);
 		param.setNillable(true);
 		oper.addParameter(param);
@@ -642,7 +642,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "dword"));
-		oper.setReturnClass(org.sirius.client.win32.core.user32.Dword.class);
+		oper.setReturnClass(org.sirius.client.win32.core.types.Dword.class);
 		oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
 		oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
 		oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -655,12 +655,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "hwnd"));
-		oper.setReturnClass(org.sirius.client.win32.core.user32.Hwnd.class);
+		oper.setReturnClass(org.sirius.client.win32.core.types.Hwnd.class);
 		oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
 		oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
 		oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -673,7 +673,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -681,12 +681,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "hwnd"));
-		oper.setReturnClass(org.sirius.client.win32.core.user32.Hwnd.class);
+		oper.setReturnClass(org.sirius.client.win32.core.types.Hwnd.class);
 		oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
 		oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
 		oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -704,7 +704,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -712,7 +712,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -765,7 +765,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -773,7 +773,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hrgn"),
-				org.sirius.client.win32.core.user32.Hrgn.class, false, false);
+				org.sirius.client.win32.core.types.Hrgn.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -798,7 +798,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -823,7 +823,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
@@ -841,7 +841,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "dword"),
-				org.sirius.client.win32.core.user32.Dword.class, false, false);
+				org.sirius.client.win32.core.types.Dword.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -849,7 +849,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "dword"),
-				org.sirius.client.win32.core.user32.Dword.class, false, false);
+				org.sirius.client.win32.core.types.Dword.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -874,7 +874,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hhook"),
-				org.sirius.client.win32.core.user32.Hhook.class, false, false);
+				org.sirius.client.win32.core.types.Hhook.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -889,7 +889,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "wparam"),
-				org.sirius.client.win32.core.user32.Wparam.class, false, false);
+				org.sirius.client.win32.core.types.Wparam.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -897,12 +897,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "lparam"),
-				org.sirius.client.win32.core.user32.Lparam.class, false, false);
+				org.sirius.client.win32.core.types.Lparam.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "lresult"));
-		oper.setReturnClass(org.sirius.client.win32.core.user32.Lresult.class);
+		oper.setReturnClass(org.sirius.client.win32.core.types.Lresult.class);
 		oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
 		oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
 		oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -915,7 +915,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hhook"),
-				org.sirius.client.win32.core.user32.Hhook.class, false, false);
+				org.sirius.client.win32.core.types.Hhook.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -930,7 +930,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "wparam"),
-				org.sirius.client.win32.core.user32.Wparam.class, false, false);
+				org.sirius.client.win32.core.types.Wparam.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -938,12 +938,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "pointer"),
-				org.sirius.client.win32.core.user32.Pointer.class, false, false);
+				org.sirius.client.win32.core.types.Pointer.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "lresult"));
-		oper.setReturnClass(org.sirius.client.win32.core.user32.Lresult.class);
+		oper.setReturnClass(org.sirius.client.win32.core.types.Lresult.class);
 		oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
 		oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
 		oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -956,12 +956,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "msg"),
-				org.sirius.client.win32.core.user32.Msg.class, false, false);
+				org.sirius.client.win32.core.types.Msg.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "lresult"));
-		oper.setReturnClass(org.sirius.client.win32.core.user32.Lresult.class);
+		oper.setReturnClass(org.sirius.client.win32.core.types.Lresult.class);
 		oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
 		oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
 		oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -974,7 +974,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "flashwinfo"),
-				org.sirius.client.win32.core.user32.Flashwinfo.class, false,
+				org.sirius.client.win32.core.types.Flashwinfo.class, false,
 				false);
 		param.setOmittable(true);
 		oper.addParameter(param);
@@ -1012,7 +1012,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		oper.setName("GetForegroundWindow");
 		oper.setReturnType(new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "hwnd"));
-		oper.setReturnClass(org.sirius.client.win32.core.user32.Hwnd.class);
+		oper.setReturnClass(org.sirius.client.win32.core.types.Hwnd.class);
 		oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
 		oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
 		oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -1032,7 +1032,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "guithreadinfo"),
-				org.sirius.client.win32.core.user32.Guithreadinfo.class, false,
+				org.sirius.client.win32.core.types.Guithreadinfo.class, false,
 				false);
 		param.setOmittable(true);
 		oper.addParameter(param);
@@ -1070,7 +1070,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "lastinputinfo"),
-				org.sirius.client.win32.core.user32.Lastinputinfo.class, false,
+				org.sirius.client.win32.core.types.Lastinputinfo.class, false,
 				false);
 		param.setOmittable(true);
 		oper.addParameter(param);
@@ -1106,7 +1106,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -1114,7 +1114,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "windowinfo"),
-				org.sirius.client.win32.core.user32.Windowinfo.class, false,
+				org.sirius.client.win32.core.types.Windowinfo.class, false,
 				false);
 		param.setOmittable(true);
 		oper.addParameter(param);
@@ -1133,7 +1133,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -1158,7 +1158,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -1170,7 +1170,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "longPTR"));
-		oper.setReturnClass(org.sirius.client.win32.core.user32.LongPTR.class);
+		oper.setReturnClass(org.sirius.client.win32.core.types.LongPTR.class);
 		oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
 		oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
 		oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -1183,7 +1183,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -1191,7 +1191,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "rect"),
-				org.sirius.client.win32.core.user32.Rect.class, false, false);
+				org.sirius.client.win32.core.types.Rect.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
@@ -1209,7 +1209,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -1248,7 +1248,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
@@ -1266,7 +1266,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -1275,7 +1275,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				new javax.xml.namespace.QName(
 						"com.sun.jna.platform.win32.WinBase.PROCESS_INFORMATION",
 						"processInfoByReference"),
-				org.sirius.client.win32.core.user32.ProcessInfoByReference.class,
+				org.sirius.client.win32.core.types.ProcessInfoByReference.class,
 				false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
@@ -1301,7 +1301,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
@@ -1333,7 +1333,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -1372,7 +1372,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
@@ -1390,7 +1390,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -1422,7 +1422,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -1437,12 +1437,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "pointer"),
-				org.sirius.client.win32.core.user32.Pointer.class, false, false);
+				org.sirius.client.win32.core.types.Pointer.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "pointer"));
-		oper.setReturnClass(org.sirius.client.win32.core.user32.Pointer.class);
+		oper.setReturnClass(org.sirius.client.win32.core.types.Pointer.class);
 		oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
 		oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
 		oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -1455,7 +1455,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -1470,12 +1470,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "longPTR"),
-				org.sirius.client.win32.core.user32.LongPTR.class, false, false);
+				org.sirius.client.win32.core.types.LongPTR.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "longPTR"));
-		oper.setReturnClass(org.sirius.client.win32.core.user32.LongPTR.class);
+		oper.setReturnClass(org.sirius.client.win32.core.types.LongPTR.class);
 		oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
 		oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
 		oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -1488,7 +1488,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -1503,12 +1503,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "pointer"),
-				org.sirius.client.win32.core.user32.Pointer.class, false, false);
+				org.sirius.client.win32.core.types.Pointer.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "pointer"));
-		oper.setReturnClass(org.sirius.client.win32.core.user32.Pointer.class);
+		oper.setReturnClass(org.sirius.client.win32.core.types.Pointer.class);
 		oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
 		oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
 		oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -1526,7 +1526,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "msg"),
-				org.sirius.client.win32.core.user32.Msg.class, false, false);
+				org.sirius.client.win32.core.types.Msg.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
@@ -1544,7 +1544,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hhook"),
-				org.sirius.client.win32.core.user32.Hhook.class, false, false);
+				org.sirius.client.win32.core.types.Hhook.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
@@ -1562,7 +1562,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "pointer"),
-				org.sirius.client.win32.core.user32.Pointer.class, false, false);
+				org.sirius.client.win32.core.types.Pointer.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -1587,7 +1587,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -1595,7 +1595,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hdc"),
-				org.sirius.client.win32.core.user32.Hdc.class, false, false);
+				org.sirius.client.win32.core.types.Hdc.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -1603,7 +1603,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "point"),
-				org.sirius.client.win32.core.user32.Point.class, false, false);
+				org.sirius.client.win32.core.types.Point.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -1611,7 +1611,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "size"),
-				org.sirius.client.win32.core.user32.Size.class, false, false);
+				org.sirius.client.win32.core.types.Size.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -1619,7 +1619,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hdc"),
-				org.sirius.client.win32.core.user32.Hdc.class, false, false);
+				org.sirius.client.win32.core.types.Hdc.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -1627,7 +1627,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "point"),
-				org.sirius.client.win32.core.user32.Point.class, false, false);
+				org.sirius.client.win32.core.types.Point.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -1642,7 +1642,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "blendfunction"),
-				org.sirius.client.win32.core.user32.Blendfunction.class, false,
+				org.sirius.client.win32.core.types.Blendfunction.class, false,
 				false);
 		param.setOmittable(true);
 		oper.addParameter(param);
@@ -1668,7 +1668,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "handle"),
-				org.sirius.client.win32.core.user32.Handle.class, false, false);
+				org.sirius.client.win32.core.types.Handle.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -1676,12 +1676,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "dword"),
-				org.sirius.client.win32.core.user32.Dword.class, false, false);
+				org.sirius.client.win32.core.types.Dword.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		oper.setReturnType(new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "dword"));
-		oper.setReturnClass(org.sirius.client.win32.core.user32.Dword.class);
+		oper.setReturnClass(org.sirius.client.win32.core.types.Dword.class);
 		oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
 		oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
 		oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -1694,7 +1694,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				org.apache.axis.description.ParameterDesc.IN,
 				new javax.xml.namespace.QName(
 						"http://core.win32.server.sirius.org/", "hwnd"),
-				org.sirius.client.win32.core.user32.Hwnd.class, false, false);
+				org.sirius.client.win32.core.types.Hwnd.class, false, false);
 		param.setOmittable(true);
 		oper.addParameter(param);
 		param = new org.apache.axis.description.ParameterDesc(
@@ -1764,7 +1764,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 				"com.sun.jna.platform.win32.WinBase.PROCESS_INFORMATION",
 				"processInfoByReference");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.ProcessInfoByReference.class;
+		cls = org.sirius.client.win32.core.types.ProcessInfoByReference.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1772,7 +1772,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "blendfunction");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Blendfunction.class;
+		cls = org.sirius.client.win32.core.types.Blendfunction.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1780,7 +1780,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "byReference");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.ByReference.class;
+		cls = org.sirius.client.win32.core.types.ByReference.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1788,7 +1788,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "byteByReference");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.ByteByReference.class;
+		cls = org.sirius.client.win32.core.types.ByteByReference.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1796,7 +1796,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "dword");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Dword.class;
+		cls = org.sirius.client.win32.core.types.Dword.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1804,7 +1804,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "flashwinfo");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Flashwinfo.class;
+		cls = org.sirius.client.win32.core.types.Flashwinfo.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1812,7 +1812,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "guithreadinfo");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Guithreadinfo.class;
+		cls = org.sirius.client.win32.core.types.Guithreadinfo.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1820,7 +1820,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "handle");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Handle.class;
+		cls = org.sirius.client.win32.core.types.Handle.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1828,7 +1828,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "hardwareinput");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Hardwareinput.class;
+		cls = org.sirius.client.win32.core.types.Hardwareinput.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1836,7 +1836,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "hdc");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Hdc.class;
+		cls = org.sirius.client.win32.core.types.Hdc.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1844,7 +1844,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "hhook");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Hhook.class;
+		cls = org.sirius.client.win32.core.types.Hhook.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1852,7 +1852,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "hicon");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Hicon.class;
+		cls = org.sirius.client.win32.core.types.Hicon.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1860,7 +1860,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "hinstance");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Hinstance.class;
+		cls = org.sirius.client.win32.core.types.Hinstance.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1868,7 +1868,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "hrgn");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Hrgn.class;
+		cls = org.sirius.client.win32.core.types.Hrgn.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1876,7 +1876,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "hwnd");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Hwnd.class;
+		cls = org.sirius.client.win32.core.types.Hwnd.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1884,7 +1884,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "input");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Input.class;
+		cls = org.sirius.client.win32.core.types.Input.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1892,7 +1892,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "inputUNION");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.InputUNION.class;
+		cls = org.sirius.client.win32.core.types.InputUNION.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1900,7 +1900,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "intByReference");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.IntByReference.class;
+		cls = org.sirius.client.win32.core.types.IntByReference.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1908,7 +1908,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "integerType");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.IntegerType.class;
+		cls = org.sirius.client.win32.core.types.IntegerType.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1916,7 +1916,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "keybdinput");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Keybdinput.class;
+		cls = org.sirius.client.win32.core.types.Keybdinput.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1924,7 +1924,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "lastinputinfo");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Lastinputinfo.class;
+		cls = org.sirius.client.win32.core.types.Lastinputinfo.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1932,7 +1932,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "long");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32._long.class;
+		cls = org.sirius.client.win32.core.types._long.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1940,7 +1940,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "longPTR");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.LongPTR.class;
+		cls = org.sirius.client.win32.core.types.LongPTR.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1948,7 +1948,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "lparam");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Lparam.class;
+		cls = org.sirius.client.win32.core.types.Lparam.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1956,7 +1956,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "lresult");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Lresult.class;
+		cls = org.sirius.client.win32.core.types.Lresult.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1964,7 +1964,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "mouseinput");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Mouseinput.class;
+		cls = org.sirius.client.win32.core.types.Mouseinput.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1972,7 +1972,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "msg");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Msg.class;
+		cls = org.sirius.client.win32.core.types.Msg.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1980,7 +1980,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "number");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Number.class;
+		cls = org.sirius.client.win32.core.types.Number.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1988,7 +1988,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "point");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Point.class;
+		cls = org.sirius.client.win32.core.types.Point.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -1996,7 +1996,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "pointer");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Pointer.class;
+		cls = org.sirius.client.win32.core.types.Pointer.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -2004,7 +2004,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "pointerType");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.PointerType.class;
+		cls = org.sirius.client.win32.core.types.PointerType.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -2012,7 +2012,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "processINFORMATION");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.ProcessINFORMATION.class;
+		cls = org.sirius.client.win32.core.types.ProcessINFORMATION.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -2020,7 +2020,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "rect");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Rect.class;
+		cls = org.sirius.client.win32.core.types.Rect.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -2028,7 +2028,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "size");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Size.class;
+		cls = org.sirius.client.win32.core.types.Size.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -2036,7 +2036,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "structure");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Structure.class;
+		cls = org.sirius.client.win32.core.types.Structure.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -2044,7 +2044,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "uintPTR");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.UintPTR.class;
+		cls = org.sirius.client.win32.core.types.UintPTR.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -2052,7 +2052,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "ulongPTR");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.UlongPTR.class;
+		cls = org.sirius.client.win32.core.types.UlongPTR.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -2060,7 +2060,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "union");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Union.class;
+		cls = org.sirius.client.win32.core.types.Union.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -2068,7 +2068,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "windowinfo");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Windowinfo.class;
+		cls = org.sirius.client.win32.core.types.Windowinfo.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -2076,7 +2076,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "word");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Word.class;
+		cls = org.sirius.client.win32.core.types.Word.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -2084,7 +2084,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		qName = new javax.xml.namespace.QName(
 				"http://core.win32.server.sirius.org/", "wparam");
 		cachedSerQNames.add(qName);
-		cls = org.sirius.client.win32.core.user32.Wparam.class;
+		cls = org.sirius.client.win32.core.types.Wparam.class;
 		cachedSerClasses.add(cls);
 		cachedSerFactories.add(beansf);
 		cachedDeserFactories.add(beandf);
@@ -2157,10 +2157,10 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 	}
 
 	public boolean getLayeredWindowAttributes(
-			org.sirius.client.win32.core.user32.Hwnd arg0,
-			org.sirius.client.win32.core.user32.IntByReference arg1,
-			org.sirius.client.win32.core.user32.ByteByReference arg2,
-			org.sirius.client.win32.core.user32.IntByReference arg3)
+			org.sirius.client.win32.core.types.Hwnd arg0,
+			org.sirius.client.win32.core.types.IntByReference arg1,
+			org.sirius.client.win32.core.types.ByteByReference arg2,
+			org.sirius.client.win32.core.types.IntByReference arg3)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -2202,7 +2202,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 	}
 
 	public int getWindowModuleFileName(
-			org.sirius.client.win32.core.user32.Hwnd arg0,
+			org.sirius.client.win32.core.types.Hwnd arg0,
 			org.apache.axis.types.UnsignedShort[] arg1, int arg2)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
@@ -2245,8 +2245,8 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 	}
 
 	public int getWindowThreadProcessId(
-			org.sirius.client.win32.core.user32.Hwnd arg0,
-			org.sirius.client.win32.core.user32.IntByReference arg1)
+			org.sirius.client.win32.core.types.Hwnd arg0,
+			org.sirius.client.win32.core.types.IntByReference arg1)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -2287,7 +2287,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public boolean closeWindow(org.sirius.client.win32.core.user32.Hwnd arg0)
+	public boolean closeWindow(org.sirius.client.win32.core.types.Hwnd arg0)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -2327,7 +2327,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public boolean destroyIcon(org.sirius.client.win32.core.user32.Hicon arg0)
+	public boolean destroyIcon(org.sirius.client.win32.core.types.Hicon arg0)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -2367,7 +2367,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public org.sirius.client.win32.core.user32.Hwnd findWindow(
+	public org.sirius.client.win32.core.types.Hwnd findWindow(
 			java.lang.String arg0, java.lang.String arg1)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
@@ -2397,12 +2397,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 			} else {
 				extractAttachments(_call);
 				try {
-					return (org.sirius.client.win32.core.user32.Hwnd) _resp;
+					return (org.sirius.client.win32.core.types.Hwnd) _resp;
 				} catch (java.lang.Exception _exception) {
-					return (org.sirius.client.win32.core.user32.Hwnd) org.apache.axis.utils.JavaUtils
+					return (org.sirius.client.win32.core.types.Hwnd) org.apache.axis.utils.JavaUtils
 							.convert(
 									_resp,
-									org.sirius.client.win32.core.user32.Hwnd.class);
+									org.sirius.client.win32.core.types.Hwnd.class);
 				}
 			}
 		} catch (org.apache.axis.AxisFault axisFaultException) {
@@ -2410,7 +2410,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public int getClassName(org.sirius.client.win32.core.user32.Hwnd arg0,
+	public int getClassName(org.sirius.client.win32.core.types.Hwnd arg0,
 			org.apache.axis.types.UnsignedShort[] arg1, int arg2)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
@@ -2451,8 +2451,8 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public org.sirius.client.win32.core.user32.Hdc getDC(
-			org.sirius.client.win32.core.user32.Hwnd arg0)
+	public org.sirius.client.win32.core.types.Hdc getDC(
+			org.sirius.client.win32.core.types.Hwnd arg0)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -2481,12 +2481,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 			} else {
 				extractAttachments(_call);
 				try {
-					return (org.sirius.client.win32.core.user32.Hdc) _resp;
+					return (org.sirius.client.win32.core.types.Hdc) _resp;
 				} catch (java.lang.Exception _exception) {
-					return (org.sirius.client.win32.core.user32.Hdc) org.apache.axis.utils.JavaUtils
+					return (org.sirius.client.win32.core.types.Hdc) org.apache.axis.utils.JavaUtils
 							.convert(
 									_resp,
-									org.sirius.client.win32.core.user32.Hdc.class);
+									org.sirius.client.win32.core.types.Hdc.class);
 				}
 			}
 		} catch (org.apache.axis.AxisFault axisFaultException) {
@@ -2494,8 +2494,8 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public int getMessage(org.sirius.client.win32.core.user32.Msg arg0,
-			org.sirius.client.win32.core.user32.Hwnd arg1, int arg2, int arg3)
+	public int getMessage(org.sirius.client.win32.core.types.Msg arg0,
+			org.sirius.client.win32.core.types.Hwnd arg1, int arg2, int arg3)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -2536,9 +2536,9 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public org.sirius.client.win32.core.user32.Hwnd getWindow(
-			org.sirius.client.win32.core.user32.Hwnd arg0,
-			org.sirius.client.win32.core.user32.Dword arg1)
+	public org.sirius.client.win32.core.types.Hwnd getWindow(
+			org.sirius.client.win32.core.types.Hwnd arg0,
+			org.sirius.client.win32.core.types.Dword arg1)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -2567,12 +2567,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 			} else {
 				extractAttachments(_call);
 				try {
-					return (org.sirius.client.win32.core.user32.Hwnd) _resp;
+					return (org.sirius.client.win32.core.types.Hwnd) _resp;
 				} catch (java.lang.Exception _exception) {
-					return (org.sirius.client.win32.core.user32.Hwnd) org.apache.axis.utils.JavaUtils
+					return (org.sirius.client.win32.core.types.Hwnd) org.apache.axis.utils.JavaUtils
 							.convert(
 									_resp,
-									org.sirius.client.win32.core.user32.Hwnd.class);
+									org.sirius.client.win32.core.types.Hwnd.class);
 				}
 			}
 		} catch (org.apache.axis.AxisFault axisFaultException) {
@@ -2580,8 +2580,8 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public org.sirius.client.win32.core.user32.Hicon loadIcon(
-			org.sirius.client.win32.core.user32.Hinstance arg0,
+	public org.sirius.client.win32.core.types.Hicon loadIcon(
+			org.sirius.client.win32.core.types.Hinstance arg0,
 			java.lang.String arg1) throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -2610,12 +2610,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 			} else {
 				extractAttachments(_call);
 				try {
-					return (org.sirius.client.win32.core.user32.Hicon) _resp;
+					return (org.sirius.client.win32.core.types.Hicon) _resp;
 				} catch (java.lang.Exception _exception) {
-					return (org.sirius.client.win32.core.user32.Hicon) org.apache.axis.utils.JavaUtils
+					return (org.sirius.client.win32.core.types.Hicon) org.apache.axis.utils.JavaUtils
 							.convert(
 									_resp,
-									org.sirius.client.win32.core.user32.Hicon.class);
+									org.sirius.client.win32.core.types.Hicon.class);
 				}
 			}
 		} catch (org.apache.axis.AxisFault axisFaultException) {
@@ -2623,8 +2623,8 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public org.sirius.client.win32.core.user32.Handle loadImage(
-			org.sirius.client.win32.core.user32.Hinstance arg0,
+	public org.sirius.client.win32.core.types.Handle loadImage(
+			org.sirius.client.win32.core.types.Hinstance arg0,
 			java.lang.String arg1, int arg2, int arg3, int arg4, int arg5)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
@@ -2656,12 +2656,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 			} else {
 				extractAttachments(_call);
 				try {
-					return (org.sirius.client.win32.core.user32.Handle) _resp;
+					return (org.sirius.client.win32.core.types.Handle) _resp;
 				} catch (java.lang.Exception _exception) {
-					return (org.sirius.client.win32.core.user32.Handle) org.apache.axis.utils.JavaUtils
+					return (org.sirius.client.win32.core.types.Handle) org.apache.axis.utils.JavaUtils
 							.convert(
 									_resp,
-									org.sirius.client.win32.core.user32.Handle.class);
+									org.sirius.client.win32.core.types.Handle.class);
 				}
 			}
 		} catch (org.apache.axis.AxisFault axisFaultException) {
@@ -2669,7 +2669,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public boolean moveWindow(org.sirius.client.win32.core.user32.Hwnd arg0,
+	public boolean moveWindow(org.sirius.client.win32.core.types.Hwnd arg0,
 			int arg1, int arg2, int arg3, int arg4, boolean arg5)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
@@ -2712,8 +2712,8 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public boolean peekMessage(org.sirius.client.win32.core.user32.Msg arg0,
-			org.sirius.client.win32.core.user32.Hwnd arg1, int arg2, int arg3,
+	public boolean peekMessage(org.sirius.client.win32.core.types.Msg arg0,
+			org.sirius.client.win32.core.types.Hwnd arg1, int arg2, int arg3,
 			int arg4) throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -2754,9 +2754,9 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public void postMessage(org.sirius.client.win32.core.user32.Hwnd arg0,
-			int arg1, org.sirius.client.win32.core.user32.Wparam arg2,
-			org.sirius.client.win32.core.user32.Lparam arg3)
+	public void postMessage(org.sirius.client.win32.core.types.Hwnd arg0,
+			int arg1, org.sirius.client.win32.core.types.Wparam arg2,
+			org.sirius.client.win32.core.types.Lparam arg3)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -2789,10 +2789,10 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public boolean redrawWindow(org.sirius.client.win32.core.user32.Hwnd arg0,
-			org.sirius.client.win32.core.user32.ProcessInfoByReference arg1,
-			org.sirius.client.win32.core.user32.Hrgn arg2,
-			org.sirius.client.win32.core.user32.Dword arg3)
+	public boolean redrawWindow(org.sirius.client.win32.core.types.Hwnd arg0,
+			org.sirius.client.win32.core.types.ProcessInfoByReference arg1,
+			org.sirius.client.win32.core.types.Hrgn arg2,
+			org.sirius.client.win32.core.types.Dword arg3)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -2832,8 +2832,8 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public int releaseDC(org.sirius.client.win32.core.user32.Hwnd arg0,
-			org.sirius.client.win32.core.user32.Hdc arg1)
+	public int releaseDC(org.sirius.client.win32.core.types.Hwnd arg0,
+			org.sirius.client.win32.core.types.Hdc arg1)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -2873,9 +2873,9 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public org.sirius.client.win32.core.user32.Dword sendInput(
-			org.sirius.client.win32.core.user32.Dword arg0,
-			org.sirius.client.win32.core.user32.Input[] arg1, int arg2)
+	public org.sirius.client.win32.core.types.Dword sendInput(
+			org.sirius.client.win32.core.types.Dword arg0,
+			org.sirius.client.win32.core.types.Input[] arg1, int arg2)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -2904,12 +2904,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 			} else {
 				extractAttachments(_call);
 				try {
-					return (org.sirius.client.win32.core.user32.Dword) _resp;
+					return (org.sirius.client.win32.core.types.Dword) _resp;
 				} catch (java.lang.Exception _exception) {
-					return (org.sirius.client.win32.core.user32.Dword) org.apache.axis.utils.JavaUtils
+					return (org.sirius.client.win32.core.types.Dword) org.apache.axis.utils.JavaUtils
 							.convert(
 									_resp,
-									org.sirius.client.win32.core.user32.Dword.class);
+									org.sirius.client.win32.core.types.Dword.class);
 				}
 			}
 		} catch (org.apache.axis.AxisFault axisFaultException) {
@@ -2917,8 +2917,8 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public org.sirius.client.win32.core.user32.Hwnd setFocus(
-			org.sirius.client.win32.core.user32.Hwnd arg0)
+	public org.sirius.client.win32.core.types.Hwnd setFocus(
+			org.sirius.client.win32.core.types.Hwnd arg0)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -2947,12 +2947,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 			} else {
 				extractAttachments(_call);
 				try {
-					return (org.sirius.client.win32.core.user32.Hwnd) _resp;
+					return (org.sirius.client.win32.core.types.Hwnd) _resp;
 				} catch (java.lang.Exception _exception) {
-					return (org.sirius.client.win32.core.user32.Hwnd) org.apache.axis.utils.JavaUtils
+					return (org.sirius.client.win32.core.types.Hwnd) org.apache.axis.utils.JavaUtils
 							.convert(
 									_resp,
-									org.sirius.client.win32.core.user32.Hwnd.class);
+									org.sirius.client.win32.core.types.Hwnd.class);
 				}
 			}
 		} catch (org.apache.axis.AxisFault axisFaultException) {
@@ -2960,9 +2960,9 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public org.sirius.client.win32.core.user32.Hwnd setParent(
-			org.sirius.client.win32.core.user32.Hwnd arg0,
-			org.sirius.client.win32.core.user32.Hwnd arg1)
+	public org.sirius.client.win32.core.types.Hwnd setParent(
+			org.sirius.client.win32.core.types.Hwnd arg0,
+			org.sirius.client.win32.core.types.Hwnd arg1)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -2991,12 +2991,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 			} else {
 				extractAttachments(_call);
 				try {
-					return (org.sirius.client.win32.core.user32.Hwnd) _resp;
+					return (org.sirius.client.win32.core.types.Hwnd) _resp;
 				} catch (java.lang.Exception _exception) {
-					return (org.sirius.client.win32.core.user32.Hwnd) org.apache.axis.utils.JavaUtils
+					return (org.sirius.client.win32.core.types.Hwnd) org.apache.axis.utils.JavaUtils
 							.convert(
 									_resp,
-									org.sirius.client.win32.core.user32.Hwnd.class);
+									org.sirius.client.win32.core.types.Hwnd.class);
 				}
 			}
 		} catch (org.apache.axis.AxisFault axisFaultException) {
@@ -3004,8 +3004,8 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public boolean setWindowPos(org.sirius.client.win32.core.user32.Hwnd arg0,
-			org.sirius.client.win32.core.user32.Hwnd arg1, int arg2, int arg3,
+	public boolean setWindowPos(org.sirius.client.win32.core.types.Hwnd arg0,
+			org.sirius.client.win32.core.types.Hwnd arg1, int arg2, int arg3,
 			int arg4, int arg5, int arg6) throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -3047,8 +3047,8 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public int setWindowRgn(org.sirius.client.win32.core.user32.Hwnd arg0,
-			org.sirius.client.win32.core.user32.Hrgn arg1, boolean arg2)
+	public int setWindowRgn(org.sirius.client.win32.core.types.Hwnd arg0,
+			org.sirius.client.win32.core.types.Hrgn arg1, boolean arg2)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -3088,7 +3088,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public boolean showWindow(org.sirius.client.win32.core.user32.Hwnd arg0,
+	public boolean showWindow(org.sirius.client.win32.core.types.Hwnd arg0,
 			int arg1) throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -3128,7 +3128,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public boolean updateWindow(org.sirius.client.win32.core.user32.Hwnd arg0)
+	public boolean updateWindow(org.sirius.client.win32.core.types.Hwnd arg0)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -3169,8 +3169,8 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 	}
 
 	public boolean attachThreadInput(
-			org.sirius.client.win32.core.user32.Dword arg0,
-			org.sirius.client.win32.core.user32.Dword arg1, boolean arg2)
+			org.sirius.client.win32.core.types.Dword arg0,
+			org.sirius.client.win32.core.types.Dword arg1, boolean arg2)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -3210,10 +3210,10 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public org.sirius.client.win32.core.user32.Lresult callNextHookEx(
-			org.sirius.client.win32.core.user32.Hhook arg0, int arg1,
-			org.sirius.client.win32.core.user32.Wparam arg2,
-			org.sirius.client.win32.core.user32.Lparam arg3)
+	public org.sirius.client.win32.core.types.Lresult callNextHookEx(
+			org.sirius.client.win32.core.types.Hhook arg0, int arg1,
+			org.sirius.client.win32.core.types.Wparam arg2,
+			org.sirius.client.win32.core.types.Lparam arg3)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -3242,12 +3242,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 			} else {
 				extractAttachments(_call);
 				try {
-					return (org.sirius.client.win32.core.user32.Lresult) _resp;
+					return (org.sirius.client.win32.core.types.Lresult) _resp;
 				} catch (java.lang.Exception _exception) {
-					return (org.sirius.client.win32.core.user32.Lresult) org.apache.axis.utils.JavaUtils
+					return (org.sirius.client.win32.core.types.Lresult) org.apache.axis.utils.JavaUtils
 							.convert(
 									_resp,
-									org.sirius.client.win32.core.user32.Lresult.class);
+									org.sirius.client.win32.core.types.Lresult.class);
 				}
 			}
 		} catch (org.apache.axis.AxisFault axisFaultException) {
@@ -3255,10 +3255,10 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public org.sirius.client.win32.core.user32.Lresult callNextHookEx2(
-			org.sirius.client.win32.core.user32.Hhook arg0, int arg1,
-			org.sirius.client.win32.core.user32.Wparam arg2,
-			org.sirius.client.win32.core.user32.Pointer arg3)
+	public org.sirius.client.win32.core.types.Lresult callNextHookEx2(
+			org.sirius.client.win32.core.types.Hhook arg0, int arg1,
+			org.sirius.client.win32.core.types.Wparam arg2,
+			org.sirius.client.win32.core.types.Pointer arg3)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -3287,12 +3287,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 			} else {
 				extractAttachments(_call);
 				try {
-					return (org.sirius.client.win32.core.user32.Lresult) _resp;
+					return (org.sirius.client.win32.core.types.Lresult) _resp;
 				} catch (java.lang.Exception _exception) {
-					return (org.sirius.client.win32.core.user32.Lresult) org.apache.axis.utils.JavaUtils
+					return (org.sirius.client.win32.core.types.Lresult) org.apache.axis.utils.JavaUtils
 							.convert(
 									_resp,
-									org.sirius.client.win32.core.user32.Lresult.class);
+									org.sirius.client.win32.core.types.Lresult.class);
 				}
 			}
 		} catch (org.apache.axis.AxisFault axisFaultException) {
@@ -3300,8 +3300,8 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public org.sirius.client.win32.core.user32.Lresult dispatchMessage(
-			org.sirius.client.win32.core.user32.Msg arg0)
+	public org.sirius.client.win32.core.types.Lresult dispatchMessage(
+			org.sirius.client.win32.core.types.Msg arg0)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -3330,12 +3330,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 			} else {
 				extractAttachments(_call);
 				try {
-					return (org.sirius.client.win32.core.user32.Lresult) _resp;
+					return (org.sirius.client.win32.core.types.Lresult) _resp;
 				} catch (java.lang.Exception _exception) {
-					return (org.sirius.client.win32.core.user32.Lresult) org.apache.axis.utils.JavaUtils
+					return (org.sirius.client.win32.core.types.Lresult) org.apache.axis.utils.JavaUtils
 							.convert(
 									_resp,
-									org.sirius.client.win32.core.user32.Lresult.class);
+									org.sirius.client.win32.core.types.Lresult.class);
 				}
 			}
 		} catch (org.apache.axis.AxisFault axisFaultException) {
@@ -3344,7 +3344,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 	}
 
 	public boolean flashWindowEx(
-			org.sirius.client.win32.core.user32.Flashwinfo arg0)
+			org.sirius.client.win32.core.types.Flashwinfo arg0)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -3423,7 +3423,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public org.sirius.client.win32.core.user32.Hwnd getForegroundWindow()
+	public org.sirius.client.win32.core.types.Hwnd getForegroundWindow()
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -3451,12 +3451,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 			} else {
 				extractAttachments(_call);
 				try {
-					return (org.sirius.client.win32.core.user32.Hwnd) _resp;
+					return (org.sirius.client.win32.core.types.Hwnd) _resp;
 				} catch (java.lang.Exception _exception) {
-					return (org.sirius.client.win32.core.user32.Hwnd) org.apache.axis.utils.JavaUtils
+					return (org.sirius.client.win32.core.types.Hwnd) org.apache.axis.utils.JavaUtils
 							.convert(
 									_resp,
-									org.sirius.client.win32.core.user32.Hwnd.class);
+									org.sirius.client.win32.core.types.Hwnd.class);
 				}
 			}
 		} catch (org.apache.axis.AxisFault axisFaultException) {
@@ -3465,7 +3465,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 	}
 
 	public boolean getGUIThreadInfo(int arg0,
-			org.sirius.client.win32.core.user32.Guithreadinfo arg1)
+			org.sirius.client.win32.core.types.Guithreadinfo arg1)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -3546,7 +3546,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 	}
 
 	public boolean getLastInputInfo(
-			org.sirius.client.win32.core.user32.Lastinputinfo arg0)
+			org.sirius.client.win32.core.types.Lastinputinfo arg0)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -3625,8 +3625,8 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public boolean getWindowInfo(org.sirius.client.win32.core.user32.Hwnd arg0,
-			org.sirius.client.win32.core.user32.Windowinfo arg1)
+	public boolean getWindowInfo(org.sirius.client.win32.core.types.Hwnd arg0,
+			org.sirius.client.win32.core.types.Windowinfo arg1)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -3666,7 +3666,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public int getWindowLong(org.sirius.client.win32.core.user32.Hwnd arg0,
+	public int getWindowLong(org.sirius.client.win32.core.types.Hwnd arg0,
 			int arg1) throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -3706,8 +3706,8 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public org.sirius.client.win32.core.user32.LongPTR getWindowLongPtr(
-			org.sirius.client.win32.core.user32.Hwnd arg0, int arg1)
+	public org.sirius.client.win32.core.types.LongPTR getWindowLongPtr(
+			org.sirius.client.win32.core.types.Hwnd arg0, int arg1)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -3736,12 +3736,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 			} else {
 				extractAttachments(_call);
 				try {
-					return (org.sirius.client.win32.core.user32.LongPTR) _resp;
+					return (org.sirius.client.win32.core.types.LongPTR) _resp;
 				} catch (java.lang.Exception _exception) {
-					return (org.sirius.client.win32.core.user32.LongPTR) org.apache.axis.utils.JavaUtils
+					return (org.sirius.client.win32.core.types.LongPTR) org.apache.axis.utils.JavaUtils
 							.convert(
 									_resp,
-									org.sirius.client.win32.core.user32.LongPTR.class);
+									org.sirius.client.win32.core.types.LongPTR.class);
 				}
 			}
 		} catch (org.apache.axis.AxisFault axisFaultException) {
@@ -3749,8 +3749,8 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public boolean getWindowRect(org.sirius.client.win32.core.user32.Hwnd arg0,
-			org.sirius.client.win32.core.user32.Rect arg1)
+	public boolean getWindowRect(org.sirius.client.win32.core.types.Hwnd arg0,
+			org.sirius.client.win32.core.types.Rect arg1)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -3790,7 +3790,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public int getWindowText(org.sirius.client.win32.core.user32.Hwnd arg0,
+	public int getWindowText(org.sirius.client.win32.core.types.Hwnd arg0,
 			org.apache.axis.types.UnsignedShort[] arg1, int arg2)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
@@ -3831,7 +3831,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public int getWindowTextLength(org.sirius.client.win32.core.user32.Hwnd arg0)
+	public int getWindowTextLength(org.sirius.client.win32.core.types.Hwnd arg0)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -3872,8 +3872,8 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 	}
 
 	public boolean invalidateRect(
-			org.sirius.client.win32.core.user32.Hwnd arg0,
-			org.sirius.client.win32.core.user32.ProcessInfoByReference arg1,
+			org.sirius.client.win32.core.types.Hwnd arg0,
+			org.sirius.client.win32.core.types.ProcessInfoByReference arg1,
 			boolean arg2) throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -3913,7 +3913,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public boolean isWindowVisible(org.sirius.client.win32.core.user32.Hwnd arg0)
+	public boolean isWindowVisible(org.sirius.client.win32.core.types.Hwnd arg0)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -3986,7 +3986,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 	}
 
 	public boolean registerHotKey(
-			org.sirius.client.win32.core.user32.Hwnd arg0, int arg1, int arg2,
+			org.sirius.client.win32.core.types.Hwnd arg0, int arg1, int arg2,
 			int arg3) throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -4028,7 +4028,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 	}
 
 	public boolean setForegroundWindow(
-			org.sirius.client.win32.core.user32.Hwnd arg0)
+			org.sirius.client.win32.core.types.Hwnd arg0)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -4068,7 +4068,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public int setWindowLong(org.sirius.client.win32.core.user32.Hwnd arg0,
+	public int setWindowLong(org.sirius.client.win32.core.types.Hwnd arg0,
 			int arg1, int arg2) throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -4109,9 +4109,9 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public org.sirius.client.win32.core.user32.Pointer setWindowLong2(
-			org.sirius.client.win32.core.user32.Hwnd arg0, int arg1,
-			org.sirius.client.win32.core.user32.Pointer arg2)
+	public org.sirius.client.win32.core.types.Pointer setWindowLong2(
+			org.sirius.client.win32.core.types.Hwnd arg0, int arg1,
+			org.sirius.client.win32.core.types.Pointer arg2)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -4140,12 +4140,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 			} else {
 				extractAttachments(_call);
 				try {
-					return (org.sirius.client.win32.core.user32.Pointer) _resp;
+					return (org.sirius.client.win32.core.types.Pointer) _resp;
 				} catch (java.lang.Exception _exception) {
-					return (org.sirius.client.win32.core.user32.Pointer) org.apache.axis.utils.JavaUtils
+					return (org.sirius.client.win32.core.types.Pointer) org.apache.axis.utils.JavaUtils
 							.convert(
 									_resp,
-									org.sirius.client.win32.core.user32.Pointer.class);
+									org.sirius.client.win32.core.types.Pointer.class);
 				}
 			}
 		} catch (org.apache.axis.AxisFault axisFaultException) {
@@ -4153,9 +4153,9 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public org.sirius.client.win32.core.user32.LongPTR setWindowLongPtr(
-			org.sirius.client.win32.core.user32.Hwnd arg0, int arg1,
-			org.sirius.client.win32.core.user32.LongPTR arg2)
+	public org.sirius.client.win32.core.types.LongPTR setWindowLongPtr(
+			org.sirius.client.win32.core.types.Hwnd arg0, int arg1,
+			org.sirius.client.win32.core.types.LongPTR arg2)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -4184,12 +4184,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 			} else {
 				extractAttachments(_call);
 				try {
-					return (org.sirius.client.win32.core.user32.LongPTR) _resp;
+					return (org.sirius.client.win32.core.types.LongPTR) _resp;
 				} catch (java.lang.Exception _exception) {
-					return (org.sirius.client.win32.core.user32.LongPTR) org.apache.axis.utils.JavaUtils
+					return (org.sirius.client.win32.core.types.LongPTR) org.apache.axis.utils.JavaUtils
 							.convert(
 									_resp,
-									org.sirius.client.win32.core.user32.LongPTR.class);
+									org.sirius.client.win32.core.types.LongPTR.class);
 				}
 			}
 		} catch (org.apache.axis.AxisFault axisFaultException) {
@@ -4197,9 +4197,9 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public org.sirius.client.win32.core.user32.Pointer setWindowLongPtr2(
-			org.sirius.client.win32.core.user32.Hwnd arg0, int arg1,
-			org.sirius.client.win32.core.user32.Pointer arg2)
+	public org.sirius.client.win32.core.types.Pointer setWindowLongPtr2(
+			org.sirius.client.win32.core.types.Hwnd arg0, int arg1,
+			org.sirius.client.win32.core.types.Pointer arg2)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -4228,12 +4228,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 			} else {
 				extractAttachments(_call);
 				try {
-					return (org.sirius.client.win32.core.user32.Pointer) _resp;
+					return (org.sirius.client.win32.core.types.Pointer) _resp;
 				} catch (java.lang.Exception _exception) {
-					return (org.sirius.client.win32.core.user32.Pointer) org.apache.axis.utils.JavaUtils
+					return (org.sirius.client.win32.core.types.Pointer) org.apache.axis.utils.JavaUtils
 							.convert(
 									_resp,
-									org.sirius.client.win32.core.user32.Pointer.class);
+									org.sirius.client.win32.core.types.Pointer.class);
 				}
 			}
 		} catch (org.apache.axis.AxisFault axisFaultException) {
@@ -4241,7 +4241,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public boolean translateMessage(org.sirius.client.win32.core.user32.Msg arg0)
+	public boolean translateMessage(org.sirius.client.win32.core.types.Msg arg0)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -4282,7 +4282,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 	}
 
 	public boolean unhookWindowsHookEx(
-			org.sirius.client.win32.core.user32.Hhook arg0)
+			org.sirius.client.win32.core.types.Hhook arg0)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -4323,7 +4323,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 	}
 
 	public boolean unregisterHotKey(
-			org.sirius.client.win32.core.user32.Pointer arg0, int arg1)
+			org.sirius.client.win32.core.types.Pointer arg0, int arg1)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -4364,13 +4364,13 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 	}
 
 	public boolean updateLayeredWindow(
-			org.sirius.client.win32.core.user32.Hwnd arg0,
-			org.sirius.client.win32.core.user32.Hdc arg1,
-			org.sirius.client.win32.core.user32.Point arg2,
-			org.sirius.client.win32.core.user32.Size arg3,
-			org.sirius.client.win32.core.user32.Hdc arg4,
-			org.sirius.client.win32.core.user32.Point arg5, int arg6,
-			org.sirius.client.win32.core.user32.Blendfunction arg7, int arg8)
+			org.sirius.client.win32.core.types.Hwnd arg0,
+			org.sirius.client.win32.core.types.Hdc arg1,
+			org.sirius.client.win32.core.types.Point arg2,
+			org.sirius.client.win32.core.types.Size arg3,
+			org.sirius.client.win32.core.types.Hdc arg4,
+			org.sirius.client.win32.core.types.Point arg5, int arg6,
+			org.sirius.client.win32.core.types.Blendfunction arg7, int arg8)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -4412,9 +4412,9 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 		}
 	}
 
-	public org.sirius.client.win32.core.user32.Dword waitForInputIdle(
-			org.sirius.client.win32.core.user32.Handle arg0,
-			org.sirius.client.win32.core.user32.Dword arg1)
+	public org.sirius.client.win32.core.types.Dword waitForInputIdle(
+			org.sirius.client.win32.core.types.Handle arg0,
+			org.sirius.client.win32.core.types.Dword arg1)
 			throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();
@@ -4443,12 +4443,12 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 			} else {
 				extractAttachments(_call);
 				try {
-					return (org.sirius.client.win32.core.user32.Dword) _resp;
+					return (org.sirius.client.win32.core.types.Dword) _resp;
 				} catch (java.lang.Exception _exception) {
-					return (org.sirius.client.win32.core.user32.Dword) org.apache.axis.utils.JavaUtils
+					return (org.sirius.client.win32.core.types.Dword) org.apache.axis.utils.JavaUtils
 							.convert(
 									_resp,
-									org.sirius.client.win32.core.user32.Dword.class);
+									org.sirius.client.win32.core.types.Dword.class);
 				}
 			}
 		} catch (org.apache.axis.AxisFault axisFaultException) {
@@ -4457,7 +4457,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub
 	}
 
 	public boolean setLayeredWindowAttributes(
-			org.sirius.client.win32.core.user32.Hwnd arg0, int arg1, byte arg2,
+			org.sirius.client.win32.core.types.Hwnd arg0, int arg1, byte arg2,
 			int arg3) throws java.rmi.RemoteException {
 		if (super.cachedEndpoint == null) {
 			throw new org.apache.axis.NoEndPointException();

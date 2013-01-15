@@ -26,8 +26,8 @@ public class Win32Client {
 	public final Win32CoreClient core() {
 		return core;
 	}
-	
-	public final Win32UtilsProxy utils(){
+
+	public final Win32UtilsProxy utils() {
 		return utils;
 	}
 }
