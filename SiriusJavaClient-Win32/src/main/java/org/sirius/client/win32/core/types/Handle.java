@@ -7,8 +7,8 @@
 
 package org.sirius.client.win32.core.types;
 
-public class Handle extends org.sirius.client.win32.core.types.PointerType implements
-		java.io.Serializable {
+public class Handle extends org.sirius.client.win32.core.types.PointerType
+		implements java.io.Serializable {
 	public Handle() {
 	}
 
@@ -54,7 +54,7 @@ public class Handle extends org.sirius.client.win32.core.types.PointerType imple
 
 	static {
 		typeDesc.setXmlType(new javax.xml.namespace.QName(
-				"http://win32.server.sirius.org/", "handle"));
+				"http://core.win32.server.sirius.org/", "handle"));
 	}
 
 	/**

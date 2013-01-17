@@ -1,5 +1,5 @@
 /**
- * PointerType.java
+ * Hresult.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
@@ -7,40 +7,17 @@
 
 package org.sirius.client.win32.core.types;
 
-public abstract class PointerType implements java.io.Serializable {
-	private org.sirius.client.win32.core.types.Pointer pointer;
-
-	public PointerType() {
-	}
-
-	public PointerType(org.sirius.client.win32.core.types.Pointer pointer) {
-		this.pointer = pointer;
-	}
-
-	/**
-	 * Gets the pointer value for this PointerType.
-	 * 
-	 * @return pointer
-	 */
-	public org.sirius.client.win32.core.types.Pointer getPointer() {
-		return pointer;
-	}
-
-	/**
-	 * Sets the pointer value for this PointerType.
-	 * 
-	 * @param pointer
-	 */
-	public void setPointer(org.sirius.client.win32.core.types.Pointer pointer) {
-		this.pointer = pointer;
+public class Hresult extends org.sirius.client.win32.core.types.NativeLong
+		implements java.io.Serializable {
+	public Hresult() {
 	}
 
 	private java.lang.Object __equalsCalc = null;
 
 	public synchronized boolean equals(java.lang.Object obj) {
-		if (!(obj instanceof PointerType))
+		if (!(obj instanceof Hresult))
 			return false;
-		PointerType other = (PointerType) obj;
+		Hresult other = (Hresult) obj;
 		if (obj == null)
 			return false;
 		if (this == obj)
@@ -50,8 +27,7 @@ public abstract class PointerType implements java.io.Serializable {
 		}
 		__equalsCalc = obj;
 		boolean _equals;
-		_equals = true && ((this.pointer == null && other.getPointer() == null) || (this.pointer != null && this.pointer
-				.equals(other.getPointer())));
+		_equals = super.equals(obj);
 		__equalsCalc = null;
 		return _equals;
 	}
@@ -63,29 +39,18 @@ public abstract class PointerType implements java.io.Serializable {
 			return 0;
 		}
 		__hashCodeCalc = true;
-		int _hashCode = 1;
-		if (getPointer() != null) {
-			_hashCode += getPointer().hashCode();
-		}
+		int _hashCode = super.hashCode();
 		__hashCodeCalc = false;
 		return _hashCode;
 	}
 
 	// Type metadata
 	private static org.apache.axis.description.TypeDesc typeDesc = new org.apache.axis.description.TypeDesc(
-			PointerType.class, true);
+			Hresult.class, true);
 
 	static {
 		typeDesc.setXmlType(new javax.xml.namespace.QName(
-				"http://core.win32.server.sirius.org/", "pointerType"));
-		org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
-		elemField.setFieldName("pointer");
-		elemField.setXmlName(new javax.xml.namespace.QName("", "pointer"));
-		elemField.setXmlType(new javax.xml.namespace.QName(
-				"http://core.win32.server.sirius.org/", "pointer"));
-		elemField.setMinOccurs(0);
-		elemField.setNillable(false);
-		typeDesc.addFieldDesc(elemField);
+				"http://core.win32.server.sirius.org/", "hresult"));
 	}
 
 	/**

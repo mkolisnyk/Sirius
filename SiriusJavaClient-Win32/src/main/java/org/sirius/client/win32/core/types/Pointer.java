@@ -49,7 +49,7 @@ public class Pointer implements java.io.Serializable {
 
 	static {
 		typeDesc.setXmlType(new javax.xml.namespace.QName(
-				"http://win32.server.sirius.org/", "pointer"));
+				"http://core.win32.server.sirius.org/", "pointer"));
 	}
 
 	/**

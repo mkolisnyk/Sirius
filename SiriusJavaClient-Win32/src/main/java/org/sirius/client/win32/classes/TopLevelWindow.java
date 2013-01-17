@@ -25,6 +25,7 @@ public class TopLevelWindow extends MovableWindow {
 	}
 	
 	public Menu getMenu(){
+		
 		return null;
 	}
 }

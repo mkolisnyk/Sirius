@@ -54,7 +54,7 @@ public class Hwnd extends org.sirius.client.win32.core.types.Handle implements
 
 	static {
 		typeDesc.setXmlType(new javax.xml.namespace.QName(
-				"http://win32.server.sirius.org/", "hwnd"));
+				"http://core.win32.server.sirius.org/", "hwnd"));
 	}
 
 	/**

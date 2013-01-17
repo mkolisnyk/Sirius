@@ -8,7 +8,7 @@ import org.sirius.client.win32.types.Win32Locator;
 
 /**
  * @author Myk Kolisnyk
- *
+ * 
  */
 public class MainWindow extends TopLevelWindow {
 
@@ -18,7 +18,21 @@ public class MainWindow extends TopLevelWindow {
 	 */
 	public MainWindow(Win32Client client, Win32Locator locator) {
 		super(client, locator);
-		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * 
+	 * @param executable
+	 * @param params
+	 * @param workingDir
+	 * @throws Exception
+	 */
+	public void start(String executable, String params, String workingDir)
+			throws Exception {
+		this.client
+				.core()
+				.shell32()
+				.shellExecute(this.locator.getHwnd(), null, executable, params,
+						workingDir, SW_SHOW);
+	}
 }
