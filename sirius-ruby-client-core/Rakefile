@@ -1,4 +1,5 @@
 require 'rubygems'
+require 'rubygems/package_task'
 require 'cucumber'
 require 'cucumber/rake/task'
 
@@ -6,7 +7,7 @@ spec = Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
   s.summary = "Sirius Ruby client"
   s.name = "sirius-client-core"
-  s.version = 0.0
+  s.version = File.read('VERSION').chomp
   s.requirements = "none"
   s.files = FileList["lib/**/*.rb", "Rakefile"]
   s.homepage = "http://github.com/mkolisnyk/Sirius"
