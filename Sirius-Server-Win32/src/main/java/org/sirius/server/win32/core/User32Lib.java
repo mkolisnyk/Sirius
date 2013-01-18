@@ -6,6 +6,11 @@ package org.sirius.server.win32.core;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlType;
 
+import org.sirius.server.win32.core.types.WinDefExt.MENUBARINFO;
+import org.sirius.server.win32.core.types.WinDefExt.MENUINFO;
+import org.sirius.server.win32.core.types.WinDefExt.MENUITEMINFO;
+import org.sirius.server.win32.core.types.WinDefExt.UINT;
+
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
 import com.sun.jna.platform.win32.BaseTSD.LONG_PTR;
@@ -15,8 +20,10 @@ import com.sun.jna.platform.win32.WinDef.DWORD;
 import com.sun.jna.platform.win32.WinDef.HDC;
 import com.sun.jna.platform.win32.WinDef.HICON;
 import com.sun.jna.platform.win32.WinDef.HINSTANCE;
+import com.sun.jna.platform.win32.WinDef.HMENU;
 import com.sun.jna.platform.win32.WinDef.HRGN;
 import com.sun.jna.platform.win32.WinDef.HWND;
+import com.sun.jna.platform.win32.WinDef.LONG;
 import com.sun.jna.platform.win32.WinDef.LPARAM;
 import com.sun.jna.platform.win32.WinDef.LRESULT;
 import com.sun.jna.platform.win32.WinDef.RECT;
@@ -43,7 +50,7 @@ import com.sun.jna.ptr.IntByReference;
 @WebService
 public class User32Lib {
 
-	protected User32 user32;
+	protected User32Ext user32;
 
 	@XmlType(namespace="com.sun.jna.platform.win32.WinBase.PROCESS_INFORMATION")
     public static class ProcessInfoByReference extends PROCESS_INFORMATION implements Structure.ByReference {
@@ -60,7 +67,7 @@ public class User32Lib {
 	 * 
 	 */
 	public User32Lib() {
-		user32 = User32.INSTANCE;
+		user32 = User32Ext.INSTANCE;
 	}
 
 	public boolean AttachThreadInput(DWORD arg0, DWORD arg1, boolean arg2) {
@@ -374,4 +381,73 @@ public class User32Lib {
 		return user32.WaitForInputIdle(arg0, arg1);
 	}
 
+	public HMENU GetMenu(HWND hWnd) {
+		
+		return user32.GetMenu(hWnd);
+	}
+
+	public HMENU GetSubMenu(HMENU hMenu, int nPos) {
+		
+		return user32.GetSubMenu(hMenu, nPos);
+	}
+
+	public boolean GetMenuBarInfo(HWND hwnd, LONG idObject, LONG idItem,
+			MENUBARINFO pmbi) {
+		
+		return user32.GetMenuBarInfo(hwnd, idObject, idItem, pmbi);
+	}
+
+	public LONG GetMenuCheckMarkDimensions() {
+		
+		return user32.GetMenuCheckMarkDimensions();
+	}
+
+	public UINT GetMenuDefaultItem(HMENU hMenu, UINT fByPos, UINT gmdiFlags) {
+		
+		return user32.GetMenuDefaultItem(hMenu, fByPos, gmdiFlags);
+	}
+
+	public boolean GetMenuInfo(HMENU hmenu, MENUINFO lpcmi) {
+		
+		return user32.GetMenuInfo(hmenu, lpcmi);
+	}
+
+	public int GetMenuItemCount(HMENU hMenu) {
+		
+		return user32.GetMenuItemCount(hMenu);
+	}
+
+	public UINT GetMenuItemID(HMENU hMenu, int nPos) {
+		
+		return user32.GetMenuItemID(hMenu, nPos);
+	}
+
+	public boolean GetMenuItemInfo(HMENU hMenu, UINT uItem,
+			boolean fByPosition, MENUITEMINFO lpmii) {
+		
+		return user32.GetMenuItemInfo(hMenu, uItem, fByPosition, lpmii);
+	}
+
+	public boolean GetMenuItemRect(HWND hWnd, HMENU hMenu, UINT uItem, RECT rect) {
+		
+		return user32.GetMenuItemRect(hWnd, hMenu, uItem, rect);
+	}
+
+	public UINT GetMenuState(HMENU hMenu, UINT uId, UINT uFlags) {
+		
+		return user32.GetMenuState(hMenu, uId, uFlags);
+	}
+
+	public int GetMenuString(HMENU hMenu, UINT uIDItem, char[] lpString,
+			int nMaxCount, UINT uFlag) {
+		
+		return user32.GetMenuString(hMenu, uIDItem, lpString, nMaxCount, uFlag);
+	}
+
+	public HMENU GetSystemMenu(HWND hWnd, boolean bRevert) {
+		
+		return user32.GetSystemMenu(hWnd, bRevert);
+	}
+
+	
 }

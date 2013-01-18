@@ -1,5 +1,5 @@
 /**
- * ByteByReference.java
+ * Uint.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
@@ -7,44 +7,14 @@
 
 package org.sirius.client.win32.core.types;
 
-public class ByteByReference  extends org.sirius.client.win32.core.types.ByReference  implements java.io.Serializable {
-    private byte value;
-
-    public ByteByReference() {
-    }
-
-    public ByteByReference(
-           org.sirius.client.win32.core.types.Pointer pointer,
-           byte value) {
-        super(
-            pointer);
-        this.value = value;
-    }
-
-
-    /**
-     * Gets the value value for this ByteByReference.
-     * 
-     * @return value
-     */
-    public byte getValue() {
-        return value;
-    }
-
-
-    /**
-     * Sets the value value for this ByteByReference.
-     * 
-     * @param value
-     */
-    public void setValue(byte value) {
-        this.value = value;
+public class Uint  extends org.sirius.client.win32.core.types.Dword  implements java.io.Serializable {
+    public Uint() {
     }
 
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof ByteByReference)) return false;
-        ByteByReference other = (ByteByReference) obj;
+        if (!(obj instanceof Uint)) return false;
+        Uint other = (Uint) obj;
         if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
@@ -52,8 +22,7 @@ public class ByteByReference  extends org.sirius.client.win32.core.types.ByRefer
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = super.equals(obj) && 
-            this.value == other.getValue();
+        _equals = super.equals(obj);
         __equalsCalc = null;
         return _equals;
     }
@@ -65,23 +34,16 @@ public class ByteByReference  extends org.sirius.client.win32.core.types.ByRefer
         }
         __hashCodeCalc = true;
         int _hashCode = super.hashCode();
-        _hashCode += getValue();
         __hashCodeCalc = false;
         return _hashCode;
     }
 
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(ByteByReference.class, true);
+        new org.apache.axis.description.TypeDesc(Uint.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://core.win32.server.sirius.org/", "byteByReference"));
-        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("value");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "value"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "byte"));
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://core.win32.server.sirius.org/", "uint"));
     }
 
     /**

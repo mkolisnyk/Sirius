@@ -1,5 +1,5 @@
 /**
- * ByteByReference.java
+ * Menuiteminfo.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
@@ -7,44 +7,46 @@
 
 package org.sirius.client.win32.core.types;
 
-public class ByteByReference  extends org.sirius.client.win32.core.types.ByReference  implements java.io.Serializable {
-    private byte value;
+public class Menuiteminfo  extends org.sirius.client.win32.core.types.Structure  implements java.io.Serializable {
+    private int cbSize;
 
-    public ByteByReference() {
+    public Menuiteminfo() {
     }
 
-    public ByteByReference(
-           org.sirius.client.win32.core.types.Pointer pointer,
-           byte value) {
+    public Menuiteminfo(
+           boolean autoRead,
+           boolean autoWrite,
+           int cbSize) {
         super(
-            pointer);
-        this.value = value;
+            autoRead,
+            autoWrite);
+        this.cbSize = cbSize;
     }
 
 
     /**
-     * Gets the value value for this ByteByReference.
+     * Gets the cbSize value for this Menuiteminfo.
      * 
-     * @return value
+     * @return cbSize
      */
-    public byte getValue() {
-        return value;
+    public int getCbSize() {
+        return cbSize;
     }
 
 
     /**
-     * Sets the value value for this ByteByReference.
+     * Sets the cbSize value for this Menuiteminfo.
      * 
-     * @param value
+     * @param cbSize
      */
-    public void setValue(byte value) {
-        this.value = value;
+    public void setCbSize(int cbSize) {
+        this.cbSize = cbSize;
     }
 
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof ByteByReference)) return false;
-        ByteByReference other = (ByteByReference) obj;
+        if (!(obj instanceof Menuiteminfo)) return false;
+        Menuiteminfo other = (Menuiteminfo) obj;
         if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
@@ -53,7 +55,7 @@ public class ByteByReference  extends org.sirius.client.win32.core.types.ByRefer
         __equalsCalc = obj;
         boolean _equals;
         _equals = super.equals(obj) && 
-            this.value == other.getValue();
+            this.cbSize == other.getCbSize();
         __equalsCalc = null;
         return _equals;
     }
@@ -65,21 +67,21 @@ public class ByteByReference  extends org.sirius.client.win32.core.types.ByRefer
         }
         __hashCodeCalc = true;
         int _hashCode = super.hashCode();
-        _hashCode += getValue();
+        _hashCode += getCbSize();
         __hashCodeCalc = false;
         return _hashCode;
     }
 
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(ByteByReference.class, true);
+        new org.apache.axis.description.TypeDesc(Menuiteminfo.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://core.win32.server.sirius.org/", "byteByReference"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://core.win32.server.sirius.org/", "menuiteminfo"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("value");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "value"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "byte"));
+        elemField.setFieldName("cbSize");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "cbSize"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
     }
