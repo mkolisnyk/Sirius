@@ -278,7 +278,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub implem
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://core.win32.server.sirius.org/", "hwnd"), org.sirius.client.win32.core.types.Hwnd.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("com.sun.jna.platform.win32.WinBase.PROCESS_INFORMATION", "processInfoByReference"), PROCESS_INFORMATION.WinBase.win32.platform.jna.sun.com.ProcessInfoByReference.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("com.sun.jna.platform.win32.WinBase.PROCESS_INFORMATION", "processInfoByReference"), org.sirius.client.win32.core.types.ProcessInfoByReference.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg2"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"), boolean.class, false, false);
@@ -947,7 +947,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub implem
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://core.win32.server.sirius.org/", "hwnd"), org.sirius.client.win32.core.types.Hwnd.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("com.sun.jna.platform.win32.WinBase.PROCESS_INFORMATION", "processInfoByReference"), PROCESS_INFORMATION.WinBase.win32.platform.jna.sun.com.ProcessInfoByReference.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("com.sun.jna.platform.win32.WinBase.PROCESS_INFORMATION", "processInfoByReference"), org.sirius.client.win32.core.types.ProcessInfoByReference.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg2"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://core.win32.server.sirius.org/", "hrgn"), org.sirius.client.win32.core.types.Hrgn.class, false, false);
@@ -1188,7 +1188,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub implem
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("com.sun.jna.platform.win32.WinBase.PROCESS_INFORMATION", "processInfoByReference");
             cachedSerQNames.add(qName);
-            cls = PROCESS_INFORMATION.WinBase.win32.platform.jna.sun.com.ProcessInfoByReference.class;
+            cls = org.sirius.client.win32.core.types.ProcessInfoByReference.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -2159,7 +2159,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub implem
 }
     }
 
-    public boolean invalidateRect(org.sirius.client.win32.core.types.Hwnd arg0, PROCESS_INFORMATION.WinBase.win32.platform.jna.sun.com.ProcessInfoByReference arg1, boolean arg2) throws java.rmi.RemoteException {
+    public boolean invalidateRect(org.sirius.client.win32.core.types.Hwnd arg0, org.sirius.client.win32.core.types.ProcessInfoByReference arg1, boolean arg2) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -3471,7 +3471,7 @@ public class User32LibPortBindingStub extends org.apache.axis.client.Stub implem
 }
     }
 
-    public boolean redrawWindow(org.sirius.client.win32.core.types.Hwnd arg0, PROCESS_INFORMATION.WinBase.win32.platform.jna.sun.com.ProcessInfoByReference arg1, org.sirius.client.win32.core.types.Hrgn arg2, org.sirius.client.win32.core.types.Dword arg3) throws java.rmi.RemoteException {
+    public boolean redrawWindow(org.sirius.client.win32.core.types.Hwnd arg0, org.sirius.client.win32.core.types.ProcessInfoByReference arg1, org.sirius.client.win32.core.types.Hrgn arg2, org.sirius.client.win32.core.types.Dword arg3) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }

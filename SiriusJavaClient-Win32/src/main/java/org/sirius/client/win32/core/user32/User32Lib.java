@@ -25,7 +25,7 @@ public interface User32Lib extends java.rmi.Remote {
     public boolean getWindowRect(org.sirius.client.win32.core.types.Hwnd arg0, org.sirius.client.win32.core.types.Rect arg1) throws java.rmi.RemoteException;
     public int getWindowText(org.sirius.client.win32.core.types.Hwnd arg0, org.apache.axis.types.UnsignedShort[] arg1, int arg2) throws java.rmi.RemoteException;
     public int getWindowTextLength(org.sirius.client.win32.core.types.Hwnd arg0) throws java.rmi.RemoteException;
-    public boolean invalidateRect(org.sirius.client.win32.core.types.Hwnd arg0, PROCESS_INFORMATION.WinBase.win32.platform.jna.sun.com.ProcessInfoByReference arg1, boolean arg2) throws java.rmi.RemoteException;
+    public boolean invalidateRect(org.sirius.client.win32.core.types.Hwnd arg0, org.sirius.client.win32.core.types.ProcessInfoByReference arg1, boolean arg2) throws java.rmi.RemoteException;
     public boolean isWindowVisible(org.sirius.client.win32.core.types.Hwnd arg0) throws java.rmi.RemoteException;
     public void postQuitMessage(int arg0) throws java.rmi.RemoteException;
     public boolean registerHotKey(org.sirius.client.win32.core.types.Hwnd arg0, int arg1, int arg2, int arg3) throws java.rmi.RemoteException;
@@ -64,7 +64,7 @@ public interface User32Lib extends java.rmi.Remote {
     public boolean moveWindow(org.sirius.client.win32.core.types.Hwnd arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) throws java.rmi.RemoteException;
     public boolean peekMessage(org.sirius.client.win32.core.types.Msg arg0, org.sirius.client.win32.core.types.Hwnd arg1, int arg2, int arg3, int arg4) throws java.rmi.RemoteException;
     public void postMessage(org.sirius.client.win32.core.types.Hwnd arg0, int arg1, org.sirius.client.win32.core.types.Wparam arg2, org.sirius.client.win32.core.types.Lparam arg3) throws java.rmi.RemoteException;
-    public boolean redrawWindow(org.sirius.client.win32.core.types.Hwnd arg0, PROCESS_INFORMATION.WinBase.win32.platform.jna.sun.com.ProcessInfoByReference arg1, org.sirius.client.win32.core.types.Hrgn arg2, org.sirius.client.win32.core.types.Dword arg3) throws java.rmi.RemoteException;
+    public boolean redrawWindow(org.sirius.client.win32.core.types.Hwnd arg0, org.sirius.client.win32.core.types.ProcessInfoByReference arg1, org.sirius.client.win32.core.types.Hrgn arg2, org.sirius.client.win32.core.types.Dword arg3) throws java.rmi.RemoteException;
     public int releaseDC(org.sirius.client.win32.core.types.Hwnd arg0, org.sirius.client.win32.core.types.Hdc arg1) throws java.rmi.RemoteException;
     public org.sirius.client.win32.core.types.Dword sendInput(org.sirius.client.win32.core.types.Dword arg0, org.sirius.client.win32.core.types.Input[] arg1, int arg2) throws java.rmi.RemoteException;
     public org.sirius.client.win32.core.types.Hwnd setFocus(org.sirius.client.win32.core.types.Hwnd arg0) throws java.rmi.RemoteException;

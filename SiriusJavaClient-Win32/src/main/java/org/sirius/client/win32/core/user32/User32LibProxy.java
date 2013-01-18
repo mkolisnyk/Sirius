@@ -146,7 +146,7 @@ public class User32LibProxy implements org.sirius.client.win32.core.user32.User3
     return user32Lib.getWindowTextLength(arg0);
   }
   
-  public boolean invalidateRect(org.sirius.client.win32.core.types.Hwnd arg0, PROCESS_INFORMATION.WinBase.win32.platform.jna.sun.com.ProcessInfoByReference arg1, boolean arg2) throws java.rmi.RemoteException{
+  public boolean invalidateRect(org.sirius.client.win32.core.types.Hwnd arg0, org.sirius.client.win32.core.types.ProcessInfoByReference arg1, boolean arg2) throws java.rmi.RemoteException{
     if (user32Lib == null)
       _initUser32LibProxy();
     return user32Lib.invalidateRect(arg0, arg1, arg2);
@@ -380,7 +380,7 @@ public class User32LibProxy implements org.sirius.client.win32.core.user32.User3
     user32Lib.postMessage(arg0, arg1, arg2, arg3);
   }
   
-  public boolean redrawWindow(org.sirius.client.win32.core.types.Hwnd arg0, PROCESS_INFORMATION.WinBase.win32.platform.jna.sun.com.ProcessInfoByReference arg1, org.sirius.client.win32.core.types.Hrgn arg2, org.sirius.client.win32.core.types.Dword arg3) throws java.rmi.RemoteException{
+  public boolean redrawWindow(org.sirius.client.win32.core.types.Hwnd arg0, org.sirius.client.win32.core.types.ProcessInfoByReference arg1, org.sirius.client.win32.core.types.Hrgn arg2, org.sirius.client.win32.core.types.Dword arg3) throws java.rmi.RemoteException{
     if (user32Lib == null)
       _initUser32LibProxy();
     return user32Lib.redrawWindow(arg0, arg1, arg2, arg3);
