@@ -3,6 +3,8 @@
  */
 package tests.core.system;
 
+import org.junit.Ignore;
+
 import tests.common.StoryCommon;
 import tests.core.system.steps.FileOperationsSteps;
 
@@ -10,6 +12,7 @@ import tests.core.system.steps.FileOperationsSteps;
  * @author KaNoN
  * 
  */
+@Ignore
 public class FileOperationsTest extends StoryCommon {
 
 	/**
