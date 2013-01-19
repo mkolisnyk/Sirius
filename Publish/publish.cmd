@@ -3,9 +3,9 @@ call mvn assembly:single -Dpackage.version=%1
 
 echo "Publishing Ruby client"
 
-gem push sirius-client-*.gem
+gem push Ruby-Client\sirius-client-*.gem
 
 echo "Publishing C# client"
 
 .\..\Utils\NuGet.exe Update -self
-.\..\Utils\NuGet.exe Push Sirius.CSharp.Client.*.nupkg
+.\..\Utils\NuGet.exe Push CSharp-Client\Sirius.CSharp.Client.*.nupkg
