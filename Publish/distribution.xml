@@ -9,9 +9,9 @@
 		<fileSet>
 		<directory>${basedir}</directory>
 		<includes>
-			<include>*.jar</include>
-			<include>*.gem</include>
-			<include>*.nupkg</include>
+			<include>**/*.jar</include>
+			<include>**/*.gem</include>
+			<include>**/*.nupkg</include>
 		</includes>
 		</fileSet>
 	</fileSets>
