@@ -11,3 +11,10 @@ SiriusCSharp.Client/SiriusClient/obj
 SiriusCSharp.Client/SiriusCSharp.Client.Tests/bin/*
 SiriusCSharp.Client/SiriusCSharp.Client.Tests/Packages/*
 SiriusCSharp.Client/SiriusClient/obj/*
+SiriusCSharp.Client/Sirius.Client.Core/bin/*
+SiriusCSharp.Client/Sirius.Client.Core/obj/*
+SiriusCSharp.Client/Sirius.CSharp.Client.Package/bin/*
+SiriusCSharp.Client/Sirius.CSharp.Client.Package/obj/*
+SiriusCSharp.Client/Sirius.CSharp.Client.Win32/bin/*
+SiriusCSharp.Client/Sirius.CSharp.Client.Win32/obj/*
+SiriusCSharp.Client/SiriusClient/Sirius.CSharp.Client.Package/bin/*

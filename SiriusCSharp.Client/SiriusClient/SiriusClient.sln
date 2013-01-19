@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiriusClient", "SiriusClien
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiriusCSharp.Client.Tests", "..\SiriusCSharp.Client.Tests\SiriusCSharp.Client.Tests.csproj", "{68789BB2-8F13-486B-BAE9-8E1992E88C6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirius.CSharp.Client.Package", "Sirius.CSharp.Client.Package\Sirius.CSharp.Client.Package.csproj", "{B3A60008-9715-4979-B72E-75289EAD1975}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D6325031-CDD4-4290-BB96-9538703C2916}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\packages.config = .nuget\packages.config
@@ -22,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{C7F1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7750AA7D-7DB6-48F4-B419-C9D1FF7FB3BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirius.CSharp.Client.Package", "..\Sirius.CSharp.Client.Package\Sirius.CSharp.Client.Package.csproj", "{B3A60008-9715-4979-B72E-75289EAD1975}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,10 +36,6 @@ Global
 		{68789BB2-8F13-486B-BAE9-8E1992E88C6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68789BB2-8F13-486B-BAE9-8E1992E88C6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68789BB2-8F13-486B-BAE9-8E1992E88C6E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B3A60008-9715-4979-B72E-75289EAD1975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B3A60008-9715-4979-B72E-75289EAD1975}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B3A60008-9715-4979-B72E-75289EAD1975}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B3A60008-9715-4979-B72E-75289EAD1975}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A642ABEC-A66C-4011-92BC-85FC92CD3E3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A642ABEC-A66C-4011-92BC-85FC92CD3E3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A642ABEC-A66C-4011-92BC-85FC92CD3E3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -48,15 +44,19 @@ Global
 		{49C28AD0-60A0-4065-9A40-21FDE49695C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49C28AD0-60A0-4065-9A40-21FDE49695C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49C28AD0-60A0-4065-9A40-21FDE49695C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3A60008-9715-4979-B72E-75289EAD1975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3A60008-9715-4979-B72E-75289EAD1975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3A60008-9715-4979-B72E-75289EAD1975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3A60008-9715-4979-B72E-75289EAD1975}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{B3A60008-9715-4979-B72E-75289EAD1975} = {556119DF-F71F-4BDB-BC3A-09A1D23A747B}
 		{A642ABEC-A66C-4011-92BC-85FC92CD3E3F} = {C7F1D820-184F-4BBB-9F37-A0D1AC845EA3}
-		{666725AE-A44E-4E83-8314-BE186F223C0E} = {C7F1D820-184F-4BBB-9F37-A0D1AC845EA3}
 		{49C28AD0-60A0-4065-9A40-21FDE49695C6} = {C7F1D820-184F-4BBB-9F37-A0D1AC845EA3}
+		{666725AE-A44E-4E83-8314-BE186F223C0E} = {C7F1D820-184F-4BBB-9F37-A0D1AC845EA3}
 		{68789BB2-8F13-486B-BAE9-8E1992E88C6E} = {7750AA7D-7DB6-48F4-B419-C9D1FF7FB3BA}
+		{B3A60008-9715-4979-B72E-75289EAD1975} = {556119DF-F71F-4BDB-BC3A-09A1D23A747B}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion Condition="'$(ProductVersion)'==''">0.0.0</ProductVersion>
+    <SolutionDir>..</SolutionDir>
+  </PropertyGroup>
+  <Target Name="Clean">
+    <ConvertToAbsolutePath Paths="$(SolutionDir)">
+      <Output TaskParameter="AbsolutePaths" PropertyName="SolutionDirAbs"/>
+    </ConvertToAbsolutePath>
+
+    <RemoveDir Directories="$(SolutionDirAbs)\bin\$(Configuration)\" />
+
+    <CreateItem Include="$(SolutionDirAbs)\bin\$(Configuration)\*.*">
+      <Output TaskParameter="Include" ItemName="ClientBinaries"/>
+    </CreateItem>
+
+    <CreateItem Include="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package\*.nupkg">
+      <Output TaskParameter="Include" ItemName="Packages"/>
+    </CreateItem>
+    <CreateItem Include="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package\lib\*.*">
+      <Output TaskParameter="Include" ItemName="Lib"/>
+    </CreateItem>
+
+    <Delete Files="@(ClientBinaries)" />
+    <RemoveDir Directories="$(SolutionDirAbs)\bin\$(Configuration)\" />
+
+    <Delete Files="@(Packages)" />
+    <Delete Files="@(Lib)" />
+  </Target>
+  <Target Name="Build"  DependsOnTargets="Clean">
+    <ConvertToAbsolutePath Paths="$(SolutionDir)">
+      <Output TaskParameter="AbsolutePaths" PropertyName="SolutionDirAbs"/>
+    </ConvertToAbsolutePath>
+    <MSBuild Projects="$(SolutionDirAbs)\Sirius.Client.Core.csproj" />
+
+    <CreateItem Include="$(SolutionDirAbs)\bin\$(Configuration)\*.*">
+      <Output TaskParameter="Include" ItemName="ClientBinaries"/>
+    </CreateItem>
+    <Copy SourceFiles="@(ClientBinaries)" DestinationFolder="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package\lib\%(ClientBinaries.RecursiveDir)" ContinueOnError="true"/>
+    <Copy SourceFiles="$(SolutionDirAbs)\Package.nuspec" DestinationFolder="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package" OverwriteReadOnlyFiles="true" />
+    <Exec Command="$(SolutionDirAbs)\..\SiriusClient\Sirius.CSharp.Client.Package\BuildPublishPackage.cmd $(ProductVersion)" WorkingDirectory="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package" />
+  </Target>
+</Project>

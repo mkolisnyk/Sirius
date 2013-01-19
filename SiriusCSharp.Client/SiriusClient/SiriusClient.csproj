@@ -52,9 +52,11 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="BuildScript\Sirius.Client.msbuild">
+    <None Include="Build.cmd" />
+    <None Include="BuildScript\Build.msbuild">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Package.nuspec" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
