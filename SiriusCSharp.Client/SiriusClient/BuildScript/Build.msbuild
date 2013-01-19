@@ -41,6 +41,6 @@
     </CreateItem>
     <Copy SourceFiles="@(ClientBinaries)" DestinationFolder="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package\lib\%(ClientBinaries.RecursiveDir)" ContinueOnError="true"/>
     <Copy SourceFiles="$(SolutionDirAbs)\Package.nuspec" DestinationFolder="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package" OverwriteReadOnlyFiles="true" />
-    <Exec Command="$(SolutionDirAbs)\..\SiriusClient\Sirius.CSharp.Client.Package\BuildPublishPackage.cmd $(ProductVersion)" WorkingDirectory="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package" />
+    <Exec Command="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package\BuildPublishPackage.cmd $(ProductVersion)" WorkingDirectory="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package" />
   </Target>
 </Project>
