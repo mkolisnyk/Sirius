@@ -3,9 +3,9 @@ call mvn assembly:single -Dpackage.version=%1
 
 echo "Publishing Ruby client"
 
-gem push Ruby-Client\sirius-client-*.gem
+for /f %%i in ('dir /B Ruby-Client\*.gem') DO cmd /C gem push Ruby-Client\%%i
 
 echo "Publishing C# client"
 
 .\..\Utils\NuGet.exe Update -self
-.\..\Utils\NuGet.exe Push CSharp-Client\Sirius.CSharp.Client.*.nupkg
+for /f %%i in ('dir /B CSharp-Client\*.nupkg') DO cmd /C .\..\Utils\NuGet.exe Push CSharp-Client\%%i

@@ -10,6 +10,7 @@ import org.sirius.server.win32.core.types.WinDefExt.MENUBARINFO;
 import org.sirius.server.win32.core.types.WinDefExt.MENUINFO;
 import org.sirius.server.win32.core.types.WinDefExt.MENUITEMINFO;
 import org.sirius.server.win32.core.types.WinDefExt.UINT;
+import org.sirius.server.win32.core.types.WinDefExt.WINDOWPLACEMENT;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
@@ -52,17 +53,6 @@ public class User32Lib {
 
 	protected User32Ext user32;
 
-	@XmlType(namespace="com.sun.jna.platform.win32.WinBase.PROCESS_INFORMATION")
-    public static class ProcessInfoByReference extends PROCESS_INFORMATION implements Structure.ByReference {
-        public ProcessInfoByReference() {
-        }
-
-        public ProcessInfoByReference(Pointer memory) {
-            super(memory);
-        }
-    }
-
-	
 	/**
 	 * 
 	 */
@@ -207,6 +197,11 @@ public class User32Lib {
 		return user32.GetWindowRect(arg0, arg1);
 	}
 
+	public boolean GetClientRect(HWND arg0, RECT arg1) {
+
+		return user32.GetClientRect(arg0, arg1);
+	}
+
 	public int GetWindowText(HWND arg0, char[] arg1, int arg2) {
 
 		return user32.GetWindowText(arg0, arg1, arg2);
@@ -222,16 +217,31 @@ public class User32Lib {
 		return user32.GetWindowThreadProcessId(arg0, arg1);
 	}
 
-	public boolean InvalidateRect(HWND arg0, ProcessInfoByReference arg1, boolean arg2) {
-
-		return user32.InvalidateRect(arg0, arg1, arg2);
-	}
-
 	public boolean IsWindowVisible(HWND arg0) {
 
 		return user32.IsWindowVisible(arg0);
 	}
 
+	public boolean IsIconic(HWND handle){
+		return user32.IsIconic(handle);
+	}
+	public boolean IsMenu(HMENU handle){
+		return user32.IsMenu(handle);
+	}
+	public boolean IsRectEmpty(RECT rect){
+		return user32.IsRectEmpty(rect);
+	}
+	public boolean IsWindow(HWND  handle){
+		return user32.IsWindow(handle);
+	}
+	public boolean IsWindowEnabled(HWND handle){
+		return user32.IsWindowEnabled(handle);
+	}
+	public boolean IsWindowUnicode(HWND handle){
+		return user32.IsWindowUnicode(handle);
+	}
+
+	
 	public HICON LoadIcon(HINSTANCE arg0, String arg1) {
 
 		return user32.LoadIcon(arg0, arg1);
@@ -262,12 +272,6 @@ public class User32Lib {
 	public void PostQuitMessage(int arg0) {
 
 		user32.PostQuitMessage(arg0);
-	}
-
-	public boolean RedrawWindow(HWND arg0, ProcessInfoByReference arg1, HRGN arg2,
-			DWORD arg3) {
-
-		return user32.RedrawWindow(arg0, arg1, arg2, arg3);
 	}
 
 	public boolean RegisterHotKey(HWND arg0, int arg1, int arg2, int arg3) {
@@ -391,18 +395,18 @@ public class User32Lib {
 		return user32.GetSubMenu(hMenu, nPos);
 	}
 
-	public boolean GetMenuBarInfo(HWND hwnd, LONG idObject, LONG idItem,
+	public boolean GetMenuBarInfo(HWND hwnd, long idObject, long idItem,
 			MENUBARINFO pmbi) {
 		
 		return user32.GetMenuBarInfo(hwnd, idObject, idItem, pmbi);
 	}
 
-	public LONG GetMenuCheckMarkDimensions() {
+	public long GetMenuCheckMarkDimensions() {
 		
 		return user32.GetMenuCheckMarkDimensions();
 	}
 
-	public UINT GetMenuDefaultItem(HMENU hMenu, UINT fByPos, UINT gmdiFlags) {
+	public int GetMenuDefaultItem(HMENU hMenu, int fByPos, int gmdiFlags) {
 		
 		return user32.GetMenuDefaultItem(hMenu, fByPos, gmdiFlags);
 	}
@@ -417,29 +421,29 @@ public class User32Lib {
 		return user32.GetMenuItemCount(hMenu);
 	}
 
-	public UINT GetMenuItemID(HMENU hMenu, int nPos) {
+	public int GetMenuItemID(HMENU hMenu, int nPos) {
 		
 		return user32.GetMenuItemID(hMenu, nPos);
 	}
 
-	public boolean GetMenuItemInfo(HMENU hMenu, UINT uItem,
+	public boolean GetMenuItemInfo(HMENU hMenu, int uItem,
 			boolean fByPosition, MENUITEMINFO lpmii) {
 		
 		return user32.GetMenuItemInfo(hMenu, uItem, fByPosition, lpmii);
 	}
 
-	public boolean GetMenuItemRect(HWND hWnd, HMENU hMenu, UINT uItem, RECT rect) {
+	public boolean GetMenuItemRect(HWND hWnd, HMENU hMenu, int uItem, RECT rect) {
 		
 		return user32.GetMenuItemRect(hWnd, hMenu, uItem, rect);
 	}
 
-	public UINT GetMenuState(HMENU hMenu, UINT uId, UINT uFlags) {
+	public int GetMenuState(HMENU hMenu, int uId, int uFlags) {
 		
 		return user32.GetMenuState(hMenu, uId, uFlags);
 	}
 
-	public int GetMenuString(HMENU hMenu, UINT uIDItem, char[] lpString,
-			int nMaxCount, UINT uFlag) {
+	public int GetMenuString(HMENU hMenu, int uIDItem, char[] lpString,
+			int nMaxCount, int uFlag) {
 		
 		return user32.GetMenuString(hMenu, uIDItem, lpString, nMaxCount, uFlag);
 	}
@@ -449,5 +453,7 @@ public class User32Lib {
 		return user32.GetSystemMenu(hWnd, bRevert);
 	}
 
-	
+	public boolean GetWindowPlacement(HWND hwnd,WINDOWPLACEMENT placement){
+		return user32.GetWindowPlacement(hwnd, placement);
+	}
 }

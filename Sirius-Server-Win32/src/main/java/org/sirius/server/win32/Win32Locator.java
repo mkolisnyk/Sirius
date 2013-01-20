@@ -3,6 +3,7 @@
  */
 package org.sirius.server.win32;
 
+import com.sun.jna.Pointer;
 import com.sun.jna.platform.win32.WinDef.HWND;
 
 /**
@@ -11,8 +12,8 @@ import com.sun.jna.platform.win32.WinDef.HWND;
  */
 public class Win32Locator {
 
-	private HWND hwnd;
-	private HWND parent;
+	private long hwnd;
+	private long parent;
 	private String winClass;
 	private String caption;
 	private int index;
@@ -21,8 +22,8 @@ public class Win32Locator {
 	 * 
 	 */
 	public Win32Locator() {
-		hwnd = null;
-		parent = null;
+		hwnd = 0;
+		parent = 0;
 		winClass = "(.*)";
 		caption = "(.*)";
 		index = 0;
@@ -31,7 +32,7 @@ public class Win32Locator {
 	/**
 	 * @return the hwnd
 	 */
-	public final HWND getHwnd() {
+	public final long getHwnd() {
 		return hwnd;
 	}
 
@@ -39,7 +40,7 @@ public class Win32Locator {
 	 * @param hwnd the hwnd to set
 	 */
 	public final void setHwnd(HWND hwnd) {
-		this.hwnd = hwnd;
+		this.hwnd = Pointer.nativeValue(hwnd.getPointer());
 	}
 
 	/**
@@ -87,7 +88,7 @@ public class Win32Locator {
 	/**
 	 * @return the parent
 	 */
-	public final HWND getParent() {
+	public final long getParent() {
 		return parent;
 	}
 
@@ -95,6 +96,10 @@ public class Win32Locator {
 	 * @param parent the parent to set
 	 */
 	public final void setParent(HWND parent) {
+		this.parent = parent.getPointer().getLong(0);
+	}
+	
+	public final void setParent(long parent) {
 		this.parent = parent;
-	}	
+	}
 }
