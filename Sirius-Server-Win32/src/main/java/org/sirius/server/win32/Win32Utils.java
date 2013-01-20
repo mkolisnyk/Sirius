@@ -7,10 +7,14 @@ import javax.jws.WebService;
 
 import junit.framework.Assert;
 
+import org.sirius.server.win32.classes.Common;
+import org.sirius.server.win32.classes.Menu;
 import org.sirius.server.win32.classes.Window;
+import org.sirius.server.win32.core.User32Ext;
+import org.sirius.server.win32.core.User32Lib;
+import org.sirius.server.win32.core.types.WinDefExt.MENUINFO;
 
 import com.sun.jna.Pointer;
-import com.sun.jna.platform.win32.User32;
 import com.sun.jna.platform.win32.WinDef.HWND;
 import com.sun.jna.platform.win32.WinDef.RECT;
 import com.sun.jna.platform.win32.WinUser;
@@ -20,7 +24,7 @@ import com.sun.jna.platform.win32.WinUser;
  *
  */
 @WebService
-public class Win32Utils {
+public class Win32Utils extends Common {
 
 	/**
 	 * 
@@ -47,7 +51,7 @@ public class Win32Utils {
 
         @Override
 		public boolean callback(HWND arg0, Pointer arg1) {
-        	User32 user32 = User32.INSTANCE;
+        	User32Lib user32 = new User32Lib();
             int length = user32.GetWindowTextLength(arg0) + 1;
             char buf[] = new char[length];
             
@@ -76,7 +80,13 @@ public class Win32Utils {
         		locator.setHwnd( arg0 );
         	}
             
-            if( locator.getHwnd() == 0 ) return true;
+            if( locator.getHwnd() == 0 ) {
+            	return true;
+            }
+            else if( !user32.IsWindow(longToHwnd(locator.getHwnd()))){
+            	locator.setHwnd(0L);
+            	return true;
+            }
             
             buf = null;
             locator.setCaption(text);
@@ -87,8 +97,9 @@ public class Win32Utils {
     }
 	
 	public long searchWindow(Win32Locator locator){
-		User32 user32 = User32.INSTANCE;
-		
+		User32Ext user32 = User32Ext.INSTANCE;
+
+		locator.setHwnd(0L);
 		WNDENUMPROC enumProc = new WNDENUMPROC(locator);
 		Pointer pt = Pointer.NULL;
         
@@ -96,7 +107,7 @@ public class Win32Utils {
 		return enumProc.getLocator().getHwnd();
 	}
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws InterruptedException{
 		Win32Locator locator = new Win32Locator();
 		locator.setWinClass("Notepad");
 		Win32Utils utils = new Win32Utils();
@@ -119,5 +130,32 @@ public class Win32Utils {
 		win.restore(hwnd);
 		Assert.assertTrue(win.isNormal(hwnd));
 		System.out.println("OK!!!");
+		
+		Menu menu = new Menu();
+		long hmenu = win.getMenu(hwnd);
+		System.out.println("Getting menu: " + hmenu);
+		
+		MENUINFO lpcmi = new MENUINFO();
+		menu.GetMenuInfo(hmenu, lpcmi);
+		System.out.println("Menu info: " + lpcmi);
+		
+		int count = menu.GetMenuItemCount(hmenu);
+		
+		for(int i=0;i<count;i++){
+			char[] buffer = new char[255];
+			menu.GetMenuString(hmenu, i, buffer, 255, (int)Menu.MF_BYPOSITION);
+			String text = new String(buffer);
+			System.out.println(text);
+		}
+		
+		long subMenu = menu.GetSubMenu(hmenu, 0);
+		
+		//menu.pickItem(hwnd, subMenu, 1);
+		win.close(hwnd);
+		Thread.sleep(5000);
+		locator.setHwnd(0L);
+		hwnd = utils.searchWindow(locator);
+		System.out.println(String.format("%x",hwnd) );
+		System.out.println(win.isWindow(hwnd) );
 	}
 }

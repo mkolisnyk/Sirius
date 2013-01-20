@@ -43,6 +43,10 @@ public class Win32Locator {
 		this.hwnd = Pointer.nativeValue(hwnd.getPointer());
 	}
 
+	public final void setHwnd(long hwnd) {
+		this.hwnd = hwnd;
+	}
+
 	/**
 	 * @return the winClass
 	 */

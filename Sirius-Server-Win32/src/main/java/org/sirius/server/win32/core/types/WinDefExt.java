@@ -77,6 +77,8 @@ public interface WinDefExt extends WinDef {
 			return Arrays.asList(new String[] { "cbSize", "fMask", "dwStyle",
 					"cyMax", "hbrBack", "dwContextHelpID", "dwMenuData" });
 		}
+		
+		
 	}
 
 	public class MENUITEMINFO extends Structure {
@@ -89,7 +91,7 @@ public interface WinDefExt extends WinDef {
 		public HBITMAP hbmpChecked;
 		public HBITMAP hbmpUnchecked;
 		public ULONG_PTR dwItemData;
-		public char[] dwTypeData;
+		public String dwTypeData;
 		public UINT cch;
 		public HBITMAP hbmpItem;
 
