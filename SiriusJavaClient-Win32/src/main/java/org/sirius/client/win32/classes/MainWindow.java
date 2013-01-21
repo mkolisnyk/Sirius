@@ -31,8 +31,7 @@ public class MainWindow extends TopLevelWindow {
 			throws Exception {
 		this.client
 				.core()
-				.shell32()
-				.shellExecute(this.locator.getHwnd(), null, executable, params,
-						workingDir, SW_SHOW);
+				.window().start(this.locator.getHwnd(), executable, params,
+						workingDir);
 	}
 }

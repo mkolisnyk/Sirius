@@ -11,7 +11,6 @@ import org.sirius.server.win32.classes.Common;
 import org.sirius.server.win32.classes.Menu;
 import org.sirius.server.win32.classes.Window;
 import org.sirius.server.win32.core.User32Ext;
-import org.sirius.server.win32.core.User32Lib;
 import org.sirius.server.win32.core.types.WinDefExt.MENUINFO;
 
 import com.sun.jna.Pointer;
@@ -51,7 +50,7 @@ public class Win32Utils extends Common {
 
         @Override
 		public boolean callback(HWND arg0, Pointer arg1) {
-        	User32Lib user32 = new User32Lib();
+        	User32Ext user32 = User32Ext.INSTANCE;
             int length = user32.GetWindowTextLength(arg0) + 1;
             char buf[] = new char[length];
             
@@ -107,6 +106,7 @@ public class Win32Utils extends Common {
 		return enumProc.getLocator().getHwnd();
 	}
 	
+	/*
 	public static void main(String[] args) throws InterruptedException{
 		Win32Locator locator = new Win32Locator();
 		locator.setWinClass("Notepad");
@@ -157,5 +157,5 @@ public class Win32Utils extends Common {
 		hwnd = utils.searchWindow(locator);
 		System.out.println(String.format("%x",hwnd) );
 		System.out.println(win.isWindow(hwnd) );
-	}
+	}*/
 }

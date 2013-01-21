@@ -43,7 +43,7 @@ public class Uint  extends org.sirius.client.win32.core.types.Dword  implements 
         new org.apache.axis.description.TypeDesc(Uint.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://core.win32.server.sirius.org/", "uint"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://classes.win32.server.sirius.org/", "uint"));
     }
 
     /**

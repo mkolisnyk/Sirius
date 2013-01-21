@@ -21,7 +21,7 @@ public class TopLevelWindow extends MovableWindow {
 	}
 
 	public void setActive() throws Exception {
-		this.client.core().user32().setForegroundWindow(locator.getHwnd());
+		this.client.core().window().activate(locator.getHwnd());
 	}
 	
 	public Menu getMenu(){

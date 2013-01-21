@@ -49,7 +49,7 @@ public class Hmenu  extends org.sirius.client.win32.core.types.Handle  implement
         new org.apache.axis.description.TypeDesc(Hmenu.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://core.win32.server.sirius.org/", "hmenu"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://classes.win32.server.sirius.org/", "hmenu"));
     }
 
     /**

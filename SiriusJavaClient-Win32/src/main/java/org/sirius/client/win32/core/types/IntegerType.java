@@ -43,7 +43,7 @@ public abstract class IntegerType  extends org.sirius.client.win32.core.types.Nu
         new org.apache.axis.description.TypeDesc(IntegerType.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://core.win32.server.sirius.org/", "integerType"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://classes.win32.server.sirius.org/", "integerType"));
     }
 
     /**

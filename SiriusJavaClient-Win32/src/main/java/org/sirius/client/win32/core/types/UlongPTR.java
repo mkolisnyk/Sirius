@@ -43,7 +43,7 @@ public class UlongPTR  extends org.sirius.client.win32.core.types.IntegerType  i
         new org.apache.axis.description.TypeDesc(UlongPTR.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://core.win32.server.sirius.org/", "ulongPTR"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://classes.win32.server.sirius.org/", "ulongPTR"));
     }
 
     /**

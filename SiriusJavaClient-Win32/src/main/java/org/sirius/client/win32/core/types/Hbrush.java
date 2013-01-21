@@ -49,7 +49,7 @@ public class Hbrush  extends org.sirius.client.win32.core.types.Handle  implemen
         new org.apache.axis.description.TypeDesc(Hbrush.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://core.win32.server.sirius.org/", "hbrush"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://classes.win32.server.sirius.org/", "hbrush"));
     }
 
     /**

@@ -8,11 +8,9 @@
 package org.sirius.client.win32.utils;
 
 public interface Win32UtilsService extends javax.xml.rpc.Service {
-	public java.lang.String getWin32UtilsPortAddress();
+    public java.lang.String getWin32UtilsPortAddress();
 
-	public org.sirius.client.win32.utils.Win32Utils getWin32UtilsPort()
-			throws javax.xml.rpc.ServiceException;
+    public org.sirius.client.win32.utils.Win32Utils getWin32UtilsPort() throws javax.xml.rpc.ServiceException;
 
-	public org.sirius.client.win32.utils.Win32Utils getWin32UtilsPort(
-			java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
+    public org.sirius.client.win32.utils.Win32Utils getWin32UtilsPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
 }

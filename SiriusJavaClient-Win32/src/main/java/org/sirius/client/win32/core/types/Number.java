@@ -43,7 +43,7 @@ public abstract class Number  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(Number.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://core.win32.server.sirius.org/", "number"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://classes.win32.server.sirius.org/", "number"));
     }
 
     /**

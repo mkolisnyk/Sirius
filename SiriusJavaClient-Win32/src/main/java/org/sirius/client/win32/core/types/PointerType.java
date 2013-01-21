@@ -76,11 +76,11 @@ public abstract class PointerType  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(PointerType.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://core.win32.server.sirius.org/", "pointerType"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://classes.win32.server.sirius.org/", "pointerType"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("pointer");
         elemField.setXmlName(new javax.xml.namespace.QName("", "pointer"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://core.win32.server.sirius.org/", "pointer"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://classes.win32.server.sirius.org/", "pointer"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

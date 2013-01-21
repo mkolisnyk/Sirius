@@ -43,7 +43,7 @@ public class Dword  extends org.sirius.client.win32.core.types.IntegerType  impl
         new org.apache.axis.description.TypeDesc(Dword.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://core.win32.server.sirius.org/", "dword"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://classes.win32.server.sirius.org/", "dword"));
     }
 
     /**

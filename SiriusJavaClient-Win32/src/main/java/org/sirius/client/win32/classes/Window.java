@@ -7,8 +7,10 @@ import java.lang.reflect.Method;
 import java.rmi.RemoteException;
 import java.util.Date;
 
+import org.apache.log4j.ConsoleAppender;
+import org.apache.log4j.Logger;
+import org.apache.log4j.SimpleLayout;
 import org.sirius.client.win32.Win32Client;
-import org.sirius.client.win32.core.types.Hwnd;
 import org.sirius.client.win32.core.types.Rect;
 import org.sirius.client.win32.types.Win32Locator;
 
@@ -24,12 +26,13 @@ public class Window implements WinUser {
 	protected Win32Locator locator;
 	protected Window parent;
 
+	protected Logger logger;
+	
 	/**
 	 * 
 	 */
 	public Window(Win32Client client, Win32Locator locator) {
-		this.client = client;
-		this.locator = locator;
+		this(client,null,locator);
 	}
 
 	/**
@@ -39,6 +42,10 @@ public class Window implements WinUser {
 		this.client = client;
 		this.locator = locator;
 		this.parent = parent;
+		this.logger = Logger.getLogger(this.getClass());
+		this.logger.addAppender(new ConsoleAppender(new SimpleLayout()));
+		
+		logger.debug("Initializing instance");
 	}
 
 	public void click() {
@@ -46,11 +53,24 @@ public class Window implements WinUser {
 	}
 
 	public boolean exists() throws RemoteException {
-		Hwnd hwnd = client.utils().searchWindow(locator);
-		if (hwnd != null) {
+		logger.debug(String.format("Searching for window: %s", this.locator));
+		
+		this.locator.setHwnd(0);
+		long hwnd = 0;
+		hwnd = client.utils().searchWindow(locator);
+		if (hwnd != 0) {
 			this.locator.setHwnd(hwnd);
+			
+			logger.debug(String.format("Window found: %s", this.locator));
+			
 			return true;
 		}
+		else {
+			this.locator.setHwnd(0);	
+		}
+		
+		logger.debug(String.format("Window wasn't found"));
+		
 		return false;
 	}
 
@@ -94,9 +114,7 @@ public class Window implements WinUser {
 
 	public Rect getRect() throws Exception {
 		Rect rc = new Rect(); 
-		if( !client.core().user32().getWindowRect(locator.getHwnd(), rc) ){
-			return null;
-		}
+		rc = client.core().window().getRect(this.locator.getHwnd());
 		return rc;
 	}
 
@@ -104,12 +122,12 @@ public class Window implements WinUser {
 		return false;
 	}
 
-	public boolean isEnabled() {
-		return false;
+	public boolean isEnabled() throws Exception {
+		return client.core().window().isEnabled(locator.getHwnd());
 	}
 
 	public boolean isVisible() throws Exception {
-		return client.core().user32().isWindowVisible(locator.getHwnd());
+		return client.core().window().isVisible(locator.getHwnd());
 	}
 
 	public void sendKeys() {
@@ -117,6 +135,6 @@ public class Window implements WinUser {
 	}
 
 	public Window getParent() {
-		return null;
+		return parent;
 	}
 }

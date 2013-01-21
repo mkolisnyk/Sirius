@@ -27,45 +27,41 @@ public class MovableWindow extends Window {
 
 	public boolean moveTo(int x, int y) throws Exception {
 		Rect rc = this.getRect();
-		return this.client
+		this.client
 				.core()
-				.user32()
-				.moveWindow(locator.getHwnd(), x, y,
-						rc.getRight() - rc.getLeft(),
-						rc.getBottom() - rc.getTop(), true);
+				.window().moveTo(locator.getHwnd(), x, y);
+		return true;
 	}
 
 	public boolean sizeTo(int width,int height) throws Exception {
 		Rect rc = this.getRect();
-		return this.client
+		this.client
 				.core()
-				.user32()
-				.moveWindow(locator.getHwnd(), rc.getLeft(), rc.getTop(),
-						width,
-						height, true);
+				.window().sizeTo(locator.getHwnd(), width, height);
+		return true;
 	}
 
 	public void minimize() throws Exception {
 		this.client
 		.core()
-		.user32().showWindow(locator.getHwnd(), SW_MINIMIZE);
+		.window().minimize(locator.getHwnd());
 	}
 
 	public void maximize() throws Exception {
 		this.client
 		.core()
-		.user32().showWindow(locator.getHwnd(), SW_MAXIMIZE);
+		.window().maximize(locator.getHwnd());
 	}
 
 	public void restore() throws Exception {
 		this.client
 		.core()
-		.user32().showWindow(locator.getHwnd(), SW_SHOWNORMAL);
+		.window().restore(locator.getHwnd());
 	}
 
 	public void close() throws Exception {
 		this.client
 		.core()
-		.user32().closeWindow(locator.getHwnd());
+		.window().close(locator.getHwnd());
 	}
 }
