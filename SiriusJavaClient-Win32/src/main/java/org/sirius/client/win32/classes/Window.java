@@ -112,8 +112,10 @@ public class Window implements WinUser {
 		return waitFor(timeout, "disappears", true);
 	}
 
-	public void getClientRect() {
-		;
+	public Rect getClientRect() throws Exception {
+		Rect rc = new Rect();
+		client.core().window().getClientRect(this.locator.getHwnd());
+		return rc;
 	}
 
 	public Rect getRect() throws Exception {
