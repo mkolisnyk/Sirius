@@ -17,14 +17,27 @@ import org.sirius.client.win32.types.Win32Locator;
  * @author Myk Kolisnyk
  *
  */
-public class WindowResizeDemoTest {
+public class MainWindowDemoTest {
 
 	Win32Client client = new Win32Client();
-	MainWindow notepad = new MainWindow(client,new Win32Locator("Notepad",0));
+	
+	public class NotepadWindow extends MainWindow {
+
+		/**
+		 * @param client
+		 * @param locator
+		 */
+		public NotepadWindow(Win32Client client, Win32Locator locator) {
+			super(client, locator);
+		}
+		
+	}
+	
+	NotepadWindow notepad = new NotepadWindow(client,new Win32Locator("Notepad",0));
 	
 	@Ignore
-	@Test
-	public void test() throws Exception {
+	//@Test
+	public void moveResize() throws Exception {
 		System.out.println("Starting notepad");
 		notepad.start("notepad.exe", "", "");
 		System.out.println("Waiting for appear");
@@ -44,4 +57,11 @@ public class WindowResizeDemoTest {
 		System.out.println("Success");
 	}
 
+	//@Test
+	public void menuOperations() throws Exception {
+		notepad.start("notepad.exe", "", "");
+		System.out.println("Waiting for appear");
+		Assert.assertTrue(notepad.exists(IWin32Options.DEFAULT_TIMEOUT));
+		
+	}
 }

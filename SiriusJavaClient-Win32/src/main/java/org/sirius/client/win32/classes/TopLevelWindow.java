@@ -24,8 +24,11 @@ public class TopLevelWindow extends MovableWindow {
 		this.client.core().window().activate(locator.getHwnd());
 	}
 	
-	public Menu getMenu(){
-		
+	public Menu menu() throws Exception {
+		if(this.exists()){
+			Menu menu = new Menu(client, this.locator.getHwnd());
+			return menu;
+		}
 		return null;
 	}
 }

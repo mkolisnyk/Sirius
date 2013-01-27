@@ -9,9 +9,13 @@ spec = Gem::Specification.new do |s|
   s.name = "sirius-client"
   s.version = File.read('VERSION').chomp
   s.requirements = "none"
-  s.files = FileList["lib/**/*.rb", "Rakefile"]
+  s.files = FileList["lib/**/*.rb", "Rakefile","README.rdoc"]
   s.homepage = "http://github.com/mkolisnyk/Sirius"
-  s.description = "The client for Sirius system"
+  
+  s.description = '''
+  The core ruby client part for Sirius system. 
+  '''
+  
   s.authors="Myk Kolisnyk"
   s.email="kolesnik.nickolay@gmail.com"
   s.add_dependency('sirius-client-core', '>= 0.0')

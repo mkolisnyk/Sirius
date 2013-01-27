@@ -52,6 +52,10 @@ public class Window implements WinUser {
 		;
 	}
 
+	public long getHwnd(){
+		return this.locator.getHwnd();
+	}
+	
 	public boolean exists() throws RemoteException {
 		logger.debug(String.format("Searching for window: %s", this.locator));
 		
