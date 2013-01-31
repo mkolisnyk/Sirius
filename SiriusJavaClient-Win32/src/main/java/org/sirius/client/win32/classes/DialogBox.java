@@ -8,7 +8,7 @@ import org.sirius.client.win32.types.Win32Locator;
 
 /**
  * @author Myk Kolisnyk
- *
+ * 
  */
 public class DialogBox extends TopLevelWindow {
 

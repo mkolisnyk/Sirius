@@ -29,9 +29,7 @@ public class MainWindow extends TopLevelWindow {
 	 */
 	public void start(String executable, String params, String workingDir)
 			throws Exception {
-		this.client
-				.core()
-				.window().start(this.locator.getHwnd(), executable, params,
-						workingDir);
+		this.client.core().window()
+				.start(this.locator.getHwnd(), executable, params, workingDir);
 	}
 }

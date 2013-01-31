@@ -27,12 +27,12 @@ public class Window implements WinUser {
 	protected Window parent;
 
 	protected Logger logger;
-	
+
 	/**
 	 * 
 	 */
 	public Window(Win32Client client, Win32Locator locator) {
-		this(client,null,locator);
+		this(client, null, locator);
 	}
 
 	/**
@@ -44,7 +44,21 @@ public class Window implements WinUser {
 		this.parent = parent;
 		this.logger = Logger.getLogger(this.getClass());
 		this.logger.addAppender(new ConsoleAppender(new SimpleLayout()));
-		
+
+		logger.debug("Initializing instance");
+	}
+
+	/**
+	 * @param parent2
+	 * @param locator2
+	 */
+	public Window(Window parent, Win32Locator locator) {
+		this.client = null;
+		this.locator = locator;
+		this.parent = parent;
+		this.logger = Logger.getLogger(this.getClass());
+		this.logger.addAppender(new ConsoleAppender(new SimpleLayout()));
+
 		logger.debug("Initializing instance");
 	}
 
@@ -52,29 +66,47 @@ public class Window implements WinUser {
 		;
 	}
 
-	public long getHwnd(){
+	public long getHwnd() {
 		return this.locator.getHwnd();
 	}
-	
+
+	public Win32Locator getLocator() {
+		return this.locator;
+	}
+
 	public boolean exists() throws RemoteException {
 		logger.debug(String.format("Searching for window: %s", this.locator));
-		
+
+		if (parent != null) {
+			logger.debug(String.format("Searching for parent window: %s",
+					this.parent.getLocator()));
+
+			if (!parent.exists()) {
+				logger.debug(String
+						.format("Parent window doesn't exist. Returning false"));
+				return false;
+			} else {
+				logger.debug(String
+						.format("The parent window was found. Looking for current window"));
+				this.locator.setParent(parent.getHwnd());
+			}
+		}
+
 		this.locator.setHwnd(0);
 		long hwnd = 0;
 		hwnd = client.utils().searchWindow(locator);
 		if (hwnd != 0) {
 			this.locator.setHwnd(hwnd);
-			
+
 			logger.debug(String.format("Window found: %s", this.locator));
-			
+
 			return true;
+		} else {
+			this.locator.setHwnd(0);
 		}
-		else {
-			this.locator.setHwnd(0);	
-		}
-		
+
 		logger.debug(String.format("Window wasn't found"));
-		
+
 		return false;
 	}
 
@@ -91,8 +123,9 @@ public class Window implements WinUser {
 		long end = (new Date()).getTime() + timeout;
 		Class<?>[] parameterTypes = getArrayTypes(params);
 		while ((new Date()).getTime() < end) {
-			Method waitMethod = this.getClass().getMethod(methodName, parameterTypes);
-			Object result = waitMethod.invoke(this, params); 
+			Method waitMethod = this.getClass().getMethod(methodName,
+					parameterTypes);
+			Object result = waitMethod.invoke(this, params);
 			if (result.equals(expectedValue)) {
 				return true;
 			}
@@ -113,14 +146,12 @@ public class Window implements WinUser {
 	}
 
 	public Rect getClientRect() throws Exception {
-		Rect rc = new Rect();
-		client.core().window().getClientRect(this.locator.getHwnd());
+		Rect rc = client.core().window().getClientRect(this.locator.getHwnd());
 		return rc;
 	}
 
 	public Rect getRect() throws Exception {
-		Rect rc = new Rect(); 
-		rc = client.core().window().getRect(this.locator.getHwnd());
+		Rect rc = client.core().window().getRect(this.locator.getHwnd());
 		return rc;
 	}
 

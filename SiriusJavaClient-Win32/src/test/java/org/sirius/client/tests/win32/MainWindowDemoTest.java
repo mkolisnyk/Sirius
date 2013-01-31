@@ -35,21 +35,26 @@ public class MainWindowDemoTest {
 	
 	NotepadWindow notepad = new NotepadWindow(client,new Win32Locator("Notepad",0));
 	
-	@Ignore
-	//@Test
+	//@Ignore
+	@Test
 	public void moveResize() throws Exception {
 		System.out.println("Starting notepad");
+		Thread.sleep(5000);
 		notepad.start("notepad.exe", "", "");
 		System.out.println("Waiting for appear");
 		Assert.assertTrue(notepad.exists(IWin32Options.DEFAULT_TIMEOUT));
 		System.out.println("OK. It exists!!! Activating...");
 		notepad.setActive();
+		Thread.sleep(5000);
 		System.out.println("Maximizing...");
 		notepad.maximize();
+		Thread.sleep(5000);
 		System.out.println("Minimizing...");
 		notepad.minimize();
+		Thread.sleep(5000);
 		System.out.println("Restore...");
 		notepad.restore();
+		Thread.sleep(5000);
 		System.out.println("Close window");
 		notepad.close();
 		System.out.println("Waiting for disappear...");

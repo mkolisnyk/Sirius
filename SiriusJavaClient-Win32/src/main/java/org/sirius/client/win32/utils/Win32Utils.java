@@ -8,5 +8,10 @@
 package org.sirius.client.win32.utils;
 
 public interface Win32Utils extends java.rmi.Remote {
-    public long searchWindow(org.sirius.client.win32.types.Win32Locator arg0) throws java.rmi.RemoteException;
+	public long searchWindow(org.sirius.client.win32.types.Win32Locator arg0)
+			throws java.rmi.RemoteException;
+
+	public long searchSameThreadWindow(long arg0,
+			org.sirius.client.win32.types.Win32Locator arg1)
+			throws java.rmi.RemoteException;
 }

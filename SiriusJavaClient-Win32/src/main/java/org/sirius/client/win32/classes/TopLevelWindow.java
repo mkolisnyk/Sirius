@@ -8,7 +8,7 @@ import org.sirius.client.win32.types.Win32Locator;
 
 /**
  * @author Myk Kolisnyk
- *
+ * 
  */
 public class TopLevelWindow extends MovableWindow {
 
@@ -23,10 +23,20 @@ public class TopLevelWindow extends MovableWindow {
 	public void setActive() throws Exception {
 		this.client.core().window().activate(locator.getHwnd());
 	}
-	
+
 	public Menu menu() throws Exception {
-		if(this.exists()){
-			Menu menu = new Menu(client, this.locator.getHwnd());
+		if (this.exists()) {
+			Menu menu = new Menu(client, this);
+			return menu;
+		}
+		return null;
+	}
+
+	public Menu systemMenu() throws Exception {
+		if (this.exists()) {
+			long hmenu = this.client.core().window()
+					.getSystemMenu(this.getHwnd(), true);
+			Menu menu = new Menu(client, this, hmenu);
 			return menu;
 		}
 		return null;

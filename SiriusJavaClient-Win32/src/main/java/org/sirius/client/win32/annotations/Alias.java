@@ -10,10 +10,10 @@ import java.lang.annotation.Target;
 
 /**
  * @author Myk Kolisnyk
- *
+ * 
  */
 @Target(ElementType.FIELD)
-@Retention(value=RetentionPolicy.RUNTIME)
+@Retention(value = RetentionPolicy.RUNTIME)
 public @interface Alias {
 	public String name() default "";
 }

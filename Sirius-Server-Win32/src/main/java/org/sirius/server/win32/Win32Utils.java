@@ -5,18 +5,13 @@ package org.sirius.server.win32;
 
 import javax.jws.WebService;
 
-import junit.framework.Assert;
-
 import org.sirius.server.win32.classes.Common;
-import org.sirius.server.win32.classes.Menu;
-import org.sirius.server.win32.classes.Window;
 import org.sirius.server.win32.core.User32Ext;
-import org.sirius.server.win32.core.types.WinDefExt.MENUINFO;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.platform.win32.WinDef.HWND;
-import com.sun.jna.platform.win32.WinDef.RECT;
 import com.sun.jna.platform.win32.WinUser;
+import com.sun.jna.ptr.IntByReference;
 
 /**
  * @author Myk Kolisnyk
@@ -102,7 +97,32 @@ public class Win32Utils extends Common {
 		WNDENUMPROC enumProc = new WNDENUMPROC(locator);
 		Pointer pt = Pointer.NULL;
         
-		user32.EnumWindows(enumProc, pt);
+		if( locator.getParent() == 0L ){
+			user32.EnumWindows(enumProc, pt);
+		}
+		else {
+			HWND hWnd = new HWND();
+			hWnd.setPointer(Pointer.createConstant(locator.getParent()));
+			user32.EnumChildWindows(hWnd, enumProc, pt);
+		}
+		return enumProc.getLocator().getHwnd();
+	}
+	
+	public long searchSameThreadWindow(long baseHwnd,Win32Locator locator){
+		User32Ext user32 = User32Ext.INSTANCE;
+		
+		HWND hWnd = new HWND();
+		hWnd.setPointer(Pointer.createConstant(baseHwnd));
+		
+		IntByReference lpdwProcessId = new IntByReference();
+		int threadID = user32.GetWindowThreadProcessId(hWnd, lpdwProcessId);
+		
+		Pointer pt = Pointer.NULL;
+		locator.setHwnd(0L);
+		
+		WNDENUMPROC enumProc = new WNDENUMPROC(locator);
+        user32.EnumThreadWindows(threadID, enumProc, pt);
+		
 		return enumProc.getLocator().getHwnd();
 	}
 	
