@@ -11,7 +11,9 @@ import org.sirius.server.win32.core.types.WinDefExt.WINDOWPLACEMENT;
 import com.sun.jna.Native;
 import com.sun.jna.platform.win32.User32;
 import com.sun.jna.platform.win32.WinDef.HWND;
+import com.sun.jna.platform.win32.WinDef.LPARAM;
 import com.sun.jna.platform.win32.WinDef.RECT;
+import com.sun.jna.platform.win32.WinDef.WPARAM;
 import com.sun.jna.win32.W32APIOptions;
 
 /**
@@ -49,4 +51,7 @@ public interface User32Ext extends User32 {
 	public boolean IsWindowEnabled(HWND handle);
 	public boolean IsWindowUnicode(HWND handle);
 
+	public int SendMessage(HWND hWnd, int msg, WPARAM wParam, LPARAM lParam);
+
+	public boolean SetWindowText( HWND hWnd, char[] lpString);
 }

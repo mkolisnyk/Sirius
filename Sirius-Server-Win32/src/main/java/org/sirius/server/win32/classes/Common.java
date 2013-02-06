@@ -10,6 +10,8 @@ import com.sun.jna.Pointer;
 import com.sun.jna.platform.win32.Shell32;
 import com.sun.jna.platform.win32.WinDef.HMENU;
 import com.sun.jna.platform.win32.WinDef.HWND;
+import com.sun.jna.platform.win32.WinDef.LPARAM;
+import com.sun.jna.platform.win32.WinDef.WPARAM;
 
 /**
  * @author Myk Kolisnyk
@@ -40,4 +42,21 @@ public class Common {
 		return handle;
 	}
 
+	protected long MAKELONG(int a, int b){ 
+		return (long)(a | (b << 16));
+	}
+	
+	protected WPARAM MAKEWPARAM(int a,int b){
+		WPARAM wParam = new WPARAM(MAKELONG(a,b));
+		return wParam;
+	}
+
+	protected LPARAM MAKELPARAM(int a,int b){
+		LPARAM lParam = new LPARAM(MAKELONG(a,b));
+		return lParam;
+	}
+	
+	protected int SendMessage(long hwnd,int msg,int wparam,int lparam){
+		return user32.SendMessage(longToHwnd(hwnd), msg, new WPARAM(wParam), new LPARAM(lParam));
+	}
 }

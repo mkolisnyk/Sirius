@@ -3,11 +3,21 @@
  */
 package org.sirius.server.win32.classes.controls;
 
+import javax.jws.WebService;
+
+import org.sirius.server.win32.classes.Common;
+import org.sirius.server.win32.constants.IButtonConsts;
+
+import com.sun.jna.platform.win32.WinDef.HWND;
+import com.sun.jna.platform.win32.WinDef.LPARAM;
+import com.sun.jna.platform.win32.WinDef.WPARAM;
+
 /**
  * @author Myk Kolisnyk
  *
  */
-public class Button {
+@WebService
+public class Button extends Common implements IButtonConsts {
 
 	/**
 	 * 
@@ -16,16 +26,22 @@ public class Button {
 		// TODO Auto-generated constructor stub
 	}
 
-	/*
-	 #define Button_Enable(hwndCtl,fEnable) EnableWindow((hwndCtl),(fEnable))
-#define Button_GetCheck(hwndCtl) ((int)(DWORD)SNDMSG((hwndCtl),BM_GETCHECK,0,0))
-#define Button_GetState(hwndCtl) ((int)(DWORD)SNDMSG((hwndCtl),BM_GETSTATE,0,0))
-#define Button_GetText(hwndCtl,lpch,cchMax) GetWindowText((hwndCtl),(lpch),(cchMax))
-#define Button_GetTextLength(hwndCtl) GetWindowTextLength(hwndCtl)
-#define Button_SetCheck(hwndCtl,check) ((void)SNDMSG((hwndCtl),BM_SETCHECK,(WPARAM)(int)(check),0))
-#define Button_SetState(hwndCtl,state) ((UINT)(DWORD)SNDMSG((hwndCtl),BM_SETSTATE,(WPARAM)(int)(state),0))
-#define Button_SetStyle(hwndCtl,style,fRedraw) ((void)SNDMSG((hwndCtl),BM_SETSTYLE,(WPARAM)LOWORD(style),MAKELPARAM(((fRedraw) ? TRUE : FALSE),0)))
-#define Button_SetText(hwndCtl,lpsz) SetWindowText((hwndCtl),(lpsz))
-
-	 */
+	public int GetCheck(long hwndCtl) {
+		HWND handle = this.longToHwnd(hwndCtl);
+		return user32.SendMessage(handle,BM_GETCHECK,new WPARAM(0),new LPARAM(0));
+	}
+	
+	public int GetState(long hwndCtl){
+		HWND handle = this.longToHwnd(hwndCtl);
+		return user32.SendMessage(handle,BM_GETSTATE,new WPARAM(0),new LPARAM(0));
+	}
+	
+	public void SetCheck(long hwndCtl,int check) {
+		HWND handle = this.longToHwnd(hwndCtl);
+		user32.SendMessage(handle,BM_SETCHECK,new WPARAM(check),new LPARAM(0));
+	}
+	public void SetState(long hwndCtl,int state) {
+		HWND handle = this.longToHwnd(hwndCtl);
+		user32.SendMessage(handle,BM_SETSTATE,new WPARAM(state),new LPARAM(0));
+	}
 }

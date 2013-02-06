@@ -3,11 +3,22 @@
  */
 package org.sirius.server.win32.classes.controls;
 
+import javax.jws.WebService;
+
+import org.sirius.server.win32.classes.Common;
+import org.sirius.server.win32.constants.IEditConsts;
+
+import com.sun.jna.Pointer;
+import com.sun.jna.platform.win32.WinDef.HWND;
+import com.sun.jna.platform.win32.WinDef.LPARAM;
+import com.sun.jna.platform.win32.WinDef.WPARAM;
+
 /**
  * @author Myk Kolisnyk
- *
+ * 
  */
-public class Edit {
+@WebService
+public class Edit extends Common implements IEditConsts {
 
 	/**
 	 * 
@@ -16,41 +27,129 @@ public class Edit {
 		// TODO Auto-generated constructor stub
 	}
 
-	/*
-	 
-	 #define Edit_CanUndo(hwndCtl) ((BOOL)(DWORD)SNDMSG((hwndCtl),EM_CANUNDO,0,0))
-#define Edit_EmptyUndoBuffer(hwndCtl) ((void)SNDMSG((hwndCtl),EM_EMPTYUNDOBUFFER,0,0))
-#define Edit_Enable(hwndCtl,fEnable) EnableWindow((hwndCtl),(fEnable))
-#define Edit_FmtLines(hwndCtl,fAddEOL) ((BOOL)(DWORD)SNDMSG((hwndCtl),EM_FMTLINES,(WPARAM)(BOOL)(fAddEOL),0))
-#define Edit_GetFirstVisibleLine(hwndCtl) ((int)(DWORD)SNDMSG((hwndCtl),EM_GETFIRSTVISIBLELINE,0,0))
-#define Edit_GetHandle(hwndCtl) ((HLOCAL)(UINT)(DWORD)SNDMSG((hwndCtl),EM_GETHANDLE,0,0))
-#define Edit_GetLine(hwndCtl,line,lpch,cchMax) ((*((int*)(lpch)) = (cchMax)),((int)(DWORD)SNDMSG((hwndCtl),EM_GETLINE,(WPARAM)(int)(line),(LPARAM)(LPTSTR)(lpch))))
-#define Edit_GetLineCount(hwndCtl) ((int)(DWORD)SNDMSG((hwndCtl),EM_GETLINECOUNT,0,0))
-#define Edit_GetModify(hwndCtl) ((BOOL)(DWORD)SNDMSG((hwndCtl),EM_GETMODIFY,0,0))
-#define Edit_GetPasswordChar(hwndCtl) ((TCHAR)(DWORD)SNDMSG((hwndCtl),EM_GETPASSWORDCHAR,0,0))
-#define Edit_GetRect(hwndCtl,lprc) ((void)SNDMSG((hwndCtl),EM_GETRECT,0,(LPARAM)(RECT*)(lprc)))
-#define Edit_GetSel(hwndCtl) ((DWORD)SNDMSG((hwndCtl),EM_GETSEL,0,0))
-#define Edit_GetText(hwndCtl,lpch,cchMax) GetWindowText((hwndCtl),(lpch),(cchMax))
-#define Edit_GetTextLength(hwndCtl) GetWindowTextLength(hwndCtl)
-#define Edit_GetWordBreakProc(hwndCtl) ((EDITWORDBREAKPROC)SNDMSG((hwndCtl),EM_GETWORDBREAKPROC,0,0))
-#define Edit_LimitText(hwndCtl,cchMax) ((void)SNDMSG((hwndCtl),EM_LIMITTEXT,(WPARAM)(cchMax),0))
-#define Edit_LineFromChar(hwndCtl,ich) ((int)(DWORD)SNDMSG((hwndCtl),EM_LINEFROMCHAR,(WPARAM)(int)(ich),0))
-#define Edit_LineIndex(hwndCtl,line) ((int)(DWORD)SNDMSG((hwndCtl),EM_LINEINDEX,(WPARAM)(int)(line),0))
-#define Edit_LineLength(hwndCtl,line) ((int)(DWORD)SNDMSG((hwndCtl),EM_LINELENGTH,(WPARAM)(int)(line),0))
-#define Edit_ReplaceSel(hwndCtl,lpszReplace) ((void)SNDMSG((hwndCtl),EM_REPLACESEL,0,(LPARAM)(LPCTSTR)(lpszReplace)))
-#define Edit_Scroll(hwndCtl,dv,dh) ((void)SNDMSG((hwndCtl),EM_LINESCROLL,(WPARAM)(dh),(LPARAM)(dv)))
-#define Edit_ScrollCaret(hwndCtl) ((BOOL)(DWORD)SNDMSG((hwndCtl),EM_SCROLLCARET,0,0))
-#define Edit_SetHandle(hwndCtl,h) ((void)SNDMSG((hwndCtl),EM_SETHANDLE,(WPARAM)(UINT)(HLOCAL)(h),0))
-#define Edit_SetModify(hwndCtl,fModified) ((void)SNDMSG((hwndCtl),EM_SETMODIFY,(WPARAM)(UINT)(fModified),0))
-#define Edit_SetPasswordChar(hwndCtl,ch) ((void)SNDMSG((hwndCtl),EM_SETPASSWORDCHAR,(WPARAM)(UINT)(ch),0))
-#define Edit_SetReadOnly(hwndCtl,fReadOnly) ((BOOL)(DWORD)SNDMSG((hwndCtl),EM_SETREADONLY,(WPARAM)(BOOL)(fReadOnly),0))
-#define Edit_SetRect(hwndCtl,lprc) ((void)SNDMSG((hwndCtl),EM_SETRECT,0,(LPARAM)(const RECT*)(lprc)))
-#define Edit_SetRectNoPaint(hwndCtl,lprc) ((void)SNDMSG((hwndCtl),EM_SETRECTNP,0,(LPARAM)(const RECT*)(lprc)))
-#define Edit_SetSel(hwndCtl,ichStart,ichEnd) ((void)SNDMSG((hwndCtl),EM_SETSEL,(ichStart),(ichEnd)))
-#define Edit_SetTabStops(hwndCtl,cTabs,lpTabs) ((void)SNDMSG((hwndCtl),EM_SETTABSTOPS,(WPARAM)(int)(cTabs),(LPARAM)(const int*)(lpTabs)))
-#define Edit_SetText(hwndCtl,lpsz) SetWindowText((hwndCtl),(lpsz))
-#define Edit_SetWordBreakProc(hwndCtl,lpfnWordBreak) ((void)SNDMSG((hwndCtl),EM_SETWORDBREAKPROC,0,(LPARAM)(EDITWORDBREAKPROC)(lpfnWordBreak)))
-#define Edit_Undo(hwndCtl) ((BOOL)(DWORD)SNDMSG((hwndCtl),EM_UNDO,0,0))
+	public int CanUndo(long hwndCtl) {
+		HWND hWnd = longToHwnd(hwndCtl);
+		WPARAM wParam = new WPARAM(0);
+		LPARAM lParam = new LPARAM(0);
+		return user32.SendMessage(hWnd, EM_CANUNDO, wParam, lParam);
+	}
 
+	public int EmptyUndoBuffer(long hwndCtl) {
+		HWND hWnd = longToHwnd(hwndCtl);
+		WPARAM wParam = new WPARAM(0);
+		LPARAM lParam = new LPARAM(0);
+		return user32.SendMessage(hWnd, EM_EMPTYUNDOBUFFER, wParam, lParam);
+	}
+
+	public int GetFirstVisibleLine(long hwndCtl) {
+		HWND hWnd = longToHwnd(hwndCtl);
+		WPARAM wParam = new WPARAM(0);
+		LPARAM lParam = new LPARAM(0);
+		return user32.SendMessage(hWnd, EM_GETFIRSTVISIBLELINE, wParam, lParam);
+	}
+
+	/*
+	 * public int GetLine(hwndCtl,line,lpch,cchMax) { ((*((int*)(lpch)) =
+	 * (cchMax
+	 * )),((int)(DWORD)SNDMSG((hwndCtl),EM_GETLINE,(WPARAM)(int)(line),(LPARAM
+	 * )(LPTSTR)(lpch)))) }
 	 */
+	public int GetLineCount(long hwndCtl) {
+		HWND hWnd = longToHwnd(hwndCtl);
+		WPARAM wParam = new WPARAM(0);
+		LPARAM lParam = new LPARAM(0);
+		return user32.SendMessage(hWnd, EM_GETLINECOUNT, wParam, lParam);
+	}
+
+	public int GetModify(long hwndCtl) {
+		HWND hWnd = longToHwnd(hwndCtl);
+		WPARAM wParam = new WPARAM(0);
+		LPARAM lParam = new LPARAM(0);
+		return user32.SendMessage(hWnd, EM_GETMODIFY, wParam, lParam);
+	}
+
+	public int GetPasswordChar(long hwndCtl) {
+		HWND hWnd = longToHwnd(hwndCtl);
+		WPARAM wParam = new WPARAM(0);
+		LPARAM lParam = new LPARAM(0);
+		return user32.SendMessage(hWnd, EM_GETPASSWORDCHAR, wParam, lParam);
+	}
+
+	public int GetSel(long hwndCtl) {
+		HWND hWnd = longToHwnd(hwndCtl);
+		WPARAM wParam = new WPARAM(0);
+		LPARAM lParam = new LPARAM(0);
+		return user32.SendMessage(hWnd, EM_GETSEL, wParam, lParam);
+	}
+
+	public int LineFromChar(long hwndCtl, int ich) {
+		HWND hWnd = longToHwnd(hwndCtl);
+		WPARAM wParam = new WPARAM(ich);
+		LPARAM lParam = new LPARAM(0);
+		return user32.SendMessage(hWnd, EM_LINEFROMCHAR, wParam, lParam);
+	}
+
+	public int LineIndex(long hwndCtl, int line) {
+		HWND hWnd = longToHwnd(hwndCtl);
+		WPARAM wParam = new WPARAM(line);
+		LPARAM lParam = new LPARAM(0);
+		return user32.SendMessage(hWnd, EM_LINEINDEX, wParam, lParam);
+	}
+
+	public int LineLength(long hwndCtl, int line) {
+		HWND hWnd = longToHwnd(hwndCtl);
+		WPARAM wParam = new WPARAM(line);
+		LPARAM lParam = new LPARAM(0);
+		return user32.SendMessage(hWnd, EM_LINELENGTH, wParam, lParam);
+	}
+
+	public int ReplaceSel(long hwndCtl, String lpszReplace) {
+		HWND hWnd = longToHwnd(hwndCtl);
+		WPARAM wParam = new WPARAM(0);
+		Pointer pt = new Pointer(0);
+		pt.setString(0, lpszReplace);
+		LPARAM lParam = new LPARAM(Pointer.nativeValue(pt));
+		return user32.SendMessage(hWnd, EM_REPLACESEL, wParam, lParam);
+	}
+
+	public int Scroll(long hwndCtl, int dv, int dh) {
+		HWND hWnd = longToHwnd(hwndCtl);
+		WPARAM wParam = new WPARAM(dh);
+		LPARAM lParam = new LPARAM(dv);
+		return user32.SendMessage(hWnd, EM_LINESCROLL, wParam, lParam);
+	}
+
+	public boolean ScrollCaret(long hwndCtl) {
+		HWND hWnd = longToHwnd(hwndCtl);
+		WPARAM wParam = new WPARAM(0);
+		LPARAM lParam = new LPARAM(0);
+		return (user32.SendMessage(hWnd, EM_SCROLLCARET, wParam, lParam) != 0) ? (true)
+				: (false);
+	}
+
+	public int SetPasswordChar(long hwndCtl, int ch) {
+		HWND hWnd = longToHwnd(hwndCtl);
+		WPARAM wParam = new WPARAM(ch);
+		LPARAM lParam = new LPARAM(0);
+		return user32.SendMessage(hWnd, EM_SETPASSWORDCHAR, wParam, lParam);
+	}
+
+	public int SetSel(long hwndCtl, int ichStart, int ichEnd) {
+		HWND hWnd = longToHwnd(hwndCtl);
+		WPARAM wParam = new WPARAM(ichStart);
+		LPARAM lParam = new LPARAM(ichEnd);
+		return user32.SendMessage(hWnd, EM_SETSEL, wParam, lParam);
+	}
+
+	public boolean SetText(long hwndCtl, String lpsz) {
+		HWND hWnd = longToHwnd(hwndCtl);
+		return user32.SetWindowText(hWnd, (lpsz).toCharArray());
+	}
+
+	public int Undo(long hwndCtl) {
+		HWND hWnd = longToHwnd(hwndCtl);
+		WPARAM wParam = new WPARAM(0);
+		LPARAM lParam = new LPARAM(0);
+		return user32.SendMessage(hWnd, EM_UNDO, wParam, lParam);
+	}
 }
