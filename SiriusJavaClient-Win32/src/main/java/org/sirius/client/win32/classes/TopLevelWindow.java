@@ -20,6 +20,10 @@ public class TopLevelWindow extends MovableWindow {
 		super(client, locator);
 	}
 
+	public TopLevelWindow(Win32Client client, Window parent, Win32Locator locator) {
+		super(client, parent, locator);
+	}
+
 	public void setActive() throws Exception {
 		this.client.core().window().activate(locator.getHwnd());
 	}
