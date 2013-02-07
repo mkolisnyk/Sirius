@@ -3,11 +3,19 @@
  */
 package org.sirius.server.win32.classes.controls;
 
+import org.sirius.server.win32.classes.Common;
+import org.sirius.server.win32.constants.IListBoxConsts;
+
+import com.sun.jna.Pointer;
+import com.sun.jna.platform.win32.WinDef.HWND;
+import com.sun.jna.platform.win32.WinDef.LPARAM;
+import com.sun.jna.platform.win32.WinDef.WPARAM;
+
 /**
  * @author Myk Kolisnyk
- *
+ * 
  */
-public class ListBox {
+public class ListBox extends Common implements IListBoxConsts {
 
 	/**
 	 * 
@@ -17,41 +25,118 @@ public class ListBox {
 	}
 
 	/*
-	 #define ListBox_AddItemData(hwndCtl,data) ((int)(DWORD)SNDMSG((hwndCtl),LB_ADDSTRING,0,(LPARAM)(data)))
-#define ListBox_AddString(hwndCtl,lpsz) ((int)(DWORD)SNDMSG((hwndCtl),LB_ADDSTRING,0,(LPARAM)(LPCTSTR)(lpsz)))
-#define ListBox_DeleteString(hwndCtl,index) ((int)(DWORD)SNDMSG((hwndCtl),LB_DELETESTRING,(WPARAM)(int)(index),0))
-#define ListBox_Dir(hwndCtl,attrs,lpszFileSpec) ((int)(DWORD)SNDMSG((hwndCtl),LB_DIR,(WPARAM)(UINT)(attrs),(LPARAM)(LPCTSTR)(lpszFileSpec)))
-#define ListBox_Enable(hwndCtl,fEnable) EnableWindow((hwndCtl),(fEnable))
-#define ListBox_FindItemData(hwndCtl,indexStart,data) ((int)(DWORD)SNDMSG((hwndCtl),LB_FINDSTRING,(WPARAM)(int)(indexStart),(LPARAM)(data)))
-#define ListBox_FindString(hwndCtl,indexStart,lpszFind) ((int)(DWORD)SNDMSG((hwndCtl),LB_FINDSTRING,(WPARAM)(int)(indexStart),(LPARAM)(LPCTSTR)(lpszFind)))
-#define ListBox_FindStringExact(hwndCtl,indexStart,lpszFind) ((int)(DWORD)SNDMSG((hwndCtl),LB_FINDSTRINGEXACT,(WPARAM)(int)(indexStart),(LPARAM)(LPCTSTR)(lpszFind)))
-#define ListBox_GetCaretIndex(hwndCtl) ((int)(DWORD)SNDMSG((hwndCtl),LB_GETCARETINDEX,0,0))
-#define ListBox_GetCount(hwndCtl) ((int)(DWORD)SNDMSG((hwndCtl),LB_GETCOUNT,0,0))
-#define ListBox_GetCurSel(hwndCtl) ((int)(DWORD)SNDMSG((hwndCtl),LB_GETCURSEL,0,0))
-#define ListBox_GetHorizontalExtent(hwndCtl) ((int)(DWORD)SNDMSG((hwndCtl),LB_GETHORIZONTALEXTENT,0,0))
-#define ListBox_GetItemData(hwndCtl,index) ((LRESULT)(DWORD)SNDMSG((hwndCtl),LB_GETITEMDATA,(WPARAM)(int)(index),0))
-#define ListBox_GetItemHeight(hwndCtl,index) ((int)(DWORD)SNDMSG((hwndCtl),LB_GETITEMHEIGHT,(WPARAM)(int)(index),0))
-#define ListBox_GetItemRect(hwndCtl,index,lprc) ((int)(DWORD)SNDMSG((hwndCtl),LB_GETITEMRECT,(WPARAM)(int)(index),(LPARAM)(RECT*)(lprc)))
-#define ListBox_GetSel(hwndCtl,index) ((int)(DWORD)SNDMSG((hwndCtl),LB_GETSEL,(WPARAM)(int)(index),0))
-#define ListBox_GetSelCount(hwndCtl) ((int)(DWORD)SNDMSG((hwndCtl),LB_GETSELCOUNT,0,0))
-#define ListBox_GetSelItems(hwndCtl,cItems,lpItems) ((int)(DWORD)SNDMSG((hwndCtl),LB_GETSELITEMS,(WPARAM)(int)(cItems),(LPARAM)(int*)(lpItems)))
-#define ListBox_GetText(hwndCtl,index,lpszBuffer) ((int)(DWORD)SNDMSG((hwndCtl),LB_GETTEXT,(WPARAM)(int)(index),(LPARAM)(LPCTSTR)(lpszBuffer)))
-#define ListBox_GetTextLen(hwndCtl,index) ((int)(DWORD)SNDMSG((hwndCtl),LB_GETTEXTLEN,(WPARAM)(int)(index),0))
-#define ListBox_GetTopIndex(hwndCtl) ((int)(DWORD)SNDMSG((hwndCtl),LB_GETTOPINDEX,0,0))
-#define ListBox_InsertItemData(hwndCtl,index,data) ((int)(DWORD)SNDMSG((hwndCtl),LB_INSERTSTRING,(WPARAM)(int)(index),(LPARAM)(data)))
-#define ListBox_InsertString(hwndCtl,index,lpsz) ((int)(DWORD)SNDMSG((hwndCtl),LB_INSERTSTRING,(WPARAM)(int)(index),(LPARAM)(LPCTSTR)(lpsz)))
-#define ListBox_ResetContent(hwndCtl) ((BOOL)(DWORD)SNDMSG((hwndCtl),LB_RESETCONTENT,0,0))
-#define ListBox_SelItemRange(hwndCtl,fSelect,first,last) ((int)(DWORD)SNDMSG((hwndCtl),LB_SELITEMRANGE,(WPARAM)(BOOL)(fSelect),MAKELPARAM((first),(last))))
-#define ListBox_SelectItemData(hwndCtl,indexStart,data) ((int)(DWORD)SNDMSG((hwndCtl),LB_SELECTSTRING,(WPARAM)(int)(indexStart),(LPARAM)(data)))
-#define ListBox_SelectString(hwndCtl,indexStart,lpszFind) ((int)(DWORD)SNDMSG((hwndCtl),LB_SELECTSTRING,(WPARAM)(int)(indexStart),(LPARAM)(LPCTSTR)(lpszFind)))
-#define ListBox_SetCaretIndex(hwndCtl,index) ((int)(DWORD)SNDMSG((hwndCtl),LB_SETCARETINDEX,(WPARAM)(int)(index),0))
-#define ListBox_SetColumnWidth(hwndCtl,cxColumn) ((void)SNDMSG((hwndCtl),LB_SETCOLUMNWIDTH,(WPARAM)(int)(cxColumn),0))
-#define ListBox_SetCurSel(hwndCtl,index) ((int)(DWORD)SNDMSG((hwndCtl),LB_SETCURSEL,(WPARAM)(int)(index),0))
-#define ListBox_SetHorizontalExtent(hwndCtl,cxExtent) ((void)SNDMSG((hwndCtl),LB_SETHORIZONTALEXTENT,(WPARAM)(int)(cxExtent),0))
-#define ListBox_SetItemData(hwndCtl,index,data) ((int)(DWORD)SNDMSG((hwndCtl),LB_SETITEMDATA,(WPARAM)(int)(index),(LPARAM)(data)))
-#define ListBox_SetItemHeight(hwndCtl,index,cy) ((int)(DWORD)SNDMSG((hwndCtl),LB_SETITEMHEIGHT,(WPARAM)(int)(index),MAKELPARAM((cy),0)))
-#define ListBox_SetSel(hwndCtl,fSelect,index) ((int)(DWORD)SNDMSG((hwndCtl),LB_SETSEL,(WPARAM)(BOOL)(fSelect),(LPARAM)(index)))
-#define ListBox_SetTabStops(hwndCtl,cTabs,lpTabs) ((BOOL)(DWORD)SNDMSG((hwndCtl),LB_SETTABSTOPS,(WPARAM)(int)(cTabs),(LPARAM)(int*)(lpTabs)))
-#define ListBox_SetTopIndex(hwndCtl,indexTop) ((int)(DWORD)SNDMSG((hwndCtl),LB_SETTOPINDEX,(WPARAM)(int)(indexTop),0))
+	 * public int FindItemData(hwndCtl,indexStart,data) {
+	 * ((int)(DWORD)SNDMSG((hwndCtl
+	 * ),LB_FINDSTRING,(WPARAM)(int)(indexStart),(LPARAM)(data))) }
 	 */
+	public int FindString(long hwndCtl, int indexStart, String lpszFind) {
+		HWND hWnd = longToHwnd(hwndCtl);
+		WPARAM wParam = new WPARAM(indexStart);
+		Pointer pt = new Pointer(0);
+		pt.setString(0, lpszFind);
+		LPARAM lParam = new LPARAM(Pointer.nativeValue(pt));
+
+		return user32.SendMessage(hWnd, LB_FINDSTRING, wParam, lParam);
+	}
+
+	public int FindStringExact(long hwndCtl, int indexStart, String lpszFind) {
+		HWND hWnd = longToHwnd(hwndCtl);
+		WPARAM wParam = new WPARAM(indexStart);
+		Pointer pt = new Pointer(0);
+		pt.setString(0, lpszFind);
+		LPARAM lParam = new LPARAM(Pointer.nativeValue(pt));
+
+		return user32.SendMessage(hWnd, LB_FINDSTRINGEXACT, wParam, lParam);
+	}
+
+	public int GetCaretIndex(long hwndCtl) {
+		return this.SendMessage(hwndCtl, LB_GETCARETINDEX, 0, 0);
+	}
+
+	public int GetCount(long hwndCtl) {
+		return this.SendMessage(hwndCtl, LB_GETCOUNT, 0, 0);
+	}
+
+	public int GetCurSel(long hwndCtl) {
+		return this.SendMessage(hwndCtl, LB_GETCURSEL, 0, 0);
+	}
+
+	public int GetHorizontalExtent(long hwndCtl) {
+		return this.SendMessage(hwndCtl, LB_GETHORIZONTALEXTENT, 0, 0);
+	}
+
+	/*
+	 * public int GetItemData(hwndCtl,index) {
+	 * ((LRESULT)(DWORD)SNDMSG((hwndCtl),LB_GETITEMDATA,(WPARAM)(int)(index),0))
+	 * }
+	 */
+	public int GetItemHeight(long hwndCtl, int index) {
+		return this.SendMessage(hwndCtl, LB_GETITEMHEIGHT, index, 0);
+	}
+
+	/*
+	 * public int GetItemRect(hwndCtl,index,lprc) {
+	 * ((int)(DWORD)SNDMSG((hwndCtl)
+	 * ,LB_GETITEMRECT,(WPARAM)(int)(index),(LPARAM)(RECT*)(lprc))) }
+	 */
+	public int GetSel(long hwndCtl, int index) {
+		return this.SendMessage(hwndCtl, LB_GETSEL, index, 0);
+	}
+
+	public int GetSelCount(long hwndCtl) {
+		return this.SendMessage(hwndCtl, LB_GETSELCOUNT, 0, 0);
+	}
+
+	/*
+	 * public int GetSelItems(hwndCtl,cItems,lpItems) {
+	 * ((int)(DWORD)SNDMSG((hwndCtl
+	 * ),LB_GETSELITEMS,(WPARAM)(int)(cItems),(LPARAM)(int*)(lpItems))) }
+	 */
+	public String GetText(long hwndCtl, int index) {
+		HWND hWnd = longToHwnd(hwndCtl);
+		WPARAM wParam = new WPARAM(index);
+		Pointer pt = new Pointer(0);
+		String lpszText = "";
+		pt.setString(0, lpszText);
+		LPARAM lParam = new LPARAM(Pointer.nativeValue(pt));
+		user32.SendMessage(hWnd, LB_GETTEXT, wParam, lParam);
+		return pt.getString(0);
+	}
+
+	public int GetTextLen(long hwndCtl, int index) {
+		return SendMessage(hwndCtl, LB_GETTEXTLEN, index, 0);
+	}
+
+	public int GetTopIndex(long hwndCtl) {
+		return SendMessage(hwndCtl, LB_GETTOPINDEX, 0, 0);
+	}
+
+	public int SelItemRange(long hwndCtl, boolean fSelect, int first, int last) {
+		HWND hWnd = longToHwnd(hwndCtl);
+		WPARAM wParam = new WPARAM((fSelect) ? (1) : (0));
+		LPARAM lParam = this.MAKELPARAM(first, last);
+		return user32.SendMessage(hWnd, LB_SELITEMRANGE, wParam, lParam);
+	}
+
+	public int SelectString(long hwndCtl, int indexStart, String lpszFind) {
+		HWND hWnd = longToHwnd(hwndCtl);
+		WPARAM wParam = new WPARAM(indexStart);
+		Pointer pt = new Pointer(0);
+		String lpszText = "";
+		pt.setString(0, lpszText);
+		LPARAM lParam = new LPARAM(Pointer.nativeValue(pt));
+		return user32.SendMessage(hWnd, LB_SELECTSTRING, wParam, lParam);
+	}
+
+	public int SetCaretIndex(long hwndCtl, int index) {
+		return SendMessage(hwndCtl, LB_SETCARETINDEX, index, 0);
+	}
+
+	public int SetCurSel(long hwndCtl, int index) {
+		return SendMessage(hwndCtl, LB_SETCURSEL, index, 0);
+	}
+
+	public int SetSel(long hwndCtl, boolean fSelect, int index) {
+		return SendMessage(hwndCtl, LB_SETSEL, (fSelect) ? (1) : (0), index);
+	}
 }
