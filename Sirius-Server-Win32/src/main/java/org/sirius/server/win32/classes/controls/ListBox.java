@@ -3,6 +3,8 @@
  */
 package org.sirius.server.win32.classes.controls;
 
+import javax.jws.WebService;
+
 import org.sirius.server.win32.classes.Common;
 import org.sirius.server.win32.constants.IListBoxConsts;
 
@@ -15,6 +17,7 @@ import com.sun.jna.platform.win32.WinDef.WPARAM;
  * @author Myk Kolisnyk
  * 
  */
+@WebService
 public class ListBox extends Common implements IListBoxConsts {
 
 	/**

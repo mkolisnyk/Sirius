@@ -1,5 +1,5 @@
 /**
- * IntegerType.java
+ * Lparam.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
@@ -7,14 +7,14 @@
 
 package org.sirius.client.win32.core.types;
 
-public abstract class IntegerType  extends org.sirius.client.win32.core.types.Number  implements java.io.Serializable {
-    public IntegerType() {
+public class Lparam  extends org.sirius.client.win32.core.types.LongPTR  implements java.io.Serializable {
+    public Lparam() {
     }
 
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof IntegerType)) return false;
-        IntegerType other = (IntegerType) obj;
+        if (!(obj instanceof Lparam)) return false;
+        Lparam other = (Lparam) obj;
         if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
@@ -40,10 +40,10 @@ public abstract class IntegerType  extends org.sirius.client.win32.core.types.Nu
 
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(IntegerType.class, true);
+        new org.apache.axis.description.TypeDesc(Lparam.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "integerType"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "lparam"));
     }
 
     /**

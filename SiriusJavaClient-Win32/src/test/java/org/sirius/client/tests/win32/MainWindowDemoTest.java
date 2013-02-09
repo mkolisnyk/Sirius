@@ -35,7 +35,7 @@ public class MainWindowDemoTest {
 	
 	NotepadWindow notepad = new NotepadWindow(client,new Win32Locator("Notepad",0));
 	
-	//@Ignore
+	@Ignore
 	@Test
 	public void moveResize() throws Exception {
 		System.out.println("Starting notepad");

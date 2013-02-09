@@ -6,6 +6,8 @@ package org.sirius.server.win32.classes.controls;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.jws.WebService;
+
 import org.sirius.server.win32.classes.Common;
 import org.sirius.server.win32.constants.IHeaderConsts;
 
@@ -18,9 +20,10 @@ import com.sun.jna.platform.win32.WinDef.LPARAM;
  * @author Myk Kolisnyk
  *
  */
+@WebService
 public class Header extends Common implements IHeaderConsts {
 
-	public class HD_ITEM extends Structure {
+	public static class HD_ITEM extends Structure {
 		int mask;
 		int cxy;
 		char[] pszText;

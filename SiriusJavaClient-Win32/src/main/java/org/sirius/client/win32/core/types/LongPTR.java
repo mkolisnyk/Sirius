@@ -1,5 +1,5 @@
 /**
- * IntegerType.java
+ * LongPTR.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
@@ -7,14 +7,14 @@
 
 package org.sirius.client.win32.core.types;
 
-public abstract class IntegerType  extends org.sirius.client.win32.core.types.Number  implements java.io.Serializable {
-    public IntegerType() {
+public class LongPTR  extends org.sirius.client.win32.core.types.IntegerType  implements java.io.Serializable {
+    public LongPTR() {
     }
 
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof IntegerType)) return false;
-        IntegerType other = (IntegerType) obj;
+        if (!(obj instanceof LongPTR)) return false;
+        LongPTR other = (LongPTR) obj;
         if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
@@ -40,10 +40,10 @@ public abstract class IntegerType  extends org.sirius.client.win32.core.types.Nu
 
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(IntegerType.class, true);
+        new org.apache.axis.description.TypeDesc(LongPTR.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "integerType"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "longPTR"));
     }
 
     /**

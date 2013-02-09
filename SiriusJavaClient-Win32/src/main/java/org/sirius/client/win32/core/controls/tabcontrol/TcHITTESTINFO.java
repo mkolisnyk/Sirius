@@ -1,76 +1,76 @@
 /**
- * Point.java
+ * TcHITTESTINFO.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package org.sirius.client.win32.core.types;
+package org.sirius.client.win32.core.controls.tabcontrol;
 
-public class Point  extends org.sirius.client.win32.core.types.Structure  implements java.io.Serializable {
-    private int x;
+public class TcHITTESTINFO  extends org.sirius.client.win32.core.types.Structure  implements java.io.Serializable {
+    private org.sirius.client.win32.core.types.Point pt;
 
-    private int y;
+    private int flags;
 
-    public Point() {
+    public TcHITTESTINFO() {
     }
 
-    public Point(
+    public TcHITTESTINFO(
            boolean autoRead,
            boolean autoWrite,
-           int x,
-           int y) {
+           org.sirius.client.win32.core.types.Point pt,
+           int flags) {
         super(
             autoRead,
             autoWrite);
-        this.x = x;
-        this.y = y;
+        this.pt = pt;
+        this.flags = flags;
     }
 
 
     /**
-     * Gets the x value for this Point.
+     * Gets the pt value for this TcHITTESTINFO.
      * 
-     * @return x
+     * @return pt
      */
-    public int getX() {
-        return x;
+    public org.sirius.client.win32.core.types.Point getPt() {
+        return pt;
     }
 
 
     /**
-     * Sets the x value for this Point.
+     * Sets the pt value for this TcHITTESTINFO.
      * 
-     * @param x
+     * @param pt
      */
-    public void setX(int x) {
-        this.x = x;
+    public void setPt(org.sirius.client.win32.core.types.Point pt) {
+        this.pt = pt;
     }
 
 
     /**
-     * Gets the y value for this Point.
+     * Gets the flags value for this TcHITTESTINFO.
      * 
-     * @return y
+     * @return flags
      */
-    public int getY() {
-        return y;
+    public int getFlags() {
+        return flags;
     }
 
 
     /**
-     * Sets the y value for this Point.
+     * Sets the flags value for this TcHITTESTINFO.
      * 
-     * @param y
+     * @param flags
      */
-    public void setY(int y) {
-        this.y = y;
+    public void setFlags(int flags) {
+        this.flags = flags;
     }
 
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof Point)) return false;
-        Point other = (Point) obj;
+        if (!(obj instanceof TcHITTESTINFO)) return false;
+        TcHITTESTINFO other = (TcHITTESTINFO) obj;
         if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
@@ -79,8 +79,10 @@ public class Point  extends org.sirius.client.win32.core.types.Structure  implem
         __equalsCalc = obj;
         boolean _equals;
         _equals = super.equals(obj) && 
-            this.x == other.getX() &&
-            this.y == other.getY();
+            ((this.pt==null && other.getPt()==null) || 
+             (this.pt!=null &&
+              this.pt.equals(other.getPt()))) &&
+            this.flags == other.getFlags();
         __equalsCalc = null;
         return _equals;
     }
@@ -92,27 +94,30 @@ public class Point  extends org.sirius.client.win32.core.types.Structure  implem
         }
         __hashCodeCalc = true;
         int _hashCode = super.hashCode();
-        _hashCode += getX();
-        _hashCode += getY();
+        if (getPt() != null) {
+            _hashCode += getPt().hashCode();
+        }
+        _hashCode += getFlags();
         __hashCodeCalc = false;
         return _hashCode;
     }
 
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(Point.class, true);
+        new org.apache.axis.description.TypeDesc(TcHITTESTINFO.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "point"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "tcHITTESTINFO"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("x");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "x"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setFieldName("pt");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "pt"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "point"));
+        elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("y");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "y"));
+        elemField.setFieldName("flags");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "flags"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

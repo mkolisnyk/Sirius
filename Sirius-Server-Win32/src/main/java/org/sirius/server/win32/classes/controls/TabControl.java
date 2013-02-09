@@ -33,7 +33,7 @@ public class TabControl extends Common implements ITabControlConsts {
 		// TODO Auto-generated constructor stub
 	}
 
-	public class TC_ITEM extends Structure {
+	public static class TC_ITEM extends Structure {
 		public int mask;
 
 		public int dwState;
@@ -57,7 +57,7 @@ public class TabControl extends Common implements ITabControlConsts {
 		}
 	}
 
-	public class TC_HITTESTINFO extends Structure {
+	public static class TC_HITTESTINFO extends Structure {
 		public POINT pt;
 		public int flags;
 
