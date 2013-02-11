@@ -59,4 +59,8 @@ public class Common {
 	protected int SendMessage(long hwnd,int msg,int wparam,int lparam){
 		return user32.SendMessage(longToHwnd(hwnd), msg, new WPARAM(wparam), new LPARAM(lparam));
 	}
+
+	protected void PostMessage(long hwnd,int msg,int wparam,int lparam){
+		user32.PostMessage(longToHwnd(hwnd), msg, new WPARAM(wparam), new LPARAM(lparam));
+	}
 }

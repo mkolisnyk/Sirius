@@ -27,7 +27,7 @@ public class Win32Locator implements java.io.Serializable {
 	}
 
 	public Win32Locator(String winClass, int index) {
-		super();
+		this();
 		this.winClass = winClass;
 		this.index = index;
 	}
@@ -250,6 +250,14 @@ public class Win32Locator implements java.io.Serializable {
 			javax.xml.namespace.QName _xmlType) {
 		return new org.apache.axis.encoding.ser.BeanDeserializer(_javaType,
 				_xmlType, typeDesc);
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return String.format("{%x} [%s]%s[%d]", this.getHwnd(),this.getWinClass(),this.getCaption(),this.getIndex());
 	}
 
 }

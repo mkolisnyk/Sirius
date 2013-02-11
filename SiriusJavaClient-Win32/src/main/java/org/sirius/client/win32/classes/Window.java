@@ -60,12 +60,25 @@ public class Window implements WinUser {
 		this.logger.addAppender(new ConsoleAppender(new SimpleLayout()));
 
 		logger.debug("Initializing instance");
+		if(parent != null){
+			this.client = parent.client;
+		}
 	}
 
-	public void click() {
-		;
+	public void click() throws Exception {
+		if(!exists()) return;
+		client.core().window().click(locator.getHwnd(), 0, 0, 0, false, false, false);
 	}
 
+	public void typeKeys(String text) throws Exception {
+		if(!exists()) return;
+		for(char key:text.toCharArray()){
+			int code = key;
+			// TODO Add specific keys handling
+			client.core().window().keyPress(locator.getHwnd(), code);
+		}
+	}
+	
 	public long getHwnd() {
 		return this.locator.getHwnd();
 	}
@@ -87,14 +100,27 @@ public class Window implements WinUser {
 				return false;
 			} else {
 				logger.debug(String
-						.format("The parent window was found. Looking for current window"));
+						.format("The parent window was found: %s. Looking for current window: %s",
+								this.parent.getLocator(),
+								this.getLocator()));
 				this.locator.setParent(parent.getHwnd());
 			}
 		}
 
 		this.locator.setHwnd(0);
+		if(parent != null){
+			this.client = parent.client;
+		}
+
 		long hwnd = 0;
-		hwnd = client.utils().searchWindow(locator);
+		logger.debug(String.format("Searching for window: %s", this.locator));
+		try {
+			hwnd = client.utils().searchWindow(locator);
+		}
+		catch(Throwable e){
+			logger.debug(String.format("Error while searching for window", locator),e);
+		}
+		logger.debug(String.format("HWND returned: %d", hwnd));
 		if (hwnd != 0) {
 			this.locator.setHwnd(hwnd);
 
@@ -163,8 +189,16 @@ public class Window implements WinUser {
 		return client.core().window().isEnabled(locator.getHwnd());
 	}
 
+	public boolean isEnabled(long timeout) throws Exception {
+		return waitFor(timeout, "isEnabled", true);
+	}
+
 	public boolean isVisible() throws Exception {
 		return client.core().window().isVisible(locator.getHwnd());
+	}
+	
+	public boolean isVisible(long timeout) throws Exception {
+		return waitFor(timeout, "isVisible", true);
 	}
 
 	public void sendKeys() {

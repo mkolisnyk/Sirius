@@ -103,7 +103,7 @@ public class Point  extends org.sirius.client.win32.core.types.Structure  implem
         new org.apache.axis.description.TypeDesc(Point.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "point"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://classes.win32.server.sirius.org/", "point"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("x");
         elemField.setXmlName(new javax.xml.namespace.QName("", "x"));

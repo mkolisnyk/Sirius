@@ -3,11 +3,13 @@
  */
 package org.sirius.server.win32.constants;
 
+import com.sun.jna.platform.win32.WinUser;
+
 /**
  * @author Myk Kolisnyk
  * 
  */
-public interface IWMConsts {
+public interface IWMConsts extends WinUser{
 
 	public final int WM_ACTIVATE = 0x0006;
 	public final int WM_ACTIVATEAPP = 0x001C;

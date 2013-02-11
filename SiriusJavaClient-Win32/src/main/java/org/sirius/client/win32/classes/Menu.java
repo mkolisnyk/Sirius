@@ -86,7 +86,7 @@ public class Menu implements IMenuFlag {
 	}
 
 	public void pick(int position) throws Exception {
-		return;
+		client.core().menu().pickItem(owner.getHwnd(), hmenu, position);
 	}
 
 	public String[] getItemNames() throws Exception {

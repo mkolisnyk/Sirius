@@ -5,9 +5,13 @@ package org.sirius.server.win32.classes;
 
 import javax.jws.WebService;
 
+import org.sirius.server.win32.constants.IMKConsts;
+import org.sirius.server.win32.constants.IWMConsts;
 import org.sirius.server.win32.core.types.WinDefExt.WINDOWPLACEMENT;
 
 import com.sun.jna.Pointer;
+import com.sun.jna.platform.win32.WinDef.HMENU;
+import com.sun.jna.platform.win32.WinDef.RECT;
 import com.sun.jna.platform.win32.WinUser;
 import com.sun.jna.platform.win32.WinDef.HWND;
 import com.sun.jna.platform.win32.WinDef.LPARAM;
@@ -18,7 +22,7 @@ import com.sun.jna.platform.win32.WinDef.WPARAM;
  *
  */
 @WebService
-public class Window extends Common implements WinUser {
+public class Window extends Common implements IWMConsts, IMKConsts {
 
 	/**
 	 * 
@@ -30,6 +34,104 @@ public class Window extends Common implements WinUser {
 	public void activate(long hwnd){
 		HWND handle = longToHwnd(hwnd);
 		user32.SetForegroundWindow(handle);
+	}
+	
+	public void mouseDown(long hwnd,int button,int x,int y, boolean isControl,boolean isAlt, boolean isShift){
+		int message = 0;
+		int flags = 0;
+		switch(button){
+			case 0:
+				message = WM_LBUTTONDOWN;
+				break;
+			case 1:
+				message = WM_RBUTTONDOWN;
+				break;
+			case 2:
+				message = WM_MBUTTONDOWN;
+				break;
+			default:
+				message = WM_LBUTTONDOWN;
+				break;
+		}
+		
+		if(isControl){
+			flags |= MK_CONTROL;
+		}
+		if(isShift){
+			flags |= MK_SHIFT;
+		}
+		SendMessage(hwnd, message,flags, MAKELPARAM(x, y).intValue());
+	}
+	
+	public void mouseUp(long hwnd,int button,int x,int y, boolean isControl,boolean isAlt, boolean isShift){
+		int message = 0;
+		int flags = 0;
+		switch(button){
+			case 0:
+				message = WM_LBUTTONUP;
+				break;
+			case 1:
+				message = WM_RBUTTONUP;
+				break;
+			case 2:
+				message = WM_MBUTTONUP;
+				break;
+			default:
+				message = WM_LBUTTONUP;
+				break;
+		}
+		
+		if(isControl){
+			flags |= MK_CONTROL;
+		}
+		if(isShift){
+			flags |= MK_SHIFT;
+		}
+		SendMessage(hwnd, message,flags, MAKELPARAM(x, y).intValue());
+	}
+	
+	public void click(long hwnd,int button,int x,int y, boolean isControl,boolean isAlt, boolean isShift){
+		mouseDown(hwnd, button, x, y, isControl, isAlt, isShift);
+		mouseUp(hwnd, button, x, y, isControl, isAlt, isShift);
+	}
+	
+	public void doubleClick(long hwnd,int button,int x,int y, boolean isControl,boolean isAlt, boolean isShift){
+		int message = 0;
+		int flags = 0;
+		switch(button){
+			case 0:
+				message = WM_LBUTTONDBLCLK;
+				break;
+			case 1:
+				message = WM_RBUTTONDBLCLK;
+				break;
+			case 2:
+				message = WM_MBUTTONDBLCLK;
+				break;
+			default:
+				message = WM_LBUTTONDBLCLK;
+				break;
+		}
+		
+		if(isControl){
+			flags |= MK_CONTROL;
+		}
+		if(isShift){
+			flags |= MK_SHIFT;
+		}
+		SendMessage(hwnd, message,flags, MAKELPARAM(x, y).intValue());
+	}
+	
+	public void keyDown(long hwnd,int key){
+		SendMessage(hwnd,WM_KEYDOWN,key,0);
+	}
+	
+	public void keyUp(long hwnd,int key){
+		SendMessage(hwnd,WM_KEYUP,key,0);
+	}
+	
+	public void keyPress(long hwnd,int key){
+		SendMessage(hwnd,WM_CHAR,key,0);
 	}
 	
 	public void close(long hwnd){

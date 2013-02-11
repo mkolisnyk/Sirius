@@ -1,9 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<name>Sirius Server</name>
 	<groupId>Sirius-Server</groupId>
 	<artifactId>Sirius-Server-Engine</artifactId>
 	<version>${package.version}</version>
+	<url>https://github.com/mkolisnyk/Sirius</url>
+	<description>Sirius is open source platform initially designed for test automation purpose. In general, it is delivered as as set of libraries and execution service which is responsible for actual commands execution.</description>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 	    <testSourceDirectory>src/tests</testSourceDirectory>
@@ -136,7 +139,6 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	<name>Sirius Server</name>
 	<dependencies>
 		<dependency>
 			<groupId>log4j</groupId>
@@ -153,6 +155,5 @@
 			</plugin>
 		</plugins>
 	</reporting>
-	<url>https://github.com/mkolisnyk/Sirius</url>
-	<description>Sirius is open source platform initially designed for test automation purpose. In general, it is delivered as as set of libraries and execution service which is responsible for actual commands execution.</description>
+
 </project>

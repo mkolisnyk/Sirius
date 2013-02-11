@@ -98,7 +98,7 @@ public abstract class Structure  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(Structure.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "structure"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://classes.win32.server.sirius.org/", "structure"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("autoRead");
         elemField.setXmlName(new javax.xml.namespace.QName("", "autoRead"));
