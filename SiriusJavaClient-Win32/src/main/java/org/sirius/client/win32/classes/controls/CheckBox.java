@@ -21,4 +21,24 @@ public class CheckBox extends Button {
 		// TODO Auto-generated constructor stub
 	}
 
+	public void check(){
+		;
+	}
+	
+	public void uncheck(){
+		;
+	}
+	
+	public boolean isChecked(){
+		return false;
+	}
+	
+	public void setState(boolean checked){
+		if(checked){
+			check();
+		}
+		else {
+			uncheck();
+		}
+	}
 }

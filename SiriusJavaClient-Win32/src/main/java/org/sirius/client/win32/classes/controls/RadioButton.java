@@ -21,4 +21,6 @@ public class RadioButton extends CheckBox {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public void uncheck(){;}
 }

@@ -21,4 +21,27 @@ public class PageList extends List {
 		// TODO Auto-generated constructor stub
 	}
 
+	public String[] getTabNames(){
+		return null;
+	}
+	
+	public int getTabsCount(){
+		return 0;
+	}
+	
+	public void select(String tabName){
+		;
+	}
+
+	public void select(int index){
+		;
+	}
+	
+	public int getSelectedTab(){
+		return 0;
+	}
+	
+	public String getSelectedTabName(){
+		return "";
+	}
 }
