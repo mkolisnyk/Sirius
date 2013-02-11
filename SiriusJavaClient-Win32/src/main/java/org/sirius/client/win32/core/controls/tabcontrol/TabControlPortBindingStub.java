@@ -343,7 +343,7 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
 }
     }
 
-    public void getItemCount(long arg0) throws java.rmi.RemoteException {
+    public int getItemCount(long arg0) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -365,6 +365,11 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
             throw (java.rmi.RemoteException)_resp;
         }
         extractAttachments(_call);
+        try {
+            return ((java.lang.Integer) _resp).intValue();
+        } catch (java.lang.Exception _exception) {
+            return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+        }
   } catch (org.apache.axis.AxisFault axisFaultException) {
   throw axisFaultException;
 }
@@ -533,7 +538,7 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
 }
     }
 
-    public void getRowCount(long arg0) throws java.rmi.RemoteException {
+    public int getRowCount(long arg0) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -555,6 +560,11 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
             throw (java.rmi.RemoteException)_resp;
         }
         extractAttachments(_call);
+        try {
+            return ((java.lang.Integer) _resp).intValue();
+        } catch (java.lang.Exception _exception) {
+            return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+        }
   } catch (org.apache.axis.AxisFault axisFaultException) {
   throw axisFaultException;
 }

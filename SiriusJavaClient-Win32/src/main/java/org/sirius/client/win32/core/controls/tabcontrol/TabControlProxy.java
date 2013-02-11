@@ -56,10 +56,10 @@ public class TabControlProxy implements org.sirius.client.win32.core.controls.ta
     return tabControl.getCurSel(arg0);
   }
   
-  public void getItemCount(long arg0) throws java.rmi.RemoteException{
+  public int getItemCount(long arg0) throws java.rmi.RemoteException{
     if (tabControl == null)
       _initTabControlProxy();
-    tabControl.getItemCount(arg0);
+    return tabControl.getItemCount(arg0);
   }
   
   public org.sirius.client.win32.core.controls.tabcontrol.TcITEM getItem(long arg0, int arg1) throws java.rmi.RemoteException{
@@ -92,10 +92,10 @@ public class TabControlProxy implements org.sirius.client.win32.core.controls.ta
     return tabControl.hitTest(arg0);
   }
   
-  public void getRowCount(long arg0) throws java.rmi.RemoteException{
+  public int getRowCount(long arg0) throws java.rmi.RemoteException{
     if (tabControl == null)
       _initTabControlProxy();
-    tabControl.getRowCount(arg0);
+    return tabControl.getRowCount(arg0);
   }
   
   

@@ -119,8 +119,8 @@ public class TabControl extends Common implements ITabControlConsts {
 		return item;
 	}
 
-	public void GetRowCount(long hwndCtl) {
-		SendMessage(hwndCtl, TCM_GETROWCOUNT, 0, 0);
+	public int GetRowCount(long hwndCtl) {
+		return SendMessage(hwndCtl, TCM_GETROWCOUNT, 0, 0);
 	}
 
 	/*
@@ -135,7 +135,7 @@ public class TabControl extends Common implements ITabControlConsts {
 		SendMessage(hwndCtl, TCM_SETCURFOCUS, index, 0);
 	}
 
-	public void GetItemCount(long hwndCtl) {
-		SendMessage(hwndCtl, TCM_GETITEMCOUNT, 0, 0);
+	public int GetItemCount(long hwndCtl) {
+		return SendMessage(hwndCtl, TCM_GETITEMCOUNT, 0, 0);
 	}
 }
