@@ -83,6 +83,13 @@ public class Win32CoreClient {
 	public Win32CoreClient() {
 		menu = new MenuProxy();
 		window = new WindowProxy();
+		
+		dialog = new DialogProxy();
+		button = new ButtonProxy();
+		combo = new ComboBoxProxy();
+		edit = new EditProxy();
+		listbox = new ListBoxProxy();
+		tabcontrol = new TabControlProxy();
 	}
 
 }

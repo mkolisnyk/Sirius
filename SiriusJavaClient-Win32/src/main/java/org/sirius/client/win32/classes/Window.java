@@ -7,6 +7,7 @@ import java.lang.reflect.Method;
 import java.rmi.RemoteException;
 import java.util.Date;
 
+import org.apache.axis.types.UnsignedShort;
 import org.apache.log4j.ConsoleAppender;
 import org.apache.log4j.Logger;
 import org.apache.log4j.SimpleLayout;
@@ -28,6 +29,14 @@ public class Window implements WinUser {
 
 	protected Logger logger;
 
+	protected String getNativeText(UnsignedShort[] text){
+		char[] convertedText = new char[text.length];
+		for(int i=0;i<text.length;i++){
+			convertedText[i] = (char)text[i].intValue();
+		}
+		return null;		
+	}
+	
 	/**
 	 * 
 	 */

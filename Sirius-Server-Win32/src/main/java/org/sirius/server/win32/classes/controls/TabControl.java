@@ -9,6 +9,7 @@ import java.util.List;
 import javax.jws.WebService;
 
 import org.sirius.server.win32.classes.Common;
+import org.sirius.server.win32.classes.Window;
 import org.sirius.server.win32.constants.ITabControlConsts;
 
 import com.sun.jna.Pointer;
@@ -39,7 +40,7 @@ public class TabControl extends Common implements ITabControlConsts {
 		public int dwState;
 		public int dwStateMask;
 
-		public char[] pszText;
+		public String pszText;
 		public int cchTextMax;
 		public int iImage;
 		public LPARAM lParam;
@@ -54,6 +55,10 @@ public class TabControl extends Common implements ITabControlConsts {
 			return Arrays
 					.asList(new String[] { "mask", "dwState", "dwStateMask",
 							"pszText", "cchTextMax", "iImage", "lParam" });
+		}
+		public TC_ITEM(){
+			//cchTextMax=255;
+			pszText = "";
 		}
 	}
 
@@ -79,7 +84,7 @@ public class TabControl extends Common implements ITabControlConsts {
 
 		Pointer pt = item.getPointer();
 		LPARAM lParam = new LPARAM(Pointer.nativeValue(pt));
-		user32.SendMessage(hWnd, TCM_GETITEMW, wParam, lParam);
+		user32.SendMessage(hWnd, TCM_GETITEMA, wParam, lParam);
 		return item;
 	}
 
@@ -137,5 +142,19 @@ public class TabControl extends Common implements ITabControlConsts {
 
 	public int GetItemCount(long hwndCtl) {
 		return SendMessage(hwndCtl, TCM_GETITEMCOUNT, 0, 0);
+	}
+	
+	public static void main(String args[]){
+		long hwnd = 0x000B0960L;
+
+		long mainHwnd = 0x0009093FCL;
+		HWND dlg = new HWND();
+		dlg.setPointer(Pointer.createConstant(mainHwnd));
+		TabControl control = new TabControl();
+		Window win = new Window();
+		//TC_ITEM item = control.GetItem(hwnd, 0);
+		//System.out.println(item.pszText);
+		RECT rc = control.GetItemRect(hwnd, 2);
+		win.click(hwnd, 0, rc.left, rc.top, true, true, true);
 	}
 }

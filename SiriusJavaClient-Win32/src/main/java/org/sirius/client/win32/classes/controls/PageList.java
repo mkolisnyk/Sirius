@@ -27,7 +27,7 @@ public class PageList extends List {
 		String[] tabNames = new String[count];
 		for(int i=0;i<count;i++){
 			TcITEM item = client.core().tabcontrol().getItem(this.getHwnd(), i);
-			tabNames[i] = String.valueOf(item.getPszText());
+			tabNames[i] = getNativeText(item.getPszText());
 		}
 		return tabNames;
 	}

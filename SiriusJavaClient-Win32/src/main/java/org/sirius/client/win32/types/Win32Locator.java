@@ -32,6 +32,13 @@ public class Win32Locator implements java.io.Serializable {
 		this.index = index;
 	}
 
+	public Win32Locator(String winClass, String caption, int index){
+		this();
+		this.index = index;
+		this.caption = caption;
+		this.winClass = winClass;
+	}
+	
 	public Win32Locator(java.lang.String caption, long hwnd, int index,
 			long parent, java.lang.String winClass) {
 		this.caption = caption;

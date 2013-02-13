@@ -44,22 +44,22 @@ public class TabControlProxy implements org.sirius.client.win32.core.controls.ta
     return tabControl;
   }
   
-  public void setCurSel(long arg0, int arg1) throws java.rmi.RemoteException{
-    if (tabControl == null)
-      _initTabControlProxy();
-    tabControl.setCurSel(arg0, arg1);
-  }
-  
   public int getCurSel(long arg0) throws java.rmi.RemoteException{
     if (tabControl == null)
       _initTabControlProxy();
     return tabControl.getCurSel(arg0);
   }
   
-  public int getItemCount(long arg0) throws java.rmi.RemoteException{
+  public void setCurSel(long arg0, int arg1) throws java.rmi.RemoteException{
     if (tabControl == null)
       _initTabControlProxy();
-    return tabControl.getItemCount(arg0);
+    tabControl.setCurSel(arg0, arg1);
+  }
+  
+  public void setCurFocus(long arg0, int arg1) throws java.rmi.RemoteException{
+    if (tabControl == null)
+      _initTabControlProxy();
+    tabControl.setCurFocus(arg0, arg1);
   }
   
   public org.sirius.client.win32.core.controls.tabcontrol.TcITEM getItem(long arg0, int arg1) throws java.rmi.RemoteException{
@@ -68,10 +68,10 @@ public class TabControlProxy implements org.sirius.client.win32.core.controls.ta
     return tabControl.getItem(arg0, arg1);
   }
   
-  public void setCurFocus(long arg0, int arg1) throws java.rmi.RemoteException{
+  public int getItemCount(long arg0) throws java.rmi.RemoteException{
     if (tabControl == null)
       _initTabControlProxy();
-    tabControl.setCurFocus(arg0, arg1);
+    return tabControl.getItemCount(arg0);
   }
   
   public int getCurFocus(long arg0) throws java.rmi.RemoteException{

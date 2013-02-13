@@ -155,7 +155,7 @@ public class Rect  extends org.sirius.client.win32.core.types.Structure  impleme
         new org.apache.axis.description.TypeDesc(Rect.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://classes.win32.server.sirius.org/", "rect"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "rect"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("left");
         elemField.setXmlName(new javax.xml.namespace.QName("", "left"));
