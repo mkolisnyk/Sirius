@@ -54,4 +54,7 @@ public interface User32Ext extends User32 {
 	public int SendMessage(HWND hWnd, int msg, WPARAM wParam, LPARAM lParam);
 
 	public boolean SetWindowText( HWND hWnd, char[] lpString);
+	
+	public HWND GetParent(HWND hWnd);
+	public HDC GetWindowDC(HWND hWnd);
 }

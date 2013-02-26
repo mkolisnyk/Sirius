@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 require 'ButtonServiceDriver.rb'
 
-
-Sirius::Win32::Core::Button
+Sirius::Client::Win32::Core::Button
 
 endpoint_url = ARGV.shift
 obj = Button.new(endpoint_url)
@@ -21,18 +20,6 @@ obj.wiredump_dev = STDERR if $DEBUG
 #
 parameters = nil
 puts obj.setState(parameters)
-
-# SYNOPSIS
-#   getCheck(parameters)
-#
-# ARGS
-#   parameters      GetCheck - {http://controls.classes.win32.server.sirius.org/}GetCheck
-#
-# RETURNS
-#   parameters      GetCheckResponse - {http://controls.classes.win32.server.sirius.org/}GetCheckResponse
-#
-parameters = nil
-puts obj.getCheck(parameters)
 
 # SYNOPSIS
 #   setCheck(parameters)
@@ -58,7 +45,16 @@ puts obj.setCheck(parameters)
 parameters = nil
 puts obj.getState(parameters)
 
+# SYNOPSIS
+#   getCheck(parameters)
+#
+# ARGS
+#   parameters      GetCheck - {http://controls.classes.win32.server.sirius.org/}GetCheck
+#
+# RETURNS
+#   parameters      GetCheckResponse - {http://controls.classes.win32.server.sirius.org/}GetCheckResponse
+#
+parameters = nil
+puts obj.getCheck(parameters)
 
-
-
-Sirius::Win32::Core::Button
+Sirius::Client::Win32::Core::Button

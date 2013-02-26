@@ -2,7 +2,7 @@ require 'Win32UtilsService.rb'
 require 'Win32UtilsServiceMappingRegistry.rb'
 require 'soap/rpc/driver'
 
-module Sirius::Win32::Core::Utils
+module Sirius::Client::Win32::Core::Utils
 
 
 class Win32Utils < ::SOAP::RPC::Driver  DefaultEndpointUrl = "http:localhost:21212/win32/utils"

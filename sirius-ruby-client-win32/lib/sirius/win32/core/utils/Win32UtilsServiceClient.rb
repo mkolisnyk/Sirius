@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 require 'Win32UtilsServiceDriver.rb'
 
-
-Sirius::Win32::Core::Utils
+Sirius::Client::Win32::Core::Utils
 
 endpoint_url = ARGV.shift
 obj = Win32Utils.new(endpoint_url)
@@ -34,7 +33,4 @@ puts obj.searchWindow(parameters)
 parameters = nil
 puts obj.searchSameThreadWindow(parameters)
 
-
-
-
-Sirius::Win32::Core::Utils
+Sirius::Client::Win32::Core::Utils

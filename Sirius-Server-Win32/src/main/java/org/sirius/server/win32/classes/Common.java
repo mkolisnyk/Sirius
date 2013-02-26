@@ -3,7 +3,11 @@
  */
 package org.sirius.server.win32.classes;
 
+import org.sirius.server.win32.constants.IICCConsts;
+import org.sirius.server.win32.core.CommCtl;
+import org.sirius.server.win32.core.CommCtl.INITCOMMONCONTROLSEX;
 import org.sirius.server.win32.core.DlgWin32API;
+import org.sirius.server.win32.core.Kernel32Ext;
 import org.sirius.server.win32.core.User32Ext;
 
 import com.sun.jna.Pointer;
@@ -17,11 +21,13 @@ import com.sun.jna.platform.win32.WinDef.WPARAM;
  * @author Myk Kolisnyk
  *
  */
-public class Common {
+public class Common implements IICCConsts {
 
 	protected Shell32 shell32 = Shell32.INSTANCE;
 	protected User32Ext user32 = User32Ext.INSTANCE;
 	protected DlgWin32API dlg32 = DlgWin32API.INSTANCE; 
+	protected Kernel32Ext kernel32 = Kernel32Ext.INSTANCE;
+	protected CommCtl commCtl32 = CommCtl.INSTANCE;
 	
 	/**
 	 * 
@@ -62,5 +68,12 @@ public class Common {
 
 	protected void PostMessage(long hwnd,int msg,int wparam,int lparam){
 		user32.PostMessage(longToHwnd(hwnd), msg, new WPARAM(wparam), new LPARAM(lparam));
+	}
+	
+	public void InitCommonControls(){
+		
+		INITCOMMONCONTROLSEX lpInitCtrls = new INITCOMMONCONTROLSEX();
+		lpInitCtrls.dwICC = IICCConsts.ICC_ALL;
+		commCtl32.InitCommonControlsEx(lpInitCtrls);
 	}
 }

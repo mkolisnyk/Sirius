@@ -1,62 +1,13 @@
 #!/usr/bin/env ruby
 require 'ListBoxServiceDriver.rb'
 
-
-Sirius::Win32::Core::Listbox
+Sirius::Client::Win32::Core::Listbox
 
 endpoint_url = ARGV.shift
 obj = ListBox.new(endpoint_url)
 
 # run ruby with -d to see SOAP wiredumps.
 obj.wiredump_dev = STDERR if $DEBUG
-
-# SYNOPSIS
-#   setCurSel(parameters)
-#
-# ARGS
-#   parameters      SetCurSel - {http://controls.classes.win32.server.sirius.org/}SetCurSel
-#
-# RETURNS
-#   parameters      SetCurSelResponse - {http://controls.classes.win32.server.sirius.org/}SetCurSelResponse
-#
-parameters = nil
-puts obj.setCurSel(parameters)
-
-# SYNOPSIS
-#   getText(parameters)
-#
-# ARGS
-#   parameters      GetText - {http://controls.classes.win32.server.sirius.org/}GetText
-#
-# RETURNS
-#   parameters      GetTextResponse - {http://controls.classes.win32.server.sirius.org/}GetTextResponse
-#
-parameters = nil
-puts obj.getText(parameters)
-
-# SYNOPSIS
-#   getCurSel(parameters)
-#
-# ARGS
-#   parameters      GetCurSel - {http://controls.classes.win32.server.sirius.org/}GetCurSel
-#
-# RETURNS
-#   parameters      GetCurSelResponse - {http://controls.classes.win32.server.sirius.org/}GetCurSelResponse
-#
-parameters = nil
-puts obj.getCurSel(parameters)
-
-# SYNOPSIS
-#   selectString(parameters)
-#
-# ARGS
-#   parameters      SelectString - {http://controls.classes.win32.server.sirius.org/}SelectString
-#
-# RETURNS
-#   parameters      SelectStringResponse - {http://controls.classes.win32.server.sirius.org/}SelectStringResponse
-#
-parameters = nil
-puts obj.selectString(parameters)
 
 # SYNOPSIS
 #   getCount(parameters)
@@ -83,16 +34,52 @@ parameters = nil
 puts obj.findString(parameters)
 
 # SYNOPSIS
-#   setSel(parameters)
+#   getCurSel(parameters)
 #
 # ARGS
-#   parameters      SetSel - {http://controls.classes.win32.server.sirius.org/}SetSel
+#   parameters      GetCurSel - {http://controls.classes.win32.server.sirius.org/}GetCurSel
 #
 # RETURNS
-#   parameters      SetSelResponse - {http://controls.classes.win32.server.sirius.org/}SetSelResponse
+#   parameters      GetCurSelResponse - {http://controls.classes.win32.server.sirius.org/}GetCurSelResponse
 #
 parameters = nil
-puts obj.setSel(parameters)
+puts obj.getCurSel(parameters)
+
+# SYNOPSIS
+#   getText(parameters)
+#
+# ARGS
+#   parameters      GetText - {http://controls.classes.win32.server.sirius.org/}GetText
+#
+# RETURNS
+#   parameters      GetTextResponse - {http://controls.classes.win32.server.sirius.org/}GetTextResponse
+#
+parameters = nil
+puts obj.getText(parameters)
+
+# SYNOPSIS
+#   selectString(parameters)
+#
+# ARGS
+#   parameters      SelectString - {http://controls.classes.win32.server.sirius.org/}SelectString
+#
+# RETURNS
+#   parameters      SelectStringResponse - {http://controls.classes.win32.server.sirius.org/}SelectStringResponse
+#
+parameters = nil
+puts obj.selectString(parameters)
+
+# SYNOPSIS
+#   setCurSel(parameters)
+#
+# ARGS
+#   parameters      SetCurSel - {http://controls.classes.win32.server.sirius.org/}SetCurSel
+#
+# RETURNS
+#   parameters      SetCurSelResponse - {http://controls.classes.win32.server.sirius.org/}SetCurSelResponse
+#
+parameters = nil
+puts obj.setCurSel(parameters)
 
 # SYNOPSIS
 #   getSel(parameters)
@@ -105,6 +92,18 @@ puts obj.setSel(parameters)
 #
 parameters = nil
 puts obj.getSel(parameters)
+
+# SYNOPSIS
+#   setSel(parameters)
+#
+# ARGS
+#   parameters      SetSel - {http://controls.classes.win32.server.sirius.org/}SetSel
+#
+# RETURNS
+#   parameters      SetSelResponse - {http://controls.classes.win32.server.sirius.org/}SetSelResponse
+#
+parameters = nil
+puts obj.setSel(parameters)
 
 # SYNOPSIS
 #   getSelCount(parameters)
@@ -214,7 +213,4 @@ puts obj.getCaretIndex(parameters)
 parameters = nil
 puts obj.setCaretIndex(parameters)
 
-
-
-
-Sirius::Win32::Core::Listbox
+Sirius::Client::Win32::Core::Listbox

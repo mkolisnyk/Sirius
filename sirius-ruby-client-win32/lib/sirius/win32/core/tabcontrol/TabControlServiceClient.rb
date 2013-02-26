@@ -1,26 +1,13 @@
 #!/usr/bin/env ruby
 require 'TabControlServiceDriver.rb'
 
-
-Sirius::Win32::Core::Tabcontrol
+Sirius::Client::Win32::Core::Tabcontrol
 
 endpoint_url = ARGV.shift
 obj = TabControl.new(endpoint_url)
 
 # run ruby with -d to see SOAP wiredumps.
 obj.wiredump_dev = STDERR if $DEBUG
-
-# SYNOPSIS
-#   setCurSel(parameters)
-#
-# ARGS
-#   parameters      SetCurSel - {http://controls.classes.win32.server.sirius.org/}SetCurSel
-#
-# RETURNS
-#   parameters      SetCurSelResponse - {http://controls.classes.win32.server.sirius.org/}SetCurSelResponse
-#
-parameters = nil
-puts obj.setCurSel(parameters)
 
 # SYNOPSIS
 #   getCurSel(parameters)
@@ -35,6 +22,18 @@ parameters = nil
 puts obj.getCurSel(parameters)
 
 # SYNOPSIS
+#   setCurSel(parameters)
+#
+# ARGS
+#   parameters      SetCurSel - {http://controls.classes.win32.server.sirius.org/}SetCurSel
+#
+# RETURNS
+#   parameters      SetCurSelResponse - {http://controls.classes.win32.server.sirius.org/}SetCurSelResponse
+#
+parameters = nil
+puts obj.setCurSel(parameters)
+
+# SYNOPSIS
 #   getItemCount(parameters)
 #
 # ARGS
@@ -47,16 +46,28 @@ parameters = nil
 puts obj.getItemCount(parameters)
 
 # SYNOPSIS
-#   setCurFocus(parameters)
+#   getCurFocus(parameters)
 #
 # ARGS
-#   parameters      SetCurFocus - {http://controls.classes.win32.server.sirius.org/}SetCurFocus
+#   parameters      GetCurFocus - {http://controls.classes.win32.server.sirius.org/}GetCurFocus
 #
 # RETURNS
-#   parameters      SetCurFocusResponse - {http://controls.classes.win32.server.sirius.org/}SetCurFocusResponse
+#   parameters      GetCurFocusResponse - {http://controls.classes.win32.server.sirius.org/}GetCurFocusResponse
 #
 parameters = nil
-puts obj.setCurFocus(parameters)
+puts obj.getCurFocus(parameters)
+
+# SYNOPSIS
+#   hitTest(parameters)
+#
+# ARGS
+#   parameters      HitTest - {http://controls.classes.win32.server.sirius.org/}HitTest
+#
+# RETURNS
+#   parameters      HitTestResponse - {http://controls.classes.win32.server.sirius.org/}HitTestResponse
+#
+parameters = nil
+puts obj.hitTest(parameters)
 
 # SYNOPSIS
 #   getRowCount(parameters)
@@ -83,16 +94,16 @@ parameters = nil
 puts obj.getItemRect(parameters)
 
 # SYNOPSIS
-#   hitTest(parameters)
+#   setCurFocus(parameters)
 #
 # ARGS
-#   parameters      HitTest - {http://controls.classes.win32.server.sirius.org/}HitTest
+#   parameters      SetCurFocus - {http://controls.classes.win32.server.sirius.org/}SetCurFocus
 #
 # RETURNS
-#   parameters      HitTestResponse - {http://controls.classes.win32.server.sirius.org/}HitTestResponse
+#   parameters      SetCurFocusResponse - {http://controls.classes.win32.server.sirius.org/}SetCurFocusResponse
 #
 parameters = nil
-puts obj.hitTest(parameters)
+puts obj.setCurFocus(parameters)
 
 # SYNOPSIS
 #   getItem(parameters)
@@ -106,19 +117,4 @@ puts obj.hitTest(parameters)
 parameters = nil
 puts obj.getItem(parameters)
 
-# SYNOPSIS
-#   getCurFocus(parameters)
-#
-# ARGS
-#   parameters      GetCurFocus - {http://controls.classes.win32.server.sirius.org/}GetCurFocus
-#
-# RETURNS
-#   parameters      GetCurFocusResponse - {http://controls.classes.win32.server.sirius.org/}GetCurFocusResponse
-#
-parameters = nil
-puts obj.getCurFocus(parameters)
-
-
-
-
-Sirius::Win32::Core::Tabcontrol
+Sirius::Client::Win32::Core::Tabcontrol

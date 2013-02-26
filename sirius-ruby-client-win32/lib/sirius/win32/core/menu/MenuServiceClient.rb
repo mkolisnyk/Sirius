@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 require 'MenuServiceDriver.rb'
 
-
-Sirius::Win32::Core::Menu
+Sirius::Client::Win32::Core::Menu
 
 endpoint_url = ARGV.shift
 obj = Menu.new(endpoint_url)
@@ -142,7 +141,4 @@ puts obj.getMenuString(parameters)
 parameters = nil
 puts obj.pickItem(parameters)
 
-
-
-
-Sirius::Win32::Core::Menu
+Sirius::Client::Win32::Core::Menu

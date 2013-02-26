@@ -2,7 +2,7 @@ require 'ButtonService.rb'
 require 'ButtonServiceMappingRegistry.rb'
 require 'soap/rpc/driver'
 
-module Sirius::Win32::Core::Button
+module Sirius::Client::Win32::Core::Button
 
 
 class Button < ::SOAP::RPC::Driver  DefaultEndpointUrl = "http:localhost:21212/win32/button"
@@ -11,14 +11,6 @@ class Button < ::SOAP::RPC::Driver  DefaultEndpointUrl = "http:localhost:21212/w
       "setState",
       [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SetState"]],
         [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SetStateResponse"]] ],
-      { :request_style =>  :document, :request_use =>  :literal,
-        :response_style => :document, :response_use => :literal,
-        :faults => {} }
-    ],
-    [ "",
-      "getCheck",
-      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetCheck"]],
-        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetCheckResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
@@ -35,6 +27,14 @@ class Button < ::SOAP::RPC::Driver  DefaultEndpointUrl = "http:localhost:21212/w
       "getState",
       [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetState"]],
         [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetStateResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "getCheck",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetCheck"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetCheckResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }

@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 require 'DialogServiceDriver.rb'
 
-
-Sirius::Win32::Core::Dialog
+Sirius::Client::Win32::Core::Dialog
 
 endpoint_url = ARGV.shift
 obj = Dialog.new(endpoint_url)
@@ -106,7 +105,4 @@ puts obj.setDlgItemInt(parameters)
 parameters = nil
 puts obj.setDlgItemText(parameters)
 
-
-
-
-Sirius::Win32::Core::Dialog
+Sirius::Client::Win32::Core::Dialog

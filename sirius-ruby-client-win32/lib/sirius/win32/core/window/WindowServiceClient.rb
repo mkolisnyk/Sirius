@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 require 'WindowServiceDriver.rb'
 
-
-Sirius::Win32::Core::Window
+Sirius::Client::Win32::Core::Window
 
 endpoint_url = ARGV.shift
 obj = Window.new(endpoint_url)
@@ -358,7 +357,4 @@ puts obj.getMenu(parameters)
 parameters = nil
 puts obj.isNormal(parameters)
 
-
-
-
-Sirius::Win32::Core::Window
+Sirius::Client::Win32::Core::Window

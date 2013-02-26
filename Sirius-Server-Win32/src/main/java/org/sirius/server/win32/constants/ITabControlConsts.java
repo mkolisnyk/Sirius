@@ -47,4 +47,15 @@ public interface ITabControlConsts {
 	
 	public final int TCM_SETUNICODEFORMAT = CCM_SETUNICODEFORMAT;
 	public final int TCM_GETUNICODEFORMAT = CCM_GETUNICODEFORMAT;
+	
+	public final int TCIF_TEXT = 1;
+	public final int TCIF_IMAGE = 2;
+	public final int TCIF_RTLREADING = 4;
+	public final int TCIF_PARAM = 8;
+	public final int TCIF_STATE = 16;
+	
+	public final int TCN_FIRST = Integer.MAX_VALUE -550;
+	public final int TCN_KEYDOWN=TCN_FIRST;
+	public final int TCN_SELCHANGE=(TCN_FIRST-1);
+	public final int TCN_SELCHANGING=(TCN_FIRST-2);
 }
