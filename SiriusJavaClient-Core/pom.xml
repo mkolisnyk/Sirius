@@ -1,8 +1,33 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>Sirius-Client</groupId>
-  <artifactId>Sirius-Client-Core</artifactId>
-  	<version>${package.version}</version>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.github.mkolisnyk</groupId>
+	<artifactId>sirius.client.core</artifactId>
+	<version>${package.version}</version>
+	<packaging>jar</packaging>
+	<name>SiriusJavaClient-Core</name>
+	<description>Sirius Client for core operations</description>
+	<url>https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core</url>
+	<licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <connection>scm:https://github.com/mkolisnyk/Sirius.git</connection>
+    <developerConnection>scm:https://github.com/mkolisnyk/Sirius.git</developerConnection>
+    <url>https://github.com/mkolisnyk/Sirius.git</url>
+  </scm>
+  <developers>
+    <developer>
+      <id>mkolisnyk</id>
+      <name>Mykola Kolisnyk</name>
+      <email>kolesnik.nickolay@gmail.com</email>
+    </developer>
+  </developers>
+	
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<resources>
@@ -85,6 +110,19 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 		<pluginManagement>
 			<plugins>
@@ -158,5 +196,4 @@
 			</plugin>
 		</plugins>
 	</reporting>
-  <name>SiriusJavaClient-Core</name>
 </project>

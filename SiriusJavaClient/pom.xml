@@ -1,9 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>Sirius-Client</groupId>
-	<artifactId>Sirius-Java-Client</artifactId>
+	<groupId>com.github.mkolisnyk</groupId>
+	<artifactId>sirius.java.client</artifactId>
 	<version>${package.version}</version>
+	<name>Sirius Java Client</name>
+	<url>https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient</url>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<resources>
@@ -86,6 +88,19 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 		<pluginManagement>
 			<plugins>
@@ -147,6 +162,4 @@
 			</plugin>
 		</plugins>
 	</reporting>
-	<name>Sirius Java Client</name>
-	<url>https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient</url>
 </project>

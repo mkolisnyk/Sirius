@@ -1,12 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>Sirius-Server</groupId>
-  <artifactId>Sirius-Server-Core</artifactId>
-  <version>${package.version}</version>
-  <name>Sirius Server Core</name>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.github.mkolisnyk</groupId>
+	<artifactId>sirius.server.core</artifactId>
+	<version>${package.version}</version>
+	<name>Sirius Server Core</name>
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
-	    <testSourceDirectory>src/test/java</testSourceDirectory>
+		<testSourceDirectory>src/test/java</testSourceDirectory>
 		<resources>
 			<resource>
 				<directory>src</directory>
@@ -96,10 +97,24 @@
 					<preparationGoals>package install:install-file</preparationGoals>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -135,7 +150,7 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-  	<dependencies>
+	<dependencies>
 		<dependency>
 			<groupId>org.jbehave</groupId>
 			<artifactId>jbehave-core</artifactId>
@@ -148,5 +163,5 @@
 			<version>4.8.1</version>
 			<scope>test</scope>
 		</dependency>
-  	</dependencies>
+	</dependencies>
 </project>

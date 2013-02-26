@@ -2,14 +2,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<name>Sirius Server</name>
-	<groupId>Sirius-Server</groupId>
-	<artifactId>Sirius-Server-Engine</artifactId>
+	<groupId>com.github.mkolisnyk</groupId>
+	<artifactId>sirius.server.engine</artifactId>
 	<version>${package.version}</version>
 	<url>https://github.com/mkolisnyk/Sirius</url>
 	<description>Sirius is open source platform initially designed for test automation purpose. In general, it is delivered as as set of libraries and execution service which is responsible for actual commands execution.</description>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
-	    <testSourceDirectory>src/tests</testSourceDirectory>
+		<testSourceDirectory>src/tests</testSourceDirectory>
 		<resources>
 			<resource>
 				<directory>src</directory>
@@ -98,6 +98,19 @@
 					<tagNameFormat>v@{project.version}</tagNameFormat>
 					<preparationGoals>package install:install-file</preparationGoals>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 		<pluginManagement>
