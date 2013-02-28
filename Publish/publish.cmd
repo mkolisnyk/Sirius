@@ -3,7 +3,7 @@ call mvn assembly:single -Dpackage.version=%1
 
 echo "Publishing Ruby client"
 
-for /f %%i in ('dir /B Ruby-Client\*.gem') DO cmd /C gem push Ruby-Client\%%i
+for /f %%i in ('dir /B Ruby-Client\*.gem') DO cmd /C gem push Ruby-Client\%%i -k 4ab5f5583c8ce4be13bf8deb3b3805c1
 
 echo "Publishing C# client"
 
