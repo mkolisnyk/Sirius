@@ -28,20 +28,30 @@
 				<groupId>com.googlecode.maven-gcu-plugin</groupId>
 				<artifactId>maven-gcu-plugin</artifactId>
 				<version>1.0</version>
-				<configuration>
-					<failsOnError>true</failsOnError> <!-- default: false -->
-					<projectName>sirius-platform</projectName> <!-- default: ${project.artifactId} -->
-					<uploads>
-						 <upload>
-							<file>${project.build.directory}/${project.artifactId}-${project.version}.${project.packaging}</file>
-							<summary>${project.name} binaries ${project.version}</summary>
-							<labels>
-								<label>Featured</label>
-								<label>Type-Archive</label>
-							</labels>
-						</upload>
-					</uploads>
-				</configuration>
+				<executions>
+					<execution>
+						<id>gcode-upload</id>
+						<phase>package</phase> <!-- default: deploy -->
+						<goals>
+							<goal>upload</goal>
+						</goals>
+						<configuration>
+							<serverId>googlecode</serverId> <!-- default: googlecode -->
+							<failsOnError>true</failsOnError> <!-- default: false -->
+							<projectName>sirius-platform</projectName> <!-- default: ${project.artifactId} -->
+							<uploads>
+								<upload>
+									<file>${project.build.directory}/${project.artifactId}-${project.version}.${project.packaging}</file>
+									<summary>${project.name} bundle ${project.version}</summary>
+									<labels>
+										<label>Featured</label>
+										<label>Type-Archive</label>
+									</labels>
+								</upload>
+							</uploads>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
