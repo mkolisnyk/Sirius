@@ -9,25 +9,32 @@
 	<description>Sirius Client for core operations</description>
 	<url>https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core</url>
 	<licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
-  <scm>
-    <connection>scm:https://github.com/mkolisnyk/Sirius.git</connection>
-    <developerConnection>scm:https://github.com/mkolisnyk/Sirius.git</developerConnection>
-    <url>https://github.com/mkolisnyk/Sirius.git</url>
-  </scm>
-  <developers>
-    <developer>
-      <id>mkolisnyk</id>
-      <name>Mykola Kolisnyk</name>
-      <email>kolesnik.nickolay@gmail.com</email>
-    </developer>
-  </developers>
-	
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<scm>
+		<connection>scm:https://github.com/mkolisnyk/Sirius.git</connection>
+		<developerConnection>scm:https://github.com/mkolisnyk/Sirius.git</developerConnection>
+		<url>https://github.com/mkolisnyk/Sirius.git</url>
+	</scm>
+	<developers>
+		<developer>
+			<id>mkolisnyk</id>
+			<name>Mykola Kolisnyk</name>
+			<email>kolesnik.nickolay@gmail.com</email>
+		</developer>
+	</developers>
+
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
+
+
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<resources>
@@ -91,11 +98,15 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.4</version>
 				<configuration>
-					<descriptorRefs>
-						<descriptorRef>-deps</descriptorRef>
-					</descriptorRefs>
+					<descriptors>
+						<descriptor>./sources.xml</descriptor>
+					</descriptors>
 				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-install-plugin</artifactId>
 			</plugin>
 
 			<plugin>
@@ -112,6 +123,15 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<show>private</show>
+					<nohelp>false</nohelp>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-gpg-plugin</artifactId>
 				<executions>
 					<execution>
@@ -122,6 +142,11 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.4</version>
 			</plugin>
 		</plugins>
 		<pluginManagement>
@@ -153,7 +178,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore></ignore>
+										<ignore/>
 									</action>
 								</pluginExecution>
 							</pluginExecutions>
