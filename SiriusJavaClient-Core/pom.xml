@@ -128,6 +128,7 @@
 				<configuration>
 					<show>private</show>
 					<nohelp>false</nohelp>
+					<failOnError>false</failOnError>
 				</configuration>
 			</plugin>
 			<plugin>
