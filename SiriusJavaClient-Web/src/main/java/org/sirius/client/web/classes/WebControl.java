@@ -67,4 +67,8 @@ public class WebControl {
 	public String getAttribute(String attribute) throws RemoteException{
 		return client().core().getAttribute(parentElement, locator, attribute);
 	}
+	
+	public String getValue() throws RemoteException{
+		return getAttribute("value");
+	}
 }

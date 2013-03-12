@@ -22,9 +22,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
  * 
  */
 @WebService
-public class WebCore {
-
-	public static HashMap<String, WebDriver> drivers = new HashMap<String, WebDriver>();
+public class WebCore extends WebHelper {
 
 	public final String IE = "ie";
 	public final String FIREFOX = "firefox";
@@ -52,21 +50,16 @@ public class WebCore {
 		}
 
 		if (driver != null) {
-			drivers.put(driver.toString(), driver);
+			DriverMap.drivers.put(driver.toString(), driver);
 			return driver.toString();
 		}
 
 		return null;
 	}
 
-	private WebDriver driver(String token) {
-		WebDriver driver = drivers.get(token);
-		return driver;
-	}
-
 	public void stop(String token) {
 		driver(token).close();
-		drivers.remove(token);
+		DriverMap.drivers.remove(token);
 	}
 
 	public void open(String token, String url) {
@@ -119,37 +112,6 @@ public class WebCore {
 
 	public void selectAlert(String token) {
 		driver(token).switchTo().alert();
-	}
-
-	// WebElement wrappers
-	private By toLocator(String locator) {
-		String prefix = locator.split("=")[0];
-		String value = locator.substring(locator.indexOf("=") + 1);
-		if (prefix.equals("id")) {
-			return By.id(value);
-		} else if (prefix.equals("name")) {
-			return By.name(value);
-		} else if (prefix.equals("link")) {
-			return By.linkText(value);
-		} else if (prefix.equals("tag")) {
-			return By.tagName(value);
-		} else if (prefix.equals("class")) {
-			return By.className(value);
-		} else if (prefix.equals("css")) {
-			return By.cssSelector(value);
-		} else if (prefix.equals("xpath")) {
-			return By.xpath(value);
-		}
-
-		return null;
-	}
-
-	private WebElement getElement(String token, String startFrom, String locator) {
-		if (startFrom != null) {
-			return driver(token).findElement(toLocator(startFrom)).findElement(
-					toLocator(locator));
-		}
-		return driver(token).findElement(toLocator(locator));
 	}
 
 	public void clear(String token, String startFrom, String locator) {

@@ -9,6 +9,7 @@ import org.sirius.client.web.core.Dimension;
 import org.sirius.client.web.core.Point;
 import org.sirius.client.web.core.WebCore;
 import org.sirius.client.web.core.WebCoreProxy;
+import org.sirius.client.web.select.WebSelectProxy;
 
 /**
  * @author Myk Kolisnyk
@@ -17,6 +18,7 @@ import org.sirius.client.web.core.WebCoreProxy;
 public class WebClientCoreProxy extends WebCoreProxy {
 
 	protected String token = "";
+	protected WebSelectProxy select;
 	
 	public String token(){
 		return token;
@@ -26,7 +28,7 @@ public class WebClientCoreProxy extends WebCoreProxy {
 	 * 
 	 */
 	public WebClientCoreProxy() {
-		;
+		select = new WebSelectProxy();
 	}
 
 	/**
@@ -319,6 +321,148 @@ public class WebClientCoreProxy extends WebCoreProxy {
 			throws RemoteException {
 		
 		return super.getTagName(this.token, arg1, arg2);
+	}
+
+	/**
+	 * @param arg0
+	 * @param arg1
+	 * @param arg2
+	 * @return
+	 * @throws RemoteException
+	 * @see org.sirius.client.web.select.WebSelectProxy#isMultiple(java.lang.String, java.lang.String, java.lang.String)
+	 */
+	public boolean isMultiple( String arg1, String arg2)
+			throws RemoteException {
+		return select.isMultiple(this.token,arg1, arg2);
+	}
+
+	/**
+	 * @param arg0
+	 * @param arg1
+	 * @param arg2
+	 * @throws RemoteException
+	 * @see org.sirius.client.web.select.WebSelectProxy#deselectAll(java.lang.String, java.lang.String, java.lang.String)
+	 */
+	public void deselectAll( String arg1, String arg2)
+			throws RemoteException {
+		select.deselectAll(this.token,arg1, arg2);
+	}
+
+	/**
+	 * @param arg0
+	 * @param arg1
+	 * @param arg2
+	 * @param arg3
+	 * @throws RemoteException
+	 * @see org.sirius.client.web.select.WebSelectProxy#deselectByIndex(java.lang.String, java.lang.String, java.lang.String, int)
+	 */
+	public void deselectByIndex( String arg1, String arg2, int arg3)
+			throws RemoteException {
+		select.deselectByIndex(this.token,arg1, arg2, arg3);
+	}
+
+	/**
+	 * @param arg0
+	 * @param arg1
+	 * @param arg2
+	 * @param arg3
+	 * @throws RemoteException
+	 * @see org.sirius.client.web.select.WebSelectProxy#deselectByValue(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+	 */
+	public void deselectByValue( String arg1, String arg2,
+			String arg3) throws RemoteException {
+		select.deselectByValue(this.token,arg1, arg2, arg3);
+	}
+
+	/**
+	 * @param arg0
+	 * @param arg1
+	 * @param arg2
+	 * @return
+	 * @throws RemoteException
+	 * @see org.sirius.client.web.select.WebSelectProxy#getAllOptions(java.lang.String, java.lang.String, java.lang.String)
+	 */
+	public String[] getAllOptions( String arg1, String arg2)
+			throws RemoteException {
+		return select.getAllOptions(this.token,arg1, arg2);
+	}
+
+	/**
+	 * @param arg0
+	 * @param arg1
+	 * @param arg2
+	 * @param arg3
+	 * @throws RemoteException
+	 * @see org.sirius.client.web.select.WebSelectProxy#selectByIndex(java.lang.String, java.lang.String, java.lang.String, int)
+	 */
+	public void selectByIndex( String arg1, String arg2, int arg3)
+			throws RemoteException {
+		select.selectByIndex(this.token,arg1, arg2, arg3);
+	}
+
+	/**
+	 * @param arg0
+	 * @param arg1
+	 * @param arg2
+	 * @param arg3
+	 * @throws RemoteException
+	 * @see org.sirius.client.web.select.WebSelectProxy#selectByValue(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+	 */
+	public void selectByValue( String arg1, String arg2, String arg3)
+			throws RemoteException {
+		select.selectByValue(this.token,arg1, arg2, arg3);
+	}
+
+	/**
+	 * @param arg0
+	 * @param arg1
+	 * @param arg2
+	 * @param arg3
+	 * @throws RemoteException
+	 * @see org.sirius.client.web.select.WebSelectProxy#selectByVisibleText(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+	 */
+	public void selectByVisibleText( String arg1, String arg2,
+			String arg3) throws RemoteException {
+		select.selectByVisibleText(this.token,arg1, arg2, arg3);
+	}
+
+	/**
+	 * @param arg0
+	 * @param arg1
+	 * @param arg2
+	 * @param arg3
+	 * @throws RemoteException
+	 * @see org.sirius.client.web.select.WebSelectProxy#deselectByVisibleText(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+	 */
+	public void deselectByVisibleText( String arg1, String arg2,
+			String arg3) throws RemoteException {
+		select.deselectByVisibleText(this.token,arg1, arg2, arg3);
+	}
+
+	/**
+	 * @param arg0
+	 * @param arg1
+	 * @param arg2
+	 * @return
+	 * @throws RemoteException
+	 * @see org.sirius.client.web.select.WebSelectProxy#getAllSelectedOptions(java.lang.String, java.lang.String, java.lang.String)
+	 */
+	public String[] getAllSelectedOptions( String arg1, String arg2)
+			throws RemoteException {
+		return select.getAllSelectedOptions(this.token,arg1, arg2);
+	}
+
+	/**
+	 * @param arg0
+	 * @param arg1
+	 * @param arg2
+	 * @return
+	 * @throws RemoteException
+	 * @see org.sirius.client.web.select.WebSelectProxy#getFirstSelectedOption(java.lang.String, java.lang.String, java.lang.String)
+	 */
+	public String getFirstSelectedOption( String arg1, String arg2)
+			throws RemoteException {
+		return select.getFirstSelectedOption(this.token,arg1, arg2);
 	}
 
 	
