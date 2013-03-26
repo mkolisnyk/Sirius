@@ -1,0 +1,24 @@
+require 'rubygems'
+require 'rubygems/package_task'
+require 'cucumber'
+require 'cucumber/rake/task'
+
+spec = Gem::Specification.new do |s|
+  s.platform = Gem::Platform::RUBY
+  s.summary = "Sirius Ruby Web client"
+  s.name = "sirius-client-web"
+  s.version = File.read('VERSION').chomp
+  s.requirements = "none"
+  s.files = FileList["lib/**/*.rb", "Rakefile"]
+  s.homepage = "http://github.com/mkolisnyk/Sirius"
+  s.description = "The web client module for Sirius system"
+  s.authors="Myk Kolisnyk"
+  s.email="kolesnik.nickolay@gmail.com"
+end
+
+Gem::PackageTask.new(spec) do |pkg|
+end
+
+Cucumber::Rake::Task.new(:test) do |t|
+  t.cucumber_opts = "tests/features --format pretty --guess"
+end

@@ -13,12 +13,12 @@ import org.sirius.client.web.core.WebCoreProxy;
  */
 public class WebClient {
 
-	public final String IE = "ie";
-	public final String FIREFOX = "firefox";
-	public final String FIREFOX_UNSECURED = "chrome";
-	public final String CHROME = "googlechrome";
-	public final String OPERA = "opera";
-	public final String HTMLUNIT = "htmlunit";
+	public final static String IE = "ie";
+	public final static String FIREFOX = "firefox";
+	public final static String FIREFOX_UNSECURED = "chrome";
+	public final static String CHROME = "googlechrome";
+	public final static String OPERA = "opera";
+	public final static String HTMLUNIT = "htmlunit";
 
 	
 	private WebClientCoreProxy core = null;

@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{49C28AD0-60A0-4065-9A40-21FDE49695C6}</ProjectGuid>
+    <ProjectGuid>{B4C114F2-AAB0-42E7-A05A-13B436021C8E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sirius.CSharp.Client.Win32</RootNamespace>
-    <AssemblyName>Sirius.CSharp.Client.Win32</AssemblyName>
+    <RootNamespace>Sirius.CSharp.Client.Web</RootNamespace>
+    <AssemblyName>Sirius.CSharp.Client.Web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,15 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sirius.Client\Win32.Core\Button\ButtonService.cs" />
-    <Compile Include="Sirius.Client\Win32.Core\ComboBox\ComboBoxService.cs" />
-    <Compile Include="Sirius.Client\Win32.Core\Dialog\DialogService.cs" />
-    <Compile Include="Sirius.Client\Win32.Core\Edit\EditService.cs" />
-    <Compile Include="Sirius.Client\Win32.Core\ListBox\ListBoxService.cs" />
-    <Compile Include="Sirius.Client\Win32.Core\Menu\MenuService.cs" />
-    <Compile Include="Sirius.Client\Win32.Core\TabControl\TabControlService.cs" />
-    <Compile Include="Sirius.Client\Win32.Core\Utils\Win32UtilsService.cs" />
-    <Compile Include="Sirius.Client\Win32.Core\Window\WindowService.cs" />
+    <Compile Include="Sirius.Client\Web.Core\WebCoreService.cs" />
+    <Compile Include="Sirius.Client\Web.Select\WebSelectService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -59,19 +52,11 @@
     </None>
     <None Include="GenClient.cmd" />
     <None Include="Package.nuspec" />
-    <None Include="Sirius.Client\Win32.Core\Button\output.config" />
-    <None Include="Sirius.Client\Win32.Core\ComboBox\output.config" />
-    <None Include="Sirius.Client\Win32.Core\Dialog\output.config" />
-    <None Include="Sirius.Client\Win32.Core\Edit\output.config" />
-    <None Include="Sirius.Client\Win32.Core\ListBox\output.config" />
-    <None Include="Sirius.Client\Win32.Core\Menu\output.config" />
-    <None Include="Sirius.Client\Win32.Core\TabControl\output.config" />
-    <None Include="Sirius.Client\Win32.Core\Utils\output.config" />
-    <None Include="Sirius.Client\Win32.Core\Window\output.config" />
+    <None Include="Sirius.Client\Web.Core\output.config" />
+    <None Include="Sirius.Client\Web.Select\output.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Sirius.Client\Win32\Controls\" />
-    <Folder Include="Sirius.Client\Win32\Windows\" />
+    <Folder Include="Sirius.Client\Web\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
