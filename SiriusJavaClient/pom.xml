@@ -215,7 +215,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore/>
+										<ignore />
 									</action>
 								</pluginExecution>
 							</pluginExecutions>
@@ -251,8 +251,4 @@
 			</plugin>
 		</plugins>
 	</reporting>
-	<modules>
-		<module>../Sirius-Server-Core</module>
-		<module>../Sirius-Server-Win32</module>
-	</modules>
 </project>
