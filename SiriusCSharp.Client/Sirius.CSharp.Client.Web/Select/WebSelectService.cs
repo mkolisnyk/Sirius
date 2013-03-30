@@ -8,116 +8,73 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sirius.Client.Web.Select
+namespace Sirius.CSharp.Client.Web.Select
 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://web.server.sirius.org/", ConfigurationName="Sirius.Client.Web.Select.WebSelect")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://web.server.sirius.org/", ConfigurationName="Sirius.CSharp.Client.Web.Select.WebSelect")]
     public interface WebSelect
     {
-        
-        // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebSelect/deselectAllRequest", ReplyAction="http://web.server.sirius.org/WebSelect/deselectAllResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Sirius.Client.Web.Select.deselectAllResponse deselectAll(Sirius.Client.Web.Select.deselectAllRequest request);
         
         // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebSelect/isMultipleRequest", ReplyAction="http://web.server.sirius.org/WebSelect/isMultipleResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Sirius.Client.Web.Select.isMultipleResponse isMultiple(Sirius.Client.Web.Select.isMultipleRequest request);
+        Sirius.CSharp.Client.Web.Select.isMultipleResponse isMultiple(Sirius.CSharp.Client.Web.Select.isMultipleRequest request);
+        
+        // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebSelect/deselectAllRequest", ReplyAction="http://web.server.sirius.org/WebSelect/deselectAllResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        Sirius.CSharp.Client.Web.Select.deselectAllResponse deselectAll(Sirius.CSharp.Client.Web.Select.deselectAllRequest request);
+        
+        // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebSelect/deselectByVisibleTextRequest", ReplyAction="http://web.server.sirius.org/WebSelect/deselectByVisibleTextResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        Sirius.CSharp.Client.Web.Select.deselectByVisibleTextResponse deselectByVisibleText(Sirius.CSharp.Client.Web.Select.deselectByVisibleTextRequest request);
         
         // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebSelect/deselectByIndexRequest", ReplyAction="http://web.server.sirius.org/WebSelect/deselectByIndexResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Sirius.Client.Web.Select.deselectByIndexResponse deselectByIndex(Sirius.Client.Web.Select.deselectByIndexRequest request);
+        Sirius.CSharp.Client.Web.Select.deselectByIndexResponse deselectByIndex(Sirius.CSharp.Client.Web.Select.deselectByIndexRequest request);
         
         // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebSelect/deselectByValueRequest", ReplyAction="http://web.server.sirius.org/WebSelect/deselectByValueResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Sirius.Client.Web.Select.deselectByValueResponse deselectByValue(Sirius.Client.Web.Select.deselectByValueRequest request);
+        Sirius.CSharp.Client.Web.Select.deselectByValueResponse deselectByValue(Sirius.CSharp.Client.Web.Select.deselectByValueRequest request);
         
         // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebSelect/getAllOptionsRequest", ReplyAction="http://web.server.sirius.org/WebSelect/getAllOptionsResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Sirius.Client.Web.Select.getAllOptionsResponse getAllOptions(Sirius.Client.Web.Select.getAllOptionsRequest request);
+        Sirius.CSharp.Client.Web.Select.getAllOptionsResponse getAllOptions(Sirius.CSharp.Client.Web.Select.getAllOptionsRequest request);
         
         // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebSelect/selectByIndexRequest", ReplyAction="http://web.server.sirius.org/WebSelect/selectByIndexResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Sirius.Client.Web.Select.selectByIndexResponse selectByIndex(Sirius.Client.Web.Select.selectByIndexRequest request);
+        Sirius.CSharp.Client.Web.Select.selectByIndexResponse selectByIndex(Sirius.CSharp.Client.Web.Select.selectByIndexRequest request);
         
         // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebSelect/selectByValueRequest", ReplyAction="http://web.server.sirius.org/WebSelect/selectByValueResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Sirius.Client.Web.Select.selectByValueResponse selectByValue(Sirius.Client.Web.Select.selectByValueRequest request);
+        Sirius.CSharp.Client.Web.Select.selectByValueResponse selectByValue(Sirius.CSharp.Client.Web.Select.selectByValueRequest request);
         
         // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebSelect/selectByVisibleTextRequest", ReplyAction="http://web.server.sirius.org/WebSelect/selectByVisibleTextResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Sirius.Client.Web.Select.selectByVisibleTextResponse selectByVisibleText(Sirius.Client.Web.Select.selectByVisibleTextRequest request);
+        Sirius.CSharp.Client.Web.Select.selectByVisibleTextResponse selectByVisibleText(Sirius.CSharp.Client.Web.Select.selectByVisibleTextRequest request);
         
         // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebSelect/getAllSelectedOptionsRequest", ReplyAction="http://web.server.sirius.org/WebSelect/getAllSelectedOptionsResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Sirius.Client.Web.Select.getAllSelectedOptionsResponse getAllSelectedOptions(Sirius.Client.Web.Select.getAllSelectedOptionsRequest request);
+        Sirius.CSharp.Client.Web.Select.getAllSelectedOptionsResponse getAllSelectedOptions(Sirius.CSharp.Client.Web.Select.getAllSelectedOptionsRequest request);
         
         // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebSelect/getFirstSelectedOptionRequest", ReplyAction="http://web.server.sirius.org/WebSelect/getFirstSelectedOptionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Sirius.Client.Web.Select.getFirstSelectedOptionResponse getFirstSelectedOption(Sirius.Client.Web.Select.getFirstSelectedOptionRequest request);
-        
-        // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebSelect/deselectByVisibleTextRequest", ReplyAction="http://web.server.sirius.org/WebSelect/deselectByVisibleTextResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Sirius.Client.Web.Select.deselectByVisibleTextResponse deselectByVisibleText(Sirius.Client.Web.Select.deselectByVisibleTextRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="deselectAll", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class deselectAllRequest
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg2;
-        
-        public deselectAllRequest()
-        {
-        }
-        
-        public deselectAllRequest(string arg0, string arg1, string arg2)
-        {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-            this.arg2 = arg2;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="deselectAllResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class deselectAllResponse
-    {
-        
-        public deselectAllResponse()
-        {
-        }
+        Sirius.CSharp.Client.Web.Select.getFirstSelectedOptionResponse getFirstSelectedOption(Sirius.CSharp.Client.Web.Select.getFirstSelectedOptionRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -169,6 +126,97 @@ namespace Sirius.Client.Web.Select
         public isMultipleResponse(bool @return)
         {
             this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="deselectAll", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class deselectAllRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg1;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg2;
+        
+        public deselectAllRequest()
+        {
+        }
+        
+        public deselectAllRequest(string arg0, string arg1, string arg2)
+        {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+            this.arg2 = arg2;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="deselectAllResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class deselectAllResponse
+    {
+        
+        public deselectAllResponse()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="deselectByVisibleText", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class deselectByVisibleTextRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg1;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg2;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg3;
+        
+        public deselectByVisibleTextRequest()
+        {
+        }
+        
+        public deselectByVisibleTextRequest(string arg0, string arg1, string arg2, string arg3)
+        {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+            this.arg2 = arg2;
+            this.arg3 = arg3;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="deselectByVisibleTextResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class deselectByVisibleTextResponse
+    {
+        
+        public deselectByVisibleTextResponse()
+        {
         }
     }
     
@@ -568,62 +616,14 @@ namespace Sirius.Client.Web.Select
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="deselectByVisibleText", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class deselectByVisibleTextRequest
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg2;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg3;
-        
-        public deselectByVisibleTextRequest()
-        {
-        }
-        
-        public deselectByVisibleTextRequest(string arg0, string arg1, string arg2, string arg3)
-        {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-            this.arg2 = arg2;
-            this.arg3 = arg3;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="deselectByVisibleTextResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class deselectByVisibleTextResponse
-    {
-        
-        public deselectByVisibleTextResponse()
-        {
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface WebSelectChannel : Sirius.Client.Web.Select.WebSelect, System.ServiceModel.IClientChannel
+    public interface WebSelectChannel : Sirius.CSharp.Client.Web.Select.WebSelect, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class WebSelectClient : System.ServiceModel.ClientBase<Sirius.Client.Web.Select.WebSelect>, Sirius.Client.Web.Select.WebSelect
+    public partial class WebSelectClient : System.ServiceModel.ClientBase<Sirius.CSharp.Client.Web.Select.WebSelect>, Sirius.CSharp.Client.Web.Select.WebSelect
     {
         
         public WebSelectClient()
@@ -651,178 +651,178 @@ namespace Sirius.Client.Web.Select
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Select.deselectAllResponse Sirius.Client.Web.Select.WebSelect.deselectAll(Sirius.Client.Web.Select.deselectAllRequest request)
-        {
-            return base.Channel.deselectAll(request);
-        }
-        
-        public void deselectAll(string arg0, string arg1, string arg2)
-        {
-            Sirius.Client.Web.Select.deselectAllRequest inValue = new Sirius.Client.Web.Select.deselectAllRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            Sirius.Client.Web.Select.deselectAllResponse retVal = ((Sirius.Client.Web.Select.WebSelect)(this)).deselectAll(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Select.isMultipleResponse Sirius.Client.Web.Select.WebSelect.isMultiple(Sirius.Client.Web.Select.isMultipleRequest request)
+        Sirius.CSharp.Client.Web.Select.isMultipleResponse Sirius.CSharp.Client.Web.Select.WebSelect.isMultiple(Sirius.CSharp.Client.Web.Select.isMultipleRequest request)
         {
             return base.Channel.isMultiple(request);
         }
         
         public bool isMultiple(string arg0, string arg1, string arg2)
         {
-            Sirius.Client.Web.Select.isMultipleRequest inValue = new Sirius.Client.Web.Select.isMultipleRequest();
+            Sirius.CSharp.Client.Web.Select.isMultipleRequest inValue = new Sirius.CSharp.Client.Web.Select.isMultipleRequest();
             inValue.arg0 = arg0;
             inValue.arg1 = arg1;
             inValue.arg2 = arg2;
-            Sirius.Client.Web.Select.isMultipleResponse retVal = ((Sirius.Client.Web.Select.WebSelect)(this)).isMultiple(inValue);
+            Sirius.CSharp.Client.Web.Select.isMultipleResponse retVal = ((Sirius.CSharp.Client.Web.Select.WebSelect)(this)).isMultiple(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Select.deselectByIndexResponse Sirius.Client.Web.Select.WebSelect.deselectByIndex(Sirius.Client.Web.Select.deselectByIndexRequest request)
+        Sirius.CSharp.Client.Web.Select.deselectAllResponse Sirius.CSharp.Client.Web.Select.WebSelect.deselectAll(Sirius.CSharp.Client.Web.Select.deselectAllRequest request)
         {
-            return base.Channel.deselectByIndex(request);
+            return base.Channel.deselectAll(request);
         }
         
-        public void deselectByIndex(string arg0, string arg1, string arg2, int arg3)
+        public void deselectAll(string arg0, string arg1, string arg2)
         {
-            Sirius.Client.Web.Select.deselectByIndexRequest inValue = new Sirius.Client.Web.Select.deselectByIndexRequest();
+            Sirius.CSharp.Client.Web.Select.deselectAllRequest inValue = new Sirius.CSharp.Client.Web.Select.deselectAllRequest();
             inValue.arg0 = arg0;
             inValue.arg1 = arg1;
             inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            Sirius.Client.Web.Select.deselectByIndexResponse retVal = ((Sirius.Client.Web.Select.WebSelect)(this)).deselectByIndex(inValue);
+            Sirius.CSharp.Client.Web.Select.deselectAllResponse retVal = ((Sirius.CSharp.Client.Web.Select.WebSelect)(this)).deselectAll(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Select.deselectByValueResponse Sirius.Client.Web.Select.WebSelect.deselectByValue(Sirius.Client.Web.Select.deselectByValueRequest request)
-        {
-            return base.Channel.deselectByValue(request);
-        }
-        
-        public void deselectByValue(string arg0, string arg1, string arg2, string arg3)
-        {
-            Sirius.Client.Web.Select.deselectByValueRequest inValue = new Sirius.Client.Web.Select.deselectByValueRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            Sirius.Client.Web.Select.deselectByValueResponse retVal = ((Sirius.Client.Web.Select.WebSelect)(this)).deselectByValue(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Select.getAllOptionsResponse Sirius.Client.Web.Select.WebSelect.getAllOptions(Sirius.Client.Web.Select.getAllOptionsRequest request)
-        {
-            return base.Channel.getAllOptions(request);
-        }
-        
-        public string[] getAllOptions(string arg0, string arg1, string arg2)
-        {
-            Sirius.Client.Web.Select.getAllOptionsRequest inValue = new Sirius.Client.Web.Select.getAllOptionsRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            Sirius.Client.Web.Select.getAllOptionsResponse retVal = ((Sirius.Client.Web.Select.WebSelect)(this)).getAllOptions(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Select.selectByIndexResponse Sirius.Client.Web.Select.WebSelect.selectByIndex(Sirius.Client.Web.Select.selectByIndexRequest request)
-        {
-            return base.Channel.selectByIndex(request);
-        }
-        
-        public void selectByIndex(string arg0, string arg1, string arg2, int arg3)
-        {
-            Sirius.Client.Web.Select.selectByIndexRequest inValue = new Sirius.Client.Web.Select.selectByIndexRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            Sirius.Client.Web.Select.selectByIndexResponse retVal = ((Sirius.Client.Web.Select.WebSelect)(this)).selectByIndex(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Select.selectByValueResponse Sirius.Client.Web.Select.WebSelect.selectByValue(Sirius.Client.Web.Select.selectByValueRequest request)
-        {
-            return base.Channel.selectByValue(request);
-        }
-        
-        public void selectByValue(string arg0, string arg1, string arg2, string arg3)
-        {
-            Sirius.Client.Web.Select.selectByValueRequest inValue = new Sirius.Client.Web.Select.selectByValueRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            Sirius.Client.Web.Select.selectByValueResponse retVal = ((Sirius.Client.Web.Select.WebSelect)(this)).selectByValue(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Select.selectByVisibleTextResponse Sirius.Client.Web.Select.WebSelect.selectByVisibleText(Sirius.Client.Web.Select.selectByVisibleTextRequest request)
-        {
-            return base.Channel.selectByVisibleText(request);
-        }
-        
-        public void selectByVisibleText(string arg0, string arg1, string arg2, string arg3)
-        {
-            Sirius.Client.Web.Select.selectByVisibleTextRequest inValue = new Sirius.Client.Web.Select.selectByVisibleTextRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            Sirius.Client.Web.Select.selectByVisibleTextResponse retVal = ((Sirius.Client.Web.Select.WebSelect)(this)).selectByVisibleText(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Select.getAllSelectedOptionsResponse Sirius.Client.Web.Select.WebSelect.getAllSelectedOptions(Sirius.Client.Web.Select.getAllSelectedOptionsRequest request)
-        {
-            return base.Channel.getAllSelectedOptions(request);
-        }
-        
-        public string[] getAllSelectedOptions(string arg0, string arg1, string arg2)
-        {
-            Sirius.Client.Web.Select.getAllSelectedOptionsRequest inValue = new Sirius.Client.Web.Select.getAllSelectedOptionsRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            Sirius.Client.Web.Select.getAllSelectedOptionsResponse retVal = ((Sirius.Client.Web.Select.WebSelect)(this)).getAllSelectedOptions(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Select.getFirstSelectedOptionResponse Sirius.Client.Web.Select.WebSelect.getFirstSelectedOption(Sirius.Client.Web.Select.getFirstSelectedOptionRequest request)
-        {
-            return base.Channel.getFirstSelectedOption(request);
-        }
-        
-        public string getFirstSelectedOption(string arg0, string arg1, string arg2)
-        {
-            Sirius.Client.Web.Select.getFirstSelectedOptionRequest inValue = new Sirius.Client.Web.Select.getFirstSelectedOptionRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            Sirius.Client.Web.Select.getFirstSelectedOptionResponse retVal = ((Sirius.Client.Web.Select.WebSelect)(this)).getFirstSelectedOption(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Select.deselectByVisibleTextResponse Sirius.Client.Web.Select.WebSelect.deselectByVisibleText(Sirius.Client.Web.Select.deselectByVisibleTextRequest request)
+        Sirius.CSharp.Client.Web.Select.deselectByVisibleTextResponse Sirius.CSharp.Client.Web.Select.WebSelect.deselectByVisibleText(Sirius.CSharp.Client.Web.Select.deselectByVisibleTextRequest request)
         {
             return base.Channel.deselectByVisibleText(request);
         }
         
         public void deselectByVisibleText(string arg0, string arg1, string arg2, string arg3)
         {
-            Sirius.Client.Web.Select.deselectByVisibleTextRequest inValue = new Sirius.Client.Web.Select.deselectByVisibleTextRequest();
+            Sirius.CSharp.Client.Web.Select.deselectByVisibleTextRequest inValue = new Sirius.CSharp.Client.Web.Select.deselectByVisibleTextRequest();
             inValue.arg0 = arg0;
             inValue.arg1 = arg1;
             inValue.arg2 = arg2;
             inValue.arg3 = arg3;
-            Sirius.Client.Web.Select.deselectByVisibleTextResponse retVal = ((Sirius.Client.Web.Select.WebSelect)(this)).deselectByVisibleText(inValue);
+            Sirius.CSharp.Client.Web.Select.deselectByVisibleTextResponse retVal = ((Sirius.CSharp.Client.Web.Select.WebSelect)(this)).deselectByVisibleText(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.CSharp.Client.Web.Select.deselectByIndexResponse Sirius.CSharp.Client.Web.Select.WebSelect.deselectByIndex(Sirius.CSharp.Client.Web.Select.deselectByIndexRequest request)
+        {
+            return base.Channel.deselectByIndex(request);
+        }
+        
+        public void deselectByIndex(string arg0, string arg1, string arg2, int arg3)
+        {
+            Sirius.CSharp.Client.Web.Select.deselectByIndexRequest inValue = new Sirius.CSharp.Client.Web.Select.deselectByIndexRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            inValue.arg3 = arg3;
+            Sirius.CSharp.Client.Web.Select.deselectByIndexResponse retVal = ((Sirius.CSharp.Client.Web.Select.WebSelect)(this)).deselectByIndex(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.CSharp.Client.Web.Select.deselectByValueResponse Sirius.CSharp.Client.Web.Select.WebSelect.deselectByValue(Sirius.CSharp.Client.Web.Select.deselectByValueRequest request)
+        {
+            return base.Channel.deselectByValue(request);
+        }
+        
+        public void deselectByValue(string arg0, string arg1, string arg2, string arg3)
+        {
+            Sirius.CSharp.Client.Web.Select.deselectByValueRequest inValue = new Sirius.CSharp.Client.Web.Select.deselectByValueRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            inValue.arg3 = arg3;
+            Sirius.CSharp.Client.Web.Select.deselectByValueResponse retVal = ((Sirius.CSharp.Client.Web.Select.WebSelect)(this)).deselectByValue(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.CSharp.Client.Web.Select.getAllOptionsResponse Sirius.CSharp.Client.Web.Select.WebSelect.getAllOptions(Sirius.CSharp.Client.Web.Select.getAllOptionsRequest request)
+        {
+            return base.Channel.getAllOptions(request);
+        }
+        
+        public string[] getAllOptions(string arg0, string arg1, string arg2)
+        {
+            Sirius.CSharp.Client.Web.Select.getAllOptionsRequest inValue = new Sirius.CSharp.Client.Web.Select.getAllOptionsRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            Sirius.CSharp.Client.Web.Select.getAllOptionsResponse retVal = ((Sirius.CSharp.Client.Web.Select.WebSelect)(this)).getAllOptions(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.CSharp.Client.Web.Select.selectByIndexResponse Sirius.CSharp.Client.Web.Select.WebSelect.selectByIndex(Sirius.CSharp.Client.Web.Select.selectByIndexRequest request)
+        {
+            return base.Channel.selectByIndex(request);
+        }
+        
+        public void selectByIndex(string arg0, string arg1, string arg2, int arg3)
+        {
+            Sirius.CSharp.Client.Web.Select.selectByIndexRequest inValue = new Sirius.CSharp.Client.Web.Select.selectByIndexRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            inValue.arg3 = arg3;
+            Sirius.CSharp.Client.Web.Select.selectByIndexResponse retVal = ((Sirius.CSharp.Client.Web.Select.WebSelect)(this)).selectByIndex(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.CSharp.Client.Web.Select.selectByValueResponse Sirius.CSharp.Client.Web.Select.WebSelect.selectByValue(Sirius.CSharp.Client.Web.Select.selectByValueRequest request)
+        {
+            return base.Channel.selectByValue(request);
+        }
+        
+        public void selectByValue(string arg0, string arg1, string arg2, string arg3)
+        {
+            Sirius.CSharp.Client.Web.Select.selectByValueRequest inValue = new Sirius.CSharp.Client.Web.Select.selectByValueRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            inValue.arg3 = arg3;
+            Sirius.CSharp.Client.Web.Select.selectByValueResponse retVal = ((Sirius.CSharp.Client.Web.Select.WebSelect)(this)).selectByValue(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.CSharp.Client.Web.Select.selectByVisibleTextResponse Sirius.CSharp.Client.Web.Select.WebSelect.selectByVisibleText(Sirius.CSharp.Client.Web.Select.selectByVisibleTextRequest request)
+        {
+            return base.Channel.selectByVisibleText(request);
+        }
+        
+        public void selectByVisibleText(string arg0, string arg1, string arg2, string arg3)
+        {
+            Sirius.CSharp.Client.Web.Select.selectByVisibleTextRequest inValue = new Sirius.CSharp.Client.Web.Select.selectByVisibleTextRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            inValue.arg3 = arg3;
+            Sirius.CSharp.Client.Web.Select.selectByVisibleTextResponse retVal = ((Sirius.CSharp.Client.Web.Select.WebSelect)(this)).selectByVisibleText(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.CSharp.Client.Web.Select.getAllSelectedOptionsResponse Sirius.CSharp.Client.Web.Select.WebSelect.getAllSelectedOptions(Sirius.CSharp.Client.Web.Select.getAllSelectedOptionsRequest request)
+        {
+            return base.Channel.getAllSelectedOptions(request);
+        }
+        
+        public string[] getAllSelectedOptions(string arg0, string arg1, string arg2)
+        {
+            Sirius.CSharp.Client.Web.Select.getAllSelectedOptionsRequest inValue = new Sirius.CSharp.Client.Web.Select.getAllSelectedOptionsRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            Sirius.CSharp.Client.Web.Select.getAllSelectedOptionsResponse retVal = ((Sirius.CSharp.Client.Web.Select.WebSelect)(this)).getAllSelectedOptions(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.CSharp.Client.Web.Select.getFirstSelectedOptionResponse Sirius.CSharp.Client.Web.Select.WebSelect.getFirstSelectedOption(Sirius.CSharp.Client.Web.Select.getFirstSelectedOptionRequest request)
+        {
+            return base.Channel.getFirstSelectedOption(request);
+        }
+        
+        public string getFirstSelectedOption(string arg0, string arg1, string arg2)
+        {
+            Sirius.CSharp.Client.Web.Select.getFirstSelectedOptionRequest inValue = new Sirius.CSharp.Client.Web.Select.getFirstSelectedOptionRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            Sirius.CSharp.Client.Web.Select.getFirstSelectedOptionResponse retVal = ((Sirius.CSharp.Client.Web.Select.WebSelect)(this)).getFirstSelectedOption(inValue);
+            return retVal.@return;
         }
     }
 }

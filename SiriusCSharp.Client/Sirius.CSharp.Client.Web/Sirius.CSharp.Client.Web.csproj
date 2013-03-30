@@ -33,6 +33,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,9 +42,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Form.cs" />
+    <Compile Include="Classes\Frame.cs" />
+    <Compile Include="Classes\Page.cs" />
+    <Compile Include="Classes\WebButton.cs" />
+    <Compile Include="Classes\WebCheckBox.cs" />
+    <Compile Include="Classes\WebControl.cs" />
+    <Compile Include="Classes\WebEdit.cs" />
+    <Compile Include="Classes\WebImage.cs" />
+    <Compile Include="Classes\WebLink.cs" />
+    <Compile Include="Classes\WebPopupList.cs" />
+    <Compile Include="Classes\WebRadioButton.cs" />
+    <Compile Include="Core\WebCoreService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sirius.Client\Web.Core\WebCoreService.cs" />
-    <Compile Include="Sirius.Client\Web.Select\WebSelectService.cs" />
+    <Compile Include="Select\WebSelectService.cs" />
+    <Compile Include="WebClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -50,14 +64,12 @@
     <None Include="BuildScript\Build.msbuild">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Core\output.config" />
     <None Include="GenClient.cmd" />
     <None Include="Package.nuspec" />
-    <None Include="Sirius.Client\Web.Core\output.config" />
-    <None Include="Sirius.Client\Web.Select\output.config" />
+    <None Include="Select\output.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Sirius.Client\Web\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

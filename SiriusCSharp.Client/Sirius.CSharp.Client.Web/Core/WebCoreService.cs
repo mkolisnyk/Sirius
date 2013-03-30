@@ -8,186 +8,186 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sirius.Client.Web.Core
+namespace Sirius.CSharp.Client.Web.Core
 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://web.server.sirius.org/", ConfigurationName="Sirius.Client.Web.Core.WebCore")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://web.server.sirius.org/", ConfigurationName="Sirius.CSharp.Client.Web.Core.WebCore")]
     public interface WebCore
     {
         
-        // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/getWindowHandleRequest", ReplyAction="http://web.server.sirius.org/WebCore/getWindowHandleResponse")]
+        // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/selectAlertRequest", ReplyAction="http://web.server.sirius.org/WebCore/selectAlertResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Sirius.Client.Web.Core.getWindowHandleResponse getWindowHandle(Sirius.Client.Web.Core.getWindowHandleRequest request);
+        Sirius.CSharp.Client.Web.Core.selectAlertResponse selectAlert(Sirius.CSharp.Client.Web.Core.selectAlertRequest request);
         
         // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/selectFrameByNameRequest", ReplyAction="http://web.server.sirius.org/WebCore/selectFrameByNameResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/selectWindowRequest", ReplyAction="http://web.server.sirius.org/WebCore/selectWindowResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Sirius.Client.Web.Core.selectFrameByNameResponse selectFrameByName(Sirius.Client.Web.Core.selectFrameByNameRequest request);
+        Sirius.CSharp.Client.Web.Core.selectWindowResponse selectWindow(Sirius.CSharp.Client.Web.Core.selectWindowRequest request);
         
         // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/selectDefaultContentRequest", ReplyAction="http://web.server.sirius.org/WebCore/selectDefaultContentResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/forwardRequest", ReplyAction="http://web.server.sirius.org/WebCore/forwardResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Sirius.Client.Web.Core.selectDefaultContentResponse selectDefaultContent(Sirius.Client.Web.Core.selectDefaultContentRequest request);
-        
-        // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/getPageSourceRequest", ReplyAction="http://web.server.sirius.org/WebCore/getPageSourceResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute()]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Sirius.Client.Web.Core.getPageSourceResponse getPageSource(Sirius.Client.Web.Core.getPageSourceRequest request);
-        
-        // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/selectFrameByIndexRequest", ReplyAction="http://web.server.sirius.org/WebCore/selectFrameByIndexResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Sirius.Client.Web.Core.selectFrameByIndexResponse selectFrameByIndex(Sirius.Client.Web.Core.selectFrameByIndexRequest request);
-        
-        // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/backRequest", ReplyAction="http://web.server.sirius.org/WebCore/backResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Sirius.Client.Web.Core.backResponse back(Sirius.Client.Web.Core.backRequest request);
-        
-        // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/isDisplayedRequest", ReplyAction="http://web.server.sirius.org/WebCore/isDisplayedResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute()]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Sirius.Client.Web.Core.isDisplayedResponse isDisplayed(Sirius.Client.Web.Core.isDisplayedRequest request);
+        Sirius.CSharp.Client.Web.Core.forwardResponse forward(Sirius.CSharp.Client.Web.Core.forwardRequest request);
         
         // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/getCssValueRequest", ReplyAction="http://web.server.sirius.org/WebCore/getCssValueResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Sirius.Client.Web.Core.getCssValueResponse getCssValue(Sirius.Client.Web.Core.getCssValueRequest request);
+        Sirius.CSharp.Client.Web.Core.getCssValueResponse getCssValue(Sirius.CSharp.Client.Web.Core.getCssValueRequest request);
+        
+        // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/isDisplayedRequest", ReplyAction="http://web.server.sirius.org/WebCore/isDisplayedResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        Sirius.CSharp.Client.Web.Core.isDisplayedResponse isDisplayed(Sirius.CSharp.Client.Web.Core.isDisplayedRequest request);
         
         // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/sendKeysRequest", ReplyAction="http://web.server.sirius.org/WebCore/sendKeysResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Sirius.Client.Web.Core.sendKeysResponse sendKeys(Sirius.Client.Web.Core.sendKeysRequest request);
+        Sirius.CSharp.Client.Web.Core.sendKeysResponse sendKeys(Sirius.CSharp.Client.Web.Core.sendKeysRequest request);
         
         // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/forwardRequest", ReplyAction="http://web.server.sirius.org/WebCore/forwardResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/selectFrameByNameRequest", ReplyAction="http://web.server.sirius.org/WebCore/selectFrameByNameResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Sirius.Client.Web.Core.forwardResponse forward(Sirius.Client.Web.Core.forwardRequest request);
+        Sirius.CSharp.Client.Web.Core.selectFrameByNameResponse selectFrameByName(Sirius.CSharp.Client.Web.Core.selectFrameByNameRequest request);
+        
+        // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/getWindowHandleRequest", ReplyAction="http://web.server.sirius.org/WebCore/getWindowHandleResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        Sirius.CSharp.Client.Web.Core.getWindowHandleResponse getWindowHandle(Sirius.CSharp.Client.Web.Core.getWindowHandleRequest request);
         
         // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/selectWindowRequest", ReplyAction="http://web.server.sirius.org/WebCore/selectWindowResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/selectFrameByIndexRequest", ReplyAction="http://web.server.sirius.org/WebCore/selectFrameByIndexResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Sirius.Client.Web.Core.selectWindowResponse selectWindow(Sirius.Client.Web.Core.selectWindowRequest request);
+        Sirius.CSharp.Client.Web.Core.selectFrameByIndexResponse selectFrameByIndex(Sirius.CSharp.Client.Web.Core.selectFrameByIndexRequest request);
+        
+        // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/getPageSourceRequest", ReplyAction="http://web.server.sirius.org/WebCore/getPageSourceResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        Sirius.CSharp.Client.Web.Core.getPageSourceResponse getPageSource(Sirius.CSharp.Client.Web.Core.getPageSourceRequest request);
         
         // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
-        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/selectAlertRequest", ReplyAction="http://web.server.sirius.org/WebCore/selectAlertResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/selectDefaultContentRequest", ReplyAction="http://web.server.sirius.org/WebCore/selectDefaultContentResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Sirius.Client.Web.Core.selectAlertResponse selectAlert(Sirius.Client.Web.Core.selectAlertRequest request);
+        Sirius.CSharp.Client.Web.Core.selectDefaultContentResponse selectDefaultContent(Sirius.CSharp.Client.Web.Core.selectDefaultContentRequest request);
+        
+        // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
+        [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/backRequest", ReplyAction="http://web.server.sirius.org/WebCore/backResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        Sirius.CSharp.Client.Web.Core.backResponse back(Sirius.CSharp.Client.Web.Core.backRequest request);
         
         // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/getLocationRequest", ReplyAction="http://web.server.sirius.org/WebCore/getLocationResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Sirius.Client.Web.Core.getLocationResponse getLocation(Sirius.Client.Web.Core.getLocationRequest request);
+        Sirius.CSharp.Client.Web.Core.getLocationResponse getLocation(Sirius.CSharp.Client.Web.Core.getLocationRequest request);
         
         // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/getURLRequest", ReplyAction="http://web.server.sirius.org/WebCore/getURLResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Sirius.Client.Web.Core.getURLResponse getURL(Sirius.Client.Web.Core.getURLRequest request);
+        Sirius.CSharp.Client.Web.Core.getURLResponse getURL(Sirius.CSharp.Client.Web.Core.getURLRequest request);
         
         // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/clearRequest", ReplyAction="http://web.server.sirius.org/WebCore/clearResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Sirius.Client.Web.Core.clearResponse clear(Sirius.Client.Web.Core.clearRequest request);
+        Sirius.CSharp.Client.Web.Core.clearResponse clear(Sirius.CSharp.Client.Web.Core.clearRequest request);
         
         // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/startRequest", ReplyAction="http://web.server.sirius.org/WebCore/startResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Sirius.Client.Web.Core.startResponse start(Sirius.Client.Web.Core.startRequest request);
+        Sirius.CSharp.Client.Web.Core.startResponse start(Sirius.CSharp.Client.Web.Core.startRequest request);
         
         // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/stopRequest", ReplyAction="http://web.server.sirius.org/WebCore/stopResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Sirius.Client.Web.Core.stopResponse stop(Sirius.Client.Web.Core.stopRequest request);
+        Sirius.CSharp.Client.Web.Core.stopResponse stop(Sirius.CSharp.Client.Web.Core.stopRequest request);
         
         // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/getSizeRequest", ReplyAction="http://web.server.sirius.org/WebCore/getSizeResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Sirius.Client.Web.Core.getSizeResponse getSize(Sirius.Client.Web.Core.getSizeRequest request);
+        Sirius.CSharp.Client.Web.Core.getSizeResponse getSize(Sirius.CSharp.Client.Web.Core.getSizeRequest request);
         
         // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/openRequest", ReplyAction="http://web.server.sirius.org/WebCore/openResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Sirius.Client.Web.Core.openResponse open(Sirius.Client.Web.Core.openRequest request);
+        Sirius.CSharp.Client.Web.Core.openResponse open(Sirius.CSharp.Client.Web.Core.openRequest request);
         
         // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/refreshRequest", ReplyAction="http://web.server.sirius.org/WebCore/refreshResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Sirius.Client.Web.Core.refreshResponse refresh(Sirius.Client.Web.Core.refreshRequest request);
+        Sirius.CSharp.Client.Web.Core.refreshResponse refresh(Sirius.CSharp.Client.Web.Core.refreshRequest request);
         
         // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/getTitleRequest", ReplyAction="http://web.server.sirius.org/WebCore/getTitleResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Sirius.Client.Web.Core.getTitleResponse getTitle(Sirius.Client.Web.Core.getTitleRequest request);
+        Sirius.CSharp.Client.Web.Core.getTitleResponse getTitle(Sirius.CSharp.Client.Web.Core.getTitleRequest request);
         
         // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/isEnabledRequest", ReplyAction="http://web.server.sirius.org/WebCore/isEnabledResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Sirius.Client.Web.Core.isEnabledResponse isEnabled(Sirius.Client.Web.Core.isEnabledRequest request);
+        Sirius.CSharp.Client.Web.Core.isEnabledResponse isEnabled(Sirius.CSharp.Client.Web.Core.isEnabledRequest request);
         
         // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/getTextRequest", ReplyAction="http://web.server.sirius.org/WebCore/getTextResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Sirius.Client.Web.Core.getTextResponse getText(Sirius.Client.Web.Core.getTextRequest request);
+        Sirius.CSharp.Client.Web.Core.getTextResponse getText(Sirius.CSharp.Client.Web.Core.getTextRequest request);
         
         // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/submitRequest", ReplyAction="http://web.server.sirius.org/WebCore/submitResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Sirius.Client.Web.Core.submitResponse submit(Sirius.Client.Web.Core.submitRequest request);
+        Sirius.CSharp.Client.Web.Core.submitResponse submit(Sirius.CSharp.Client.Web.Core.submitRequest request);
         
         // CODEGEN: Параметр "arg0" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/clickRequest", ReplyAction="http://web.server.sirius.org/WebCore/clickResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Sirius.Client.Web.Core.clickResponse click(Sirius.Client.Web.Core.clickRequest request);
+        Sirius.CSharp.Client.Web.Core.clickResponse click(Sirius.CSharp.Client.Web.Core.clickRequest request);
         
         // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/isSelectedRequest", ReplyAction="http://web.server.sirius.org/WebCore/isSelectedResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Sirius.Client.Web.Core.isSelectedResponse isSelected(Sirius.Client.Web.Core.isSelectedRequest request);
+        Sirius.CSharp.Client.Web.Core.isSelectedResponse isSelected(Sirius.CSharp.Client.Web.Core.isSelectedRequest request);
         
         // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/getAttributeRequest", ReplyAction="http://web.server.sirius.org/WebCore/getAttributeResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Sirius.Client.Web.Core.getAttributeResponse getAttribute(Sirius.Client.Web.Core.getAttributeRequest request);
+        Sirius.CSharp.Client.Web.Core.getAttributeResponse getAttribute(Sirius.CSharp.Client.Web.Core.getAttributeRequest request);
         
         // CODEGEN: Параметр "return" требует дополнительной информации о схеме, которую невозможно получить в режиме параметров. Указан атрибут "System.Xml.Serialization.XmlElementAttribute".
         [System.ServiceModel.OperationContractAttribute(Action="http://web.server.sirius.org/WebCore/getTagNameRequest", ReplyAction="http://web.server.sirius.org/WebCore/getTagNameResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Sirius.Client.Web.Core.getTagNameResponse getTagName(Sirius.Client.Web.Core.getTagNameRequest request);
+        Sirius.CSharp.Client.Web.Core.getTagNameResponse getTagName(Sirius.CSharp.Client.Web.Core.getTagNameRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getWindowHandle", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class getWindowHandleRequest
+    [System.ServiceModel.MessageContractAttribute(WrapperName="selectAlert", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class selectAlertRequest
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string arg0;
         
-        public getWindowHandleRequest()
+        public selectAlertRequest()
         {
         }
         
-        public getWindowHandleRequest(string arg0)
+        public selectAlertRequest(string arg0)
         {
             this.arg0 = arg0;
         }
@@ -196,29 +196,20 @@ namespace Sirius.Client.Web.Core
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getWindowHandleResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class getWindowHandleResponse
+    [System.ServiceModel.MessageContractAttribute(WrapperName="selectAlertResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class selectAlertResponse
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string @return;
-        
-        public getWindowHandleResponse()
+        public selectAlertResponse()
         {
-        }
-        
-        public getWindowHandleResponse(string @return)
-        {
-            this.@return = @return;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="selectFrameByName", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class selectFrameByNameRequest
+    [System.ServiceModel.MessageContractAttribute(WrapperName="selectWindow", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class selectWindowRequest
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
@@ -229,11 +220,11 @@ namespace Sirius.Client.Web.Core
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string arg1;
         
-        public selectFrameByNameRequest()
+        public selectWindowRequest()
         {
         }
         
-        public selectFrameByNameRequest(string arg0, string arg1)
+        public selectWindowRequest(string arg0, string arg1)
         {
             this.arg0 = arg0;
             this.arg1 = arg1;
@@ -243,11 +234,11 @@ namespace Sirius.Client.Web.Core
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="selectFrameByNameResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class selectFrameByNameResponse
+    [System.ServiceModel.MessageContractAttribute(WrapperName="selectWindowResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class selectWindowResponse
     {
         
-        public selectFrameByNameResponse()
+        public selectWindowResponse()
         {
         }
     }
@@ -255,19 +246,19 @@ namespace Sirius.Client.Web.Core
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="selectDefaultContent", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class selectDefaultContentRequest
+    [System.ServiceModel.MessageContractAttribute(WrapperName="forward", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class forwardRequest
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string arg0;
         
-        public selectDefaultContentRequest()
+        public forwardRequest()
         {
         }
         
-        public selectDefaultContentRequest(string arg0)
+        public forwardRequest(string arg0)
         {
             this.arg0 = arg0;
         }
@@ -276,177 +267,12 @@ namespace Sirius.Client.Web.Core
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="selectDefaultContentResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class selectDefaultContentResponse
+    [System.ServiceModel.MessageContractAttribute(WrapperName="forwardResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class forwardResponse
     {
         
-        public selectDefaultContentResponse()
+        public forwardResponse()
         {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getPageSource", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class getPageSourceRequest
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        public getPageSourceRequest()
-        {
-        }
-        
-        public getPageSourceRequest(string arg0)
-        {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getPageSourceResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class getPageSourceResponse
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string @return;
-        
-        public getPageSourceResponse()
-        {
-        }
-        
-        public getPageSourceResponse(string @return)
-        {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="selectFrameByIndex", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class selectFrameByIndexRequest
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int arg1;
-        
-        public selectFrameByIndexRequest()
-        {
-        }
-        
-        public selectFrameByIndexRequest(string arg0, int arg1)
-        {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="selectFrameByIndexResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class selectFrameByIndexResponse
-    {
-        
-        public selectFrameByIndexResponse()
-        {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="back", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class backRequest
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        public backRequest()
-        {
-        }
-        
-        public backRequest(string arg0)
-        {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="backResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class backResponse
-    {
-        
-        public backResponse()
-        {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="isDisplayed", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class isDisplayedRequest
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg2;
-        
-        public isDisplayedRequest()
-        {
-        }
-        
-        public isDisplayedRequest(string arg0, string arg1, string arg2)
-        {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-            this.arg2 = arg2;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="isDisplayedResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class isDisplayedResponse
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public bool @return;
-        
-        public isDisplayedResponse()
-        {
-        }
-        
-        public isDisplayedResponse(bool @return)
-        {
-            this.@return = @return;
         }
     }
     
@@ -510,6 +336,58 @@ namespace Sirius.Client.Web.Core
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="isDisplayed", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class isDisplayedRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg1;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg2;
+        
+        public isDisplayedRequest()
+        {
+        }
+        
+        public isDisplayedRequest(string arg0, string arg1, string arg2)
+        {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+            this.arg2 = arg2;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="isDisplayedResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class isDisplayedResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool @return;
+        
+        public isDisplayedResponse()
+        {
+        }
+        
+        public isDisplayedResponse(bool @return)
+        {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="sendKeys", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
     public partial class sendKeysRequest
     {
@@ -558,41 +436,8 @@ namespace Sirius.Client.Web.Core
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="forward", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class forwardRequest
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        public forwardRequest()
-        {
-        }
-        
-        public forwardRequest(string arg0)
-        {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="forwardResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class forwardResponse
-    {
-        
-        public forwardResponse()
-        {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="selectWindow", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class selectWindowRequest
+    [System.ServiceModel.MessageContractAttribute(WrapperName="selectFrameByName", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class selectFrameByNameRequest
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
@@ -603,11 +448,11 @@ namespace Sirius.Client.Web.Core
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string arg1;
         
-        public selectWindowRequest()
+        public selectFrameByNameRequest()
         {
         }
         
-        public selectWindowRequest(string arg0, string arg1)
+        public selectFrameByNameRequest(string arg0, string arg1)
         {
             this.arg0 = arg0;
             this.arg1 = arg1;
@@ -617,11 +462,11 @@ namespace Sirius.Client.Web.Core
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="selectWindowResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class selectWindowResponse
+    [System.ServiceModel.MessageContractAttribute(WrapperName="selectFrameByNameResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class selectFrameByNameResponse
     {
         
-        public selectWindowResponse()
+        public selectFrameByNameResponse()
         {
         }
     }
@@ -629,19 +474,19 @@ namespace Sirius.Client.Web.Core
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="selectAlert", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class selectAlertRequest
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getWindowHandle", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class getWindowHandleRequest
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string arg0;
         
-        public selectAlertRequest()
+        public getWindowHandleRequest()
         {
         }
         
-        public selectAlertRequest(string arg0)
+        public getWindowHandleRequest(string arg0)
         {
             this.arg0 = arg0;
         }
@@ -650,11 +495,166 @@ namespace Sirius.Client.Web.Core
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="selectAlertResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
-    public partial class selectAlertResponse
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getWindowHandleResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class getWindowHandleResponse
     {
         
-        public selectAlertResponse()
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string @return;
+        
+        public getWindowHandleResponse()
+        {
+        }
+        
+        public getWindowHandleResponse(string @return)
+        {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="selectFrameByIndex", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class selectFrameByIndexRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int arg1;
+        
+        public selectFrameByIndexRequest()
+        {
+        }
+        
+        public selectFrameByIndexRequest(string arg0, int arg1)
+        {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="selectFrameByIndexResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class selectFrameByIndexResponse
+    {
+        
+        public selectFrameByIndexResponse()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getPageSource", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class getPageSourceRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        public getPageSourceRequest()
+        {
+        }
+        
+        public getPageSourceRequest(string arg0)
+        {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getPageSourceResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class getPageSourceResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string @return;
+        
+        public getPageSourceResponse()
+        {
+        }
+        
+        public getPageSourceResponse(string @return)
+        {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="selectDefaultContent", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class selectDefaultContentRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        public selectDefaultContentRequest()
+        {
+        }
+        
+        public selectDefaultContentRequest(string arg0)
+        {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="selectDefaultContentResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class selectDefaultContentResponse
+    {
+        
+        public selectDefaultContentResponse()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="back", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class backRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        public backRequest()
+        {
+        }
+        
+        public backRequest(string arg0)
+        {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="backResponse", WrapperNamespace="http://web.server.sirius.org/", IsWrapped=true)]
+    public partial class backResponse
+    {
+        
+        public backResponse()
         {
         }
     }
@@ -783,13 +783,13 @@ namespace Sirius.Client.Web.Core
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Sirius.Client.Web.Core.point @return;
+        public Sirius.CSharp.Client.Web.Core.point @return;
         
         public getLocationResponse()
         {
         }
         
-        public getLocationResponse(Sirius.Client.Web.Core.point @return)
+        public getLocationResponse(Sirius.CSharp.Client.Web.Core.point @return)
         {
             this.@return = @return;
         }
@@ -995,13 +995,13 @@ namespace Sirius.Client.Web.Core
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://web.server.sirius.org/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Sirius.Client.Web.Core.dimension @return;
+        public Sirius.CSharp.Client.Web.Core.dimension @return;
         
         public getSizeResponse()
         {
         }
         
-        public getSizeResponse(Sirius.Client.Web.Core.dimension @return)
+        public getSizeResponse(Sirius.CSharp.Client.Web.Core.dimension @return)
         {
             this.@return = @return;
         }
@@ -1472,13 +1472,13 @@ namespace Sirius.Client.Web.Core
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface WebCoreChannel : Sirius.Client.Web.Core.WebCore, System.ServiceModel.IClientChannel
+    public interface WebCoreChannel : Sirius.CSharp.Client.Web.Core.WebCore, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class WebCoreClient : System.ServiceModel.ClientBase<Sirius.Client.Web.Core.WebCore>, Sirius.Client.Web.Core.WebCore
+    public partial class WebCoreClient : System.ServiceModel.ClientBase<Sirius.CSharp.Client.Web.Core.WebCore>, Sirius.CSharp.Client.Web.Core.WebCore
     {
         
         public WebCoreClient()
@@ -1506,413 +1506,413 @@ namespace Sirius.Client.Web.Core
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.getWindowHandleResponse Sirius.Client.Web.Core.WebCore.getWindowHandle(Sirius.Client.Web.Core.getWindowHandleRequest request)
-        {
-            return base.Channel.getWindowHandle(request);
-        }
-        
-        public string getWindowHandle(string arg0)
-        {
-            Sirius.Client.Web.Core.getWindowHandleRequest inValue = new Sirius.Client.Web.Core.getWindowHandleRequest();
-            inValue.arg0 = arg0;
-            Sirius.Client.Web.Core.getWindowHandleResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).getWindowHandle(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.selectFrameByNameResponse Sirius.Client.Web.Core.WebCore.selectFrameByName(Sirius.Client.Web.Core.selectFrameByNameRequest request)
-        {
-            return base.Channel.selectFrameByName(request);
-        }
-        
-        public void selectFrameByName(string arg0, string arg1)
-        {
-            Sirius.Client.Web.Core.selectFrameByNameRequest inValue = new Sirius.Client.Web.Core.selectFrameByNameRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            Sirius.Client.Web.Core.selectFrameByNameResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).selectFrameByName(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.selectDefaultContentResponse Sirius.Client.Web.Core.WebCore.selectDefaultContent(Sirius.Client.Web.Core.selectDefaultContentRequest request)
-        {
-            return base.Channel.selectDefaultContent(request);
-        }
-        
-        public void selectDefaultContent(string arg0)
-        {
-            Sirius.Client.Web.Core.selectDefaultContentRequest inValue = new Sirius.Client.Web.Core.selectDefaultContentRequest();
-            inValue.arg0 = arg0;
-            Sirius.Client.Web.Core.selectDefaultContentResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).selectDefaultContent(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.getPageSourceResponse Sirius.Client.Web.Core.WebCore.getPageSource(Sirius.Client.Web.Core.getPageSourceRequest request)
-        {
-            return base.Channel.getPageSource(request);
-        }
-        
-        public string getPageSource(string arg0)
-        {
-            Sirius.Client.Web.Core.getPageSourceRequest inValue = new Sirius.Client.Web.Core.getPageSourceRequest();
-            inValue.arg0 = arg0;
-            Sirius.Client.Web.Core.getPageSourceResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).getPageSource(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.selectFrameByIndexResponse Sirius.Client.Web.Core.WebCore.selectFrameByIndex(Sirius.Client.Web.Core.selectFrameByIndexRequest request)
-        {
-            return base.Channel.selectFrameByIndex(request);
-        }
-        
-        public void selectFrameByIndex(string arg0, int arg1)
-        {
-            Sirius.Client.Web.Core.selectFrameByIndexRequest inValue = new Sirius.Client.Web.Core.selectFrameByIndexRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            Sirius.Client.Web.Core.selectFrameByIndexResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).selectFrameByIndex(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.backResponse Sirius.Client.Web.Core.WebCore.back(Sirius.Client.Web.Core.backRequest request)
-        {
-            return base.Channel.back(request);
-        }
-        
-        public void back(string arg0)
-        {
-            Sirius.Client.Web.Core.backRequest inValue = new Sirius.Client.Web.Core.backRequest();
-            inValue.arg0 = arg0;
-            Sirius.Client.Web.Core.backResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).back(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.isDisplayedResponse Sirius.Client.Web.Core.WebCore.isDisplayed(Sirius.Client.Web.Core.isDisplayedRequest request)
-        {
-            return base.Channel.isDisplayed(request);
-        }
-        
-        public bool isDisplayed(string arg0, string arg1, string arg2)
-        {
-            Sirius.Client.Web.Core.isDisplayedRequest inValue = new Sirius.Client.Web.Core.isDisplayedRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            Sirius.Client.Web.Core.isDisplayedResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).isDisplayed(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.getCssValueResponse Sirius.Client.Web.Core.WebCore.getCssValue(Sirius.Client.Web.Core.getCssValueRequest request)
-        {
-            return base.Channel.getCssValue(request);
-        }
-        
-        public string getCssValue(string arg0, string arg1, string arg2, string arg3)
-        {
-            Sirius.Client.Web.Core.getCssValueRequest inValue = new Sirius.Client.Web.Core.getCssValueRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            Sirius.Client.Web.Core.getCssValueResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).getCssValue(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.sendKeysResponse Sirius.Client.Web.Core.WebCore.sendKeys(Sirius.Client.Web.Core.sendKeysRequest request)
-        {
-            return base.Channel.sendKeys(request);
-        }
-        
-        public void sendKeys(string arg0, string arg1, string arg2, string arg3)
-        {
-            Sirius.Client.Web.Core.sendKeysRequest inValue = new Sirius.Client.Web.Core.sendKeysRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            Sirius.Client.Web.Core.sendKeysResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).sendKeys(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.forwardResponse Sirius.Client.Web.Core.WebCore.forward(Sirius.Client.Web.Core.forwardRequest request)
-        {
-            return base.Channel.forward(request);
-        }
-        
-        public void forward(string arg0)
-        {
-            Sirius.Client.Web.Core.forwardRequest inValue = new Sirius.Client.Web.Core.forwardRequest();
-            inValue.arg0 = arg0;
-            Sirius.Client.Web.Core.forwardResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).forward(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.selectWindowResponse Sirius.Client.Web.Core.WebCore.selectWindow(Sirius.Client.Web.Core.selectWindowRequest request)
-        {
-            return base.Channel.selectWindow(request);
-        }
-        
-        public void selectWindow(string arg0, string arg1)
-        {
-            Sirius.Client.Web.Core.selectWindowRequest inValue = new Sirius.Client.Web.Core.selectWindowRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            Sirius.Client.Web.Core.selectWindowResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).selectWindow(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.selectAlertResponse Sirius.Client.Web.Core.WebCore.selectAlert(Sirius.Client.Web.Core.selectAlertRequest request)
+        Sirius.CSharp.Client.Web.Core.selectAlertResponse Sirius.CSharp.Client.Web.Core.WebCore.selectAlert(Sirius.CSharp.Client.Web.Core.selectAlertRequest request)
         {
             return base.Channel.selectAlert(request);
         }
         
         public void selectAlert(string arg0)
         {
-            Sirius.Client.Web.Core.selectAlertRequest inValue = new Sirius.Client.Web.Core.selectAlertRequest();
+            Sirius.CSharp.Client.Web.Core.selectAlertRequest inValue = new Sirius.CSharp.Client.Web.Core.selectAlertRequest();
             inValue.arg0 = arg0;
-            Sirius.Client.Web.Core.selectAlertResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).selectAlert(inValue);
+            Sirius.CSharp.Client.Web.Core.selectAlertResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).selectAlert(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.getLocationResponse Sirius.Client.Web.Core.WebCore.getLocation(Sirius.Client.Web.Core.getLocationRequest request)
+        Sirius.CSharp.Client.Web.Core.selectWindowResponse Sirius.CSharp.Client.Web.Core.WebCore.selectWindow(Sirius.CSharp.Client.Web.Core.selectWindowRequest request)
         {
-            return base.Channel.getLocation(request);
+            return base.Channel.selectWindow(request);
         }
         
-        public Sirius.Client.Web.Core.point getLocation(string arg0, string arg1, string arg2)
+        public void selectWindow(string arg0, string arg1)
         {
-            Sirius.Client.Web.Core.getLocationRequest inValue = new Sirius.Client.Web.Core.getLocationRequest();
+            Sirius.CSharp.Client.Web.Core.selectWindowRequest inValue = new Sirius.CSharp.Client.Web.Core.selectWindowRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            Sirius.CSharp.Client.Web.Core.selectWindowResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).selectWindow(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.CSharp.Client.Web.Core.forwardResponse Sirius.CSharp.Client.Web.Core.WebCore.forward(Sirius.CSharp.Client.Web.Core.forwardRequest request)
+        {
+            return base.Channel.forward(request);
+        }
+        
+        public void forward(string arg0)
+        {
+            Sirius.CSharp.Client.Web.Core.forwardRequest inValue = new Sirius.CSharp.Client.Web.Core.forwardRequest();
+            inValue.arg0 = arg0;
+            Sirius.CSharp.Client.Web.Core.forwardResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).forward(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.CSharp.Client.Web.Core.getCssValueResponse Sirius.CSharp.Client.Web.Core.WebCore.getCssValue(Sirius.CSharp.Client.Web.Core.getCssValueRequest request)
+        {
+            return base.Channel.getCssValue(request);
+        }
+        
+        public string getCssValue(string arg0, string arg1, string arg2, string arg3)
+        {
+            Sirius.CSharp.Client.Web.Core.getCssValueRequest inValue = new Sirius.CSharp.Client.Web.Core.getCssValueRequest();
             inValue.arg0 = arg0;
             inValue.arg1 = arg1;
             inValue.arg2 = arg2;
-            Sirius.Client.Web.Core.getLocationResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).getLocation(inValue);
+            inValue.arg3 = arg3;
+            Sirius.CSharp.Client.Web.Core.getCssValueResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).getCssValue(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.getURLResponse Sirius.Client.Web.Core.WebCore.getURL(Sirius.Client.Web.Core.getURLRequest request)
+        Sirius.CSharp.Client.Web.Core.isDisplayedResponse Sirius.CSharp.Client.Web.Core.WebCore.isDisplayed(Sirius.CSharp.Client.Web.Core.isDisplayedRequest request)
+        {
+            return base.Channel.isDisplayed(request);
+        }
+        
+        public bool isDisplayed(string arg0, string arg1, string arg2)
+        {
+            Sirius.CSharp.Client.Web.Core.isDisplayedRequest inValue = new Sirius.CSharp.Client.Web.Core.isDisplayedRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            Sirius.CSharp.Client.Web.Core.isDisplayedResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).isDisplayed(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.CSharp.Client.Web.Core.sendKeysResponse Sirius.CSharp.Client.Web.Core.WebCore.sendKeys(Sirius.CSharp.Client.Web.Core.sendKeysRequest request)
+        {
+            return base.Channel.sendKeys(request);
+        }
+        
+        public void sendKeys(string arg0, string arg1, string arg2, string arg3)
+        {
+            Sirius.CSharp.Client.Web.Core.sendKeysRequest inValue = new Sirius.CSharp.Client.Web.Core.sendKeysRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            inValue.arg3 = arg3;
+            Sirius.CSharp.Client.Web.Core.sendKeysResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).sendKeys(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.CSharp.Client.Web.Core.selectFrameByNameResponse Sirius.CSharp.Client.Web.Core.WebCore.selectFrameByName(Sirius.CSharp.Client.Web.Core.selectFrameByNameRequest request)
+        {
+            return base.Channel.selectFrameByName(request);
+        }
+        
+        public void selectFrameByName(string arg0, string arg1)
+        {
+            Sirius.CSharp.Client.Web.Core.selectFrameByNameRequest inValue = new Sirius.CSharp.Client.Web.Core.selectFrameByNameRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            Sirius.CSharp.Client.Web.Core.selectFrameByNameResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).selectFrameByName(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.CSharp.Client.Web.Core.getWindowHandleResponse Sirius.CSharp.Client.Web.Core.WebCore.getWindowHandle(Sirius.CSharp.Client.Web.Core.getWindowHandleRequest request)
+        {
+            return base.Channel.getWindowHandle(request);
+        }
+        
+        public string getWindowHandle(string arg0)
+        {
+            Sirius.CSharp.Client.Web.Core.getWindowHandleRequest inValue = new Sirius.CSharp.Client.Web.Core.getWindowHandleRequest();
+            inValue.arg0 = arg0;
+            Sirius.CSharp.Client.Web.Core.getWindowHandleResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).getWindowHandle(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.CSharp.Client.Web.Core.selectFrameByIndexResponse Sirius.CSharp.Client.Web.Core.WebCore.selectFrameByIndex(Sirius.CSharp.Client.Web.Core.selectFrameByIndexRequest request)
+        {
+            return base.Channel.selectFrameByIndex(request);
+        }
+        
+        public void selectFrameByIndex(string arg0, int arg1)
+        {
+            Sirius.CSharp.Client.Web.Core.selectFrameByIndexRequest inValue = new Sirius.CSharp.Client.Web.Core.selectFrameByIndexRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            Sirius.CSharp.Client.Web.Core.selectFrameByIndexResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).selectFrameByIndex(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.CSharp.Client.Web.Core.getPageSourceResponse Sirius.CSharp.Client.Web.Core.WebCore.getPageSource(Sirius.CSharp.Client.Web.Core.getPageSourceRequest request)
+        {
+            return base.Channel.getPageSource(request);
+        }
+        
+        public string getPageSource(string arg0)
+        {
+            Sirius.CSharp.Client.Web.Core.getPageSourceRequest inValue = new Sirius.CSharp.Client.Web.Core.getPageSourceRequest();
+            inValue.arg0 = arg0;
+            Sirius.CSharp.Client.Web.Core.getPageSourceResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).getPageSource(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.CSharp.Client.Web.Core.selectDefaultContentResponse Sirius.CSharp.Client.Web.Core.WebCore.selectDefaultContent(Sirius.CSharp.Client.Web.Core.selectDefaultContentRequest request)
+        {
+            return base.Channel.selectDefaultContent(request);
+        }
+        
+        public void selectDefaultContent(string arg0)
+        {
+            Sirius.CSharp.Client.Web.Core.selectDefaultContentRequest inValue = new Sirius.CSharp.Client.Web.Core.selectDefaultContentRequest();
+            inValue.arg0 = arg0;
+            Sirius.CSharp.Client.Web.Core.selectDefaultContentResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).selectDefaultContent(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.CSharp.Client.Web.Core.backResponse Sirius.CSharp.Client.Web.Core.WebCore.back(Sirius.CSharp.Client.Web.Core.backRequest request)
+        {
+            return base.Channel.back(request);
+        }
+        
+        public void back(string arg0)
+        {
+            Sirius.CSharp.Client.Web.Core.backRequest inValue = new Sirius.CSharp.Client.Web.Core.backRequest();
+            inValue.arg0 = arg0;
+            Sirius.CSharp.Client.Web.Core.backResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).back(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.CSharp.Client.Web.Core.getLocationResponse Sirius.CSharp.Client.Web.Core.WebCore.getLocation(Sirius.CSharp.Client.Web.Core.getLocationRequest request)
+        {
+            return base.Channel.getLocation(request);
+        }
+        
+        public Sirius.CSharp.Client.Web.Core.point getLocation(string arg0, string arg1, string arg2)
+        {
+            Sirius.CSharp.Client.Web.Core.getLocationRequest inValue = new Sirius.CSharp.Client.Web.Core.getLocationRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            Sirius.CSharp.Client.Web.Core.getLocationResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).getLocation(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sirius.CSharp.Client.Web.Core.getURLResponse Sirius.CSharp.Client.Web.Core.WebCore.getURL(Sirius.CSharp.Client.Web.Core.getURLRequest request)
         {
             return base.Channel.getURL(request);
         }
         
         public string getURL(string arg0)
         {
-            Sirius.Client.Web.Core.getURLRequest inValue = new Sirius.Client.Web.Core.getURLRequest();
+            Sirius.CSharp.Client.Web.Core.getURLRequest inValue = new Sirius.CSharp.Client.Web.Core.getURLRequest();
             inValue.arg0 = arg0;
-            Sirius.Client.Web.Core.getURLResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).getURL(inValue);
+            Sirius.CSharp.Client.Web.Core.getURLResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).getURL(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.clearResponse Sirius.Client.Web.Core.WebCore.clear(Sirius.Client.Web.Core.clearRequest request)
+        Sirius.CSharp.Client.Web.Core.clearResponse Sirius.CSharp.Client.Web.Core.WebCore.clear(Sirius.CSharp.Client.Web.Core.clearRequest request)
         {
             return base.Channel.clear(request);
         }
         
         public void clear(string arg0, string arg1, string arg2)
         {
-            Sirius.Client.Web.Core.clearRequest inValue = new Sirius.Client.Web.Core.clearRequest();
+            Sirius.CSharp.Client.Web.Core.clearRequest inValue = new Sirius.CSharp.Client.Web.Core.clearRequest();
             inValue.arg0 = arg0;
             inValue.arg1 = arg1;
             inValue.arg2 = arg2;
-            Sirius.Client.Web.Core.clearResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).clear(inValue);
+            Sirius.CSharp.Client.Web.Core.clearResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).clear(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.startResponse Sirius.Client.Web.Core.WebCore.start(Sirius.Client.Web.Core.startRequest request)
+        Sirius.CSharp.Client.Web.Core.startResponse Sirius.CSharp.Client.Web.Core.WebCore.start(Sirius.CSharp.Client.Web.Core.startRequest request)
         {
             return base.Channel.start(request);
         }
         
         public string start(string arg0)
         {
-            Sirius.Client.Web.Core.startRequest inValue = new Sirius.Client.Web.Core.startRequest();
+            Sirius.CSharp.Client.Web.Core.startRequest inValue = new Sirius.CSharp.Client.Web.Core.startRequest();
             inValue.arg0 = arg0;
-            Sirius.Client.Web.Core.startResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).start(inValue);
+            Sirius.CSharp.Client.Web.Core.startResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).start(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.stopResponse Sirius.Client.Web.Core.WebCore.stop(Sirius.Client.Web.Core.stopRequest request)
+        Sirius.CSharp.Client.Web.Core.stopResponse Sirius.CSharp.Client.Web.Core.WebCore.stop(Sirius.CSharp.Client.Web.Core.stopRequest request)
         {
             return base.Channel.stop(request);
         }
         
         public void stop(string arg0)
         {
-            Sirius.Client.Web.Core.stopRequest inValue = new Sirius.Client.Web.Core.stopRequest();
+            Sirius.CSharp.Client.Web.Core.stopRequest inValue = new Sirius.CSharp.Client.Web.Core.stopRequest();
             inValue.arg0 = arg0;
-            Sirius.Client.Web.Core.stopResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).stop(inValue);
+            Sirius.CSharp.Client.Web.Core.stopResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).stop(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.getSizeResponse Sirius.Client.Web.Core.WebCore.getSize(Sirius.Client.Web.Core.getSizeRequest request)
+        Sirius.CSharp.Client.Web.Core.getSizeResponse Sirius.CSharp.Client.Web.Core.WebCore.getSize(Sirius.CSharp.Client.Web.Core.getSizeRequest request)
         {
             return base.Channel.getSize(request);
         }
         
-        public Sirius.Client.Web.Core.dimension getSize(string arg0, string arg1, string arg2)
+        public Sirius.CSharp.Client.Web.Core.dimension getSize(string arg0, string arg1, string arg2)
         {
-            Sirius.Client.Web.Core.getSizeRequest inValue = new Sirius.Client.Web.Core.getSizeRequest();
+            Sirius.CSharp.Client.Web.Core.getSizeRequest inValue = new Sirius.CSharp.Client.Web.Core.getSizeRequest();
             inValue.arg0 = arg0;
             inValue.arg1 = arg1;
             inValue.arg2 = arg2;
-            Sirius.Client.Web.Core.getSizeResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).getSize(inValue);
+            Sirius.CSharp.Client.Web.Core.getSizeResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).getSize(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.openResponse Sirius.Client.Web.Core.WebCore.open(Sirius.Client.Web.Core.openRequest request)
+        Sirius.CSharp.Client.Web.Core.openResponse Sirius.CSharp.Client.Web.Core.WebCore.open(Sirius.CSharp.Client.Web.Core.openRequest request)
         {
             return base.Channel.open(request);
         }
         
         public void open(string arg0, string arg1)
         {
-            Sirius.Client.Web.Core.openRequest inValue = new Sirius.Client.Web.Core.openRequest();
+            Sirius.CSharp.Client.Web.Core.openRequest inValue = new Sirius.CSharp.Client.Web.Core.openRequest();
             inValue.arg0 = arg0;
             inValue.arg1 = arg1;
-            Sirius.Client.Web.Core.openResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).open(inValue);
+            Sirius.CSharp.Client.Web.Core.openResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).open(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.refreshResponse Sirius.Client.Web.Core.WebCore.refresh(Sirius.Client.Web.Core.refreshRequest request)
+        Sirius.CSharp.Client.Web.Core.refreshResponse Sirius.CSharp.Client.Web.Core.WebCore.refresh(Sirius.CSharp.Client.Web.Core.refreshRequest request)
         {
             return base.Channel.refresh(request);
         }
         
         public void refresh(string arg0)
         {
-            Sirius.Client.Web.Core.refreshRequest inValue = new Sirius.Client.Web.Core.refreshRequest();
+            Sirius.CSharp.Client.Web.Core.refreshRequest inValue = new Sirius.CSharp.Client.Web.Core.refreshRequest();
             inValue.arg0 = arg0;
-            Sirius.Client.Web.Core.refreshResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).refresh(inValue);
+            Sirius.CSharp.Client.Web.Core.refreshResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).refresh(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.getTitleResponse Sirius.Client.Web.Core.WebCore.getTitle(Sirius.Client.Web.Core.getTitleRequest request)
+        Sirius.CSharp.Client.Web.Core.getTitleResponse Sirius.CSharp.Client.Web.Core.WebCore.getTitle(Sirius.CSharp.Client.Web.Core.getTitleRequest request)
         {
             return base.Channel.getTitle(request);
         }
         
         public string getTitle(string arg0)
         {
-            Sirius.Client.Web.Core.getTitleRequest inValue = new Sirius.Client.Web.Core.getTitleRequest();
+            Sirius.CSharp.Client.Web.Core.getTitleRequest inValue = new Sirius.CSharp.Client.Web.Core.getTitleRequest();
             inValue.arg0 = arg0;
-            Sirius.Client.Web.Core.getTitleResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).getTitle(inValue);
+            Sirius.CSharp.Client.Web.Core.getTitleResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).getTitle(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.isEnabledResponse Sirius.Client.Web.Core.WebCore.isEnabled(Sirius.Client.Web.Core.isEnabledRequest request)
+        Sirius.CSharp.Client.Web.Core.isEnabledResponse Sirius.CSharp.Client.Web.Core.WebCore.isEnabled(Sirius.CSharp.Client.Web.Core.isEnabledRequest request)
         {
             return base.Channel.isEnabled(request);
         }
         
         public bool isEnabled(string arg0, string arg1, string arg2)
         {
-            Sirius.Client.Web.Core.isEnabledRequest inValue = new Sirius.Client.Web.Core.isEnabledRequest();
+            Sirius.CSharp.Client.Web.Core.isEnabledRequest inValue = new Sirius.CSharp.Client.Web.Core.isEnabledRequest();
             inValue.arg0 = arg0;
             inValue.arg1 = arg1;
             inValue.arg2 = arg2;
-            Sirius.Client.Web.Core.isEnabledResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).isEnabled(inValue);
+            Sirius.CSharp.Client.Web.Core.isEnabledResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).isEnabled(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.getTextResponse Sirius.Client.Web.Core.WebCore.getText(Sirius.Client.Web.Core.getTextRequest request)
+        Sirius.CSharp.Client.Web.Core.getTextResponse Sirius.CSharp.Client.Web.Core.WebCore.getText(Sirius.CSharp.Client.Web.Core.getTextRequest request)
         {
             return base.Channel.getText(request);
         }
         
         public string getText(string arg0, string arg1, string arg2)
         {
-            Sirius.Client.Web.Core.getTextRequest inValue = new Sirius.Client.Web.Core.getTextRequest();
+            Sirius.CSharp.Client.Web.Core.getTextRequest inValue = new Sirius.CSharp.Client.Web.Core.getTextRequest();
             inValue.arg0 = arg0;
             inValue.arg1 = arg1;
             inValue.arg2 = arg2;
-            Sirius.Client.Web.Core.getTextResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).getText(inValue);
+            Sirius.CSharp.Client.Web.Core.getTextResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).getText(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.submitResponse Sirius.Client.Web.Core.WebCore.submit(Sirius.Client.Web.Core.submitRequest request)
+        Sirius.CSharp.Client.Web.Core.submitResponse Sirius.CSharp.Client.Web.Core.WebCore.submit(Sirius.CSharp.Client.Web.Core.submitRequest request)
         {
             return base.Channel.submit(request);
         }
         
         public void submit(string arg0, string arg1, string arg2)
         {
-            Sirius.Client.Web.Core.submitRequest inValue = new Sirius.Client.Web.Core.submitRequest();
+            Sirius.CSharp.Client.Web.Core.submitRequest inValue = new Sirius.CSharp.Client.Web.Core.submitRequest();
             inValue.arg0 = arg0;
             inValue.arg1 = arg1;
             inValue.arg2 = arg2;
-            Sirius.Client.Web.Core.submitResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).submit(inValue);
+            Sirius.CSharp.Client.Web.Core.submitResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).submit(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.clickResponse Sirius.Client.Web.Core.WebCore.click(Sirius.Client.Web.Core.clickRequest request)
+        Sirius.CSharp.Client.Web.Core.clickResponse Sirius.CSharp.Client.Web.Core.WebCore.click(Sirius.CSharp.Client.Web.Core.clickRequest request)
         {
             return base.Channel.click(request);
         }
         
         public void click(string arg0, string arg1, string arg2)
         {
-            Sirius.Client.Web.Core.clickRequest inValue = new Sirius.Client.Web.Core.clickRequest();
+            Sirius.CSharp.Client.Web.Core.clickRequest inValue = new Sirius.CSharp.Client.Web.Core.clickRequest();
             inValue.arg0 = arg0;
             inValue.arg1 = arg1;
             inValue.arg2 = arg2;
-            Sirius.Client.Web.Core.clickResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).click(inValue);
+            Sirius.CSharp.Client.Web.Core.clickResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).click(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.isSelectedResponse Sirius.Client.Web.Core.WebCore.isSelected(Sirius.Client.Web.Core.isSelectedRequest request)
+        Sirius.CSharp.Client.Web.Core.isSelectedResponse Sirius.CSharp.Client.Web.Core.WebCore.isSelected(Sirius.CSharp.Client.Web.Core.isSelectedRequest request)
         {
             return base.Channel.isSelected(request);
         }
         
         public bool isSelected(string arg0, string arg1, string arg2)
         {
-            Sirius.Client.Web.Core.isSelectedRequest inValue = new Sirius.Client.Web.Core.isSelectedRequest();
+            Sirius.CSharp.Client.Web.Core.isSelectedRequest inValue = new Sirius.CSharp.Client.Web.Core.isSelectedRequest();
             inValue.arg0 = arg0;
             inValue.arg1 = arg1;
             inValue.arg2 = arg2;
-            Sirius.Client.Web.Core.isSelectedResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).isSelected(inValue);
+            Sirius.CSharp.Client.Web.Core.isSelectedResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).isSelected(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.getAttributeResponse Sirius.Client.Web.Core.WebCore.getAttribute(Sirius.Client.Web.Core.getAttributeRequest request)
+        Sirius.CSharp.Client.Web.Core.getAttributeResponse Sirius.CSharp.Client.Web.Core.WebCore.getAttribute(Sirius.CSharp.Client.Web.Core.getAttributeRequest request)
         {
             return base.Channel.getAttribute(request);
         }
         
         public string getAttribute(string arg0, string arg1, string arg2, string arg3)
         {
-            Sirius.Client.Web.Core.getAttributeRequest inValue = new Sirius.Client.Web.Core.getAttributeRequest();
+            Sirius.CSharp.Client.Web.Core.getAttributeRequest inValue = new Sirius.CSharp.Client.Web.Core.getAttributeRequest();
             inValue.arg0 = arg0;
             inValue.arg1 = arg1;
             inValue.arg2 = arg2;
             inValue.arg3 = arg3;
-            Sirius.Client.Web.Core.getAttributeResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).getAttribute(inValue);
+            Sirius.CSharp.Client.Web.Core.getAttributeResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).getAttribute(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sirius.Client.Web.Core.getTagNameResponse Sirius.Client.Web.Core.WebCore.getTagName(Sirius.Client.Web.Core.getTagNameRequest request)
+        Sirius.CSharp.Client.Web.Core.getTagNameResponse Sirius.CSharp.Client.Web.Core.WebCore.getTagName(Sirius.CSharp.Client.Web.Core.getTagNameRequest request)
         {
             return base.Channel.getTagName(request);
         }
         
         public string getTagName(string arg0, string arg1, string arg2)
         {
-            Sirius.Client.Web.Core.getTagNameRequest inValue = new Sirius.Client.Web.Core.getTagNameRequest();
+            Sirius.CSharp.Client.Web.Core.getTagNameRequest inValue = new Sirius.CSharp.Client.Web.Core.getTagNameRequest();
             inValue.arg0 = arg0;
             inValue.arg1 = arg1;
             inValue.arg2 = arg2;
-            Sirius.Client.Web.Core.getTagNameResponse retVal = ((Sirius.Client.Web.Core.WebCore)(this)).getTagName(inValue);
+            Sirius.CSharp.Client.Web.Core.getTagNameResponse retVal = ((Sirius.CSharp.Client.Web.Core.WebCore)(this)).getTagName(inValue);
             return retVal.@return;
         }
     }
