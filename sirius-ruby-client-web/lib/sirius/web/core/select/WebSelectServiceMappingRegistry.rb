@@ -1,9 +1,9 @@
 require 'WebSelectService.rb'
 require 'soap/mapping'
-module Sirius
-module Client
-module Win32
-module Core
+module Sirius
+module Client
+module Win32
+module Core
 module Select
 
 module WebSelectServiceMappingRegistry  EncodedRegistry = ::SOAP::Mapping::EncodedRegistry.new
@@ -580,8 +580,8 @@ module WebSelectServiceMappingRegistry  EncodedRegistry = ::SOAP::Mapping::Encod
   )
 end
 
-end
-end
-end
-end
+end
+end
+end
+end
 end

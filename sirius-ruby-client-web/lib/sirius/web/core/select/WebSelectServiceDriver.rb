@@ -101,7 +101,7 @@ class WebSelect < ::SOAP::RPC::Driver  DefaultEndpointUrl = "http:localhost:2121
     super(endpoint_url, nil)
     self.mapping_registry = WebSelectServiceMappingRegistry::EncodedRegistry
     self.literal_mapping_registry = WebSelectServiceMappingRegistry::LiteralRegistry
-    init_methods
+    init_methods
   end
 private
 
@@ -122,7 +122,7 @@ private
               end
             end
 
-  end
+  end
 end
 
 end

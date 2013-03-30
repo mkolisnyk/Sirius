@@ -45,7 +45,7 @@ class Button < ::SOAP::RPC::Driver  DefaultEndpointUrl = "http:localhost:21212/w
     super(endpoint_url, nil)
     self.mapping_registry = ButtonServiceMappingRegistry::EncodedRegistry
     self.literal_mapping_registry = ButtonServiceMappingRegistry::LiteralRegistry
-    init_methods
+    init_methods
   end
 private
 
@@ -66,7 +66,7 @@ private
               end
             end
 
-  end
+  end
 end
 
 end

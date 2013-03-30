@@ -29,7 +29,7 @@ class Win32Utils < ::SOAP::RPC::Driver  DefaultEndpointUrl = "http:localhost:212
     super(endpoint_url, nil)
     self.mapping_registry = Win32UtilsServiceMappingRegistry::EncodedRegistry
     self.literal_mapping_registry = Win32UtilsServiceMappingRegistry::LiteralRegistry
-    init_methods
+    init_methods
   end
 private
 
@@ -50,7 +50,7 @@ private
               end
             end
 
-  end
+  end
 end
 
 end

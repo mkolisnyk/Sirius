@@ -149,7 +149,7 @@ class Edit < ::SOAP::RPC::Driver  DefaultEndpointUrl = "http:localhost:21212/win
     super(endpoint_url, nil)
     self.mapping_registry = EditServiceMappingRegistry::EncodedRegistry
     self.literal_mapping_registry = EditServiceMappingRegistry::LiteralRegistry
-    init_methods
+    init_methods
   end
 private
 
@@ -170,7 +170,7 @@ private
               end
             end
 
-  end
+  end
 end
 
 end
