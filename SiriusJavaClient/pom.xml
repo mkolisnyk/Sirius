@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.mkolisnyk</groupId>
 	<artifactId>sirius.java.client</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.3.66-SNAPSHOT</version>
 	<name>Sirius Java Client</name>
 	<url>https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient</url>
 	<description>Sirius Java main client</description>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
@@ -33,7 +33,7 @@
 		<connection>scm:git:ssh://git@github.com/mkolisnyk/Sirius.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/mkolisnyk/Sirius.git</developerConnection>
 		<url>http://github.com/mkolisnyk/Sirius/tree/master</url>
-		<tag>v${package.version}</tag>
+		<tag>sirius.java.client-v${package.version}</tag>
 	</scm>
 
 	<build>
