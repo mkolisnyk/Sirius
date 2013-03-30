@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.mkolisnyk</groupId>
 	<artifactId>sirius.java.client</artifactId>
-	<version>${package.version}</version>
+	<version>0.0.0</version>
 	<name>Sirius Java Client</name>
 	<url>https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient</url>
 	<description>Sirius Java main client</description>
@@ -33,7 +33,7 @@
 		<connection>scm:git:ssh://git@github.com/mkolisnyk/Sirius.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/mkolisnyk/Sirius.git</developerConnection>
 		<url>http://github.com/mkolisnyk/Sirius/tree/master</url>
-		<tag>v${package.version}</tag>
+		<tag>v0.0.0</tag>
 	</scm>
 
 	<build>
