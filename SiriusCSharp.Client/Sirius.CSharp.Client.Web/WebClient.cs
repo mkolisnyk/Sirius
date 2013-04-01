@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using Sirius.CSharp.Client.Web.Core;
 using Sirius.CSharp.Client.Web.Select;
-using Sirius.CSharp.Client.Web.Core;
 
 namespace Sirius.CSharp.Client.Web
 {
-    class WebClient
+    public class WebClient
     {
         private WebCoreClient coreProxy = null;
         private WebSelectClient selectProxy = null;

@@ -30,6 +30,8 @@
     <Delete Files="@(Packages)" />
     <Delete Files="@(Lib)" />
   </Target>
+  <Target Name="NuGet">
+  </Target>
   <Target Name="Build"  DependsOnTargets="Clean">
     <ConvertToAbsolutePath Paths="$(SolutionDir)">
       <Output TaskParameter="AbsolutePaths" PropertyName="SolutionDirAbs"/>

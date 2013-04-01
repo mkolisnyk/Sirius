@@ -12,6 +12,9 @@
 			<include>**/*.jar</include>
 			<include>**/*.gem</include>
 			<include>**/*.nupkg</include>
+			<include>**/*.csv</include>
+			<include>**/log4j.xml</include>
+			<include>**/log4j.dtd</include>
 		</includes>
 		</fileSet>
 	</fileSets>

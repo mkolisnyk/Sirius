@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.mkolisnyk</groupId>
 	<artifactId>sirius.java.client</artifactId>
-	<version>1.3.68-SNAPSHOT</version>
+	<version>2013.4.1.0-SNAPSHOT</version>
 	<name>Sirius Java Client</name>
 	<url>https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient</url>
 	<description>Sirius Java main client</description>
@@ -30,10 +30,9 @@
 	</parent>
 
 	<scm>
-		<connection>scm:git:ssh://git@github.com/mkolisnyk/Sirius.git</connection>
-		<developerConnection>scm:git:ssh://git@github.com/mkolisnyk/Sirius.git</developerConnection>
-		<url>http://github.com/mkolisnyk/Sirius/tree/master</url>
-		<tag>sirius.java.client-1.3.66</tag>
+		<connection>scm:svn:https://sirius-platform.googlecode.com/svn/trunk/SiriusJavaClient/</connection>
+		<developerConnection>scm:svn:https://sirius-platform.googlecode.com/svn/trunk/SiriusJavaClient/</developerConnection>
+		<url>https://sirius-platform.googlecode.com/svn</url>
 	</scm>
 
 	<build>
@@ -136,7 +135,10 @@
 				<artifactId>maven-release-plugin</artifactId>
 				<version>2.4.1</version>
 				<configuration>
-					<tagNameFormat>v@{project.version}</tagNameFormat>
+					<tagNameFormat>sirius.java.client-@{project.version}</tagNameFormat>
+					<configuration>
+						<tagBase>https://sirius-platform.googlecode.com/svn/tags/releases</tagBase>
+					</configuration>
 				</configuration>
 			</plugin>
 			<plugin>
