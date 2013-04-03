@@ -44,6 +44,19 @@ The below table shows currently available components and their language-specific
 | Win32 | [Server Win32](https://github.com/mkolisnyk/Sirius/tree/master/Sirius-Server-Win32) | [Java Win32](https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Win32) | [Ruby Win32](https://github.com/mkolisnyk/Sirius/tree/master/sirius-ruby-client-win32) | [C\# Win32](https://github.com/mkolisnyk/Sirius/tree/master/SiriusCSharp.Client/Sirius.CSharp.Client.Win32) |
 | Web | [Server Web](https://github.com/mkolisnyk/Sirius/tree/master/Sirius-Server-Web) | [Java Web](https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web) | [Ruby Web](https://github.com/mkolisnyk/Sirius/tree/master/sirius-ruby-client-web) | [C\# Web](https://github.com/mkolisnyk/Sirius/tree/master/SiriusCSharp.Client/Sirius.CSharp.Client.Web) |
 
+User Reference Guide
+======
+
+* [Getting Started](https://github.com/mkolisnyk/Sirius/wiki/Getting-Started) - gives an introduction how to use Sirius system
+
+**Server side:**
+* [Sirius Server Command Line Reference](https://github.com/mkolisnyk/Sirius/wiki/Sirius-Server-Command-Line-Reference)
+* [Sirius Server configuration guide](https://github.com/mkolisnyk/Sirius/wiki/Server:-configuration-guide)
+
+**Client side:**
+* [Win32 applications interaction](https://github.com/mkolisnyk/Sirius/wiki/Win32-Client:-Win32-interaction)
+* [Web applications interaction](https://github.com/mkolisnyk/Sirius/wiki/Web-Client:-Web-Interaction)
+
 Releases
 ======
 There're 2 release types supported by this project:
