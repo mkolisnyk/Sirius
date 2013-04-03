@@ -33,7 +33,7 @@ The server side is split by functional areas. So, we have dedicated module for s
 
 Each server component has dedicated client ported to different programming languages. The entire structure can be represented with the following diagram:
 
-![Sirius Components Structure](http://4.bp.blogspot.com/-eKROx1osfy8/UMzIlY2glgI/AAAAAAAAAO0/0BHcbczWEro/s1600/ComponentDiagram.png)
+![Sirius Components Structure](https://raw.github.com/mkolisnyk/Sirius/master/Docs/img/diagrams/ComponentDiagram.png "Sirius Component Diagram")
 
 The below table shows currently available components and their language-specific ports.
 
