@@ -6,8 +6,8 @@ The following endpoints are defined for this module:
 
 | Endpoint                       | Class                             | Description |
 | ------------------------------ | --------------------------------- | ----------- |
-| http://<base URL>/web/core     | org.sirius.server.web.WebCore     | Provides main functionality. Actually it combines the API of WebDriver and WebElement classes of the WebDriver |
-| http://<base URL>/web/select   | org.sirius.server.web.WebSelect   | Provides functionality specific to web lists. It's designed as separate endpoint as it's implemented separately in WebDriver |
+| http://\<base URL\>/web/core     | org.sirius.server.web.WebCore     | Provides main functionality. Actually it combines the API of WebDriver and WebElement classes of the WebDriver |
+| http://\<base URL\>/web/select   | org.sirius.server.web.WebSelect   | Provides functionality specific to web lists. It's designed as separate endpoint as it's implemented separately in WebDriver |
 
 # Authors
 
