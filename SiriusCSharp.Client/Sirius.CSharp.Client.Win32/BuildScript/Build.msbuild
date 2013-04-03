@@ -3,6 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductName>Sirius.CSharp.Client.Win32</ProductName>
     <ProductVersion Condition="'$(ProductVersion)'==''">0.0.0</ProductVersion>
     <SolutionDir>..</SolutionDir>
   </PropertyGroup>
@@ -42,5 +43,8 @@
     <Copy SourceFiles="@(ClientBinaries)" DestinationFolder="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package\lib\%(ClientBinaries.RecursiveDir)" ContinueOnError="true"/>
     <Copy SourceFiles="$(SolutionDirAbs)\Package.nuspec" DestinationFolder="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package" OverwriteReadOnlyFiles="true" />
     <Exec Command="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package\BuildPublishPackage.cmd $(ProductVersion)" WorkingDirectory="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package" />
+  </Target>
+  <Target Name="Publish" DependsOnTargets="Build">
+    <Exec Command="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package\nuget.exe push $(ProductName).$(ProductVersion).nupkg" WorkingDirectory="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package" />
   </Target>
 </Project>
