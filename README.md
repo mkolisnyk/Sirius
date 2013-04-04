@@ -83,4 +83,6 @@ http://mkolisnyk.blogspot.com/search/label/Sirius
 
 Authors
 ======
-Myk Kolisnyk (kolesnik.nickolay@gmail.com)
+Myk Kolisnyk (kolesnik.nickolay@gmail.com) 
+
+<a href="http://ua.linkedin.com/pub/mykola-kolisnyk/14/533/903"><img src="http://www.linkedin.com/img/webpromo/btn_profile_bluetxt_80x15.png" width="80" height="15" border="0" alt="View Mykola Kolisnyk's profile on LinkedIn"></a>
