@@ -5,7 +5,9 @@ This is the core part of the Java Client Library for Sirius Test Automation Plat
 # Installation
 
 The client library is delivered in 2 ways:
+
 1. Self-contained Java library provided as **jar** file. It can be taken from [downloads page](http://code.google.com/p/sirius-platform/downloads/list). All we need to do is just unpack the archive and include appropriate **jar** file into the project.
+
 2. Maven dependencies. Each client module is also published to Maven repository. The list of available modules can be found on [the following page](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.github.mkolisnyk%22). So, if we have Maven project where we'd like to use Sirius Java client libraries we should update Maven script with the entry like this:
 ``` xml
 	<dependency>
