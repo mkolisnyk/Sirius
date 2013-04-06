@@ -1,0 +1,53 @@
+= Sirius Ruby Core Client Overview
+
+This is the client library for Sirius test automation platform for Ruby programming language.
+
+= Installation
+
+Ruby client library is delivered as GEM package and can be installed using the following command:
+
+  gem install sirius-client-core
+
+After that the library can be accessible and can be included using
+
+  reguire 'sirius.rb'
+
+
+= Sample usage
+
+Once you have an access to Sirius CoreClient classes you can use them as an ordinary code. 
+In order to make interaction with Sirius Server API more centralized the following classes were added as the main entry point for all method calls:
+
+* Sirius::Client::Core.Core
+* Sirius::Client::Core::System.System
+
+These are major client classes for core library and typically we have to initialize their connection to the Sirius Server part with the following code:
+
+  @client = Sirius::Client::Core.Core.new
+  @system = Sirius::Client::Core::System.System.new
+
+or target it to specific host/port by specifying extra parameters like:
+
+  @client = Sirius::Client::Core.Core.new "my_host" , "8080"
+  @system = Sirius::Client::Core::System.System.new "my_host" , "8080"
+
+These instructions will connect to the server instance listening the http://my_host:8080 host. By default the connection is set up for the following URL: http://localhost:21212 
+
+After that we can use these client instances as an ordinary API which wraps the actual calls to server side. E.g. the following code creates directory with the specified path:
+
+  @system.dir.create_directory('./Temp')
+
+or using more common client:
+ 
+  @client.system.dir.create_directory('./Temp')
+  
+For more detailed reference please refer to the {Sirius Core Client API documentation}[http://rubydoc.info/gems/sirius-client-core] available online.
+  
+= Authors
+
+Myk Kolisnyk ({kolesnik.nickolay@gmail.com}[mailto://kolesnik.nickolay@gmail.com])
+
+= Links  
+
+* {GitHub project}[https://github.com/mkolisnyk/Sirius]
+* {Dedicated blog entries}[http://mkolisnyk.blogspot.co.uk/search/label/Sirius]

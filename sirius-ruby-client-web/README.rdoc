@@ -1,0 +1,52 @@
+= Sirius Ruby Web Client Overview
+
+This is the client library for Sirius Test Automation Platform for Ruby programming language designed to provide interface for Web applications interaction. 
+
+= Installation
+
+Ruby client library is delivered as GEM package and can be installed using the following command:
+
+  gem install sirius-client-web
+
+After that the library can be accessible and can be included using
+
+  reguire 'sirius.rb'
+
+
+= Sample usage
+
+Once you have an access to Sirius Client classes you can use them as an ordinary code. 
+Typically you just have to initialize the connection to Sirius Server. It's done while creating new
+instance of any library object. 
+
+For Web operations there's dedicated client class which serves as main entry point for all client API calls. So, web client is typically initialized in the following way:
+
+  @client = Sirius::Client::Web::Web.new
+  
+or if we want to explicitly define the Sirius Server location we should use:
+
+  @client = Sirius::Client::Web::Web.new "my_host", "8080"
+
+This instruction will connect to the server instance listening the http://my_host:8080 host. By default the connection is set up for the following URL: http://localhost:21212 .
+
+After that we can start using client classes, e.g.:
+
+  @client.start('*iexplore')
+  @client.core.open('http://google.com')
+
+For more details please refer to {Sirius Ruby Web Client API documentation}[http://rubydoc.info/gems/sirius-client-web].
+
+= Web Client high-level API
+
+In addition to the methods providing interaction with Sirius Server the Sirius Ruby Web Client API contains classes which operate with such abstractions as Pages, Controls etc. So, we can use them within our tests.
+
+For more detailed reference please refer to the {Web Client: Web Interaction}[https://github.com/mkolisnyk/Sirius/wiki/Web-Client:-Web-Interaction] page on the {Sirius Project Wiki page}[https://github.com/mkolisnyk/Sirius/wiki]
+
+= Authors
+
+Myk Kolisnyk ({kolesnik.nickolay@gmail.com}[mailto://kolesnik.nickolay@gmail.com])
+
+= Links  
+
+* {GitHub project}[https://github.com/mkolisnyk/Sirius]
+* {Dedicated blog entries}[http://mkolisnyk.blogspot.co.uk/search/label/Sirius]
