@@ -69,6 +69,7 @@ Demo
 ======
 
 The basic Sirius Win32 demo is available on Youtube:
+
 [![Sirius: Basic Win32 demo](http://img.youtube.com/vi/JI8zuvx5nV4/0.jpg)](http://www.youtube.com/watch?v=JI8zuvx5nV4)
 
 Documentation
