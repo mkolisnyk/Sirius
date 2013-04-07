@@ -23,198 +23,201 @@ import com.sun.jna.platform.win32.WinUser;
  */
 public class Window implements WinUser {
 
-	protected Win32Client client;
-	protected Win32Locator locator;
-	protected Window parent;
+    protected Win32Client  client;
+    protected Win32Locator locator;
+    protected Window       parent;
 
-	protected Logger logger;
+    protected Logger       logger;
 
-	protected String getNativeText(UnsignedShort[] text){
-		char[] convertedText = new char[text.length];
-		for(int i=0;i<text.length;i++){
-			convertedText[i] = (char)text[i].intValue();
-		}
-		return null;		
-	}
-	
-	/**
+    protected String getNativeText(UnsignedShort[] text) {
+        char[] convertedText = new char[text.length];
+        for (int i = 0; i < text.length; i++) {
+            convertedText[i] = (char) text[i].intValue();
+        }
+        return null;
+    }
+
+    /**
 	 * 
 	 */
-	public Window(Win32Client client, Win32Locator locator) {
-		this(client, null, locator);
-	}
+    public Window(Win32Client client, Win32Locator locator) {
+        this(client, null, locator);
+    }
 
-	/**
+    /**
 	 * 
 	 */
-	public Window(Win32Client client, Window parent, Win32Locator locator) {
-		this.client = client;
-		this.locator = locator;
-		this.parent = parent;
-		this.logger = Logger.getLogger(this.getClass());
-		this.logger.addAppender(new ConsoleAppender(new SimpleLayout()));
+    public Window(Win32Client client, Window parent, Win32Locator locator) {
+        this.client = client;
+        this.locator = locator;
+        this.parent = parent;
+        this.logger = Logger.getLogger(this.getClass());
+        this.logger.addAppender(new ConsoleAppender(new SimpleLayout()));
 
-		logger.debug("Initializing instance");
-	}
+        logger.debug("Initializing instance");
+    }
 
-	/**
-	 * @param parent2
-	 * @param locator2
-	 */
-	public Window(Window parent, Win32Locator locator) {
-		this.client = null;
-		this.locator = locator;
-		this.parent = parent;
-		this.logger = Logger.getLogger(this.getClass());
-		this.logger.addAppender(new ConsoleAppender(new SimpleLayout()));
+    /**
+     * @param parent2
+     * @param locator2
+     */
+    public Window(Window parent, Win32Locator locator) {
+        this.client = null;
+        this.locator = locator;
+        this.parent = parent;
+        this.logger = Logger.getLogger(this.getClass());
+        this.logger.addAppender(new ConsoleAppender(new SimpleLayout()));
 
-		logger.debug("Initializing instance");
-		if(parent != null){
-			this.client = parent.client;
-		}
-	}
+        logger.debug("Initializing instance");
+        if (parent != null) {
+            this.client = parent.client;
+        }
+    }
 
-	public void click() throws Exception {
-		if(!exists()) return;
-		client.core().window().click(locator.getHwnd(), 0, 0, 0, false, false, false);
-	}
+    public void click() throws Exception {
+        if (!exists())
+            return;
+        client.core().window()
+                .click(locator.getHwnd(), 0, 0, 0, false, false, false);
+    }
 
-	public void typeKeys(String text) throws Exception {
-		if(!exists()) return;
-		for(char key:text.toCharArray()){
-			int code = key;
-			// TODO Add specific keys handling
-			client.core().window().keyPress(locator.getHwnd(), code);
-		}
-	}
-	
-	public long getHwnd() {
-		return this.locator.getHwnd();
-	}
+    public void typeKeys(String text) throws Exception {
+        if (!exists())
+            return;
+        for (char key : text.toCharArray()) {
+            int code = key;
+            // TODO Add specific keys handling
+            client.core().window().keyPress(locator.getHwnd(), code);
+        }
+    }
 
-	public Win32Locator getLocator() {
-		return this.locator;
-	}
+    public long getHwnd() {
+        return this.locator.getHwnd();
+    }
 
-	public boolean exists() throws RemoteException {
-		logger.debug(String.format("Searching for window: %s", this.locator));
+    public Win32Locator getLocator() {
+        return this.locator;
+    }
 
-		if (parent != null) {
-			logger.debug(String.format("Searching for parent window: %s",
-					this.parent.getLocator()));
+    public boolean exists() throws RemoteException {
+        logger.debug(String.format("Searching for window: %s", this.locator));
 
-			if (!parent.exists()) {
-				logger.debug(String
-						.format("Parent window doesn't exist. Returning false"));
-				return false;
-			} else {
-				logger.debug(String
-						.format("The parent window was found: %s. Looking for current window: %s",
-								this.parent.getLocator(),
-								this.getLocator()));
-				this.locator.setParent(parent.getHwnd());
-			}
-		}
+        if (parent != null) {
+            logger.debug(String.format("Searching for parent window: %s",
+                    this.parent.getLocator()));
 
-		this.locator.setHwnd(0);
-		if(parent != null){
-			this.client = parent.client;
-		}
+            if (!parent.exists()) {
+                logger.debug(String
+                        .format("Parent window doesn't exist. Returning false"));
+                return false;
+            } else {
+                logger.debug(String
+                        .format("The parent window was found: %s. Looking for current window: %s",
+                                this.parent.getLocator(), this.getLocator()));
+                this.locator.setParent(parent.getHwnd());
+            }
+        }
 
-		long hwnd = 0;
-		logger.debug(String.format("Searching for window: %s", this.locator));
-		try {
-			hwnd = client.utils().searchWindow(locator);
-		}
-		catch(Throwable e){
-			logger.debug(String.format("Error while searching for window", locator),e);
-		}
-		logger.debug(String.format("HWND returned: %d", hwnd));
-		if (hwnd != 0) {
-			this.locator.setHwnd(hwnd);
+        this.locator.setHwnd(0);
+        if (parent != null) {
+            this.client = parent.client;
+        }
 
-			logger.debug(String.format("Window found: %s", this.locator));
+        long hwnd = 0;
+        logger.debug(String.format("Searching for window: %s", this.locator));
+        try {
+            hwnd = client.utils().searchWindow(locator);
+        } catch (Throwable e) {
+            logger.debug(
+                    String.format("Error while searching for window", locator),
+                    e);
+        }
+        logger.debug(String.format("HWND returned: %d", hwnd));
+        if (hwnd != 0) {
+            this.locator.setHwnd(hwnd);
 
-			return true;
-		} else {
-			this.locator.setHwnd(0);
-		}
+            logger.debug(String.format("Window found: %s", this.locator));
 
-		logger.debug(String.format("Window wasn't found"));
+            return true;
+        } else {
+            this.locator.setHwnd(0);
+        }
 
-		return false;
-	}
+        logger.debug(String.format("Window wasn't found"));
 
-	private Class<?>[] getArrayTypes(Object... params) {
-		Class<?>[] types = new Class[params.length];
-		for (int i = 0; i < params.length; i++) {
-			types[i] = params[i].getClass();
-		}
-		return types;
-	}
+        return false;
+    }
 
-	public boolean waitFor(long timeout, String methodName,
-			Object expectedValue, Object... params) throws Exception {
-		long end = (new Date()).getTime() + timeout;
-		Class<?>[] parameterTypes = getArrayTypes(params);
-		while ((new Date()).getTime() < end) {
-			Method waitMethod = this.getClass().getMethod(methodName,
-					parameterTypes);
-			Object result = waitMethod.invoke(this, params);
-			if (result.equals(expectedValue)) {
-				return true;
-			}
-		}
-		return false;
-	}
+    private Class<?>[] getArrayTypes(Object... params) {
+        Class<?>[] types = new Class[params.length];
+        for (int i = 0; i < params.length; i++) {
+            types[i] = params[i].getClass();
+        }
+        return types;
+    }
 
-	public boolean exists(long timeout) throws Exception {
-		return waitFor(timeout, "exists", true);
-	}
+    public boolean waitFor(long timeout, String methodName,
+            Object expectedValue, Object... params) throws Exception {
+        long end = (new Date()).getTime() + timeout;
+        Class<?>[] parameterTypes = getArrayTypes(params);
+        while ((new Date()).getTime() < end) {
+            Method waitMethod = this.getClass().getMethod(methodName,
+                    parameterTypes);
+            Object result = waitMethod.invoke(this, params);
+            if (result.equals(expectedValue)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-	public boolean disappears() throws Exception {
-		return !exists();
-	}
+    public boolean exists(long timeout) throws Exception {
+        return waitFor(timeout, "exists", true);
+    }
 
-	public boolean disappears(long timeout) throws Exception {
-		return waitFor(timeout, "disappears", true);
-	}
+    public boolean disappears() throws Exception {
+        return !exists();
+    }
 
-	public Rect getClientRect() throws Exception {
-		Rect rc = client.core().window().getClientRect(this.locator.getHwnd());
-		return rc;
-	}
+    public boolean disappears(long timeout) throws Exception {
+        return waitFor(timeout, "disappears", true);
+    }
 
-	public Rect getRect() throws Exception {
-		Rect rc = client.core().window().getRect(this.locator.getHwnd());
-		return rc;
-	}
+    public Rect getClientRect() throws Exception {
+        Rect rc = client.core().window().getClientRect(this.locator.getHwnd());
+        return rc;
+    }
 
-	public boolean isActive() {
-		return false;
-	}
+    public Rect getRect() throws Exception {
+        Rect rc = client.core().window().getRect(this.locator.getHwnd());
+        return rc;
+    }
 
-	public boolean isEnabled() throws Exception {
-		return client.core().window().isEnabled(locator.getHwnd());
-	}
+    public boolean isActive() {
+        return false;
+    }
 
-	public boolean isEnabled(long timeout) throws Exception {
-		return waitFor(timeout, "isEnabled", true);
-	}
+    public boolean isEnabled() throws Exception {
+        return client.core().window().isEnabled(locator.getHwnd());
+    }
 
-	public boolean isVisible() throws Exception {
-		return client.core().window().isVisible(locator.getHwnd());
-	}
-	
-	public boolean isVisible(long timeout) throws Exception {
-		return waitFor(timeout, "isVisible", true);
-	}
+    public boolean isEnabled(long timeout) throws Exception {
+        return waitFor(timeout, "isEnabled", true);
+    }
 
-	public void sendKeys() {
-		;
-	}
+    public boolean isVisible() throws Exception {
+        return client.core().window().isVisible(locator.getHwnd());
+    }
 
-	public Window getParent() {
-		return parent;
-	}
+    public boolean isVisible(long timeout) throws Exception {
+        return waitFor(timeout, "isVisible", true);
+    }
+
+    public void sendKeys() {
+        ;
+    }
+
+    public Window getParent() {
+        return parent;
+    }
 }

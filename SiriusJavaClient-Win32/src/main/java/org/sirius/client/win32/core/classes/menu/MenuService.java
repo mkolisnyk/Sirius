@@ -8,11 +8,11 @@
 package org.sirius.client.win32.core.classes.menu;
 
 public interface MenuService extends javax.xml.rpc.Service {
-	public java.lang.String getMenuPortAddress();
+    public java.lang.String getMenuPortAddress();
 
-	public org.sirius.client.win32.core.classes.menu.Menu getMenuPort()
-			throws javax.xml.rpc.ServiceException;
+    public org.sirius.client.win32.core.classes.menu.Menu getMenuPort()
+            throws javax.xml.rpc.ServiceException;
 
-	public org.sirius.client.win32.core.classes.menu.Menu getMenuPort(
-			java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
+    public org.sirius.client.win32.core.classes.menu.Menu getMenuPort(
+            java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
 }

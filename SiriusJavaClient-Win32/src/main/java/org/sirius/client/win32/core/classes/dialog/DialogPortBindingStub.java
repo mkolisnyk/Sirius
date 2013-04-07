@@ -7,27 +7,34 @@
 
 package org.sirius.client.win32.core.classes.dialog;
 
-public class DialogPortBindingStub extends org.apache.axis.client.Stub implements org.sirius.client.win32.core.classes.dialog.Dialog {
-    private java.util.Vector cachedSerClasses = new java.util.Vector();
-    private java.util.Vector cachedSerQNames = new java.util.Vector();
-    private java.util.Vector cachedSerFactories = new java.util.Vector();
-    private java.util.Vector cachedDeserFactories = new java.util.Vector();
+public class DialogPortBindingStub extends org.apache.axis.client.Stub
+        implements org.sirius.client.win32.core.classes.dialog.Dialog {
+    private java.util.Vector                           cachedSerClasses     = new java.util.Vector();
+    private java.util.Vector                           cachedSerQNames      = new java.util.Vector();
+    private java.util.Vector                           cachedSerFactories   = new java.util.Vector();
+    private java.util.Vector                           cachedDeserFactories = new java.util.Vector();
 
-    static org.apache.axis.description.OperationDesc [] _operations;
+    static org.apache.axis.description.OperationDesc[] _operations;
 
     static {
         _operations = new org.apache.axis.description.OperationDesc[8];
         _initOperationDesc1();
     }
 
-    private static void _initOperationDesc1(){
+    private static void _initOperationDesc1() {
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getDlgCtrlID");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg0"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "long"),
+                long.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnType(new javax.xml.namespace.QName(
+                "http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(int.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -36,11 +43,22 @@ public class DialogPortBindingStub extends org.apache.axis.client.Stub implement
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getDlgItem");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg0"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "long"),
+                long.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg1"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "int"), int.class,
+                false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        oper.setReturnType(new javax.xml.namespace.QName(
+                "http://www.w3.org/2001/XMLSchema", "long"));
         oper.setReturnClass(long.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -49,7 +67,8 @@ public class DialogPortBindingStub extends org.apache.axis.client.Stub implement
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getDialogBaseUnits");
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        oper.setReturnType(new javax.xml.namespace.QName(
+                "http://www.w3.org/2001/XMLSchema", "long"));
         oper.setReturnClass(long.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -58,15 +77,36 @@ public class DialogPortBindingStub extends org.apache.axis.client.Stub implement
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getDlgItemInt");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg0"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "long"),
+                long.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg1"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "int"), int.class,
+                false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg2"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"), boolean.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg2"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "boolean"),
+                boolean.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg3"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"), boolean.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg3"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "boolean"),
+                boolean.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnType(new javax.xml.namespace.QName(
+                "http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(int.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -75,11 +115,22 @@ public class DialogPortBindingStub extends org.apache.axis.client.Stub implement
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getDlgItemTextA");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg0"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "long"),
+                long.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg1"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "int"), int.class,
+                false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        oper.setReturnType(new javax.xml.namespace.QName(
+                "http://www.w3.org/2001/XMLSchema", "string"));
         oper.setReturnClass(java.lang.String.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -88,11 +139,22 @@ public class DialogPortBindingStub extends org.apache.axis.client.Stub implement
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("isDlgButtonChecked");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg0"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "long"),
+                long.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg1"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "int"), int.class,
+                false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnType(new javax.xml.namespace.QName(
+                "http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(int.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -101,15 +163,36 @@ public class DialogPortBindingStub extends org.apache.axis.client.Stub implement
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setDlgItemInt");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg0"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "long"),
+                long.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg1"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "int"), int.class,
+                false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg2"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg2"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "int"), int.class,
+                false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg3"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"), boolean.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg3"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "boolean"),
+                boolean.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        oper.setReturnType(new javax.xml.namespace.QName(
+                "http://www.w3.org/2001/XMLSchema", "boolean"));
         oper.setReturnClass(boolean.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -118,14 +201,30 @@ public class DialogPortBindingStub extends org.apache.axis.client.Stub implement
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setDlgItemText");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg0"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "long"),
+                long.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg1"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "int"), int.class,
+                false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg2"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg2"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "string"),
+                java.lang.String.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        oper.setReturnType(new javax.xml.namespace.QName(
+                "http://www.w3.org/2001/XMLSchema", "boolean"));
         oper.setReturnClass(boolean.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -135,24 +234,28 @@ public class DialogPortBindingStub extends org.apache.axis.client.Stub implement
     }
 
     public DialogPortBindingStub() throws org.apache.axis.AxisFault {
-         this(null);
+        this(null);
     }
 
-    public DialogPortBindingStub(java.net.URL endpointURL, javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
-         this(service);
-         super.cachedEndpoint = endpointURL;
+    public DialogPortBindingStub(java.net.URL endpointURL,
+            javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
+        this(service);
+        super.cachedEndpoint = endpointURL;
     }
 
-    public DialogPortBindingStub(javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
+    public DialogPortBindingStub(javax.xml.rpc.Service service)
+            throws org.apache.axis.AxisFault {
         if (service == null) {
             super.service = new org.apache.axis.client.Service();
         } else {
             super.service = service;
         }
-        ((org.apache.axis.client.Service)super.service).setTypeMappingVersion("1.2");
+        ((org.apache.axis.client.Service) super.service)
+                .setTypeMappingVersion("1.2");
     }
 
-    protected org.apache.axis.client.Call createCall() throws java.rmi.RemoteException {
+    protected org.apache.axis.client.Call createCall()
+            throws java.rmi.RemoteException {
         try {
             org.apache.axis.client.Call _call = super._createCall();
             if (super.maintainSessionSet) {
@@ -179,9 +282,9 @@ public class DialogPortBindingStub extends org.apache.axis.client.Stub implement
                 _call.setProperty(key, super.cachedProperties.get(key));
             }
             return _call;
-        }
-        catch (java.lang.Throwable _t) {
-            throw new org.apache.axis.AxisFault("Failure trying to get the Call object", _t);
+        } catch (java.lang.Throwable _t) {
+            throw new org.apache.axis.AxisFault(
+                    "Failure trying to get the Call object", _t);
         }
     }
 
@@ -194,29 +297,34 @@ public class DialogPortBindingStub extends org.apache.axis.client.Stub implement
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR,
+                Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS,
+                Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://classes.win32.server.sirius.org/", "getDlgCtrlID"));
+        _call.setOperationName(new javax.xml.namespace.QName(
+                "http://classes.win32.server.sirius.org/", "getDlgCtrlID"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(arg0)});
+        try {
+            java.lang.Object _resp = _call
+                    .invoke(new java.lang.Object[] { new java.lang.Long(arg0) });
 
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return ((java.lang.Integer) _resp).intValue();
-            } catch (java.lang.Exception _exception) {
-                return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            if (_resp instanceof java.rmi.RemoteException) {
+                throw (java.rmi.RemoteException) _resp;
+            } else {
+                extractAttachments(_call);
+                try {
+                    return ((java.lang.Integer) _resp).intValue();
+                } catch (java.lang.Exception _exception) {
+                    return ((java.lang.Integer) org.apache.axis.utils.JavaUtils
+                            .convert(_resp, int.class)).intValue();
+                }
             }
+        } catch (org.apache.axis.AxisFault axisFaultException) {
+            throw axisFaultException;
         }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
     }
 
     public long getDlgItem(long arg0, int arg1) throws java.rmi.RemoteException {
@@ -228,29 +336,34 @@ public class DialogPortBindingStub extends org.apache.axis.client.Stub implement
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR,
+                Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS,
+                Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://classes.win32.server.sirius.org/", "getDlgItem"));
+        _call.setOperationName(new javax.xml.namespace.QName(
+                "http://classes.win32.server.sirius.org/", "getDlgItem"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(arg0), new java.lang.Integer(arg1)});
+        try {
+            java.lang.Object _resp = _call.invoke(new java.lang.Object[] {
+                    new java.lang.Long(arg0), new java.lang.Integer(arg1) });
 
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return ((java.lang.Long) _resp).longValue();
-            } catch (java.lang.Exception _exception) {
-                return ((java.lang.Long) org.apache.axis.utils.JavaUtils.convert(_resp, long.class)).longValue();
+            if (_resp instanceof java.rmi.RemoteException) {
+                throw (java.rmi.RemoteException) _resp;
+            } else {
+                extractAttachments(_call);
+                try {
+                    return ((java.lang.Long) _resp).longValue();
+                } catch (java.lang.Exception _exception) {
+                    return ((java.lang.Long) org.apache.axis.utils.JavaUtils
+                            .convert(_resp, long.class)).longValue();
+                }
             }
+        } catch (org.apache.axis.AxisFault axisFaultException) {
+            throw axisFaultException;
         }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
     }
 
     public long getDialogBaseUnits() throws java.rmi.RemoteException {
@@ -262,32 +375,37 @@ public class DialogPortBindingStub extends org.apache.axis.client.Stub implement
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR,
+                Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS,
+                Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://classes.win32.server.sirius.org/", "getDialogBaseUnits"));
+        _call.setOperationName(new javax.xml.namespace.QName(
+                "http://classes.win32.server.sirius.org/", "getDialogBaseUnits"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+        try {
+            java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
 
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return ((java.lang.Long) _resp).longValue();
-            } catch (java.lang.Exception _exception) {
-                return ((java.lang.Long) org.apache.axis.utils.JavaUtils.convert(_resp, long.class)).longValue();
+            if (_resp instanceof java.rmi.RemoteException) {
+                throw (java.rmi.RemoteException) _resp;
+            } else {
+                extractAttachments(_call);
+                try {
+                    return ((java.lang.Long) _resp).longValue();
+                } catch (java.lang.Exception _exception) {
+                    return ((java.lang.Long) org.apache.axis.utils.JavaUtils
+                            .convert(_resp, long.class)).longValue();
+                }
             }
+        } catch (org.apache.axis.AxisFault axisFaultException) {
+            throw axisFaultException;
         }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
     }
 
-    public int getDlgItemInt(long arg0, int arg1, boolean arg2, boolean arg3) throws java.rmi.RemoteException {
+    public int getDlgItemInt(long arg0, int arg1, boolean arg2, boolean arg3)
+            throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -296,32 +414,39 @@ public class DialogPortBindingStub extends org.apache.axis.client.Stub implement
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR,
+                Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS,
+                Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://classes.win32.server.sirius.org/", "getDlgItemInt"));
+        _call.setOperationName(new javax.xml.namespace.QName(
+                "http://classes.win32.server.sirius.org/", "getDlgItemInt"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(arg0), new java.lang.Integer(arg1), new java.lang.Boolean(arg2), new java.lang.Boolean(arg3)});
+        try {
+            java.lang.Object _resp = _call.invoke(new java.lang.Object[] {
+                    new java.lang.Long(arg0), new java.lang.Integer(arg1),
+                    new java.lang.Boolean(arg2), new java.lang.Boolean(arg3) });
 
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return ((java.lang.Integer) _resp).intValue();
-            } catch (java.lang.Exception _exception) {
-                return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            if (_resp instanceof java.rmi.RemoteException) {
+                throw (java.rmi.RemoteException) _resp;
+            } else {
+                extractAttachments(_call);
+                try {
+                    return ((java.lang.Integer) _resp).intValue();
+                } catch (java.lang.Exception _exception) {
+                    return ((java.lang.Integer) org.apache.axis.utils.JavaUtils
+                            .convert(_resp, int.class)).intValue();
+                }
             }
+        } catch (org.apache.axis.AxisFault axisFaultException) {
+            throw axisFaultException;
         }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
     }
 
-    public java.lang.String getDlgItemTextA(long arg0, int arg1) throws java.rmi.RemoteException {
+    public java.lang.String getDlgItemTextA(long arg0, int arg1)
+            throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -330,32 +455,38 @@ public class DialogPortBindingStub extends org.apache.axis.client.Stub implement
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR,
+                Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS,
+                Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://classes.win32.server.sirius.org/", "getDlgItemTextA"));
+        _call.setOperationName(new javax.xml.namespace.QName(
+                "http://classes.win32.server.sirius.org/", "getDlgItemTextA"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(arg0), new java.lang.Integer(arg1)});
+        try {
+            java.lang.Object _resp = _call.invoke(new java.lang.Object[] {
+                    new java.lang.Long(arg0), new java.lang.Integer(arg1) });
 
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.lang.String) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
+            if (_resp instanceof java.rmi.RemoteException) {
+                throw (java.rmi.RemoteException) _resp;
+            } else {
+                extractAttachments(_call);
+                try {
+                    return (java.lang.String) _resp;
+                } catch (java.lang.Exception _exception) {
+                    return (java.lang.String) org.apache.axis.utils.JavaUtils
+                            .convert(_resp, java.lang.String.class);
+                }
             }
+        } catch (org.apache.axis.AxisFault axisFaultException) {
+            throw axisFaultException;
         }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
     }
 
-    public int isDlgButtonChecked(long arg0, int arg1) throws java.rmi.RemoteException {
+    public int isDlgButtonChecked(long arg0, int arg1)
+            throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -364,32 +495,38 @@ public class DialogPortBindingStub extends org.apache.axis.client.Stub implement
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR,
+                Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS,
+                Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://classes.win32.server.sirius.org/", "isDlgButtonChecked"));
+        _call.setOperationName(new javax.xml.namespace.QName(
+                "http://classes.win32.server.sirius.org/", "isDlgButtonChecked"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(arg0), new java.lang.Integer(arg1)});
+        try {
+            java.lang.Object _resp = _call.invoke(new java.lang.Object[] {
+                    new java.lang.Long(arg0), new java.lang.Integer(arg1) });
 
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return ((java.lang.Integer) _resp).intValue();
-            } catch (java.lang.Exception _exception) {
-                return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            if (_resp instanceof java.rmi.RemoteException) {
+                throw (java.rmi.RemoteException) _resp;
+            } else {
+                extractAttachments(_call);
+                try {
+                    return ((java.lang.Integer) _resp).intValue();
+                } catch (java.lang.Exception _exception) {
+                    return ((java.lang.Integer) org.apache.axis.utils.JavaUtils
+                            .convert(_resp, int.class)).intValue();
+                }
             }
+        } catch (org.apache.axis.AxisFault axisFaultException) {
+            throw axisFaultException;
         }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
     }
 
-    public boolean setDlgItemInt(long arg0, int arg1, int arg2, boolean arg3) throws java.rmi.RemoteException {
+    public boolean setDlgItemInt(long arg0, int arg1, int arg2, boolean arg3)
+            throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -398,32 +535,39 @@ public class DialogPortBindingStub extends org.apache.axis.client.Stub implement
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR,
+                Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS,
+                Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://classes.win32.server.sirius.org/", "setDlgItemInt"));
+        _call.setOperationName(new javax.xml.namespace.QName(
+                "http://classes.win32.server.sirius.org/", "setDlgItemInt"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(arg0), new java.lang.Integer(arg1), new java.lang.Integer(arg2), new java.lang.Boolean(arg3)});
+        try {
+            java.lang.Object _resp = _call.invoke(new java.lang.Object[] {
+                    new java.lang.Long(arg0), new java.lang.Integer(arg1),
+                    new java.lang.Integer(arg2), new java.lang.Boolean(arg3) });
 
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return ((java.lang.Boolean) _resp).booleanValue();
-            } catch (java.lang.Exception _exception) {
-                return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
+            if (_resp instanceof java.rmi.RemoteException) {
+                throw (java.rmi.RemoteException) _resp;
+            } else {
+                extractAttachments(_call);
+                try {
+                    return ((java.lang.Boolean) _resp).booleanValue();
+                } catch (java.lang.Exception _exception) {
+                    return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils
+                            .convert(_resp, boolean.class)).booleanValue();
+                }
             }
+        } catch (org.apache.axis.AxisFault axisFaultException) {
+            throw axisFaultException;
         }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
     }
 
-    public boolean setDlgItemText(long arg0, int arg1, java.lang.String arg2) throws java.rmi.RemoteException {
+    public boolean setDlgItemText(long arg0, int arg1, java.lang.String arg2)
+            throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -432,29 +576,35 @@ public class DialogPortBindingStub extends org.apache.axis.client.Stub implement
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR,
+                Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS,
+                Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://classes.win32.server.sirius.org/", "setDlgItemText"));
+        _call.setOperationName(new javax.xml.namespace.QName(
+                "http://classes.win32.server.sirius.org/", "setDlgItemText"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(arg0), new java.lang.Integer(arg1), arg2});
+        try {
+            java.lang.Object _resp = _call
+                    .invoke(new java.lang.Object[] { new java.lang.Long(arg0),
+                            new java.lang.Integer(arg1), arg2 });
 
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return ((java.lang.Boolean) _resp).booleanValue();
-            } catch (java.lang.Exception _exception) {
-                return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
+            if (_resp instanceof java.rmi.RemoteException) {
+                throw (java.rmi.RemoteException) _resp;
+            } else {
+                extractAttachments(_call);
+                try {
+                    return ((java.lang.Boolean) _resp).booleanValue();
+                } catch (java.lang.Exception _exception) {
+                    return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils
+                            .convert(_resp, boolean.class)).booleanValue();
+                }
             }
+        } catch (org.apache.axis.AxisFault axisFaultException) {
+            throw axisFaultException;
         }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
     }
 
 }

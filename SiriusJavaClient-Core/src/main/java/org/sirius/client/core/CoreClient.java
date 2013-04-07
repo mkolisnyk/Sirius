@@ -14,35 +14,35 @@ import org.sirius.client.core.system.sys.SystemOperationsProxy;
  */
 public class CoreClient {
 
-	private DirectoryOperationsProxy dirProxy;
-	private FileOperationsProxy fileProxy;
-	private ProcessOperationsProxy processProxy;
-	private SystemOperationsProxy systemProxy;
+    private DirectoryOperationsProxy dirProxy;
+    private FileOperationsProxy      fileProxy;
+    private ProcessOperationsProxy   processProxy;
+    private SystemOperationsProxy    systemProxy;
 
-	public final DirectoryOperationsProxy dir() {
-		return dirProxy;
-	}
+    public final DirectoryOperationsProxy dir() {
+        return dirProxy;
+    }
 
-	public final FileOperationsProxy file() {
-		return fileProxy;
-	}
+    public final FileOperationsProxy file() {
+        return fileProxy;
+    }
 
-	public final ProcessOperationsProxy process() {
-		return processProxy;
-	}
+    public final ProcessOperationsProxy process() {
+        return processProxy;
+    }
 
-	public final SystemOperationsProxy system() {
-		return systemProxy;
-	}
+    public final SystemOperationsProxy system() {
+        return systemProxy;
+    }
 
-	/**
+    /**
 	 * 
 	 */
-	public CoreClient() {
-		dirProxy = new DirectoryOperationsProxy();
-		fileProxy = new FileOperationsProxy();
-		processProxy = new ProcessOperationsProxy();
-		systemProxy = new SystemOperationsProxy();
-	}
+    public CoreClient() {
+        dirProxy = new DirectoryOperationsProxy();
+        fileProxy = new FileOperationsProxy();
+        processProxy = new ProcessOperationsProxy();
+        systemProxy = new SystemOperationsProxy();
+    }
 
 }

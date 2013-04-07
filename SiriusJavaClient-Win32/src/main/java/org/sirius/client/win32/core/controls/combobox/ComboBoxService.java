@@ -10,7 +10,9 @@ package org.sirius.client.win32.core.controls.combobox;
 public interface ComboBoxService extends javax.xml.rpc.Service {
     public java.lang.String getComboBoxPortAddress();
 
-    public org.sirius.client.win32.core.controls.combobox.ComboBox getComboBoxPort() throws javax.xml.rpc.ServiceException;
+    public org.sirius.client.win32.core.controls.combobox.ComboBox getComboBoxPort()
+            throws javax.xml.rpc.ServiceException;
 
-    public org.sirius.client.win32.core.controls.combobox.ComboBox getComboBoxPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
+    public org.sirius.client.win32.core.controls.combobox.ComboBox getComboBoxPort(
+            java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
 }

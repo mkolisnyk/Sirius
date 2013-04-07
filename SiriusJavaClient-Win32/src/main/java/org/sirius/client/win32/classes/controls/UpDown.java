@@ -12,13 +12,13 @@ import org.sirius.client.win32.types.Win32Locator;
  */
 public class UpDown extends Edit {
 
-	/**
-	 * @param client
-	 * @param locator
-	 */
-	public UpDown(Window parent, Win32Locator locator) {
-		super(parent, locator);
-		// TODO Auto-generated constructor stub
-	}
+    /**
+     * @param client
+     * @param locator
+     */
+    public UpDown(Window parent, Win32Locator locator) {
+        super(parent, locator);
+        // TODO Auto-generated constructor stub
+    }
 
 }

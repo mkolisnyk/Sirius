@@ -7,17 +7,19 @@
 
 package org.sirius.client.win32.core.classes.dialog;
 
-public class DialogServiceLocator extends org.apache.axis.client.Service implements org.sirius.client.win32.core.classes.dialog.DialogService {
+public class DialogServiceLocator extends org.apache.axis.client.Service
+        implements org.sirius.client.win32.core.classes.dialog.DialogService {
 
     public DialogServiceLocator() {
     }
-
 
     public DialogServiceLocator(org.apache.axis.EngineConfiguration config) {
         super(config);
     }
 
-    public DialogServiceLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
+    public DialogServiceLocator(java.lang.String wsdlLoc,
+            javax.xml.namespace.QName sName)
+            throws javax.xml.rpc.ServiceException {
         super(wsdlLoc, sName);
     }
 
@@ -39,24 +41,25 @@ public class DialogServiceLocator extends org.apache.axis.client.Service impleme
         DialogPortWSDDServiceName = name;
     }
 
-    public org.sirius.client.win32.core.classes.dialog.Dialog getDialogPort() throws javax.xml.rpc.ServiceException {
-       java.net.URL endpoint;
+    public org.sirius.client.win32.core.classes.dialog.Dialog getDialogPort()
+            throws javax.xml.rpc.ServiceException {
+        java.net.URL endpoint;
         try {
             endpoint = new java.net.URL(DialogPort_address);
-        }
-        catch (java.net.MalformedURLException e) {
+        } catch (java.net.MalformedURLException e) {
             throw new javax.xml.rpc.ServiceException(e);
         }
         return getDialogPort(endpoint);
     }
 
-    public org.sirius.client.win32.core.classes.dialog.Dialog getDialogPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public org.sirius.client.win32.core.classes.dialog.Dialog getDialogPort(
+            java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
-            org.sirius.client.win32.core.classes.dialog.DialogPortBindingStub _stub = new org.sirius.client.win32.core.classes.dialog.DialogPortBindingStub(portAddress, this);
+            org.sirius.client.win32.core.classes.dialog.DialogPortBindingStub _stub = new org.sirius.client.win32.core.classes.dialog.DialogPortBindingStub(
+                    portAddress, this);
             _stub.setPortName(getDialogPortWSDDServiceName());
             return _stub;
-        }
-        catch (org.apache.axis.AxisFault e) {
+        } catch (org.apache.axis.AxisFault e) {
             return null;
         }
     }
@@ -66,38 +69,42 @@ public class DialogServiceLocator extends org.apache.axis.client.Service impleme
     }
 
     /**
-     * For the given interface, get the stub implementation.
-     * If this service has no port for the given interface,
-     * then ServiceException is thrown.
+     * For the given interface, get the stub implementation. If this service has
+     * no port for the given interface, then ServiceException is thrown.
      */
-    public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
+    public java.rmi.Remote getPort(Class serviceEndpointInterface)
+            throws javax.xml.rpc.ServiceException {
         try {
-            if (org.sirius.client.win32.core.classes.dialog.Dialog.class.isAssignableFrom(serviceEndpointInterface)) {
-                org.sirius.client.win32.core.classes.dialog.DialogPortBindingStub _stub = new org.sirius.client.win32.core.classes.dialog.DialogPortBindingStub(new java.net.URL(DialogPort_address), this);
+            if (org.sirius.client.win32.core.classes.dialog.Dialog.class
+                    .isAssignableFrom(serviceEndpointInterface)) {
+                org.sirius.client.win32.core.classes.dialog.DialogPortBindingStub _stub = new org.sirius.client.win32.core.classes.dialog.DialogPortBindingStub(
+                        new java.net.URL(DialogPort_address), this);
                 _stub.setPortName(getDialogPortWSDDServiceName());
                 return _stub;
             }
-        }
-        catch (java.lang.Throwable t) {
+        } catch (java.lang.Throwable t) {
             throw new javax.xml.rpc.ServiceException(t);
         }
-        throw new javax.xml.rpc.ServiceException("There is no stub implementation for the interface:  " + (serviceEndpointInterface == null ? "null" : serviceEndpointInterface.getName()));
+        throw new javax.xml.rpc.ServiceException(
+                "There is no stub implementation for the interface:  "
+                        + (serviceEndpointInterface == null ? "null"
+                                : serviceEndpointInterface.getName()));
     }
 
     /**
-     * For the given interface, get the stub implementation.
-     * If this service has no port for the given interface,
-     * then ServiceException is thrown.
+     * For the given interface, get the stub implementation. If this service has
+     * no port for the given interface, then ServiceException is thrown.
      */
-    public java.rmi.Remote getPort(javax.xml.namespace.QName portName, Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
+    public java.rmi.Remote getPort(javax.xml.namespace.QName portName,
+            Class serviceEndpointInterface)
+            throws javax.xml.rpc.ServiceException {
         if (portName == null) {
             return getPort(serviceEndpointInterface);
         }
         java.lang.String inputPortName = portName.getLocalPart();
         if ("DialogPort".equals(inputPortName)) {
             return getDialogPort();
-        }
-        else  {
+        } else {
             java.rmi.Remote _stub = getPort(serviceEndpointInterface);
             ((org.apache.axis.client.Stub) _stub).setPortName(portName);
             return _stub;
@@ -105,7 +112,8 @@ public class DialogServiceLocator extends org.apache.axis.client.Service impleme
     }
 
     public javax.xml.namespace.QName getServiceName() {
-        return new javax.xml.namespace.QName("http://classes.win32.server.sirius.org/", "DialogService");
+        return new javax.xml.namespace.QName(
+                "http://classes.win32.server.sirius.org/", "DialogService");
     }
 
     private java.util.HashSet ports = null;
@@ -113,29 +121,31 @@ public class DialogServiceLocator extends org.apache.axis.client.Service impleme
     public java.util.Iterator getPorts() {
         if (ports == null) {
             ports = new java.util.HashSet();
-            ports.add(new javax.xml.namespace.QName("http://classes.win32.server.sirius.org/", "DialogPort"));
+            ports.add(new javax.xml.namespace.QName(
+                    "http://classes.win32.server.sirius.org/", "DialogPort"));
         }
         return ports.iterator();
     }
 
     /**
-    * Set the endpoint address for the specified port name.
-    */
-    public void setEndpointAddress(java.lang.String portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
-        
-if ("DialogPort".equals(portName)) {
+     * Set the endpoint address for the specified port name.
+     */
+    public void setEndpointAddress(java.lang.String portName,
+            java.lang.String address) throws javax.xml.rpc.ServiceException {
+
+        if ("DialogPort".equals(portName)) {
             setDialogPortEndpointAddress(address);
-        }
-        else 
-{ // Unknown Port Name
-            throw new javax.xml.rpc.ServiceException(" Cannot set Endpoint Address for Unknown Port" + portName);
+        } else { // Unknown Port Name
+            throw new javax.xml.rpc.ServiceException(
+                    " Cannot set Endpoint Address for Unknown Port" + portName);
         }
     }
 
     /**
-    * Set the endpoint address for the specified port name.
-    */
-    public void setEndpointAddress(javax.xml.namespace.QName portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
+     * Set the endpoint address for the specified port name.
+     */
+    public void setEndpointAddress(javax.xml.namespace.QName portName,
+            java.lang.String address) throws javax.xml.rpc.ServiceException {
         setEndpointAddress(portName.getLocalPart(), address);
     }
 

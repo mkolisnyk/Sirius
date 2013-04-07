@@ -14,42 +14,40 @@ import org.sirius.client.win32.types.Win32Locator;
  */
 public class DialogBox extends TopLevelWindow {
 
-	public DialogBox(Win32Client client, Win32Locator locator) {
-		super(client, locator);
-	}
+    public DialogBox(Win32Client client, Win32Locator locator) {
+        super(client, locator);
+    }
 
-	public DialogBox(Win32Client client, Window parent, Win32Locator locator) {
-		super(client, parent,locator);
-	}
-	
-	@Override
-	public boolean exists() throws RemoteException {
-		logger.debug("Searching for dialog box: " + this.locator);
-		if(this.parent == null){
-			logger.debug("Searching for dialog box parent");
-			return super.exists();
-		}
-		else if(!parent.exists()){
-			logger.debug("Parent window doesn't exist. Quiting...");
-			return false;
-		}
-		else {
-			logger.debug("Searching for dialog box in the same thread");
-			long hwnd = client.utils().searchSameThreadWindow(parent.getHwnd(), locator);
-			if(hwnd==0){
-				logger.debug("No dialog found. Returning false");
-				return false;
-			}
-			else {
-				locator.setHwnd(hwnd);
-			}
-		}
-		logger.debug("Dialog was found: " + locator);
-		return true;
-	}
-	
-	@Override
-	public boolean exists(long timeout) throws Exception{
-		return waitFor(timeout, "exists", true);
-	}
+    public DialogBox(Win32Client client, Window parent, Win32Locator locator) {
+        super(client, parent, locator);
+    }
+
+    @Override
+    public boolean exists() throws RemoteException {
+        logger.debug("Searching for dialog box: " + this.locator);
+        if (this.parent == null) {
+            logger.debug("Searching for dialog box parent");
+            return super.exists();
+        } else if (!parent.exists()) {
+            logger.debug("Parent window doesn't exist. Quiting...");
+            return false;
+        } else {
+            logger.debug("Searching for dialog box in the same thread");
+            long hwnd = client.utils().searchSameThreadWindow(parent.getHwnd(),
+                    locator);
+            if (hwnd == 0) {
+                logger.debug("No dialog found. Returning false");
+                return false;
+            } else {
+                locator.setHwnd(hwnd);
+            }
+        }
+        logger.debug("Dialog was found: " + locator);
+        return true;
+    }
+
+    @Override
+    public boolean exists(long timeout) throws Exception {
+        return waitFor(timeout, "exists", true);
+    }
 }

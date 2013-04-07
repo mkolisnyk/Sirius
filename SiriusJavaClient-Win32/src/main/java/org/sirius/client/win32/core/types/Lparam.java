@@ -7,16 +7,21 @@
 
 package org.sirius.client.win32.core.types;
 
-public class Lparam  extends org.sirius.client.win32.core.types.LongPTR  implements java.io.Serializable {
+public class Lparam extends org.sirius.client.win32.core.types.LongPTR
+        implements java.io.Serializable {
     public Lparam() {
     }
 
     private java.lang.Object __equalsCalc = null;
+
     public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof Lparam)) return false;
+        if (!(obj instanceof Lparam))
+            return false;
         Lparam other = (Lparam) obj;
-        if (obj == null) return false;
-        if (this == obj) return true;
+        if (obj == null)
+            return false;
+        if (this == obj)
+            return true;
         if (__equalsCalc != null) {
             return (__equalsCalc == obj);
         }
@@ -28,6 +33,7 @@ public class Lparam  extends org.sirius.client.win32.core.types.LongPTR  impleme
     }
 
     private boolean __hashCodeCalc = false;
+
     public synchronized int hashCode() {
         if (__hashCodeCalc) {
             return 0;
@@ -39,11 +45,13 @@ public class Lparam  extends org.sirius.client.win32.core.types.LongPTR  impleme
     }
 
     // Type metadata
-    private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(Lparam.class, true);
+    private static org.apache.axis.description.TypeDesc typeDesc = new org.apache.axis.description.TypeDesc(
+                                                                         Lparam.class,
+                                                                         true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "lparam"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/", "lparam"));
     }
 
     /**
@@ -57,24 +65,20 @@ public class Lparam  extends org.sirius.client.win32.core.types.LongPTR  impleme
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
-           javax.xml.namespace.QName _xmlType) {
-        return 
-          new  org.apache.axis.encoding.ser.BeanSerializer(
-            _javaType, _xmlType, typeDesc);
+            java.lang.String mechType, java.lang.Class _javaType,
+            javax.xml.namespace.QName _xmlType) {
+        return new org.apache.axis.encoding.ser.BeanSerializer(_javaType,
+                _xmlType, typeDesc);
     }
 
     /**
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
-           javax.xml.namespace.QName _xmlType) {
-        return 
-          new  org.apache.axis.encoding.ser.BeanDeserializer(
-            _javaType, _xmlType, typeDesc);
+            java.lang.String mechType, java.lang.Class _javaType,
+            javax.xml.namespace.QName _xmlType) {
+        return new org.apache.axis.encoding.ser.BeanDeserializer(_javaType,
+                _xmlType, typeDesc);
     }
 
 }

@@ -11,13 +11,13 @@ import org.sirius.client.win32.types.Win32Locator;
  */
 public class Control extends Window {
 
-	/**
-	 * @param client
-	 * @param locator
-	 */
-	public Control(Window parent, Win32Locator locator) {
-		super(parent, locator);
-		// TODO Auto-generated constructor stub
-	}
+    /**
+     * @param client
+     * @param locator
+     */
+    public Control(Window parent, Win32Locator locator) {
+        super(parent, locator);
+        // TODO Auto-generated constructor stub
+    }
 
 }

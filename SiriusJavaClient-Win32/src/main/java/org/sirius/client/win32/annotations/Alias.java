@@ -15,5 +15,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(value = RetentionPolicy.RUNTIME)
 public @interface Alias {
-	public String name() default "";
+    public String name() default "";
 }

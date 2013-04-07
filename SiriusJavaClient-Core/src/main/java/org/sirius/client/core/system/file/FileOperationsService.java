@@ -8,11 +8,11 @@
 package org.sirius.client.core.system.file;
 
 public interface FileOperationsService extends javax.xml.rpc.Service {
-	public java.lang.String getFileOperationsPortAddress();
+    public java.lang.String getFileOperationsPortAddress();
 
-	public org.sirius.client.core.system.file.FileOperations getFileOperationsPort()
-			throws javax.xml.rpc.ServiceException;
+    public org.sirius.client.core.system.file.FileOperations getFileOperationsPort()
+            throws javax.xml.rpc.ServiceException;
 
-	public org.sirius.client.core.system.file.FileOperations getFileOperationsPort(
-			java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
+    public org.sirius.client.core.system.file.FileOperations getFileOperationsPort(
+            java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
 }

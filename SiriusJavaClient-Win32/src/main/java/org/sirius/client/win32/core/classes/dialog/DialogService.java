@@ -10,7 +10,9 @@ package org.sirius.client.win32.core.classes.dialog;
 public interface DialogService extends javax.xml.rpc.Service {
     public java.lang.String getDialogPortAddress();
 
-    public org.sirius.client.win32.core.classes.dialog.Dialog getDialogPort() throws javax.xml.rpc.ServiceException;
+    public org.sirius.client.win32.core.classes.dialog.Dialog getDialogPort()
+            throws javax.xml.rpc.ServiceException;
 
-    public org.sirius.client.win32.core.classes.dialog.Dialog getDialogPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
+    public org.sirius.client.win32.core.classes.dialog.Dialog getDialogPort(
+            java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
 }

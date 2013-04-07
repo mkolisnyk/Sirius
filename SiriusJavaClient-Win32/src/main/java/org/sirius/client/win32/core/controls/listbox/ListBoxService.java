@@ -10,7 +10,9 @@ package org.sirius.client.win32.core.controls.listbox;
 public interface ListBoxService extends javax.xml.rpc.Service {
     public java.lang.String getListBoxPortAddress();
 
-    public org.sirius.client.win32.core.controls.listbox.ListBox getListBoxPort() throws javax.xml.rpc.ServiceException;
+    public org.sirius.client.win32.core.controls.listbox.ListBox getListBoxPort()
+            throws javax.xml.rpc.ServiceException;
 
-    public org.sirius.client.win32.core.controls.listbox.ListBox getListBoxPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
+    public org.sirius.client.win32.core.controls.listbox.ListBox getListBoxPort(
+            java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
 }

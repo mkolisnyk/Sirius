@@ -12,33 +12,32 @@ import org.sirius.client.win32.types.Win32Locator;
  */
 public class CheckBox extends Button {
 
-	/**
-	 * @param client
-	 * @param locator
-	 */
-	public CheckBox(Window parent, Win32Locator locator) {
-		super(parent, locator);
-		// TODO Auto-generated constructor stub
-	}
+    /**
+     * @param client
+     * @param locator
+     */
+    public CheckBox(Window parent, Win32Locator locator) {
+        super(parent, locator);
+        // TODO Auto-generated constructor stub
+    }
 
-	public void check(){
-		;
-	}
-	
-	public void uncheck(){
-		;
-	}
-	
-	public boolean isChecked(){
-		return false;
-	}
-	
-	public void setState(boolean checked){
-		if(checked){
-			check();
-		}
-		else {
-			uncheck();
-		}
-	}
+    public void check() {
+        ;
+    }
+
+    public void uncheck() {
+        ;
+    }
+
+    public boolean isChecked() {
+        return false;
+    }
+
+    public void setState(boolean checked) {
+        if (checked) {
+            check();
+        } else {
+            uncheck();
+        }
+    }
 }

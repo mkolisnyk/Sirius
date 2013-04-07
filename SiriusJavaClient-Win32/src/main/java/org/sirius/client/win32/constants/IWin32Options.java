@@ -8,5 +8,5 @@ package org.sirius.client.win32.constants;
  * 
  */
 public interface IWin32Options {
-	public final long DEFAULT_TIMEOUT = 60000;
+    public final long DEFAULT_TIMEOUT = 60000;
 }

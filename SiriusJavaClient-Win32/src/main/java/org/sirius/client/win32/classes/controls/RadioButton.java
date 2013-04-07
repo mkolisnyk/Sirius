@@ -12,15 +12,17 @@ import org.sirius.client.win32.types.Win32Locator;
  */
 public class RadioButton extends CheckBox {
 
-	/**
-	 * @param client
-	 * @param locator
-	 */
-	public RadioButton(Window parent, Win32Locator locator) {
-		super(parent, locator);
-		// TODO Auto-generated constructor stub
-	}
+    /**
+     * @param client
+     * @param locator
+     */
+    public RadioButton(Window parent, Win32Locator locator) {
+        super(parent, locator);
+        // TODO Auto-generated constructor stub
+    }
 
-	@Override
-	public void uncheck(){;}
+    @Override
+    public void uncheck() {
+        ;
+    }
 }

@@ -10,7 +10,9 @@ package org.sirius.client.win32.core.controls.tabcontrol;
 public interface TabControlService extends javax.xml.rpc.Service {
     public java.lang.String getTabControlPortAddress();
 
-    public org.sirius.client.win32.core.controls.tabcontrol.TabControl getTabControlPort() throws javax.xml.rpc.ServiceException;
+    public org.sirius.client.win32.core.controls.tabcontrol.TabControl getTabControlPort()
+            throws javax.xml.rpc.ServiceException;
 
-    public org.sirius.client.win32.core.controls.tabcontrol.TabControl getTabControlPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
+    public org.sirius.client.win32.core.controls.tabcontrol.TabControl getTabControlPort(
+            java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
 }

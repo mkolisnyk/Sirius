@@ -9,7 +9,10 @@ package org.sirius.client.win32.core.controls.button;
 
 public interface Button extends java.rmi.Remote {
     public void setState(long arg0, int arg1) throws java.rmi.RemoteException;
+
     public int getState(long arg0) throws java.rmi.RemoteException;
+
     public int getCheck(long arg0) throws java.rmi.RemoteException;
+
     public void setCheck(long arg0, int arg1) throws java.rmi.RemoteException;
 }

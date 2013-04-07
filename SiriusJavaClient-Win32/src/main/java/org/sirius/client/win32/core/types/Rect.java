@@ -7,7 +7,8 @@
 
 package org.sirius.client.win32.core.types;
 
-public class Rect  extends org.sirius.client.win32.core.types.Structure  implements java.io.Serializable {
+public class Rect extends org.sirius.client.win32.core.types.Structure
+        implements java.io.Serializable {
     private int left;
 
     private int top;
@@ -19,22 +20,14 @@ public class Rect  extends org.sirius.client.win32.core.types.Structure  impleme
     public Rect() {
     }
 
-    public Rect(
-           boolean autoRead,
-           boolean autoWrite,
-           int left,
-           int top,
-           int right,
-           int bottom) {
-        super(
-            autoRead,
-            autoWrite);
+    public Rect(boolean autoRead, boolean autoWrite, int left, int top,
+            int right, int bottom) {
+        super(autoRead, autoWrite);
         this.left = left;
         this.top = top;
         this.right = right;
         this.bottom = bottom;
     }
-
 
     /**
      * Gets the left value for this Rect.
@@ -45,7 +38,6 @@ public class Rect  extends org.sirius.client.win32.core.types.Structure  impleme
         return left;
     }
 
-
     /**
      * Sets the left value for this Rect.
      * 
@@ -54,7 +46,6 @@ public class Rect  extends org.sirius.client.win32.core.types.Structure  impleme
     public void setLeft(int left) {
         this.left = left;
     }
-
 
     /**
      * Gets the top value for this Rect.
@@ -65,7 +56,6 @@ public class Rect  extends org.sirius.client.win32.core.types.Structure  impleme
         return top;
     }
 
-
     /**
      * Sets the top value for this Rect.
      * 
@@ -74,7 +64,6 @@ public class Rect  extends org.sirius.client.win32.core.types.Structure  impleme
     public void setTop(int top) {
         this.top = top;
     }
-
 
     /**
      * Gets the right value for this Rect.
@@ -85,7 +74,6 @@ public class Rect  extends org.sirius.client.win32.core.types.Structure  impleme
         return right;
     }
 
-
     /**
      * Sets the right value for this Rect.
      * 
@@ -95,7 +83,6 @@ public class Rect  extends org.sirius.client.win32.core.types.Structure  impleme
         this.right = right;
     }
 
-
     /**
      * Gets the bottom value for this Rect.
      * 
@@ -104,7 +91,6 @@ public class Rect  extends org.sirius.client.win32.core.types.Structure  impleme
     public int getBottom() {
         return bottom;
     }
-
 
     /**
      * Sets the bottom value for this Rect.
@@ -116,26 +102,29 @@ public class Rect  extends org.sirius.client.win32.core.types.Structure  impleme
     }
 
     private java.lang.Object __equalsCalc = null;
+
     public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof Rect)) return false;
+        if (!(obj instanceof Rect))
+            return false;
         Rect other = (Rect) obj;
-        if (obj == null) return false;
-        if (this == obj) return true;
+        if (obj == null)
+            return false;
+        if (this == obj)
+            return true;
         if (__equalsCalc != null) {
             return (__equalsCalc == obj);
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = super.equals(obj) && 
-            this.left == other.getLeft() &&
-            this.top == other.getTop() &&
-            this.right == other.getRight() &&
-            this.bottom == other.getBottom();
+        _equals = super.equals(obj) && this.left == other.getLeft()
+                && this.top == other.getTop() && this.right == other.getRight()
+                && this.bottom == other.getBottom();
         __equalsCalc = null;
         return _equals;
     }
 
     private boolean __hashCodeCalc = false;
+
     public synchronized int hashCode() {
         if (__hashCodeCalc) {
             return 0;
@@ -151,33 +140,39 @@ public class Rect  extends org.sirius.client.win32.core.types.Structure  impleme
     }
 
     // Type metadata
-    private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(Rect.class, true);
+    private static org.apache.axis.description.TypeDesc typeDesc = new org.apache.axis.description.TypeDesc(
+                                                                         Rect.class,
+                                                                         true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "rect"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/", "rect"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("left");
         elemField.setXmlName(new javax.xml.namespace.QName("", "left"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setXmlType(new javax.xml.namespace.QName(
+                "http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("top");
         elemField.setXmlName(new javax.xml.namespace.QName("", "top"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setXmlType(new javax.xml.namespace.QName(
+                "http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("right");
         elemField.setXmlName(new javax.xml.namespace.QName("", "right"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setXmlType(new javax.xml.namespace.QName(
+                "http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("bottom");
         elemField.setXmlName(new javax.xml.namespace.QName("", "bottom"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setXmlType(new javax.xml.namespace.QName(
+                "http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
     }
@@ -193,24 +188,20 @@ public class Rect  extends org.sirius.client.win32.core.types.Structure  impleme
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
-           javax.xml.namespace.QName _xmlType) {
-        return 
-          new  org.apache.axis.encoding.ser.BeanSerializer(
-            _javaType, _xmlType, typeDesc);
+            java.lang.String mechType, java.lang.Class _javaType,
+            javax.xml.namespace.QName _xmlType) {
+        return new org.apache.axis.encoding.ser.BeanSerializer(_javaType,
+                _xmlType, typeDesc);
     }
 
     /**
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
-           javax.xml.namespace.QName _xmlType) {
-        return 
-          new  org.apache.axis.encoding.ser.BeanDeserializer(
-            _javaType, _xmlType, typeDesc);
+            java.lang.String mechType, java.lang.Class _javaType,
+            javax.xml.namespace.QName _xmlType) {
+        return new org.apache.axis.encoding.ser.BeanDeserializer(_javaType,
+                _xmlType, typeDesc);
     }
 
 }

@@ -7,17 +7,20 @@
 
 package org.sirius.client.win32.core.controls.tabcontrol;
 
-public class TabControlServiceLocator extends org.apache.axis.client.Service implements org.sirius.client.win32.core.controls.tabcontrol.TabControlService {
+public class TabControlServiceLocator extends org.apache.axis.client.Service
+        implements
+        org.sirius.client.win32.core.controls.tabcontrol.TabControlService {
 
     public TabControlServiceLocator() {
     }
-
 
     public TabControlServiceLocator(org.apache.axis.EngineConfiguration config) {
         super(config);
     }
 
-    public TabControlServiceLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
+    public TabControlServiceLocator(java.lang.String wsdlLoc,
+            javax.xml.namespace.QName sName)
+            throws javax.xml.rpc.ServiceException {
         super(wsdlLoc, sName);
     }
 
@@ -39,24 +42,25 @@ public class TabControlServiceLocator extends org.apache.axis.client.Service imp
         TabControlPortWSDDServiceName = name;
     }
 
-    public org.sirius.client.win32.core.controls.tabcontrol.TabControl getTabControlPort() throws javax.xml.rpc.ServiceException {
-       java.net.URL endpoint;
+    public org.sirius.client.win32.core.controls.tabcontrol.TabControl getTabControlPort()
+            throws javax.xml.rpc.ServiceException {
+        java.net.URL endpoint;
         try {
             endpoint = new java.net.URL(TabControlPort_address);
-        }
-        catch (java.net.MalformedURLException e) {
+        } catch (java.net.MalformedURLException e) {
             throw new javax.xml.rpc.ServiceException(e);
         }
         return getTabControlPort(endpoint);
     }
 
-    public org.sirius.client.win32.core.controls.tabcontrol.TabControl getTabControlPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public org.sirius.client.win32.core.controls.tabcontrol.TabControl getTabControlPort(
+            java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
-            org.sirius.client.win32.core.controls.tabcontrol.TabControlPortBindingStub _stub = new org.sirius.client.win32.core.controls.tabcontrol.TabControlPortBindingStub(portAddress, this);
+            org.sirius.client.win32.core.controls.tabcontrol.TabControlPortBindingStub _stub = new org.sirius.client.win32.core.controls.tabcontrol.TabControlPortBindingStub(
+                    portAddress, this);
             _stub.setPortName(getTabControlPortWSDDServiceName());
             return _stub;
-        }
-        catch (org.apache.axis.AxisFault e) {
+        } catch (org.apache.axis.AxisFault e) {
             return null;
         }
     }
@@ -66,38 +70,42 @@ public class TabControlServiceLocator extends org.apache.axis.client.Service imp
     }
 
     /**
-     * For the given interface, get the stub implementation.
-     * If this service has no port for the given interface,
-     * then ServiceException is thrown.
+     * For the given interface, get the stub implementation. If this service has
+     * no port for the given interface, then ServiceException is thrown.
      */
-    public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
+    public java.rmi.Remote getPort(Class serviceEndpointInterface)
+            throws javax.xml.rpc.ServiceException {
         try {
-            if (org.sirius.client.win32.core.controls.tabcontrol.TabControl.class.isAssignableFrom(serviceEndpointInterface)) {
-                org.sirius.client.win32.core.controls.tabcontrol.TabControlPortBindingStub _stub = new org.sirius.client.win32.core.controls.tabcontrol.TabControlPortBindingStub(new java.net.URL(TabControlPort_address), this);
+            if (org.sirius.client.win32.core.controls.tabcontrol.TabControl.class
+                    .isAssignableFrom(serviceEndpointInterface)) {
+                org.sirius.client.win32.core.controls.tabcontrol.TabControlPortBindingStub _stub = new org.sirius.client.win32.core.controls.tabcontrol.TabControlPortBindingStub(
+                        new java.net.URL(TabControlPort_address), this);
                 _stub.setPortName(getTabControlPortWSDDServiceName());
                 return _stub;
             }
-        }
-        catch (java.lang.Throwable t) {
+        } catch (java.lang.Throwable t) {
             throw new javax.xml.rpc.ServiceException(t);
         }
-        throw new javax.xml.rpc.ServiceException("There is no stub implementation for the interface:  " + (serviceEndpointInterface == null ? "null" : serviceEndpointInterface.getName()));
+        throw new javax.xml.rpc.ServiceException(
+                "There is no stub implementation for the interface:  "
+                        + (serviceEndpointInterface == null ? "null"
+                                : serviceEndpointInterface.getName()));
     }
 
     /**
-     * For the given interface, get the stub implementation.
-     * If this service has no port for the given interface,
-     * then ServiceException is thrown.
+     * For the given interface, get the stub implementation. If this service has
+     * no port for the given interface, then ServiceException is thrown.
      */
-    public java.rmi.Remote getPort(javax.xml.namespace.QName portName, Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
+    public java.rmi.Remote getPort(javax.xml.namespace.QName portName,
+            Class serviceEndpointInterface)
+            throws javax.xml.rpc.ServiceException {
         if (portName == null) {
             return getPort(serviceEndpointInterface);
         }
         java.lang.String inputPortName = portName.getLocalPart();
         if ("TabControlPort".equals(inputPortName)) {
             return getTabControlPort();
-        }
-        else  {
+        } else {
             java.rmi.Remote _stub = getPort(serviceEndpointInterface);
             ((org.apache.axis.client.Stub) _stub).setPortName(portName);
             return _stub;
@@ -105,7 +113,9 @@ public class TabControlServiceLocator extends org.apache.axis.client.Service imp
     }
 
     public javax.xml.namespace.QName getServiceName() {
-        return new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "TabControlService");
+        return new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/",
+                "TabControlService");
     }
 
     private java.util.HashSet ports = null;
@@ -113,29 +123,32 @@ public class TabControlServiceLocator extends org.apache.axis.client.Service imp
     public java.util.Iterator getPorts() {
         if (ports == null) {
             ports = new java.util.HashSet();
-            ports.add(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "TabControlPort"));
+            ports.add(new javax.xml.namespace.QName(
+                    "http://controls.classes.win32.server.sirius.org/",
+                    "TabControlPort"));
         }
         return ports.iterator();
     }
 
     /**
-    * Set the endpoint address for the specified port name.
-    */
-    public void setEndpointAddress(java.lang.String portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
-        
-if ("TabControlPort".equals(portName)) {
+     * Set the endpoint address for the specified port name.
+     */
+    public void setEndpointAddress(java.lang.String portName,
+            java.lang.String address) throws javax.xml.rpc.ServiceException {
+
+        if ("TabControlPort".equals(portName)) {
             setTabControlPortEndpointAddress(address);
-        }
-        else 
-{ // Unknown Port Name
-            throw new javax.xml.rpc.ServiceException(" Cannot set Endpoint Address for Unknown Port" + portName);
+        } else { // Unknown Port Name
+            throw new javax.xml.rpc.ServiceException(
+                    " Cannot set Endpoint Address for Unknown Port" + portName);
         }
     }
 
     /**
-    * Set the endpoint address for the specified port name.
-    */
-    public void setEndpointAddress(javax.xml.namespace.QName portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
+     * Set the endpoint address for the specified port name.
+     */
+    public void setEndpointAddress(javax.xml.namespace.QName portName,
+            java.lang.String address) throws javax.xml.rpc.ServiceException {
         setEndpointAddress(portName.getLocalPart(), address);
     }
 

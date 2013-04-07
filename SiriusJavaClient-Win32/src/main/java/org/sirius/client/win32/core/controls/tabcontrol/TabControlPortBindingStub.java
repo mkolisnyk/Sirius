@@ -7,27 +7,34 @@
 
 package org.sirius.client.win32.core.controls.tabcontrol;
 
-public class TabControlPortBindingStub extends org.apache.axis.client.Stub implements org.sirius.client.win32.core.controls.tabcontrol.TabControl {
-    private java.util.Vector cachedSerClasses = new java.util.Vector();
-    private java.util.Vector cachedSerQNames = new java.util.Vector();
-    private java.util.Vector cachedSerFactories = new java.util.Vector();
-    private java.util.Vector cachedDeserFactories = new java.util.Vector();
+public class TabControlPortBindingStub extends org.apache.axis.client.Stub
+        implements org.sirius.client.win32.core.controls.tabcontrol.TabControl {
+    private java.util.Vector                           cachedSerClasses     = new java.util.Vector();
+    private java.util.Vector                           cachedSerQNames      = new java.util.Vector();
+    private java.util.Vector                           cachedSerFactories   = new java.util.Vector();
+    private java.util.Vector                           cachedDeserFactories = new java.util.Vector();
 
-    static org.apache.axis.description.OperationDesc [] _operations;
+    static org.apache.axis.description.OperationDesc[] _operations;
 
     static {
         _operations = new org.apache.axis.description.OperationDesc[9];
         _initOperationDesc1();
     }
 
-    private static void _initOperationDesc1(){
+    private static void _initOperationDesc1() {
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetCurSel");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg0"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "long"),
+                long.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnType(new javax.xml.namespace.QName(
+                "http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(int.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -36,9 +43,19 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("SetCurSel");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg0"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "long"),
+                long.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg1"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "int"), int.class,
+                false, false);
         oper.addParameter(param);
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -47,9 +64,15 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetItemCount");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg0"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "long"),
+                long.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnType(new javax.xml.namespace.QName(
+                "http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(int.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -58,9 +81,15 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetCurFocus");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg0"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "long"),
+                long.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnType(new javax.xml.namespace.QName(
+                "http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(int.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -69,9 +98,19 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("SetCurFocus");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg0"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "long"),
+                long.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg1"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "int"), int.class,
+                false, false);
         oper.addParameter(param);
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -80,9 +119,15 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetRowCount");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg0"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "long"),
+                long.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnType(new javax.xml.namespace.QName(
+                "http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(int.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -91,11 +136,22 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetItem");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg0"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "long"),
+                long.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg1"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "int"), int.class,
+                false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "tcITEM"));
+        oper.setReturnType(new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/", "tcITEM"));
         oper.setReturnClass(org.sirius.client.win32.core.controls.tabcontrol.TcITEM.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -104,11 +160,22 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetItemRect");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg0"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "long"),
+                long.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg1"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "int"), int.class,
+                false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "rect"));
+        oper.setReturnType(new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/", "rect"));
         oper.setReturnClass(org.sirius.client.win32.core.types.Rect.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -117,9 +184,16 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("HitTest");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg0"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "long"),
+                long.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "tcHITTESTINFO"));
+        oper.setReturnType(new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/",
+                "tcHITTESTINFO"));
         oper.setReturnClass(org.sirius.client.win32.core.controls.tabcontrol.TcHITTESTINFO.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -129,100 +203,115 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
     }
 
     public TabControlPortBindingStub() throws org.apache.axis.AxisFault {
-         this(null);
+        this(null);
     }
 
-    public TabControlPortBindingStub(java.net.URL endpointURL, javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
-         this(service);
-         super.cachedEndpoint = endpointURL;
+    public TabControlPortBindingStub(java.net.URL endpointURL,
+            javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
+        this(service);
+        super.cachedEndpoint = endpointURL;
     }
 
-    public TabControlPortBindingStub(javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
+    public TabControlPortBindingStub(javax.xml.rpc.Service service)
+            throws org.apache.axis.AxisFault {
         if (service == null) {
             super.service = new org.apache.axis.client.Service();
         } else {
             super.service = service;
         }
-        ((org.apache.axis.client.Service)super.service).setTypeMappingVersion("1.2");
-            java.lang.Class cls;
-            javax.xml.namespace.QName qName;
-            javax.xml.namespace.QName qName2;
-            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
-            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
-            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
-            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
-            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
-            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
-            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
-            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
-            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
-            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
-            qName = new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "integerType");
-            cachedSerQNames.add(qName);
-            cls = org.sirius.client.win32.core.types.IntegerType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
+        ((org.apache.axis.client.Service) super.service)
+                .setTypeMappingVersion("1.2");
+        java.lang.Class cls;
+        javax.xml.namespace.QName qName;
+        javax.xml.namespace.QName qName2;
+        java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
+        java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
+        java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
+        java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
+        java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
+        java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
+        java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
+        java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
+        java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
+        java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+        qName = new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/",
+                "integerType");
+        cachedSerQNames.add(qName);
+        cls = org.sirius.client.win32.core.types.IntegerType.class;
+        cachedSerClasses.add(cls);
+        cachedSerFactories.add(beansf);
+        cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "longPTR");
-            cachedSerQNames.add(qName);
-            cls = org.sirius.client.win32.core.types.LongPTR.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
+        qName = new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/", "longPTR");
+        cachedSerQNames.add(qName);
+        cls = org.sirius.client.win32.core.types.LongPTR.class;
+        cachedSerClasses.add(cls);
+        cachedSerFactories.add(beansf);
+        cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "lparam");
-            cachedSerQNames.add(qName);
-            cls = org.sirius.client.win32.core.types.Lparam.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
+        qName = new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/", "lparam");
+        cachedSerQNames.add(qName);
+        cls = org.sirius.client.win32.core.types.Lparam.class;
+        cachedSerClasses.add(cls);
+        cachedSerFactories.add(beansf);
+        cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "number");
-            cachedSerQNames.add(qName);
-            cls = org.sirius.client.win32.core.types.Number.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
+        qName = new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/", "number");
+        cachedSerQNames.add(qName);
+        cls = org.sirius.client.win32.core.types.Number.class;
+        cachedSerClasses.add(cls);
+        cachedSerFactories.add(beansf);
+        cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "point");
-            cachedSerQNames.add(qName);
-            cls = org.sirius.client.win32.core.types.Point.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
+        qName = new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/", "point");
+        cachedSerQNames.add(qName);
+        cls = org.sirius.client.win32.core.types.Point.class;
+        cachedSerClasses.add(cls);
+        cachedSerFactories.add(beansf);
+        cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "rect");
-            cachedSerQNames.add(qName);
-            cls = org.sirius.client.win32.core.types.Rect.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
+        qName = new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/", "rect");
+        cachedSerQNames.add(qName);
+        cls = org.sirius.client.win32.core.types.Rect.class;
+        cachedSerClasses.add(cls);
+        cachedSerFactories.add(beansf);
+        cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "structure");
-            cachedSerQNames.add(qName);
-            cls = org.sirius.client.win32.core.types.Structure.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
+        qName = new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/", "structure");
+        cachedSerQNames.add(qName);
+        cls = org.sirius.client.win32.core.types.Structure.class;
+        cachedSerClasses.add(cls);
+        cachedSerFactories.add(beansf);
+        cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "tcHITTESTINFO");
-            cachedSerQNames.add(qName);
-            cls = org.sirius.client.win32.core.controls.tabcontrol.TcHITTESTINFO.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
+        qName = new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/",
+                "tcHITTESTINFO");
+        cachedSerQNames.add(qName);
+        cls = org.sirius.client.win32.core.controls.tabcontrol.TcHITTESTINFO.class;
+        cachedSerClasses.add(cls);
+        cachedSerFactories.add(beansf);
+        cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "tcITEM");
-            cachedSerQNames.add(qName);
-            cls = org.sirius.client.win32.core.controls.tabcontrol.TcITEM.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
+        qName = new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/", "tcITEM");
+        cachedSerQNames.add(qName);
+        cls = org.sirius.client.win32.core.controls.tabcontrol.TcITEM.class;
+        cachedSerClasses.add(cls);
+        cachedSerFactories.add(beansf);
+        cachedDeserFactories.add(beandf);
 
     }
 
-    protected org.apache.axis.client.Call createCall() throws java.rmi.RemoteException {
+    protected org.apache.axis.client.Call createCall()
+            throws java.rmi.RemoteException {
         try {
             org.apache.axis.client.Call _call = super._createCall();
             if (super.maintainSessionSet) {
@@ -258,31 +347,31 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
                     // must set encoding style before registering serializers
                     _call.setEncodingStyle(null);
                     for (int i = 0; i < cachedSerFactories.size(); ++i) {
-                        java.lang.Class cls = (java.lang.Class) cachedSerClasses.get(i);
-                        javax.xml.namespace.QName qName =
-                                (javax.xml.namespace.QName) cachedSerQNames.get(i);
+                        java.lang.Class cls = (java.lang.Class) cachedSerClasses
+                                .get(i);
+                        javax.xml.namespace.QName qName = (javax.xml.namespace.QName) cachedSerQNames
+                                .get(i);
                         java.lang.Object x = cachedSerFactories.get(i);
                         if (x instanceof Class) {
-                            java.lang.Class sf = (java.lang.Class)
-                                 cachedSerFactories.get(i);
-                            java.lang.Class df = (java.lang.Class)
-                                 cachedDeserFactories.get(i);
+                            java.lang.Class sf = (java.lang.Class) cachedSerFactories
+                                    .get(i);
+                            java.lang.Class df = (java.lang.Class) cachedDeserFactories
+                                    .get(i);
                             _call.registerTypeMapping(cls, qName, sf, df, false);
-                        }
-                        else if (x instanceof javax.xml.rpc.encoding.SerializerFactory) {
-                            org.apache.axis.encoding.SerializerFactory sf = (org.apache.axis.encoding.SerializerFactory)
-                                 cachedSerFactories.get(i);
-                            org.apache.axis.encoding.DeserializerFactory df = (org.apache.axis.encoding.DeserializerFactory)
-                                 cachedDeserFactories.get(i);
+                        } else if (x instanceof javax.xml.rpc.encoding.SerializerFactory) {
+                            org.apache.axis.encoding.SerializerFactory sf = (org.apache.axis.encoding.SerializerFactory) cachedSerFactories
+                                    .get(i);
+                            org.apache.axis.encoding.DeserializerFactory df = (org.apache.axis.encoding.DeserializerFactory) cachedDeserFactories
+                                    .get(i);
                             _call.registerTypeMapping(cls, qName, sf, df, false);
                         }
                     }
                 }
             }
             return _call;
-        }
-        catch (java.lang.Throwable _t) {
-            throw new org.apache.axis.AxisFault("Failure trying to get the Call object", _t);
+        } catch (java.lang.Throwable _t) {
+            throw new org.apache.axis.AxisFault(
+                    "Failure trying to get the Call object", _t);
         }
     }
 
@@ -295,29 +384,34 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR,
+                Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS,
+                Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "GetCurSel"));
+        _call.setOperationName(new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/", "GetCurSel"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(arg0)});
+        try {
+            java.lang.Object _resp = _call
+                    .invoke(new java.lang.Object[] { new java.lang.Long(arg0) });
 
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return ((java.lang.Integer) _resp).intValue();
-            } catch (java.lang.Exception _exception) {
-                return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            if (_resp instanceof java.rmi.RemoteException) {
+                throw (java.rmi.RemoteException) _resp;
+            } else {
+                extractAttachments(_call);
+                try {
+                    return ((java.lang.Integer) _resp).intValue();
+                } catch (java.lang.Exception _exception) {
+                    return ((java.lang.Integer) org.apache.axis.utils.JavaUtils
+                            .convert(_resp, int.class)).intValue();
+                }
             }
+        } catch (org.apache.axis.AxisFault axisFaultException) {
+            throw axisFaultException;
         }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
     }
 
     public void setCurSel(long arg0, int arg1) throws java.rmi.RemoteException {
@@ -329,22 +423,27 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR,
+                Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS,
+                Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "SetCurSel"));
+        _call.setOperationName(new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/", "SetCurSel"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(arg0), new java.lang.Integer(arg1)});
+        try {
+            java.lang.Object _resp = _call.invoke(new java.lang.Object[] {
+                    new java.lang.Long(arg0), new java.lang.Integer(arg1) });
 
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
+            if (_resp instanceof java.rmi.RemoteException) {
+                throw (java.rmi.RemoteException) _resp;
+            }
+            extractAttachments(_call);
+        } catch (org.apache.axis.AxisFault axisFaultException) {
+            throw axisFaultException;
         }
-        extractAttachments(_call);
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
     }
 
     public int getItemCount(long arg0) throws java.rmi.RemoteException {
@@ -356,29 +455,35 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR,
+                Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS,
+                Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "GetItemCount"));
+        _call.setOperationName(new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/",
+                "GetItemCount"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(arg0)});
+        try {
+            java.lang.Object _resp = _call
+                    .invoke(new java.lang.Object[] { new java.lang.Long(arg0) });
 
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return ((java.lang.Integer) _resp).intValue();
-            } catch (java.lang.Exception _exception) {
-                return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            if (_resp instanceof java.rmi.RemoteException) {
+                throw (java.rmi.RemoteException) _resp;
+            } else {
+                extractAttachments(_call);
+                try {
+                    return ((java.lang.Integer) _resp).intValue();
+                } catch (java.lang.Exception _exception) {
+                    return ((java.lang.Integer) org.apache.axis.utils.JavaUtils
+                            .convert(_resp, int.class)).intValue();
+                }
             }
+        } catch (org.apache.axis.AxisFault axisFaultException) {
+            throw axisFaultException;
         }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
     }
 
     public int getCurFocus(long arg0) throws java.rmi.RemoteException {
@@ -390,32 +495,39 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR,
+                Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS,
+                Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "GetCurFocus"));
+        _call.setOperationName(new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/",
+                "GetCurFocus"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(arg0)});
+        try {
+            java.lang.Object _resp = _call
+                    .invoke(new java.lang.Object[] { new java.lang.Long(arg0) });
 
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return ((java.lang.Integer) _resp).intValue();
-            } catch (java.lang.Exception _exception) {
-                return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            if (_resp instanceof java.rmi.RemoteException) {
+                throw (java.rmi.RemoteException) _resp;
+            } else {
+                extractAttachments(_call);
+                try {
+                    return ((java.lang.Integer) _resp).intValue();
+                } catch (java.lang.Exception _exception) {
+                    return ((java.lang.Integer) org.apache.axis.utils.JavaUtils
+                            .convert(_resp, int.class)).intValue();
+                }
             }
+        } catch (org.apache.axis.AxisFault axisFaultException) {
+            throw axisFaultException;
         }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
     }
 
-    public void setCurFocus(long arg0, int arg1) throws java.rmi.RemoteException {
+    public void setCurFocus(long arg0, int arg1)
+            throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -424,22 +536,28 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR,
+                Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS,
+                Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "SetCurFocus"));
+        _call.setOperationName(new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/",
+                "SetCurFocus"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(arg0), new java.lang.Integer(arg1)});
+        try {
+            java.lang.Object _resp = _call.invoke(new java.lang.Object[] {
+                    new java.lang.Long(arg0), new java.lang.Integer(arg1) });
 
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
+            if (_resp instanceof java.rmi.RemoteException) {
+                throw (java.rmi.RemoteException) _resp;
+            }
+            extractAttachments(_call);
+        } catch (org.apache.axis.AxisFault axisFaultException) {
+            throw axisFaultException;
         }
-        extractAttachments(_call);
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
     }
 
     public int getRowCount(long arg0) throws java.rmi.RemoteException {
@@ -451,32 +569,39 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR,
+                Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS,
+                Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "GetRowCount"));
+        _call.setOperationName(new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/",
+                "GetRowCount"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(arg0)});
+        try {
+            java.lang.Object _resp = _call
+                    .invoke(new java.lang.Object[] { new java.lang.Long(arg0) });
 
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return ((java.lang.Integer) _resp).intValue();
-            } catch (java.lang.Exception _exception) {
-                return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            if (_resp instanceof java.rmi.RemoteException) {
+                throw (java.rmi.RemoteException) _resp;
+            } else {
+                extractAttachments(_call);
+                try {
+                    return ((java.lang.Integer) _resp).intValue();
+                } catch (java.lang.Exception _exception) {
+                    return ((java.lang.Integer) org.apache.axis.utils.JavaUtils
+                            .convert(_resp, int.class)).intValue();
+                }
             }
+        } catch (org.apache.axis.AxisFault axisFaultException) {
+            throw axisFaultException;
         }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
     }
 
-    public org.sirius.client.win32.core.controls.tabcontrol.TcITEM getItem(long arg0, int arg1) throws java.rmi.RemoteException {
+    public org.sirius.client.win32.core.controls.tabcontrol.TcITEM getItem(
+            long arg0, int arg1) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -485,32 +610,40 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR,
+                Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS,
+                Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "GetItem"));
+        _call.setOperationName(new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/", "GetItem"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(arg0), new java.lang.Integer(arg1)});
+        try {
+            java.lang.Object _resp = _call.invoke(new java.lang.Object[] {
+                    new java.lang.Long(arg0), new java.lang.Integer(arg1) });
 
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (org.sirius.client.win32.core.controls.tabcontrol.TcITEM) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (org.sirius.client.win32.core.controls.tabcontrol.TcITEM) org.apache.axis.utils.JavaUtils.convert(_resp, org.sirius.client.win32.core.controls.tabcontrol.TcITEM.class);
+            if (_resp instanceof java.rmi.RemoteException) {
+                throw (java.rmi.RemoteException) _resp;
+            } else {
+                extractAttachments(_call);
+                try {
+                    return (org.sirius.client.win32.core.controls.tabcontrol.TcITEM) _resp;
+                } catch (java.lang.Exception _exception) {
+                    return (org.sirius.client.win32.core.controls.tabcontrol.TcITEM) org.apache.axis.utils.JavaUtils
+                            .convert(
+                                    _resp,
+                                    org.sirius.client.win32.core.controls.tabcontrol.TcITEM.class);
+                }
             }
+        } catch (org.apache.axis.AxisFault axisFaultException) {
+            throw axisFaultException;
         }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
     }
 
-    public org.sirius.client.win32.core.types.Rect getItemRect(long arg0, int arg1) throws java.rmi.RemoteException {
+    public org.sirius.client.win32.core.types.Rect getItemRect(long arg0,
+            int arg1) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -519,32 +652,41 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR,
+                Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS,
+                Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "GetItemRect"));
+        _call.setOperationName(new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/",
+                "GetItemRect"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(arg0), new java.lang.Integer(arg1)});
+        try {
+            java.lang.Object _resp = _call.invoke(new java.lang.Object[] {
+                    new java.lang.Long(arg0), new java.lang.Integer(arg1) });
 
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (org.sirius.client.win32.core.types.Rect) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (org.sirius.client.win32.core.types.Rect) org.apache.axis.utils.JavaUtils.convert(_resp, org.sirius.client.win32.core.types.Rect.class);
+            if (_resp instanceof java.rmi.RemoteException) {
+                throw (java.rmi.RemoteException) _resp;
+            } else {
+                extractAttachments(_call);
+                try {
+                    return (org.sirius.client.win32.core.types.Rect) _resp;
+                } catch (java.lang.Exception _exception) {
+                    return (org.sirius.client.win32.core.types.Rect) org.apache.axis.utils.JavaUtils
+                            .convert(
+                                    _resp,
+                                    org.sirius.client.win32.core.types.Rect.class);
+                }
             }
+        } catch (org.apache.axis.AxisFault axisFaultException) {
+            throw axisFaultException;
         }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
     }
 
-    public org.sirius.client.win32.core.controls.tabcontrol.TcHITTESTINFO hitTest(long arg0) throws java.rmi.RemoteException {
+    public org.sirius.client.win32.core.controls.tabcontrol.TcHITTESTINFO hitTest(
+            long arg0) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -553,29 +695,36 @@ public class TabControlPortBindingStub extends org.apache.axis.client.Stub imple
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR,
+                Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS,
+                Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "HitTest"));
+        _call.setOperationName(new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/", "HitTest"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(arg0)});
+        try {
+            java.lang.Object _resp = _call
+                    .invoke(new java.lang.Object[] { new java.lang.Long(arg0) });
 
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (org.sirius.client.win32.core.controls.tabcontrol.TcHITTESTINFO) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (org.sirius.client.win32.core.controls.tabcontrol.TcHITTESTINFO) org.apache.axis.utils.JavaUtils.convert(_resp, org.sirius.client.win32.core.controls.tabcontrol.TcHITTESTINFO.class);
+            if (_resp instanceof java.rmi.RemoteException) {
+                throw (java.rmi.RemoteException) _resp;
+            } else {
+                extractAttachments(_call);
+                try {
+                    return (org.sirius.client.win32.core.controls.tabcontrol.TcHITTESTINFO) _resp;
+                } catch (java.lang.Exception _exception) {
+                    return (org.sirius.client.win32.core.controls.tabcontrol.TcHITTESTINFO) org.apache.axis.utils.JavaUtils
+                            .convert(
+                                    _resp,
+                                    org.sirius.client.win32.core.controls.tabcontrol.TcHITTESTINFO.class);
+                }
             }
+        } catch (org.apache.axis.AxisFault axisFaultException) {
+            throw axisFaultException;
         }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
     }
 
 }

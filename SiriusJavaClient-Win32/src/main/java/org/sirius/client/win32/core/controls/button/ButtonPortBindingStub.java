@@ -7,27 +7,38 @@
 
 package org.sirius.client.win32.core.controls.button;
 
-public class ButtonPortBindingStub extends org.apache.axis.client.Stub implements org.sirius.client.win32.core.controls.button.Button {
-    private java.util.Vector cachedSerClasses = new java.util.Vector();
-    private java.util.Vector cachedSerQNames = new java.util.Vector();
-    private java.util.Vector cachedSerFactories = new java.util.Vector();
-    private java.util.Vector cachedDeserFactories = new java.util.Vector();
+public class ButtonPortBindingStub extends org.apache.axis.client.Stub
+        implements org.sirius.client.win32.core.controls.button.Button {
+    private java.util.Vector                           cachedSerClasses     = new java.util.Vector();
+    private java.util.Vector                           cachedSerQNames      = new java.util.Vector();
+    private java.util.Vector                           cachedSerFactories   = new java.util.Vector();
+    private java.util.Vector                           cachedDeserFactories = new java.util.Vector();
 
-    static org.apache.axis.description.OperationDesc [] _operations;
+    static org.apache.axis.description.OperationDesc[] _operations;
 
     static {
         _operations = new org.apache.axis.description.OperationDesc[4];
         _initOperationDesc1();
     }
 
-    private static void _initOperationDesc1(){
+    private static void _initOperationDesc1() {
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("SetState");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg0"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "long"),
+                long.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg1"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "int"), int.class,
+                false, false);
         oper.addParameter(param);
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -36,9 +47,15 @@ public class ButtonPortBindingStub extends org.apache.axis.client.Stub implement
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetState");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg0"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "long"),
+                long.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnType(new javax.xml.namespace.QName(
+                "http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(int.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -47,9 +64,15 @@ public class ButtonPortBindingStub extends org.apache.axis.client.Stub implement
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetCheck");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg0"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "long"),
+                long.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnType(new javax.xml.namespace.QName(
+                "http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(int.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -58,9 +81,19 @@ public class ButtonPortBindingStub extends org.apache.axis.client.Stub implement
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("SetCheck");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg0"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg0"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "long"),
+                long.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "arg1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(
+                new javax.xml.namespace.QName("", "arg1"),
+                org.apache.axis.description.ParameterDesc.IN,
+                new javax.xml.namespace.QName(
+                        "http://www.w3.org/2001/XMLSchema", "int"), int.class,
+                false, false);
         oper.addParameter(param);
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -70,24 +103,28 @@ public class ButtonPortBindingStub extends org.apache.axis.client.Stub implement
     }
 
     public ButtonPortBindingStub() throws org.apache.axis.AxisFault {
-         this(null);
+        this(null);
     }
 
-    public ButtonPortBindingStub(java.net.URL endpointURL, javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
-         this(service);
-         super.cachedEndpoint = endpointURL;
+    public ButtonPortBindingStub(java.net.URL endpointURL,
+            javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
+        this(service);
+        super.cachedEndpoint = endpointURL;
     }
 
-    public ButtonPortBindingStub(javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
+    public ButtonPortBindingStub(javax.xml.rpc.Service service)
+            throws org.apache.axis.AxisFault {
         if (service == null) {
             super.service = new org.apache.axis.client.Service();
         } else {
             super.service = service;
         }
-        ((org.apache.axis.client.Service)super.service).setTypeMappingVersion("1.2");
+        ((org.apache.axis.client.Service) super.service)
+                .setTypeMappingVersion("1.2");
     }
 
-    protected org.apache.axis.client.Call createCall() throws java.rmi.RemoteException {
+    protected org.apache.axis.client.Call createCall()
+            throws java.rmi.RemoteException {
         try {
             org.apache.axis.client.Call _call = super._createCall();
             if (super.maintainSessionSet) {
@@ -114,9 +151,9 @@ public class ButtonPortBindingStub extends org.apache.axis.client.Stub implement
                 _call.setProperty(key, super.cachedProperties.get(key));
             }
             return _call;
-        }
-        catch (java.lang.Throwable _t) {
-            throw new org.apache.axis.AxisFault("Failure trying to get the Call object", _t);
+        } catch (java.lang.Throwable _t) {
+            throw new org.apache.axis.AxisFault(
+                    "Failure trying to get the Call object", _t);
         }
     }
 
@@ -129,22 +166,27 @@ public class ButtonPortBindingStub extends org.apache.axis.client.Stub implement
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR,
+                Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS,
+                Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "SetState"));
+        _call.setOperationName(new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/", "SetState"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(arg0), new java.lang.Integer(arg1)});
+        try {
+            java.lang.Object _resp = _call.invoke(new java.lang.Object[] {
+                    new java.lang.Long(arg0), new java.lang.Integer(arg1) });
 
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
+            if (_resp instanceof java.rmi.RemoteException) {
+                throw (java.rmi.RemoteException) _resp;
+            }
+            extractAttachments(_call);
+        } catch (org.apache.axis.AxisFault axisFaultException) {
+            throw axisFaultException;
         }
-        extractAttachments(_call);
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
     }
 
     public int getState(long arg0) throws java.rmi.RemoteException {
@@ -156,29 +198,34 @@ public class ButtonPortBindingStub extends org.apache.axis.client.Stub implement
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR,
+                Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS,
+                Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "GetState"));
+        _call.setOperationName(new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/", "GetState"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(arg0)});
+        try {
+            java.lang.Object _resp = _call
+                    .invoke(new java.lang.Object[] { new java.lang.Long(arg0) });
 
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return ((java.lang.Integer) _resp).intValue();
-            } catch (java.lang.Exception _exception) {
-                return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            if (_resp instanceof java.rmi.RemoteException) {
+                throw (java.rmi.RemoteException) _resp;
+            } else {
+                extractAttachments(_call);
+                try {
+                    return ((java.lang.Integer) _resp).intValue();
+                } catch (java.lang.Exception _exception) {
+                    return ((java.lang.Integer) org.apache.axis.utils.JavaUtils
+                            .convert(_resp, int.class)).intValue();
+                }
             }
+        } catch (org.apache.axis.AxisFault axisFaultException) {
+            throw axisFaultException;
         }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
     }
 
     public int getCheck(long arg0) throws java.rmi.RemoteException {
@@ -190,29 +237,34 @@ public class ButtonPortBindingStub extends org.apache.axis.client.Stub implement
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR,
+                Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS,
+                Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "GetCheck"));
+        _call.setOperationName(new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/", "GetCheck"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(arg0)});
+        try {
+            java.lang.Object _resp = _call
+                    .invoke(new java.lang.Object[] { new java.lang.Long(arg0) });
 
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return ((java.lang.Integer) _resp).intValue();
-            } catch (java.lang.Exception _exception) {
-                return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            if (_resp instanceof java.rmi.RemoteException) {
+                throw (java.rmi.RemoteException) _resp;
+            } else {
+                extractAttachments(_call);
+                try {
+                    return ((java.lang.Integer) _resp).intValue();
+                } catch (java.lang.Exception _exception) {
+                    return ((java.lang.Integer) org.apache.axis.utils.JavaUtils
+                            .convert(_resp, int.class)).intValue();
+                }
             }
+        } catch (org.apache.axis.AxisFault axisFaultException) {
+            throw axisFaultException;
         }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
     }
 
     public void setCheck(long arg0, int arg1) throws java.rmi.RemoteException {
@@ -224,22 +276,27 @@ public class ButtonPortBindingStub extends org.apache.axis.client.Stub implement
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR,
+                Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS,
+                Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://controls.classes.win32.server.sirius.org/", "SetCheck"));
+        _call.setOperationName(new javax.xml.namespace.QName(
+                "http://controls.classes.win32.server.sirius.org/", "SetCheck"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(arg0), new java.lang.Integer(arg1)});
+        try {
+            java.lang.Object _resp = _call.invoke(new java.lang.Object[] {
+                    new java.lang.Long(arg0), new java.lang.Integer(arg1) });
 
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
+            if (_resp instanceof java.rmi.RemoteException) {
+                throw (java.rmi.RemoteException) _resp;
+            }
+            extractAttachments(_call);
+        } catch (org.apache.axis.AxisFault axisFaultException) {
+            throw axisFaultException;
         }
-        extractAttachments(_call);
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
     }
 
 }
