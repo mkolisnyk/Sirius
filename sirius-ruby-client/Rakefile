@@ -2,6 +2,7 @@ require 'rubygems'
 require 'rubygems/package_task'
 require 'cucumber'
 require 'cucumber/rake/task.rb'
+require 'rubygems/tasks'
 
 spec = Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
@@ -20,6 +21,7 @@ spec = Gem::Specification.new do |s|
   s.email="kolesnik.nickolay@gmail.com"
   s.add_dependency('sirius-client-core', '>= 0.0')
   s.add_dependency('sirius-client-win32', '>= 0.0')
+  s.add_dependency('sirius-client-web', '>= 0.0')
 end
 
 Gem::PackageTask.new(spec) do |pkg|

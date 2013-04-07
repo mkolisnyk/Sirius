@@ -20,3 +20,4 @@ SiriusCSharp.Client/Sirius.CSharp.Client.Win32/obj/*
 SiriusCSharp.Client/SiriusClient/Sirius.CSharp.Client.Package/bin/*
 obj
 bin
+.svn

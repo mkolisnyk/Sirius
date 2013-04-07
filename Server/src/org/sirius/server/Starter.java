@@ -6,7 +6,6 @@ package org.sirius.server;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileFilter;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -16,105 +15,186 @@ import java.util.HashMap;
 
 import javax.xml.ws.Endpoint;
 
-import org.sirius.server.common.Log4J;
+import org.apache.log4j.ConsoleAppender;
+import org.apache.log4j.Logger;
+import org.apache.log4j.SimpleLayout;
 
 /**
  * @author KaNoN
- * 
  */
 public class Starter {
 
-	private static final String HOST_KEY = "-host";
-	private static final String PORT_KEY = "-port";
-	private static final String CONFIG_KEY = "-config";
-	private static final String DEFAULT_HOST = "localhost";
-	private static final String DEFAULT_PORT = "21212";
-	private static final String DEFAULT_CONFIG = ".\\modules.csv";
-
-	static ArrayList<Endpoint> endpoints = new ArrayList<Endpoint>();
+	/**
+	 * .
+	 */
+	private static final int PARAMS_COUNT = 3;
 
 	/**
-	 * 
+	 * .
+	 */
+	private static final String HOST_KEY = "-host";
+
+	/**
+	 * .
+	 */
+	private static final String PORT_KEY = "-port";
+
+	/**
+	 * .
+	 */
+	private static final String CONFIG_KEY = "-config";
+
+	/**
+	 * .
+	 */
+	private static final String DEFAULT_HOST = "localhost";
+
+	/**
+	 * .
+	 */
+	private static final String DEFAULT_PORT = "21212";
+
+	/**
+	 * .
+	 */
+	private static final String DEFAULT_CONFIG = ".\\modules.csv";
+
+	/**
+	 * .
+	 */
+	private static ArrayList<Endpoint> endpoints = new ArrayList<Endpoint>();
+
+	/**
+	 * .
+	 */
+	private static Logger logger = Logger.getLogger(Starter.class);
+
+	static {
+		logger.addAppender(new ConsoleAppender(new SimpleLayout()));
+	}
+
+	/**
+	 * .
 	 * @param config
 	 * @return
 	 * @throws IOException
 	 */
-	public ArrayList<PackageOptions> readConfig(String config)
+	public final ArrayList<PackageOptions> readConfig(final String config)
 			throws IOException {
+
+		logger.info("Start reading configuration file: " + config);
+
 		FileReader reader = new FileReader(config);
 		BufferedReader br = new BufferedReader(reader);
 
 		String line = br.readLine();
 
-		ArrayList<PackageOptions> options = new ArrayList<PackageOptions>();
+		logger.debug("Line read: " + line);
+
+		ArrayList<PackageOptions> options =
+				new ArrayList<PackageOptions>();
 
 		while ((line = br.readLine()) != null) {
+			logger.debug("Line read: " + line);
+
 			if (line.startsWith("#")) {
+				logger.debug("Commented line detected. " +
+						"Skipping...");
 				continue;
 			}
 			String[] row = line.split(",");
-			if (row.length < 3) {
+			if (row.length < PARAMS_COUNT) {
+				logger.debug("Malformed line detected. " +
+						"It should contain at least 3 fields. " +
+						"Skipping...");
 				continue;
 			}
-			PackageOptions option = new PackageOptions(row[0].trim(),
-					row[1].trim(), row[2].trim());
+			PackageOptions option = 
+					new PackageOptions(row[0].trim(),
+							row[1].trim(), row[2].trim());
 			options.add(option);
 		}
+
+		logger.info("Complete reading configuration file: " + config);
 
 		br.close();
 		reader.close();
 		return options;
 	}
 
-	private String findMatchingFile(String filter){
+	/**
+	 * .
+	 * @param filter
+	 * @return
+	 */
+	private String findMatchingFile(final String filter) {
 		File location = new File(filter);
-		
-		for(String file:location.getParentFile().list() ){
-			if(file.matches(location.getName())){
+
+		for (String file : location.getParentFile().list()) {
+			if (file.matches(location.getName())) {
 				return file;
 			}
 		}
-		
+
 		return "";
 	}
-	
+
 	/**
-	 * 
+	 * .
 	 * @param options
 	 * @param host
 	 * @param port
-	 * @throws MalformedURLException 
+	 * @throws MalformedURLException
 	 */
-	public void startEndPoints(ArrayList<PackageOptions> options, String host,
-			String port) throws MalformedURLException {
+	public final void startEndPoints(
+			final ArrayList<PackageOptions> options, 
+			final String host,
+			final String port) throws MalformedURLException {
 		for (PackageOptions option : options) {
 			ClassLoader loader;
 			if (!option.get_packageLocation().equals("Local")) {
-				Log4J.log()
-						.info("Uploading binary file:"
-								+ option.get_packageLocation());
+				logger.info("Uploading binary file:"
+						+ option.get_packageLocation());
 
-				String packageFile = findMatchingFile(option.get_packageLocation());
+				String packageFile = findMatchingFile(option
+						.get_packageLocation());
 				File location = new File(packageFile);
-				
-				URL url[] = { location.getAbsoluteFile().toURI().toURL() };
-				loader = new URLClassLoader(url,this.getClass().getClassLoader());
-			}
-			else {
+
+				URL[] url = {
+						location.getAbsoluteFile().toURI().toURL()
+				};
+				loader = new URLClassLoader(url, this.getClass()
+						.getClassLoader());
+			} else {
 				loader = this.getClass().getClassLoader();
 			}
 			try {
 				String endPoint = option.get_endPoint();
-				endPoint = endPoint.replaceAll("\\$\\{HOST}", host);
-				endPoint = endPoint.replaceAll("\\$\\{PORT}", port);
-				Log4J.log().info("Starting endpoint: " + endPoint);
+				endPoint =
+						endPoint.replaceAll(
+								"\\$\\{HOST}",
+								host
+						);
+				endPoint =
+						endPoint.replaceAll(
+								"\\$\\{PORT}",
+								port
+						);
+				logger.info("Starting endpoint: " + endPoint);
 				Endpoint endpoint = Endpoint.publish(endPoint,
-						Class.forName(option.get_className(),true,loader).newInstance());
+						Class.forName(
+								option.get_className(), 
+								true,
+								loader
+						)
+						.newInstance());
 				endpoints.add(endpoint);
 			} catch (Exception e) {
-				Log4J.log().error("Failed publishing server endpoint", e);
+				logger.error(
+						"Failed publishing server endpoint", e
+				);
 			} finally {
-				Log4J.log().info("Done...");
+				logger.info("Done...");
 			}
 		}
 	}
@@ -126,20 +206,20 @@ public class Starter {
 	 * @throws IllegalAccessException
 	 * @throws InstantiationException
 	 */
-	public static void main(String[] args) throws IOException,
+	public static void main(final String[] args) throws IOException,
 			InstantiationException, IllegalAccessException,
 			ClassNotFoundException {
 		String host = DEFAULT_HOST;
 		String port = DEFAULT_PORT;
 		String config = DEFAULT_CONFIG;
 
-		Log4J.log().info("Parsing command line arguments");
+		logger.info("Parsing command line arguments");
 
 		HashMap<String, String> params = new HashMap<String, String>();
 
-		for (int i = 0; i < args.length; i += 2) {
+		for (int i = 0; i < (2 * (args.length / 2)); i += 2) {
 			if (i < args.length - 1) {
-				params.put(args[i], args[i - 1]);
+				params.put(args[i], args[i + 1]);
 			}
 		}
 
@@ -153,26 +233,26 @@ public class Starter {
 			config = params.get(CONFIG_KEY);
 		}
 
-		Log4J.log().info("The following parameters were specified:");
-		Log4J.log().info("Endpoint host name: " + host);
-		Log4J.log().info("Endpoint port number: " + port);
-		Log4J.log().info("Configuration file: " + config);
+		logger.info("The following parameters were specified:");
+		logger.info("Endpoint host name: " + host);
+		logger.info("Endpoint port number: " + port);
+		logger.info("Configuration file: " + config);
 
 		Starter starter = new Starter();
 
-		Log4J.log().info("Reading configuration file...");
+		logger.info("Reading configuration file...");
 		ArrayList<PackageOptions> options = starter.readConfig(config);
 
-		Log4J.log().info("Starting interanl endpoint...");
+		logger.info("Starting interanl endpoint...");
 		try {
 			endpoints.add(Endpoint.publish("http://" + host + ":" + port
 					+ "/internal", new Internal()));
 		} catch (Exception e) {
-			Log4J.log().error("Failed to start interanl endpoint", e);
+			logger.error("Failed to start interanl endpoint", e);
 		}
-		Log4J.log().info("Done...");
+		logger.info("Done...");
 
-		Log4J.log().info("Starting endpoints...");
+		logger.info("Starting endpoints...");
 		starter.startEndPoints(options, host, port);
 	}
 

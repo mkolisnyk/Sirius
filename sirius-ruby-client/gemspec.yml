@@ -1,0 +1,16 @@
+name: sirius-client
+summary: Sirius Ruby client
+requirements: none
+homepage: http://github.com/mkolisnyk/Sirius
+
+description: |
+  This is the client library for Sirius test automation platform for Ruby programming language.
+  The Sirius Client is the main entry point for all Ruby client libraries and if this module
+  is included all sub-sequent modules are included as well. 
+ 
+authors: Myk Kolisnyk
+email: kolesnik.nickolay@gmail.com
+dependencies:
+  sirius-client-core: '>= 0.0'
+  sirius-client-win32: '>= 0.0'
+  sirius-client-web: '>= 0.0'
