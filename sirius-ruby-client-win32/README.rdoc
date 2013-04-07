@@ -1,3 +1,5 @@
+{<img src="https://badge.fury.io/rb/sirius-client-win32.png" alt="Gem Version" />}[http://badge.fury.io/rb/sirius-client-win32]
+
 = Sirius Ruby Win32 Client Overview
 
 This is the client library for Sirius Test Automation Platform for Ruby programming language designed to provide interface for Win32 applications 

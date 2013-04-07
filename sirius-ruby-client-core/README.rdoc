@@ -1,3 +1,5 @@
+{<img src="https://badge.fury.io/rb/sirius-client-core.png" alt="Gem Version" />}[http://badge.fury.io/rb/sirius-client-core]
+
 = Sirius Ruby Core Client Overview
 
 This is the client library for Sirius test automation platform for Ruby programming language.

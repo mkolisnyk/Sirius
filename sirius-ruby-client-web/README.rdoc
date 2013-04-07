@@ -1,3 +1,5 @@
+{<img src="https://badge.fury.io/rb/sirius-client-web.png" alt="Gem Version" />}[http://badge.fury.io/rb/sirius-client-web]
+
 = Sirius Ruby Web Client Overview
 
 This is the client library for Sirius Test Automation Platform for Ruby programming language designed to provide interface for Web applications interaction. 
