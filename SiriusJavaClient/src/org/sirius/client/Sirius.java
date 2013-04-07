@@ -4,14 +4,13 @@
 package org.sirius.client;
 
 /**
- * @author Myk Kolisnyk
- * .
+ * @author Myk Kolisnyk .
  */
 public class Sirius {
 
-	/**
-	 * .
-	 */
-	public Sirius() {
-	}
+    /**
+     * .
+     */
+    public Sirius() {
+    }
 }
