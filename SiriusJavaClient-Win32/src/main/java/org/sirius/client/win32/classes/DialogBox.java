@@ -14,18 +14,19 @@ import org.sirius.client.win32.types.Win32Locator;
  */
 public class DialogBox extends TopLevelWindow {
 
-    public DialogBox(Win32Client client, Win32Locator locator) {
+    public DialogBox(final Win32Client client, final Win32Locator locator) {
         super(client, locator);
     }
 
-    public DialogBox(Win32Client client, Window parent, Win32Locator locator) {
+    public DialogBox(final Win32Client client, final Window parent,
+            final Win32Locator locator) {
         super(client, parent, locator);
     }
 
     @Override
     public boolean exists() throws RemoteException {
-        logger.debug("Searching for dialog box: " + this.locator);
-        if (this.parent == null) {
+        logger.debug("Searching for dialog box: " + locator);
+        if (parent == null) {
             logger.debug("Searching for dialog box parent");
             return super.exists();
         } else if (!parent.exists()) {
@@ -47,7 +48,7 @@ public class DialogBox extends TopLevelWindow {
     }
 
     @Override
-    public boolean exists(long timeout) throws Exception {
+    public boolean exists(final long timeout) throws Exception {
         return waitFor(timeout, "exists", true);
     }
 }

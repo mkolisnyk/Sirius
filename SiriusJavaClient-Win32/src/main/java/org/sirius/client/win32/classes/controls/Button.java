@@ -17,7 +17,7 @@ public class Button extends Control {
      * @param client
      * @param locator
      */
-    public Button(Window parent, Win32Locator locator) {
+    public Button(final Window parent, final Win32Locator locator) {
         super(parent, locator);
         // TODO Auto-generated constructor stub
     }

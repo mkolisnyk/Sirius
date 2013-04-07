@@ -21,7 +21,7 @@ public class Frame {
     /**
 	 * 
 	 */
-    public Frame(WebClient client, String locator) {
+    public Frame(final WebClient client, final String locator) {
         this.client = client;
         this.locator = locator;
     }
@@ -30,27 +30,27 @@ public class Frame {
         return false;
     }
 
-    public String getURL() throws RemoteException {
-        return this.client.core().getURL();
+    public Point getLocation() throws RemoteException {
+        return this.client.core().getLocation(null, locator);
     }
 
     public String getLocator() {
         return this.locator;
     }
 
-    public Point getLocation() throws RemoteException {
-        return this.client.core().getLocation(null, locator);
-    }
-
     public Dimension getSize() throws RemoteException {
         return this.client.core().getSize(null, locator);
+    }
+
+    public String getURL() throws RemoteException {
+        return this.client.core().getURL();
     }
 
     public String innerHtml() throws RemoteException {
         return this.client.core().getAttribute(null, locator, "innerHTML");
     }
 
-    public void switchTo(Frame frame) throws RemoteException {
+    public void switchTo(final Frame frame) throws RemoteException {
         this.client.core().selectFrameByName(frame.getLocator());
     }
 }

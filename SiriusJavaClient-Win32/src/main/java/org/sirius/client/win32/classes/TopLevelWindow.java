@@ -16,17 +16,13 @@ public class TopLevelWindow extends MovableWindow {
      * @param client
      * @param locator
      */
-    public TopLevelWindow(Win32Client client, Win32Locator locator) {
+    public TopLevelWindow(final Win32Client client, final Win32Locator locator) {
         super(client, locator);
     }
 
-    public TopLevelWindow(Win32Client client, Window parent,
-            Win32Locator locator) {
+    public TopLevelWindow(final Win32Client client, final Window parent,
+            final Win32Locator locator) {
         super(client, parent, locator);
-    }
-
-    public void setActive() throws Exception {
-        this.client.core().window().activate(locator.getHwnd());
     }
 
     public Menu menu() throws Exception {
@@ -37,9 +33,13 @@ public class TopLevelWindow extends MovableWindow {
         return null;
     }
 
+    public void setActive() throws Exception {
+        client.core().window().activate(locator.getHwnd());
+    }
+
     public Menu systemMenu() throws Exception {
         if (this.exists()) {
-            long hmenu = this.client.core().window()
+            long hmenu = client.core().window()
                     .getSystemMenu(this.getHwnd(), true);
             Menu menu = new Menu(client, this, hmenu);
             return menu;

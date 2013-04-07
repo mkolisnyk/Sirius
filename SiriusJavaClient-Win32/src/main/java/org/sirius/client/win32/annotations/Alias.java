@@ -1,5 +1,5 @@
 /**
- * 
+ * .
  */
 package org.sirius.client.win32.annotations;
 
@@ -9,8 +9,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @author Myk Kolisnyk
- * 
+ * @author Myk Kolisnyk .
  */
 @Target(ElementType.FIELD)
 @Retention(value = RetentionPolicy.RUNTIME)

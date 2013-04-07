@@ -13,19 +13,20 @@ public class WebCheckBox extends WebRadioButton {
 
     /**
      * @param parent
-     * @param parentElement
      * @param locator
      */
-    public WebCheckBox(Frame parent, String parentElement, String locator) {
-        super(parent, parentElement, locator);
+    public WebCheckBox(final Frame parent, final String locator) {
+        super(parent, locator);
     }
 
     /**
      * @param parent
+     * @param parentElement
      * @param locator
      */
-    public WebCheckBox(Frame parent, String locator) {
-        super(parent, locator);
+    public WebCheckBox(final Frame parent, final String parentElement,
+            final String locator) {
+        super(parent, parentElement, locator);
     }
 
     public void uncheck() throws RemoteException, Exception {

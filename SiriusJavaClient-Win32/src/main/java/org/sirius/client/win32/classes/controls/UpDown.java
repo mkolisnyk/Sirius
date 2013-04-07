@@ -16,7 +16,7 @@ public class UpDown extends Edit {
      * @param client
      * @param locator
      */
-    public UpDown(Window parent, Win32Locator locator) {
+    public UpDown(final Window parent, final Win32Locator locator) {
         super(parent, locator);
         // TODO Auto-generated constructor stub
     }

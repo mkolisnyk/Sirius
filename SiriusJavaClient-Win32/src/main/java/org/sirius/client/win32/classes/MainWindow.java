@@ -16,7 +16,7 @@ public class MainWindow extends TopLevelWindow {
      * @param client
      * @param locator
      */
-    public MainWindow(Win32Client client, Win32Locator locator) {
+    public MainWindow(final Win32Client client, final Win32Locator locator) {
         super(client, locator);
     }
 
@@ -27,9 +27,9 @@ public class MainWindow extends TopLevelWindow {
      * @param workingDir
      * @throws Exception
      */
-    public void start(String executable, String params, String workingDir)
-            throws Exception {
-        this.client.core().window()
-                .start(this.locator.getHwnd(), executable, params, workingDir);
+    public void start(final String executable, final String params,
+            final String workingDir) throws Exception {
+        client.core().window()
+                .start(locator.getHwnd(), executable, params, workingDir);
     }
 }

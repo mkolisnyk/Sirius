@@ -16,7 +16,7 @@ public class ListBox extends List {
      * @param client
      * @param locator
      */
-    public ListBox(Window parent, Win32Locator locator) {
+    public ListBox(final Window parent, final Win32Locator locator) {
         super(parent, locator);
         // TODO Auto-generated constructor stub
     }

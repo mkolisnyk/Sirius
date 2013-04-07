@@ -16,7 +16,7 @@ public class CheckListBox extends List {
      * @param client
      * @param locator
      */
-    public CheckListBox(Window parent, Win32Locator locator) {
+    public CheckListBox(final Window parent, final Win32Locator locator) {
         super(parent, locator);
         // TODO Auto-generated constructor stub
     }

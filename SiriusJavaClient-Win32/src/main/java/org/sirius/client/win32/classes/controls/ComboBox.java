@@ -16,7 +16,7 @@ public class ComboBox extends List {
      * @param client
      * @param locator
      */
-    public ComboBox(Window parent, Win32Locator locator) {
+    public ComboBox(final Window parent, final Win32Locator locator) {
         super(parent, locator);
         // TODO Auto-generated constructor stub
     }

@@ -18,6 +18,34 @@ public class Menu implements IMenuFlag {
     // Menu baseMenu;
     long        hmenu;
 
+    public Menu(final Menu parent, final String text) throws Exception {
+        client = parent.getClient();
+        owner = parent.getOwner();
+
+        Menu current = parent.menu(text);
+
+        hmenu = current.getHmenu();
+    }
+
+    /**
+     * @param client
+     * @param locator
+     */
+    public Menu(final Win32Client client, final Window owner) throws Exception {
+        this.client = client;
+        this.owner = owner;
+        if (owner.exists()) {
+            hmenu = client.core().window().getMenu(owner.getHwnd());
+        }
+        // baseMenu = null;
+    }
+
+    public Menu(final Win32Client client, final Window owner, final long hmenu) {
+        this.client = client;
+        this.owner = owner;
+        this.hmenu = hmenu;
+    }
+
     /**
      * @return the client
      */
@@ -26,67 +54,10 @@ public class Menu implements IMenuFlag {
     }
 
     /**
-     * @return the owner
-     */
-    public final Window getOwner() {
-        return owner;
-    }
-
-    /**
      * @return the hmenu
      */
     public final long getHmenu() {
         return hmenu;
-    }
-
-    /**
-     * @param client
-     * @param locator
-     */
-    public Menu(Win32Client client, Window owner) throws Exception {
-        this.client = client;
-        this.owner = owner;
-        if (owner.exists()) {
-            this.hmenu = client.core().window().getMenu(owner.getHwnd());
-        }
-        // baseMenu = null;
-    }
-
-    public Menu(Win32Client client, Window owner, long hmenu) {
-        this.client = client;
-        this.owner = owner;
-        this.hmenu = hmenu;
-    }
-
-    public Menu(Menu parent, String text) throws Exception {
-        this.client = parent.getClient();
-        this.owner = parent.getOwner();
-
-        Menu current = parent.menu(text);
-
-        this.hmenu = current.getHmenu();
-    }
-
-    public String getMenuItemText(int position) throws Exception {
-        int maxLength = 255;
-
-        UnsignedShort[] buffer = new UnsignedShort[maxLength];
-        client.core()
-                .menu()
-                .getMenuString(hmenu, position, buffer, maxLength,
-                        (int) MF_BYPOSITION);
-        String result = buffer.toString();
-
-        return result;
-    }
-
-    public Menu getSubMenu(int position) throws Exception {
-        long subMenu = client.core().menu().getSubMenu(hmenu, position);
-        return new Menu(client, owner, subMenu);
-    }
-
-    public void pick(int position) throws Exception {
-        client.core().menu().pickItem(owner.getHwnd(), hmenu, position);
     }
 
     public String[] getItemNames() throws Exception {
@@ -108,21 +79,32 @@ public class Menu implements IMenuFlag {
         return names;
     }
 
-    public Menu menu(String title) throws Exception {
-        String[] names = this.getItemNames();
-        int item = -1;
-        for (int i = 0; i < names.length; i++) {
-            if (names[i].matches(title) || names[i].contains(title)) {
-                item = i;
-                break;
-            }
-        }
-        long subHMenu = client.core().menu().getSubMenu(hmenu, item);
-        Menu subMenu = new Menu(this.client, owner, subHMenu);
-        return subMenu;
+    public String getMenuItemText(final int position) throws Exception {
+        int maxLength = 255;
+
+        UnsignedShort[] buffer = new UnsignedShort[maxLength];
+        client.core()
+                .menu()
+                .getMenuString(hmenu, position, buffer, maxLength,
+                        (int) MF_BYPOSITION);
+        String result = buffer.toString();
+
+        return result;
     }
 
-    public MenuItem item(String title) throws Exception {
+    /**
+     * @return the owner
+     */
+    public final Window getOwner() {
+        return owner;
+    }
+
+    public Menu getSubMenu(final int position) throws Exception {
+        long subMenu = client.core().menu().getSubMenu(hmenu, position);
+        return new Menu(client, owner, subMenu);
+    }
+
+    public MenuItem item(final String title) throws Exception {
         String[] names = this.getItemNames();
         int itemNum = -1;
         for (int i = 0; i < names.length; i++) {
@@ -133,5 +115,23 @@ public class Menu implements IMenuFlag {
         }
         MenuItem item = new MenuItem(client, owner, hmenu, itemNum);
         return item;
+    }
+
+    public Menu menu(final String title) throws Exception {
+        String[] names = this.getItemNames();
+        int item = -1;
+        for (int i = 0; i < names.length; i++) {
+            if (names[i].matches(title) || names[i].contains(title)) {
+                item = i;
+                break;
+            }
+        }
+        long subHMenu = client.core().menu().getSubMenu(hmenu, item);
+        Menu subMenu = new Menu(client, owner, subHMenu);
+        return subMenu;
+    }
+
+    public void pick(final int position) throws Exception {
+        client.core().menu().pickItem(owner.getHwnd(), hmenu, position);
     }
 }

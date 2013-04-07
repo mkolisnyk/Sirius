@@ -16,12 +16,8 @@ public class Form extends Frame {
     /**
 	 * 
 	 */
-    public Form(WebClient client, String locator) {
+    public Form(final WebClient client, final String locator) {
         super(client, locator);
-    }
-
-    public String name() throws RemoteException {
-        return this.client.core().getAttribute(null, locator, "name");
     }
 
     public String action() throws RemoteException {
@@ -30,6 +26,10 @@ public class Form extends Frame {
 
     public String method() throws Exception {
         return this.client.core().getAttribute(null, locator, "method");
+    }
+
+    public String name() throws RemoteException {
+        return this.client.core().getAttribute(null, locator, "name");
     }
 
     public void submit() throws RemoteException {

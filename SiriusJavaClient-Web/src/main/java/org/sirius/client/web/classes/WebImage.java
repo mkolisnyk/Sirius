@@ -13,28 +13,29 @@ public class WebImage extends WebButton {
 
     /**
      * @param parent
-     * @param parentElement
      * @param locator
      */
-    public WebImage(Frame parent, String parentElement, String locator) {
-        super(parent, parentElement, locator);
+    public WebImage(final Frame parent, final String locator) {
+        super(parent, locator);
         // TODO Auto-generated constructor stub
     }
 
     /**
      * @param parent
+     * @param parentElement
      * @param locator
      */
-    public WebImage(Frame parent, String locator) {
-        super(parent, locator);
+    public WebImage(final Frame parent, final String parentElement,
+            final String locator) {
+        super(parent, parentElement, locator);
         // TODO Auto-generated constructor stub
-    }
-
-    public String src() throws RemoteException {
-        return this.getAttribute("src");
     }
 
     public String alt() throws RemoteException {
         return this.getAttribute("alt");
+    }
+
+    public String src() throws RemoteException {
+        return this.getAttribute("src");
     }
 }

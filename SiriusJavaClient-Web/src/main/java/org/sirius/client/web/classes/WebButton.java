@@ -11,20 +11,21 @@ public class WebButton extends WebControl {
 
     /**
      * @param parent
-     * @param parentElement
      * @param locator
      */
-    public WebButton(Frame parent, String parentElement, String locator) {
-        super(parent, parentElement, locator);
+    public WebButton(final Frame parent, final String locator) {
+        super(parent, locator);
         // TODO Auto-generated constructor stub
     }
 
     /**
      * @param parent
+     * @param parentElement
      * @param locator
      */
-    public WebButton(Frame parent, String locator) {
-        super(parent, locator);
+    public WebButton(final Frame parent, final String parentElement,
+            final String locator) {
+        super(parent, parentElement, locator);
         // TODO Auto-generated constructor stub
     }
 

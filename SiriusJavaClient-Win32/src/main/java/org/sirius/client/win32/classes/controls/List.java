@@ -17,7 +17,7 @@ public class List extends Control {
      * @param client
      * @param locator
      */
-    public List(Window parent, Win32Locator locator) {
+    public List(final Window parent, final Win32Locator locator) {
         super(parent, locator);
         // TODO Auto-generated constructor stub
     }

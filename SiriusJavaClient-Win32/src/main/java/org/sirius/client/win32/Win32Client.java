@@ -12,8 +12,8 @@ import org.sirius.client.win32.utils.Win32UtilsProxy;
  */
 public class Win32Client {
 
-    private Win32CoreClient core;
-    private Win32UtilsProxy utils;
+    private final Win32CoreClient core;
+    private final Win32UtilsProxy utils;
 
     /**
 	 * 

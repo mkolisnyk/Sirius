@@ -16,7 +16,7 @@ public class ListView extends List {
      * @param client
      * @param locator
      */
-    public ListView(Window parent, Win32Locator locator) {
+    public ListView(final Window parent, final Win32Locator locator) {
         super(parent, locator);
         // TODO Auto-generated constructor stub
     }

@@ -16,7 +16,7 @@ public class RadioButton extends CheckBox {
      * @param client
      * @param locator
      */
-    public RadioButton(Window parent, Win32Locator locator) {
+    public RadioButton(final Window parent, final Win32Locator locator) {
         super(parent, locator);
         // TODO Auto-generated constructor stub
     }

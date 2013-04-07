@@ -19,7 +19,8 @@ public class MenuItem {
     /**
 	 * 
 	 */
-    public MenuItem(Win32Client client, Window owner, long hmenu, int pos) {
+    public MenuItem(final Win32Client client, final Window owner,
+            final long hmenu, final int pos) {
         this.client = client;
         this.owner = owner;
         this.hmenu = hmenu;

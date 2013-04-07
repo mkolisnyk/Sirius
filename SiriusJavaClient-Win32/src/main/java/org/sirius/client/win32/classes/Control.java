@@ -15,7 +15,7 @@ public class Control extends Window {
      * @param client
      * @param locator
      */
-    public Control(Window parent, Win32Locator locator) {
+    public Control(final Window parent, final Win32Locator locator) {
         super(parent, locator);
         // TODO Auto-generated constructor stub
     }

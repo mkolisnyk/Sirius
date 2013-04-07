@@ -17,7 +17,7 @@ public class OpenSaveDialog extends DialogBox {
      * @param client
      * @param locator
      */
-    public OpenSaveDialog(Win32Client client, Win32Locator locator) {
+    public OpenSaveDialog(final Win32Client client, final Win32Locator locator) {
         super(client, locator);
         // TODO Auto-generated constructor stub
     }

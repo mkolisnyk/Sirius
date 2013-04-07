@@ -16,7 +16,7 @@ public class CheckBox extends Button {
      * @param client
      * @param locator
      */
-    public CheckBox(Window parent, Win32Locator locator) {
+    public CheckBox(final Window parent, final Win32Locator locator) {
         super(parent, locator);
         // TODO Auto-generated constructor stub
     }
@@ -25,19 +25,19 @@ public class CheckBox extends Button {
         ;
     }
 
-    public void uncheck() {
-        ;
-    }
-
     public boolean isChecked() {
         return false;
     }
 
-    public void setState(boolean checked) {
+    public void setState(final boolean checked) {
         if (checked) {
             check();
         } else {
             uncheck();
         }
+    }
+
+    public void uncheck() {
+        ;
     }
 }

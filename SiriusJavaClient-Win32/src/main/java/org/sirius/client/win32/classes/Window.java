@@ -29,30 +29,23 @@ public class Window implements WinUser {
 
     protected Logger       logger;
 
-    protected String getNativeText(UnsignedShort[] text) {
-        char[] convertedText = new char[text.length];
-        for (int i = 0; i < text.length; i++) {
-            convertedText[i] = (char) text[i].intValue();
-        }
-        return null;
-    }
-
     /**
 	 * 
 	 */
-    public Window(Win32Client client, Win32Locator locator) {
+    public Window(final Win32Client client, final Win32Locator locator) {
         this(client, null, locator);
     }
 
     /**
 	 * 
 	 */
-    public Window(Win32Client client, Window parent, Win32Locator locator) {
+    public Window(final Win32Client client, final Window parent,
+            final Win32Locator locator) {
         this.client = client;
         this.locator = locator;
         this.parent = parent;
-        this.logger = Logger.getLogger(this.getClass());
-        this.logger.addAppender(new ConsoleAppender(new SimpleLayout()));
+        logger = Logger.getLogger(this.getClass());
+        logger.addAppender(new ConsoleAppender(new SimpleLayout()));
 
         logger.debug("Initializing instance");
     }
@@ -61,50 +54,41 @@ public class Window implements WinUser {
      * @param parent2
      * @param locator2
      */
-    public Window(Window parent, Win32Locator locator) {
-        this.client = null;
+    public Window(final Window parent, final Win32Locator locator) {
+        client = null;
         this.locator = locator;
         this.parent = parent;
-        this.logger = Logger.getLogger(this.getClass());
-        this.logger.addAppender(new ConsoleAppender(new SimpleLayout()));
+        logger = Logger.getLogger(this.getClass());
+        logger.addAppender(new ConsoleAppender(new SimpleLayout()));
 
         logger.debug("Initializing instance");
         if (parent != null) {
-            this.client = parent.client;
+            client = parent.client;
         }
     }
 
     public void click() throws Exception {
-        if (!exists())
+        if (!exists()) {
             return;
+        }
         client.core().window()
                 .click(locator.getHwnd(), 0, 0, 0, false, false, false);
     }
 
-    public void typeKeys(String text) throws Exception {
-        if (!exists())
-            return;
-        for (char key : text.toCharArray()) {
-            int code = key;
-            // TODO Add specific keys handling
-            client.core().window().keyPress(locator.getHwnd(), code);
-        }
+    public boolean disappears() throws Exception {
+        return !exists();
     }
 
-    public long getHwnd() {
-        return this.locator.getHwnd();
-    }
-
-    public Win32Locator getLocator() {
-        return this.locator;
+    public boolean disappears(final long timeout) throws Exception {
+        return waitFor(timeout, "disappears", true);
     }
 
     public boolean exists() throws RemoteException {
-        logger.debug(String.format("Searching for window: %s", this.locator));
+        logger.debug(String.format("Searching for window: %s", locator));
 
         if (parent != null) {
             logger.debug(String.format("Searching for parent window: %s",
-                    this.parent.getLocator()));
+                    parent.getLocator()));
 
             if (!parent.exists()) {
                 logger.debug(String
@@ -113,18 +97,18 @@ public class Window implements WinUser {
             } else {
                 logger.debug(String
                         .format("The parent window was found: %s. Looking for current window: %s",
-                                this.parent.getLocator(), this.getLocator()));
-                this.locator.setParent(parent.getHwnd());
+                                parent.getLocator(), this.getLocator()));
+                locator.setParent(parent.getHwnd());
             }
         }
 
-        this.locator.setHwnd(0);
+        locator.setHwnd(0);
         if (parent != null) {
-            this.client = parent.client;
+            client = parent.client;
         }
 
         long hwnd = 0;
-        logger.debug(String.format("Searching for window: %s", this.locator));
+        logger.debug(String.format("Searching for window: %s", locator));
         try {
             hwnd = client.utils().searchWindow(locator);
         } catch (Throwable e) {
@@ -134,13 +118,13 @@ public class Window implements WinUser {
         }
         logger.debug(String.format("HWND returned: %d", hwnd));
         if (hwnd != 0) {
-            this.locator.setHwnd(hwnd);
+            locator.setHwnd(hwnd);
 
-            logger.debug(String.format("Window found: %s", this.locator));
+            logger.debug(String.format("Window found: %s", locator));
 
             return true;
         } else {
-            this.locator.setHwnd(0);
+            locator.setHwnd(0);
         }
 
         logger.debug(String.format("Window wasn't found"));
@@ -148,7 +132,11 @@ public class Window implements WinUser {
         return false;
     }
 
-    private Class<?>[] getArrayTypes(Object... params) {
+    public boolean exists(final long timeout) throws Exception {
+        return waitFor(timeout, "exists", true);
+    }
+
+    private Class<?>[] getArrayTypes(final Object... params) {
         Class<?>[] types = new Class[params.length];
         for (int i = 0; i < params.length; i++) {
             types[i] = params[i].getClass();
@@ -156,40 +144,33 @@ public class Window implements WinUser {
         return types;
     }
 
-    public boolean waitFor(long timeout, String methodName,
-            Object expectedValue, Object... params) throws Exception {
-        long end = (new Date()).getTime() + timeout;
-        Class<?>[] parameterTypes = getArrayTypes(params);
-        while ((new Date()).getTime() < end) {
-            Method waitMethod = this.getClass().getMethod(methodName,
-                    parameterTypes);
-            Object result = waitMethod.invoke(this, params);
-            if (result.equals(expectedValue)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean exists(long timeout) throws Exception {
-        return waitFor(timeout, "exists", true);
-    }
-
-    public boolean disappears() throws Exception {
-        return !exists();
-    }
-
-    public boolean disappears(long timeout) throws Exception {
-        return waitFor(timeout, "disappears", true);
-    }
-
     public Rect getClientRect() throws Exception {
-        Rect rc = client.core().window().getClientRect(this.locator.getHwnd());
+        Rect rc = client.core().window().getClientRect(locator.getHwnd());
         return rc;
     }
 
+    public long getHwnd() {
+        return locator.getHwnd();
+    }
+
+    public Win32Locator getLocator() {
+        return locator;
+    }
+
+    protected String getNativeText(final UnsignedShort[] text) {
+        char[] convertedText = new char[text.length];
+        for (int i = 0; i < text.length; i++) {
+            convertedText[i] = (char) text[i].intValue();
+        }
+        return null;
+    }
+
+    public Window getParent() {
+        return parent;
+    }
+
     public Rect getRect() throws Exception {
-        Rect rc = client.core().window().getRect(this.locator.getHwnd());
+        Rect rc = client.core().window().getRect(locator.getHwnd());
         return rc;
     }
 
@@ -201,7 +182,7 @@ public class Window implements WinUser {
         return client.core().window().isEnabled(locator.getHwnd());
     }
 
-    public boolean isEnabled(long timeout) throws Exception {
+    public boolean isEnabled(final long timeout) throws Exception {
         return waitFor(timeout, "isEnabled", true);
     }
 
@@ -209,7 +190,7 @@ public class Window implements WinUser {
         return client.core().window().isVisible(locator.getHwnd());
     }
 
-    public boolean isVisible(long timeout) throws Exception {
+    public boolean isVisible(final long timeout) throws Exception {
         return waitFor(timeout, "isVisible", true);
     }
 
@@ -217,7 +198,30 @@ public class Window implements WinUser {
         ;
     }
 
-    public Window getParent() {
-        return parent;
+    public void typeKeys(final String text) throws Exception {
+        if (!exists()) {
+            return;
+        }
+        for (char key : text.toCharArray()) {
+            int code = key;
+            // TODO Add specific keys handling
+            client.core().window().keyPress(locator.getHwnd(), code);
+        }
+    }
+
+    public boolean waitFor(final long timeout, final String methodName,
+            final Object expectedValue, final Object... params)
+            throws Exception {
+        long end = new Date().getTime() + timeout;
+        Class<?>[] parameterTypes = getArrayTypes(params);
+        while (new Date().getTime() < end) {
+            Method waitMethod = this.getClass().getMethod(methodName,
+                    parameterTypes);
+            Object result = waitMethod.invoke(this, params);
+            if (result.equals(expectedValue)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

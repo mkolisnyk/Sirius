@@ -13,19 +13,15 @@ import org.sirius.client.web.WebClient;
  */
 public class Page extends Frame {
 
-    /**
-	 * 
-	 */
-    public Page(WebClient client, String locator) {
-        super(client, locator);
-    }
-
-    public Page(WebClient client) {
+    public Page(final WebClient client) {
         super(client, null);
     }
 
-    public String title() throws RemoteException {
-        return client.core().getTitle();
+    /**
+	 * 
+	 */
+    public Page(final WebClient client, final String locator) {
+        super(client, locator);
     }
 
     public void back() throws RemoteException {
@@ -36,19 +32,23 @@ public class Page extends Frame {
         client.core().forward();
     }
 
-    public void refresh() throws RemoteException {
-        client.core().refresh();
-    }
-
-    public void open(String URL) throws RemoteException {
-        client.core().open(URL);
-    }
-
     public void home() {
         ;
     }
 
-    public void switchTo(Page page) throws RemoteException {
+    public void open(final String URL) throws RemoteException {
+        client.core().open(URL);
+    }
+
+    public void refresh() throws RemoteException {
+        client.core().refresh();
+    }
+
+    public void switchTo(final Page page) throws RemoteException {
         client.core().selectWindow(page.getLocator());
+    }
+
+    public String title() throws RemoteException {
+        return client.core().getTitle();
     }
 }

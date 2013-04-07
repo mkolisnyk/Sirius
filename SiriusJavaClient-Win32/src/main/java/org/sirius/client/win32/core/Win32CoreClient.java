@@ -18,28 +18,28 @@ import org.sirius.client.win32.core.controls.tabcontrol.TabControlProxy;
  */
 public class Win32CoreClient {
 
-    private MenuProxy       menu;
-    private WindowProxy     window;
-    private DialogProxy     dialog;
-    private ButtonProxy     button;
-    private ComboBoxProxy   combo;
-    private EditProxy       edit;
-    private ListBoxProxy    listbox;
-    private TabControlProxy tabcontrol;
-
-    public final MenuProxy menu() {
-        return menu;
-    }
-
-    public final WindowProxy window() {
-        return window;
-    }
+    private final MenuProxy       menu;
+    private final WindowProxy     window;
+    private final DialogProxy     dialog;
+    private final ButtonProxy     button;
+    private final ComboBoxProxy   combo;
+    private final EditProxy       edit;
+    private final ListBoxProxy    listbox;
+    private final TabControlProxy tabcontrol;
 
     /**
-     * @return the dialog
-     */
-    public final DialogProxy dialog() {
-        return dialog;
+	 * 
+	 */
+    public Win32CoreClient() {
+        menu = new MenuProxy();
+        window = new WindowProxy();
+
+        dialog = new DialogProxy();
+        button = new ButtonProxy();
+        combo = new ComboBoxProxy();
+        edit = new EditProxy();
+        listbox = new ListBoxProxy();
+        tabcontrol = new TabControlProxy();
     }
 
     /**
@@ -57,6 +57,13 @@ public class Win32CoreClient {
     }
 
     /**
+     * @return the dialog
+     */
+    public final DialogProxy dialog() {
+        return dialog;
+    }
+
+    /**
      * @return the edit
      */
     public final EditProxy edit() {
@@ -70,6 +77,10 @@ public class Win32CoreClient {
         return listbox;
     }
 
+    public final MenuProxy menu() {
+        return menu;
+    }
+
     /**
      * @return the tabcontrol
      */
@@ -77,19 +88,8 @@ public class Win32CoreClient {
         return tabcontrol;
     }
 
-    /**
-	 * 
-	 */
-    public Win32CoreClient() {
-        menu = new MenuProxy();
-        window = new WindowProxy();
-
-        dialog = new DialogProxy();
-        button = new ButtonProxy();
-        combo = new ComboBoxProxy();
-        edit = new EditProxy();
-        listbox = new ListBoxProxy();
-        tabcontrol = new TabControlProxy();
+    public final WindowProxy window() {
+        return window;
     }
 
 }

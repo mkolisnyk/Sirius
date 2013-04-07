@@ -20,6 +20,24 @@ public class WebControl {
     protected String    parentElement = null;
     protected String    locator       = null;
 
+    public WebControl(final Frame parent, final String locator) {
+        this(parent, null, locator);
+    }
+
+    /**
+	 * 
+	 */
+    public WebControl(final Frame parent, final String parentElement,
+            final String locator) {
+        this.parent = parent;
+        this.parentElement = parentElement;
+        this.locator = locator;
+    }
+
+    public void click() throws Exception {
+        client().core().click(parentElement, locator);
+    }
+
     protected WebClient client() {
         if (client == null) {
             client = parent.client;
@@ -27,27 +45,8 @@ public class WebControl {
         return client;
     }
 
-    /**
-	 * 
-	 */
-    public WebControl(Frame parent, String parentElement, String locator) {
-        this.parent = parent;
-        this.parentElement = parentElement;
-        this.locator = locator;
-    }
-
-    public WebControl(Frame parent, String locator) {
-        this(parent, null, locator);
-    }
-
-    public String innerText() throws RemoteException {
-        return client().core()
-                .getAttribute(parentElement, locator, "innerText");
-    }
-
-    public String innerHtml() throws RemoteException {
-        return client().core()
-                .getAttribute(parentElement, locator, "innerHTML");
+    public String getAttribute(final String attribute) throws RemoteException {
+        return client().core().getAttribute(parentElement, locator, attribute);
     }
 
     public Point getLocation() throws RemoteException {
@@ -58,19 +57,21 @@ public class WebControl {
         return client().core().getSize(parentElement, locator);
     }
 
-    public boolean isFocused() throws RemoteException {
-        return false;
-    }
-
-    public void click() throws Exception {
-        client().core().click(parentElement, locator);
-    }
-
-    public String getAttribute(String attribute) throws RemoteException {
-        return client().core().getAttribute(parentElement, locator, attribute);
-    }
-
     public String getValue() throws RemoteException {
         return getAttribute("value");
+    }
+
+    public String innerHtml() throws RemoteException {
+        return client().core()
+                .getAttribute(parentElement, locator, "innerHTML");
+    }
+
+    public String innerText() throws RemoteException {
+        return client().core()
+                .getAttribute(parentElement, locator, "innerText");
+    }
+
+    public boolean isFocused() throws RemoteException {
+        return false;
     }
 }

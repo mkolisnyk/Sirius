@@ -5,8 +5,6 @@ package org.sirius.client.web;
 
 import java.rmi.RemoteException;
 
-import org.sirius.client.web.core.WebCoreProxy;
-
 /**
  * @author Myk Kolisnyk
  * 
@@ -33,7 +31,7 @@ public class WebClient {
         return core;
     }
 
-    public void start(String browser) throws RemoteException {
+    public void start(final String browser) throws RemoteException {
         core.start(browser);
     }
 

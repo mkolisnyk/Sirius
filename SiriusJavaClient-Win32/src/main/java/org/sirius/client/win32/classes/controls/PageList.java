@@ -17,9 +17,18 @@ public class PageList extends List {
      * @param client
      * @param locator
      */
-    public PageList(Window parent, Win32Locator locator) {
+    public PageList(final Window parent, final Win32Locator locator) {
         super(parent, locator);
         // TODO Auto-generated constructor stub
+    }
+
+    public int getSelectedTab() throws Exception {
+        return client.core().tabcontrol().getCurSel(this.getHwnd());
+    }
+
+    public String getSelectedTabName() throws Exception {
+        int current = getSelectedTab();
+        return getTabNames()[current];
     }
 
     public String[] getTabNames() throws Exception {
@@ -36,25 +45,16 @@ public class PageList extends List {
         return client.core().tabcontrol().getItemCount(this.getHwnd());
     }
 
-    public void select(String tabName) throws Exception {
+    public void select(final int index) throws Exception {
+        client.core().tabcontrol().setCurSel(this.getHwnd(), index);
+    }
+
+    public void select(final String tabName) throws Exception {
         String tabs[] = getTabNames();
         for (int i = 0; i < tabs.length; i++) {
             if (tabs[i].matches(tabName)) {
                 select(i);
             }
         }
-    }
-
-    public void select(int index) throws Exception {
-        client.core().tabcontrol().setCurSel(this.getHwnd(), index);
-    }
-
-    public int getSelectedTab() throws Exception {
-        return client.core().tabcontrol().getCurSel(this.getHwnd());
-    }
-
-    public String getSelectedTabName() throws Exception {
-        int current = getSelectedTab();
-        return getTabNames()[current];
     }
 }
