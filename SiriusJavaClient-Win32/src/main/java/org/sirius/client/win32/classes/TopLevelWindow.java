@@ -1,5 +1,5 @@
 /**
- * 
+ * .
  */
 package org.sirius.client.win32.classes;
 
@@ -8,24 +8,39 @@ import org.sirius.client.win32.types.Win32Locator;
 
 /**
  * @author Myk Kolisnyk
- * 
+ * .
  */
 public class TopLevelWindow extends MovableWindow {
 
     /**
-     * @param client
-     * @param locator
+     * @param clientValue .
+     * @param locatorValue .
      */
-    public TopLevelWindow(final Win32Client client, final Win32Locator locator) {
-        super(client, locator);
+    public TopLevelWindow(
+            final Win32Client clientValue,
+            final Win32Locator locatorValue) {
+        super(clientValue, locatorValue);
     }
 
-    public TopLevelWindow(final Win32Client client, final Window parent,
-            final Win32Locator locator) {
-        super(client, parent, locator);
+    /**
+     * .
+     * @param clientValue .
+     * @param parentValue .
+     * @param locatorValue .
+     */
+    public TopLevelWindow(
+            final Win32Client clientValue,
+            final Window parentValue,
+            final Win32Locator locatorValue) {
+        super(clientValue, parentValue, locatorValue);
     }
 
-    public Menu menu() throws Exception {
+    /**
+     * .
+     * @return .
+     * @throws Exception .
+     */
+    public final Menu menu() throws Exception {
         if (this.exists()) {
             Menu menu = new Menu(client, this);
             return menu;
@@ -33,11 +48,20 @@ public class TopLevelWindow extends MovableWindow {
         return null;
     }
 
-    public void setActive() throws Exception {
+    /**
+     * .
+     * @throws Exception .
+     */
+    public final void setActive() throws Exception {
         client.core().window().activate(locator.getHwnd());
     }
 
-    public Menu systemMenu() throws Exception {
+    /**
+     * .
+     * @return .
+     * @throws Exception .
+     */
+    public final Menu systemMenu() throws Exception {
         if (this.exists()) {
             long hmenu = client.core().window()
                     .getSystemMenu(this.getHwnd(), true);

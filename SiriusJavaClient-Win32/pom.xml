@@ -196,7 +196,7 @@
 				<artifactId>maven-checkstyle-plugin</artifactId>
 				<version>2.9.1</version>
 				<configuration>
-					<excludes>**/test/java/**/*.java,**/win32/core/**/*.java</excludes>
+					<excludes>**/test/java/**/*.java,**/win32/core/**/*.java,**/win32/utils/**/*.java,**/win32/types/**/*.java</excludes>
 				</configuration>
 				<executions>
 					<execution>

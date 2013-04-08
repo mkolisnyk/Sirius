@@ -1,5 +1,5 @@
 /**
- * 
+ * .
  */
 package org.sirius.client.win32.core;
 
@@ -14,22 +14,46 @@ import org.sirius.client.win32.core.controls.tabcontrol.TabControlProxy;
 
 /**
  * @author Myk Kolisnyk
- * 
+ * .
  */
 public class Win32CoreClient {
 
+    /**
+     * .
+     */
     private final MenuProxy       menu;
+    /**
+     * .
+     */
     private final WindowProxy     window;
+    /**
+     * .
+     */
     private final DialogProxy     dialog;
+    /**
+     * .
+     */
     private final ButtonProxy     button;
+    /**
+     * .
+     */
     private final ComboBoxProxy   combo;
+    /**
+     * .
+     */
     private final EditProxy       edit;
+    /**
+     * .
+     */
     private final ListBoxProxy    listbox;
+    /**
+     * .
+     */
     private final TabControlProxy tabcontrol;
 
     /**
-	 * 
-	 */
+     * .
+     */
     public Win32CoreClient() {
         menu = new MenuProxy();
         window = new WindowProxy();
@@ -77,6 +101,10 @@ public class Win32CoreClient {
         return listbox;
     }
 
+    /**
+     * .
+     * @return .
+     */
     public final MenuProxy menu() {
         return menu;
     }
@@ -88,6 +116,10 @@ public class Win32CoreClient {
         return tabcontrol;
     }
 
+    /**
+     * .
+     * @return .
+     */
     public final WindowProxy window() {
         return window;
     }

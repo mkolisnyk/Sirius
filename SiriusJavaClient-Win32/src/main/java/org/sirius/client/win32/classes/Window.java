@@ -1,5 +1,5 @@
 /**
- * 
+ * .
  */
 package org.sirius.client.win32.classes;
 
@@ -19,31 +19,87 @@ import com.sun.jna.platform.win32.WinUser;
 
 /**
  * @author Myk Kolisnyk
- * 
+ * .
  */
 public class Window implements WinUser {
 
-    protected Win32Client  client;
-    protected Win32Locator locator;
-    protected Window       parent;
-
-    protected Logger       logger;
+    /**
+     * .
+     */
+    private Win32Client  client;
+    /**
+     * .
+     */
+    private Win32Locator locator;
+    /**
+     * .
+     */
+    private Window       parent;
 
     /**
-	 * 
-	 */
-    public Window(final Win32Client client, final Win32Locator locator) {
-        this(client, null, locator);
+     * .
+     */
+    private Logger       logger;
+
+    /**
+     * @return the client
+     */
+    public final Win32Client getClient() {
+        return client;
     }
 
     /**
-	 * 
-	 */
-    public Window(final Win32Client client, final Window parent,
-            final Win32Locator locator) {
-        this.client = client;
-        this.locator = locator;
-        this.parent = parent;
+     * @param clientValue the client to set
+     */
+    public final void setClient(final Win32Client clientValue) {
+        this.client = clientValue;
+    }
+
+    /**
+     * @return the logger
+     */
+    public final Logger getLogger() {
+        return logger;
+    }
+
+    /**
+     * @param locatorValue the locator to set
+     */
+    public final void setLocator(final Win32Locator locatorValue) {
+        this.locator = locatorValue;
+    }
+
+    /**
+     * @param parentValue the parent to set
+     */
+    public final void setParent(final Window parentValue) {
+        this.parent = parentValue;
+    }
+
+    /**
+     * .
+     * @param clientValue .
+     * @param locatorValue .
+     */
+    public Window(
+            final Win32Client clientValue,
+            final Win32Locator locatorValue) {
+        this(clientValue, null, locatorValue);
+    }
+
+    /**
+     * .
+     * @param clientValue .
+     * @param parentValue .
+     * @param locatorValue .
+     */
+    public Window(
+            final Win32Client clientValue,
+            final Window parentValue,
+            final Win32Locator locatorValue) {
+        this.client = clientValue;
+        this.locator = locatorValue;
+        this.parent = parentValue;
         logger = Logger.getLogger(this.getClass());
         logger.addAppender(new ConsoleAppender(new SimpleLayout()));
 
@@ -51,13 +107,14 @@ public class Window implements WinUser {
     }
 
     /**
-     * @param parent2
-     * @param locator2
+     * .
+     * @param parentValue .
+     * @param locatorValue .
      */
-    public Window(final Window parent, final Win32Locator locator) {
+    public Window(final Window parentValue, final Win32Locator locatorValue) {
         client = null;
-        this.locator = locator;
-        this.parent = parent;
+        this.locator = locatorValue;
+        this.parent = parentValue;
         logger = Logger.getLogger(this.getClass());
         logger.addAppender(new ConsoleAppender(new SimpleLayout()));
 
@@ -67,7 +124,11 @@ public class Window implements WinUser {
         }
     }
 
-    public void click() throws Exception {
+    /**
+     * .
+     * @throws Exception .
+     */
+    public final void click() throws Exception {
         if (!exists()) {
             return;
         }
@@ -75,29 +136,54 @@ public class Window implements WinUser {
                 .click(locator.getHwnd(), 0, 0, 0, false, false, false);
     }
 
-    public boolean disappears() throws Exception {
+    /**
+     * .
+     * @return .
+     * @throws Exception .
+     */
+    public final boolean disappears() throws Exception {
         return !exists();
     }
 
-    public boolean disappears(final long timeout) throws Exception {
+    /**
+     * .
+     * @param timeout .
+     * @return .
+     * @throws Exception .
+     */
+    public final boolean disappears(final long timeout) throws Exception {
         return waitFor(timeout, "disappears", true);
     }
 
-    public boolean exists() throws RemoteException {
+    /**
+     * .
+     * @return .
+     * @throws RemoteException .
+     */
+    public final boolean exists() throws RemoteException {
         logger.debug(String.format("Searching for window: %s", locator));
 
         if (parent != null) {
-            logger.debug(String.format("Searching for parent window: %s",
+            logger.debug(
+                String.format("Searching for parent window: %s",
                     parent.getLocator()));
 
             if (!parent.exists()) {
-                logger.debug(String
-                        .format("Parent window doesn't exist. Returning false"));
+                logger.debug(
+                    String.format(
+                        "Parent window doesn't exist. Returning false"
+                    )
+                );
                 return false;
             } else {
-                logger.debug(String
-                        .format("The parent window was found: %s. Looking for current window: %s",
-                                parent.getLocator(), this.getLocator()));
+                logger.debug(
+                    String.format(
+                        "The parent window was found: %s. "
+                        + "Looking for current window: %s",
+                        parent.getLocator(),
+                        this.getLocator()
+                    )
+                );
                 locator.setParent(parent.getHwnd());
             }
         }
@@ -132,10 +218,21 @@ public class Window implements WinUser {
         return false;
     }
 
-    public boolean exists(final long timeout) throws Exception {
+    /**
+     * .
+     * @param timeout .
+     * @return .
+     * @throws Exception .
+     */
+    public final boolean exists(final long timeout) throws Exception {
         return waitFor(timeout, "exists", true);
     }
 
+    /**
+     * .
+     * @param params .
+     * @return .
+     */
     private Class<?>[] getArrayTypes(final Object... params) {
         Class<?>[] types = new Class[params.length];
         for (int i = 0; i < params.length; i++) {
@@ -144,20 +241,38 @@ public class Window implements WinUser {
         return types;
     }
 
-    public Rect getClientRect() throws Exception {
+    /**
+     * .
+     * @return .
+     * @throws Exception .
+     */
+    public final Rect getClientRect() throws Exception {
         Rect rc = client.core().window().getClientRect(locator.getHwnd());
         return rc;
     }
 
-    public long getHwnd() {
+    /**
+     * .
+     * @return .
+     */
+    public final long getHwnd() {
         return locator.getHwnd();
     }
 
-    public Win32Locator getLocator() {
+    /**
+     * .
+     * @return .
+     */
+    public final Win32Locator getLocator() {
         return locator;
     }
 
-    protected String getNativeText(final UnsignedShort[] text) {
+    /**
+     * .
+     * @param text .
+     * @return .
+     */
+    protected final String getNativeText(final UnsignedShort[] text) {
         char[] convertedText = new char[text.length];
         for (int i = 0; i < text.length; i++) {
             convertedText[i] = (char) text[i].intValue();
@@ -165,40 +280,82 @@ public class Window implements WinUser {
         return null;
     }
 
-    public Window getParent() {
+    /**
+     * .
+     * @return .
+     */
+    public final Window getParent() {
         return parent;
     }
 
-    public Rect getRect() throws Exception {
+    /**
+     * .
+     * @return .
+     * @throws Exception .
+     */
+    public final Rect getRect() throws Exception {
         Rect rc = client.core().window().getRect(locator.getHwnd());
         return rc;
     }
 
-    public boolean isActive() {
+    /**
+     * .
+     * @return .
+     */
+    public final boolean isActive() {
         return false;
     }
 
-    public boolean isEnabled() throws Exception {
+    /**
+     * .
+     * @return .
+     * @throws Exception .
+     */
+    public final boolean isEnabled() throws Exception {
         return client.core().window().isEnabled(locator.getHwnd());
     }
 
-    public boolean isEnabled(final long timeout) throws Exception {
+    /**
+     * .
+     * @param timeout .
+     * @return .
+     * @throws Exception .
+     */
+    public final boolean isEnabled(final long timeout) throws Exception {
         return waitFor(timeout, "isEnabled", true);
     }
 
-    public boolean isVisible() throws Exception {
+    /**
+     * .
+     * @return .
+     * @throws Exception .
+     */
+    public final boolean isVisible() throws Exception {
         return client.core().window().isVisible(locator.getHwnd());
     }
 
-    public boolean isVisible(final long timeout) throws Exception {
+    /**
+     * .
+     * @param timeout .
+     * @return .
+     * @throws Exception .
+     */
+    public final boolean isVisible(final long timeout) throws Exception {
         return waitFor(timeout, "isVisible", true);
     }
 
-    public void sendKeys() {
-        ;
+    /**
+     * .
+     */
+    public final void sendKeys() {
     }
 
-    public void typeKeys(final String text) throws Exception {
+    /**
+     * .
+     * @param text .
+     * @throws Exception .
+     */
+    public final void typeKeys(final String text) throws Exception {
         if (!exists()) {
             return;
         }
@@ -209,7 +366,16 @@ public class Window implements WinUser {
         }
     }
 
-    public boolean waitFor(final long timeout, final String methodName,
+    /**
+     * .
+     * @param timeout .
+     * @param methodName .
+     * @param expectedValue .
+     * @param params .
+     * @return .
+     * @throws Exception .
+     */
+    public final boolean waitFor(final long timeout, final String methodName,
             final Object expectedValue, final Object... params)
             throws Exception {
         long end = new Date().getTime() + timeout;

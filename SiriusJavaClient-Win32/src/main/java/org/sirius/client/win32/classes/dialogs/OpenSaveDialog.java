@@ -1,5 +1,5 @@
 /**
- * 
+ * .
  */
 package org.sirius.client.win32.classes.dialogs;
 
@@ -9,16 +9,19 @@ import org.sirius.client.win32.types.Win32Locator;
 
 /**
  * @author Myk Kolisnyk
- * 
+ * .
  */
 public class OpenSaveDialog extends DialogBox {
 
     /**
-     * @param client
-     * @param locator
+     * .
+     * @param clientValue .
+     * @param locatorValue .
      */
-    public OpenSaveDialog(final Win32Client client, final Win32Locator locator) {
-        super(client, locator);
+    public OpenSaveDialog(
+            final Win32Client clientValue,
+            final Win32Locator locatorValue) {
+        super(clientValue, locatorValue);
         // TODO Auto-generated constructor stub
     }
 

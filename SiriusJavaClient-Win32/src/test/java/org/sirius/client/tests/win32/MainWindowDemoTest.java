@@ -14,7 +14,7 @@ import org.sirius.client.win32.classes.MainWindow;
 import org.sirius.client.win32.classes.Window;
 import org.sirius.client.win32.classes.controls.Button;
 import org.sirius.client.win32.classes.controls.Edit;
-import org.sirius.client.win32.constants.IWin32Options;
+import org.sirius.client.win32.core.constants.IWin32Options;
 import org.sirius.client.win32.types.Win32Locator;
 
 /**

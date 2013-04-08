@@ -13,11 +13,14 @@ import org.sirius.client.win32.types.Win32Locator;
 public class MessageBox extends DialogBox {
 
     /**
-     * @param client
-     * @param locator
+     * .
+     * @param clientValue .
+     * @param locatorValue .
      */
-    public MessageBox(final Win32Client client, final Win32Locator locator) {
-        super(client, locator);
+    public MessageBox(
+            final Win32Client clientValue,
+            final Win32Locator locatorValue) {
+        super(clientValue, locatorValue);
         // TODO Auto-generated constructor stub
     }
 }

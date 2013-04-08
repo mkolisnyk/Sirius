@@ -7,17 +7,45 @@
 
 package org.sirius.client.win32.types;
 
+/**
+ * .
+ * @author Myk Kolisnyk
+ *
+ */
 public class Win32Locator implements java.io.Serializable {
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * .
+     */
     private java.lang.String caption;
 
+    /**
+     * .
+     */
     private long             hwnd;
 
+    /**
+     * .
+     */
     private int              index;
 
+    /**
+     * .
+     */
     private long             parent;
 
+    /**
+     * .
+     */
     private java.lang.String winClass;
 
+    /**
+     * .
+     */
     public Win32Locator() {
         this.hwnd = 0;
         this.parent = 0;
