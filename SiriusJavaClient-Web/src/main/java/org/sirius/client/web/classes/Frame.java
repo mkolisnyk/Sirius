@@ -1,5 +1,5 @@
 /**
- * 
+ * .
  */
 package org.sirius.client.web.classes;
 
@@ -11,46 +11,109 @@ import org.sirius.client.web.core.Point;
 
 /**
  * @author Myk Kolisnyk
- * 
+ * .
  */
 public class Frame {
 
-    protected WebClient client  = null;
-    protected String    locator = "";
+    /**
+     * .
+     */
+    private WebClient client  = null;
 
     /**
-	 * 
-	 */
-    public Frame(final WebClient client, final String locator) {
-        this.client = client;
-        this.locator = locator;
+     * .
+     */
+    private String    locator = "";
+
+    /**
+     * @return the client
+     */
+    public final WebClient getClient() {
+        return client;
     }
 
-    public boolean exists() {
+    /**
+     * @param clientValue the client to set
+     */
+    public final void setClient(final WebClient clientValue) {
+        this.client = clientValue;
+    }
+
+    /**
+     * @param locatorValue the locator to set
+     */
+    public final void setLocator(final String locatorValue) {
+        this.locator = locatorValue;
+    }
+
+    /**
+     * .
+     * @param clientValue .
+     * @param locatorValue .
+     */
+    public Frame(final WebClient clientValue, final String locatorValue) {
+        this.client = clientValue;
+        this.locator = locatorValue;
+    }
+
+    /**
+     * .
+     * @return .
+     */
+    public final boolean exists() {
         return false;
     }
 
-    public Point getLocation() throws RemoteException {
+    /**
+     * .
+     * @return .
+     * @throws RemoteException .
+     */
+    public final Point getLocation() throws RemoteException {
         return this.client.core().getLocation(null, locator);
     }
 
-    public String getLocator() {
+    /**
+     * .
+     * @return .
+     */
+    public final String getLocator() {
         return this.locator;
     }
 
-    public Dimension getSize() throws RemoteException {
+    /**
+     * .
+     * @return .
+     * @throws RemoteException .
+     */
+    public final Dimension getSize() throws RemoteException {
         return this.client.core().getSize(null, locator);
     }
 
-    public String getURL() throws RemoteException {
+    /**
+     * .
+     * @return .
+     * @throws RemoteException .
+     */
+    public final String getURL() throws RemoteException {
         return this.client.core().getURL();
     }
 
-    public String innerHtml() throws RemoteException {
+    /**
+     * .
+     * @return .
+     * @throws RemoteException .
+     */
+    public final String innerHtml() throws RemoteException {
         return this.client.core().getAttribute(null, locator, "innerHTML");
     }
 
-    public void switchTo(final Frame frame) throws RemoteException {
+    /**
+     * .
+     * @param frame .
+     * @throws RemoteException .
+     */
+    public final void switchTo(final Frame frame) throws RemoteException {
         this.client.core().selectFrameByName(frame.getLocator());
     }
 }

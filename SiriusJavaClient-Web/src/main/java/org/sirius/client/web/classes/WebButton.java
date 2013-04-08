@@ -1,17 +1,17 @@
 /**
- * 
+ * .
  */
 package org.sirius.client.web.classes;
 
 /**
  * @author Myk Kolisnyk
- * 
+ * .
  */
 public class WebButton extends WebControl {
 
     /**
-     * @param parent
-     * @param locator
+     * @param parent .
+     * @param locator .
      */
     public WebButton(final Frame parent, final String locator) {
         super(parent, locator);
@@ -19,9 +19,9 @@ public class WebButton extends WebControl {
     }
 
     /**
-     * @param parent
-     * @param parentElement
-     * @param locator
+     * @param parent .
+     * @param parentElement .
+     * @param locator .
      */
     public WebButton(final Frame parent, final String parentElement,
             final String locator) {
@@ -29,7 +29,12 @@ public class WebButton extends WebControl {
         // TODO Auto-generated constructor stub
     }
 
-    public String text() throws Exception {
+    /**
+     * .
+     * @return .
+     * @throws Exception .
+     */
+    public final String text() throws Exception {
         String text = client().core().getAttribute(parentElement, locator,
                 "value");
         if (text.equals("")) {

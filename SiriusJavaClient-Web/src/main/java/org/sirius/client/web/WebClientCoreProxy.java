@@ -1,5 +1,5 @@
 /**
- * 
+ * .
  */
 package org.sirius.client.web;
 
@@ -12,558 +12,542 @@ import org.sirius.client.web.core.WebCoreProxy;
 import org.sirius.client.web.select.WebSelectProxy;
 
 /**
- * @author Myk Kolisnyk
- * 
+ * @author Myk Kolisnyk .
  */
 public class WebClientCoreProxy extends WebCoreProxy {
 
-    protected String         token = "";
-    protected WebSelectProxy select;
+    /**
+     * .
+     */
+    private String         token = "";
 
     /**
-	 * 
-	 */
+     * .
+     */
+    private WebSelectProxy select;
+
+    /**
+     * .
+     */
     public WebClientCoreProxy() {
         select = new WebSelectProxy();
     }
 
     /**
      * @param endpoint
+     *            .
      */
     public WebClientCoreProxy(final String endpoint) {
         super(endpoint);
     }
 
-    public void back() throws RemoteException {
+    /**
+     * .
+     * @throws RemoteException .
+     */
+    public final void back() throws RemoteException {
 
         super.back(this.token);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.sirius.client.web.core.WebCoreProxy#getEndpoint()
+    /**
+     * .
+     * @param arg1 .
+     * @param arg2 .
+     * @throws RemoteException .
      */
-
-    public void clear(final String arg1, final String arg2)
+    public final void clear(final String arg1, final String arg2)
             throws RemoteException {
 
         super.clear(this.token, arg1, arg2);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.sirius.client.web.core.WebCoreProxy#getWebCore()
+    /**
+     * .
+     * @param arg1 .
+     * @param arg2 .
+     * @throws RemoteException .
      */
-
-    public void click(final String arg1, final String arg2)
+    public final void click(final String arg1, final String arg2)
             throws RemoteException {
 
         super.click(this.token, arg1, arg2);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.sirius.client.web.core.WebCoreProxy#forward(java.lang.String)
-     */
-
     /**
-     * @param arg0
-     * @param arg1
-     * @param arg2
-     * @throws RemoteException
-     * @see org.sirius.client.web.select.WebSelectProxy#deselectAll(java.lang.String,
-     *      java.lang.String, java.lang.String)
+     * @param arg1 .
+     * @param arg2 .
+     * @throws RemoteException .
+     * @see org.sirius.client.web.select.WebSelectProxy#deselectAll
+     *      (java.lang.String, java.lang.String, java.lang.String)
      */
-    public void deselectAll(final String arg1, final String arg2)
+    public final void deselectAll(final String arg1, final String arg2)
             throws RemoteException {
         select.deselectAll(this.token, arg1, arg2);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.sirius.client.web.core.WebCoreProxy#sendKeys(java.lang.String,
-     * java.lang.String, java.lang.String, java.lang.String)
-     */
-
     /**
-     * @param arg0
      * @param arg1
+     *            .
      * @param arg2
+     *            .
      * @param arg3
-     * @throws RemoteException
-     * @see org.sirius.client.web.select.WebSelectProxy#deselectByIndex(java.lang.String,
-     *      java.lang.String, java.lang.String, int)
+     *            .
+     * @throws RemoteException .
+     * @see org.sirius.client.web.select.WebSelectProxy#deselectByIndex
+     *      (java.lang.String, java.lang.String, java.lang.String, int)
      */
-    public void deselectByIndex(final String arg1, final String arg2,
+    public final void deselectByIndex(final String arg1, final String arg2,
             final int arg3) throws RemoteException {
         select.deselectByIndex(this.token, arg1, arg2, arg3);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * org.sirius.client.web.core.WebCoreProxy#selectWindow(java.lang.String,
-     * java.lang.String)
-     */
-
     /**
-     * @param arg0
      * @param arg1
+     *            .
      * @param arg2
+     *            .
      * @param arg3
-     * @throws RemoteException
-     * @see org.sirius.client.web.select.WebSelectProxy#deselectByValue(java.lang.String,
-     *      java.lang.String, java.lang.String, java.lang.String)
+     *            .
+     * @throws RemoteException .
+     * @see org.sirius.client.web.select.WebSelectProxy
+     *      #deselectByValue(java.lang.String,java.lang.String,
+     *      java.lang.String, java.lang.String)
      */
-    public void deselectByValue(final String arg1, final String arg2,
+    public final void deselectByValue(final String arg1, final String arg2,
             final String arg3) throws RemoteException {
         select.deselectByValue(this.token, arg1, arg2, arg3);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * org.sirius.client.web.core.WebCoreProxy#selectAlert(java.lang.String)
-     */
-
     /**
-     * @param arg0
      * @param arg1
+     *            .
      * @param arg2
+     *            .
      * @param arg3
-     * @throws RemoteException
-     * @see org.sirius.client.web.select.WebSelectProxy#deselectByVisibleText(java.lang.String,
-     *      java.lang.String, java.lang.String, java.lang.String)
+     *            .
+     * @throws RemoteException .
+     * @see org.sirius.client.web.select.WebSelectProxy
+     *      #deselectByVisibleText(java.lang.String, java.lang.String,
+     *      java.lang.String, java.lang.String)
      */
-    public void deselectByVisibleText(final String arg1, final String arg2,
-            final String arg3) throws RemoteException {
+    public final void deselectByVisibleText(final String arg1,
+            final String arg2, final String arg3) throws RemoteException {
         select.deselectByVisibleText(this.token, arg1, arg2, arg3);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * org.sirius.client.web.core.WebCoreProxy#getCssValue(java.lang.String,
-     * java.lang.String, java.lang.String, java.lang.String)
+    /**
+     * .
+     * @throws RemoteException .
      */
-
-    public void forward() throws RemoteException {
-
+    public final void forward() throws RemoteException {
         super.forward(this.token);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * org.sirius.client.web.core.WebCoreProxy#isDisplayed(java.lang.String,
-     * java.lang.String, java.lang.String)
-     */
-
     /**
-     * @param arg0
-     * @param arg1
-     * @param arg2
-     * @return
-     * @throws RemoteException
-     * @see org.sirius.client.web.select.WebSelectProxy#getAllOptions(java.lang.String,
-     *      java.lang.String, java.lang.String)
+     * @param arg1 .
+     * @param arg2 .
+     * @return .
+     * @throws RemoteException .
+     * @see org.sirius.client.web.select.WebSelectProxy
+     *      #getAllOptions(java.lang.String, java.lang.String, java.lang.String)
      */
-    public String[] getAllOptions(final String arg1, final String arg2)
+    public final String[] getAllOptions(final String arg1, final String arg2)
             throws RemoteException {
         return select.getAllOptions(this.token, arg1, arg2);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * org.sirius.client.web.core.WebCoreProxy#getWindowHandle(java.lang.String)
-     */
-
     /**
-     * @param arg0
      * @param arg1
+     *            .
      * @param arg2
-     * @return
-     * @throws RemoteException
-     * @see org.sirius.client.web.select.WebSelectProxy#getAllSelectedOptions(java.lang.String,
-     *      java.lang.String, java.lang.String)
+     *            .
+     * @return .
+     * @throws RemoteException .
+     * @see org.sirius.client.web.select.WebSelectProxy
+     *      #getAllSelectedOptions(java.lang.String, java.lang.String,
+     *      java.lang.String)
      */
-    public String[] getAllSelectedOptions(final String arg1, final String arg2)
-            throws RemoteException {
+    public final String[] getAllSelectedOptions(final String arg1,
+            final String arg2) throws RemoteException {
         return select.getAllSelectedOptions(this.token, arg1, arg2);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * org.sirius.client.web.core.WebCoreProxy#selectFrameByName(java.lang.String
-     * , java.lang.String)
+    /**
+     * @param arg1
+     *            .
+     * @param arg2
+     *            .
+     * @param arg3
+     *            .
+     * @return .
+     * @throws RemoteException .
      */
-
-    public String getAttribute(final String arg1, final String arg2,
+    public final String getAttribute(final String arg1, final String arg2,
             final String arg3) throws RemoteException {
-
         return super.getAttribute(this.token, arg1, arg2, arg3);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * org.sirius.client.web.core.WebCoreProxy#selectDefaultContent(java.lang
-     * .String)
+    /**
+     * @param arg1
+     *            .
+     * @param arg2
+     *            .
+     * @param arg3
+     *            .
+     * @return .
+     * @throws RemoteException .
      */
-
-    public String getCssValue(final String arg1, final String arg2,
+    public final String getCssValue(final String arg1, final String arg2,
             final String arg3) throws RemoteException {
 
         return super.getCssValue(this.token, arg1, arg2, arg3);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * org.sirius.client.web.core.WebCoreProxy#getPageSource(java.lang.String)
-     */
-
     @Override
-    public String getEndpoint() {
+    public final String getEndpoint() {
 
         return super.getEndpoint();
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * org.sirius.client.web.core.WebCoreProxy#selectFrameByIndex(java.lang.
-     * String, int)
-     */
-
     /**
-     * @param arg0
      * @param arg1
+     *            .
      * @param arg2
-     * @return
-     * @throws RemoteException
-     * @see org.sirius.client.web.select.WebSelectProxy#getFirstSelectedOption(java.lang.String,
-     *      java.lang.String, java.lang.String)
+     *            .
+     * @return .
+     * @throws RemoteException .
+     * @see org.sirius.client.web.select.WebSelectProxy
+     *      #getFirstSelectedOption(java.lang.String, java.lang.String,
+     *      java.lang.String)
      */
-    public String getFirstSelectedOption(final String arg1, final String arg2)
-            throws RemoteException {
+    public final String getFirstSelectedOption(final String arg1,
+            final String arg2) throws RemoteException {
         return select.getFirstSelectedOption(this.token, arg1, arg2);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.sirius.client.web.core.WebCoreProxy#back(java.lang.String)
+    /**
+     * @param arg1
+     *            .
+     * @param arg2
+     *            .
+     * @return .
+     * @throws RemoteException .
      */
-
-    public Point getLocation(final String arg1, final String arg2)
+    public final Point getLocation(final String arg1, final String arg2)
             throws RemoteException {
-
         return super.getLocation(this.token, arg1, arg2);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * org.sirius.client.web.core.WebCoreProxy#getLocation(java.lang.String,
-     * java.lang.String, java.lang.String)
+    /**
+     * .
+     * @return .
+     * @throws RemoteException .
      */
-
-    public String getPageSource() throws RemoteException {
+    public final String getPageSource() throws RemoteException {
 
         return super.getPageSource(this.token);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.sirius.client.web.core.WebCoreProxy#getURL(java.lang.String)
+    /**
+     * @param arg1
+     *            .
+     * @param arg2
+     *            .
+     * @return .
+     * @throws RemoteException .
      */
-
-    public Dimension getSize(final String arg1, final String arg2)
+    public final Dimension getSize(final String arg1, final String arg2)
             throws RemoteException {
-
         return super.getSize(this.token, arg1, arg2);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.sirius.client.web.core.WebCoreProxy#clear(java.lang.String,
-     * java.lang.String, java.lang.String)
+    /**
+     * @param arg1
+     *            .
+     * @param arg2
+     *            .
+     * @return .
+     * @throws RemoteException .
      */
-
-    public String getTagName(final String arg1, final String arg2)
+    public final String getTagName(final String arg1, final String arg2)
             throws RemoteException {
-
         return super.getTagName(this.token, arg1, arg2);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.sirius.client.web.core.WebCoreProxy#start(java.lang.String)
+    /**
+     * @param arg1
+     *            .
+     * @param arg2
+     *            .
+     * @return .
+     * @throws RemoteException .
      */
-
-    public String getText(final String arg1, final String arg2)
+    public final String getText(final String arg1, final String arg2)
             throws RemoteException {
-
         return super.getText(this.token, arg1, arg2);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.sirius.client.web.core.WebCoreProxy#stop(java.lang.String)
+    /**
+     * .
+     * @return .
+     * @throws RemoteException .
      */
-
-    public String getTitle() throws RemoteException {
+    public final String getTitle() throws RemoteException {
 
         return super.getTitle(this.token);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.sirius.client.web.core.WebCoreProxy#getSize(java.lang.String,
-     * java.lang.String, java.lang.String)
+    /**
+     * .
+     * @return .
+     * @throws RemoteException .
      */
-
-    public String getURL() throws RemoteException {
-
+    public final String getURL() throws RemoteException {
         return super.getURL(this.token);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.sirius.client.web.core.WebCoreProxy#open(java.lang.String,
-     * java.lang.String)
-     */
-
     @Override
-    public WebCore getWebCore() {
+    public final WebCore getWebCore() {
 
         return super.getWebCore();
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.sirius.client.web.core.WebCoreProxy#refresh(java.lang.String)
+    /**
+     * .
+     * @return .
+     * @throws RemoteException .
      */
-
-    public String getWindowHandle() throws RemoteException {
+    public final String getWindowHandle() throws RemoteException {
 
         return super.getWindowHandle(this.token);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.sirius.client.web.core.WebCoreProxy#getTitle(java.lang.String)
+    /**
+     * .
+     * @param arg1 .
+     * @param arg2 .
+     * @return .
+     * @throws RemoteException .
      */
-
-    public boolean isDisplayed(final String arg1, final String arg2)
+    public final boolean isDisplayed(final String arg1, final String arg2)
             throws RemoteException {
 
         return super.isDisplayed(this.token, arg1, arg2);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.sirius.client.web.core.WebCoreProxy#isEnabled(java.lang.String,
-     * java.lang.String, java.lang.String)
+    /**
+     * .
+     * @param arg1 .
+     * @param arg2 .
+     * @return .
+     * @throws RemoteException .
      */
-
-    public boolean isEnabled(final String arg1, final String arg2)
+    public final boolean isEnabled(final String arg1, final String arg2)
             throws RemoteException {
 
         return super.isEnabled(this.token, arg1, arg2);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.sirius.client.web.core.WebCoreProxy#getText(java.lang.String,
-     * java.lang.String, java.lang.String)
-     */
-
     /**
-     * @param arg0
      * @param arg1
+     *            .
      * @param arg2
-     * @return
-     * @throws RemoteException
-     * @see org.sirius.client.web.select.WebSelectProxy#isMultiple(java.lang.String,
-     *      java.lang.String, java.lang.String)
+     *            .
+     * @return .
+     * @throws RemoteException .
+     * @see org.sirius.client.web.select.WebSelectProxy
+     *      #isMultiple(java.lang.String, java.lang.String, java.lang.String)
      */
-    public boolean isMultiple(final String arg1, final String arg2)
+    public final boolean isMultiple(final String arg1, final String arg2)
             throws RemoteException {
         return select.isMultiple(this.token, arg1, arg2);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.sirius.client.web.core.WebCoreProxy#submit(java.lang.String,
-     * java.lang.String, java.lang.String)
+    /**
+     * .
+     * @param arg1
+     *            .
+     * @param arg2
+     *            .
+     * @return .
+     * @throws RemoteException .
      */
-
-    public boolean isSelected(final String arg1, final String arg2)
+    public final boolean isSelected(final String arg1, final String arg2)
             throws RemoteException {
-
         return super.isSelected(this.token, arg1, arg2);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.sirius.client.web.core.WebCoreProxy#click(java.lang.String,
-     * java.lang.String, java.lang.String)
+    /**
+     * .
+     * @param arg1
+     *            .
+     * @throws RemoteException .
      */
-
-    public void open(final String arg1) throws RemoteException {
-
+    public final void open(final String arg1) throws RemoteException {
         super.open(this.token, arg1);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.sirius.client.web.core.WebCoreProxy#isSelected(java.lang.String,
-     * java.lang.String, java.lang.String)
+    /**
+     * .
+     * @throws RemoteException .
      */
-
-    public void refresh() throws RemoteException {
+    public final void refresh() throws RemoteException {
 
         super.refresh(this.token);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * org.sirius.client.web.core.WebCoreProxy#getAttribute(java.lang.String,
-     * java.lang.String, java.lang.String, java.lang.String)
+    /**
+     * .
+     * @throws RemoteException .
      */
-
-    public void selectAlert() throws RemoteException {
+    public final void selectAlert() throws RemoteException {
 
         super.selectAlert(this.token);
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.sirius.client.web.core.WebCoreProxy#getTagName(java.lang.String,
-     * java.lang.String, java.lang.String)
-     */
-
     /**
-     * @param arg0
      * @param arg1
+     *            .
      * @param arg2
+     *            .
      * @param arg3
-     * @throws RemoteException
-     * @see org.sirius.client.web.select.WebSelectProxy#selectByIndex(java.lang.String,
-     *      java.lang.String, java.lang.String, int)
+     *            .
+     * @throws RemoteException .
+     * @see org.sirius.client.web.select.WebSelectProxy
+     *      #selectByIndex(java.lang.String, java.lang.String, java.lang.String,
+     *      int)
      */
-    public void selectByIndex(final String arg1, final String arg2,
+    public final void selectByIndex(final String arg1, final String arg2,
             final int arg3) throws RemoteException {
         select.selectByIndex(this.token, arg1, arg2, arg3);
     }
 
     /**
-     * @param arg0
      * @param arg1
+     *            .
      * @param arg2
+     *            .
      * @param arg3
-     * @throws RemoteException
-     * @see org.sirius.client.web.select.WebSelectProxy#selectByValue(java.lang.String,
-     *      java.lang.String, java.lang.String, java.lang.String)
+     *            .
+     * @throws RemoteException .
+     * @see org.sirius.client.web.select.WebSelectProxy
+     *      #selectByValue(java.lang.String, java.lang.String, java.lang.String,
+     *      java.lang.String)
      */
-    public void selectByValue(final String arg1, final String arg2,
+    public final void selectByValue(final String arg1, final String arg2,
             final String arg3) throws RemoteException {
         select.selectByValue(this.token, arg1, arg2, arg3);
     }
 
     /**
-     * @param arg0
      * @param arg1
+     *            .
      * @param arg2
+     *            .
      * @param arg3
-     * @throws RemoteException
-     * @see org.sirius.client.web.select.WebSelectProxy#selectByVisibleText(java.lang.String,
-     *      java.lang.String, java.lang.String, java.lang.String)
+     *            .
+     * @throws RemoteException .
+     * @see org.sirius.client.web.select.WebSelectProxy
+     *      #selectByVisibleText(java.lang.String, java.lang.String,
+     *      java.lang.String, java.lang.String)
      */
-    public void selectByVisibleText(final String arg1, final String arg2,
+    public final void selectByVisibleText(final String arg1, final String arg2,
             final String arg3) throws RemoteException {
         select.selectByVisibleText(this.token, arg1, arg2, arg3);
     }
 
-    public void selectDefaultContent() throws RemoteException {
-
+    /**
+     * .
+     * @throws RemoteException .
+     */
+    public final void selectDefaultContent() throws RemoteException {
         super.selectDefaultContent(this.token);
     }
 
-    public void selectFrameByIndex(final int arg1) throws RemoteException {
+    /**
+     * .
+     * @param arg1
+     *            .
+     * @throws RemoteException .
+     */
+    public final void selectFrameByIndex(final int arg1)
+            throws RemoteException {
 
         super.selectFrameByIndex(this.token, arg1);
     }
 
-    public void selectFrameByName(final String arg1) throws RemoteException {
+    /**
+     * .
+     * @param arg1
+     *            .
+     * @throws RemoteException .
+     */
+    public final void selectFrameByName(final String arg1)
+            throws RemoteException {
 
         super.selectFrameByName(this.token, arg1);
     }
 
-    public void selectWindow(final String arg1) throws RemoteException {
+    /**
+     * .
+     * @param arg1
+     *            .
+     * @throws RemoteException .
+     */
+    public final void selectWindow(final String arg1) throws RemoteException {
 
         super.selectWindow(this.token, arg1);
     }
 
-    public void sendKeys(final String arg1, final String arg2, final String arg3)
-            throws RemoteException {
+    /**
+     * .
+     * @param arg1
+     *            .
+     * @param arg2
+     *            .
+     * @param arg3
+     *            .
+     * @throws RemoteException .
+     */
+    public final void sendKeys(final String arg1, final String arg2,
+            final String arg3) throws RemoteException {
 
         super.sendKeys(this.token, arg1, arg2, arg3);
     }
 
     @Override
-    public String start(final String browser) throws RemoteException {
+    public final String start(final String browser) throws RemoteException {
         this.token = super.start(browser);
         return this.token;
     }
 
-    public void stop() throws RemoteException {
-
+    /**
+     * .
+     * @throws RemoteException .
+     */
+    public final void stop() throws RemoteException {
         super.stop(this.token);
     }
 
-    public void submit(final String arg1, final String arg2)
+    /**
+     * .
+     * @param arg1
+     *            .
+     * @param arg2
+     *            .
+     * @throws RemoteException .
+     */
+    public final void submit(final String arg1, final String arg2)
             throws RemoteException {
-
         super.submit(this.token, arg1, arg2);
     }
 
-    public String token() {
+    /**
+     * .
+     * @return .
+     */
+    public final String token() {
         return token;
     }
-
 }

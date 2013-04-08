@@ -1,5 +1,5 @@
 /**
- * 
+ * .
  */
 package org.sirius.client.web.classes;
 
@@ -9,30 +9,57 @@ import org.sirius.client.web.WebClient;
 
 /**
  * @author Myk Kolisnyk
- * 
+ * .
  */
 public class Form extends Frame {
 
     /**
-	 * 
-	 */
+     * .
+     * @param client .
+     * @param locator .
+     */
     public Form(final WebClient client, final String locator) {
         super(client, locator);
     }
 
-    public String action() throws RemoteException {
-        return this.client.core().getAttribute(null, locator, "action");
+    /**
+     * .
+     * @return .
+     * @throws RemoteException .
+     */
+    public final String action() throws RemoteException {
+        return this.getClient()
+                .core()
+                .getAttribute(null, getLocator(), "action");
     }
 
-    public String method() throws Exception {
-        return this.client.core().getAttribute(null, locator, "method");
+    /**
+     * .
+     * @return .
+     * @throws Exception .
+     */
+    public final String method() throws Exception {
+        return this.getClient()
+                .core()
+                .getAttribute(null, getLocator(), "method");
     }
 
-    public String name() throws RemoteException {
-        return this.client.core().getAttribute(null, locator, "name");
+    /**
+     * .
+     * @return .
+     * @throws RemoteException .
+     */
+    public final String name() throws RemoteException {
+        return this.getClient()
+                .core()
+                .getAttribute(null, getLocator(), "name");
     }
 
-    public void submit() throws RemoteException {
-        this.client.core().submit(null, locator);
+    /**
+     * .
+     * @throws RemoteException .
+     */
+    public final void submit() throws RemoteException {
+        this.getClient().core().submit(null, getLocator());
     }
 }

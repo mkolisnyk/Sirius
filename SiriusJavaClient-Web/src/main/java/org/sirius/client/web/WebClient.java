@@ -1,5 +1,5 @@
 /**
- * 
+ * .
  */
 package org.sirius.client.web;
 
@@ -7,35 +7,68 @@ import java.rmi.RemoteException;
 
 /**
  * @author Myk Kolisnyk
- * 
+ * .
  */
 public class WebClient {
+    /**
+     * .
+     */
+    public static final String IE                = "ie";
+    /**
+     * .
+     */
+    public static final String FIREFOX           = "firefox";
+    /**
+     * .
+     */
+    public static final String FIREFOX_UNSECURED = "chrome";
+    /**
+     * .
+     */
+    public static final String CHROME            = "googlechrome";
+    /**
+     * .
+     */
+    public static final String OPERA             = "opera";
+    /**
+     * .
+     */
+    public static final String HTMLUNIT          = "htmlunit";
 
-    public final static String IE                = "ie";
-    public final static String FIREFOX           = "firefox";
-    public final static String FIREFOX_UNSECURED = "chrome";
-    public final static String CHROME            = "googlechrome";
-    public final static String OPERA             = "opera";
-    public final static String HTMLUNIT          = "htmlunit";
-
+    /**
+     * .
+     */
     private WebClientCoreProxy core              = null;
 
     /**
-	 * 
-	 */
+     * .
+     */
     public WebClient() {
         core = new WebClientCoreProxy();
     }
 
-    public WebClientCoreProxy core() {
+    /**
+     * .
+     * @return .
+     */
+    public final WebClientCoreProxy core() {
         return core;
     }
 
-    public void start(final String browser) throws RemoteException {
+    /**
+     * .
+     * @param browser .
+     * @throws RemoteException .
+     */
+    public final void start(final String browser) throws RemoteException {
         core.start(browser);
     }
 
-    public void stop() throws RemoteException {
+    /**
+     * .
+     * @throws RemoteException .
+     */
+    public final void stop() throws RemoteException {
         core.stop();
     }
 }

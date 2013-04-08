@@ -1,5 +1,5 @@
 /**
- * 
+ * .
  */
 package org.sirius.client.web.classes;
 
@@ -7,23 +7,23 @@ import java.rmi.RemoteException;
 
 /**
  * @author Myk Kolisnyk
- * 
+ * .
  */
 public class WebRadioButton extends WebButton {
 
     /**
-     * @param parent
-     * @param locator
+     * @param parentValue .
+     * @param locatorValue .
      */
-    public WebRadioButton(final Frame parent, final String locator) {
-        super(parent, locator);
+    public WebRadioButton(final Frame parentValue, final String locatorValue) {
+        super(parentValue, locatorValue);
         // TODO Auto-generated constructor stub
     }
 
     /**
-     * @param parent
-     * @param parentElement
-     * @param locator
+     * @param parent .
+     * @param parentElement .
+     * @param locator .
      */
     public WebRadioButton(final Frame parent, final String parentElement,
             final String locator) {
@@ -31,13 +31,24 @@ public class WebRadioButton extends WebButton {
         // TODO Auto-generated constructor stub
     }
 
-    public void check() throws RemoteException, Exception {
+    /**
+     * .
+     * @throws Exception .
+     */
+    public final void check() throws Exception {
         if (!isChecked()) {
             click();
         }
     }
 
-    public boolean isChecked() throws RemoteException {
-        return this.client().core().isSelected(parentElement, locator);
+    /**
+     * .
+     * @return .
+     * @throws RemoteException .
+     */
+    public final boolean isChecked() throws RemoteException {
+        return this.client()
+                    .core()
+                    .isSelected(getParentElement(), getLocator());
     }
 }

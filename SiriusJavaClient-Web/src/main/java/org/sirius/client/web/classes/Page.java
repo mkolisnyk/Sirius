@@ -1,5 +1,5 @@
 /**
- * 
+ * .
  */
 package org.sirius.client.web.classes;
 
@@ -9,46 +9,81 @@ import org.sirius.client.web.WebClient;
 
 /**
  * @author Myk Kolisnyk
- * 
+ * .
  */
 public class Page extends Frame {
 
+    /**
+     * .
+     * @param client .
+     */
     public Page(final WebClient client) {
         super(client, null);
     }
 
     /**
-	 * 
-	 */
+     * .
+     * @param client .
+     * @param locator .
+     */
     public Page(final WebClient client, final String locator) {
         super(client, locator);
     }
 
-    public void back() throws RemoteException {
-        client.core().back();
+    /**
+     * .
+     * @throws RemoteException .
+     */
+    public final void back() throws RemoteException {
+        getClient().core().back();
     }
 
-    public void forward() throws RemoteException {
-        client.core().forward();
+    /**
+     * .
+     * @throws RemoteException .
+     */
+    public final void forward() throws RemoteException {
+        getClient().core().forward();
     }
 
+    /**
+     * .
+     */
     public void home() {
-        ;
     }
 
-    public void open(final String URL) throws RemoteException {
-        client.core().open(URL);
+    /**
+     * .
+     * @param url .
+     * @throws RemoteException .
+     */
+    public final void open(final String url) throws RemoteException {
+        getClient().core().open(url);
     }
 
-    public void refresh() throws RemoteException {
-        client.core().refresh();
+    /**
+     * .
+     * @throws RemoteException .
+     */
+    public final void refresh() throws RemoteException {
+        getClient().core().refresh();
     }
 
-    public void switchTo(final Page page) throws RemoteException {
-        client.core().selectWindow(page.getLocator());
+    /**
+     * .
+     * @param page .
+     * @throws RemoteException .
+     */
+    public final void switchTo(final Page page) throws RemoteException {
+        getClient().core().selectWindow(page.getLocator());
     }
 
-    public String title() throws RemoteException {
-        return client.core().getTitle();
+    /**
+     * .
+     * @return .
+     * @throws RemoteException .
+     */
+    public final String title() throws RemoteException {
+        return getClient().core().getTitle();
     }
 }

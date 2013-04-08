@@ -1,17 +1,17 @@
 /**
- * 
+ * .
  */
 package org.sirius.client.web.classes;
 
 /**
  * @author Myk Kolisnyk
- * 
+ * .
  */
 public class WebLink extends WebButton {
 
     /**
-     * @param parent
-     * @param locator
+     * @param parent .
+     * @param locator .
      */
     public WebLink(final Frame parent, final String locator) {
         super(parent, locator);
@@ -19,9 +19,9 @@ public class WebLink extends WebButton {
     }
 
     /**
-     * @param parent
-     * @param parentElement
-     * @param locator
+     * @param parent .
+     * @param parentElement .
+     * @param locator .
      */
     public WebLink(final Frame parent, final String parentElement,
             final String locator) {
@@ -29,7 +29,12 @@ public class WebLink extends WebButton {
         // TODO Auto-generated constructor stub
     }
 
-    public String href() throws Exception {
+    /**
+     * .
+     * @return .
+     * @throws Exception .
+     */
+    public final String href() throws Exception {
         return client().core().getAttribute(parentElement, locator, "href");
     }
 }

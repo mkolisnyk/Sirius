@@ -1,5 +1,5 @@
 /**
- * 
+ * .
  */
 package org.sirius.client.web.classes;
 
@@ -11,67 +11,191 @@ import org.sirius.client.web.core.Point;
 
 /**
  * @author Myk Kolisnyk
- * 
+ * .
  */
 public class WebControl {
 
-    protected WebClient client        = null;
-    protected Frame     parent        = null;
-    protected String    parentElement = null;
-    protected String    locator       = null;
+    /**
+     * .
+     */
+    private WebClient client        = null;
+    /**
+     * .
+     */
+    private Frame     parent        = null;
+    /**
+     * .
+     */
+    private String    parentElement = null;
+    /**
+     * .
+     */
+    private String    locator       = null;
 
-    public WebControl(final Frame parent, final String locator) {
-        this(parent, null, locator);
+    /**
+     * @return the client
+     */
+    public final WebClient getClient() {
+        return client;
     }
 
     /**
-	 * 
-	 */
-    public WebControl(final Frame parent, final String parentElement,
-            final String locator) {
-        this.parent = parent;
-        this.parentElement = parentElement;
-        this.locator = locator;
+     * @param clientValue the client to set
+     */
+    public final void setClient(final WebClient clientValue) {
+        this.client = clientValue;
     }
 
-    public void click() throws Exception {
+    /**
+     * @return the parent
+     */
+    public final Frame getParent() {
+        return parent;
+    }
+
+    /**
+     * @param parentValue the parent to set
+     */
+    public final void setParent(final Frame parentValue) {
+        this.parent = parentValue;
+    }
+
+    /**
+     * @return the parentElement
+     */
+    public final String getParentElement() {
+        return parentElement;
+    }
+
+    /**
+     * @param parentElementValue the parentElement to set
+     */
+    public final void setParentElement(final String parentElementValue) {
+        this.parentElement = parentElementValue;
+    }
+
+    /**
+     * @return the locator
+     */
+    public final String getLocator() {
+        return locator;
+    }
+
+    /**
+     * @param locatorValue the locator to set
+     */
+    public final void setLocator(final String locatorValue) {
+        this.locator = locatorValue;
+    }
+
+    /**
+     * .
+     * @param parentValue .
+     * @param locatorValue .
+     */
+    public WebControl(final Frame parentValue, final String locatorValue) {
+        this(parentValue, null, locatorValue);
+    }
+
+    /**
+     * .
+     * @param parentValue .
+     * @param parentElementValue .
+     * @param locatorValue .
+     */
+    public WebControl(final Frame parentValue, final String parentElementValue,
+            final String locatorValue) {
+        this.parent = parentValue;
+        this.parentElement = parentElementValue;
+        this.locator = locatorValue;
+    }
+
+    /**
+     * .
+     * @throws Exception .
+     */
+    public final void click() throws Exception {
         client().core().click(parentElement, locator);
     }
 
-    protected WebClient client() {
+    /**
+     * .
+     * @return .
+     */
+    protected final WebClient client() {
         if (client == null) {
-            client = parent.client;
+            client = getParent().getClient();
         }
         return client;
     }
 
-    public String getAttribute(final String attribute) throws RemoteException {
-        return client().core().getAttribute(parentElement, locator, attribute);
+    /**
+     * .
+     * @param attribute .
+     * @return .
+     * @throws RemoteException .
+     */
+    public final String getAttribute(final String attribute)
+            throws RemoteException {
+        return client().core().getAttribute(
+                parentElement,
+                locator,
+                attribute);
     }
 
-    public Point getLocation() throws RemoteException {
+    /**
+     * .
+     * @return .
+     * @throws RemoteException .
+     */
+    public final Point getLocation() throws RemoteException {
         return client().core().getLocation(parentElement, locator);
     }
 
-    public Dimension getSize() throws RemoteException {
+    /**
+     * .
+     * @return .
+     * @throws RemoteException .
+     */
+    public final Dimension getSize() throws RemoteException {
         return client().core().getSize(parentElement, locator);
     }
 
-    public String getValue() throws RemoteException {
+    /**
+     * .
+     * @return .
+     * @throws RemoteException .
+     */
+    public final String getValue() throws RemoteException {
         return getAttribute("value");
     }
 
-    public String innerHtml() throws RemoteException {
+    /**
+     * .
+     * @return .
+     * @throws RemoteException .
+     */
+    public final String innerHtml() throws RemoteException {
         return client().core()
                 .getAttribute(parentElement, locator, "innerHTML");
     }
 
-    public String innerText() throws RemoteException {
+    /**
+     * .
+     * @return .
+     * @throws RemoteException .
+     */
+    public final String innerText() throws RemoteException {
         return client().core()
                 .getAttribute(parentElement, locator, "innerText");
     }
 
-    public boolean isFocused() throws RemoteException {
+    /**
+     * .
+     * @return .
+     * @throws RemoteException .
+     */
+    public final boolean isFocused() throws RemoteException {
         return false;
     }
 }
