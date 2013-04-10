@@ -3,6 +3,7 @@ require 'rubygems/package_task'
 require 'cucumber'
 require 'cucumber/rake/task.rb'
 require 'rubygems/tasks'
+require 'rubocop'
 
 spec = Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
@@ -24,9 +25,17 @@ spec = Gem::Specification.new do |s|
   s.add_dependency('sirius-client-web', '>= 0.0')
 end
 
-Gem::PackageTask.new(spec) do |pkg|
-end
-
 Cucumber::Rake::Task.new(:test) do |t|
   t.cucumber_opts = "tests/features --format pretty --guess"
+end
+
+task :rubocop do |t|
+  sh 'call rubocop -c .rubocop.yml -e lib'
+end
+
+Gem::PackageTask.new(spec) do |pkg| 
+end
+
+task :push => [:package] do |t| 
+  sh "call gem push pkg/#{spec.name}-#{spec.version}.gem"
 end
