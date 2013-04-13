@@ -37,5 +37,5 @@ Gem::PackageTask.new(spec) do |pkg|
 end
 
 task :push => [:package] do |t| 
-  sh "call gem push pkg/#{spec.name}-#{spec.version}.gem"
+  sh "call gem push  -k sirius_api_key -V pkg/#{spec.name}-#{spec.version}.gem"
 end
