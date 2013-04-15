@@ -1,63 +1,145 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Sirius.CSharp.Client.Web.Core;
+﻿//-----------------------------------------------------------------------
+// <copyright file="Frame.cs" company="Sirius">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 
 namespace Sirius.CSharp.Client.Web.Classes
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using Sirius.CSharp.Client.Web.Core;
+
+    /// <summary>
+    /// TODO: Add documentation description.
+    /// </summary>
     public class Frame
     {
-        protected WebClient client = null;
-        protected String locator = "";
+        /// <summary>
+        /// TODO: Add documentation description.
+        /// </summary>
+        private WebClient client = null;
 
-        /**
-         * 
-         */
-        public Frame(WebClient client, String locator)
+        /// <summary>
+        /// TODO: Add documentation description.
+        /// </summary>
+        private string locator = string.Empty;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Frame" /> class.
+        /// </summary>
+        /// <param name="client">TODO: Add documentation description for client parameter.</param>
+        /// <param name="locator">TODO: Add documentation description for locator parameter.</param>
+        public Frame(WebClient client, string locator)
         {
             this.client = client;
             this.locator = locator;
         }
 
-        public WebClient getClient()
+        /// <summary>
+        /// Gets or sets TODO: Add documentation description.
+        /// </summary>
+        protected WebClient Client
         {
-            return client;
+            get
+            {
+                return this.client;
+            }
+
+            set
+            {
+                this.client = value;
+            }
         }
 
-        public bool exists()
+        /// <summary>
+        /// Gets or sets TODO: Add documentation description.
+        /// </summary>
+        protected string Locator
+        {
+            get
+            {
+                return this.locator;
+            }
+
+            set
+            {
+                this.locator = value;
+            }
+        }
+
+        /// <summary>
+        /// TODO: Add documentation description.
+        /// </summary>
+        /// <returns>TODO: Add documentation description for return statement.</returns>
+        public WebClient GetClient()
+        {
+            return this.client;
+        }
+
+        /// <summary>
+        /// TODO: Add documentation description.
+        /// </summary>
+        /// <returns>TODO: Add documentation description for return statement.</returns>
+        public bool Exists()
         {
             return false;
         }
 
-        public String getURL()
+        /// <summary>
+        /// TODO: Add documentation description.
+        /// </summary>
+        /// <returns>TODO: Add documentation description for return value.</returns>
+        public string GetURL()
         {
-            return this.client.getURL();
+            return this.client.GetURL();
         }
 
-        public String getLocator()
+        /// <summary>
+        /// TODO: Add documentation description.
+        /// </summary>
+        /// <returns>TODO: Add documentation description for return statement.</returns>
+        public string GetLocator()
         {
             return this.locator;
         }
 
-        public point getLocation()
+        /// <summary>
+        /// TODO: Add documentation description.
+        /// </summary>
+        /// <returns>TODO: Add documentation description for return statement.</returns>
+        public point GetLocation()
         {
-            return this.client.getLocation(null, locator);
+            return this.client.GetLocation(null, this.locator);
         }
 
-        public dimension getSize()
+        /// <summary>
+        /// TODO: Add documentation description.
+        /// </summary>
+        /// <returns>TODO: Add documentation description for return statement.</returns>
+        public dimension GetSize()
         {
-            return this.client.getSize(null, locator);
+            return this.client.GetSize(null, this.locator);
         }
 
-        public String innerHtml()
+        /// <summary>
+        /// TODO: Add documentation description.
+        /// </summary>
+        /// <returns>TODO: Add documentation description for return statement.</returns>
+        public string InnerHtml()
         {
-            return this.client.getAttribute(null, locator, "innerHTML");
+            return this.client.GetAttribute(null, this.locator, "innerHTML");
         }
 
-        public void switchTo(Frame frame)
+        /// <summary>
+        /// TODO: Add documentation description.
+        /// </summary>
+        /// <param name="frame">TODO: Add documentation description for the frame parameter.</param>
+        public void SwitchTo(Frame frame)
         {
-            this.client.selectFrameByName(frame.getLocator());
+            this.client.SelectFrameByName(frame.GetLocator());
         }
     }
 }

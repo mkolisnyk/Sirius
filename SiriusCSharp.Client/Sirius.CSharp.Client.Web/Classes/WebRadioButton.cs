@@ -1,34 +1,58 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="WebRadioButton.cs" company="Sirius">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace Sirius.CSharp.Client.Web.Classes
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
+    /// <summary>
+    /// TODO: Add documentation.
+    /// </summary>
     public class WebRadioButton : WebButton
     {
-        public WebRadioButton(Frame parent, String parentElement, String locator)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebRadioButton" /> class.
+        /// </summary>
+        /// <param name="parent">TODO: Add documentation for parent.</param>
+        /// <param name="parentElement">TODO: Add documentation for parent element.</param>
+        /// <param name="locator">TODO: Add documentation for locator.</param>
+        public WebRadioButton(Frame parent, string parentElement, string locator)
             : base(parent, parentElement, locator)
         {
-            ;
         }
 
-        public WebRadioButton(Frame parent, String locator)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebRadioButton" /> class.
+        /// </summary>
+        /// <param name="parent">TODO: Add documentation for parent.</param>
+        /// <param name="locator">TODO: Add documentation for locator.</param>
+        public WebRadioButton(Frame parent, string locator)
             : base(parent, locator)
         {
-            ;
         }
 
-        public bool isChecked()
+        /// <summary>
+        /// TODO: Add documentation.
+        /// </summary>
+        /// <returns>TODO: Add documentation for return value.</returns>
+        public bool IsChecked()
         {
-            return this.client().isSelected(parentElement, locator);
+            return this.Client().IsSelected(this.ParentElement, this.Locator);
         }
 
-        public void check()
+        /// <summary>
+        /// TODO: Add documentation.
+        /// </summary>
+        public void Check()
         {
-            if (!isChecked())
+            if (!this.IsChecked())
             {
-                click();
+                this.Click();
             }
         }
     }

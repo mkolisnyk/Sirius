@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Sirius.CSharp.Client</id>
+    <id>Sirius.CSharp.Client.Core</id>
     <version>1.0.0</version>
     <authors>Myk Kolisnyk</authors>
     <owners>Myk Kolisnyk</owners>

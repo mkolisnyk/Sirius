@@ -1,77 +1,137 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="WebPopupList.cs" company="Sirius">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace Sirius.CSharp.Client.Web.Classes
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
+    /// <summary>
+    /// TODO: Add documentation.
+    /// </summary>
     public class WebPopupList : WebControl
     {
-        public WebPopupList(Frame parent, String parentElement, String locator)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebPopupList" /> class.
+        /// </summary>
+        /// <param name="parent">TODO: Add documentation for parent.</param>
+        /// <param name="parentElement">TODO: Add documentation for parent element.</param>
+        /// <param name="locator">TODO: Add documentation for locator.</param>
+        public WebPopupList(Frame parent, string parentElement, string locator)
             : base(parent, parentElement, locator)
         {
-            ;
         }
 
-        public WebPopupList(Frame parent, String locator)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebPopupList" /> class.
+        /// </summary>
+        /// <param name="parent">TODO: Add documentation for parent.</param>
+        /// <param name="locator">TODO: Add documentation for locator.</param>
+        public WebPopupList(Frame parent, string locator)
             : base(parent, locator)
         {
-            ;
         }
 
-        public bool isMulti()
+        /// <summary>
+        /// TODO: Add documentation.
+        /// </summary>
+        /// <returns>TODO: Add documentation for return value.</returns>
+        public bool IsMulti()
         {
-            return this.client().isMultiple(parentElement, locator);
+            return this.Client().IsMultiple(this.ParentElement, this.Locator);
         }
 
-        public void deselectAll()
+        /// <summary>
+        /// TODO: Add documentation.
+        /// </summary>
+        public void DeselectAll()
         {
-            this.client().deselectAll(parentElement, locator);
+            this.Client().DeselectAll(this.ParentElement, this.Locator);
         }
 
-        public void deselectByIndex(int arg3)
+        /// <summary>
+        /// TODO: Add documentation.
+        /// </summary>
+        /// <param name="arg3">TODO: Add documentation for argument.</param>
+        public void DeselectByIndex(int arg3)
         {
-            this.client().deselectByIndex(parentElement, locator, arg3);
+            this.Client().DeselectByIndex(this.ParentElement, this.Locator, arg3);
         }
 
-        public void deselectByValue(String arg3)
+        /// <summary>
+        /// TODO: Add documentation.
+        /// </summary>
+        /// <param name="arg3">TODO: Add documentation for argument.</param>
+        public void DeselectByValue(string arg3)
         {
-            this.client().deselectByValue(parentElement, locator, arg3);
+            this.Client().DeselectByValue(this.ParentElement, this.Locator, arg3);
         }
 
-        public void deselectByVisibleText(String arg3)
+        /// <summary>
+        /// TODO: Add documentation.
+        /// </summary>
+        /// <param name="arg3">TODO: Add documentation for argument.</param>
+        public void DeselectByVisibleText(string arg3)
         {
-            this.client().deselectByVisibleText(parentElement, locator, arg3);
+            this.Client().DeselectByVisibleText(this.ParentElement, this.Locator, arg3);
         }
 
-        public String[] getAllOptions()
+        /// <summary>
+        /// TODO: Add documentation.
+        /// </summary>
+        /// <returns>TODO: Add documentation for return value.</returns>
+        public string[] GetAllOptions()
         {
-            return this.client().getAllOptions(parentElement, locator);
+            return this.Client().GetAllOptions(this.ParentElement, this.Locator);
         }
 
-        public void selectByIndex(int arg3)
+        /// <summary>
+        /// TODO: Add documentation.
+        /// </summary>
+        /// <param name="arg3">TODO: Add documentation for argument.</param>
+        public void SelectByIndex(int arg3)
         {
-            this.client().selectByIndex(parentElement, locator, arg3);
+            this.Client().SelectByIndex(this.ParentElement, this.Locator, arg3);
         }
 
-        public void selectByValue(String arg3)
+        /// <summary>
+        /// TODO: Add documentation.
+        /// </summary>
+        /// <param name="arg3">TODO: Add documentation for argument.</param>
+        public void SelectByValue(string arg3)
         {
-            this.client().selectByValue(parentElement, locator, arg3);
+            this.Client().SelectByValue(this.ParentElement, this.Locator, arg3);
         }
 
-        public void selectByVisibleText(String arg3)
+        /// <summary>
+        /// TODO: Add documentation.
+        /// </summary>
+        /// <param name="arg3">TODO: Add documentation for argument.</param>
+        public void SelectByVisibleText(string arg3)
         {
-            this.client().selectByVisibleText(parentElement, locator, arg3);
+            this.Client().SelectByVisibleText(this.ParentElement, this.Locator, arg3);
         }
 
-        public String[] getAllSelectedOptions()
+        /// <summary>
+        /// TODO: Add documentation.
+        /// </summary>
+        /// <returns>TODO: Add documentation for return value.</returns>
+        public string[] GetAllSelectedOptions()
         {
-            return this.client().getAllSelectedOptions(parentElement, locator);
+            return this.Client().GetAllSelectedOptions(this.ParentElement, this.Locator);
         }
 
-        public String getFirstSelectedOption()
+        /// <summary>
+        /// TODO: Add documentation.
+        /// </summary>
+        /// <returns>TODO: Add documentation for return value.</returns>
+        public string GetFirstSelectedOption()
         {
-            return this.client().getFirstSelectedOption(parentElement, locator);
+            return this.Client().GetFirstSelectedOption(this.ParentElement, this.Locator);
         }
     }
 }

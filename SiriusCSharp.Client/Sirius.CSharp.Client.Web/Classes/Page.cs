@@ -1,57 +1,95 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="Page.cs" company="Sirius">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace Sirius.CSharp.Client.Web.Classes
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
+    /// <summary>
+    /// TODO: Add documentation.
+    /// </summary>
     public class Page : Frame
     {
-        public Page(WebClient client, String locator)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Page" /> class.
+        /// </summary>
+        /// <param name="client">TODO: Add documentation for client.</param>
+        /// <param name="locator">TODO: Add documentation for locator.</param>
+        public Page(WebClient client, string locator)
             : base(client, locator)
         {
-            ;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Page" /> class.
+        /// </summary>
+        /// <param name="client">TODO: Add documentation for client.</param>
         public Page(WebClient client)
             : base(client, null)
         {
-            ;
         }
 
-        public String title()
+        /// <summary>
+        /// TODO: Add documentation.
+        /// </summary>
+        /// <returns>TODO: Add documentation for return.</returns>
+        public string Title()
         {
-            return client.getTitle();
+            return Client.GetTitle();
         }
 
-        public void back()
+        /// <summary>
+        /// TODO: Add documentation.
+        /// </summary>
+        public void Back()
         {
-            client.back();
+            Client.Back();
         }
 
-        public void forward()
+        /// <summary>
+        /// TODO: Add documentation.
+        /// </summary>
+        public void Forward()
         {
-            client.forward();
+            Client.Forward();
         }
 
-        public void refresh()
+        /// <summary>
+        /// TODO: Add documentation.
+        /// </summary>
+        public void Refresh()
         {
-            client.refresh();
+            Client.Refresh();
         }
 
-        public void open(String URL)
+        /// <summary>
+        /// TODO: Add documentation.
+        /// </summary>
+        /// <param name="url">TODO: Add documentation for URL.</param>
+        public void Open(string url)
         {
-            client.open(URL);
+            Client.Open(url);
         }
 
-        public void home()
+        /// <summary>
+        /// TODO: Add documentation.
+        /// </summary>
+        public void Home()
         {
-            ;
         }
 
-        public void switchTo(Page page)
+        /// <summary>
+        /// TODO: Add documentation.
+        /// </summary>
+        /// <param name="page">TODO: Add documentation for page.</param>
+        public void SwitchTo(Page page)
         {
-            client.selectWindow(page.getLocator());
+            Client.SelectWindow(page.GetLocator());
         }
     }
 }

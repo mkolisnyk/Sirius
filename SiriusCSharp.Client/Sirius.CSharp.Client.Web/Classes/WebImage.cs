@@ -1,37 +1,60 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="WebImage.cs" company="Sirius">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace Sirius.CSharp.Client.Web.Classes
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
+    /// <summary>
+    /// TODO: Add documentation.
+    /// </summary>
     public class WebImage : WebControl
     {
-        public WebImage(Frame parent, String parentElement, String locator)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebImage" /> class.
+        /// </summary>
+        /// <param name="parent">TODO: Add documentation for parent parameter.</param>
+        /// <param name="parentElement">TODO: Add documentation for parent element.</param>
+        /// <param name="locator">TODO: Add documentation for locator.</param>
+        public WebImage(Frame parent, string parentElement, string locator)
             : base(parent, parentElement, locator)
         {
-            ;
         }
 
-        public WebImage(Frame parent, String locator)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebImage" /> class.
+        /// </summary>
+        /// <param name="parent">TODO: Add documentation for parent.</param>
+        /// <param name="locator">TODO: Add documentation for locator.</param>
+        public WebImage(Frame parent, string locator)
             : base(parent, locator)
         {
-            ;
         }
 
-        public String src
+        /// <summary>
+        /// Gets TODO: Add documentation.
+        /// </summary>
+        public string Src
         {
             get
             {
-                return this.getAttribute("src");
+                return this.GetAttribute("src");
             }
         }
 
-        public String alt
+        /// <summary>
+        /// Gets TODO: Add documentation.
+        /// </summary>
+        public string Alt
         {
             get
             {
-                return this.getAttribute("alt");
+                return this.GetAttribute("alt");
             }
         }
     }
