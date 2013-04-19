@@ -40,7 +40,12 @@ public class MovableWindow extends Window {
      * @throws Exception .
      */
     public final void close() throws Exception {
-        client.core().window().close(locator.getHwnd());
+        getClient()
+        .core()
+        .window()
+        .close(
+                getLocator().getHwnd()
+               );
     }
 
     /**
@@ -49,7 +54,12 @@ public class MovableWindow extends Window {
      * @throws Exception .
      */
     public final boolean isMaximized() throws Exception {
-        return client.core().window().isMaximized(locator.getHwnd());
+        return getClient()
+                .core()
+                .window()
+                .isMaximized(
+                        getLocator().getHwnd()
+                       );
     }
 
     /**
@@ -58,7 +68,12 @@ public class MovableWindow extends Window {
      * @throws Exception .
      */
     public final boolean isMinimized() throws Exception {
-        return client.core().window().isMinimized(locator.getHwnd());
+        return getClient()
+                .core()
+                .window()
+                .isMinimized(
+                        getLocator().getHwnd()
+                        );
     }
 
     /**
@@ -67,7 +82,13 @@ public class MovableWindow extends Window {
      * @throws Exception .
      */
     public final boolean isRestored() throws Exception {
-        return client.core().window().isNormal(locator.getHwnd());
+        return getClient()
+                .core()
+                .window()
+                .isNormal(
+                        getLocator()
+                        .getHwnd()
+                        );
     }
 
     /**
@@ -75,7 +96,13 @@ public class MovableWindow extends Window {
      * @throws Exception .
      */
     public final void maximize() throws Exception {
-        client.core().window().maximize(locator.getHwnd());
+        getClient()
+        .core()
+        .window()
+        .maximize(
+                getLocator()
+                .getHwnd()
+                );
     }
 
     /**
@@ -83,7 +110,12 @@ public class MovableWindow extends Window {
      * @throws Exception .
      */
     public final void minimize() throws Exception {
-        client.core().window().minimize(locator.getHwnd());
+        getClient()
+        .core()
+        .window()
+        .minimize(
+                getLocator().getHwnd()
+                );
     }
 
     /**
@@ -94,7 +126,15 @@ public class MovableWindow extends Window {
      * @throws Exception .
      */
     public final boolean moveTo(final int x, final int y) throws Exception {
-        client.core().window().moveTo(locator.getHwnd(), x, y);
+        getClient()
+        .core()
+        .window()
+        .moveTo(
+                getLocator()
+                .getHwnd(), 
+                x, 
+                y
+                );
         return true;
     }
 
@@ -103,7 +143,13 @@ public class MovableWindow extends Window {
      * @throws Exception .
      */
     public final void restore() throws Exception {
-        client.core().window().restore(locator.getHwnd());
+        getClient()
+        .core()
+        .window()
+        .restore(
+                getLocator()
+                .getHwnd()
+               );
     }
 
     /**
@@ -117,7 +163,15 @@ public class MovableWindow extends Window {
             final int width,
             final int height)
                     throws Exception {
-        client.core().window().sizeTo(locator.getHwnd(), width, height);
+        getClient()
+        .core()
+        .window()
+        .sizeTo(
+                getLocator()
+                .getHwnd(),
+                width,
+                height
+               );
         return true;
     }
 }

@@ -16,9 +16,17 @@ spec = Gem::Specification.new do |s|
   s.email="kolesnik.nickolay@gmail.com"
 end
 
+task :rubocop do |t|
+  sh 'call rubocop -c .rubocop.yml -e lib'
+end
+
 Gem::PackageTask.new(spec) do |pkg|
 end
 
 Cucumber::Rake::Task.new(:test) do |t|
   t.cucumber_opts = "tests/features --format pretty --guess"
+end
+
+task :push => [:package] do |t| 
+  sh "call gem push -V pkg/#{spec.name}-#{spec.version}.gem"
 end

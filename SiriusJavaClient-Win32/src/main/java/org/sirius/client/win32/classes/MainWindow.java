@@ -30,7 +30,11 @@ public class MainWindow extends TopLevelWindow {
      */
     public final void start(final String executable, final String params,
             final String workingDir) throws Exception {
-        client.core().window()
-                .start(locator.getHwnd(), executable, params, workingDir);
+        getClient().core().window()
+                .start(
+                        getLocator().getHwnd(),
+                        executable,
+                        params,
+                        workingDir);
     }
 }

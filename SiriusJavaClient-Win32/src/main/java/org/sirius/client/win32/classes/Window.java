@@ -160,7 +160,7 @@ public class Window implements WinUser {
      * @return .
      * @throws RemoteException .
      */
-    public final boolean exists() throws RemoteException {
+    public boolean exists() throws RemoteException {
         logger.debug(String.format("Searching for window: %s", locator));
 
         if (parent != null) {
@@ -224,7 +224,7 @@ public class Window implements WinUser {
      * @return .
      * @throws Exception .
      */
-    public final boolean exists(final long timeout) throws Exception {
+    public boolean exists(final long timeout) throws Exception {
         return waitFor(timeout, "exists", true);
     }
 

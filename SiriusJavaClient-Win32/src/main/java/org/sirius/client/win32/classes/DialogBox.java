@@ -36,25 +36,27 @@ public class DialogBox extends TopLevelWindow {
 
     @Override
     public final boolean exists() throws RemoteException {
-        logger.debug("Searching for dialog box: " + locator);
-        if (parent == null) {
-            logger.debug("Searching for dialog box parent");
+        getLogger().debug("Searching for dialog box: " + getLocator());
+        if (getParent() == null) {
+            getLogger().debug("Searching for dialog box parent");
             return super.exists();
-        } else if (!parent.exists()) {
-            logger.debug("Parent window doesn't exist. Quiting...");
+        } else if (!getParent().exists()) {
+            getLogger().debug("Parent window doesn't exist. Quiting...");
             return false;
         } else {
-            logger.debug("Searching for dialog box in the same thread");
-            long hwnd = client.utils().searchSameThreadWindow(parent.getHwnd(),
-                    locator);
+            getLogger().debug("Searching for dialog box in the same thread");
+            long hwnd = getClient().utils().searchSameThreadWindow(
+                    getParent()
+                    .getHwnd(),
+                    getLocator());
             if (hwnd == 0) {
-                logger.debug("No dialog found. Returning false");
+                getLogger().debug("No dialog found. Returning false");
                 return false;
             } else {
-                locator.setHwnd(hwnd);
+                getLocator().setHwnd(hwnd);
             }
         }
-        logger.debug("Dialog was found: " + locator);
+        getLogger().debug("Dialog was found: " + getLocator());
         return true;
     }
 

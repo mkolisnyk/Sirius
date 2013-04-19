@@ -33,6 +33,10 @@ task :rubocop do |t|
   sh 'call rubocop -c .rubocop.yml -e lib'
 end
 
+task :saikuro do |t|
+  sh 'call saikuro -c -t -i lib -y 0 -w 11 -e 16 -o out/'
+end
+
 Gem::PackageTask.new(spec) do |pkg| 
 end
 

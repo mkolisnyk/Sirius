@@ -42,7 +42,7 @@ public class TopLevelWindow extends MovableWindow {
      */
     public final Menu menu() throws Exception {
         if (this.exists()) {
-            Menu menu = new Menu(client, this);
+            Menu menu = new Menu(getClient(), this);
             return menu;
         }
         return null;
@@ -53,7 +53,13 @@ public class TopLevelWindow extends MovableWindow {
      * @throws Exception .
      */
     public final void setActive() throws Exception {
-        client.core().window().activate(locator.getHwnd());
+        getClient()
+        .core()
+        .window()
+        .activate(
+                getLocator()
+                .getHwnd()
+                );
     }
 
     /**
@@ -63,9 +69,14 @@ public class TopLevelWindow extends MovableWindow {
      */
     public final Menu systemMenu() throws Exception {
         if (this.exists()) {
-            long hmenu = client.core().window()
+            long hmenu = getClient()
+                    .core()
+                    .window()
                     .getSystemMenu(this.getHwnd(), true);
-            Menu menu = new Menu(client, this, hmenu);
+            Menu menu = new Menu(
+                    getClient(),
+                    this,
+                    hmenu);
             return menu;
         }
         return null;

@@ -3,7 +3,10 @@ module Sirius
     module Win32
       module Classes
         module Controls
-          class CheckBox
+          class CheckBox < Button
+            def initialize(locator,parent=nil)
+              super(locator,parent)
+            end
           end
         end
       end
