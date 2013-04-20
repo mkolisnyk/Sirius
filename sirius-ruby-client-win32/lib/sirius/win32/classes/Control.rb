@@ -3,13 +3,11 @@ module Sirius
     module Win32
       module Classes
         class Control < Window
-          def initialize(locator,parent=nil)
+          def initialize(locator, parent = nil)
             @locator = locator
-            @parent=parent
+            @parent = parent
 
-            if(parent != nil)
-              @client = @parent.client
-            end
+            @client = @parent.client if parent != nil
           end
         end
       end

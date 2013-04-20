@@ -4,19 +4,19 @@ module Sirius
       module Classes
         class Menu
 
-          MF_BYCOMMAND = 0x00000000
-          MF_BYPOSITION = 0x00000400
+          MF_BYCOMMAND = _0x00000000
+          MF_BYPOSITION = _0x00000400
 
           attr_accessor client
           attr_accessor owner
           attr_accessor hmenu
-          def initialize(client, owner=nil, hmenu=nil)
+          def initialize(client, owner = nil, hmenu = nil)
             @client = client
             @owner = owner
             if hmenu == nil
-              @hmenu = hmenu;
+              @hmenu = hmenu
             else
-              @hmenu = @client.core.window.getMenu( @owner.hwnd )
+              @hmenu = @client.core.window.getMenu @owner.hwnd
             end
           end
 
@@ -27,10 +27,15 @@ module Sirius
           end
 
           def get_menu_item_text(position)
-            maxLength = 255;
+            max_length = 255;
 
-            buffer = " " * maxLength
-            @client.core.menu.getMenuString(@hmenu, position, buffer, maxLength,MF_BYPOSITION)
+            buffer = ' ' * maxLength
+            @client.core.menu.getMenuString(
+              @hmenu,
+              position,
+              buffer,
+              max_length,
+              MF_BYPOSITION)
             buffer
           end
 
@@ -50,7 +55,8 @@ module Sirius
             #      for (int i = 0; i < count; i++) {
             #        UnsignedShort[] buf = new UnsignedShort[255];
             #        client.core().menu()
-            #            .getMenuString(hmenu, i, buf, 255, (int) MF_BYPOSITION);
+            #            .getMenuString(hmenu, i, buf, 255,
+            #             (int) MF_BYPOSITION);
             #        byte[] text = new byte[buf.length];
             #
             #        for (int j = 0; j < buf.length; j++) {
@@ -64,14 +70,18 @@ module Sirius
 
           def menu(title)
             names = get_item_names
-            item = names.index { |name| ( name.match(title) || name.index(title)!=nil ) }
+            item = names.index do |name|
+              (name.match(title) || name.index(title) != nil)
+            end
             sub_hmenu = @client.core.menu.getSubMenu(hmenu, item)
             Menu.new(@client, @owner, sub_hmenu)
           end
 
           def item(title)
             names = get_item_names
-            item = names.index{|name| (name.match(title) || name.index(title)!=nil ) }
+            item = names.index do |name|
+              (name.match(title) || name.index(title) != nil)
+            end
             MenuItem.new(@client, @owner, @hmenu, item)
           end
         end

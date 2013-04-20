@@ -3,14 +3,12 @@ module Sirius
     module Win32
       module Classes
         class DialogBox < TopLevelWindow
-          def initialize(locator,client=nil,parent=nil)
+          def initialize(locator, client = nil, parent = nil)
             super(client, parent, locator);
           end
 
-          def exists?()
-            if (@parent == nil)
-              return super.exists?
-            end
+          def exists?
+            return super.exists? if @parent == nil
 
             return false unless @parent.exists?
 
@@ -18,7 +16,7 @@ module Sirius
             @parent.hwnd,
             @locator)
 
-            if (hwnd == 0)
+            if hwnd == 0
               return false
             else
               @locator.hwnd = hwnd
@@ -26,9 +24,9 @@ module Sirius
             return true
           end
 
-          #          
+          #
           def exists?(timeout)
-            return waitFor(timeout, "exists", true)
+            return waitFor(timeout, 'exists', true)
           end
         end
       end

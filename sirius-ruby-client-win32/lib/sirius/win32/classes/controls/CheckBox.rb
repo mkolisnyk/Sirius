@@ -4,8 +4,8 @@ module Sirius
       module Classes
         module Controls
           class CheckBox < Button
-            def initialize(locator,parent=nil)
-              super(locator,parent)
+            def initialize(locator, parent = nil)
+              super(locator, parent)
             end
           end
         end

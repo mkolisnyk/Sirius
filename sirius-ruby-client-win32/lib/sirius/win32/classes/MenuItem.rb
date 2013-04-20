@@ -16,22 +16,21 @@ module Sirius
             @pos = pos
           end
 
-          def checked?()
+          def checked?
             false
           end
 
-          def enabled?()
+          def enabled?
             false
           end
 
-          def separator?()
+          def separator?
             false
           end
 
-          def pick()
+          def pick
             @client.core.menu.pickItem(@owner.hwnd, @hmenu, @pos)
           end
-
         end
       end
     end

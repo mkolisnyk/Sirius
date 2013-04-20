@@ -6,33 +6,37 @@ module Sirius
           attr_accessor :client
           attr_accessor :locator
           attr_accessor :parent
-          
-          def initialize(locator,client=nil,parent=nil)
+
+          def initialize(locator, client = nil, parent = nil)
             @locator = locator
             @client = client
-            @parent=parent
+            @parent = parent
 
-            if(parent != nil)
-              @client = @parent.client
-            end
+            @client = @parent.client if parent != nil
           end
 
           def click
             return unless exists?
-            @client.core.window.click(@locator.hwnd, 0, 0, 0, false, false, false);
+            @client.core.window.click(
+              @locator.hwnd,
+                0,
+                0,
+                0,
+                false,
+                false,
+                false)
           end
 
           def type_keys(text)
             return unless exists?
-            text.split('//').each { |key|
-              @client.core.window.keyPress(@locator.hwnd, key);
-            }
+            text.split('//').each do |key|
+              @client.core.window.keyPress(@locator.hwnd, key)
+            end
           end
 
           def exists?
-            if (@parent != nil)
-
-              if (!@parent.exists?)
+            if @parent != nil
+              if !@parent.exists?
                 return false;
               else
                 @locator.parent = @parent.hwnd
@@ -40,9 +44,7 @@ module Sirius
             end
 
             @locator.hwnd = 0
-            if(@parent != nil)
-              @client = @parent.client
-            end
+            @client = @parent.client if @parent != nil
 
             @locator.hwnd = @client.utils.searchWindow(@locator)
 
@@ -52,7 +54,7 @@ module Sirius
               @locator.hwnd = 0
             end
 
-            return false;
+            return false
           end
 
 =begin

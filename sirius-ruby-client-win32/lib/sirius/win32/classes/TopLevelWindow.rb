@@ -3,7 +3,7 @@ module Sirius
     module Win32
       module Classes
         class TopLevelWindow < MovableWindow
-          def initialize(client=nil, locator=nil,parent=nil)
+          def initialize(client = nil, locator = nil, parent = nil)
             super(client, parent, locator)
           end
 
@@ -13,13 +13,14 @@ module Sirius
 
           def menu
             if exists?
-              return Menu.new(client,self)
+              Menu.new(client, self)
+            else
+              nil
             end
-            return nil
           end
 
           def system_menu
-            if (exists?)
+            if exists?
               @hmenu = @client.core.window.getSystemMenu(@locator.hwnd, true);
               return Menu.new(client, self, @hmenu)
             end

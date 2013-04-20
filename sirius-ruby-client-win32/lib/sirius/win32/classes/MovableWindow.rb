@@ -3,15 +3,15 @@ module Sirius
     module Win32
       module Classes
         class MovableWindow < Window
-          def initialize(client=nil, locator=nil,parent=nil)
+          def initialize(client = nil, locator = nil, parent = nil)
             super(client, parent, locator)
           end
 
-          def moveTo(x, y)
+          def move_to(x, y)
             @client.core.window.moveTo(@locator.hwnd, x, y);
           end
 
-          def sizeTo(width, height)
+          def size_to(width, height)
             @client.core.window.sizeTo(@locator.hwnd, width, height);
           end
 

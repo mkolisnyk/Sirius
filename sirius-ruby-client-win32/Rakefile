@@ -17,7 +17,14 @@ spec = Gem::Specification.new do |s|
 end
 
 task :rubocop do |t|
-  sh 'call rubocop -c .rubocop.yml -e lib'
+  includes = Dir['lib/**/*']
+  excludes = Dir['lib/sirius/win32/core/**/*']
+  
+  file_list = (includes - excludes ).reject {|fn| File.directory?(fn)}   
+  
+  file_list.each do |path|
+    sh "call rubocop -c .rubocop.yml -e #{path}"
+  end
 end
 
 Gem::PackageTask.new(spec) do |pkg|
