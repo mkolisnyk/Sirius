@@ -131,8 +131,8 @@ public class MovableWindow extends Window {
         .window()
         .moveTo(
                 getLocator()
-                .getHwnd(), 
-                x, 
+                .getHwnd(),
+                x,
                 y
                 );
         return true;

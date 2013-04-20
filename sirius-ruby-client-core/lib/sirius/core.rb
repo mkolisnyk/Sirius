@@ -5,8 +5,8 @@ module Sirius
     module Core
       class Core
         attr_accessor(:system)
-        def initialize(host = "localhost",port="21212")
-          @system = System::System.new(host,port)
+        def initialize(host = 'localhost', port = '21212')
+          @system = System::System.new(host, port)
         end
       end
     end

@@ -6,18 +6,18 @@ module Sirius
       module System
         class DirectoryOperations
           attr_accessor(:host, :port, :client)
-          def initialize(host = "localhost",port="21212")
+          def initialize(host = 'localhost', port = '21212' )
             @host = host
             @port = port
 
             @client = Savon.client do |wsdl|
               wsdl.endpoint = "http://#{@host}:#{@port}/system/file?wsdl"
-              wsdl.namespace = "http://system.server.sirius.org/"
+              wsdl.namespace = 'http://system.server.sirius.org/'
             end
           end
 
-          def copy_ex(origin,destination,overwrite)
-            response = @client.request :sys, "copyEx" do
+          def copy_ex(origin, destination, overwrite)
+            response = @client.request :sys, 'copyEx' do
               soap.body = {
                 :origin => origin,
                 :destination => destination,

@@ -17,7 +17,7 @@ spec = Gem::Specification.new do |s|
 end
 
 task :rubocop do |t|
-  sh 'call rubocop -c .rubocop.yml -e lib'
+  sh 'call rubocop -c .rubocop.yml -e lib/sirius/core.rb lib/sirius/core/system.rb'
 end
 
 Gem::PackageTask.new(spec) do |pkg|
