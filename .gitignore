@@ -21,3 +21,9 @@ SiriusCSharp.Client/SiriusClient/Sirius.CSharp.Client.Package/bin/*
 obj
 bin
 .svn
+
+target
+CSharp-Client
+Java-Client
+RubyClient
+Server
