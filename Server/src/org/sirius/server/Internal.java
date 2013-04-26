@@ -15,9 +15,9 @@ public class Internal {
 
 	
 	public void stop(){
-		for(Endpoint endpoint:Starter.endpoints){
+		for(Endpoint endpoint:Starter.getEndpoints()){
 			endpoint.stop();			
 		}
-		Starter.endpoints.removeAll(Starter.endpoints);
+		Starter.getEndpoints().removeAll(Starter.getEndpoints());
 	}
 }

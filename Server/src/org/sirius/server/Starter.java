@@ -65,6 +65,13 @@ public class Starter {
 	private static ArrayList<Endpoint> endpoints = new ArrayList<Endpoint>();
 
 	/**
+     * @return the endpoints
+     */
+    public static ArrayList<Endpoint> getEndpoints() {
+        return endpoints;
+    }
+
+    /**
 	 * .
 	 */
 	private static Logger logger = Logger.getLogger(Starter.class);
@@ -254,6 +261,7 @@ public class Starter {
 
 		logger.info("Starting endpoints...");
 		starter.startEndPoints(options, host, port);
+		
 	}
 
 }
