@@ -2,23 +2,20 @@ module Sirius
   module Client
     module Web
       module Classes
-       
         class WebButton < WebControl
           attr_accessor :parent
-          attr_accessor :parentElement
+          attr_accessor :parent_element
           attr_accessor :locator
 
-          def initialize(parent, locator, parentElement=nil)
+          def initialize(parent, locator, parent_element = nil)
             @parent = parent
-            @parentElement = parentElement
-            @locator = locator            
-          end          
+            @parent_element = parent_element
+            @locator = locator
+          end
 
-          def text()
+          def text
             res = self.value
-            if(res == nil)
-              res = self.innerText 
-            end
+            res = self.inner_text if res == nil
             res
           end
         end

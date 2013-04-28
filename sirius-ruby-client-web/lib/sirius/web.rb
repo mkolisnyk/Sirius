@@ -4,21 +4,21 @@ module Sirius
       class Web
         attr_accessor :core
         attr_accessor :token
-        def initialize(host="localhost",port="21212")
-          @core = Core::Core.new(host,port)
+        def initialize(host = 'localhost', port = '21212')
+          @core = Core::Core.new(host, port)
           @token = nil
         end
 
-        def start()
+        def start
           @token = @core.start
         end
 
-        def stop()
+        def stop
           @core.stop @token
         end
 
-        def method_missing? name,*args
-          @core.method(name).call(@token,args)
+        def method_missing?(name, *args)
+          @core.method(name).call(@token, args)
         end
       end
     end

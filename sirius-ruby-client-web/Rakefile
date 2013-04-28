@@ -2,6 +2,7 @@ require 'rubygems'
 require 'rubygems/package_task'
 require 'cucumber'
 require 'cucumber/rake/task'
+require 'rake/testtask'
 
 spec = Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
@@ -17,7 +18,21 @@ spec = Gem::Specification.new do |s|
 end
 
 task :rubocop do |t|
-  sh 'call rubocop -c .rubocop.yml -e lib'
+  includes = Dir['lib/**/*']
+  excludes = Dir['lib/sirius/web/core/**/*']
+  
+  file_list = (includes - excludes ).reject {|fn| File.directory?(fn)}   
+  
+  file_list.each do |path|
+    sh "call rubocop -c .rubocop.yml -e #{path}"
+  end
+end
+
+Rake::TestTask.new(:install_test) do |task|
+  task.name = 'install_test'
+  task.libs << "test"
+  task.test_files = FileList['tests/install/**/*.rb']
+  task.verbose = true
 end
 
 Gem::PackageTask.new(spec) do |pkg|
@@ -30,3 +45,5 @@ end
 task :push => [:package] do |t| 
   sh "call gem push -V pkg/#{spec.name}-#{spec.version}.gem"
 end
+
+task :all => [:rubocop,:package,:install_test]

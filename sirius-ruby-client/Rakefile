@@ -4,6 +4,7 @@ require 'cucumber'
 require 'cucumber/rake/task.rb'
 require 'rubygems/tasks'
 require 'rubocop'
+require 'rake/testtask'
 
 spec = Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
@@ -25,12 +26,26 @@ spec = Gem::Specification.new do |s|
   s.add_dependency('sirius-client-web', '>= 0.0')
 end
 
+Rake::TestTask.new(:install_test) do |task|
+  task.name = 'install_test'
+  task.libs << "test"
+  task.test_files = FileList['tests/install/**/*.rb']
+  task.verbose = true
+end
+
 Cucumber::Rake::Task.new(:test) do |t|
   t.cucumber_opts = "tests/features --format pretty --guess"
 end
 
 task :rubocop do |t|
-  sh 'call rubocop -c .rubocop.yml -e lib'
+  includes = Dir['lib/**/*']
+  excludes = Dir['lib/sirius/internal/**/*']
+  
+  file_list = (includes - excludes ).reject {|fn| File.directory?(fn)}   
+  
+  file_list.each do |path|
+    sh "call rubocop -c .rubocop.yml -e #{path}"
+  end
 end
 
 task :saikuro do |t|
@@ -43,3 +58,5 @@ end
 task :push => [:package] do |t| 
   sh "call gem push  -k sirius_api_key -V pkg/#{spec.name}-#{spec.version}.gem"
 end
+
+task :all => [:rubocop,:package,:install_test]

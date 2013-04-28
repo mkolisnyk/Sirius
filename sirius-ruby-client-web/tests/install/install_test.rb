@@ -3,7 +3,7 @@ require 'test/unit'
 class TestInstall < Test::Unit::TestCase
   
   def package
-    'sirius-client'
+    'sirius-client-web'
   end
   
   def install
@@ -11,7 +11,7 @@ class TestInstall < Test::Unit::TestCase
   end
   
   def test_modules
-    gems = [package]
+    gems = ["#{package}"]
     gems.each do |gem|
       `gem uninstall #{gem} -a -q`
       output = `gem search #{gem} -l`

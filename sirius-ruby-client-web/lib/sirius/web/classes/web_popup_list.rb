@@ -3,54 +3,53 @@ module Sirius
     module Web
       module Classes
         class WebPopupList < WebControl
-          def initialize(parent, locator, parentElement=nil)
-            super(parent,locator,parentElement)
+          def initialize(parent, locator, parentElement = nil)
+            super(parent, locator, parent_element)
           end
 
-          def multi?()
-            client().core.isMultiple(@parentElement, @locator)
+          def multi?
+            client.core.isMultiple(@parent_element, @locator)
           end
-      
-          def deselectAll()
-            client().core.deselectAll(@parentElement, @locator)
+
+          def deselect_all
+            client.core.deselectAll(@parent_element, @locator)
           end
-          
-          def deselectByIndex(index)
-            client().core.deselectByIndex(@parentElement, @locator, index)
+
+          def deselect_by_index(index)
+            client.core.deselectByIndex(@parent_element, @locator, index)
           end
-          
-          def  deselectByValue(value)
-            client().core.deselectByValue(@parentElement, @locator, value)
+
+          def  deselect_by_value(value)
+            client.core.deselectByValue(@parent_element, @locator, value)
           end
-          
-          def deselectByVisibleText(text)
-            client().core.deselectByVisibleText(@parentElement, @locator, text)
+
+          def deselect_by_visible_text(text)
+            client.core.deselectByVisibleText(@parent_element, @locator, text)
           end
-          
-          def getAllOptions()
-            client().core.getAllOptions(@parentElement, @locator)
+
+          def get_all_options
+            client.core.getAllOptions(@parent_element, @locator)
           end
-          
-          def selectByIndex(index)
-            client().core.selectByIndex(@parentElement, @locator, index)
+
+          def select_by_index(index)
+            client.core.selectByIndex(@parent_element, @locator, index)
           end
-          
-          def selectByValue(value)
-            client().core.selectByValue(@parentElement, @locator, value)
+
+          def select_by_value(value)
+            client.core.selectByValue(@parent_element, @locator, value)
           end
-          
-          def selectByVisibleText(text)
-            client().core.selectByVisibleText(@parentElement, @locator, text)
+
+          def select_by_visible_text(text)
+            client.core.selectByVisibleText(@parent_element, @locator, text)
           end
-          
-          def getAllSelectedOptions()
-            client().core.getAllSelectedOptions(@parentElement, @locator)
+
+          def get_all_selected_options
+            client.core.getAllSelectedOptions(@parent_element, @locator)
           end
-          
-          def getFirstSelectedOption()
-            client().core.getFirstSelectedOption(@parentElement, @locator)
+
+          def get_first_selected_option
+            client.core.getFirstSelectedOption(@parent_element, @locator)
           end
-          
         end
       end
     end

@@ -3,16 +3,15 @@ module Sirius
     module Web
       module Classes
         class WebRadioButton < WebButton
+          def initialize(parent, locator, parent_element = nil)
+            super(parent, locator, parent_element)
+          end
 
-          def initialize(parent, locator, parentElement=nil)
-            super(parent,locator,parentElement)
+          def checked?
+            client.core.isSelected(@parent_element, @locator)
           end
-          
-          def checked?()
-            client().core.isSelected(@parentElement, @locator)
-          end
-          
-          def check()
+
+          def check
             click unless checked?
           end
         end

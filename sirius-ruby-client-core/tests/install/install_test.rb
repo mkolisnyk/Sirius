@@ -3,9 +3,9 @@ require 'test/unit'
 class TestInstall < Test::Unit::TestCase
   
   def package
-    'sirius-client'
+    'sirius-client-core'
   end
-  
+      
   def install
     `gem install #{package} --local ./pkg/#{package}-#{File.read('VERSION').chomp}.gem --no-ri --no-rdoc`
   end
