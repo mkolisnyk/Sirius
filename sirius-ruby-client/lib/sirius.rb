@@ -1,4 +1,6 @@
+require 'sirius/internal.rb'
+
 module Sirius
-  module Client
+  module Client    
   end
 end

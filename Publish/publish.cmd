@@ -16,17 +16,19 @@ mkdir .\Java-Client
 mkdir .\Ruby-Client
 mkdir .\CSharp-Client
 
-echo "Building server modules"
-cd ..
-call mvn -f Server/pom.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom.xml -Dpackaging=jar -DgeneratePom=true clean package
-call mvn -f Sirius-Server-Core/pom.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom.xml -Dpackaging=jar -DgeneratePom=true clean package
-call mvn -f Sirius-Server-Win32/pom.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom.xml -Dpackaging=jar -DgeneratePom=true clean package
-call mvn -f Sirius-Server-Web/pom.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom.xml -Dpackaging=jar -DgeneratePom=true clean package
-cd .\Publish
-FOR /f %%i IN ('dir /B /S ..\sirius.server*%1.jar') DO copy /Y %%i .\Server
-copy ..\Server\modules.csv .\Server
-copy ..\Server\log4j.xml .\Server
-copy ..\Server\log4j.dtd .\Server
+rem echo "Building server modules"
+rem cd ..
+rem call mvn -f Server/pom.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom.xml -Dpackaging=jar -DgeneratePom=true clean package
+rem call mvn -f Sirius-Server-Core/pom.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom.xml -Dpackaging=jar -DgeneratePom=true clean package
+rem call mvn -f Sirius-Server-Win32/pom.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom.xml -Dpackaging=jar -DgeneratePom=true clean package
+rem call mvn -f Sirius-Server-Web/pom.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom.xml -Dpackaging=jar -DgeneratePom=true clean package
+rem cd .\Publish
+rem FOR /f %%i IN ('dir /B /S ..\sirius.server*%1.jar') DO copy /Y %%i .\Server
+rem copy ..\Server\modules.csv .\Server
+rem copy ..\Server\log4j.xml .\Server
+rem copy ..\Server\log4j.dtd .\Server
+
+call installsvc.cmd %1
 
 echo "Building Java client modules"
 
