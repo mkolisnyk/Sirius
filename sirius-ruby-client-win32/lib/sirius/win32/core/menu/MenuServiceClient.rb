@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require 'MenuServiceDriver.rb'
+require 'sirius/win32/core/menu/MenuServiceDriver.rb'
 
 Sirius::Client::Win32::Core::Menu
 

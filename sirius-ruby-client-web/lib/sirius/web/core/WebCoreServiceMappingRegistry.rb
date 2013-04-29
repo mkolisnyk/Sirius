@@ -1,8 +1,9 @@
-require 'WebCoreService.rb'
+# encoding: UTF-8
+require 'sirius/web/core/WebCoreService.rb'
 require 'soap/mapping'
-module Sirius
-module Client
-module Web
+module Sirius
+module Client
+module Web
 module Core
 
 module WebCoreServiceMappingRegistry  EncodedRegistry = ::SOAP::Mapping::EncodedRegistry.new
@@ -1404,7 +1405,7 @@ module WebCoreServiceMappingRegistry  EncodedRegistry = ::SOAP::Mapping::Encoded
   )
 end
 
-end
-end
-end
+end
+end
+end
 end

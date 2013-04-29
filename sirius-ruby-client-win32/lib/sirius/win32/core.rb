@@ -1,3 +1,13 @@
+require 'sirius/win32/core/button/ButtonServiceDriver.rb'
+require 'sirius/win32/core/combobox/ComboBoxServiceDriver.rb'
+require 'sirius/win32/core/dialog/DialogServiceDriver.rb'
+require 'sirius/win32/core/edit/EditServiceDriver.rb'
+require 'sirius/win32/core/listbox/ListBoxServiceDriver.rb'
+require 'sirius/win32/core/menu/MenuServiceDriver.rb'
+require 'sirius/win32/core/tabcontrol/TabControlServiceDriver.rb'
+require 'sirius/win32/core/utils/Win32UtilsServiceDriver.rb'
+require 'sirius/win32/core/window/WindowServiceDriver.rb'
+
 module Sirius
   module Client
     module Win32

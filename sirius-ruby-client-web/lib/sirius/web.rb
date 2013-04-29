@@ -1,3 +1,6 @@
+# encoding: UTF-8
+require 'sirius/web/core.rb'
+
 module Sirius
   module Client
     module Web

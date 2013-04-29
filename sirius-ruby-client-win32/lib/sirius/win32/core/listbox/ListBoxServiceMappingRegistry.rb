@@ -1,4 +1,4 @@
-require 'ListBoxService.rb'
+require 'sirius/win32/core/listbox/ListBoxService.rb'
 require 'soap/mapping'
 
 module Sirius  module Client    module Win32      module Core        module Listbox
@@ -873,8 +873,8 @@ module Sirius  module Client    module Win32      module Core        module 
             )
           end
 
-        end
-      end
-    end
-  end
+        end
+      end
+    end
+  end
 end

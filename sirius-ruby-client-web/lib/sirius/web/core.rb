@@ -1,3 +1,7 @@
+# encoding: UTF-8
+require 'sirius/web/core/WebCoreServiceDriver.rb'
+require 'sirius/web/core/select/WebSelectServiceDriver.rb'
+
 module Sirius
   module Client
     module Web
@@ -8,7 +12,13 @@ module Sirius
 
           def initialize(host = 'localhost', port = '21212')
             @core_client = WebCore.new("http://#{host}:#{port}")
-            @select_client = Select::WebSelect.new("http://#{host}:#{port}")
+            @select_client =
+              Sirius::
+                Client::
+                  Web::
+                    Core::
+                      Select::
+                        WebSelect.new("http://#{host}:#{port}")
           end
 
           def method_missing?(name, *args)

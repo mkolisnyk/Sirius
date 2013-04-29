@@ -1,4 +1,4 @@
-require 'EditService.rb'
+require 'sirius/win32/core/edit/EditService.rb'
 require 'soap/mapping'
 
 module Sirius  module Client    module Win32      module Core        module Edit
@@ -852,8 +852,8 @@ module Sirius  module Client    module Win32      module Core        module 
             )
           end
 
-        end
-      end
-    end
-  end
+        end
+      end
+    end
+  end
 end

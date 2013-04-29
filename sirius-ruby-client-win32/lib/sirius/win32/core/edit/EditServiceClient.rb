@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require 'EditServiceDriver.rb'
+require 'sirius/win32/core/edit/EditServiceDriver.rb'
 
 Sirius::Client::Win32::Core::Edit
 

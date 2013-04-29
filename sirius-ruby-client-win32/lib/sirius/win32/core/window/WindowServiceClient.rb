@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require 'WindowServiceDriver.rb'
+require 'sirius/win32/core/window/WindowServiceDriver.rb'
 
 Sirius::Client::Win32::Core::Window
 

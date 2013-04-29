@@ -1,4 +1,4 @@
-require 'ButtonService.rb'
+require 'sirius/win32/core/button/ButtonService.rb'
 require 'soap/mapping'
 
 module Sirius  module Client    module Win32      module Core        module Button
@@ -192,8 +192,8 @@ module Sirius  module Client    module Win32      module Core        module 
             )
           end
 
-        end
-      end
-    end
-  end
+        end
+      end
+    end
+  end
 end

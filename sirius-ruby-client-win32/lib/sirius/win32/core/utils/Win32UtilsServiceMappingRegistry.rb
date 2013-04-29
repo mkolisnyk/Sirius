@@ -1,4 +1,4 @@
-require 'Win32UtilsService.rb'
+require 'sirius/win32/core/utils/Win32UtilsService.rb'
 require 'soap/mapping'
 
 module Sirius  module Client    module Win32      module Core        module Utils
@@ -129,8 +129,8 @@ module Sirius  module Client    module Win32      module Core        module 
             )
           end
 
-        end
-      end
-    end
-  end
+        end
+      end
+    end
+  end
 end

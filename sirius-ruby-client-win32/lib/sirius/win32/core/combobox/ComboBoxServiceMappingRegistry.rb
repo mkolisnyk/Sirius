@@ -1,4 +1,4 @@
-require 'ComboBoxService.rb'
+require 'sirius/win32/core/combobox/ComboBoxService.rb'
 require 'soap/mapping'
 
 module Sirius  module Client    module Win32      module Core        module Combobox
@@ -1093,8 +1093,8 @@ module Sirius  module Client    module Win32      module Core        module 
             )
           end
 
-        end
-      end
-    end
-  end
+        end
+      end
+    end
+  end
 end

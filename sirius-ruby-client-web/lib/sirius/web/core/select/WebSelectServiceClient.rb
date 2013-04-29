@@ -1,8 +1,8 @@
-#!/usr/bin/env ruby
-require 'WebSelectServiceDriver.rb'
+# encoding: UTF-8
+require 'sirius/web/core/select/WebSelectServiceDriver.rb'
 
 
-Sirius::Client::Win32::Core::Select
+Sirius::Client::Web::Core::Select
 
 endpoint_url = ARGV.shift
 obj = WebSelect.new(endpoint_url)
@@ -145,4 +145,4 @@ puts obj.deselectByVisibleText(parameters)
 
 
 
-Sirius::Client::Win32::Core::Select
+Sirius::Client::Web::Core::Select

@@ -4,12 +4,13 @@ require 'soap/rpc/driver.rb'
 
 module Sirius::Client::Internal
   class Internal < SOAP::RPC::Driver
+    
     DefaultEndpointUrl = "http://localhost:21212/internal"
     Methods = [
       [ "",
       "stop",
-      [ [:in, "parameters", ["::SOAP::SOAPElement", "http://server.sirius.org/", "stop"]],
-      [:out, "parameters", ["::SOAP::SOAPElement", "http://server.sirius.org/", "stopResponse"]] ],
+      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http://server.sirius.org/", "stop"]],
+      [ SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http://server.sirius.org/", "stopResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
       :response_style => :document, :response_use => :literal,
       :faults => {} }

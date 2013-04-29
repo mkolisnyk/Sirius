@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require 'DialogServiceDriver.rb'
+require 'sirius/win32/core/dialog/DialogServiceDriver.rb'
 
 Sirius::Client::Win32::Core::Dialog
 

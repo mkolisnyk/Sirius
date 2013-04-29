@@ -1,3 +1,5 @@
+require 'sirius/win32/core.rb'
+
 module Sirius
   module Client
     module Win32

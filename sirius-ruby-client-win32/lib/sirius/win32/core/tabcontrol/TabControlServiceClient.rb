@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require 'TabControlServiceDriver.rb'
+require 'sirius/win32/core/tabcontrol/TabControlServiceDriver.rb'
 
 Sirius::Client::Win32::Core::Tabcontrol
 

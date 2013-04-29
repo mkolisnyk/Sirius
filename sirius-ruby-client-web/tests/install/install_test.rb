@@ -13,7 +13,7 @@ class TestInstall < Test::Unit::TestCase
   def test_modules
     gems = ["#{package}"]
     gems.each do |gem|
-      `gem uninstall #{gem} -a -q`
+      `gem uninstall #{gem} -a -q -I`
       output = `gem search #{gem} -l`
       assert_equal nil,output.match("#{gem} [(]"),"The '#{gem}' module wasn't removed"
     end
@@ -28,15 +28,15 @@ class TestInstall < Test::Unit::TestCase
   def test_inclusions
     install
     assert_nothing_raised do
-      require 'sirius'
+      require 'sirius/web.rb'
     end
   end
 
   def test_new_instances
     install
     assert_nothing_raised do
-      require 'sirius'
-      @client = Sirius::Client::InternalClient.new
+      require 'sirius/web.rb'
+      @client = Sirius::Client::Web::Web.new
     end
     
   end

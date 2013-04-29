@@ -1,96 +1,97 @@
-require 'MenuService.rb'
-require 'MenuServiceMappingRegistry.rb'
+require 'sirius/win32/core/menu/MenuService.rb'
+require 'sirius/win32/core/menu/MenuServiceMappingRegistry.rb'
 require 'soap/rpc/driver'
 
 module Sirius::Client::Win32::Core::Menu
 
 
-class Menu < ::SOAP::RPC::Driver  DefaultEndpointUrl = "http:localhost:21212/win32/menu"
+class Menu < ::SOAP::RPC::Driver
+  DefaultEndpointUrl = "http:localhost:21212/win32/menu"
   Methods = [
     [ "",
       "isMenu",
-      [ [:in, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "IsMenu"]],
-        [:out, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "IsMenuResponse"]] ],
+      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "IsMenu"]],
+        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "IsMenuResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "getMenuInfo",
-      [ [:in, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuInfo"]],
-        [:out, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuInfoResponse"]] ],
+      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuInfo"]],
+        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuInfoResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "getMenuState",
-      [ [:in, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuState"]],
-        [:out, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuStateResponse"]] ],
+      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuState"]],
+        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuStateResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "getSubMenu",
-      [ [:in, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetSubMenu"]],
-        [:out, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetSubMenuResponse"]] ],
+      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetSubMenu"]],
+        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetSubMenuResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "getMenuItemRect",
-      [ [:in, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuItemRect"]],
-        [:out, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuItemRectResponse"]] ],
+      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuItemRect"]],
+        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuItemRectResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "getMenuDefaultItem",
-      [ [:in, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuDefaultItem"]],
-        [:out, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuDefaultItemResponse"]] ],
+      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuDefaultItem"]],
+        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuDefaultItemResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "getMenuItemCount",
-      [ [:in, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuItemCount"]],
-        [:out, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuItemCountResponse"]] ],
+      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuItemCount"]],
+        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuItemCountResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "getMenuItemID",
-      [ [:in, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuItemID"]],
-        [:out, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuItemIDResponse"]] ],
+      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuItemID"]],
+        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuItemIDResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "getMenuItemInfo",
-      [ [:in, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuItemInfo"]],
-        [:out, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuItemInfoResponse"]] ],
+      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuItemInfo"]],
+        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuItemInfoResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "getMenuString",
-      [ [:in, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuString"]],
-        [:out, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuStringResponse"]] ],
+      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuString"]],
+        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "GetMenuStringResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "pickItem",
-      [ [:in, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "pickItem"]],
-        [:out, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "pickItemResponse"]] ],
+      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "pickItem"]],
+        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "pickItemResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
@@ -101,7 +102,7 @@ class Menu < ::SOAP::RPC::Driver  DefaultEndpointUrl = "http:localhost:21212/win
     super(endpoint_url, nil)
     self.mapping_registry = MenuServiceMappingRegistry::EncodedRegistry
     self.literal_mapping_registry = MenuServiceMappingRegistry::LiteralRegistry
-    init_methods
+    init_methods
   end
 private
 
@@ -122,7 +123,7 @@ private
               end
             end
 
-  end
+  end
 end
 
 end

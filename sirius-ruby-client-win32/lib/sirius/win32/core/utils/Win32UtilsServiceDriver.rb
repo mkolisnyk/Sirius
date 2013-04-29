@@ -1,24 +1,25 @@
-require 'Win32UtilsService.rb'
-require 'Win32UtilsServiceMappingRegistry.rb'
+require 'sirius/win32/core/utils/Win32UtilsService.rb'
+require 'sirius/win32/core/utils/Win32UtilsServiceMappingRegistry.rb'
 require 'soap/rpc/driver'
 
 module Sirius::Client::Win32::Core::Utils
 
 
-class Win32Utils < ::SOAP::RPC::Driver  DefaultEndpointUrl = "http:localhost:21212/win32/utils"
+class Win32Utils < ::SOAP::RPC::Driver
+  DefaultEndpointUrl = "http:localhost:21212/win32/utils"
   Methods = [
     [ "",
       "searchWindow",
-      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:win32.server.sirius.org/", "searchWindow"]],
-        [:out, "parameters", ["::SOAP::SOAPElement", "http:win32.server.sirius.org/", "searchWindowResponse"]] ],
+      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:win32.server.sirius.org/", "searchWindow"]],
+        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:win32.server.sirius.org/", "searchWindowResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "searchSameThreadWindow",
-      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:win32.server.sirius.org/", "searchSameThreadWindow"]],
-        [:out, "parameters", ["::SOAP::SOAPElement", "http:win32.server.sirius.org/", "searchSameThreadWindowResponse"]] ],
+      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:win32.server.sirius.org/", "searchSameThreadWindow"]],
+        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:win32.server.sirius.org/", "searchSameThreadWindowResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
@@ -29,7 +30,7 @@ class Win32Utils < ::SOAP::RPC::Driver  DefaultEndpointUrl = "http:localhost:212
     super(endpoint_url, nil)
     self.mapping_registry = Win32UtilsServiceMappingRegistry::EncodedRegistry
     self.literal_mapping_registry = Win32UtilsServiceMappingRegistry::LiteralRegistry
-    init_methods
+    init_methods
   end
 private
 
@@ -50,7 +51,7 @@ private
               end
             end
 
-  end
+  end
 end
 
 end

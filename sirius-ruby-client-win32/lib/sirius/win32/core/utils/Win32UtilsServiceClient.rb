@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require 'Win32UtilsServiceDriver.rb'
+require 'sirius/win32/core/utils/Win32UtilsServiceDriver.rb'
 
 Sirius::Client::Win32::Core::Utils
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require 'ButtonServiceDriver.rb'
+require 'sirius/win32/core/button/ButtonServiceDriver.rb'
 
 Sirius::Client::Win32::Core::Button
 

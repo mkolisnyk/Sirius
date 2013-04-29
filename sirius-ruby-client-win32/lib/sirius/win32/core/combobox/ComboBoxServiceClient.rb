@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require 'ComboBoxServiceDriver.rb'
+require 'sirius/win32/core/combobox/ComboBoxServiceDriver.rb'
 
 Sirius::Client::Win32::Core::Combobox
 

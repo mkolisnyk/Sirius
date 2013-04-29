@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require 'WebCoreServiceDriver.rb'
+require 'sirius/web/core/WebCoreServiceDriver.rb'
 
 
 Sirius::Client::Web::Core

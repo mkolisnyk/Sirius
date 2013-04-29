@@ -13,7 +13,7 @@ class TestInstall < Test::Unit::TestCase
   def test_modules
     gems = [package]
     gems.each do |gem|
-      `gem uninstall #{gem} -a -q`
+      `gem uninstall #{gem} -a -q -I`
       output = `gem search #{gem} -l`
       assert_equal nil,output.match("#{gem} [(]"),"The '#{gem}' module wasn't removed"
     end

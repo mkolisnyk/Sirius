@@ -1,4 +1,4 @@
-require 'WindowService.rb'
+require 'sirius/win32/core/window/WindowService.rb'
 require 'soap/mapping'
 
 module Sirius  module Client    module Win32      module Core        module Window
@@ -1506,8 +1506,8 @@ module Sirius  module Client    module Win32      module Core        module 
             )
           end
 
-        end
-      end
-    end
-  end
+        end
+      end
+    end
+  end
 end

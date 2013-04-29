@@ -19,7 +19,7 @@ end
 
 task :rubocop do |t|
   includes = Dir['lib/**/*']
-  excludes = ['']#Dir['lib/sirius/core/**/*']
+  excludes = Dir['lib/sirius/core/system/**/*']
   
   file_list = (includes - excludes ).reject {|fn| File.directory?(fn)}   
   

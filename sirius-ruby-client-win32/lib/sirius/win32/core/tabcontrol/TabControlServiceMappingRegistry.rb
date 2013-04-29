@@ -1,4 +1,4 @@
-require 'TabControlService.rb'
+require 'sirius/win32/core/tabcontrol/TabControlService.rb'
 require 'soap/mapping'
 
 module Sirius  module Client    module Win32      module Core        module Tabcontrol
@@ -576,8 +576,8 @@ module Sirius  module Client    module Win32      module Core        module 
             )
           end
 
-        end
-      end
-    end
-  end
+        end
+      end
+    end
+  end
 end
