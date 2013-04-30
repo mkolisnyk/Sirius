@@ -28,7 +28,7 @@ spec = Gem::Specification.new do |s|
 end
 
 task :clean do |t|
-  FileUtils.rm_r 'pkg'
+  FileUtils.rm_r 'pkg', :force => true
 end
 
 Rake::TestTask.new(:install_test) do |task|
