@@ -11,8 +11,8 @@ module Sirius
             @port = port
 
             @client = Savon.client do |wsdl|
-              wsdl.endpoint = "http://#{@host}:#{@port}/system/file?wsdl"
-              wsdl.namespace = "http://system.server.sirius.org/"
+              wsdl.endpoint("http://#{@host}:#{@port}/system/file?wsdl")
+              wsdl.namespace("http://system.server.sirius.org/")
             end
           end
 
