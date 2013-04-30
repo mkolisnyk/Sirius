@@ -1,4 +1,3 @@
-GOTO PUBLISH
 echo "Creating folder structure"
 
 DEL /Q /S .\Server\*.*
@@ -48,19 +47,19 @@ echo %1 1>..\sirius-ruby-client-win32\VERSION
 echo %1 1>..\sirius-ruby-client-web\VERSION
 
 cd ..\sirius-ruby-client\
-call rake package
+call rake all
 cd ..\Publish
 
 cd ..\sirius-ruby-client-core\
-call rake package
+call rake all
 cd ..\Publish
 
 cd ..\sirius-ruby-client-win32\
-call rake package
+call rake all
 cd ..\Publish
 
 cd ..\sirius-ruby-client-web\
-call rake package
+call rake all
 cd ..\Publish
 FOR /f %%i IN ('dir /B /S ..\*%1.gem') DO copy /Y %%i .\Ruby-Client
 

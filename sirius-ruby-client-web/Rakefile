@@ -3,6 +3,7 @@ require 'rubygems/package_task'
 require 'cucumber'
 require 'cucumber/rake/task'
 require 'rake/testtask'
+require 'fileutils'
 
 spec = Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
@@ -15,6 +16,10 @@ spec = Gem::Specification.new do |s|
   s.description = "The web client module for Sirius system"
   s.authors="Myk Kolisnyk"
   s.email="kolesnik.nickolay@gmail.com"
+end
+
+task :clean do |t|
+  FileUtils.rm_r 'pkg'
 end
 
 task :rubocop do |t|
@@ -46,4 +51,4 @@ task :push => [:package] do |t|
   sh "call gem push -V pkg/#{spec.name}-#{spec.version}.gem"
 end
 
-task :all => [:rubocop,:package,:install_test]
+task :all => [:clean,:rubocop,:package,:install_test]
