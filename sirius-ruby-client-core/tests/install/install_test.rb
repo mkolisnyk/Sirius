@@ -28,15 +28,15 @@ class TestInstall < Test::Unit::TestCase
   def test_inclusions
     install
     assert_nothing_raised do
-      require 'sirius'
+      require 'sirius/core.rb'
     end
   end
 
   def test_new_instances
     install
     assert_nothing_raised do
-      require 'sirius'
-      @client = Sirius::Client::InternalClient.new
+      require 'sirius/core.rb'
+      @client = Sirius::Client::Core::Core.new
     end
     
   end

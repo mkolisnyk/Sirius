@@ -1,4 +1,4 @@
-require 'core/system.rb'
+require 'sirius/core/system.rb'
 
 module Sirius
   module Client
