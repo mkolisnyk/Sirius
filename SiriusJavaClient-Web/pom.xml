@@ -33,9 +33,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<scm>
-		<connection>scm:svn:https://sirius-platform.googlecode.com/svn/tags/sirius.client.web-2013.4.30.0</connection>
-		<developerConnection>scm:svn:https://sirius-platform.googlecode.com/svn/tags/sirius.client.web-2013.4.30.0</developerConnection>
-		<url>https://sirius-platform.googlecode.com/svn/tags/sirius.client.web-2013.4.30.0</url>
+		<connection>scm:svn:https://sirius-platform.googlecode.com/svn/tags/sirius.client.web-1.5.4</connection>
+		<developerConnection>scm:svn:https://sirius-platform.googlecode.com/svn/tags/sirius.client.web-1.5.4</developerConnection>
+		<url>https://sirius-platform.googlecode.com/svn/tags/sirius.client.web-1.5.4</url>
 	</scm>
 
 	<build>
