@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.mkolisnyk</groupId>
 	<artifactId>sirius.client.web</artifactId>
-	<version>1.4.2-SNAPSHOT</version>
+	<version>1.5.4-SNAPSHOT</version>
 	<name>sirius.client.web</name>
 	<url>https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient</url>
 	<description>Sirius Java main client</description>
@@ -33,9 +33,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<scm>
-		<connection>scm:svn:https://sirius-platform.googlecode.com/svn/trunk/SiriusJavaClient-Web/</connection>
-		<developerConnection>scm:svn:https://sirius-platform.googlecode.com/svn/trunk/SiriusJavaClient-Web/</developerConnection>
-		<url>https://sirius-platform.googlecode.com/svn</url>
+		<connection>scm:svn:https://sirius-platform.googlecode.com/svn/tags/sirius.client.web-2013.4.30.0</connection>
+		<developerConnection>scm:svn:https://sirius-platform.googlecode.com/svn/tags/sirius.client.web-2013.4.30.0</developerConnection>
+		<url>https://sirius-platform.googlecode.com/svn/tags/sirius.client.web-2013.4.30.0</url>
 	</scm>
 
 	<build>
@@ -157,7 +157,7 @@
 			<plugin>
 				<groupId>org.sonatype.plugins</groupId>
 				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.3</version>
+				<version>1.4.4</version>
 				<executions>
 					<execution>
 						<id>default-deploy</id>
