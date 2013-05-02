@@ -1,16 +1,13 @@
 echo "Creating folder structure"
 
-DEL /Q /S .\Server\*.*
 DEL /Q /S .\Java-Client\*.*
 DEL /Q /S .\Ruby-Client\*.*
 DEL /Q /S .\CSharp-Client\*.*
 
-rmdir .\Server
 rmdir .\Java-Client
 rmdir .\Ruby-Client
 rmdir .\CSharp-Client
 
-mkdir .\Server
 mkdir .\Java-Client
 mkdir .\Ruby-Client
 mkdir .\CSharp-Client

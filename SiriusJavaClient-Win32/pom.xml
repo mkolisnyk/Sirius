@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.mkolisnyk</groupId>
 	<artifactId>sirius.client.win32</artifactId>
-	<version>1.4.40-SNAPSHOT</version>
+	<version>1.5.42-SNAPSHOT</version>
 	<name>SiriusJavaClient-Win32</name>
 	<url>https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Win32</url>
 	<description>Sirius Java Win32 client</description>

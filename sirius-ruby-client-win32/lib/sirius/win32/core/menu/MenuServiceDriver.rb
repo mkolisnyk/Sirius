@@ -102,7 +102,7 @@ class Menu < ::SOAP::RPC::Driver
     super(endpoint_url, nil)
     self.mapping_registry = MenuServiceMappingRegistry::EncodedRegistry
     self.literal_mapping_registry = MenuServiceMappingRegistry::LiteralRegistry
-    init_methods
+    init_methods
   end
 private
 
@@ -123,7 +123,7 @@ private
               end
             end
 
-  end
+  end
 end
 
 end

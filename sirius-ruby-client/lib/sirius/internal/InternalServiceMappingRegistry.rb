@@ -43,6 +43,6 @@ module Sirius  module Client    module Internal
         )
       end
 
-    end
-  end
+    end
+  end
 end

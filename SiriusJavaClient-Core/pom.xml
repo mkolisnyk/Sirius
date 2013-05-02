@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.mkolisnyk</groupId>
 	<artifactId>sirius.client.core</artifactId>
-	<version>1.4.34-SNAPSHOT</version>
+	<version>1.5.35-SNAPSHOT</version>
 	<name>SiriusJavaClient-Core</name>
 	<description>Sirius Client for core operations</description>
 	<url>https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core</url>

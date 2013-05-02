@@ -22,7 +22,7 @@ module Sirius::Client::Internal
       super(endpoint_url, nil)
       self.mapping_registry = InternalServiceMappingRegistry::EncodedRegistry
       self.literal_mapping_registry = InternalServiceMappingRegistry::LiteralRegistry
-      init_methods
+      init_methods
     end
     private
 
@@ -43,7 +43,7 @@ module Sirius::Client::Internal
         end
       end
 
-    end
+    end
   end
 
 end

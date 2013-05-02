@@ -3,10 +3,10 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.mkolisnyk</groupId>
 	<artifactId>sirius.client.web</artifactId>
-	<version>1.5.4-SNAPSHOT</version>
+	<version>1.5.3-SNAPSHOT</version>
 	<name>sirius.client.web</name>
-	<url>https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient</url>
-	<description>Sirius Java main client</description>
+	<url>https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web</url>
+	<description>Sirius Java Web client</description>
 	<packaging>pom</packaging>
 	<licenses>
 		<license>
@@ -33,9 +33,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<scm>
-		<connection>scm:svn:https://sirius-platform.googlecode.com/svn/tags/sirius.client.web-1.5.4</connection>
-		<developerConnection>scm:svn:https://sirius-platform.googlecode.com/svn/tags/sirius.client.web-1.5.4</developerConnection>
-		<url>https://sirius-platform.googlecode.com/svn/tags/sirius.client.web-1.5.4</url>
+		<connection>scm:svn:https://sirius-platform.googlecode.com/svn/trunk/SiriusJavaClient-Web/</connection>
+		<developerConnection>scm:svn:https://sirius-platform.googlecode.com/svn/trunk/SiriusJavaClient-Web/</developerConnection>
+		<url>https://sirius-platform.googlecode.com/svn</url>
 	</scm>
 
 	<build>
@@ -133,6 +133,8 @@
 				<configuration>
 					<show>private</show>
 					<nohelp>false</nohelp>
+					<failOnError>false</failOnError>
+					<sourcepath>src/main/java</sourcepath>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -195,9 +197,12 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>2.9.1</version>
+				<version>2.10</version>
 				<configuration>
 					<excludes>**/test/java/**/*.java,**/web/core/**/*.java,**/web/select/**/*.java</excludes>
+					<configLocation>./sun_checks.xml</configLocation>
+					<suppressionsLocation>./checkstyle-suppressions.xml</suppressionsLocation>
+					<!--<suppressionsFileExpression>checkstyle.suppressions.file</suppressionsFileExpression>-->
 				</configuration>
 				<executions>
 					<execution>

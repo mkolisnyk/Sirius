@@ -577,8 +577,8 @@ module Sirius  module Client    module Web      module Core        module Se
             )
           end
 
-        end
-      end
-    end
-  end
+        end
+      end
+    end
+  end
 end
