@@ -9,16 +9,9 @@ namespace Sirius.Win32.Lib.Controls
 {
     public class Tab : Control,ISelectable
     {
-        public int Find(int parent, int index) 
+        public Tab() : base(ControlType.Tab) 
         {
-            AutomationElement baseElement = base.Find(parent);
-            Condition locator = new PropertyCondition(AutomationElement.ControlTypeProperty, ControlType.Tab);
-            AutomationElementCollection elements = baseElement.FindAll(TreeScope.Subtree, locator);
-            if (elements.Count <= index) 
-            {
-                return 0;
-            }
-            return elements[index].Current.NativeWindowHandle;
+            ;
         }
 
         public int GetItemsCount(int hwnd) 
