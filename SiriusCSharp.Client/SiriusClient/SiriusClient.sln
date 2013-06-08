@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{3C278B77-C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirius.CSharp.Client.Web", "..\Sirius.CSharp.Client.Web\Sirius.CSharp.Client.Web.csproj", "{B4C114F2-AAB0-42E7-A05A-13B436021C8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirius.Win32.Lib", "..\Sirius.Win32.Lib\Sirius.Win32.Lib.csproj", "{ED9B6BF9-D11A-4B1E-A903-CC91F9584E4B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,16 @@ Global
 		{B4C114F2-AAB0-42E7-A05A-13B436021C8E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{B4C114F2-AAB0-42E7-A05A-13B436021C8E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B4C114F2-AAB0-42E7-A05A-13B436021C8E}.Release|Win32.ActiveCfg = Release|Any CPU
+		{ED9B6BF9-D11A-4B1E-A903-CC91F9584E4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED9B6BF9-D11A-4B1E-A903-CC91F9584E4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED9B6BF9-D11A-4B1E-A903-CC91F9584E4B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{ED9B6BF9-D11A-4B1E-A903-CC91F9584E4B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{ED9B6BF9-D11A-4B1E-A903-CC91F9584E4B}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{ED9B6BF9-D11A-4B1E-A903-CC91F9584E4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED9B6BF9-D11A-4B1E-A903-CC91F9584E4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED9B6BF9-D11A-4B1E-A903-CC91F9584E4B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{ED9B6BF9-D11A-4B1E-A903-CC91F9584E4B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{ED9B6BF9-D11A-4B1E-A903-CC91F9584E4B}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,5 +120,6 @@ Global
 		{B4C114F2-AAB0-42E7-A05A-13B436021C8E} = {C7F1D820-184F-4BBB-9F37-A0D1AC845EA3}
 		{68789BB2-8F13-486B-BAE9-8E1992E88C6E} = {7750AA7D-7DB6-48F4-B419-C9D1FF7FB3BA}
 		{B3A60008-9715-4979-B72E-75289EAD1975} = {556119DF-F71F-4BDB-BC3A-09A1D23A747B}
+		{ED9B6BF9-D11A-4B1E-A903-CC91F9584E4B} = {3C278B77-CC5A-4A87-9D75-E416B9B79112}
 	EndGlobalSection
 EndGlobal
