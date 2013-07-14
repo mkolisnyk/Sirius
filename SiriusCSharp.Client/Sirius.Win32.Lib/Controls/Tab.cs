@@ -9,9 +9,9 @@ namespace Sirius.Win32.Lib.Controls
 {
     public class Tab : Control,ISelectable
     {
-        public Tab() : base(ControlType.Tab) 
+        public Tab()
         {
-            ;
+            this.controlType = ControlType.Tab;
         }
 
         public int GetItemsCount(int hwnd) 

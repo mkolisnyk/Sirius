@@ -8,9 +8,17 @@ namespace Sirius.Win32.Lib.Controls
 {
     public class Edit : Control
     {
-        public Edit() : base(ControlType.Edit)
+        public Edit()
         {
-            ;
+            this.controlType = ControlType.Edit;
+        }
+
+        public String GetText(int hwnd)
+        {
+            AutomationElement element = Find(hwnd);
+            ValuePattern value = element.GetCurrentPattern(ValuePattern.Pattern) as ValuePattern;
+
+            return value.Current.Value;
         }
 
         public void SetText(int hwnd, String text) 
@@ -44,14 +52,6 @@ namespace Sirius.Win32.Lib.Controls
             AutomationElement element = Find(hwnd);
             TextPattern value = element.GetCurrentPattern(TextPattern.Pattern) as TextPattern;
             return "";
-        }
-
-        public String GetText(int hwnd)
-        {
-            AutomationElement element = Find(hwnd);
-            ValuePattern value = element.GetCurrentPattern(ValuePattern.Pattern) as ValuePattern;
-
-            return value.Current.Value;
         }
     }
 }

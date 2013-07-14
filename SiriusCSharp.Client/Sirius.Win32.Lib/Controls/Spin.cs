@@ -3,39 +3,59 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Sirius.Win32.Lib.Controls.Interfaces;
+using System.Windows.Automation;
 
 namespace Sirius.Win32.Lib.Controls
 {
-    public class Spin : IEditable,IRange
+    public class Spin : Control,IEditable,IRange
     {
-        public string GetText()
+        public Spin()
         {
-            throw new NotImplementedException();
+            this.controlType = ControlType.Spinner;
         }
 
-        public void SetText(string text)
+        public double GetLowerBound(int hwnd)
         {
-            throw new NotImplementedException();
+            AutomationElement element = Find(hwnd);
+            RangeValuePattern range = element.GetCurrentPattern(RangeValuePattern.Pattern) as RangeValuePattern;
+            return range.Current.Minimum;
         }
 
-        public int GetLowerBound()
+        public double GetUpperBound(int hwnd)
         {
-            throw new NotImplementedException();
+            AutomationElement element = Find(hwnd);
+            RangeValuePattern range = element.GetCurrentPattern(RangeValuePattern.Pattern) as RangeValuePattern;
+            return range.Current.Maximum;
         }
 
-        public int GetUpperBound()
+        public double GetPosition(int hwnd)
         {
-            throw new NotImplementedException();
+            AutomationElement element = Find(hwnd);
+            RangeValuePattern range = element.GetCurrentPattern(RangeValuePattern.Pattern) as RangeValuePattern;
+            return range.Current.Value;
         }
 
-        public int GetPosition()
+        public void SetPosition(int hwnd, double pos)
         {
-            throw new NotImplementedException();
+            AutomationElement element = Find(hwnd);
+            RangeValuePattern range = element.GetCurrentPattern(RangeValuePattern.Pattern) as RangeValuePattern;
+            range.SetValue(pos);
         }
 
-        public void SetPosition(int pos)
+        public String GetText(int hwnd)
         {
-            throw new NotImplementedException();
+            AutomationElement element = Find(hwnd);
+            ValuePattern value = element.GetCurrentPattern(ValuePattern.Pattern) as ValuePattern;
+
+            return value.Current.Value;
+        }
+
+        public void SetText(int hwnd, String text)
+        {
+            AutomationElement element = Find(hwnd);
+            ValuePattern value = element.GetCurrentPattern(ValuePattern.Pattern) as ValuePattern;
+
+            value.SetValue(text);
         }
     }
 }

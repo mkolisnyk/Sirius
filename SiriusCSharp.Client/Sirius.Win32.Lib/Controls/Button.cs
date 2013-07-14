@@ -8,21 +8,32 @@ namespace Sirius.Win32.Lib.Controls
 {
     public class Button : Control
     {
-        public Button() : base(ControlType.Button) { ;}
-
-        public Boolean IsChecked(int hwnd) 
+        public Button()
         {
-            return false;
+            this.controlType = ControlType.Button;
         }
 
-        public Boolean IsPressed(int hwnd)
+        public bool IsChecked(int hwnd) 
         {
-            return false;
+            AutomationElement element = Find(hwnd);
+            TogglePattern toggle = element.GetCurrentPattern(TogglePattern.Pattern) as TogglePattern;
+
+            return toggle.Current.ToggleState.HasFlag(ToggleState.On);
         }
 
-        public void SetCheck(int hwnd, Boolean check)
+        public bool IsPressed(int hwnd)
         {
-            ;
+            return IsChecked(hwnd);
+        }
+
+        public void SetCheck(int hwnd, bool check)
+        {
+            if (IsChecked(hwnd) != check)
+            {
+                AutomationElement element = Find(hwnd);
+                TogglePattern toggle = element.GetCurrentPattern(TogglePattern.Pattern) as TogglePattern;
+                toggle.Toggle();
+            }
         }
     }
 }

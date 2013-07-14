@@ -8,6 +8,9 @@ namespace Sirius.Win32.Lib.Controls
 {
     public class Header : Control
     {
-        public Header() : base(ControlType.Header) { }
+        public Header() 
+        {
+            this.controlType = ControlType.Header;
+        }
     }
 }

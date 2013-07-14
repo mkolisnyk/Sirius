@@ -3,29 +3,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Sirius.Win32.Lib.Controls.Interfaces;
+using System.Windows.Automation;
 
 namespace Sirius.Win32.Lib.Controls
 {
-    public class Slider : IRange
+    public class Slider : Control, IRange
     {
-        public int GetLowerBound()
+        public Slider()
         {
-            throw new NotImplementedException();
+            this.controlType = ControlType.Slider;
         }
 
-        public int GetUpperBound()
+        public double GetLowerBound(int hwnd)
         {
-            throw new NotImplementedException();
+            AutomationElement element = Find(hwnd);
+            RangeValuePattern range = element.GetCurrentPattern(RangeValuePattern.Pattern) as RangeValuePattern;
+            return range.Current.Minimum;
         }
 
-        public int GetPosition()
+        public double GetUpperBound(int hwnd)
         {
-            throw new NotImplementedException();
+            AutomationElement element = Find(hwnd);
+            RangeValuePattern range = element.GetCurrentPattern(RangeValuePattern.Pattern) as RangeValuePattern;
+            return range.Current.Maximum;
         }
 
-        public void SetPosition(int pos)
+        public double GetPosition(int hwnd)
         {
-            throw new NotImplementedException();
+            AutomationElement element = Find(hwnd);
+            RangeValuePattern range = element.GetCurrentPattern(RangeValuePattern.Pattern) as RangeValuePattern;
+            return range.Current.Value;
         }
+
+        public void SetPosition(int hwnd, double pos)
+        {
+            AutomationElement element = Find(hwnd);
+            RangeValuePattern range = element.GetCurrentPattern(RangeValuePattern.Pattern) as RangeValuePattern;
+            range.SetValue(pos);
+        }
+
     }
 }

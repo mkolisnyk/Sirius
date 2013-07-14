@@ -7,9 +7,9 @@ namespace Sirius.Win32.Lib.Controls.Interfaces
 {
     interface IRange
     {
-        int GetLowerBound();
-        int GetUpperBound();
-        int GetPosition();
-        void SetPosition(int pos);
+        double GetLowerBound(int hwnd);
+        double GetUpperBound(int hwnd);
+        double GetPosition(int hwnd);
+        void SetPosition(int hwnd, double pos);
     }
 }

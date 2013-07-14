@@ -8,12 +8,7 @@ namespace Sirius.Win32.Lib.Controls
 {
     public class Control : Window
     {
-        private ControlType controlType = null;
-
-        public Control(ControlType type) 
-        {
-            controlType = type;
-        }
+        protected ControlType controlType = null;
 
         public int Find(int parent, int index)
         {
