@@ -59,8 +59,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DirectoryOperations.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\Win32Lib\ButtonControlTest.cs" />
+    <Compile Include="Tests\Win32Lib\ComboBoxControlTest.cs" />
     <Compile Include="Tests\Win32Lib\ControlTestsCommon.cs" />
     <Compile Include="Tests\Win32Lib\EditControlTest.cs" />
+    <Compile Include="Tests\Win32Lib\HeaderControlTest.cs" />
+    <Compile Include="Tests\Win32Lib\ListBoxControlTest.cs" />
+    <Compile Include="Tests\Win32Lib\ListViewControlTest.cs" />
+    <Compile Include="Tests\Win32Lib\ProgressBarControlTest.cs" />
+    <Compile Include="Tests\Win32Lib\ScrollBarControlTest.cs" />
+    <Compile Include="Tests\Win32Lib\SliderControlTest.cs" />
+    <Compile Include="Tests\Win32Lib\SpinControlTest.cs" />
+    <Compile Include="Tests\Win32Lib\StaticControlTest.cs" />
     <Compile Include="Tests\Win32Lib\TabControlTests.cs" />
   </ItemGroup>
   <ItemGroup>

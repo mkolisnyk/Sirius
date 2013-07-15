@@ -40,6 +40,5 @@ namespace Sirius.Win32.Lib.Controls
             }
             return elements[index].Current.NativeWindowHandle;
         }
-
     }
 }

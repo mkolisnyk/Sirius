@@ -21,6 +21,14 @@ namespace Sirius.Win32.Lib.Controls
             return toggle.Current.ToggleState.HasFlag(ToggleState.On);
         }
 
+        public bool IsIntermediate(int hwnd)
+        {
+            AutomationElement element = Find(hwnd);
+            TogglePattern toggle = element.GetCurrentPattern(TogglePattern.Pattern) as TogglePattern;
+
+            return toggle.Current.ToggleState.HasFlag(ToggleState.Indeterminate);
+        }
+
         public bool IsPressed(int hwnd)
         {
             return IsChecked(hwnd);
@@ -34,6 +42,13 @@ namespace Sirius.Win32.Lib.Controls
                 TogglePattern toggle = element.GetCurrentPattern(TogglePattern.Pattern) as TogglePattern;
                 toggle.Toggle();
             }
+        }
+
+        public void Click(int hwnd)
+        {
+            AutomationElement win = Find(hwnd);
+            InvokePattern invoke = win.GetCurrentPattern(InvokePattern.Pattern) as InvokePattern;
+            invoke.Invoke();
         }
     }
 }
