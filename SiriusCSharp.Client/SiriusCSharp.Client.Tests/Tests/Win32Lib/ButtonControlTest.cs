@@ -37,7 +37,7 @@ namespace SiriusCSharp.Client.Tests.Tests.Win32Lib
         protected int htab = 0;
 
         [SetUp]
-        public override void Before()
+        public void Before()
         {
             base.Before();
             int htab = tab.Find(mainHwnd, 0);
@@ -75,11 +75,11 @@ namespace SiriusCSharp.Client.Tests.Tests.Win32Lib
 
             if (state == null) 
             { 
-                Assert.IsTrue(btn.IsIntermediate(hbtn);
+                Assert.IsTrue(btn.IsIntermediate(hbtn));
             }
             else
             {
-                Assert.AreEqual(state,btn.IsChecked(hbtn);    
+                Assert.AreEqual(state,btn.IsChecked(hbtn));    
             }
         }
 

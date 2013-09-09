@@ -17,7 +17,7 @@ namespace SiriusCSharp.Client.Tests.Tests.Win32Lib
         protected int mainHwnd;
 
         [SetUp]
-        public void Before()
+        public virtual void Before()
         {
             controlsApp = Process.Start( @"D:\Work\SiriusDev\Sirius\TestApps\win32\Controls.exe");
             win = new Window();

@@ -59,15 +59,19 @@
     <Compile Include="Controls\Spin.cs" />
     <Compile Include="Controls\Static.cs" />
     <Compile Include="Controls\Tab.cs" />
-    <Compile Include="CustomConditions.cs" />
+    <Compile Include="Common\CustomConditions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Window.cs" />
+    <Compile Include="Common\Window.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Build.cmd" />
     <None Include="BuildScript\Build.msbuild">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Package.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modules\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

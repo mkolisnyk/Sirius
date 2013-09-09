@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Sirius.Win32.Lib.Controls.Interfaces
 {
-    interface IRange
+    public interface IRange
     {
         double GetLowerBound(int hwnd);
         double GetUpperBound(int hwnd);

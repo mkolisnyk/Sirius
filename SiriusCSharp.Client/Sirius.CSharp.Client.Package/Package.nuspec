@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Sirius.CSharp.Client.Core</id>
+    <id>Sirius.Win32.Lib</id>
     <version>1.0.0</version>
     <authors>Myk Kolisnyk</authors>
     <owners>Myk Kolisnyk</owners>
     <projectUrl>https://github.com/mkolisnyk/Sirius</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
-      CSharp client for Sirius platform
+      Sirius C# library for interacting with Win32 controls
     </description>
     <releaseNotes>
     </releaseNotes>

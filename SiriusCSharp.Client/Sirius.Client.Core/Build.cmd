@@ -11,7 +11,7 @@ echo "Setting custom target list to: %2"
 SET TARGETS=%2
 
 :RUN
-C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe BuildScript\Build.msbuild /p:ProductVersion=%1 /t:%TARGETS%
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe BuildScript\Build.msbuild /p:ProductVersion=%1 /t:%TARGETS% /v:d
 GOTO END
 
 :USAGE

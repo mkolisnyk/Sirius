@@ -7,7 +7,7 @@ using System.Windows.Automation;
 
 namespace Sirius.Win32.Lib.Controls
 {
-    class ListView: Control,ISelectable,IMultiSelect
+    public class ListView: Control,ISelectable,IMultiSelect
     {
         public ListView() 
         {
