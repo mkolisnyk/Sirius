@@ -8,15 +8,15 @@ This folder contains batches to perform publishing and deployment activities. At
 
 Both batches require version to set as the parameter. E.g.:
 
-'''Batchfile
+```Batchfile
 publish 1.0.0
-'''
+```
 
 or
 
-'''Batchfile
+```Batchfile
 installsvc 1.0.0
-'''
+```
 
 
 # Links  
