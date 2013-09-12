@@ -2,7 +2,7 @@
 using System.ServiceModel;
 namespace Sirius.Win32.Svc.Controls
 {
-    [ServiceContract(Namespace = "Sirius.Win32.Svc.Controls", Name="Spin")]
+    [ServiceContract(Namespace = "http://spin.controls.win32lib.server.sirius.org/")]
     public interface ISpinContract
     {
         [OperationContract]

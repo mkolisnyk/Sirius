@@ -5,10 +5,13 @@ using System.Text;
 using System.ServiceModel;
 using Sirius.Win32.Svc.Controls;
 using Sirius.Win32.Lib.Controls;
+using System.Runtime.Serialization;
+
+//[assembly: ContractNamespace("http://system.server.sirius.org/", ClrNamespace = "Sirius.Win32.SvcImpl.Controls")]
 
 namespace Sirius.Win32.SvcImpl.Controls
 {
-    [ServiceBehavior]
+    [ServiceBehavior(Namespace = "http://tab.controls.win32lib.server.sirius.org/")]
     public class TabSvc : ITabContract
     {
         private Tab tab;

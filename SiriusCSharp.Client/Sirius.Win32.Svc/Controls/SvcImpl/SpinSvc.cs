@@ -5,9 +5,11 @@ using System.Text;
 using Sirius.Win32.Lib.Controls.Interfaces;
 using Sirius.Win32.Lib.Controls;
 using Sirius.Win32.Svc.Controls;
+using System.ServiceModel;
 
 namespace Sirius.Win32.SvcImpl.Controls
 {
+    [ServiceBehavior(Namespace = "http://spin.controls.win32lib.server.sirius.org/")]
     public class SpinSvc : ISpinContract
     {
         private Spin spin;

@@ -2,7 +2,7 @@
 using System.ServiceModel;
 namespace Sirius.Win32.Svc.Controls
 {
-    [ServiceContract(Namespace = "Sirius.Win32.Svc.Controls", Name="ScrollBar")]
+    [ServiceContract(Namespace = "http://scrollbar.controls.win32lib.server.sirius.org/")]
     public interface IScrollBarContract
     {
         [OperationContract]

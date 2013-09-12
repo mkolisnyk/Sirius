@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ServiceModel;
+using System.Runtime.Serialization;
 
 namespace Sirius.Win32.Svc.Controls
 {
-    [ServiceContract(Namespace = "Sirius.Win32.Svc.Controls", Name="Tab")]
+    [ServiceContract(Namespace="http://tab.controls.win32lib.server.sirius.org/")]
     public interface ITabContract
     {
         [OperationContract(Name = "GetItemsCount")]

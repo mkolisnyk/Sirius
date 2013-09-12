@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using Sirius.Win32.Lib.Controls;
 using Sirius.Win32.Svc.Controls;
+using System.ServiceModel;
 
 namespace Sirius.Win32.SvcImpl.Controls
 {
+    [ServiceBehavior(Namespace = "http://edit.controls.win32lib.server.sirius.org/")]
     public class EditSvc : IEditContract
     {
         private Edit edit;

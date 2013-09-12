@@ -2,7 +2,7 @@
 using System.ServiceModel;
 namespace Sirius.Win32.Svc.Controls
 {
-    [ServiceContract(Namespace = "Sirius.Win32.Svc.Controls", Name="ProgressBar")]
+    [ServiceContract(Namespace = "http://progressbar.controls.win32lib.server.sirius.org/")]
     public interface IProgressBarContract
     {
         [OperationContract]

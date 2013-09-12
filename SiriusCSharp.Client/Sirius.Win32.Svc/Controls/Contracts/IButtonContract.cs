@@ -1,8 +1,10 @@
 ﻿using System;
 using System.ServiceModel;
+using System.Runtime.Serialization;
+
 namespace Sirius.Win32.Svc.Controls
 {
-    [ServiceContract(Namespace = "Sirius.Win32.Svc.Controls", Name="Button")]
+    [ServiceContract(Namespace = "http://button.controls.win32lib.server.sirius.org/")]
     public interface IButtonContract
     {
         [OperationContract]

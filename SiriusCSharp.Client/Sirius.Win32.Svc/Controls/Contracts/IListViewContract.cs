@@ -2,7 +2,7 @@
 using System.ServiceModel;
 namespace Sirius.Win32.Svc.Controls
 {
-    [ServiceContract(Namespace = "Sirius.Win32.Svc.Controls", Name="ListView")]
+    [ServiceContract(Namespace = "http://listview.controls.win32lib.server.sirius.org/")]
     public interface IListViewContract
     {
         [OperationContract]
