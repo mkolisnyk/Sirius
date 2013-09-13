@@ -3,6 +3,7 @@
  */
 package org.sirius.server.win32.classes.controls;
 
+import java.rmi.RemoteException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,6 +18,7 @@ import org.sirius.server.win32.constants.IThreadConsts;
 import org.sirius.server.win32.constants.IWMConsts;
 import org.sirius.server.win32.core.CommCtl;
 import org.sirius.server.win32.core.types.WinDefExt.UINT;
+import org.sirius.server.win32lib.controls.Win32LibControlsClient;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
@@ -37,6 +39,8 @@ import com.sun.jna.platform.win32.WinUser.POINT;
 public class TabControl extends Common implements ITabControlConsts,
 		IThreadConsts, IMEMConsts, IWMConsts {
 
+    Win32LibControlsClient win32lib;
+    
 	/**
 	 * 
 	 */
@@ -157,29 +161,12 @@ public class TabControl extends Common implements ITabControlConsts,
 	}
 
 	public void SetCurSel(long hwndCtl, int index) {
-		HWND hWnd = longToHwnd(hwndCtl);
-		WPARAM wParam = new WPARAM(index);
-		LPARAM lParam = new LPARAM(0);
-
-		NMHDR nmh = new NMHDR();
-		
-		user32.SendMessage(hWnd, TCM_SETCURSEL, wParam, lParam);
-
-		HWND hParent = user32.GetParent(hWnd);
-		
-		nmh.code = TCN_SELCHANGING;    
-		nmh.idFrom = this.dlg32.GetDlgCtrlID(hWnd);
-		nmh.hwndFrom = hWnd;
-
-		user32.SendMessage(hWnd, WM_NOTIFY, new WPARAM(hParent.getPointer().getLong(0)), new LPARAM(nmh.getPointer().getLong(0)));
-
-		nmh.code = TCN_SELCHANGE;    
-		nmh.idFrom = this.dlg32.GetDlgCtrlID(hWnd);
-		nmh.hwndFrom = hWnd;
-
-		user32.SendMessage(hWnd, WM_NOTIFY, new WPARAM(hParent.getPointer().getLong(0)), new LPARAM(nmh.getPointer().getLong(0)));
-		HDC hdc = user32.GetWindowDC(hWnd);
-		user32.UpdateWindow(hWnd);
+		try {
+            win32lib.tab().selectByIndex((int)hwndCtl,index);
+        } catch (RemoteException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 	}
 
 	public TC_HITTESTINFO HitTest(long hwndCtl) {
@@ -212,21 +199,33 @@ public class TabControl extends Common implements ITabControlConsts,
 	public int GetItemCount(long hwndCtl) {
 		return SendMessage(hwndCtl, TCM_GETITEMCOUNT, 0, 0);
 	}
-
-	public static void main(String args[]) {
-		long hwnd = 0x000C06E4l;
-		long mainHwnd = 0x000B0772L;
-		HWND dlg = new HWND();
-		dlg.setPointer(Pointer.createConstant(mainHwnd));
-		TabControl control = new TabControl();
-		Window win = new Window();
-		System.out.println("Count is:" + control.GetItemCount(hwnd));
-		try {
-			control.SetCurSel(hwnd, 4);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		// RECT rc = control.GetItemRect(hwnd, 2);
-		// win.click(hwnd, 0, rc.left, rc.top, true, true, true);
+	
+	public String[] GetItemNames(long hwndCtl){
+	    try {
+            return win32lib.tab().getItemNames((int)hwndCtl);
+        } catch (RemoteException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+	    return null;
+	}
+	
+	public void Select(long hwndCtl, String tabName){
+	    try {
+            win32lib.tab().selectByName((int)hwndCtl, tabName);
+        } catch (RemoteException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+	}
+	
+	public String GetSelectedItem(long hwndCtl){
+	    try {
+            return win32lib.tab().getSelectedItem((int)hwndCtl);
+        } catch (RemoteException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+	    return null;
 	}
 }

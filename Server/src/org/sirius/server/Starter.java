@@ -7,6 +7,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -131,8 +134,8 @@ public class Starter {
 
 	/**
 	 * .
-	 * @param filter
-	 * @return
+	 * @param filter .
+	 * @return .
 	 */
 	private String findMatchingFile(final String filter) {
 		File location = new File(filter);
@@ -148,17 +151,19 @@ public class Starter {
 
 	/**
 	 * .
-	 * @param options
-	 * @param host
-	 * @param port
-	 * @throws MalformedURLException
+	 * @param options .
+	 * @param host .
+	 * @param port .
+	 * @throws IOException 
+	 * @throws MalformedURLException .
 	 */
 	public final void startEndPoints(
-			final ArrayList<PackageOptions> options, 
+			final ArrayList<PackageOptions> options,
 			final String host,
-			final String port) throws MalformedURLException {
+			final String port) throws IOException {
 		for (PackageOptions option : options) {
 			ClassLoader loader;
+			
 			if (!option.get_packageLocation().equals("Local")) {
 				logger.info("Uploading binary file:"
 						+ option.get_packageLocation());
@@ -204,6 +209,7 @@ public class Starter {
 				logger.info("Done...");
 			}
 		}
+		//logger.info("Initialization Completed...");
 	}
 
 	/**
