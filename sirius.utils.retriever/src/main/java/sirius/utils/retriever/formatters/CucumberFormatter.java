@@ -15,7 +15,7 @@ import sirius.utils.retriever.interfaces.IStoryFormatter;
  * @author Myk Kolisnyk
  *
  */
-public class TraceabilityMatrixFormatter implements IStoryFormatter {
+public class CucumberFormatter implements IStoryFormatter {
 
     public final String eol = System.getProperty("line.separator");
     
@@ -23,27 +23,22 @@ public class TraceabilityMatrixFormatter implements IStoryFormatter {
      * @see sirius.utils.retriever.interfaces.IStoryFormatter#GetHeader(java.util.ArrayList)
      */
     public String GetHeader(ArrayList<GHIssue> issues) {
-        return "# Tests status" + eol + eol;                
+        return "";                
     }
 
     /* (non-Javadoc)
      * @see sirius.utils.retriever.interfaces.IStoryFormatter#GetMilestone(org.kohsuke.github.GHMilestone)
      */
     public String GetMilestone(GHMilestone milestone) {
-        return "## Feature: [" + milestone.getTitle() + "](" + milestone.getUrl() + ")" + eol +
-            "```" + eol + milestone.getDescription() + eol + "```" + eol + eol +
-           "| Group | Test | Completed |" + eol + 
-           "|-------|------|-----------|";
+        return "# " + milestone.getTitle() + eol; 
     }
 
     /* (non-Javadoc)
      * @see sirius.utils.retriever.interfaces.IStoryFormatter#GetIssue(org.kohsuke.github.GHIssue)
      */
     public String GetIssue(GHIssue issue) {
-        return "|" + GetLabels(issue) + " | [" + issue.getTitle() + 
-                "](" + issue.getUrl() + ") | " +
-            ((issue.getState().equals(GHIssueState.CLOSED))?("Yes"):("No")) + 
-            "|";
+        return GetLabels(issue) + eol + "Feature: " + issue.getTitle() + eol +
+            issue.getBody() + eol;
     }
 
     /* (non-Javadoc)
@@ -63,7 +58,7 @@ public class TraceabilityMatrixFormatter implements IStoryFormatter {
         issue.getLabels().toArray(labels);
         
         for(int i=4;i<labels.length;i+=8){
-            result += "[" + labels[i] + "](" + labels[i-2] + ") ";
+            result += "@" + labels[i] + " ";
         }
         
         return result;

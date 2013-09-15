@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -15,6 +16,11 @@ import org.kohsuke.github.GHIssueState;
 import org.kohsuke.github.GHMilestone;
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GitHub;
+
+import sirius.utils.retriever.formatters.CucumberFormatter;
+import sirius.utils.retriever.formatters.DummyFormatter;
+import sirius.utils.retriever.formatters.TraceabilityMatrixFormatter;
+import sirius.utils.retriever.interfaces.IStoryFormatter;
 
 /**
  * @author Myk Kolisnyk
@@ -48,29 +54,52 @@ public class Program {
         
     }
     
-    public String getLabelNames(GHIssue issue) {
-        String result = "";
-        
-        String[] labels = new String[issue.getLabels().size()];
-        issue.getLabels().toArray(labels);
-        /*for(String label:issue.getLabels()){
-            result += label.split(" ")[2] + " ";
-        }*/
-        
-        for(int i=4;i<labels.length;i+=8){
-            result += "[" + labels[i] + "](" + labels[i-2] + ") ";
-        }
-        
-        return result;
-    }
+    public static final String REPO_NAME="-r"; 
+    public static final String USER_NAME="-u";
+    public static final String USER_PASS="-p"; 
+    public static final String OUTPUT_TYPE="-t"; 
     
     /**
      * @param args
      * @throws IOException 
      */
     public static void main(String[] args) throws IOException {
-        GitHub client = GitHub.connectUsingPassword("mkolisnyk", "Deicide13");
-        GHRepository repo = client.getMyself().getRepository("Sirius");
+        String userName="";
+        String password="";
+        String repository="";
+        String outputType = "";
+        IStoryFormatter formatter = new DummyFormatter();
+        
+        HashMap<String, String> params = new HashMap<String, String>();
+
+        for (int i = 0; i < (2 * (args.length / 2)); i += 2) {
+            if (i < args.length - 1) {
+                params.put(args[i], args[i + 1]);
+            }
+        }
+
+        if (params.containsKey(USER_NAME)) {
+            userName = params.get(USER_NAME);
+        }
+        if (params.containsKey(USER_PASS)) {
+            password = params.get(USER_PASS);
+        }
+        if (params.containsKey(REPO_NAME)) {
+            repository = params.get(REPO_NAME);
+        }
+        if (params.containsKey(OUTPUT_TYPE)) {
+            outputType = params.get(OUTPUT_TYPE);
+        }
+        
+        if(outputType.equals("trace")){
+            formatter = new TraceabilityMatrixFormatter();
+        }
+        else if(outputType.equals("cucumber")){
+            formatter = new CucumberFormatter();
+        }
+        
+        GitHub client = GitHub.connectUsingPassword(userName, password);
+        GHRepository repo = client.getMyself().getRepository(repository);
 
         ArrayList<GHIssue> issues = new ArrayList<GHIssue>();
         issues.addAll(repo.getIssues(GHIssueState.OPEN));
@@ -80,10 +109,9 @@ public class Program {
         IssuesComparator c = p.new  IssuesComparator();
         Collections.sort(issues, c);
 
-        System.out.println("# Tests status"); 
-        System.out.println(); 
-        System.out.println("| Feature | Group | Test | Completed |"); 
-        System.out.println("|---------|-------|------|-----------|");
+        System.out.println(formatter.GetHeader(issues));
+        
+        int prevMilestoneId = -1;
         
         for(GHIssue issue:issues){
             GHMilestone milestone = issue.getMilestone();
@@ -92,13 +120,14 @@ public class Program {
                 milestone = new GHMilestone();                
             }
             
+            if(milestone.getNumber() != prevMilestoneId){
+                prevMilestoneId = milestone.getNumber();
+                System.out.println(formatter.GetMilestone(milestone));
+            }
+            
             if(issue.getLabels().contains("Test"))
             {
-                System.out.println("| [" + milestone.getTitle() + "](" + milestone.getUrl() + 
-                        ") | " + p.getLabelNames(issue) + 
-                        " | [" + issue.getTitle() + "](" + issue.getUrl() + ") | " +
-                        ((issue.getState().equals(GHIssueState.CLOSED))?("Yes"):("No")) + 
-                        " |" );
+                System.out.println(formatter.GetIssue(issue));
             }
         }
     }

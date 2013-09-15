@@ -3,6 +3,8 @@
  */
 package sirius.utils.retriever.interfaces;
 
+import java.util.ArrayList;
+
 import org.kohsuke.github.GHIssue;
 import org.kohsuke.github.GHMilestone;
 
@@ -11,6 +13,10 @@ import org.kohsuke.github.GHMilestone;
  *
  */
 public interface IStoryFormatter {
-    public String WriteStory(GHMilestone milestone);
-    public String WriteIssue(GHIssue issue);
+    public String GetHeader(ArrayList<GHIssue> issues);
+    public String GetMilestone(GHMilestone milestone);
+    public String GetIssue(GHIssue issue);
+    public String GetLabels(GHIssue issue);
+    public String GetFooter(ArrayList<GHIssue> issues);
+    
 }
