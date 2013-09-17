@@ -68,4 +68,11 @@ public class TraceabilityMatrixFormatter implements IStoryFormatter {
         
         return result;
     }
+
+    /* (non-Javadoc)
+     * @see sirius.utils.retriever.interfaces.IStoryFormatter#Out(java.lang.String)
+     */
+    public void Out(String text) {
+        System.out.println(text);      
+    }
 }

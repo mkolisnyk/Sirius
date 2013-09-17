@@ -57,7 +57,9 @@ public class Program {
     public static final String REPO_NAME="-r"; 
     public static final String USER_NAME="-u";
     public static final String USER_PASS="-p"; 
-    public static final String OUTPUT_TYPE="-t"; 
+    public static final String OUTPUT_TYPE="-t";
+    public static final String GROUPS = "-g";
+    public static final String OUTPUT_LOCATION = "-o";
     
     /**
      * @param args
@@ -68,6 +70,9 @@ public class Program {
         String password="";
         String repository="";
         String outputType = "";
+        String[] groups={"Test"};
+        String outputLocation = "";
+        
         IStoryFormatter formatter = new DummyFormatter();
         
         HashMap<String, String> params = new HashMap<String, String>();
@@ -90,12 +95,19 @@ public class Program {
         if (params.containsKey(OUTPUT_TYPE)) {
             outputType = params.get(OUTPUT_TYPE);
         }
+        if (params.containsKey(GROUPS)) {
+            groups = params.get(GROUPS).split(";");
+        }
+        if (params.containsKey(OUTPUT_LOCATION)) {
+            outputLocation = params.get(OUTPUT_LOCATION);
+        }
+        
         
         if(outputType.equals("trace")){
             formatter = new TraceabilityMatrixFormatter();
         }
         else if(outputType.equals("cucumber")){
-            formatter = new CucumberFormatter();
+            formatter = new CucumberFormatter(outputLocation);
         }
         
         GitHub client = GitHub.connectUsingPassword(userName, password);
@@ -109,7 +121,7 @@ public class Program {
         IssuesComparator c = p.new  IssuesComparator();
         Collections.sort(issues, c);
 
-        System.out.println(formatter.GetHeader(issues));
+        formatter.Out(formatter.GetHeader(issues));
         
         int prevMilestoneId = -1;
         
@@ -122,12 +134,20 @@ public class Program {
             
             if(milestone.getNumber() != prevMilestoneId){
                 prevMilestoneId = milestone.getNumber();
-                System.out.println(formatter.GetMilestone(milestone));
+                formatter.Out(formatter.GetMilestone(milestone));
             }
             
-            if(issue.getLabels().contains("Test"))
+            boolean matchGroups=false;
+            for(String group:groups){
+                if(issue.getLabels().contains(group)){
+                    matchGroups = true;
+                    break;
+                }                
+            }
+            
+            if(matchGroups)
             {
-                System.out.println(formatter.GetIssue(issue));
+                formatter.Out(formatter.GetIssue(issue));
             }
         }
     }

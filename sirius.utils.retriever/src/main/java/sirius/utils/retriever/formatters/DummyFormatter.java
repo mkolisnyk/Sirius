@@ -56,4 +56,12 @@ public class DummyFormatter implements IStoryFormatter {
         return null;
     }
 
+    /* (non-Javadoc)
+     * @see sirius.utils.retriever.interfaces.IStoryFormatter#Out(java.lang.String)
+     */
+    public void Out(String text) {
+        // TODO Auto-generated method stub
+        
+    }
+
 }

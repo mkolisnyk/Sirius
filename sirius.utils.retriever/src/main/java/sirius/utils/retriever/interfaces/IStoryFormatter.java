@@ -18,5 +18,5 @@ public interface IStoryFormatter {
     public String GetIssue(GHIssue issue);
     public String GetLabels(GHIssue issue);
     public String GetFooter(ArrayList<GHIssue> issues);
-    
+    public void Out(String text);
 }
