@@ -1,8 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.github.mkolisnyk</groupId>
-	<artifactId>sirius.server.win32</artifactId>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.github.mkolisnyk</groupId>
+  <artifactId>sirius.utils.retriever</artifactId>
+  <name>sirius.utils.retriever</name>
 	<version>${package.version}</version>
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
@@ -35,7 +35,7 @@
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
-					<excludes>
+					<!--<excludes>
 						<exclude>*</exclude>
 						<exclude>com/thoughtworks/**/*</exclude>
 						<exclude>freemarker/**/*</exclude>
@@ -54,7 +54,7 @@
 						<exclude>stories/**/*</exclude>
 						<exclude>style/**/*</exclude>
 						<exclude>tests/**/*</exclude>
-					</excludes>
+					</excludes>-->
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
@@ -62,6 +62,7 @@
 							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
 							<addExtensions>true</addExtensions>
 							<classpathLayoutType>repository</classpathLayoutType>
+							<mainClass>sirius.utils.retriever.Program</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -150,7 +151,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore />
+										<ignore/>
 									</action>
 								</pluginExecution>
 							</pluginExecutions>
@@ -160,40 +161,11 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	<name>Sirius Win32 Server</name>
 	<dependencies>
 		<dependency>
-			<groupId>axis</groupId>
-			<artifactId>axis</artifactId>
-			<version>1.4</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eclipse.birt.runtime.3_7_1</groupId>
-			<artifactId>javax.wsdl</artifactId>
-			<version>1.5.1</version>
-		</dependency>
-		<dependency>
-			<groupId>net.java.dev.jna</groupId>
-			<artifactId>platform</artifactId>
-			<version>3.5.1</version>
-		</dependency>
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-picocontainer</artifactId>
-			<version>1.1.5</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-junit</artifactId>
-			<version>1.1.5</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.11</version>
-			<scope>test</scope>
+		 <groupId>org.kohsuke</groupId>
+		 <artifactId>github-api</artifactId>
+		 <version>1.41</version>
 		</dependency>
 	</dependencies>
 	<reporting>
@@ -215,4 +187,4 @@
 			</plugin>
 		</plugins>
 	</reporting>
-</project>
+</project>  
