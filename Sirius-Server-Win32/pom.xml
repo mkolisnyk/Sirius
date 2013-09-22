@@ -23,6 +23,18 @@
 		</resources>
 		<plugins>
 			<plugin>
+				<groupId>com.github.mkolisnyk</groupId>
+				<artifactId>issueget-maven-plugin</artifactId>
+				<version>1.0-SNAPSHOT</version>
+				<configuration>
+					<repository>Sirius</repository>
+					<groups>Test;Win32</groups>
+					<outputType>cucumber</outputType>
+					<outputLocation>src/test/java/org/sirius/server/test/features/win32/controls</outputLocation>
+					<goal>generate</goal>
+				</configuration>
+			</plugin>
+			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
@@ -99,6 +111,11 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-pmd-plugin</artifactId>
 				<version>3.0.1</version>
+				<configuration>
+					<excludes>
+						<exclude>**/win32lib/**/*.*</exclude>
+					</excludes>
+				</configuration>
 				<executions>
 					<execution>
 						<goals>
@@ -108,7 +125,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
 				<version>2.9.1</version>
@@ -119,7 +136,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin>-->
 		</plugins>
 		<pluginManagement>
 			<plugins>
@@ -198,11 +215,11 @@
 	</dependencies>
 	<reporting>
 		<plugins>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
 				<version>2.9.1</version>
-			</plugin>
+			</plugin>-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-pmd-plugin</artifactId>

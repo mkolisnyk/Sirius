@@ -8,9 +8,11 @@
 package org.sirius.server.win32lib.controls.button;
 
 public interface ButtonSvc extends javax.xml.rpc.Service {
+    public org.sirius.server.win32lib.controls.button.IButtonContract getButtonSvcPort()
+            throws javax.xml.rpc.ServiceException;
+
+    public org.sirius.server.win32lib.controls.button.IButtonContract getButtonSvcPort(
+            java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
+
     public java.lang.String getButtonSvcPortAddress();
-
-    public org.sirius.server.win32lib.controls.button.IButtonContract getButtonSvcPort() throws javax.xml.rpc.ServiceException;
-
-    public org.sirius.server.win32lib.controls.button.IButtonContract getButtonSvcPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
 }

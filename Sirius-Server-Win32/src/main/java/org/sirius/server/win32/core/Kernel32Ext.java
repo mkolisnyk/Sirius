@@ -14,12 +14,13 @@ import com.sun.jna.win32.W32APIOptions;
  */
 public interface Kernel32Ext extends Kernel32 {
 
-	public Kernel32Ext INSTANCE = (Kernel32Ext) Native.loadLibrary(
-			"kernel32.dll", Kernel32Ext.class, W32APIOptions.DEFAULT_OPTIONS);
+    Kernel32Ext INSTANCE = (Kernel32Ext) Native.loadLibrary(
+                                        "kernel32.dll", Kernel32Ext.class,
+                                        W32APIOptions.DEFAULT_OPTIONS);
 
-	Pointer VirtualAllocEx(HANDLE hProcess, Pointer lpAddress, int dwSize,
-			DWORD flAllocationType, DWORD flProtect);
+    Pointer VirtualAllocEx(HANDLE hProcess, Pointer lpAddress, int dwSize,
+            DWORD flAllocationType, DWORD flProtect);
 
-	boolean VirtualFreeEx(HANDLE hProcess, Pointer lpAddress, int dwSize,
-			DWORD dwFreeType);
+    boolean VirtualFreeEx(HANDLE hProcess, Pointer lpAddress, int dwSize,
+            DWORD dwFreeType);
 }

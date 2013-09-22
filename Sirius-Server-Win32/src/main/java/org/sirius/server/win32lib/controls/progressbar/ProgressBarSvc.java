@@ -8,9 +8,11 @@
 package org.sirius.server.win32lib.controls.progressbar;
 
 public interface ProgressBarSvc extends javax.xml.rpc.Service {
+    public org.sirius.server.win32lib.controls.progressbar.IProgressBarContract getProgressBarSvcPort()
+            throws javax.xml.rpc.ServiceException;
+
+    public org.sirius.server.win32lib.controls.progressbar.IProgressBarContract getProgressBarSvcPort(
+            java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
+
     public java.lang.String getProgressBarSvcPortAddress();
-
-    public org.sirius.server.win32lib.controls.progressbar.IProgressBarContract getProgressBarSvcPort() throws javax.xml.rpc.ServiceException;
-
-    public org.sirius.server.win32lib.controls.progressbar.IProgressBarContract getProgressBarSvcPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
 }

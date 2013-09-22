@@ -1,5 +1,5 @@
 /**
- * 
+ * .
  */
 package org.sirius.server.win32.classes;
 
@@ -10,62 +10,115 @@ import com.sun.jna.platform.win32.WinDef.HWND;
 
 /**
  * @author Myk Kolisnyk
- * 
+ * .
  */
 @WebService
 public class Dialog extends Common {
 
-	/**
-	 * 
+    /**
+	 * .
 	 */
-	public Dialog() {
-		// TODO Auto-generated constructor stub
-	}
+    public Dialog() {
+        // TODO Auto-generated constructor stub
+    }
 
-	public long getDialogBaseUnits() {
-		return this.dlg32.GetDialogBaseUnits();
-	}
+    /**
+     * .
+     * @return .
+     */
+    public final long getDialogBaseUnits() {
+        return this.getDlg32().GetDialogBaseUnits();
+    }
 
-	public int getDlgCtrlID(long hWnd) {
-		HWND handle = this.longToHwnd(hWnd);
-		return this.dlg32.GetDlgCtrlID(handle);
-	}
+    /**
+     * .
+     * @param hWnd .
+     * @return .
+     */
+    public final int getDlgCtrlID(final long hWnd) {
+        HWND handle = this.longToHwnd(hWnd);
+        return this.getDlg32().GetDlgCtrlID(handle);
+    }
 
-	public long getDlgItem(long hWnd, int itemId) {
-		HWND handle = this.longToHwnd(hWnd);
-		return Pointer.nativeValue(this.dlg32.GetDlgItem(handle, itemId).getPointer());
-	}
+    /**
+     * .
+     * @param hWnd .
+     * @param itemId .
+     * @return .
+     */
+    public final long getDlgItem(final long hWnd, final int itemId) {
+        HWND handle = this.longToHwnd(hWnd);
+        return Pointer.nativeValue(this.getDlg32().GetDlgItem(handle, itemId)
+                .getPointer());
+    }
 
-	public int getDlgItemInt(long hWnd, int itemId, boolean pbool, boolean flag2) {
-		HWND handle = this.longToHwnd(hWnd);
-		return this.dlg32.GetDlgItemInt(handle, itemId, pbool, flag2);
-	}
+    /**
+     * .
+     * @param hWnd .
+     * @param itemId .
+     * @param pbool .
+     * @param flag2 .
+     * @return .
+     */
+    public final int getDlgItemInt(final long hWnd, final int itemId,
+            final boolean pbool, final boolean flag2) {
+        HWND handle = this.longToHwnd(hWnd);
+        return this.getDlg32().GetDlgItemInt(handle, itemId, pbool, flag2);
+    }
 
-	public String getDlgItemTextA(long hWnd, int itemId) {
-		HWND handle = this.longToHwnd(hWnd);
-		
-		int length = 255;
-        char buf[] = new char[length];
-        
-        dlg32.GetDlgItemTextA(handle, itemId, buf, length);
-    	String text = String.valueOf( buf ).trim();
-    	return text;
-	}
+    /**
+     * .
+     * @param hWnd .
+     * @param itemId .
+     * @return .
+     */
+    public final String getDlgItemTextA(final long hWnd, final int itemId) {
+        HWND handle = this.longToHwnd(hWnd);
 
-	public int isDlgButtonChecked(long hWnd, int itemId) {
-		HWND handle = this.longToHwnd(hWnd);
-		return dlg32.IsDlgButtonChecked(handle, itemId);
-	}
+        int length = 255;
+        char[] buf = new char[length];
 
-	public boolean setDlgItemInt(long hWnd, int itenId, int intValue,
-			boolean flag) {
-		HWND handle = this.longToHwnd(hWnd);
-		return dlg32.SetDlgItemInt(handle, itenId, intValue, flag);
-	}
+        getDlg32().GetDlgItemTextA(handle, itemId, buf, length);
+        String text = String.valueOf(buf).trim();
+        return text;
+    }
 
-	public boolean setDlgItemText(long hWnd, int itemId, String text) {
-		HWND handle = this.longToHwnd(hWnd);
-		return dlg32.SetDlgItemTextA(handle, itemId, text.toCharArray());
-	}
+    /**
+     * .
+     * @param hWnd .
+     * @param itemId .
+     * @return .
+     */
+    public final int isDlgButtonChecked(final long hWnd, final int itemId) {
+        HWND handle = this.longToHwnd(hWnd);
+        return getDlg32().IsDlgButtonChecked(handle, itemId);
+    }
+
+    /**
+     * .
+     * @param hWnd .
+     * @param itenId .
+     * @param intValue .
+     * @param flag .
+     * @return .
+     */
+    public final boolean setDlgItemInt(final long hWnd, final int itenId,
+            final int intValue, final boolean flag) {
+        HWND handle = this.longToHwnd(hWnd);
+        return getDlg32().SetDlgItemInt(handle, itenId, intValue, flag);
+    }
+
+    /**
+     * .
+     * @param hWnd .
+     * @param itemId .
+     * @param text .
+     * @return .
+     */
+    public final boolean setDlgItemText(final long hWnd, final int itemId,
+            final String text) {
+        HWND handle = this.longToHwnd(hWnd);
+        return getDlg32().SetDlgItemTextA(handle, itemId, text.toCharArray());
+    }
 
 }

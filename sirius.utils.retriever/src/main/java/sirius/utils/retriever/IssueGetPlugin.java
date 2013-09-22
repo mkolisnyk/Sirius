@@ -7,14 +7,14 @@ import java.io.IOException;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
-import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.*;
 import org.apache.maven.plugins.annotations.Parameter;
 
 /**
  * @author Myk Kolisnyk
  * 
  */
-@Mojo(name = "generate")
+@Mojo(name = "generate",defaultPhase=LifecyclePhase.GENERATE_SOURCES)
 public class IssueGetPlugin extends AbstractMojo {
 
     @Parameter(property = "issueget.user", defaultValue = "")

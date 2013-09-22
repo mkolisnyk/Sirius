@@ -8,9 +8,11 @@
 package org.sirius.server.win32lib.controls.edit;
 
 public interface EditSvc extends javax.xml.rpc.Service {
+    public org.sirius.server.win32lib.controls.edit.IEditContract getEditSvcPort()
+            throws javax.xml.rpc.ServiceException;
+
+    public org.sirius.server.win32lib.controls.edit.IEditContract getEditSvcPort(
+            java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
+
     public java.lang.String getEditSvcPortAddress();
-
-    public org.sirius.server.win32lib.controls.edit.IEditContract getEditSvcPort() throws javax.xml.rpc.ServiceException;
-
-    public org.sirius.server.win32lib.controls.edit.IEditContract getEditSvcPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
 }

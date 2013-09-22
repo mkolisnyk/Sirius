@@ -1,5 +1,5 @@
 /**
- * 
+ * .
  */
 package org.sirius.server.win32;
 
@@ -8,102 +8,128 @@ import com.sun.jna.platform.win32.WinDef.HWND;
 
 /**
  * @author Myk Kolisnyk
- *
+ * .
  */
 public class Win32Locator {
 
-	private long hwnd;
-	private long parent;
-	private String winClass;
-	private String caption;
-	private int index;
-	
-	/**
-	 * 
-	 */
-	public Win32Locator() {
-		hwnd = 0;
-		parent = 0;
-		winClass = "(.*)";
-		caption = "(.*)";
-		index = 0;
-	}
+    /**
+     * .
+     */
+    private long   hwnd;
+    /**
+     * .
+     */
+    private long   parent;
+    /**
+     * .
+     */
+    private String winClass;
+    /**
+     * .
+     */
+    private String caption;
+    /**
+     * .
+     */
+    private int    index;
 
-	/**
-	 * @return the hwnd
-	 */
-	public final long getHwnd() {
-		return hwnd;
-	}
+    /**
+     * .
+     */
+    public Win32Locator() {
+        hwnd = 0;
+        parent = 0;
+        winClass = "(.*)";
+        caption = "(.*)";
+        index = 0;
+    }
 
-	/**
-	 * @param hwnd the hwnd to set
-	 */
-	public final void setHwnd(HWND hwnd) {
-		this.hwnd = Pointer.nativeValue(hwnd.getPointer());
-	}
+    /**
+     * @return the caption
+     */
+    public final String getCaption() {
+        return caption;
+    }
 
-	public final void setHwnd(long hwnd) {
-		this.hwnd = hwnd;
-	}
+    /**
+     * @return the hwnd
+     */
+    public final long getHwnd() {
+        return hwnd;
+    }
 
-	/**
-	 * @return the winClass
-	 */
-	public final String getWinClass() {
-		return winClass;
-	}
+    /**
+     * @return the index
+     */
+    public final int getIndex() {
+        return index;
+    }
 
-	/**
-	 * @param winClass the winClass to set
-	 */
-	public final void setWinClass(String winClass) {
-		this.winClass = winClass;
-	}
+    /**
+     * @return the parent
+     */
+    public final long getParent() {
+        return parent;
+    }
 
-	/**
-	 * @return the caption
-	 */
-	public final String getCaption() {
-		return caption;
-	}
+    /**
+     * @return the winClass
+     */
+    public final String getWinClass() {
+        return winClass;
+    }
 
-	/**
-	 * @param caption the caption to set
-	 */
-	public final void setCaption(String caption) {
-		this.caption = caption;
-	}
+    /**
+     * @param captionVal
+     *            the caption to set
+     */
+    public final void setCaption(final String captionVal) {
+        this.caption = captionVal;
+    }
 
-	/**
-	 * @return the index
-	 */
-	public final int getIndex() {
-		return index;
-	}
+    /**
+     * @param hwndVal
+     *            the hwnd to set
+     */
+    public final void setHwnd(final HWND hwndVal) {
+        this.hwnd = Pointer.nativeValue(hwndVal.getPointer());
+    }
 
-	/**
-	 * @param index the index to set
-	 */
-	public final void setIndex(int index) {
-		this.index = index;
-	}
+    /**
+     * .
+     * @param hwndVal .
+     */
+    public final void setHwnd(final long hwndVal) {
+        this.hwnd = hwndVal;
+    }
 
-	/**
-	 * @return the parent
-	 */
-	public final long getParent() {
-		return parent;
-	}
+    /**
+     * @param indexVal
+     *            the index to set
+     */
+    public final void setIndex(final int indexVal) {
+        this.index = indexVal;
+    }
 
-	/**
-	 * @param parent the parent to set
-	 */
-	public final void setParent(HWND parent) {
-		this.parent = parent.getPointer().getLong(0);
-	}
-	
-	public final void setParent(long parent) {
-		this.parent = parent;
-	}
+    /**
+     * @param parentVal the parent to set
+     */
+    public final void setParent(final HWND parentVal) {
+        this.parent = parentVal.getPointer().getLong(0);
+    }
+
+    /**
+     * .
+     * @param parentVal .
+     */
+    public final void setParent(final long parentVal) {
+        this.parent = parentVal;
+    }
+
+    /**
+     * @param winClassVal  the winClass to set
+     */
+    public final void setWinClass(final String winClassVal) {
+        this.winClass = winClassVal;
+    }
 }

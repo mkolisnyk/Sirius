@@ -8,10 +8,21 @@
 package org.sirius.server.win32lib.controls.tab;
 
 public interface ITabContract extends java.rmi.Remote {
-    public java.lang.Integer getItemsCount(java.lang.Integer hwnd) throws java.rmi.RemoteException;
-    public java.lang.Integer getSelectedIndex(java.lang.Integer hwnd) throws java.rmi.RemoteException;
-    public java.lang.String getSelectedItem(java.lang.Integer hwnd) throws java.rmi.RemoteException;
-    public java.lang.String[] getItemNames(java.lang.Integer hwnd) throws java.rmi.RemoteException;
-    public void selectByIndex(java.lang.Integer hwnd, java.lang.Integer index) throws java.rmi.RemoteException;
-    public void selectByName(java.lang.Integer hwnd, java.lang.String item) throws java.rmi.RemoteException;
+    public java.lang.String[] getItemNames(java.lang.Integer hwnd)
+            throws java.rmi.RemoteException;
+
+    public java.lang.Integer getItemsCount(java.lang.Integer hwnd)
+            throws java.rmi.RemoteException;
+
+    public java.lang.Integer getSelectedIndex(java.lang.Integer hwnd)
+            throws java.rmi.RemoteException;
+
+    public java.lang.String getSelectedItem(java.lang.Integer hwnd)
+            throws java.rmi.RemoteException;
+
+    public void selectByIndex(java.lang.Integer hwnd, java.lang.Integer index)
+            throws java.rmi.RemoteException;
+
+    public void selectByName(java.lang.Integer hwnd, java.lang.String item)
+            throws java.rmi.RemoteException;
 }

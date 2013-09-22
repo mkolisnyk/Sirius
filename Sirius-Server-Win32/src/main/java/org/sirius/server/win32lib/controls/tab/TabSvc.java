@@ -8,9 +8,11 @@
 package org.sirius.server.win32lib.controls.tab;
 
 public interface TabSvc extends javax.xml.rpc.Service {
+    public org.sirius.server.win32lib.controls.tab.ITabContract getTabSvcPort()
+            throws javax.xml.rpc.ServiceException;
+
+    public org.sirius.server.win32lib.controls.tab.ITabContract getTabSvcPort(
+            java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
+
     public java.lang.String getTabSvcPortAddress();
-
-    public org.sirius.server.win32lib.controls.tab.ITabContract getTabSvcPort() throws javax.xml.rpc.ServiceException;
-
-    public org.sirius.server.win32lib.controls.tab.ITabContract getTabSvcPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
 }

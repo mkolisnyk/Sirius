@@ -8,9 +8,11 @@
 package org.sirius.server.win32lib.controls.listbox;
 
 public interface ListBoxSvc extends javax.xml.rpc.Service {
+    public org.sirius.server.win32lib.controls.listbox.IListBoxContract getListBoxSvcPort()
+            throws javax.xml.rpc.ServiceException;
+
+    public org.sirius.server.win32lib.controls.listbox.IListBoxContract getListBoxSvcPort(
+            java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
+
     public java.lang.String getListBoxSvcPortAddress();
-
-    public org.sirius.server.win32lib.controls.listbox.IListBoxContract getListBoxSvcPort() throws javax.xml.rpc.ServiceException;
-
-    public org.sirius.server.win32lib.controls.listbox.IListBoxContract getListBoxSvcPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
 }

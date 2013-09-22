@@ -15,18 +15,18 @@ import org.sirius.server.win32lib.controls.tab.ITabContractProxy;
 
 /**
  * @author Myk Kolisnyk
- *
+ * 
  */
 public class Win32LibControlsClient {
-    private IButtonContractProxy button;
-    private IEditContractProxy edit;
-    private IListBoxContractProxy listBox;
-    private IListViewContractProxy listView;
-    private IProgressBarContractProxy progressBar;
-    private IScrollBarContractProxy scrollBar;
-    private ISliderContractProxy slider;
-    private ISpinContractProxy spin;
-    private ITabContractProxy tab;
+    private final IButtonContractProxy      button;
+    private final IEditContractProxy        edit;
+    private final IListBoxContractProxy     listBox;
+    private final IListViewContractProxy    listView;
+    private final IProgressBarContractProxy progressBar;
+    private final IScrollBarContractProxy   scrollBar;
+    private final ISliderContractProxy      slider;
+    private final ISpinContractProxy        spin;
+    private final ITabContractProxy         tab;
 
     /**
      * .
@@ -105,6 +105,5 @@ public class Win32LibControlsClient {
     public ITabContractProxy tab() {
         return tab;
     }
-    
-    
+
 }

@@ -9,8 +9,16 @@ package org.sirius.server.win32lib.controls.button;
 
 public interface IButtonContract extends java.rmi.Remote {
     public void click(java.lang.Integer hwnd) throws java.rmi.RemoteException;
-    public java.lang.Boolean isChecked(java.lang.Integer hwnd) throws java.rmi.RemoteException;
-    public java.lang.Boolean isIntermediate(java.lang.Integer hwnd) throws java.rmi.RemoteException;
-    public java.lang.Boolean isPressed(java.lang.Integer hwnd) throws java.rmi.RemoteException;
-    public void setCheck(java.lang.Integer hwnd, java.lang.Boolean check) throws java.rmi.RemoteException;
+
+    public java.lang.Boolean isChecked(java.lang.Integer hwnd)
+            throws java.rmi.RemoteException;
+
+    public java.lang.Boolean isIntermediate(java.lang.Integer hwnd)
+            throws java.rmi.RemoteException;
+
+    public java.lang.Boolean isPressed(java.lang.Integer hwnd)
+            throws java.rmi.RemoteException;
+
+    public void setCheck(java.lang.Integer hwnd, java.lang.Boolean check)
+            throws java.rmi.RemoteException;
 }
