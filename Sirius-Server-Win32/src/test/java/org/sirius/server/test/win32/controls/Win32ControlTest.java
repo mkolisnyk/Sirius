@@ -15,7 +15,8 @@ import cucumber.api.junit.Cucumber;
 @Cucumber.Options(
         format = {"html:target/cucumber-html-report", 
                 "json:target/cucumber-json-report.json",
-                "pretty:target/cucumber-pretty"
+                "pretty:target/cucumber-pretty.txt",
+                "usage:target/cucumber-usage.json"
                 },
         features = {"src/test/java/org/sirius/server/test/features/win32/controls"},
         glue = {"org/sirius/server/test/steps/win32/controls"}

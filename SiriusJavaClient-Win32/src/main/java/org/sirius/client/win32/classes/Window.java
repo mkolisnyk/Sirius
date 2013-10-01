@@ -26,7 +26,7 @@ public class Window implements WinUser {
     /**
      * .
      */
-    protected Win32Client  client;
+    private Win32Client  client;
     /**
      * .
      */
