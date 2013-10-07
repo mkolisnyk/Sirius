@@ -17,6 +17,8 @@ import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 
+import org.apache.commons.io.FileUtils;
+
 /**
  * @author KaNoN
  * 
@@ -24,405 +26,431 @@ import javax.jws.WebService;
 @WebService
 public class FileOperations {
 
-	/**
-	 * 
-	 * @param path
-	 * @param content
-	 * @return
-	 * @throws IOException 
-	 */
-	@WebResult(name = "status")
-	public boolean append(@WebParam(name = "path") String path,
-			@WebParam(name = "content") byte[] content) throws IOException {
-		FileWriter writer = new FileWriter(path);
-		
-		String text = new String(content);
-		
-		writer.append(text);
-		writer.close();
-		return true;
-	}
+    /**
+     * 
+     * @param path
+     * @param content
+     * @return
+     * @throws IOException
+     */
+    @WebResult(name = "status")
+    public boolean append(@WebParam(name = "path") String path,
+            @WebParam(name = "content") byte[] content) throws IOException {
+        FileWriter writer = new FileWriter(path);
 
-	/**
-	 * 
-	 * @param path
-	 * @param text
-	 * @return
-	 * @throws IOException 
-	 */
-	@WebResult(name = "status")
-	public boolean appendEx(@WebParam(name = "path") String path,
-			@WebParam(name = "text") String text) throws IOException {
-		FileWriter writer = new FileWriter(path);
-		
-		writer.append(text);
-		writer.close();
-		return true;
-	}
+        String text = new String(content);
 
-	/**
-	 * 
-	 * @param origin
-	 * @param destination
-	 * @return
-	 * @throws IOException
-	 */
-	@WebResult(name = "status")
-	public boolean copy(@WebParam(name = "origin") String origin,
-			@WebParam(name = "destination") String destination)
-			throws IOException {
-		return copyEx(origin, destination, false);
-	}
+        writer.append(text);
+        writer.close();
+        return true;
+    }
 
-	/**
-	 * 
-	 * @param origin
-	 * @param destination
-	 * @param overwrite
-	 * @return
-	 */
-	@WebResult(name = "status")
-	public boolean copyEx(@WebParam(name = "origin") String origin,
-			@WebParam(name = "destination") String destination,
-			@WebParam(name = "overwrite") boolean overwrite) throws IOException {
-		File source = new File(origin);
-		File dest = new File(destination);
+    /**
+     * 
+     * @param path
+     * @param text
+     * @return
+     * @throws IOException
+     */
+    @WebResult(name = "status")
+    public boolean appendEx(@WebParam(name = "path") String path,
+            @WebParam(name = "text") String text) throws IOException {
+        /*FileWriter writer = new FileWriter(path);
 
-		if (!source.getAbsoluteFile().exists()) {
-			return false;
-		}
-		if (source.getAbsoluteFile().isDirectory()) {
-			return false;
-		}
+        writer.append(text);
+        writer.close();
+        */
+        FileUtils.write(new File(path), text, true);
+        
+        return true;
+    }
 
-		if (dest.getAbsoluteFile().exists()) {
-			if (dest.getAbsoluteFile().isDirectory()) {
-				dest = new File(dest.getAbsolutePath() + File.separator
-						+ source.getName());
-			}
-			if (dest.getAbsoluteFile().isFile()) {
-				if (overwrite) {
-					dest.delete();
-				} else {
-					return false;
-				}
-			}
-		} else {
-			dest = new File(dest.getAbsoluteFile() + File.separator
-					+ source.getName());
-			dest.getAbsoluteFile().getParentFile().mkdirs();
-		}
+    /**
+     * 
+     * @param origin
+     * @param destination
+     * @return
+     * @throws IOException
+     */
+    @WebResult(name = "status")
+    public boolean copy(@WebParam(name = "origin") String origin,
+            @WebParam(name = "destination") String destination)
+            throws IOException {
+        return copyEx(origin, destination, false);
+    }
 
-		if (dest.getAbsolutePath().length() > 255) {
-			return false;
-		}
-		try {
-			Files.copy(source.toPath(), dest.toPath());
-		} catch (Exception e) {
-			return false;
-		}
+    /**
+     * .
+     * @param origin .
+     * @param destination .
+     * @param overwrite .
+     * @return .
+     */
+    private File prepareFileCopy(String origin, String destination,
+            boolean overwrite) {
+        File source = new File(origin);
+        File dest = new File(destination);
 
-		return true;
-	}
+        if (dest.getAbsolutePath().length() > 255) {
+            return null;
+        }
 
-	/**
-	 * 
-	 * @param fileName
-	 * @return
-	 */
-	@WebResult(name = "status")
-	public boolean createFile(@WebParam(name = "fileName") String fileName) {
-		return createFileEx(fileName, false);
-	}
+        if (dest.getAbsoluteFile().exists()) {
+            if (dest.getAbsoluteFile().isDirectory()) {
+                dest = new File(dest.getAbsolutePath() + File.separator
+                        + source.getName());
+            }
+            if (dest.getAbsoluteFile().isFile()) {
+                if (overwrite) {
+                    dest.delete();
+                } else {
+                    return null;
+                }
+            }
+        } else {
+            dest = new File(dest.getAbsoluteFile() + File.separator
+                    + source.getName());
+            dest.getAbsoluteFile().getParentFile().mkdirs();
+        }
 
-	/**
-	 * 
-	 * @param fileName
-	 * @param overwrite
-	 * @return
-	 * @throws IOException
-	 */
-	@WebResult(name = "status")
-	public boolean createFileEx(@WebParam(name = "fileName") String fileName,
-			@WebParam(name = "overwrite") boolean overwrite) {
-		File dest = new File(fileName);
+        return dest;
+    }
 
-		if (dest.exists()) {
-			if (!overwrite) {
-				return false;
-			}
+    /**
+     * 
+     * @param origin
+     * @param destination
+     * @param overwrite
+     * @return
+     */
+    @WebResult(name = "status")
+    public boolean copyEx(@WebParam(name = "origin") String origin,
+            @WebParam(name = "destination") String destination,
+            @WebParam(name = "overwrite") boolean overwrite) throws IOException {
+        File source = new File(origin);
+        File dest = new File(destination);
 
-			dest.delete();
-		}
+        if (!source.getAbsoluteFile().exists()
+                || source.getAbsoluteFile().isDirectory()) {
+            return false;
+        }
 
-		try {
-			dest.getAbsoluteFile().getParentFile().mkdirs();
-			return dest.createNewFile();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return false;
-	}
+        dest = prepareFileCopy(origin, destination, overwrite);
+        if (dest == null) {
+            return false;
+        }
 
-	/**
-	 * 
-	 * @param fileName
-	 * @return
-	 */
-	@WebResult(name = "status")
-	public boolean deleteFile(@WebParam(name = "fileName") String fileName) {
-		File file = new File(fileName);
-		if (file.exists() && file.isFile()) {
-			file.delete();
-		}
-		return !file.exists() || !file.isFile();
-	}
-	
-	/**
-	 * 
-	 * @param fileName
-	 * @return
-	 */
-	@WebResult(name = "status")
-	public boolean fileExists(@WebParam(name = "fileName") String fileName) {
-		File file = new File(fileName);
-		return file.exists() && file.isFile();
-	}
+        try {
+            Files.copy(source.toPath(), dest.toPath());
+        } catch (Exception e) {
+            return false;
+        }
 
-	/**
-	 * 
-	 * @param fileName
-	 * @return
-	 */
-	@WebResult(name = "content")
-	public byte[] getAllBytes(@WebParam(name = "fileName") String fileName) {
-		return null;
-	}
+        return true;
+    }
 
-	/**
-	 * 
-	 * @param path
-	 * @return
-	 * @throws IOException
-	 */
-	@WebResult(name = "content")
-	public String[] getFileContents(@WebParam(name = "path") String path)
-			throws IOException {
-		return getFileContentsEx2(path, 0, Integer.MAX_VALUE);
-	}
+    /**
+     * 
+     * @param fileName
+     * @return
+     */
+    @WebResult(name = "status")
+    public boolean createFile(@WebParam(name = "fileName") String fileName) {
+        return createFileEx(fileName, false);
+    }
 
-	/**
-	 * 
-	 * @param path
-	 * @param start
-	 * @return
-	 * @throws IOException
-	 */
-	@WebMethod(operationName = "getFileContentsEx")
-	@WebResult(name = "content")
-	public String[] getFileContentsEx(@WebParam(name = "path") String path,
-			@WebParam(name = "start") int start) throws IOException {
-		return getFileContentsEx2(path, start, Integer.MAX_VALUE);
-	}
+    /**
+     * 
+     * @param fileName
+     * @param overwrite
+     * @return
+     * @throws IOException
+     */
+    @WebResult(name = "status")
+    public boolean createFileEx(@WebParam(name = "fileName") String fileName,
+            @WebParam(name = "overwrite") boolean overwrite) {
+        File dest = new File(fileName);
 
-	/**
-	 * 
-	 * @param path
-	 * @param start
-	 * @param number
-	 * @return
-	 * @throws IOException
-	 */
-	@WebResult(name = "content")
-	public String[] getFileContentsEx2(@WebParam(name = "path") String path,
-			@WebParam(name = "start") int start,
-			@WebParam(name = "number") int number) throws IOException {
-		File file = new File(path);
+        if(!dest.getAbsoluteFile().getName().matches("^([ a-zA-Z0-9.]+)$")){
+            return false;
+        }
+        
+        if (dest.exists()) {
+            if (!overwrite) {
+                return false;
+            }
 
-		if (!file.exists() || !file.isFile()) {
-			return null;
-		}
+            dest.delete();
+        }
 
-		ArrayList<String> content = new ArrayList<String>();
+        try {
+            dest.getAbsoluteFile().getParentFile().mkdirs();
+            return dest.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 
-		FileReader reader = new FileReader(file);
-		BufferedReader br = new BufferedReader(reader);
-		String line;
-		int counter = 0;
+    /**
+     * 
+     * @param fileName
+     * @return
+     */
+    @WebResult(name = "status")
+    public boolean deleteFile(@WebParam(name = "fileName") String fileName) {
+        File file = new File(fileName);
+        if (file.exists() && file.isFile()) {
+            file.delete();
+        }
+        return !file.exists() || !file.isFile();
+    }
 
-		while ((line = br.readLine()) != null) {
-			if ((long) counter >= (long) start
-					&& (long) counter < ((long) start + (long) number)) {
-				content.add(line);
-			}
-			counter++;
-		}
-		br.close();
-		
-		String result[] = new String[content.size()];
+    /**
+     * 
+     * @param fileName
+     * @return
+     */
+    @WebResult(name = "status")
+    public boolean fileExists(@WebParam(name = "fileName") String fileName) {
+        File file = new File(fileName);
+        return file.exists() && file.isFile();
+    }
 
-		result = content.toArray(result);
-		return result;
-	}
+    /**
+     * 
+     * @param fileName
+     * @return
+     */
+    @WebResult(name = "content")
+    public byte[] getAllBytes(@WebParam(name = "fileName") String fileName) {
+        return null;
+    }
 
-	/**
-	 * 
-	 * @param path
-	 * @param lines
-	 * @return
-	 * @throws IOException
-	 */
-	@WebMethod(operationName = "head")
-	@WebResult(name = "content")
-	public String[] head(@WebParam(name = "path") String path,
-			@WebParam(name = "lines") int lines) throws IOException {
-		return getFileContentsEx2(path, 0, lines);
-	}
+    /**
+     * 
+     * @param path
+     * @return
+     * @throws IOException
+     */
+    @WebResult(name = "content")
+    public String[] getFileContents(@WebParam(name = "path") String path)
+            throws IOException {
+        return getFileContentsEx2(path, 0, Integer.MAX_VALUE);
+    }
 
-	/**
-	 * 
-	 * @param origin
-	 * @param destination
-	 * @return
-	 * @throws IOException
-	 */
-	@WebMethod(operationName = "move")
-	@WebResult(name = "status")
-	public boolean move(@WebParam(name = "origin") String origin,
-			@WebParam(name = "destination") String destination)
-			throws IOException {
-		return moveEx(origin, destination, false);
-	}
+    /**
+     * 
+     * @param path
+     * @param start
+     * @return
+     * @throws IOException
+     */
+    @WebMethod(operationName = "getFileContentsEx")
+    @WebResult(name = "content")
+    public String[] getFileContentsEx(@WebParam(name = "path") String path,
+            @WebParam(name = "start") int start) throws IOException {
+        return getFileContentsEx2(path, start, Integer.MAX_VALUE);
+    }
 
-	/**
-	 * 
-	 * @param origin
-	 * @param destination
-	 * @param overwrite
-	 * @return
-	 * @throws IOException
-	 */
-	@WebMethod(operationName = "moveEx")
-	@WebResult(name = "status")
-	public boolean moveEx(@WebParam(name = "origin") String origin,
-			@WebParam(name = "destination") String destination,
-			@WebParam(name = "overwrite") boolean overwrite) throws IOException {
-		File source = new File(origin);
-		File dest = new File(destination);
+    /**
+     * 
+     * @param path
+     * @param start
+     * @param number
+     * @return
+     * @throws IOException
+     */
+    @WebResult(name = "content")
+    public String[] getFileContentsEx2(@WebParam(name = "path") String path,
+            @WebParam(name = "start") int start,
+            @WebParam(name = "number") int number) throws IOException {
+        File file = new File(path);
 
-		if (dest.getAbsolutePath().length() > 255) {
-			return false;
-		}
+        if (!file.exists() || !file.isFile()) {
+            return null;
+        }
 
-		if (dest.exists()) {
-			if (dest.isFile()) {
-				if (!overwrite) {
-					return false;
-				} else {
-					dest.delete();
-				}
-			} else {
-				;
-			}
-		} else {
-			dest.getAbsoluteFile().getParentFile().mkdirs();
-		}
+        ArrayList<String> content = new ArrayList<String>();
 
-		try {
-			Files.move(source.toPath(), dest.toPath());
-		} catch (FileSystemException e) {
-			return false;
-		}
-		return true;
-	}
+        FileReader reader = new FileReader(file);
+        BufferedReader br = new BufferedReader(reader);
+        String line;
+        int counter = 0;
 
-	/**
-	 * 
-	 * @param fileName
-	 * @return
-	 */
-	@WebMethod(operationName = "size")
-	@WebResult(name = "fileSize")
-	public long size(@WebParam(name = "fileName") String fileName) {
-		File file = new File(fileName);
-		if (!file.exists() || !file.isFile()) {
-			return -1;
-		}
-		return file.length();
-	}
-	
-	/**
-	 * 
-	 * @param path
-	 * @param lines
-	 * @return
-	 * @throws IOException
-	 */
-	@WebMethod(operationName = "tail")
-	@WebResult(name = "content")
-	public String[] tail(@WebParam(name = "path") String path,
-			@WebParam(name = "lines") int lines) throws IOException {
+        while ((line = br.readLine()) != null) {
+            if ((long) counter >= (long) start
+                    && (long) counter < ((long) start + (long) number)) {
+                content.add(line);
+            }
+            counter++;
+        }
+        br.close();
 
-		File file = new File(path);
+        String result[] = new String[content.size()];
 
-		if (!file.exists() || !file.isFile()) {
-			return null;
-		}
+        result = content.toArray(result);
+        return result;
+    }
 
-		ArrayList<String> content = new ArrayList<String>();
+    /**
+     * 
+     * @param path
+     * @param lines
+     * @return
+     * @throws IOException
+     */
+    @WebMethod(operationName = "head")
+    @WebResult(name = "content")
+    public String[] head(@WebParam(name = "path") String path,
+            @WebParam(name = "lines") int lines) throws IOException {
+        return getFileContentsEx2(path, 0, lines);
+    }
 
-		FileReader reader = new FileReader(file);
-		BufferedReader br = new BufferedReader(reader);
-		String line;
+    /**
+     * 
+     * @param origin
+     * @param destination
+     * @return
+     * @throws IOException
+     */
+    @WebMethod(operationName = "move")
+    @WebResult(name = "status")
+    public boolean move(@WebParam(name = "origin") String origin,
+            @WebParam(name = "destination") String destination)
+            throws IOException {
+        return moveEx(origin, destination, false);
+    }
 
-		while ((line = br.readLine()) != null) {
-			content.add(line);
-			if (content.size() > lines) {
-				content.remove(0);
-			}
-		}
-		br.close();
-		String result[] = new String[content.size()];
+    /**
+     * 
+     * @param origin
+     * @param destination
+     * @param overwrite
+     * @return
+     * @throws IOException
+     */
+    @WebMethod(operationName = "moveEx")
+    @WebResult(name = "status")
+    public boolean moveEx(@WebParam(name = "origin") String origin,
+            @WebParam(name = "destination") String destination,
+            @WebParam(name = "overwrite") boolean overwrite) throws IOException {
+        File source = new File(origin);
+        File dest = new File(destination);
 
-		result = content.toArray(result);
-		return result;
-	}
+        if (dest.getAbsolutePath().length() > 255) {
+            return false;
+        }
 
-	/**
-	 * 
-	 * @param path
-	 * @param content
-	 * @return
-	 * @throws IOException 
-	 */
-	@WebMethod(operationName = "write")
-	@WebResult(name = "status")
-	public boolean write(@WebParam(name = "path") String path,
-			@WebParam(name = "content") byte[] content) throws IOException {
-		FileWriter writer = new FileWriter(path);
-		
-		String text = new String(content);
-		
-		writer.write(text);
-		writer.close();
-		return true;
-	}
+        if (dest.exists()) {
+            if (dest.isFile()) {
+                if (!overwrite) {
+                    return false;
+                } else {
+                    dest.delete();
+                }
+            } else {
+                ;
+            }
+        } else {
+            dest.getAbsoluteFile().getParentFile().mkdirs();
+        }
 
-	/**
-	 * 
-	 * @param path
-	 * @param text
-	 * @return
-	 * @throws IOException 
-	 */
-	@WebMethod(operationName = "writeEx")
-	@WebResult(name = "status")
-	public boolean writeEx(@WebParam(name = "path") String path,
-			@WebParam(name = "text") String text) throws IOException {
-		FileWriter writer = new FileWriter(path);
-		
-		writer.write(text);
-		writer.close();
-		return true;
-	}
+        try {
+            Files.move(source.toPath(), dest.toPath());
+        } catch (FileSystemException e) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * 
+     * @param fileName
+     * @return
+     */
+    @WebMethod(operationName = "size")
+    @WebResult(name = "fileSize")
+    public long size(@WebParam(name = "fileName") String fileName) {
+        File file = new File(fileName);
+        if (!file.exists() || !file.isFile()) {
+            return -1;
+        }
+        return file.length();
+    }
+
+    /**
+     * 
+     * @param path
+     * @param lines
+     * @return
+     * @throws IOException
+     */
+    @WebMethod(operationName = "tail")
+    @WebResult(name = "content")
+    public String[] tail(@WebParam(name = "path") String path,
+            @WebParam(name = "lines") int lines) throws IOException {
+
+        File file = new File(path);
+
+        if (!file.exists() || !file.isFile()) {
+            return null;
+        }
+
+        ArrayList<String> content = new ArrayList<String>();
+
+        FileReader reader = new FileReader(file);
+        BufferedReader br = new BufferedReader(reader);
+        String line;
+
+        while ((line = br.readLine()) != null) {
+            content.add(line);
+            if (content.size() > lines) {
+                content.remove(0);
+            }
+        }
+        br.close();
+        String result[] = new String[content.size()];
+
+        result = content.toArray(result);
+        return result;
+    }
+
+    /**
+     * 
+     * @param path
+     * @param content
+     * @return
+     * @throws IOException
+     */
+    @WebMethod(operationName = "write")
+    @WebResult(name = "status")
+    public boolean write(@WebParam(name = "path") String path,
+            @WebParam(name = "content") byte[] content) throws IOException {
+        FileWriter writer = new FileWriter(path);
+
+        String text = new String(content);
+
+        writer.write(text);
+        writer.close();
+        return true;
+    }
+
+    /**
+     * 
+     * @param path
+     * @param text
+     * @return
+     * @throws IOException
+     */
+    @WebMethod(operationName = "writeEx")
+    @WebResult(name = "status")
+    public boolean writeEx(@WebParam(name = "path") String path,
+            @WebParam(name = "text") String text) throws IOException {
+        FileWriter writer = new FileWriter(path);
+
+        writer.write(text);
+        writer.close();
+        return true;
+    }
 }

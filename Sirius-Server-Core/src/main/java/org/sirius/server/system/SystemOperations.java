@@ -85,6 +85,7 @@ public class SystemOperations {
 	 * @return
 	 * @throws IOException
 	 */
+	@SuppressWarnings("unchecked")
 	@WebResult(name = "status")
 	public boolean setEnvironmentVariable(
 			@WebParam(name = "variableName") String variableName,
@@ -96,14 +97,14 @@ public class SystemOperations {
 			Field theEnvironmentField = processEnvironmentClass
 					.getDeclaredField("theEnvironment");
 			theEnvironmentField.setAccessible(true);
-			@SuppressWarnings("unchecked")
+
 			Map<String, String> env = (Map<String, String>) theEnvironmentField
 					.get(null);
 			env.put(variableName, value);
 			Field theCaseInsensitiveEnvironmentField = processEnvironmentClass
 					.getDeclaredField("theCaseInsensitiveEnvironment");
 			theCaseInsensitiveEnvironmentField.setAccessible(true);
-			@SuppressWarnings("unchecked")
+			
 			Map<String, String> cienv = (Map<String, String>) theCaseInsensitiveEnvironmentField
 					.get(null);
 			cienv.put(variableName, value);
@@ -117,7 +118,6 @@ public class SystemOperations {
 						Field field = cl.getDeclaredField("m");
 						field.setAccessible(true);
 						Object obj = field.get(env);
-						@SuppressWarnings("unchecked")
 						Map<String, String> map = (Map<String, String>) obj;
 						map.clear();
 						map.put(variableName, value);

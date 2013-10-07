@@ -15,6 +15,8 @@ import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 
+import org.apache.commons.io.FileUtils;
+
 /**
  * @author KaNoN
  * 
@@ -38,6 +40,31 @@ public class DirectoryOperations {
 	}
 
 	/**
+	 * .
+	 * @param source .
+	 * @param dest .
+	 * @param overwrite .
+	 * @return .
+	 */
+	private boolean validateDirCopy(
+	        File source,
+	        File dest,
+	        boolean overwrite ){
+	    if (//!source.getAbsoluteFile().exists() ||
+                !source.getAbsoluteFile().isDirectory() ||
+                dest.getAbsolutePath().length() > 255 ) {
+            return false;
+        }
+
+        if (dest.getAbsoluteFile().exists()
+                && !overwrite) {
+            return false;
+        }
+
+        return true;
+	}
+	
+	/**
 	 * 
 	 * @param origin
 	 * @param destination
@@ -53,35 +80,12 @@ public class DirectoryOperations {
 		File source = new File(origin);
 		File dest = new File(destination);
 
-		if (!source.getAbsoluteFile().exists()) {
-			return false;
-		}
-		if (!source.getAbsoluteFile().isDirectory()) {
-			return false;
+		if( !validateDirCopy(source, dest, overwrite)){
+		    return false;
 		}
 
-		if (dest.getAbsoluteFile().isFile() && dest.getAbsoluteFile().exists()
-				&& !overwrite) {
-			return false;
-		}
-
-		if (!dest.getAbsoluteFile().mkdirs()) {
-			return false;
-		}
-
-		FileInputStream fis = new FileInputStream(source);
-		FileOutputStream fos = new FileOutputStream(source);
-
-		try {
-			int c;
-			while ((c = fis.read()) != -1) {
-				fos.write(c);
-			}
-		} finally {
-			fis.close();
-			fos.close();
-		}
-		return false;
+		FileUtils.copyDirectory(source, dest);
+		return true;
 	}
 
 	/**
@@ -220,32 +224,18 @@ public class DirectoryOperations {
 		File source = new File(origin);
 		File dest = new File(destination);
 
-		if (!source.exists()) {
-			return false;
+		if( !validateDirCopy(source, dest, overwrite)){
+		    return false;
 		}
-		if (!source.isDirectory()) {
-			return false;
-		}
-
-		if (dest.getAbsolutePath().length() > 255) {
-			return false;
-		}
-		if (dest.exists()) {
-			if (overwrite) {
-				delete(dest.getAbsolutePath());
-			} else {
-				return false;
-			}
-		}
-		dest.getAbsoluteFile().mkdirs();
+		
 		dest.delete();
 		try {
-			Files.move(source.toPath(), dest.toPath());
+		    FileUtils.moveDirectory(source, dest);
 		} catch (NoSuchFileException e) {
 			return false;
 		}
 		return dest.exists() && dest.isDirectory()
-				&& !(source.exists() && source.isDirectory());
+				&& !(source.exists());
 	}
 
 }

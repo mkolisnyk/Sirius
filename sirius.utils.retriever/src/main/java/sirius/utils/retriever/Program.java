@@ -17,6 +17,7 @@ import org.kohsuke.github.GitHub;
 
 import sirius.utils.retriever.formatters.CucumberFormatter;
 import sirius.utils.retriever.formatters.DummyFormatter;
+import sirius.utils.retriever.formatters.MavenSiteTraceMatrixFormatter;
 import sirius.utils.retriever.formatters.TraceabilityMatrixFormatter;
 import sirius.utils.retriever.interfaces.IStoryFormatter;
 
@@ -105,6 +106,8 @@ public class Program {
             formatter = new TraceabilityMatrixFormatter();
         } else if (outputType.equals("cucumber")) {
             formatter = new CucumberFormatter(outputLocation);
+        } else if( outputType.equals("mvn-trace")){
+            formatter = new MavenSiteTraceMatrixFormatter(outputLocation);
         }
 
         GitHub client = GitHub.connectUsingPassword(userName, password);
@@ -146,6 +149,7 @@ public class Program {
                 formatter.Out(formatter.GetIssue(issue));
             }
         }
+        formatter.Out(formatter.GetFooter(issues));
     }
 
 }
