@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Sirius.Win32.Svc</id>
+    <id>Sirius.Win32.WinService</id>
     <version>1.0.0</version>
     <authors>Myk Kolisnyk</authors>
     <owners>Myk Kolisnyk</owners>

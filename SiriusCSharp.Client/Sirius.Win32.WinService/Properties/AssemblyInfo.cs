@@ -1,15 +1,16 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Resources;
 
 // Управление общими сведениями о сборке осуществляется с помощью 
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("Sirius.Win32.Svc")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Sirius.Win32.WinService")]
+[assembly: AssemblyDescription("Sirius Win32 Windows Service")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Sirius.Win32.Svc")]
+[assembly: AssemblyCompany("Sirius.org")]
+[assembly: AssemblyProduct("Sirius.Win32.WinService")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +21,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("a93e8ed9-f87b-4955-a6ad-e993b2b36dd4")]
+[assembly: Guid("a250bce9-cf3e-4144-8f60-6937e03a5eac")]
 
 // Сведения о версии сборки состоят из следующих четырех значений:
 //
@@ -34,3 +35,4 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: NeutralResourcesLanguageAttribute("en-US")]

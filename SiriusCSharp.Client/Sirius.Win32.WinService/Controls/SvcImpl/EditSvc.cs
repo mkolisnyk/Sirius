@@ -5,6 +5,7 @@ using System.Text;
 using Sirius.Win32.Lib.Controls;
 using Sirius.Win32.Svc.Controls;
 using System.ServiceModel;
+using log4net;
 
 namespace Sirius.Win32.SvcImpl.Controls
 {
@@ -12,6 +13,7 @@ namespace Sirius.Win32.SvcImpl.Controls
     public class EditSvc : IEditContract
     {
         private Edit edit;
+        private static readonly ILog logger = LogManager.GetLogger(typeof(EditSvc));
 
         public EditSvc()
         {

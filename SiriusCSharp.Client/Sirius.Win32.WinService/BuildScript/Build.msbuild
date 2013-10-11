@@ -6,7 +6,7 @@
 	<PropertyGroup>
 		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
 		<Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-		<ProductName>Sirius.Win32.Svc</ProductName>
+		<ProductName>Sirius.Win32.WinService</ProductName>
 		<ProductVersion Condition="'$(ProductVersion)'==''">0.0.0</ProductVersion>
 		<SolutionDir>..</SolutionDir>
 
@@ -14,7 +14,6 @@
 		<StyleCopCacheResults>false</StyleCopCacheResults>
 		<StyleCopOutputFile>$(SolutionDir)\StyleCop.xml</StyleCopOutputFile>
 		<StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
-
 	</PropertyGroup>
 	<ItemGroup>
 		<StyleCopFiles Include="$(SolutionDir)\\**\*.cs" />

@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Sirius.Win32.Lib</id>
+    <id>Sirius.Win32.WinService</id>
     <version>1.0.0</version>
     <authors>Myk Kolisnyk</authors>
     <owners>Myk Kolisnyk</owners>
     <projectUrl>https://github.com/mkolisnyk/Sirius</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
-      Sirius C# library for interacting with Win32 controls
+      Sirius C# service application for interacting with Win32 controls
     </description>
     <releaseNotes>
     </releaseNotes>

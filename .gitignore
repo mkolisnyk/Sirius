@@ -27,3 +27,7 @@ CSharp-Client
 Java-Client
 RubyClient
 Server
+Release
+Debug
+
+/SiriusCSharp.Client/Sirius.Win32.WinService/Packages
