@@ -3,6 +3,7 @@
  */
 package org.sirius.server.test.steps.win32.controls;
 
+import java.rmi.RemoteException;
 import java.util.List;
 import java.util.Map;
 
@@ -26,7 +27,7 @@ public class TabControlSteps {
         ;
     }
     
-    private long getTabHwnd(){
+    private long getTabHwnd() throws InterruptedException, RemoteException{
         Window win = new Window();
         Win32Utils utils = new Win32Utils();
         Win32Locator locator = new Win32Locator();
@@ -40,11 +41,22 @@ public class TabControlSteps {
         tabLocator.setCaption("");
         
         long htab = utils.searchWindow(tabLocator);
+        TabControl control = new TabControl();
+        
+        int timeout = 30;
+        do {
+            Thread.sleep(1000);
+            if(timeout--==0){
+                break;
+            }
+        }
+        while(control.GetItemCount(hwnd) <= 0);
+        
         return htab;
     }
     
     @Then("I should see the following tabs:")
-    public void verifyTabs(DataTable tabs){
+    public void verifyTabs(DataTable tabs) throws InterruptedException, RemoteException{
         //Tab Name
         long htab = getTabHwnd();
         TabControl control = new TabControl();
@@ -63,7 +75,7 @@ public class TabControlSteps {
     }
     
     @When("I select the \"(.*)\" tab")
-    public void selectTabByName(String tabName){
+    public void selectTabByName(String tabName) throws InterruptedException, RemoteException{
         long htab = getTabHwnd();
         TabControl control = new TabControl();
         
@@ -71,7 +83,7 @@ public class TabControlSteps {
     }
     
     @Then("I should see the \"(.*)\" is selected")
-    public void verifySelectedTab(String tabName){
+    public void verifySelectedTab(String tabName) throws InterruptedException, RemoteException{
         long htab = getTabHwnd();
         TabControl control = new TabControl();
         
@@ -80,7 +92,7 @@ public class TabControlSteps {
     }
 
     @When("I select the tab with the (\\d+) index")
-    public void selectByIndex(int index){
+    public void selectByIndex(int index) throws InterruptedException, RemoteException{
         long htab = getTabHwnd();
         TabControl control = new TabControl();
         
@@ -88,7 +100,7 @@ public class TabControlSteps {
     }
     
     @Then("I should see the tab with (\\d+) index is selected")
-    public void verifySelectionIndex(int index){
+    public void verifySelectionIndex(int index) throws InterruptedException, RemoteException{
         long htab = getTabHwnd();
         TabControl control = new TabControl();
         

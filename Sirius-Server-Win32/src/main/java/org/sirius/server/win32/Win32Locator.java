@@ -45,6 +45,32 @@ public class Win32Locator {
     }
 
     /**
+     * @param winClass
+     * @param caption
+     * @param index
+     */
+    public Win32Locator(String winClass, String caption, int index) {
+        super();
+        this.winClass = winClass;
+        this.caption = caption;
+        this.index = index;
+    }
+
+    /**
+     * @param parent
+     * @param winClass
+     * @param caption
+     * @param index
+     */
+    public Win32Locator(long parent, String winClass, String caption, int index) {
+        super();
+        this.parent = parent;
+        this.winClass = winClass;
+        this.caption = caption;
+        this.index = index;
+    }
+
+    /**
      * @return the caption
      */
     public final String getCaption() {

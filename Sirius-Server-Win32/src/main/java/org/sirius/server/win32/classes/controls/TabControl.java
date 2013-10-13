@@ -140,8 +140,9 @@ public class TabControl extends Common implements ITabControlConsts,
         return item;
     }
 
-    public int GetItemCount(final long hwndCtl) {
-        return sendMessage(hwndCtl, TCM_GETITEMCOUNT, 0, 0);
+    public int GetItemCount(final long hwndCtl) throws RemoteException {
+        //return sendMessage(hwndCtl, TCM_GETITEMCOUNT, 0, 0);
+        return win32lib.tab().getItemsCount((int) hwndCtl);
     }
 
     public String[] GetItemNames(final long hwndCtl) {

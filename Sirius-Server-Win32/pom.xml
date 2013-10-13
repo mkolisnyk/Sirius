@@ -62,7 +62,7 @@
 				<version>1.0-SNAPSHOT</version>
 				<configuration>
 					<repository>Sirius</repository>
-					<groups>Test;Win32</groups>
+					<groups>Win32</groups>
 					<outputType>cucumber</outputType>
 					<outputLocation>src/test/java/org/sirius/server/test/features/win32/controls</outputLocation>
 					<goal>generate</goal>
