@@ -95,7 +95,7 @@ public class TabControl extends Common implements ITabControlConsts,
 	 * 
 	 */
     public TabControl() {
-        // TODO Auto-generated constructor stub
+        win32lib = new Win32LibControlsClient();
     }
 
     public int GetCurFocus(final long hwndCtl) {
@@ -197,6 +197,15 @@ public class TabControl extends Common implements ITabControlConsts,
     public void Select(final long hwndCtl, final String tabName) {
         try {
             win32lib.tab().selectByName((int) hwndCtl, tabName);
+        } catch (RemoteException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    public void SelectByIndex(final long hwndCtl, final int index) {
+        try {
+            win32lib.tab().selectByIndex((int) hwndCtl, index);
         } catch (RemoteException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

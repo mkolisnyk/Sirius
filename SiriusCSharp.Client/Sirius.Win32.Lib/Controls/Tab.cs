@@ -4,14 +4,19 @@ using System.Linq;
 using System.Text;
 using Sirius.Win32.Lib.Controls.Interfaces;
 using System.Windows.Automation;
+using log4net;
+using log4net.Config;
 
 namespace Sirius.Win32.Lib.Controls
 {
     public class Tab : Control,ISelectable
     {
+        private static readonly ILog logger = LogManager.GetLogger(typeof(Tab));
+
         public Tab()
         {
-            this.controlType = ControlType.Tab;
+            XmlConfigurator.Configure();
+            this.controlType = ControlType.Tab;            
         }
 
         public int GetItemsCount(int hwnd) 
@@ -77,8 +82,15 @@ namespace Sirius.Win32.Lib.Controls
         public void Select(int hwnd,int index) 
         {
             int count = 0;
+            
+            logger.Debug(String.Format(@"Starting Select({0},{1})", hwnd, index));
 
             AutomationElement element = Find(hwnd);
+            if (element == null)
+            {
+                logger.Warn(String.Format("Element with {0} hwnd wasn't found", hwnd));
+            }
+
             AutomationElement tabElement = TreeWalker.RawViewWalker.GetFirstChild(element);
 
             while (tabElement != null)
@@ -100,7 +112,16 @@ namespace Sirius.Win32.Lib.Controls
 
         public void Select(int hwnd,String item) 
         {
+            logger.Debug(String.Format(@"Starting Select({0},""{1}"")",hwnd,item));
+
             AutomationElement element = Find(hwnd);
+            if (element == null) 
+            {
+                logger.Warn(String.Format("Element with {0} hwnd wasn't found",hwnd));
+            }
+
+            logger.Debug(String.Format(@"Find returns {0}", element.GetHashCode()));
+
             AutomationElement tabElement = TreeWalker.RawViewWalker.GetFirstChild(element);
 
             while (tabElement != null)

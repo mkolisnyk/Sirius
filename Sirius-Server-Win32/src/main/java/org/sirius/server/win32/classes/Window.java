@@ -121,6 +121,10 @@ public class Window extends Common implements IWMConsts, IMKConsts {
         return result;
     }
 
+    public final long getDesktopWindow(){
+        return 0;
+    }
+    
     /**
      * .
      * @param hwnd .

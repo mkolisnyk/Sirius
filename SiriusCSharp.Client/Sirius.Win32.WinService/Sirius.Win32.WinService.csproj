@@ -6,7 +6,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{81573CF8-A713-4594-B3E3-D62C73DF66CB}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sirius.Win32.WinService</RootNamespace>
     <AssemblyName>Sirius.Win32.WinService</AssemblyName>
@@ -82,6 +82,9 @@
   <PropertyGroup>
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net">
       <HintPath>Packages\log4net\lib\net40-full\log4net.dll</HintPath>
@@ -138,10 +141,12 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Build.cmd" />
     <None Include="BuildScript\Build.msbuild">
       <SubType>Designer</SubType>
     </None>
     <None Include="Package.nuspec" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

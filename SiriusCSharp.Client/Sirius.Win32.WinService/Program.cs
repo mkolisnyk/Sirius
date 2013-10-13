@@ -29,9 +29,20 @@ namespace Sirius.Win32.WinService
             Configuration appConfig = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             logger.Info("Getting Base URL");
 
+            bool isService = true;
+
             try
             {
                 baseURL = ConfigurationManager.AppSettings["baseURL"];
+            }
+            catch (Exception e)
+            {
+                logger.Fatal("Error while starting service", e);
+                throw e;
+            }
+            try
+            {
+                isService = ConfigurationManager.AppSettings["runAsService"].ToLower().Equals("true");
             }
             catch (Exception e)
             {
@@ -91,13 +102,18 @@ namespace Sirius.Win32.WinService
 
             //while (Console.ReadKey(true).KeyChar != 'q') { ;}
 
-            ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[] 
+            if (isService)
+            {
+                ServiceBase[] ServicesToRun;
+                ServicesToRun = new ServiceBase[] 
 			{ 
 				new Win32Service() 
 			};
-            ServiceBase.Run(ServicesToRun);
-
+                ServiceBase.Run(ServicesToRun);
+            }
+            else {
+                while (Console.ReadKey(true).KeyChar != 'q') { ;}
+            }
             logger.Info("Stopping Service");
             foreach (ServiceHost host in hosts)
             {

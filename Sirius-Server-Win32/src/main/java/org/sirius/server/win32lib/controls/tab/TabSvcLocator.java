@@ -11,7 +11,7 @@ public class TabSvcLocator extends org.apache.axis.client.Service implements
         org.sirius.server.win32lib.controls.tab.TabSvc {
 
     // Use to get a proxy class for TabSvcPort
-    private java.lang.String  TabSvcPort_address        = "http://localhost:8990/win32lib/tabsvc";
+    private java.lang.String  TabSvcPort_address        = "http://localhost:31313/win32lib/tabsvc";
 
     // The WSDD service name defaults to the port name.
     private java.lang.String  TabSvcPortWSDDServiceName = "TabSvcPort";

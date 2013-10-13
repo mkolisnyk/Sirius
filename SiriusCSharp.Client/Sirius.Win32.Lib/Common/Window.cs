@@ -3,11 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Automation;
+using log4net;
+using log4net.Config;
 
 namespace Sirius.Win32.Lib
 {
     public class Window
     {
+        private static readonly ILog logger = LogManager.GetLogger(typeof(Window));
+
+        public Window() 
+        {
+            XmlConfigurator.Configure();
+        }
+
         public AutomationElement Root 
         {
             get 
@@ -18,7 +27,18 @@ namespace Sirius.Win32.Lib
 
         public AutomationElement Find(int hwnd) 
         {
-            return Root.FindFirst(TreeScope.Subtree, CustomConditions.ByHandle(hwnd));
+            logger.Debug(String.Format("Find: Looking for {0} hwnd",hwnd));
+            logger.Debug(String.Format("Root item handle: {0}", Root.Current.NativeWindowHandle));
+            PropertyCondition condition = new PropertyCondition(AutomationElement.NativeWindowHandleProperty, hwnd);
+            logger.Debug(
+                String.Format(
+                    "Setting condition for property: {0} . Value: {1}",
+                    condition.Property.ProgrammaticName,
+                    condition.Value
+                )
+            );
+            return Root.FindFirst(TreeScope.Subtree, condition );
+                //CustomConditions.ByHandle(hwnd));
         } 
 
         public int Find(String className,String name,int index) 

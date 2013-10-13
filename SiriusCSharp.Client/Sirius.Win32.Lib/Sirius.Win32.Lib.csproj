@@ -37,6 +37,9 @@
     <AssemblyOriginatorKeyFile>Win32.Lib.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>Packages\log4net\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -75,6 +78,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Package.nuspec" />
+    <None Include="packages.config" />
     <None Include="Win32.Lib.snk" />
   </ItemGroup>
   <ItemGroup>
