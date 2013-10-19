@@ -250,31 +250,11 @@
 				<version>3.3</version>
 			</plugin>
 			<plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <testFailureIgnore>true</testFailureIgnore>
-                </configuration>
-            </plugin>
-			<plugin>
-				<groupId>net.masterthought</groupId>
-				<artifactId>maven-cucumber-reporting</artifactId>
-				<version>0.0.4</version>
-				<executions>
-					<execution>
-						<id>execution</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-						<configuration>
-							<projectName>Sirius Server - Core tests</projectName>
-							<outputDirectory>${project.build.directory}/cucumber-html-reports</outputDirectory>
-							<cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
-							<enableFlashCharts>false</enableFlashCharts>
-						</configuration>
-					</execution>
-				</executions>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<testFailureIgnore>true</testFailureIgnore>
+				</configuration>
 			</plugin>
 		</plugins>
 		<pluginManagement>
@@ -337,8 +317,8 @@
 		</dependency>
 		<dependency>
 			<groupId>net.masterthought</groupId>
-			<artifactId>maven-cucumber-reporting</artifactId>
-			<version>0.0.4</version>
+			<artifactId>cucumber-reporting</artifactId>
+			<version>0.0.21</version>
 		</dependency>
 	</dependencies>
 	<reporting>
@@ -409,10 +389,19 @@
 					<groups>System</groups>
 					<outputType>mvn-trace</outputType>
 					<outputLocation>target/site</outputLocation>
-					<goal>trace</goal>
+					<jsonFile>target/cucumber.json</jsonFile>
 				</configuration>
+				<reportSets>
+					<reportSet>
+						<configuration />
+						<reports>
+							<report>trace</report>
+							<report>cucumber</report>
+						</reports>
+					</reportSet>
+				</reportSets>
 			</plugin>
-			
+
 		</plugins>
 	</reporting>
 </project>

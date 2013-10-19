@@ -62,20 +62,33 @@
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
-					<!--<excludes> <exclude>*</exclude> <exclude>com/thoughtworks/**/*</exclude> 
-						<exclude>freemarker/**/*</exclude> <exclude>ftl/**/*</exclude> <exclude>i18n/**/*</exclude> 
-						<exclude>style/**/*</exclude> <exclude>junit/**/*</exclude> <exclude>licenses/**/*</exclude> 
-						<exclude>META-INF/maven/**/*</exclude> <exclude>org/codehaus/**/*</exclude> 
-						<exclude>org/hamcrest/**/*</exclude> <exclude>org/jbehave/**/*</exclude> 
-						<exclude>org/junit/**/*</exclude> <exclude>org/testng/**/*</exclude> <exclude>org/xmlpull/**/*</exclude> 
-						<exclude>stories/**/*</exclude> <exclude>style/**/*</exclude> <exclude>tests/**/*</exclude> 
-						</excludes> -->
+					<excludes>
+						<exclude>*</exclude>
+						<exclude>com/thoughtworks/**/*</exclude>
+						<exclude>freemarker/**/*</exclude>
+						<exclude>ftl/**/*</exclude>
+						<exclude>i18n/**/*</exclude>
+						<exclude>style/**/*</exclude>
+						<exclude>junit/**/*</exclude>
+						<exclude>licenses/**/*</exclude>
+						<!-- <exclude>META-INF/maven/**/*</exclude> -->
+						<exclude>org/codehaus/**/*</exclude>
+						<exclude>org/apache/velocity/**/*</exclude>
+						<exclude>org/hamcrest/**/*</exclude>
+						<exclude>org/jbehave/**/*</exclude>
+						<exclude>org/junit/**/*</exclude>
+						<exclude>org/testng/**/*</exclude>
+						<exclude>org/xmlpull/**/*</exclude>
+						<exclude>stories/**/*</exclude>
+						<exclude>style/**/*</exclude>
+						<exclude>tests/**/*</exclude>
+					</excludes>
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
 							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-							<addExtensions>true</addExtensions>
+							<!-- <addExtensions>true</addExtensions> -->
 							<classpathLayoutType>repository</classpathLayoutType>
 							<mainClass>sirius.utils.retriever.Program</mainClass>
 						</manifest>
@@ -111,49 +124,16 @@
 					<preparationGoals>package install:install-file</preparationGoals>
 				</configuration>
 			</plugin>
-			<!-- <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-pmd-plugin</artifactId>
-				<version>3.0.1</version>
-								<configuration>
-					<excludes>
-						<exclude>**/plugin/**/*.java</exclude>
-					</excludes>
-					<excludeRoots>
-            			<excludeRoot>target/generated-sources</excludeRoot>
-          			</excludeRoots>
-				</configuration>
-				
-				<executions>
-					<execution>
-						<goals>
-							<goal>check</goal>
-							<goal>cpd-check</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>2.9.1</version>
-				<configuration>
-					<excludes>
-						<exclude>**/plugin/**/*.java</exclude>
-					</excludes>
-					<excludeRoots>
-            			<excludeRoot>target/generated-sources</excludeRoot>
-          			</excludeRoots>
-				</configuration>
-
-				<executions>
-					<execution>
-						<goals>
-							<goal>check</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>-->
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-pmd-plugin</artifactId> 
+				<version>3.0.1</version> <configuration> <excludes> <exclude>**/plugin/**/*.java</exclude> 
+				</excludes> <excludeRoots> <excludeRoot>target/generated-sources</excludeRoot> 
+				</excludeRoots> </configuration> <executions> <execution> <goals> <goal>check</goal> 
+				<goal>cpd-check</goal> </goals> </execution> </executions> </plugin> <plugin> 
+				<groupId>org.apache.maven.plugins</groupId> <artifactId>maven-checkstyle-plugin</artifactId> 
+				<version>2.9.1</version> <configuration> <excludes> <exclude>**/plugin/**/*.java</exclude> 
+				</excludes> <excludeRoots> <excludeRoot>target/generated-sources</excludeRoot> 
+				</excludeRoots> </configuration> <executions> <execution> <goals> <goal>check</goal> 
+				</goals> </execution> </executions> </plugin> -->
 		</plugins>
 		<pluginManagement>
 			<plugins>
@@ -219,41 +199,46 @@
 			<artifactId>maven-plugin-api</artifactId>
 			<version>2.0</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.reporting</groupId>
+			<artifactId>maven-reporting-api</artifactId>
+			<version>2.0.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.reporting</groupId>
+			<artifactId>maven-reporting-impl</artifactId>
+			<version>2.0.4.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-utils</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>net.masterthought</groupId>
+			<artifactId>cucumber-reporting</artifactId>
+			<version>0.0.21</version>
+		</dependency>
 	</dependencies>
 	<reporting>
 		<plugins>
-			<!-- <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>2.9.1</version>
-								<configuration>
-					<excludes>
-						<exclude>**/plugin/**/*.java</exclude>
-					</excludes>
-					<excludeRoots>
-            			<excludeRoot>target/generated-sources</excludeRoot>
-          			</excludeRoots>
-				</configuration>
-				
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-pmd-plugin</artifactId>
-				<version>3.0.1</version>
-								<configuration>
-					<excludes>
-						<exclude>**/plugin/**/*.java</exclude>
-					</excludes>
-					<excludeRoots>
-            			<excludeRoot>target/generated-sources</excludeRoot>
-          			</excludeRoots>
-				</configuration>
-				
-			</plugin>-->
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-checkstyle-plugin</artifactId> 
+				<version>2.9.1</version> <configuration> <excludes> <exclude>**/plugin/**/*.java</exclude> 
+				</excludes> <excludeRoots> <excludeRoot>target/generated-sources</excludeRoot> 
+				</excludeRoots> </configuration> </plugin> <plugin> <groupId>org.apache.maven.plugins</groupId> 
+				<artifactId>maven-pmd-plugin</artifactId> <version>3.0.1</version> <configuration> 
+				<excludes> <exclude>**/plugin/**/*.java</exclude> </excludes> <excludeRoots> 
+				<excludeRoot>target/generated-sources</excludeRoot> </excludeRoots> </configuration> 
+				</plugin> -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jxr-plugin</artifactId>
 				<version>2.3</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-plugin-plugin</artifactId>
+				<version>3.2</version>
 			</plugin>
 		</plugins>
 	</reporting>
