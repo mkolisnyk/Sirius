@@ -7,6 +7,7 @@ import javax.jws.WebService;
 
 import org.sirius.server.win32.classes.Common;
 import org.sirius.server.win32.constants.IComboBoxConsts;
+import org.sirius.server.win32lib.controls.Win32LibControlsClient;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.platform.win32.WinDef.HWND;
@@ -23,8 +24,13 @@ public class ComboBox extends Common implements IComboBoxConsts {
     /**
      * .
      */
+    Win32LibControlsClient win32lib;
+
+    /**
+     * 
+     */
     public ComboBox() {
-        // TODO Auto-generated constructor stub
+        win32lib = new Win32LibControlsClient();
     }
 
     /**

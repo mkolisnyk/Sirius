@@ -3,10 +3,15 @@
  */
 package org.sirius.server.win32.classes.controls;
 
+import java.rmi.RemoteException;
+
 import javax.jws.WebService;
 
 import org.sirius.server.win32.classes.Common;
 import org.sirius.server.win32.constants.IListBoxConsts;
+import org.sirius.server.win32lib.controls.Win32LibControlsClient;
+import org.sirius.server.win32lib.controls.listbox.IListBoxContract;
+import org.sirius.server.win32lib.controls.listbox.IListBoxContractProxy;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.platform.win32.WinDef.HWND;
@@ -20,130 +25,172 @@ import com.sun.jna.platform.win32.WinDef.WPARAM;
 @WebService
 public class ListBox extends Common implements IListBoxConsts {
 
+    
+    Win32LibControlsClient win32lib;
+    
     /**
 	 * 
 	 */
     public ListBox() {
         // TODO Auto-generated constructor stub
+        win32lib = new Win32LibControlsClient();
     }
 
-    /*
-     * public int FindItemData(hwndCtl,indexStart,data) {
-     * ((int)(DWORD)SNDMSG((hwndCtl
-     * ),LB_FINDSTRING,(WPARAM)(int)(indexStart),(LPARAM)(data))) }
+    /**
+     * @param hwnd
+     * @param index
+     * @throws RemoteException
+     * @see org.sirius.server.win32lib.controls.listbox.IListBoxContractProxy#addSelectionByIndex(java.lang.Integer, java.lang.Integer)
      */
-    public int FindString(final long hwndCtl, final int indexStart,
-            final String lpszFind) {
-        HWND hWnd = longToHwnd(hwndCtl);
-        WPARAM wParam = new WPARAM(indexStart);
-        Pointer pt = new Pointer(0);
-        pt.setString(0, lpszFind);
-        LPARAM lParam = new LPARAM(Pointer.nativeValue(pt));
-
-        return getUser32().SendMessage(hWnd, LB_FINDSTRING, wParam, lParam);
+    public void addSelectionByIndex(Integer hwnd, Integer index)
+            throws RemoteException {
+        win32lib.listBox().addSelectionByIndex(hwnd, index);
     }
 
-    public int FindStringExact(final long hwndCtl, final int indexStart,
-            final String lpszFind) {
-        HWND hWnd = longToHwnd(hwndCtl);
-        WPARAM wParam = new WPARAM(indexStart);
-        Pointer pt = new Pointer(0);
-        pt.setString(0, lpszFind);
-        LPARAM lParam = new LPARAM(Pointer.nativeValue(pt));
-
-        return getUser32().SendMessage(hWnd, LB_FINDSTRINGEXACT, wParam, lParam);
-    }
-
-    public int GetCaretIndex(final long hwndCtl) {
-        return this.sendMessage(hwndCtl, LB_GETCARETINDEX, 0, 0);
-    }
-
-    public int GetCount(final long hwndCtl) {
-        return this.sendMessage(hwndCtl, LB_GETCOUNT, 0, 0);
-    }
-
-    public int GetCurSel(final long hwndCtl) {
-        return this.sendMessage(hwndCtl, LB_GETCURSEL, 0, 0);
-    }
-
-    public int GetHorizontalExtent(final long hwndCtl) {
-        return this.sendMessage(hwndCtl, LB_GETHORIZONTALEXTENT, 0, 0);
-    }
-
-    /*
-     * public int GetItemData(hwndCtl,index) {
-     * ((LRESULT)(DWORD)SNDMSG((hwndCtl),LB_GETITEMDATA,(WPARAM)(int)(index),0))
-     * }
+    /**
+     * @param hwnd
+     * @param item
+     * @throws RemoteException
+     * @see org.sirius.server.win32lib.controls.listbox.IListBoxContractProxy#addSelectionByName(java.lang.Integer, java.lang.String)
      */
-    public int GetItemHeight(final long hwndCtl, final int index) {
-        return this.sendMessage(hwndCtl, LB_GETITEMHEIGHT, index, 0);
+    public void addSelectionByName(Integer hwnd, String item)
+            throws RemoteException {
+        win32lib.listBox().addSelectionByName(hwnd, item);
     }
 
-    /*
-     * public int GetItemRect(hwndCtl,index,lprc) {
-     * ((int)(DWORD)SNDMSG((hwndCtl)
-     * ,LB_GETITEMRECT,(WPARAM)(int)(index),(LPARAM)(RECT*)(lprc))) }
+    /**
+     * @param hwnd
+     * @throws RemoteException
+     * @see org.sirius.server.win32lib.controls.listbox.IListBoxContractProxy#deselectAll(java.lang.Integer)
      */
-    public int GetSel(final long hwndCtl, final int index) {
-        return this.sendMessage(hwndCtl, LB_GETSEL, index, 0);
+    public void deselectAll(Integer hwnd) throws RemoteException {
+        win32lib.listBox().deselectAll(hwnd);
     }
 
-    public int GetSelCount(final long hwndCtl) {
-        return this.sendMessage(hwndCtl, LB_GETSELCOUNT, 0, 0);
-    }
-
-    /*
-     * public int GetSelItems(hwndCtl,cItems,lpItems) {
-     * ((int)(DWORD)SNDMSG((hwndCtl
-     * ),LB_GETSELITEMS,(WPARAM)(int)(cItems),(LPARAM)(int*)(lpItems))) }
+    /**
+     * @return
+     * @see org.sirius.server.win32lib.controls.listbox.IListBoxContractProxy#getEndpoint()
      */
-    public String GetText(final long hwndCtl, final int index) {
-        HWND hWnd = longToHwnd(hwndCtl);
-        WPARAM wParam = new WPARAM(index);
-        Pointer pt = new Pointer(0);
-        String lpszText = "";
-        pt.setString(0, lpszText);
-        LPARAM lParam = new LPARAM(Pointer.nativeValue(pt));
-        getUser32().SendMessage(hWnd, LB_GETTEXT, wParam, lParam);
-        return pt.getString(0);
+    public String getEndpoint() {
+        return win32lib.listBox().getEndpoint();
     }
 
-    public int GetTextLen(final long hwndCtl, final int index) {
-        return sendMessage(hwndCtl, LB_GETTEXTLEN, index, 0);
+    /**
+     * @return
+     * @see org.sirius.server.win32lib.controls.listbox.IListBoxContractProxy#getIListBoxContract()
+     */
+    public IListBoxContract getIListBoxContract() {
+        return win32lib.listBox().getIListBoxContract();
     }
 
-    public int GetTopIndex(final long hwndCtl) {
-        return sendMessage(hwndCtl, LB_GETTOPINDEX, 0, 0);
+    /**
+     * @param hwnd
+     * @return
+     * @throws RemoteException
+     * @see org.sirius.server.win32lib.controls.listbox.IListBoxContractProxy#getItemNames(java.lang.Integer)
+     */
+    public String[] getItemNames(Integer hwnd) throws RemoteException {
+        return win32lib.listBox().getItemNames(hwnd);
     }
 
-    public int SelectString(final long hwndCtl, final int indexStart,
-            final String lpszFind) {
-        HWND hWnd = longToHwnd(hwndCtl);
-        WPARAM wParam = new WPARAM(indexStart);
-        Pointer pt = new Pointer(0);
-        String lpszText = "";
-        pt.setString(0, lpszText);
-        LPARAM lParam = new LPARAM(Pointer.nativeValue(pt));
-        return getUser32().SendMessage(hWnd, LB_SELECTSTRING, wParam, lParam);
+    /**
+     * @param hwnd
+     * @return
+     * @throws RemoteException
+     * @see org.sirius.server.win32lib.controls.listbox.IListBoxContractProxy#getItemsCount(java.lang.Integer)
+     */
+    public Integer getItemsCount(Integer hwnd) throws RemoteException {
+        return win32lib.listBox().getItemsCount(hwnd);
     }
 
-    public int SelItemRange(final long hwndCtl, final boolean fSelect,
-            final int first, final int last) {
-        HWND hWnd = longToHwnd(hwndCtl);
-        WPARAM wParam = new WPARAM(fSelect ? 1 : 0);
-        LPARAM lParam = this.makeLParam(first, last);
-        return getUser32().SendMessage(hWnd, LB_SELITEMRANGE, wParam, lParam);
+    /**
+     * @param hwnd
+     * @return
+     * @throws RemoteException
+     * @see org.sirius.server.win32lib.controls.listbox.IListBoxContractProxy#getSelectedIndex(java.lang.Integer)
+     */
+    public Integer getSelectedIndex(Integer hwnd) throws RemoteException {
+        return win32lib.listBox().getSelectedIndex(hwnd);
     }
 
-    public int SetCaretIndex(final long hwndCtl, final int index) {
-        return sendMessage(hwndCtl, LB_SETCARETINDEX, index, 0);
+    /**
+     * @param obj
+     * @return
+     * @see java.lang.Object#equals(java.lang.Object)
+     */
+    public boolean equals(Object obj) {
+        return win32lib.listBox().equals(obj);
     }
 
-    public int SetCurSel(final long hwndCtl, final int index) {
-        return sendMessage(hwndCtl, LB_SETCURSEL, index, 0);
+    /**
+     * @param hwnd
+     * @return
+     * @throws RemoteException
+     * @see org.sirius.server.win32lib.controls.listbox.IListBoxContractProxy#getSelectedItem(java.lang.Integer)
+     */
+    public String getSelectedItem(Integer hwnd) throws RemoteException {
+        return win32lib.listBox().getSelectedItem(hwnd);
     }
 
-    public int SetSel(final long hwndCtl, final boolean fSelect, final int index) {
-        return sendMessage(hwndCtl, LB_SETSEL, fSelect ? 1 : 0, index);
+    /**
+     * @param hwnd
+     * @return
+     * @throws RemoteException
+     * @see org.sirius.server.win32lib.controls.listbox.IListBoxContractProxy#getSelectedItems(java.lang.Integer)
+     */
+    public String[] getSelectedItems(Integer hwnd) throws RemoteException {
+        return win32lib.listBox().getSelectedItems(hwnd);
+    }
+
+    /**
+     * @param hwnd
+     * @param index
+     * @throws RemoteException
+     * @see org.sirius.server.win32lib.controls.listbox.IListBoxContractProxy#removeSelectionByIndex(java.lang.Integer, java.lang.Integer)
+     */
+    public void removeSelectionByIndex(Integer hwnd, Integer index)
+            throws RemoteException {
+        win32lib.listBox().removeSelectionByIndex(hwnd, index);
+    }
+
+    /**
+     * @param hwnd
+     * @param item
+     * @throws RemoteException
+     * @see org.sirius.server.win32lib.controls.listbox.IListBoxContractProxy#removeSelectionByName(java.lang.Integer, java.lang.String)
+     */
+    public void removeSelectionByName(Integer hwnd, String item)
+            throws RemoteException {
+        win32lib.listBox().removeSelectionByName(hwnd, item);
+    }
+
+    /**
+     * @param hwnd
+     * @throws RemoteException
+     * @see org.sirius.server.win32lib.controls.listbox.IListBoxContractProxy#selectAll(java.lang.Integer)
+     */
+    public void selectAll(Integer hwnd) throws RemoteException {
+        win32lib.listBox().selectAll(hwnd);
+    }
+
+    /**
+     * @param hwnd
+     * @param index
+     * @throws RemoteException
+     * @see org.sirius.server.win32lib.controls.listbox.IListBoxContractProxy#selectByIndex(java.lang.Integer, java.lang.Integer)
+     */
+    public void selectByIndex(Integer hwnd, Integer index)
+            throws RemoteException {
+        win32lib.listBox().selectByIndex(hwnd, index);
+    }
+
+    /**
+     * @param hwnd
+     * @param item
+     * @throws RemoteException
+     * @see org.sirius.server.win32lib.controls.listbox.IListBoxContractProxy#selectByName(java.lang.Integer, java.lang.String)
+     */
+    public void selectByName(Integer hwnd, String item) throws RemoteException {
+        win32lib.listBox().selectByName(hwnd, item);
     }
 }

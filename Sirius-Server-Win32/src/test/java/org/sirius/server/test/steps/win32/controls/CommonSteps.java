@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.sirius.server.win32.Win32Locator;
 import org.sirius.server.win32.Win32Utils;
 import org.sirius.server.win32.classes.Window;
+import org.sirius.server.win32.classes.controls.TabControl;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -26,6 +27,33 @@ public class CommonSteps {
         
         long hwnd = utils.searchWindow(locator);
         return hwnd;
+    }
+    
+    public static long getMainTabControl() throws Exception {
+        Win32Utils utils = new Win32Utils();
+        Win32Locator locator = new Win32Locator();
+        locator.setCaption("Common Controls Examples");
+        
+        long hwnd = utils.searchWindow(locator);
+        
+        Win32Locator tabLocator = new Win32Locator();
+        tabLocator.setParent(hwnd);
+        tabLocator.setWinClass("SysTabControl32");
+        tabLocator.setCaption("");
+        
+        long htab = utils.searchWindow(tabLocator);
+        TabControl control = new TabControl();
+        
+        int timeout = 30;
+        do {
+            Thread.sleep(1000);
+            if(timeout--==0){
+                break;
+            }
+        }
+        while(control.GetItemCount(hwnd) <= 0);
+        
+        return htab;
     }
     
     @Given("the test GUI application is started")

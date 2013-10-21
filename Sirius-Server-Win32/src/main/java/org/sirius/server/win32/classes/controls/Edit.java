@@ -6,6 +6,7 @@ package org.sirius.server.win32.classes.controls;
 import javax.jws.WebService;
 
 import org.sirius.server.win32.classes.Common;
+import org.sirius.server.win32.classes.Window;
 import org.sirius.server.win32.constants.IEditConsts;
 
 import com.sun.jna.Pointer;
@@ -123,6 +124,11 @@ public class Edit extends Common implements IEditConsts {
         return getUser32().SendMessage(hWnd, EM_GETSEL, wParam, lParam);
     }
 
+    public final String getText(final long hwndCtl){
+        Window win = new Window();
+        return win.getText(hwndCtl);
+    }
+    
     /**
      * .
      * @param hwndCtl .
