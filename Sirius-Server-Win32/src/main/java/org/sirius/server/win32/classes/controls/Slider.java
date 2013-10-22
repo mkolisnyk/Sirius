@@ -5,21 +5,22 @@ package org.sirius.server.win32.classes.controls;
 
 import java.rmi.RemoteException;
 
+import org.sirius.server.win32.classes.Common;
 import org.sirius.server.win32lib.controls.Win32LibControlsClient;
-import org.sirius.server.win32lib.controls.scrollbar.IScrollBarContractProxy;
+import org.sirius.server.win32lib.controls.slider.ISliderContractProxy;
 
 /**
  * @author Myk Kolisnyk
- * 
+ *
  */
-public class ScrollBar {
-
-    private final Win32LibControlsClient win32lib;
+public class Slider extends Common {
+    
+    Win32LibControlsClient win32lib;    
     
     /**
      * 
      */
-    public ScrollBar() {
+    public Slider() {
         win32lib = new Win32LibControlsClient();
     }
 
@@ -27,40 +28,40 @@ public class ScrollBar {
      * @param hwnd
      * @return
      * @throws RemoteException
-     * @see org.sirius.server.win32lib.controls.scrollbar.IScrollBarContractProxy#getLowerBound(java.lang.Integer)
+     * @see org.sirius.server.win32lib.controls.slider.ISliderContractProxy#getLowerBound(java.lang.Integer)
      */
     public Double getLowerBound(Integer hwnd) throws RemoteException {
-        return win32lib.scrollBar().getLowerBound(hwnd);
+        return win32lib.slider().getLowerBound(hwnd);
     }
 
     /**
      * @param hwnd
      * @return
      * @throws RemoteException
-     * @see org.sirius.server.win32lib.controls.scrollbar.IScrollBarContractProxy#getPosition(java.lang.Integer)
+     * @see org.sirius.server.win32lib.controls.slider.ISliderContractProxy#getPosition(java.lang.Integer)
      */
     public Double getPosition(Integer hwnd) throws RemoteException {
-        return win32lib.scrollBar().getPosition(hwnd);
+        return win32lib.slider().getPosition(hwnd);
     }
 
     /**
      * @param hwnd
      * @return
      * @throws RemoteException
-     * @see org.sirius.server.win32lib.controls.scrollbar.IScrollBarContractProxy#getUpperBound(java.lang.Integer)
+     * @see org.sirius.server.win32lib.controls.slider.ISliderContractProxy#getUpperBound(java.lang.Integer)
      */
     public Double getUpperBound(Integer hwnd) throws RemoteException {
-        return win32lib.scrollBar().getUpperBound(hwnd);
+        return win32lib.slider().getUpperBound(hwnd);
     }
 
     /**
      * @param hwnd
      * @param pos
      * @throws RemoteException
-     * @see org.sirius.server.win32lib.controls.scrollbar.IScrollBarContractProxy#setPosition(java.lang.Integer,
-     *      java.lang.Double)
+     * @see org.sirius.server.win32lib.controls.slider.ISliderContractProxy#setPosition(java.lang.Integer, java.lang.Double)
      */
     public void setPosition(Integer hwnd, Double pos) throws RemoteException {
-        win32lib.scrollBar().setPosition(hwnd, pos);
+        win32lib.slider().setPosition(hwnd, pos);
     }
+
 }
