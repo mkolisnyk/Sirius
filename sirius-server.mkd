@@ -19,9 +19,6 @@ It is [delivered](http://code.google.com/p/sirius-platform/downloads/list) as ex
 The Sirius Server eEngine is invoked by command line like:
 
 where parameters are:
-* **-host <hostname>** - The host name for the Sirius Server to listen to. **Default value:** localhost
-* **-port <port number>** - The host name for the Sirius Server to listen to. **Default value:** 21212
-* **-config <path to configuration file>** - Path to the configuration file to read the modules to load from. **Default value:** .\modules.csv
 
 The indicator that server was started successfully is the console output message like:
 
@@ -41,10 +38,6 @@ In some cases we need to make light-weight Sirius Server run so that only some s
 It is defined in the configuration file specified by the **-config** parameter. The configuration file itself is the plain text comma-separated file of the following format:
 
 where:
-* **<endpoint address>** - the URL the service endpoint listens to
-* **<class canonical name>** - the canonical name of the Java class implementing methods accesible from the specified endpoint
-* **<path to jar file to load class from>** - the path to **jar** file to load the endpoint implementation class from. 
-Additionally the following speacial words are supported:
 * **${HOST}** - (used only for endpoint names) the host name specified in the command line parameter
 * **${PORT}** - (used only for endpoint names) the port number specified in the command line parameter
 
