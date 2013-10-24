@@ -17,20 +17,24 @@ It is [delivered](http://code.google.com/p/sirius-platform/downloads/list) as ex
 ## Command line format
 
 The Sirius Server eEngine is invoked by command line like:
-```dos
+
+{% highlight bat linenos=table %}
 java -jar sirius.server.engine-&lt;version number&gt;.jar [-host &lt;hostname&gt;] [-port &lt;port number&gt;] [-config &lt;path to configuration file&gt;]
-```
+{% endhighlight %}
+
 where parameters are:
 * **-host &lt;hostname&gt;** - The host name for the Sirius Server to listen to. **Default value:** localhost
 * **-port &lt;port number&gt;** - The host name for the Sirius Server to listen to. **Default value:** 21212
 * **-config &lt;path to configuration file&gt;** - Path to the configuration file to read the modules to load from. **Default value:** .\modules.csv
 
 The indicator that server was started successfully is the console output message like:
+
 {% highlight bat linenos=table %}
 2013-04-03 02:09:25,089              INFO   [Log4J] Uploading binary file:./sirius.server.web-(.*).jar
 2013-04-03 02:09:25,097              INFO   [Log4J] Starting endpoint: http://localhost:21212/web/select
 2013-04-03 02:09:25,204              INFO   [Log4J] Done...
 {% endhighlight %}
+
 For each module it indicates that the module was loaded. No exceptions means that no errors occured during each endpoint start.
 
 ## Customizing host and port
@@ -46,10 +50,11 @@ In some cases we need to make light-weight Sirius Server run so that only some s
 
 It is defined in the configuration file specified by the **-config** parameter. The configuration file itself is the plain text comma-separated file of the following format:
 
-```
+{% highlight bat linenos=table %}
 Endpoint          , Class                 , Package
 &lt;endpoint address&gt;, &lt;class canonical name&gt;, &lt;path to jar file to load class from&gt;
-```
+{% endhighlight %}
+
 where:
 * **&lt;endpoint address&gt;** - the URL the service endpoint listens to
 * **&lt;class canonical name&gt;** - the canonical name of the Java class implementing methods accesible from the specified endpoint
