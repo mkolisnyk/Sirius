@@ -1,13 +1,12 @@
 ---
 title: Sirius Server Engine Overview
-layout: default
 ---
 
 # Introduction 
 
 Sirius Server Engine is the main entry point for server side of Sirius Test Automation Platform created for:
 * Start entire Sirius Server process. It's started from command line
-* Load all included Sirius server side components based on configuration
+* Load all included Sirius server side components based on [configuration](https://github.com/mkolisnyk/Sirius/wiki/Server:-configuration-guide)
 * Provide the interface to control the server side activities
 
 It is [delivered](http://code.google.com/p/sirius-platform/downloads/list) as executable Java archive initiated from command line. 
@@ -17,11 +16,20 @@ It is [delivered](http://code.google.com/p/sirius-platform/downloads/list) as ex
 ## Command line format
 
 The Sirius Server eEngine is invoked by command line like:
-
+```dos
+java -jar sirius.server.engine-&lt;version number&gt;.jar [-host &lt;hostname&gt;] [-port &lt;port number&gt;] [-config &lt;path to configuration file&gt;]
+```
 where parameters are:
+* **-host &lt;hostname&gt;** - The host name for the Sirius Server to listen to. **Default value:** localhost
+* **-port &lt;port number&gt;** - The host name for the Sirius Server to listen to. **Default value:** 21212
+* **-config &lt;path to configuration file&gt;** - Path to the configuration file to read the modules to load from. **Default value:** .\modules.csv
 
 The indicator that server was started successfully is the console output message like:
-
+```dos
+2013-04-03 02:09:25,089              INFO   [Log4J] Uploading binary file:./sirius.server.web-(.*).jar
+2013-04-03 02:09:25,097              INFO   [Log4J] Starting endpoint: http://localhost:21212/web/select
+2013-04-03 02:09:25,204              INFO   [Log4J] Done...
+```
 For each module it indicates that the module was loaded. No exceptions means that no errors occured during each endpoint start.
 
 ## Customizing host and port
@@ -37,13 +45,22 @@ In some cases we need to make light-weight Sirius Server run so that only some s
 
 It is defined in the configuration file specified by the **-config** parameter. The configuration file itself is the plain text comma-separated file of the following format:
 
+```
+Endpoint          , Class                 , Package
+&lt;endpoint address&gt;, &lt;class canonical name&gt;, &lt;path to jar file to load class from&gt;
+```
 where:
+* **&lt;endpoint address&gt;** - the URL the service endpoint listens to
+* **&lt;class canonical name&gt;** - the canonical name of the Java class implementing methods accesible from the specified endpoint
+* **&lt;path to jar file to load class from&gt;** - the path to **jar** file to load the endpoint implementation class from. 
+Additionally the following speacial words are supported:
 * **${HOST}** - (used only for endpoint names) the host name specified in the command line parameter
 * **${PORT}** - (used only for endpoint names) the port number specified in the command line parameter
+* **\#** - if line starts with this character it is treated as the comment and ignored during processing
 
 What is the fastest way to check that your custom endpoint was loaded and can be used? For this purpose you should:
 1. Open you browser
-1. Navigate to the URL like: **endpoint address?wsdl**
+1. Navigate to the URL like: **&lt;endpoint address&gt;?wsdl**
 1. If you see the WSDL content it indicates that you can use your endpoint
 1. If there're any errors you should investigate what causes them
 
