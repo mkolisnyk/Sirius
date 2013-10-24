@@ -1,5 +1,6 @@
 ---
 title: Sirius Server Engine Overview
+layout: default
 ---
 
 # Introduction 
