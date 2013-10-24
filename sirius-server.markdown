@@ -8,6 +8,7 @@ Sirius Server Engine is the main entry point for server side of Sirius Test Auto
 * Start entire Sirius Server process. It's started from command line
 * Load all included Sirius server side components based on [configuration](https://github.com/mkolisnyk/Sirius/wiki/Server:-configuration-guide)
 * Provide the interface to control the server side activities
+* 
 
 It is [delivered](http://code.google.com/p/sirius-platform/downloads/list) as executable Java archive initiated from command line. 
 
