@@ -18,12 +18,12 @@ It is [delivered](http://code.google.com/p/sirius-platform/downloads/list) as ex
 
 The Sirius Server eEngine is invoked by command line like:
 ```
-java -jar sirius.server.engine-<version number>.jar [-host <hostname>] [-port <port number>] [-config <path to configuration file>]
+java -jar sirius.server.engine-<version number>.jar [-host \<hostname\>] [-port \<port number\>] [-config \<path to configuration file\>]
 ```
 where parameters are:
-* **-host <hostname>** - The host name for the Sirius Server to listen to. **Default value:** localhost
-* **-port <port number>** - The host name for the Sirius Server to listen to. **Default value:** 21212
-* **-config <path to configuration file>** - Path to the configuration file to read the modules to load from. **Default value:** .\modules.csv
+* **-host \<hostname\>** - The host name for the Sirius Server to listen to. **Default value:** localhost
+* **-port \<port number\>** - The host name for the Sirius Server to listen to. **Default value:** 21212
+* **-config \<path to configuration file\>** - Path to the configuration file to read the modules to load from. **Default value:** .\modules.csv
 
 The indicator that server was started successfully is the console output message like:
 ```
