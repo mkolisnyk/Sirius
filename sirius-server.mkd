@@ -7,7 +7,7 @@ layout: default
 
 Sirius Server Engine is the main entry point for server side of Sirius Test Automation Platform created for:
 * Start entire Sirius Server process. It's started from command line
-* Load all included Sirius server side components based on [configuration](https://github.com/mkolisnyk/Sirius/wiki/Server:-configuration-guide)
+* Load all included Sirius server side components based on [configuration](https://github.com/mkolisnyk/Sirius/wiki/Server---configuration-guide)
 * Provide the interface to control the server side activities
 
 It is [delivered](http://code.google.com/p/sirius-platform/downloads/list) as executable Java archive initiated from command line. 
@@ -19,7 +19,7 @@ It is [delivered](http://code.google.com/p/sirius-platform/downloads/list) as ex
 The Sirius Server eEngine is invoked by command line like:
 
 {% highlight bat linenos=table %}
-java -jar sirius.server.engine-&lt;version number&gt;.jar [-host &lt;hostname&gt;] [-port &lt;port number&gt;] [-config &lt;path to configuration file&gt;]
+java -jar sirius.server.engine-<version number>.jar [-host <hostname>] [-port <port number>] [-config <path to configuration file>]
 {% endhighlight %}
 
 where parameters are:
@@ -52,7 +52,7 @@ It is defined in the configuration file specified by the **-config** parameter. 
 
 {% highlight bat linenos=table %}
 Endpoint          , Class                 , Package
-&lt;endpoint address&gt;, &lt;class canonical name&gt;, &lt;path to jar file to load class from&gt;
+<endpoint address>, <class canonical name>, <path to jar file to load class from>;
 {% endhighlight %}
 
 where:
