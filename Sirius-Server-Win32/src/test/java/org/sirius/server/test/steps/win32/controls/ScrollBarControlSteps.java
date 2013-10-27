@@ -74,6 +74,14 @@ public class ScrollBarControlSteps {
         boolean forward = direction.equals("forward");
         int hctrl = (int) getControl(fieldName);
         ScrollBar scroll = new ScrollBar();        
-        // TODO Add implementation
+
+        for(int i=0;i<step;i++){
+            if(forward){
+                scroll.increment(hctrl);
+            }
+            else {
+                scroll.decrement(hctrl);
+            }
+        }
     }
 }

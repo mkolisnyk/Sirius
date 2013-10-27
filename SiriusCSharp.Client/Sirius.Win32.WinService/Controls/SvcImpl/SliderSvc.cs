@@ -39,5 +39,14 @@ namespace Sirius.Win32.SvcImpl.Controls
             slider.SetPosition(hwnd, pos);
         }
 
+        public double GetSmallStep(int hwnd)
+        {
+            return slider.GetSmallStep(hwnd);
+        }
+
+        public double GetLargeStep(int hwnd)
+        {
+            return slider.GetLargeStep(hwnd);
+        }
     }
 }

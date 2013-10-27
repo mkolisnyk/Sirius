@@ -36,7 +36,8 @@
 	</scm>
 
 	<build>
-		<sourceDirectory>src</sourceDirectory>
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<testSourceDirectory>src/test/java</testSourceDirectory>
 		<resources>
 			<resource>
 				<directory>src</directory>
@@ -53,30 +54,6 @@
 		</resources>
 		<plugins>
 			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.6.3.201306030806</version>
-				<configuration>
-					<includes>
-						<include>*sirius*</include>
-					</includes>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>report</id>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>report</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>javancss-maven-plugin</artifactId>
 				<version>2.0-beta-2</version>
@@ -92,9 +69,9 @@
 				<version>1.0-SNAPSHOT</version>
 				<configuration>
 					<repository>Sirius</repository>
-					<groups>Test;System</groups>
+					<groups>System</groups>
 					<outputType>cucumber</outputType>
-					<outputLocation>src/test/java/org/sirius/server/test/features/system</outputLocation>
+					<outputLocation>src/test/java/org/sirius/client/test/features/system</outputLocation>
 					<goal>generate</goal>
 				</configuration>
 			</plugin>
@@ -251,7 +228,69 @@
 					</execution>
 				</executions>
 			</plugin>
-
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<instrumentation>
+						<ignores>
+							<ignore>cucumber.*</ignore>
+							<ignore>gherkin.*</ignore>
+							<ignore>org.picocontainer.*</ignore>
+						</ignores>
+						<includes>
+							<include>org/sirius/**/*</include>
+						</includes>
+						<excludes>
+							<exclude>*</exclude>
+							<exclude>com/thoughtworks/**/*</exclude>
+							<exclude>antlr/**/*</exclude>
+							<exclude>charts/**/*</exclude>
+							<exclude>freemarker/**/*</exclude>
+							<exclude>ftl/**/*</exclude>
+							<exclude>i18n/**/*</exclude>
+							<exclude>style/**/*</exclude>
+							<exclude>junit/**/*</exclude>
+							<exclude>licenses/**/*</exclude>
+							<exclude>META-INF/maven/**/*</exclude>
+							<exclude>org/codehaus/**/*</exclude>
+							<exclude>org/hamcrest/**/*</exclude>
+							<exclude>org/jbehave/**/*</exclude>
+							<exclude>org/junit/**/*</exclude>
+							<exclude>org/testng/**/*</exclude>
+							<exclude>org/xmlpull/**/*</exclude>
+							<exclude>stories/**/*</exclude>
+							<exclude>style/**/*</exclude>
+							<exclude>tests/**/*</exclude>
+							<exclude>cucumber/**/*</exclude>
+							<exclude>gherkin/**/*</exclude>
+							<exclude>org/picocontainer/**/*</exclude>
+							<exclude>com/google/**/*</exclude>
+							<exclude>com/werken/**/*</exclude>
+						</excludes>
+					</instrumentation>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>clean</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.3</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<testFailureIgnore>true</testFailureIgnore>
+				</configuration>
+			</plugin>
 		</plugins>
 		<pluginManagement>
 			<plugins>
@@ -320,23 +359,97 @@
 			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-picocontainer</artifactId>
+			<version>1.1.5</version>
+			<scope>test</scope>			
+		</dependency>
+		<dependency>
+			<groupId>net.masterthought</groupId>
+			<artifactId>cucumber-reporting</artifactId>
+			<version>0.0.21</version>
+		</dependency>
 	</dependencies>
 	<reporting>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.9.1</version>
+				<configuration>
+					<encoding>Cp1251</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>javancss-maven-plugin</artifactId>
 				<version>2.0-beta-2</version>
+				<configuration>
+					<encoding>Cp1251</encoding>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-pmd-plugin</artifactId>
 				<version>3.0.1</version>
+				<configuration>
+					<encoding>Cp1251</encoding>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jxr-plugin</artifactId>
 				<version>2.3</version>
+				<configuration>
+					<encoding>Cp1251</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+				<configuration>
+					<encoding>Cp1251</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>2.5.2</version>
+				<configuration>
+					<onlyAnalyze>org.sirius.client.core.system.*</onlyAnalyze>
+					<encoding>Cp1251</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<encoding>Cp1251</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.github.mkolisnyk</groupId>
+				<artifactId>issueget-maven-plugin</artifactId>
+				<version>1.0-SNAPSHOT</version>
+				<configuration>
+					<repository>Sirius</repository>
+					<groups>System</groups>
+					<outputType>mvn-trace</outputType>
+					<outputLocation>target/site</outputLocation>
+					<jsonFile>target/cucumber.json</jsonFile>
+				</configuration>
+				<reportSets>
+					<reportSet>
+						<configuration />
+						<reports>
+							<report>trace</report>
+							<report>cucumber</report>
+						</reports>
+					</reportSet>
+				</reportSets>
 			</plugin>
 		</plugins>
 	</reporting>

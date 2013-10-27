@@ -7,7 +7,7 @@ using System.Windows.Automation;
 
 namespace Sirius.Win32.Lib.Controls
 {
-    public class Spin : Control,IEditable,IRange
+    public class Spin : Control,IRange
     {
         public Spin()
         {
@@ -42,20 +42,34 @@ namespace Sirius.Win32.Lib.Controls
             range.SetValue(pos);
         }
 
-        public String GetText(int hwnd)
+        public double GetValue(int hwnd)
         {
             AutomationElement element = Find(hwnd);
-            ValuePattern value = element.GetCurrentPattern(ValuePattern.Pattern) as ValuePattern;
+            RangeValuePattern value = element.GetCurrentPattern(RangeValuePattern.Pattern) as RangeValuePattern;
 
             return value.Current.Value;
         }
 
-        public void SetText(int hwnd, String text)
+        public void SetValue(int hwnd, double newVal)
         {
             AutomationElement element = Find(hwnd);
-            ValuePattern value = element.GetCurrentPattern(ValuePattern.Pattern) as ValuePattern;
+            RangeValuePattern value = element.GetCurrentPattern(RangeValuePattern.Pattern) as RangeValuePattern;
 
-            value.SetValue(text);
+            value.SetValue(newVal);
+        }
+
+        public double GetSmallStep(int hwnd)
+        {
+            AutomationElement element = Find(hwnd);
+            RangeValuePattern range = element.GetCurrentPattern(RangeValuePattern.Pattern) as RangeValuePattern;
+            return range.Current.SmallChange;
+        }
+
+        public double GetLargeStep(int hwnd)
+        {
+            AutomationElement element = Find(hwnd);
+            RangeValuePattern range = element.GetCurrentPattern(RangeValuePattern.Pattern) as RangeValuePattern;
+            return range.Current.LargeChange;
         }
     }
 }

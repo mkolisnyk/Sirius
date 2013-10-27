@@ -52,14 +52,14 @@ public class SpinControlSteps {
     public void incrementSpinValue(String fieldName) throws Throwable {
         int hctl = (int) getControl(fieldName);
         Spin spin = new Spin();
-        // TODO Add implementation
+        spin.increment(hctl);
     }
 
     @When("^(?:I |)decrement \"([^\"]*)\" field value$")
     public void decrementSpinValue(String fieldName) throws Throwable {
         int hctl = (int) getControl(fieldName);
         Spin spin = new Spin();
-        // TODO Add implementation
+        spin.decrement(hctl);
     }
 
 }

@@ -9,6 +9,9 @@ using System.IO;
 using System.ServiceModel;
 using System.ServiceModel.Configuration;
 using System.Configuration;
+using System.Windows.Automation;
+using System.Windows.Automation.Peers;
+using Sirius.Win32.Lib;
 
 namespace Sirius.Win32.WinService
 {

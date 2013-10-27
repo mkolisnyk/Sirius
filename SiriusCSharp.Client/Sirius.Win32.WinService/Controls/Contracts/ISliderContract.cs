@@ -13,5 +13,9 @@ namespace Sirius.Win32.Svc.Controls
         double GetUpperBound([param: MessageParameter(Name = "hwnd")]int hwnd);
         [OperationContract]
         void SetPosition([param: MessageParameter(Name = "hwnd")]int hwnd, [param: MessageParameter(Name = "pos")]double pos);
+        [OperationContract]
+        double GetSmallStep([param: MessageParameter(Name = "hwnd")]int hwnd);
+        [OperationContract]
+        double GetLargeStep([param: MessageParameter(Name = "hwnd")]int hwnd);
     }
 }

@@ -11,5 +11,7 @@ namespace Sirius.Win32.Lib.Controls.Interfaces
         double GetUpperBound(int hwnd);
         double GetPosition(int hwnd);
         void SetPosition(int hwnd, double pos);
+        double GetSmallStep(int hwnd);
+        double GetLargeStep(int hwnd);
     }
 }

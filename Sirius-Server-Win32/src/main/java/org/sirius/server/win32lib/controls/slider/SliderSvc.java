@@ -8,11 +8,9 @@
 package org.sirius.server.win32lib.controls.slider;
 
 public interface SliderSvc extends javax.xml.rpc.Service {
-    public org.sirius.server.win32lib.controls.slider.ISliderContract getSliderSvcPort()
-            throws javax.xml.rpc.ServiceException;
-
-    public org.sirius.server.win32lib.controls.slider.ISliderContract getSliderSvcPort(
-            java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
-
     public java.lang.String getSliderSvcPortAddress();
+
+    public org.sirius.server.win32lib.controls.slider.ISliderContract getSliderSvcPort() throws javax.xml.rpc.ServiceException;
+
+    public org.sirius.server.win32lib.controls.slider.ISliderContract getSliderSvcPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
 }

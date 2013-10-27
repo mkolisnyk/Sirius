@@ -63,4 +63,32 @@ public class ScrollBar {
     public void setPosition(Integer hwnd, Double pos) throws RemoteException {
         win32lib.scrollBar().setPosition(hwnd, pos);
     }
+    
+    public Double getSmallStep(Integer hwnd) throws RemoteException{
+        return win32lib.scrollBar().getSmallStep(hwnd);
+    }
+
+    public Double getLargeStep(Integer hwnd) throws RemoteException{
+        return win32lib.scrollBar().getLargeStep(hwnd);
+    }
+    
+    public void increment(Integer hwnd) throws RemoteException{
+        double position = this.getPosition(hwnd);
+        double step = this.getSmallStep(hwnd);
+        double max = this.getUpperBound(hwnd);
+        
+        if(position + step <= max ){
+            this.setPosition(hwnd, position + step);
+        }
+    }
+    
+    public void decrement(Integer hwnd) throws RemoteException{
+        double position = this.getPosition(hwnd);
+        double step = this.getSmallStep(hwnd);
+        double min = this.getLowerBound(hwnd);
+        
+        if(position - step >= min ){
+            this.setPosition(hwnd, position - step);
+        }
+    }
 }

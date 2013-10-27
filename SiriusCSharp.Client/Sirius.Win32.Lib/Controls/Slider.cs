@@ -42,5 +42,18 @@ namespace Sirius.Win32.Lib.Controls
             range.SetValue(pos);
         }
 
+        public double GetSmallStep(int hwnd)
+        {
+            AutomationElement element = Find(hwnd);
+            RangeValuePattern range = element.GetCurrentPattern(RangeValuePattern.Pattern) as RangeValuePattern;
+            return range.Current.SmallChange;
+        }
+
+        public double GetLargeStep(int hwnd)
+        {
+            AutomationElement element = Find(hwnd);
+            RangeValuePattern range = element.GetCurrentPattern(RangeValuePattern.Pattern) as RangeValuePattern;
+            return range.Current.LargeChange;
+        }
     }
 }

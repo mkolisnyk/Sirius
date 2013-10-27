@@ -39,14 +39,24 @@ namespace Sirius.Win32.SvcImpl.Controls
             spin.SetPosition(hwnd, pos);
         }
 
-        public String GetText(int hwnd)
+        public double GetValue(int hwnd)
         {
-            return spin.GetText(hwnd);
+            return spin.GetValue(hwnd);
         }
 
-        public void SetText(int hwnd, String text)
+        public void SetValue(int hwnd, double pos)
         {
-            spin.SetText(hwnd, text);
+            spin.SetValue(hwnd, pos);
+        }
+
+        public double GetSmallStep(int hwnd)
+        {
+            return spin.GetSmallStep(hwnd);
+        }
+
+        public double GetLargeStep(int hwnd)
+        {
+            return spin.GetLargeStep(hwnd);
         }
     }
 }

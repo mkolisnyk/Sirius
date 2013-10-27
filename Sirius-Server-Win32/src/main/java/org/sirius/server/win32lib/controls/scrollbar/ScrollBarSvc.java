@@ -8,11 +8,9 @@
 package org.sirius.server.win32lib.controls.scrollbar;
 
 public interface ScrollBarSvc extends javax.xml.rpc.Service {
-    public org.sirius.server.win32lib.controls.scrollbar.IScrollBarContract getScrollBarSvcPort()
-            throws javax.xml.rpc.ServiceException;
-
-    public org.sirius.server.win32lib.controls.scrollbar.IScrollBarContract getScrollBarSvcPort(
-            java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
-
     public java.lang.String getScrollBarSvcPortAddress();
+
+    public org.sirius.server.win32lib.controls.scrollbar.IScrollBarContract getScrollBarSvcPort() throws javax.xml.rpc.ServiceException;
+
+    public org.sirius.server.win32lib.controls.scrollbar.IScrollBarContract getScrollBarSvcPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
 }

@@ -38,5 +38,16 @@ namespace Sirius.Win32.SvcImpl.Controls
         {
             bar.SetPosition(hwnd, pos);
         }
+
+        public double GetSmallStep(int hwnd)
+        {
+            return bar.GetSmallStep(hwnd);
+        }
+
+        public double GetLargeStep(int hwnd)
+        {
+            return bar.GetLargeStep(hwnd);
+        }
+
     }
 }
