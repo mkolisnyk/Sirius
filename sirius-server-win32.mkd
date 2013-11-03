@@ -26,17 +26,7 @@ Consists of classes dedicated to:
 
 Each of those classes is represented with dedicated endpoint. Currently the following endpoints are included:
 
-| Endpoint                           | Class                                               | Description |
-| ---------------------------------- | --------------------------------------------------- | ----------- |
-| http://&lt;base URL&gt;/win32/utils      | org.sirius.server.win32.Win32Utils                  | Win32 utility functionality usually wrapper on some callback functions which can not be used via service communication |
-| http://&lt;base URL&gt;/win32/window     | org.sirius.server.win32.classes.Window              | General operations applicable to mupliple window classes |
-| http://&lt;base URL&gt;/win32/menu       | org.sirius.server.win32.classes.Menu                | Menu-specific operations |
-| http://&lt;base URL&gt;/win32/dialog     | org.sirius.server.win32.classes.Dialog              | Dialog-specific operations |
-| http://&lt;base URL&gt;/win32/button     | org.sirius.server.win32.classes.controls.Button     | Operations specific to the **button** window class |
-| http://&lt;base URL&gt;/win32/comobox    | org.sirius.server.win32.classes.controls.ComboBox   | Combo box specific operations |
-| http://&lt;base URL&gt;/win32/edit       | org.sirius.server.win32.classes.controls.Edit       | Text field specific operations |
-| http://&lt;base URL&gt;/win32/listbox    | org.sirius.server.win32.classes.controls.ListBox    | List box specific operations |
-| http://&lt;base URL&gt;/win32/tabcontrol | org.sirius.server.win32.classes.controls.TabControl | Tab control specific operations |
+
 
 # Dependencies
 
@@ -83,7 +73,7 @@ In some cases we have to look for dialog boxes which are not really siblings of 
 
 {% highlight java linenos=table %}
 Win32Locator locator = new Win32Locator();
-locator.setWinClass("32770");
+locator.setWinClass("#32770");
 long hwnd = utils.searchSameThreadWindow(hwnd,locator);
 {% endhighlight %}
 
