@@ -1,0 +1,28 @@
+Sun Nov 03 16:05:18 GMT 2013  [debug] AvalonLogChute initialized using file 'D:\Work\SiriusDev\Sirius\Sirius-Server-Core\target\site\cucumber\velocity.log'
+Sun Nov 03 16:05:18 GMT 2013  [trace] *******************************************************************
+Sun Nov 03 16:05:18 GMT 2013  [debug] Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+Sun Nov 03 16:05:18 GMT 2013  [trace] RuntimeInstance initializing.
+Sun Nov 03 16:05:18 GMT 2013  [debug] Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+Sun Nov 03 16:05:18 GMT 2013  [debug] Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+Sun Nov 03 16:05:18 GMT 2013  [debug] Using logger class org.apache.velocity.runtime.log.AvalonLogChute
+Sun Nov 03 16:05:18 GMT 2013  [debug] Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+Sun Nov 03 16:05:18 GMT 2013  [debug] ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Sun Nov 03 16:05:18 GMT 2013  [trace] ClasspathResourceLoader : initialization complete.
+Sun Nov 03 16:05:18 GMT 2013  [debug] ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+Sun Nov 03 16:05:18 GMT 2013  [trace] Default ResourceManager initialization complete.
+Sun Nov 03 16:05:18 GMT 2013  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+Sun Nov 03 16:05:18 GMT 2013  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+Sun Nov 03 16:05:18 GMT 2013  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+Sun Nov 03 16:05:18 GMT 2013  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Include
+Sun Nov 03 16:05:18 GMT 2013  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+Sun Nov 03 16:05:18 GMT 2013  [debug] Created '20' parsers.
+Sun Nov 03 16:05:18 GMT 2013  [trace] Velocimacro : initialization starting.
+Sun Nov 03 16:05:18 GMT 2013  [debug] Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+Sun Nov 03 16:05:18 GMT 2013  [debug] Velocimacro : Default library not found.
+Sun Nov 03 16:05:18 GMT 2013  [debug] Velocimacro : allowInline = true : VMs can be defined inline in templates
+Sun Nov 03 16:05:18 GMT 2013  [debug] Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+Sun Nov 03 16:05:18 GMT 2013  [debug] Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+Sun Nov 03 16:05:18 GMT 2013  [debug] Velocimacro : autoload off : VM system will not automatically reload global library macros
+Sun Nov 03 16:05:18 GMT 2013  [trace] Velocimacro : Velocimacro : initialization complete.
+Sun Nov 03 16:05:18 GMT 2013  [trace] RuntimeInstance successfully initialized.
+Sun Nov 03 16:05:18 GMT 2013  [debug] ResourceManager : found templates/tagOverview.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
