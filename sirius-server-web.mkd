@@ -27,11 +27,6 @@ The following endpoints are defined for this module:
 * [GitHub project](https://github.com/mkolisnyk/Sirius)
 * [Dedicated blog entries](http://mkolisnyk.blogspot.com/search/label/Sirius)
 
-{% highlight java linenos=table %}
-Win32Locator locator = new Win32Locator();
-locator.setCaption("Common Controls Examples");
-{% endhighlight %}
-
 #Authors
 
 Myk Kolisnyk (kolesnik.nickolay@gmail.com) 
