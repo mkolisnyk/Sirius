@@ -83,7 +83,7 @@ In some cases we have to look for dialog boxes which are not really siblings of 
 
 {% highlight java linenos=table %}
 Win32Locator locator = new Win32Locator();
-locator.setWinClass("#32770");
+locator.setWinClass("\#32770");
 long hwnd = utils.searchSameThreadWindow(hwnd,locator);
 {% endhighlight %}
 
