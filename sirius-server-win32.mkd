@@ -57,6 +57,42 @@ All the methods are designed to be independent and in most cases they use some s
 
 ## Identify search criteria for the window
 
+The below example shows how to initialize search criteria:
+
+{% highlight java linenos=table %}
+Win32Locator locator = new Win32Locator();
+locator.setCaption("Common Controls Examples");
+{% endhighlight %}
+
+Here we look for the main window with the **Common Controls Examples** caption. All other fields set into the default values indicating that we are looking for the first window with that caption for any window class and starting from the top level window.
+
+## Search for window based on search criteria
+
+Once we defined search criteria we can use it to get the handle of the window we want to interact with. Main class for locating windows is **Win32Utils**. In most cases we have to look for windows within objects hierarchy. So, we mostly need **searchWindow** method for that. See the example below:
+
+{% highlight java linenos=table %}
+Win32Utils utils = new Win32Utils();
+long hwnd = utils.searchWindow(locator);
+{% endhighlight %}
+
+In some cases we have to look for dialog boxes which are not really siblings of the main window but they are kept as the separate structure within the same process. To look for the windows like that we should use **searchSameThreadWindow** method. E.g.:
+
+{% highlight java linenos=table %}
+Win32Locator locator = new Win32Locator();
+locator.setWinClass("#32770");
+long hwnd = utils.searchSameThreadWindow(hwnd,locator);
+{% endhighlight %}
+
+In this case the search will be performed in the same thread where the **hwnd** is stored.
+
+## Call some function interacting with the window
+
+Once we have the window handle we can call the Server API functions to interact with the window. E.g.:
+
+{% highlight java linenos=table %}
+Window win = new Window();
+win.activate(hwnd);
+{% endhighlight %}
 
 # Links  
 
