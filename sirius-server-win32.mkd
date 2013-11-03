@@ -57,6 +57,12 @@ All the methods are designed to be independent and in most cases they use some s
 
 ## Identify search criteria for the window
 
+Search criteria is identified by **Win32Locator** data type. For Win32 component the following fields are used:
+* **Window class** - the name of the registered window class the target window belongs to. **Default valie is:** (.\*)
+* **Window Caption** - the text within the window (usually it's the window caption). **Default value is:** (.\*)
+* **Index** - the number identifying the position in the list of available windows when the search criteria matches multiple window objects. **Default value is:** 0
+* **Parent handle** - the handle for the parent window object. If defined the further search will be condicted within the child elements. **Default value is:** 0
+
 The below example shows how to initialize search criteria:
 
 {% highlight java linenos=table %}
