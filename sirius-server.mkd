@@ -12,6 +12,14 @@ Sirius Server Engine is the main entry point for server side of Sirius Test Auto
 
 It is [delivered](http://code.google.com/p/sirius-platform/downloads/list) as executable Java archive initiated from command line. 
 
+# Project Documentation
+
+| Resource | Description |
+| -------- | ----------- |
+| [Project Documentation Home Page](/Sirius/sirius.server.engine/index.html) | The home page for generated Maven site containing major technical documentation for the module |
+| [Project Reports Page](/Sirius/sirius.server.engine/project-reports.html) | The home page for generated Maven site containing major analysis reports for the module |
+| [Project Javadoc Page](/Sirius/sirius.server.engine/apidocs/index.html) | The home page for generated Maven site containing major Javadoc documentation for the module  |
+
 # Getting started
 
 ## Command line format
