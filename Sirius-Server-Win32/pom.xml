@@ -23,6 +23,28 @@
 		</resources>
 		<plugins>
 			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.8</version>
+				<configuration>
+					<message>Creating site for ${project.groupId}:${project.artifactId}:${project.version}</message>
+					<oauth2Token>6cbcb8e3d8031bdd0637256be9da89c57ea26949</oauth2Token>
+					<repositoryName>Sirius</repositoryName>
+					<repositoryOwner>mkolisnyk</repositoryOwner>
+					<merge>true</merge>
+					<path>${project.artifactId}</path>
+					<dryRun>false</dryRun>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>site</phase>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>javancss-maven-plugin</artifactId>
 				<version>2.0-beta-2</version>
@@ -33,19 +55,9 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>javancss-maven-plugin</artifactId>
-				<version>2.0-beta-2</version>
-				<configuration>
-					<excludes>
-						<exclude>**/win32lib/**/*.*</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
-			<plugin>
 				<groupId>com.github.mkolisnyk</groupId>
-				<artifactId>issueget-maven-plugin</artifactId>
-				<version>1.0-SNAPSHOT</version>
+				<artifactId>sirius-maven-plugin</artifactId>
+				<version>1.1</version>
 				<configuration>
 					<repository>Sirius</repository>
 					<groups>Win32</groups>
@@ -108,6 +120,7 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.7</version>
 				<executions>
 					<execution>
 						<id>unpack-dependencies</id>
@@ -292,14 +305,15 @@
 			</plugin>
 			<plugin>
 				<groupId>com.github.mkolisnyk</groupId>
-				<artifactId>issueget-maven-plugin</artifactId>
-				<version>1.0-SNAPSHOT</version>
+				<artifactId>sirius-maven-plugin</artifactId>
+				<version>1.1</version>
 				<configuration>
 					<repository>Sirius</repository>
-					<groups>System</groups>
+					<groups>Win32</groups>
 					<outputType>mvn-trace</outputType>
 					<outputLocation>target/site</outputLocation>
 					<jsonFile>target/cucumber.json</jsonFile>
+					<jsonUsageFile>target/cucumber-usage.json</jsonUsageFile>
 				</configuration>
 				<reportSets>
 					<reportSet>
@@ -307,11 +321,11 @@
 						<reports>
 							<report>trace</report>
 							<report>cucumber</report>
+							<report>cucumber-usage</report>
 						</reports>
 					</reportSet>
 				</reportSets>
 			</plugin>
-
 		</plugins>
 	</reporting>
 </project>

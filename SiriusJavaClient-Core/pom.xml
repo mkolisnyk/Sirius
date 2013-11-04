@@ -18,8 +18,15 @@
 	<developers>
 		<developer>
 			<id>mkolisnyk</id>
-			<name>mkolisnyk</name>
+			<name>Myk Kolisnyk</name>
 			<email>kolesnik.nickolay@gmail.com</email>
+			<url>http://mkolisnyk.blogspot.com/</url>
+			<roles>
+				<role>Project Coordinator</role>
+				<role>Developer</role>
+				<role>System Architect</role>
+				<role>QA</role>
+			</roles>
 		</developer>
 	</developers>
 
@@ -28,13 +35,18 @@
 		<artifactId>oss-parent</artifactId>
 		<version>7</version>
 	</parent>
-
+	<issueManagement>
+		<system>GitHub issue tracker</system>
+		<url>https://github.com/mkolisnyk/Sirius/issues</url>
+	</issueManagement>
+	<prerequisites>
+		<maven>2.0</maven>
+	</prerequisites>
 	<scm>
 		<connection>scm:svn:https://sirius-platform.googlecode.com/svn/trunk/SiriusJavaClient-Core/</connection>
 		<developerConnection>scm:svn:https://sirius-platform.googlecode.com/svn/trunk/SiriusJavaClient-Core/</developerConnection>
 		<url>https://sirius-platform.googlecode.com/svn</url>
 	</scm>
-
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
 		<testSourceDirectory>src/test/java</testSourceDirectory>
@@ -54,6 +66,28 @@
 		</resources>
 		<plugins>
 			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.8</version>
+				<configuration>
+					<message>Creating site for ${project.groupId}:${project.artifactId}:${project.version}</message>
+					<oauth2Token>6cbcb8e3d8031bdd0637256be9da89c57ea26949</oauth2Token>
+					<repositoryName>Sirius</repositoryName>
+					<repositoryOwner>mkolisnyk</repositoryOwner>
+					<merge>true</merge>
+					<path>${project.artifactId}</path>
+					<dryRun>false</dryRun>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>site</phase>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>javancss-maven-plugin</artifactId>
 				<version>2.0-beta-2</version>
@@ -65,7 +99,7 @@
 			</plugin>
 			<plugin>
 				<groupId>com.github.mkolisnyk</groupId>
-				<artifactId>issueget-maven-plugin</artifactId>
+				<artifactId>sirius-maven-plugin</artifactId>
 				<version>1.0-SNAPSHOT</version>
 				<configuration>
 					<repository>Sirius</repository>
@@ -333,6 +367,12 @@
 	</build>
 	<dependencies>
 		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-picocontainer</artifactId>
+			<version>1.1.5</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
 			<groupId>axis</groupId>
 			<artifactId>axis</artifactId>
 			<version>1.4</version>
@@ -432,14 +472,15 @@
 			</plugin>
 			<plugin>
 				<groupId>com.github.mkolisnyk</groupId>
-				<artifactId>issueget-maven-plugin</artifactId>
-				<version>1.0-SNAPSHOT</version>
+				<artifactId>sirius-maven-plugin</artifactId>
+				<version>1.1</version>
 				<configuration>
 					<repository>Sirius</repository>
 					<groups>System</groups>
 					<outputType>mvn-trace</outputType>
 					<outputLocation>target/site</outputLocation>
 					<jsonFile>target/cucumber.json</jsonFile>
+					<jsonUsageFile>target/cucumber-usage.json</jsonUsageFile>
 				</configuration>
 				<reportSets>
 					<reportSet>
@@ -447,6 +488,7 @@
 						<reports>
 							<report>trace</report>
 							<report>cucumber</report>
+							<report>cucumber-usage</report>
 						</reports>
 					</reportSet>
 				</reportSets>
