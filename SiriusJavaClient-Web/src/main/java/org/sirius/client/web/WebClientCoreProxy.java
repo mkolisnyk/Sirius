@@ -12,30 +12,34 @@ import org.sirius.client.web.core.WebCoreProxy;
 import org.sirius.client.web.select.WebSelectProxy;
 
 /**
- * @author Myk Kolisnyk .
+ * Contains core API for interaction with the Web applications.
+ * It's purely core and plain API which is the basis for high-level window classes library
+ * in the <b>org.sirius.client.web.classes</b> package.
+ * @author Myk Kolisnyk
  */
 public class WebClientCoreProxy extends WebCoreProxy {
 
     /**
-     * .
+     * Contains the value of currently open browser session.
+     * All other methods implicitly reference this token while making the calls.
      */
     private String         token = "";
 
     /**
-     * .
+     * Additional reference to the proxy class responsible for interacting with the Web lists.
      */
     private WebSelectProxy select;
 
     /**
-     * .
+     * Initializes Core Web proxy instance using default host: <b>http://localhost:21212</b>.
      */
     public WebClientCoreProxy() {
         select = new WebSelectProxy();
     }
 
     /**
-     * @param endpoint
-     *            .
+     * Initializes Core Web proxy instance using specified end-point host
+     * @param endpoint the host where remote Server module listens to
      */
     public WebClientCoreProxy(final String endpoint) {
         super(endpoint);

@@ -2,6 +2,7 @@
  * .
  */
 /**
+ * Major package containing all high-level Web classes definitions.
  * @author Myk Kolisnyk
  *
  */

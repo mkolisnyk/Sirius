@@ -35,6 +35,6 @@ public class WebLink extends WebButton {
      * @throws Exception .
      */
     public final String href() throws Exception {
-        return client().core().getAttribute(parentElement, locator, "href");
+        return client().core().getAttribute(getParentElement(), getLocator(), "href");
     }
 }

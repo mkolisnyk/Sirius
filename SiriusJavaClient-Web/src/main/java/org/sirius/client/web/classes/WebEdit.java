@@ -46,6 +46,6 @@ public class WebEdit extends WebControl {
      * @throws RemoteException .
      */
     public final void type(final String text) throws RemoteException {
-        this.client().core().sendKeys(parentElement, locator, text);
+        this.client().core().sendKeys(getParentElement(), getLocator(), text);
     }
 }

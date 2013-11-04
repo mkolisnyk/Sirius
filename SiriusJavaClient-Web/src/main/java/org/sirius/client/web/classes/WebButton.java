@@ -35,7 +35,7 @@ public class WebButton extends WebControl {
      * @throws Exception .
      */
     public final String text() throws Exception {
-        String text = client().core().getAttribute(parentElement, locator,
+        String text = client().core().getAttribute(getParentElement(), getLocator(),
                 "value");
         if (text.equals("")) {
             text = this.innerText();
