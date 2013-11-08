@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<rss version="0.91">
+  <channel>
+    <title>sirius.client.web - Checkstyle report</title>
+    <link>https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web</link>
+    <description>sirius.client.web - Checkstyle report</description>
+    <language>en-us</language>
+    <copyright>&#169;2013</copyright>
+    <item>
+      <title>File: 29,
+             Errors: 1100,
+             Warnings: 0,
+             Infos: 0
+      </title>
+            <link>https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html</link>
+      <description>
+        <p>Click <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html">here</a> for the full Checkstyle report.</p>
+
+        <table summary="Files" boder="1">
+          <thead>
+            <tr>
+              <th>Files</th>
+              <th style="width:30px;"><abbr title="Info">I</abbr></th>
+              <th style="width:30px;"><abbr title="Warning">W</abbr></th>
+              <th style="width:30px;"><abbr title="Error">E</abbr></th>
+            </tr>
+          </thead>
+          <tbody>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.core.Point.java">org/sirius/client/web/core/Point.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  64
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.core.WebCore.java">org/sirius/client/web/core/WebCore.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  57
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.classes.WebCheckBox.java">org/sirius/client/web/classes/WebCheckBox.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.select.package-info.java">org/sirius/client/web/select/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.select.WebSelectServiceLocator.java">org/sirius/client/web/select/WebSelectServiceLocator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  62
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.classes.Frame.java">org/sirius/client/web/classes/Frame.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.classes.WebButton.java">org/sirius/client/web/classes/WebButton.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.core.WebCorePortBindingStub.java">org/sirius/client/web/core/WebCorePortBindingStub.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  328
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.package-info.java">org/sirius/client/web/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.classes.Page.java">org/sirius/client/web/classes/Page.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.WebClientCoreProxy.java">org/sirius/client/web/WebClientCoreProxy.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  4
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.classes.WebLink.java">org/sirius/client/web/classes/WebLink.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.classes.WebControl.java">org/sirius/client/web/classes/WebControl.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.classes.package-info.java">org/sirius/client/web/classes/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.core.Dimension.java">org/sirius/client/web/core/Dimension.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  64
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.select.WebSelectProxy.java">org/sirius/client/web/select/WebSelectProxy.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  96
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.WebClient.java">org/sirius/client/web/WebClient.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  3
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.classes.Form.java">org/sirius/client/web/classes/Form.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  7
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.core.WebCoreServiceLocator.java">org/sirius/client/web/core/WebCoreServiceLocator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  62
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.select.WebSelect.java">org/sirius/client/web/select/WebSelect.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  23
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.select.WebSelectService.java">org/sirius/client/web/select/WebSelectService.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  7
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.classes.WebRadioButton.java">org/sirius/client/web/classes/WebRadioButton.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.select.WebSelectPortBindingStub.java">org/sirius/client/web/select/WebSelectPortBindingStub.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  142
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.classes.WebPopupList.java">org/sirius/client/web/classes/WebPopupList.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.core.WebCoreProxy.java">org/sirius/client/web/core/WebCoreProxy.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  168
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.classes.WebImage.java">org/sirius/client/web/classes/WebImage.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.classes.WebEdit.java">org/sirius/client/web/classes/WebEdit.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.core.package-info.java">org/sirius/client/web/core/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web/checkstyle.html#org.sirius.client.web.core.WebCoreService.java">org/sirius/client/web/core/WebCoreService.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  7
+                </td>
+              </tr>
+                      </tbody>
+        </table>
+        
+      </description>
+    </item>
+  </channel>
+</rss>
+
