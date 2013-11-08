@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<rss version="0.91">
+  <channel>
+    <title>SiriusJavaClient-Core - Checkstyle report</title>
+    <link>https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core</link>
+    <description>SiriusJavaClient-Core - Checkstyle report</description>
+    <language>en-us</language>
+    <copyright>&#169;2013</copyright>
+    <item>
+      <title>File: 31,
+             Errors: 1786,
+             Warnings: 0,
+             Infos: 0
+      </title>
+            <link>https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html</link>
+      <description>
+        <p>Click <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html">here</a> for the full Checkstyle report.</p>
+
+        <table summary="Files" boder="1">
+          <thead>
+            <tr>
+              <th>Files</th>
+              <th style="width:30px;"><abbr title="Info">I</abbr></th>
+              <th style="width:30px;"><abbr title="Warning">W</abbr></th>
+              <th style="width:30px;"><abbr title="Error">E</abbr></th>
+            </tr>
+          </thead>
+          <tbody>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.CoreClient.java">org/sirius/client/core/CoreClient.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  10
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.file.FileOperationsPortBindingStub.java">org/sirius/client/core/system/file/FileOperationsPortBindingStub.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  288
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.dir.package-info.java">org/sirius/client/core/system/dir/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.sys.SystemOperationsPortBindingStub.java">org/sirius/client/core/system/sys/SystemOperationsPortBindingStub.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  103
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.file.FileOperations.java">org/sirius/client/core/system/file/FileOperations.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  53
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.package-info.java">org/sirius/client/core/system/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.dir.IOException.java">org/sirius/client/core/system/dir/IOException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  62
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.process.ProcessOperationsPortBindingStub.java">org/sirius/client/core/system/process/ProcessOperationsPortBindingStub.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  171
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.process.package-info.java">org/sirius/client/core/system/process/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.sys.IOException.java">org/sirius/client/core/system/sys/IOException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  62
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.sys.SystemOperations.java">org/sirius/client/core/system/sys/SystemOperations.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  16
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.dir.DirectoryOperationsPortBindingStub.java">org/sirius/client/core/system/dir/DirectoryOperationsPortBindingStub.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  160
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.dir.DirectoryOperations.java">org/sirius/client/core/system/dir/DirectoryOperations.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  26
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.sys.SystemOperationsServiceLocator.java">org/sirius/client/core/system/sys/SystemOperationsServiceLocator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  67
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.sys.SystemOperationsProxy.java">org/sirius/client/core/system/sys/SystemOperationsProxy.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  53
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.package-info.java">org/sirius/client/core/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.dir.DirectoryOperationsServiceLocator.java">org/sirius/client/core/system/dir/DirectoryOperationsServiceLocator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  67
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.sys.package-info.java">org/sirius/client/core/system/sys/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.process.ProcessOperations.java">org/sirius/client/core/system/process/ProcessOperations.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  25
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.file.FileOperationsService.java">org/sirius/client/core/system/file/FileOperationsService.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  9
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.process.ProcessOperationsServiceLocator.java">org/sirius/client/core/system/process/ProcessOperationsServiceLocator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  67
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.file.FileOperationsServiceLocator.java">org/sirius/client/core/system/file/FileOperationsServiceLocator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  65
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.process.ProcessOperationsProxy.java">org/sirius/client/core/system/process/ProcessOperationsProxy.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  79
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.process.ProcessOperationsService.java">org/sirius/client/core/system/process/ProcessOperationsService.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  9
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.sys.SystemOperationsService.java">org/sirius/client/core/system/sys/SystemOperationsService.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  9
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.file.FileOperationsProxy.java">org/sirius/client/core/system/file/FileOperationsProxy.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  134
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.dir.DirectoryOperationsService.java">org/sirius/client/core/system/dir/DirectoryOperationsService.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  9
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.file.package-info.java">org/sirius/client/core/system/file/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.dir.DirectoryOperationsProxy.java">org/sirius/client/core/system/dir/DirectoryOperationsProxy.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  81
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.file.IOException.java">org/sirius/client/core/system/file/IOException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  62
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Core/checkstyle.html#org.sirius.client.core.system.process.ProcessInfo.java">org/sirius/client/core/system/process/ProcessInfo.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  99
+                </td>
+              </tr>
+                      </tbody>
+        </table>
+        
+      </description>
+    </item>
+  </channel>
+</rss>
+
