@@ -1,0 +1,6 @@
+org.sirius.client.core
+org.sirius.client.core.system
+org.sirius.client.core.system.dir
+org.sirius.client.core.system.file
+org.sirius.client.core.system.process
+org.sirius.client.core.system.sys
