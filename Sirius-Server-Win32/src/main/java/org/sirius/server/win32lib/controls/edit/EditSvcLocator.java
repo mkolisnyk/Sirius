@@ -11,7 +11,7 @@ public class EditSvcLocator extends org.apache.axis.client.Service implements
         org.sirius.server.win32lib.controls.edit.EditSvc {
 
     // Use to get a proxy class for EditSvcPort
-    private java.lang.String  EditSvcPort_address        = "http://localhost:8990/win32lib/editsvc";
+    private java.lang.String  EditSvcPort_address        = "http://localhost:31313/win32lib/editsvc";
 
     // The WSDD service name defaults to the port name.
     private java.lang.String  EditSvcPortWSDDServiceName = "EditSvcPort";

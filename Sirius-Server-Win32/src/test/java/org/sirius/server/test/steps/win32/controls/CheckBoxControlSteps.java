@@ -23,7 +23,7 @@ public class CheckBoxControlSteps {
     private HashMap<String,Win32Locator> buttonsMap = new HashMap<String,Win32Locator>();
     
     public CheckBoxControlSteps(){
-        buttonsMap.put("Check Box Button", new Win32Locator("Button","Check Box Button",0));
+        buttonsMap.put("Check Box Button", new Win32Locator("Button","Check Box(.*)Button",0));
     }
     
     private long getControl(String fieldName){
@@ -71,7 +71,7 @@ public class CheckBoxControlSteps {
             btnState = Button.BST_PUSHED;
         }
         
-        Assert.assertEquals("The '" + fieldName + "' has unexpected check state",
+        Assert.assertEquals("The '" + fieldName + "' has unexpected check state: " + currState,
                 btnState, btnState &  currState );
     }
 }

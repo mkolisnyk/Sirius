@@ -26,6 +26,7 @@ public class ButtonControlSteps {
     
     public ButtonControlSteps(){
         buttonsMap.put("Close", new Win32Locator("Button","Close",0));
+        buttonsMap.put("Check Box Button", new Win32Locator("Button","Check Box(.*)Button",0));
     }
     
     private long getControl(String fieldName){
@@ -56,10 +57,14 @@ public class ButtonControlSteps {
     @Then("(?:I should see |)the \"(.*)\" (?:field|button) is (enabled|disabled)")
     public void verifyCheckBoxState(String fieldName,String state){
         boolean enabled = state.equals("enabled");
-        Window win = new Window();
+        //Window win = new Window();
+        
+        Button btn = new Button();
         
         long hwndCtl = getControl(fieldName);
         Assert.assertEquals("The '" + fieldName + "' has unexpected enable state",
-                enabled, win.isEnabled(hwndCtl));
+                enabled, //win.isEnabled(hwndCtl)
+                btn.isIntermediate(hwndCtl)
+                );
     }
 }

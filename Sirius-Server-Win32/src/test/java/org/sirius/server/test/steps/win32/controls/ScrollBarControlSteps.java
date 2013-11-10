@@ -44,7 +44,7 @@ public class ScrollBarControlSteps {
         TabControl tab = new TabControl();
 
         pageLocator = new Win32Locator("#32770", tab.GetSelectedItem(htab), 0);
-
+        pageLocator.setParent(CommonSteps.getMainWindow());
         long hpage = utils.searchWindow(pageLocator);
 
         locator.setParent(hpage);

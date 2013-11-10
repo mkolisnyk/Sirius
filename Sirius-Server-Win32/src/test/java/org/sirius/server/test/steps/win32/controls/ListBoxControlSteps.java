@@ -136,12 +136,6 @@ public class ListBoxControlSteps {
         listBox.addSelectionByName((int)hctrl, itemName);
     }
 
-    @Then("^the \"([^\"]*)\" item is selected in the \"([^\"]*)\" list box$")
-    public void the_item_is_selected_in_the_list_box(String arg1, String arg2) throws Throwable {
-        // Express the Regexp above with the code you wish you had
-        throw new PendingException();
-    }
-
     @When("^(?:I |)remove \"([^\"]*)\" item from the \"([^\"]*)\" list box selection$")
     public void I_remove_item_from_the_list_box_selection(String itemName, String fieldName) throws Throwable {
         long hctrl = getControl(fieldName);

@@ -14,12 +14,13 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @Cucumber.Options(
         format = {"html:target/cucumber-html-report", 
-                "json:target/cucumber-json-report.json",
+                "json:target/cucumber.json",
                 "pretty:target/cucumber-pretty.txt",
                 "usage:target/cucumber-usage.json"
                 },
         features = {"src/test/java/org/sirius/server/test/features/win32/controls"},
-        glue = {"org/sirius/server/test/steps/win32/controls"}
+        glue = {"org/sirius/server/test/steps/win32/controls"},
+        tags = {"@debug"}
 )
 public class Win32ControlTest {
     

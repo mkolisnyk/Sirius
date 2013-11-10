@@ -3,11 +3,14 @@
  */
 package org.sirius.server.win32.classes.controls;
 
+import java.rmi.RemoteException;
+
 import javax.jws.WebService;
 
 import org.sirius.server.win32.classes.Common;
 import org.sirius.server.win32.classes.Window;
 import org.sirius.server.win32.constants.IEditConsts;
+import org.sirius.server.win32lib.controls.Win32LibControlsClient;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.platform.win32.WinDef.HWND;
@@ -21,12 +24,15 @@ import com.sun.jna.platform.win32.WinDef.WPARAM;
 @WebService
 public class Edit extends Common implements IEditConsts {
 
+    Win32LibControlsClient win32lib;
+
     /**
-     * .
+     * 
      */
     public Edit() {
-        // TODO Auto-generated constructor stub
+        win32lib = new Win32LibControlsClient();
     }
+
 
     /**
      * .
@@ -124,9 +130,8 @@ public class Edit extends Common implements IEditConsts {
         return getUser32().SendMessage(hWnd, EM_GETSEL, wParam, lParam);
     }
 
-    public final String getText(final long hwndCtl){
-        Window win = new Window();
-        return win.getText(hwndCtl);
+    public final String getText(final long hwndCtl) throws RemoteException{
+        return win32lib.edit().getText((int)hwndCtl);
     }
     
     /**
@@ -255,10 +260,12 @@ public class Edit extends Common implements IEditConsts {
      * @param hwndCtl .
      * @param lpsz .
      * @return .
+     * @throws RemoteException 
      */
-    public final boolean setText(final long hwndCtl, final String lpsz) {
+    public final boolean setText(final long hwndCtl, final String lpsz) throws RemoteException {
         HWND hWnd = longToHwnd(hwndCtl);
-        return getUser32().SetWindowText(hWnd, lpsz.toCharArray());
+        win32lib.edit().setText((int)hwndCtl, lpsz);
+        return true;
     }
 
     /**

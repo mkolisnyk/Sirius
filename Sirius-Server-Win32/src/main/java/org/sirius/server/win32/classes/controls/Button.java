@@ -48,6 +48,25 @@ public class Button extends Common implements IButtonConsts {
                 new LPARAM(0));
     }
 
+    
+    /*int BST_CHECKED       = 1;
+    int BST_INDETERMINATE = 2;
+    int BST_UNCHECKED     = 0;
+    int BST_FOCUS         = 8;
+    int BST_PUSHED        = 4;*/
+    
+    public final boolean isChecked(final long hwndCtl){
+        return (getState(hwndCtl) & BST_CHECKED) == BST_CHECKED; 
+    }
+    
+    public final boolean isIntermediate(final long hwndCtl){
+        return (getState(hwndCtl) & BST_INDETERMINATE) == BST_INDETERMINATE;
+    }
+    
+    public final boolean isPushed(final long hwndCtl){
+        return (getState(hwndCtl) & BST_PUSHED) == BST_PUSHED;
+    }
+
     /**
      * .
      * @param hwndCtl .
