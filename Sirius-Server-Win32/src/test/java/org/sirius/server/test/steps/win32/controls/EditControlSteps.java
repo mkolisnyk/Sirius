@@ -26,6 +26,8 @@ public class EditControlSteps {
     public EditControlSteps(){
         editMap.put("Edit Control", new Win32Locator("Edit","(.*)",0));
         editMap.put("Buddy Control", new Win32Locator("Edit","(.*)",0));
+        editMap.put("Lower Spin Range", new Win32Locator("Edit","(.*)",1));
+        editMap.put("Upper Spin Range", new Win32Locator("Edit","(.*)",2));
     }
 
     private long getControl(String fieldName) throws Exception{

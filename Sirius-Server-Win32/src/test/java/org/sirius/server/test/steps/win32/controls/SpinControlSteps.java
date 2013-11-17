@@ -5,12 +5,15 @@ package org.sirius.server.test.steps.win32.controls;
 
 import java.util.HashMap;
 
+import org.junit.Assert;
+
 import org.sirius.server.win32.Win32Locator;
 import org.sirius.server.win32.Win32Utils;
 import org.sirius.server.win32.classes.controls.Spin;
 import org.sirius.server.win32.classes.controls.TabControl;
 
 import cucumber.api.PendingException;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 /**
@@ -65,11 +68,20 @@ public class SpinControlSteps {
         Spin spin = new Spin();
         spin.decrement(hctl);
     }
-    
+
     @When("^(?:I |)set the \"(\\d+)\" position for the \"([^\"]*)\" spin$")
-    public void incrementSpinValue(int position,String fieldName) throws Throwable {
+    public void incrementSpinValue(int position, String fieldName)
+            throws Throwable {
         int hctl = (int) getControl(fieldName);
         Spin spin = new Spin();
-        spin.setPosition(hctl,(double)position);
+        spin.setPosition(hctl, (double) position);
+    }
+
+    @Then("^(?:I should see |)the \"(\\d+)\" value in the \"([^\"]*)\" spin")
+    public void verifyValue(int position, String field) throws Throwable {
+        int hctl = (int) getControl(field);
+        Spin spin = new Spin();
+        Assert.assertEquals("The '" + field + "' value is unexpected.",
+                (double) position, spin.getPosition(hctl), 0.01);
     }
 }
