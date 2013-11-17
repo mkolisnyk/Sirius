@@ -160,7 +160,7 @@ public class Window implements WinUser {
      * @return .
      * @throws RemoteException .
      */
-    public final boolean exists() throws RemoteException {
+    public boolean exists() throws RemoteException {
         logger.debug(String.format("Searching for window: %s", locator));
 
         if (parent != null) {

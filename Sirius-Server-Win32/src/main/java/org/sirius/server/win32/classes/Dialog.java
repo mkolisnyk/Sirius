@@ -9,8 +9,8 @@ import com.sun.jna.Pointer;
 import com.sun.jna.platform.win32.WinDef.HWND;
 
 /**
+ * Represents common interface for the Dialog boxes and all related items.
  * @author Myk Kolisnyk
- * .
  */
 @WebService
 public class Dialog extends Common {

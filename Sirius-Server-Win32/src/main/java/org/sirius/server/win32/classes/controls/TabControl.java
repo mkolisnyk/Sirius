@@ -89,6 +89,9 @@ public class TabControl extends Common implements ITabControlConsts,
         }
     }
 
+    /**
+     * .
+     */
     Win32LibControlsClient win32lib;
 
     /**

@@ -12,8 +12,9 @@ import org.sirius.server.win32.core.types.WinDefExt.WINDOWPLACEMENT;
 import com.sun.jna.Pointer;
 
 /**
+ * Core class representing base window functionality. It is collection of the methods which are mostly general
+ * to window objects. 
  * @author Myk Kolisnyk
- * .
  */
 @WebService
 public class Window extends Common implements IWMConsts, IMKConsts {
