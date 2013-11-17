@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Automation;
 using Sirius.Win32.Lib.Controls.Interfaces;
+using log4net;
 
 namespace Sirius.Win32.Lib.Controls
 {
     public class ListBox : Control,ISelectable,IMultiSelect
     {
+        private static readonly ILog logger = LogManager.GetLogger(typeof(ListBox));
+
         public ListBox() 
         {
             this.controlType = ControlType.List;

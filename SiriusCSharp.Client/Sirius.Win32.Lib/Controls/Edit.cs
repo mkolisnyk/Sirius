@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Automation;
+using log4net;
 
 namespace Sirius.Win32.Lib.Controls
 {
     public class Edit : Control
     {
+        private static readonly ILog logger = LogManager.GetLogger(typeof(Edit));
+
         public Edit()
         {
             this.controlType = ControlType.Edit;
@@ -17,7 +20,7 @@ namespace Sirius.Win32.Lib.Controls
         {
             AutomationElement element = Find(hwnd);
             ValuePattern value = element.GetCurrentPattern(ValuePattern.Pattern) as ValuePattern;
-
+            logger.Debug(String.Format("Current text is: {0}", value.Current.Value));
             return value.Current.Value;
         }
 
@@ -25,7 +28,7 @@ namespace Sirius.Win32.Lib.Controls
         {
             AutomationElement element = Find(hwnd);
             ValuePattern value = element.GetCurrentPattern(ValuePattern.Pattern) as ValuePattern;
-
+            logger.Debug(String.Format("Setting text: {0}", text));
             value.SetValue(text);
         }
 

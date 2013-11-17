@@ -24,6 +24,10 @@ public class SpinControlSteps {
     public SpinControlSteps() {
         spinMap.put("Buddy Control", new Win32Locator("msctls_updown32",
                 "Spin2", 0));
+        spinMap.put("Horizontal Lower", new Win32Locator("msctls_updown32",
+                "Spin1", 1));
+        spinMap.put("Horizontal Upper", new Win32Locator("msctls_updown32",
+                "Spin1", 2));
     }
 
     private long getControl(String fieldName) throws Exception {
@@ -40,7 +44,7 @@ public class SpinControlSteps {
         TabControl tab = new TabControl();
 
         pageLocator = new Win32Locator("#32770", tab.GetSelectedItem(htab), 0);
-
+        pageLocator.setParent(CommonSteps.getMainWindow());
         long hpage = utils.searchWindow(pageLocator);
 
         locator.setParent(hpage);
@@ -48,7 +52,7 @@ public class SpinControlSteps {
         return hctrl;
     }
 
-    @When("^(?:I )increment \"([^\"]*)\" field value$")
+    @When("^(?:I |)increment \"([^\"]*)\" field value$")
     public void incrementSpinValue(String fieldName) throws Throwable {
         int hctl = (int) getControl(fieldName);
         Spin spin = new Spin();
@@ -61,5 +65,11 @@ public class SpinControlSteps {
         Spin spin = new Spin();
         spin.decrement(hctl);
     }
-
+    
+    @When("^(?:I |)set the \"(\\d+)\" position for the \"([^\"]*)\" spin$")
+    public void incrementSpinValue(int position,String fieldName) throws Throwable {
+        int hctl = (int) getControl(fieldName);
+        Spin spin = new Spin();
+        spin.setPosition(hctl,(double)position);
+    }
 }

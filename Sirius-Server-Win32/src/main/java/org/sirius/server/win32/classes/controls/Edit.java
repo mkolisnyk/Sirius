@@ -131,6 +131,7 @@ public class Edit extends Common implements IEditConsts {
     }
 
     public final String getText(final long hwndCtl) throws RemoteException{
+        System.out.println("Getting text for the " + hwndCtl + " handle");
         return win32lib.edit().getText((int)hwndCtl);
     }
     

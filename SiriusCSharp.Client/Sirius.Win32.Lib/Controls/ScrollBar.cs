@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using Sirius.Win32.Lib.Controls.Interfaces;
 using System.Windows.Automation;
+using log4net;
 
 namespace Sirius.Win32.Lib.Controls
 {
     public class ScrollBar : Control, IRange
     {
+        private static readonly ILog logger = LogManager.GetLogger(typeof(ScrollBar));
+
         public ScrollBar()
         {
             this.controlType = ControlType.ScrollBar;
@@ -16,7 +19,7 @@ namespace Sirius.Win32.Lib.Controls
 
         public double GetLowerBound(int hwnd)
         {
-            AutomationElement element = Find(hwnd);
+            AutomationElement element = GetElement(hwnd);
             RangeValuePattern range = element.GetCurrentPattern(RangeValuePattern.Pattern) as RangeValuePattern;
             return range.Current.Minimum;
         }

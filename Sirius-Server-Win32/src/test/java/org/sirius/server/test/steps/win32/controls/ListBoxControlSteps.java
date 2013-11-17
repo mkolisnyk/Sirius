@@ -43,7 +43,7 @@ public class ListBoxControlSteps {
         TabControl tab = new TabControl();
         
         pageLocator = new Win32Locator("#32770",tab.GetSelectedItem(htab),0);
-        
+        pageLocator.setParent(CommonSteps.getMainWindow());
         long hpage = utils.searchWindow(pageLocator);
         
         locator.setParent(hpage);
@@ -100,17 +100,6 @@ public class ListBoxControlSteps {
         ListBox listBox = new ListBox();
         
         listBox.addSelectionByIndex((int)hctrl, index);
-    }
-
-    @Then("^the item (\\d+) is selected in the \"([^\"]*)\" list box$")
-    public void the_item_is_selected_in_the_list_box(int index, String fieldName) throws Throwable {
-        long hctrl = getControl(fieldName);
-        ListBox listBox = new ListBox();
-        /*
-        String[] selectedItems = listBox.getSelectedItems((int)hctrl);
-        for(String item:selectedItems){
-            Assert.assertFalse("The item '" + itemName + "' is unexpectly selected",item.equals(itemName));
-        }*/
     }
 
     @When("^(?:I |)remove item (\\d+) from the \"([^\"]*)\" list box selection$")

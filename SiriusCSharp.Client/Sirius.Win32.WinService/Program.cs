@@ -12,6 +12,7 @@ using System.Configuration;
 using System.Windows.Automation;
 using System.Windows.Automation.Peers;
 using Sirius.Win32.Lib;
+using Sirius.Win32.Lib.Controls;
 
 namespace Sirius.Win32.WinService
 {

@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using Sirius.Win32.Lib.Controls.Interfaces;
 using System.Windows.Automation;
+using log4net;
 
 namespace Sirius.Win32.Lib.Controls
 {
     public class Spin : Control,IRange
     {
+        private static readonly ILog logger = LogManager.GetLogger(typeof(Spin));
+
         public Spin()
         {
             this.controlType = ControlType.Spinner;

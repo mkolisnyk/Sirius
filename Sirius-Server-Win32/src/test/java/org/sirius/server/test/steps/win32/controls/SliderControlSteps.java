@@ -43,7 +43,7 @@ public class SliderControlSteps {
         TabControl tab = new TabControl();
 
         pageLocator = new Win32Locator("#32770", tab.GetSelectedItem(htab), 0);
-
+        pageLocator.setParent(CommonSteps.getMainWindow());
         long hpage = utils.searchWindow(pageLocator);
 
         locator.setParent(hpage);
@@ -60,7 +60,7 @@ public class SliderControlSteps {
         slider.setPosition(hctrl, (double) position);
     }
 
-    @Then("^(?:I should see |)the \"([^\"]*)\" slider is in \"(\\d+)\" position$")
+    @Then("^(?:I should see |)the \"([^\"]*)\" slider is at \"(\\d+)\" position$")
     public void verifySliderPosition(String fieldName, double position)
             throws Throwable {
         int hctrl = (int) getControl(fieldName);
@@ -68,6 +68,6 @@ public class SliderControlSteps {
 
         Assert.assertEquals("The '" + fieldName
                 + "' slider is at the unexpected position", position, slider
-                .getPosition(hctrl).doubleValue());
+                .getPosition(hctrl).doubleValue(),0.01);
     }
 }

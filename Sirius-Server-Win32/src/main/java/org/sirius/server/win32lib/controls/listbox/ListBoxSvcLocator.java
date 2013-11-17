@@ -11,7 +11,7 @@ public class ListBoxSvcLocator extends org.apache.axis.client.Service implements
         org.sirius.server.win32lib.controls.listbox.ListBoxSvc {
 
     // Use to get a proxy class for ListBoxSvcPort
-    private java.lang.String  ListBoxSvcPort_address        = "http://localhost:8990/win32lib/listboxsvc";
+    private java.lang.String  ListBoxSvcPort_address        = "http://localhost:31313/win32lib/listboxsvc";
 
     // The WSDD service name defaults to the port name.
     private java.lang.String  ListBoxSvcPortWSDDServiceName = "ListBoxSvcPort";

@@ -25,6 +25,7 @@ public class EditControlSteps {
     
     public EditControlSteps(){
         editMap.put("Edit Control", new Win32Locator("Edit","(.*)",0));
+        editMap.put("Buddy Control", new Win32Locator("Edit","(.*)",0));
     }
 
     private long getControl(String fieldName) throws Exception{

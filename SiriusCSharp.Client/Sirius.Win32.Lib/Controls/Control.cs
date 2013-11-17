@@ -3,12 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Automation;
+using log4net;
 
 namespace Sirius.Win32.Lib.Controls
 {
     public class Control : Window
     {
+        private static readonly ILog logger = LogManager.GetLogger(typeof(Control));
+
         protected ControlType controlType = null;
+
+        public AutomationElement GetElement(int hwnd)
+        {
+            AutomationElement element = Find(hwnd);
+            return element;
+        }
 
         public int Find(int parent, int index)
         {
@@ -19,6 +28,7 @@ namespace Sirius.Win32.Lib.Controls
             {
                 return 0;
             }
+            logger.Debug(String.Format("Found hwnd: {0}",elements[index].Current.NativeWindowHandle));
             return elements[index].Current.NativeWindowHandle;
         }
 
@@ -38,6 +48,7 @@ namespace Sirius.Win32.Lib.Controls
             {
                 return 0;
             }
+            logger.Debug(String.Format("Found hwnd: {0}", elements[index].Current.NativeWindowHandle));
             return elements[index].Current.NativeWindowHandle;
         }
     }

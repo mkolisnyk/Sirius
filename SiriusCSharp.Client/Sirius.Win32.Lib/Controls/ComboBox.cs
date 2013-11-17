@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using Sirius.Win32.Lib.Controls.Interfaces;
 using System.Windows.Automation;
+using log4net;
 
 namespace Sirius.Win32.Lib.Controls
 {
     public class ComboBox : Control, IEditable, ISelectable
     {
+        private static readonly ILog logger = LogManager.GetLogger(typeof(ComboBox));
+
         public ComboBox()
         {
             this.controlType = ControlType.ComboBox;
