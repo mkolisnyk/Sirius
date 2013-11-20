@@ -1,0 +1,74 @@
+---
+title: Sirius Win32 Client Interaction
+layout: default
+---
+
+# Introduction
+
+# Major Concepts
+
+## Window Object Location
+
+## Window Hierarchy Organization
+
+# Additional Features
+
+## Locator Attributes
+
+When we operate with window objects containing multiple fields representing some controls it's inconvenient to declare the fields and then initialize them separately while it can be done implicitly. E.g. the following code describes some window with fields and their initialization inside the constructor:
+
+* Java Sample
+
+{% highlight java linenos=table %}
+	public class NotepadWindow extends MainWindow {
+		
+		public OpenDialog openDialog;
+		SaveMessageDialog dSave;
+		public Edit edtText;
+
+		/**
+		 * @param client
+		 * @param locator
+		 */
+		public NotepadWindow(Win32Client client, Win32Locator locator) {
+			super(client, locator);
+
+			openDialog = new OpenDialog(client, this, new Win32Locator("#32770(.*)",0));
+			dSave = new SaveMessageDialog(client, this, new Win32Locator("#32770(.*)",0));
+			edtText = new Edit(this,new Win32Locator("Edit",0));
+		}		
+	}
+{% endhighlight %}
+
+Some of the lines and entries look redundant. E.g. in the above code we explicitly define **this** as the reference to parent window however it should be meant by default as we define some controls as the fields of this class. So, obviously, the window object instance should be the instance of the current class.
+
+And generally, it looks like duplicating effort declaring the objects and then initialize them explicitly inside the constructor.
+
+In order to minimize the writing effort for window declarations there was introduced the feature of locator attributes. It means that we declare fields and assign them annotations/attributes (whatever they're called in programming language in use) and these fields will be initialized automatically as soon as the holding class instance is initialized.
+
+In Java the above code looks like:
+{% highlight java linenos=table %}
+	public class NotepadWindow extends MainWindow {
+		
+		@Locator(winClass="#32770(.*)",index=0)
+		public OpenDialog openDialog;
+		
+		@Locator(winClass="#32770(.*)",index=0)
+		public SaveMessageDialog dSave;
+		
+		@Locator(winClass="Edit",index=0)
+		public Edit edtText;
+
+		/**
+		 * @param client
+		 * @param locator
+		 */
+		public NotepadWindow(Win32Client client, Win32Locator locator) {
+			super(client, locator);
+		}
+	}
+{% endhighlight %}
+
+As it's seen the window object definition became more compact.
+
+## Window Object Aliases

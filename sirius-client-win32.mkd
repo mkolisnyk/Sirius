@@ -78,7 +78,7 @@ and then use them within the test code like:
 	notepad.setActive();
 {% endhighlight %}
 
-Detailed information about Sirius Win32 client API usage can be found on the [project wiki page](https://github.com/mkolisnyk/Sirius/wiki/Win32-Client:-Win32-interaction) where all major concepts are described.
+Detailed information about Sirius Win32 client API usage can be found on the [project wiki page](Sirius/sirius-client-win32-interaction) where all major concepts are described.
 
 Demo
 ======
