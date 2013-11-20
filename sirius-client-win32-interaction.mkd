@@ -9,6 +9,11 @@ layout: default
 
 ## Window Object Location
 
+Each Win32 object is located using the combination of the following parameters:
+* **Window class** - 
+* **Caption** -
+* **Index** - 
+
 ## Window Hierarchy Organization
 
 # Additional Features
@@ -72,3 +77,51 @@ In Java the above code looks like:
 As it's seen the window object definition became more compact.
 
 ## Window Object Aliases
+
+In some cases  there's a need to get the control disregard it's location and position in the entire window hierarchy. E.g. we reserved some global name to some specific button and we want to get this object only by given name instead of typing all the window hierarchy for that. It can be typical case when we operate with Keyword-Driven or BDD scenarios when we cannot pass the actual object in the text instructions. But we always can reference them by specific name. 
+
+That's the main purpose for [Aliases](sirius.client.win32/apidocs/org/sirius/client/win32/classes/Aliases.html) object and [Alias](sirius.client.win32/apidocs/org/sirius/client/win32/annotations/Alias.html) annotation in particular.
+
+How it is used? Alias is another annotation/attribute which can be applied to field representing some control or child window in window declarations. All those objects are recorded into global structure which return actual window object just by specifying the alias name. 
+
+Declaration example:
+
+* Java
+
+{% highlight java linenos=table %}
+	public class NotepadWindow extends MainWindow {
+		
+		@Alias(name="Open Dialog")
+		@Locator(winClass="#32770(.*)",index=0)
+		public OpenDialog openDialog;
+		
+		@Alias(name="Save Message Dialog")
+		@Locator(winClass="#32770(.*)",index=0)
+		public SaveMessageDialog dSave;
+		
+		@Alias(name="Edit Area")
+		@Locator(winClass="Edit",index=0)
+		public Edit edtText;
+
+		/**
+		 * @param client
+		 * @param locator
+		 */
+		public NotepadWindow(Win32Client client, Win32Locator locator) {
+			super(client, locator);
+		}
+	}
+{% endhighlight %}
+
+Once we have aliases declared we can use them like the following:
+{% highlight java linenos=table %}
+Win32Client client = new Win32Client();
+NotepadWindow notepad = new NotepadWindow(client,new Win32Locator("Notepad","(.*) - (.*)",0));
+...
+OpenDialog dialog = (OpenDialog)Aliases.get("Open Dialog");
+{% endhighlight %}
+Main feature is that the code in line 4 from the above example may be even invoked in absolutely different module from the code called in first 2 lines.
+
+{% highlight %}
+In order to force aliases initialization you must create at least one window object instance. Only initialized window aliases will be stored in the memory.
+{% endhighlight %}
