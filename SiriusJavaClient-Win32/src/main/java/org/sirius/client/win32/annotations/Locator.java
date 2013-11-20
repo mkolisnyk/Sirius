@@ -8,13 +8,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import org.sirius.client.tests.win32.LocatorAnnotationTest.Test1LevelWindow;
-import org.sirius.client.win32.Win32Client;
-import org.sirius.client.win32.classes.MainWindow;
-import org.sirius.client.win32.classes.controls.Button;
-import org.sirius.client.win32.classes.controls.Edit;
-import org.sirius.client.win32.types.Win32Locator;
-
 /**
  * <p>
  * The annotation is designed to assign window locators to the fields.

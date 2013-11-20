@@ -325,7 +325,6 @@ public class Window implements WinUser {
 
     public final void initializeElements(Window win) {
         Class<? extends Window> clazz = win.getClass();
-        Annotation[] annotations = clazz.getAnnotations();
         Field[] fields = clazz.getFields();
         try {
             for (Field field : fields) {
@@ -365,6 +364,7 @@ public class Window implements WinUser {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        Aliases.set(win);
     }
 
     /**
