@@ -10,9 +10,9 @@ layout: default
 ## Window Object Location
 
 Each Win32 object is located using the combination of the following parameters:
-* **Window class** - 
-* **Caption** -
-* **Index** - 
+* **Window class** - identifies internal window class
+* **Caption** - corresponds to internal window text which is usually window caption
+* **Index** - corresponds to the number of element which goes in the sequence
 
 ## Window Hierarchy Organization
 
@@ -122,6 +122,4 @@ OpenDialog dialog = (OpenDialog)Aliases.get("Open Dialog");
 {% endhighlight %}
 Main feature is that the code in line 4 from the above example may be even invoked in absolutely different module from the code called in first 2 lines.
 
-{% highlight %}
 In order to force aliases initialization you must create at least one window object instance. Only initialized window aliases will be stored in the memory.
-{% endhighlight %}
