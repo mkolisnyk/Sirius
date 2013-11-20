@@ -17,6 +17,7 @@ public class Button extends Control {
      * .
      * @param parentValue .
      * @param locatorValue .
+     * @throws Exception 
      */
     public Button(final Window parentValue, final Win32Locator locatorValue) {
         super(parentValue, locatorValue);

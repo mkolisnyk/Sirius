@@ -16,6 +16,7 @@ public class CheckBox extends Button {
      * .
      * @param parentValue .
      * @param locatorValue .
+     * @throws Exception 
      */
     public CheckBox(
             final Window parentValue,

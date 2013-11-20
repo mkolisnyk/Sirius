@@ -17,6 +17,7 @@ public class ToolBar extends Control {
      * .
      * @param parentValue .
      * @param locatorValue .
+     * @throws Exception 
      */
     public ToolBar(
             final Window parentValue,

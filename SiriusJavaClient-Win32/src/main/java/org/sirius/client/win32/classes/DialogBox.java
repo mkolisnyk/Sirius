@@ -18,6 +18,7 @@ public class DialogBox extends TopLevelWindow {
      * .
      * @param client .
      * @param locator .
+     * @throws Exception 
      */
     public DialogBox(final Win32Client client, final Win32Locator locator) {
         super(client, locator);
@@ -28,10 +29,16 @@ public class DialogBox extends TopLevelWindow {
      * @param client .
      * @param parent .
      * @param locator .
+     * @throws Exception 
      */
     public DialogBox(final Win32Client client, final Window parent,
             final Win32Locator locator) {
         super(client, parent, locator);
+    }
+
+    public DialogBox(final Window parent,
+            final Win32Locator locator) {
+        super(parent.getClient(), parent, locator);
     }
 
     @Override

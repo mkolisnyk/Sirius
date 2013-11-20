@@ -16,6 +16,7 @@ public class RadioButton extends CheckBox {
      * .
      * @param parentValue .
      * @param locatorValue .
+     * @throws Exception 
      */
     public RadioButton(
             final Window parentValue,

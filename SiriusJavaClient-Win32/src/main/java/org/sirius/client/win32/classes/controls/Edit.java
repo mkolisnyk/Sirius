@@ -17,6 +17,7 @@ public class Edit extends Control {
      * .
      * @param parentValue .
      * @param locatorValue .
+     * @throws Exception 
      */
     public Edit(
             final Window parentValue,

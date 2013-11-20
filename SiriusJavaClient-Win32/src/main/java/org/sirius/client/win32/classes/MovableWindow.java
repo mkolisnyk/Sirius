@@ -15,6 +15,7 @@ public class MovableWindow extends Window {
     /**
      * @param clientValue .
      * @param locatorValue .
+     * @throws Exception 
      */
     public MovableWindow(
             final Win32Client clientValue,
@@ -27,6 +28,7 @@ public class MovableWindow extends Window {
      * @param clientValue .
      * @param parentValue .
      * @param locatorValue .
+     * @throws Exception 
      */
     public MovableWindow(
             final Win32Client clientValue,

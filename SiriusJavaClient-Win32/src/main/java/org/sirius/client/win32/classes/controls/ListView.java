@@ -16,6 +16,7 @@ public class ListView extends List {
      * .
      * @param parentValue .
      * @param locatorValue .
+     * @throws Exception 
      */
     public ListView(
             final Window parentValue,
@@ -23,5 +24,4 @@ public class ListView extends List {
         super(parentValue, locatorValue);
         // TODO Auto-generated constructor stub
     }
-
 }

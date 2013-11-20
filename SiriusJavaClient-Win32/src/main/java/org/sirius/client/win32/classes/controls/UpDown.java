@@ -16,6 +16,7 @@ public class UpDown extends Edit {
      * .
      * @param parentValue .
      * @param locatorValue .
+     * @throws Exception 
      */
     public UpDown(
             final Window parentValue,

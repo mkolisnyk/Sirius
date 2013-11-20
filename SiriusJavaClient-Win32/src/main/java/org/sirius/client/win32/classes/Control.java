@@ -15,6 +15,7 @@ public class Control extends Window {
      * .
      * @param parent .
      * @param locator .
+     * @throws Exception 
      */
     public Control(final Window parent, final Win32Locator locator) {
         super(parent, locator);

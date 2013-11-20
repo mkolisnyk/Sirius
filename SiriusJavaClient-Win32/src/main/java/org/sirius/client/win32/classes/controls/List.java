@@ -17,6 +17,7 @@ public class List extends Control {
      * .
      * @param parentValue .
      * @param locatorValue .
+     * @throws Exception 
      */
     public List(
             final Window parentValue,

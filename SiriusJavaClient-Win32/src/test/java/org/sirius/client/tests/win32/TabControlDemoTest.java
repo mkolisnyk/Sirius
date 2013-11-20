@@ -37,7 +37,7 @@ public class TabControlDemoTest {
 
         public void start() throws Exception {
             try {
-                this.client
+                this.getClient()
                         .core()
                         .window()
                         .start(getHwnd(),

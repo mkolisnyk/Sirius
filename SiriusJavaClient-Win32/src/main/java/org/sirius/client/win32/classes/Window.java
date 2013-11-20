@@ -3,6 +3,10 @@
  */
 package org.sirius.client.win32.classes;
 
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.rmi.RemoteException;
 import java.util.Date;
@@ -12,14 +16,14 @@ import org.apache.log4j.ConsoleAppender;
 import org.apache.log4j.Logger;
 import org.apache.log4j.SimpleLayout;
 import org.sirius.client.win32.Win32Client;
+import org.sirius.client.win32.annotations.Locator;
 import org.sirius.client.win32.core.types.Rect;
 import org.sirius.client.win32.types.Win32Locator;
 
 import com.sun.jna.platform.win32.WinUser;
 
 /**
- * @author Myk Kolisnyk
- * .
+ * @author Myk Kolisnyk .
  */
 public class Window implements WinUser {
 
@@ -49,7 +53,8 @@ public class Window implements WinUser {
     }
 
     /**
-     * @param clientValue the client to set
+     * @param clientValue
+     *            the client to set
      */
     public final void setClient(final Win32Client clientValue) {
         this.client = clientValue;
@@ -63,14 +68,16 @@ public class Window implements WinUser {
     }
 
     /**
-     * @param locatorValue the locator to set
+     * @param locatorValue
+     *            the locator to set
      */
     public final void setLocator(final Win32Locator locatorValue) {
         this.locator = locatorValue;
     }
 
     /**
-     * @param parentValue the parent to set
+     * @param parentValue
+     *            the parent to set
      */
     public final void setParent(final Window parentValue) {
         this.parent = parentValue;
@@ -78,24 +85,29 @@ public class Window implements WinUser {
 
     /**
      * .
-     * @param clientValue .
-     * @param locatorValue .
+     * 
+     * @param clientValue
+     *            .
+     * @param locatorValue
+     *            .
+     * @throws Exception
      */
-    public Window(
-            final Win32Client clientValue,
-            final Win32Locator locatorValue) {
+    public Window(final Win32Client clientValue, final Win32Locator locatorValue) {
         this(clientValue, null, locatorValue);
     }
 
     /**
      * .
-     * @param clientValue .
-     * @param parentValue .
-     * @param locatorValue .
+     * 
+     * @param clientValue
+     *            .
+     * @param parentValue
+     *            .
+     * @param locatorValue
+     *            .
+     * @throws Exception
      */
-    public Window(
-            final Win32Client clientValue,
-            final Window parentValue,
+    public Window(final Win32Client clientValue, final Window parentValue,
             final Win32Locator locatorValue) {
         this.client = clientValue;
         this.locator = locatorValue;
@@ -104,12 +116,17 @@ public class Window implements WinUser {
         logger.addAppender(new ConsoleAppender(new SimpleLayout()));
 
         logger.debug("Initializing instance");
+        this.initializeElements(this);
     }
 
     /**
      * .
-     * @param parentValue .
-     * @param locatorValue .
+     * 
+     * @param parentValue
+     *            .
+     * @param locatorValue
+     *            .
+     * @throws Exception
      */
     public Window(final Window parentValue, final Win32Locator locatorValue) {
         client = null;
@@ -122,10 +139,12 @@ public class Window implements WinUser {
         if (parent != null) {
             client = parent.client;
         }
+        this.initializeElements(this);
     }
 
     /**
      * .
+     * 
      * @throws Exception .
      */
     public final void click() throws Exception {
@@ -138,6 +157,7 @@ public class Window implements WinUser {
 
     /**
      * .
+     * 
      * @return .
      * @throws Exception .
      */
@@ -147,7 +167,9 @@ public class Window implements WinUser {
 
     /**
      * .
-     * @param timeout .
+     * 
+     * @param timeout
+     *            .
      * @return .
      * @throws Exception .
      */
@@ -157,6 +179,7 @@ public class Window implements WinUser {
 
     /**
      * .
+     * 
      * @return .
      * @throws RemoteException .
      */
@@ -164,26 +187,17 @@ public class Window implements WinUser {
         logger.debug(String.format("Searching for window: %s", locator));
 
         if (parent != null) {
-            logger.debug(
-                String.format("Searching for parent window: %s",
+            logger.debug(String.format("Searching for parent window: %s",
                     parent.getLocator()));
 
             if (!parent.exists()) {
-                logger.debug(
-                    String.format(
-                        "Parent window doesn't exist. Returning false"
-                    )
-                );
+                logger.debug(String
+                        .format("Parent window doesn't exist. Returning false"));
                 return false;
             } else {
-                logger.debug(
-                    String.format(
-                        "The parent window was found: %s. "
+                logger.debug(String.format("The parent window was found: %s. "
                         + "Looking for current window: %s",
-                        parent.getLocator(),
-                        this.getLocator()
-                    )
-                );
+                        parent.getLocator(), this.getLocator()));
                 locator.setParent(parent.getHwnd());
             }
         }
@@ -220,7 +234,9 @@ public class Window implements WinUser {
 
     /**
      * .
-     * @param timeout .
+     * 
+     * @param timeout
+     *            .
      * @return .
      * @throws Exception .
      */
@@ -230,7 +246,9 @@ public class Window implements WinUser {
 
     /**
      * .
-     * @param params .
+     * 
+     * @param params
+     *            .
      * @return .
      */
     private Class<?>[] getArrayTypes(final Object... params) {
@@ -243,6 +261,7 @@ public class Window implements WinUser {
 
     /**
      * .
+     * 
      * @return .
      * @throws Exception .
      */
@@ -253,6 +272,7 @@ public class Window implements WinUser {
 
     /**
      * .
+     * 
      * @return .
      */
     public final long getHwnd() {
@@ -261,6 +281,7 @@ public class Window implements WinUser {
 
     /**
      * .
+     * 
      * @return .
      */
     public final Win32Locator getLocator() {
@@ -269,7 +290,9 @@ public class Window implements WinUser {
 
     /**
      * .
-     * @param text .
+     * 
+     * @param text
+     *            .
      * @return .
      */
     protected final String getNativeText(final UnsignedShort[] text) {
@@ -282,6 +305,7 @@ public class Window implements WinUser {
 
     /**
      * .
+     * 
      * @return .
      */
     public final Window getParent() {
@@ -290,6 +314,7 @@ public class Window implements WinUser {
 
     /**
      * .
+     * 
      * @return .
      * @throws Exception .
      */
@@ -298,8 +323,53 @@ public class Window implements WinUser {
         return rc;
     }
 
+    public final void initializeElements(Window win) {
+        Class<? extends Window> clazz = win.getClass();
+        Annotation[] annotations = clazz.getAnnotations();
+        Field[] fields = clazz.getFields();
+        try {
+            for (Field field : fields) {
+                getLogger().debug(String.format("Field %s", field.getName()));
+                Locator tag = field.getAnnotation(Locator.class);
+                if(tag == null){
+                    getLogger().debug("No annotations found");
+                    continue;
+                }
+                getLogger().debug(String.format("Locator found: (%s,%s,%d)", tag.winClass(),tag.caption(),tag.index()));
+                
+                Win32Locator locator = new Win32Locator(tag.winClass(),
+                        tag.caption(), tag.index());
+                getLogger().debug("Creating object");
+                //Window object = new Window(win.getClient(), win, locator);
+                
+                for(Constructor<?> construct:field.getType().getConstructors()){
+                    getLogger().debug("Constructor: " + construct.getName());
+                    for(Class<?> type:construct.getParameterTypes()){
+                        getLogger().debug("- arg: " + type.getName());
+                    }
+                }
+                Constructor<?> construct = null;
+                Class<?> declaringClass = field.getType().getDeclaringClass();
+                if( declaringClass != null ){
+                    construct = field.getType().getConstructor(declaringClass,Window.class,Win32Locator.class);
+                    getLogger().debug("Constructor created");
+                    field.set(win, construct.newInstance(win,win, locator)); 
+                }
+                else {
+                    construct = field.getType().getConstructor(Window.class,Win32Locator.class);
+                    getLogger().debug("Constructor created");
+                    field.set(win, construct.newInstance(win, locator));                    
+                }
+                getLogger().debug("Field is set");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * .
+     * 
      * @return .
      */
     public final boolean isActive() {
@@ -308,6 +378,7 @@ public class Window implements WinUser {
 
     /**
      * .
+     * 
      * @return .
      * @throws Exception .
      */
@@ -317,7 +388,9 @@ public class Window implements WinUser {
 
     /**
      * .
-     * @param timeout .
+     * 
+     * @param timeout
+     *            .
      * @return .
      * @throws Exception .
      */
@@ -327,6 +400,7 @@ public class Window implements WinUser {
 
     /**
      * .
+     * 
      * @return .
      * @throws Exception .
      */
@@ -336,7 +410,9 @@ public class Window implements WinUser {
 
     /**
      * .
-     * @param timeout .
+     * 
+     * @param timeout
+     *            .
      * @return .
      * @throws Exception .
      */
@@ -352,7 +428,9 @@ public class Window implements WinUser {
 
     /**
      * .
-     * @param text .
+     * 
+     * @param text
+     *            .
      * @throws Exception .
      */
     public final void typeKeys(final String text) throws Exception {
@@ -368,10 +446,15 @@ public class Window implements WinUser {
 
     /**
      * .
-     * @param timeout .
-     * @param methodName .
-     * @param expectedValue .
-     * @param params .
+     * 
+     * @param timeout
+     *            .
+     * @param methodName
+     *            .
+     * @param expectedValue
+     *            .
+     * @param params
+     *            .
      * @return .
      * @throws Exception .
      */

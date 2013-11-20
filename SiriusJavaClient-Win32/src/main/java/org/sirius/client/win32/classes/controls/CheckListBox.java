@@ -16,6 +16,7 @@ public class CheckListBox extends List {
      * .
      * @param parentValue .
      * @param locatorValue .
+     * @throws Exception 
      */
     public CheckListBox(
             final Window parentValue,

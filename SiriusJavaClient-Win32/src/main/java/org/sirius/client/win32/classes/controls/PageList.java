@@ -17,12 +17,12 @@ public class PageList extends List {
      * .
      * @param parentValue .
      * @param locatorValue .
+     * @throws Exception 
      */
     public PageList(
             final Window parentValue,
-            final Win32Locator locatorValue) {
-        super(parentValue, locatorValue);
-        // TODO Auto-generated constructor stub
+            final Win32Locator locatorValue){
+            super(parentValue, locatorValue);
     }
 
     /**

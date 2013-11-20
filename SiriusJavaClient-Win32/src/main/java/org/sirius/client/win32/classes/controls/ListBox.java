@@ -16,6 +16,7 @@ public class ListBox extends List {
      * .
      * @param parentValue .
      * @param locatorValue .
+     * @throws Exception 
      */
     public ListBox(
             final Window parentValue,
@@ -23,5 +24,4 @@ public class ListBox extends List {
         super(parentValue, locatorValue);
         // TODO Auto-generated constructor stub
     }
-
 }

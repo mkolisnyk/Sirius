@@ -15,6 +15,7 @@ public class TopLevelWindow extends MovableWindow {
     /**
      * @param clientValue .
      * @param locatorValue .
+     * @throws Exception 
      */
     public TopLevelWindow(
             final Win32Client clientValue,
@@ -27,6 +28,7 @@ public class TopLevelWindow extends MovableWindow {
      * @param clientValue .
      * @param parentValue .
      * @param locatorValue .
+     * @throws Exception 
      */
     public TopLevelWindow(
             final Win32Client clientValue,

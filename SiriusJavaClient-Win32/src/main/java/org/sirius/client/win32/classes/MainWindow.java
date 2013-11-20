@@ -16,6 +16,7 @@ public class MainWindow extends TopLevelWindow {
      * .
      * @param client .
      * @param locator .
+     * @throws Exception 
      */
     public MainWindow(final Win32Client client, final Win32Locator locator) {
         super(client, locator);

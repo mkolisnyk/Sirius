@@ -16,6 +16,7 @@ public class ComboBox extends List {
      * .
      * @param parentValue .
      * @param locatorValue .
+     * @throws Exception 
      */
     public ComboBox(
             final Window parentValue,

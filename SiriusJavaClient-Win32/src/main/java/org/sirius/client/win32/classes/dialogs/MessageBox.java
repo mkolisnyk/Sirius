@@ -16,10 +16,11 @@ public class MessageBox extends DialogBox {
      * .
      * @param clientValue .
      * @param locatorValue .
+     * @throws Exception 
      */
     public MessageBox(
             final Win32Client clientValue,
-            final Win32Locator locatorValue) {
+            final Win32Locator locatorValue) throws Exception {
         super(clientValue, locatorValue);
         // TODO Auto-generated constructor stub
     }
