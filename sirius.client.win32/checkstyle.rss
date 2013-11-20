@@ -8,8 +8,8 @@
     <language>en-us</language>
     <copyright>&#169;2013</copyright>
     <item>
-      <title>File: 304,
-             Errors: 5491,
+      <title>File: 306,
+             Errors: 5601,
              Warnings: 0,
              Infos: 0
       </title>
@@ -164,7 +164,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  2
                 </td>
               </tr>
                           <tr>
@@ -192,7 +192,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  5
                 </td>
               </tr>
                           <tr>
@@ -435,6 +435,20 @@
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Win32/checkstyle.html#main.java.org.sirius.client.win32.annotations.Locator.java">main/java/org/sirius/client/win32/annotations/Locator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  13
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Win32/checkstyle.html#main.java.org.sirius.client.win32.core.types.LongPTR.java">main/java/org/sirius/client/win32/core/types/LongPTR.java</a>
                 </td>
                 <td>
@@ -486,7 +500,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  1
                 </td>
               </tr>
                           <tr>
@@ -612,7 +626,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  2
                 </td>
               </tr>
                           <tr>
@@ -738,7 +752,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  1
                 </td>
               </tr>
                           <tr>
@@ -990,7 +1004,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  2
                 </td>
               </tr>
                           <tr>
@@ -1074,7 +1088,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  2
                 </td>
               </tr>
                           <tr>
@@ -1298,7 +1312,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  4
                 </td>
               </tr>
                           <tr>
@@ -1457,20 +1471,6 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Win32/checkstyle.html#org.sirius.client.win32.core.controls.button.ButtonPortBindingStub.java">org/sirius/client/win32/core/controls/button/ButtonPortBindingStub.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Win32/checkstyle.html#main.java.org.sirius.client.win32.core.classes.window.Window.java">main/java/org/sirius/client/win32/core/classes/window/Window.java</a>
                 </td>
                 <td>
@@ -1481,6 +1481,20 @@
                 </td>
                 <td>
                   60
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Win32/checkstyle.html#org.sirius.client.win32.core.controls.button.ButtonPortBindingStub.java">org/sirius/client/win32/core/controls/button/ButtonPortBindingStub.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
                 </td>
               </tr>
                           <tr>
@@ -1620,7 +1634,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  2
                 </td>
               </tr>
                           <tr>
@@ -2222,7 +2236,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  53
                 </td>
               </tr>
                           <tr>
@@ -2432,7 +2446,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  2
                 </td>
               </tr>
                           <tr>
@@ -2502,7 +2516,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  2
                 </td>
               </tr>
                           <tr>
@@ -2600,7 +2614,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  2
                 </td>
               </tr>
                           <tr>
@@ -2801,6 +2815,20 @@
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Win32/checkstyle.html#org.sirius.client.win32.annotations.Locator.java">org/sirius/client/win32/annotations/Locator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Win32/checkstyle.html#org.sirius.client.win32.core.types.Hbitmap.java">org/sirius/client/win32/core/types/Hbitmap.java</a>
                 </td>
                 <td>
@@ -2950,7 +2978,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  3
                 </td>
               </tr>
                           <tr>
@@ -3454,7 +3482,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  4
                 </td>
               </tr>
                           <tr>
@@ -3524,7 +3552,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  2
                 </td>
               </tr>
                           <tr>
@@ -3678,7 +3706,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  2
                 </td>
               </tr>
                           <tr>
@@ -3958,7 +3986,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  2
                 </td>
               </tr>
                           <tr>
@@ -4000,7 +4028,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  2
                 </td>
               </tr>
                           <tr>
@@ -4196,7 +4224,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  2
                 </td>
               </tr>
                           <tr>

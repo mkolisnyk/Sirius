@@ -1,0 +1,4 @@
+org.sirius.client.test.features.win32.controls
+org.sirius.client.test.steps.win32.controls
+org.sirius.client.test.steps.win32.controls.declarations
+org.sirius.client.tests.win32
