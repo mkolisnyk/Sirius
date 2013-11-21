@@ -9,7 +9,6 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 import org.junit.Assert;
-import org.sirius.client.tests.win32.AliasAnnotationTest.Test1LevelWindow;
 import org.sirius.client.win32.Win32Client;
 import org.sirius.client.win32.classes.Aliases;
 import org.sirius.client.win32.classes.MainWindow;
