@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>AliasAnnotationTest xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../../testapidocs/org/sirius/client/tests/win32/AliasAnnotationTest.html">View Javadoc</a></div><pre>
+
+<a class="jxr_linenumber" name="1" href="#1">1</a>   <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="2" href="#2">2</a>   <em class="jxr_javadoccomment"> * </em>
+<a class="jxr_linenumber" name="3" href="#3">3</a>   <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="4" href="#4">4</a>   <strong class="jxr_keyword">package</strong> org.sirius.client.tests.win32;
+<a class="jxr_linenumber" name="5" href="#5">5</a>   
+<a class="jxr_linenumber" name="6" href="#6">6</a>   <strong class="jxr_keyword">import</strong> org.junit.Assert;
+<a class="jxr_linenumber" name="7" href="#7">7</a>   
+<a class="jxr_linenumber" name="8" href="#8">8</a>   <strong class="jxr_keyword">import</strong> org.junit.Test;
+<a class="jxr_linenumber" name="9" href="#9">9</a>   <strong class="jxr_keyword">import</strong> org.sirius.client.win32.Win32Client;
+<a class="jxr_linenumber" name="10" href="#10">10</a>  <strong class="jxr_keyword">import</strong> org.sirius.client.win32.annotations.Alias;
+<a class="jxr_linenumber" name="11" href="#11">11</a>  <strong class="jxr_keyword">import</strong> org.sirius.client.win32.annotations.Locator;
+<a class="jxr_linenumber" name="12" href="#12">12</a>  <strong class="jxr_keyword">import</strong> org.sirius.client.win32.classes.Aliases;
+<a class="jxr_linenumber" name="13" href="#13">13</a>  <strong class="jxr_keyword">import</strong> org.sirius.client.win32.classes.MainWindow;
+<a class="jxr_linenumber" name="14" href="#14">14</a>  <strong class="jxr_keyword">import</strong> org.sirius.client.win32.classes.controls.Button;
+<a class="jxr_linenumber" name="15" href="#15">15</a>  <strong class="jxr_keyword">import</strong> org.sirius.client.win32.classes.controls.Edit;
+<a class="jxr_linenumber" name="16" href="#16">16</a>  <strong class="jxr_keyword">import</strong> org.sirius.client.win32.types.Win32Locator;
+<a class="jxr_linenumber" name="17" href="#17">17</a>  
+<a class="jxr_linenumber" name="18" href="#18">18</a>  <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="19" href="#19">19</a>  <em class="jxr_javadoccomment"> * @author Myk Kolisnyk</em>
+<a class="jxr_linenumber" name="20" href="#20">20</a>  <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="21" href="#21">21</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../org/sirius/client/tests/win32/AliasAnnotationTest.html">AliasAnnotationTest</a> {
+<a class="jxr_linenumber" name="23" href="#23">23</a>  
+<a class="jxr_linenumber" name="24" href="#24">24</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../org/sirius/client/tests/win32/LocatorAnnotationTest.html">Test1LevelWindow</a> <strong class="jxr_keyword">extends</strong> MainWindow {
+<a class="jxr_linenumber" name="25" href="#25">25</a>  
+<a class="jxr_linenumber" name="26" href="#26">26</a>          @Alias(name=<span class="jxr_string">"Sample Text"</span>)
+<a class="jxr_linenumber" name="27" href="#27">27</a>          @Locator(winClass=<span class="jxr_string">"Edit"</span>,caption=<span class="jxr_string">"Sample text"</span>,index=0)
+<a class="jxr_linenumber" name="28" href="#28">28</a>          <strong class="jxr_keyword">public</strong> Edit edtText;
+<a class="jxr_linenumber" name="29" href="#29">29</a>          
+<a class="jxr_linenumber" name="30" href="#30">30</a>          @Alias(name=<span class="jxr_string">"Sample Button"</span>)
+<a class="jxr_linenumber" name="31" href="#31">31</a>          @Locator(winClass=<span class="jxr_string">"Button"</span>,caption=<span class="jxr_string">"Test Button"</span>,index=2)
+<a class="jxr_linenumber" name="32" href="#32">32</a>          <strong class="jxr_keyword">public</strong> Button btnTestButton;
+<a class="jxr_linenumber" name="33" href="#33">33</a>          
+<a class="jxr_linenumber" name="34" href="#34">34</a>          <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="35" href="#35">35</a>  <em class="jxr_javadoccomment">         * @param client</em>
+<a class="jxr_linenumber" name="36" href="#36">36</a>  <em class="jxr_javadoccomment">         * @param locator</em>
+<a class="jxr_linenumber" name="37" href="#37">37</a>  <em class="jxr_javadoccomment">         */</em>
+<a class="jxr_linenumber" name="38" href="#38">38</a>          <strong class="jxr_keyword">public</strong> <a href="../../../../../org/sirius/client/tests/win32/LocatorAnnotationTest.html">Test1LevelWindow</a>(Win32Client client) {
+<a class="jxr_linenumber" name="39" href="#39">39</a>              <strong class="jxr_keyword">super</strong>(client, <strong class="jxr_keyword">new</strong> Win32Locator(<span class="jxr_string">"Test"</span>,0));
+<a class="jxr_linenumber" name="40" href="#40">40</a>          }
+<a class="jxr_linenumber" name="41" href="#41">41</a>          
+<a class="jxr_linenumber" name="42" href="#42">42</a>      }
+<a class="jxr_linenumber" name="43" href="#43">43</a>  
+<a class="jxr_linenumber" name="44" href="#44">44</a>      @Test
+<a class="jxr_linenumber" name="45" href="#45">45</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> checkSingleLevelWindow(){
+<a class="jxr_linenumber" name="46" href="#46">46</a>          Win32Client client = <strong class="jxr_keyword">new</strong> Win32Client();
+<a class="jxr_linenumber" name="47" href="#47">47</a>          <a href="../../../../../org/sirius/client/tests/win32/LocatorAnnotationTest.html">Test1LevelWindow</a> win = <strong class="jxr_keyword">new</strong> <a href="../../../../../org/sirius/client/tests/win32/LocatorAnnotationTest.html">Test1LevelWindow</a>(client);
+<a class="jxr_linenumber" name="48" href="#48">48</a>          
+<a class="jxr_linenumber" name="49" href="#49">49</a>          Assert.assertNotNull(Aliases.get(<span class="jxr_string">"Sample Text"</span>));
+<a class="jxr_linenumber" name="50" href="#50">50</a>          Assert.assertEquals(win.edtText, Aliases.get(<span class="jxr_string">"Sample Text"</span>));
+<a class="jxr_linenumber" name="51" href="#51">51</a>          Assert.assertNotNull(Aliases.get(<span class="jxr_string">"Sample Button"</span>));
+<a class="jxr_linenumber" name="52" href="#52">52</a>          Assert.assertEquals(win.btnTestButton, Aliases.get(<span class="jxr_string">"Sample Button"</span>));
+<a class="jxr_linenumber" name="53" href="#53">53</a>      }
+<a class="jxr_linenumber" name="54" href="#54">54</a>  }
+</pre>
+<hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
+</html>
+

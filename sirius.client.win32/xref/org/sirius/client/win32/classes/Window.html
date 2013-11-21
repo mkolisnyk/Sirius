@@ -335,46 +335,46 @@
 <a class="jxr_linenumber" name="325" href="#325">325</a> 
 <a class="jxr_linenumber" name="326" href="#326">326</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">void</strong> initializeElements(<a href="../../../../../org/sirius/client/win32/classes/Window.html">Window</a> win) {
 <a class="jxr_linenumber" name="327" href="#327">327</a>         Class&lt;? <strong class="jxr_keyword">extends</strong> Window&gt; clazz = win.getClass();
-<a class="jxr_linenumber" name="328" href="#328">328</a>         Annotation[] annotations = clazz.getAnnotations();
-<a class="jxr_linenumber" name="329" href="#329">329</a>         Field[] fields = clazz.getFields();
-<a class="jxr_linenumber" name="330" href="#330">330</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="331" href="#331">331</a>             <strong class="jxr_keyword">for</strong> (Field field : fields) {
-<a class="jxr_linenumber" name="332" href="#332">332</a>                 getLogger().debug(String.format(<span class="jxr_string">"Field %s"</span>, field.getName()));
-<a class="jxr_linenumber" name="333" href="#333">333</a>                 <a href="../../../../../org/sirius/client/win32/annotations/Locator.html">Locator</a> tag = field.getAnnotation(Locator.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="334" href="#334">334</a>                 <strong class="jxr_keyword">if</strong>(tag == <strong class="jxr_keyword">null</strong>){
-<a class="jxr_linenumber" name="335" href="#335">335</a>                     getLogger().debug(<span class="jxr_string">"No annotations found"</span>);
-<a class="jxr_linenumber" name="336" href="#336">336</a>                     <strong class="jxr_keyword">continue</strong>;
-<a class="jxr_linenumber" name="337" href="#337">337</a>                 }
-<a class="jxr_linenumber" name="338" href="#338">338</a>                 getLogger().debug(String.format(<span class="jxr_string">"Locator found: (%s,%s,%d)"</span>, tag.winClass(),tag.caption(),tag.index()));
-<a class="jxr_linenumber" name="339" href="#339">339</a>                 
-<a class="jxr_linenumber" name="340" href="#340">340</a>                 <a href="../../../../../org/sirius/client/win32/types/Win32Locator.html">Win32Locator</a> locator = <strong class="jxr_keyword">new</strong> <a href="../../../../../org/sirius/client/win32/types/Win32Locator.html">Win32Locator</a>(tag.winClass(),
-<a class="jxr_linenumber" name="341" href="#341">341</a>                         tag.caption(), tag.index());
-<a class="jxr_linenumber" name="342" href="#342">342</a>                 getLogger().debug(<span class="jxr_string">"Creating object"</span>);
-<a class="jxr_linenumber" name="343" href="#343">343</a>                 <em class="jxr_comment">//Window object = new Window(win.getClient(), win, locator);</em>
-<a class="jxr_linenumber" name="344" href="#344">344</a>                 
-<a class="jxr_linenumber" name="345" href="#345">345</a>                 <strong class="jxr_keyword">for</strong>(Constructor&lt;?&gt; construct:field.getType().getConstructors()){
-<a class="jxr_linenumber" name="346" href="#346">346</a>                     getLogger().debug(<span class="jxr_string">"Constructor: "</span> + construct.getName());
-<a class="jxr_linenumber" name="347" href="#347">347</a>                     <strong class="jxr_keyword">for</strong>(Class&lt;?&gt; type:construct.getParameterTypes()){
-<a class="jxr_linenumber" name="348" href="#348">348</a>                         getLogger().debug(<span class="jxr_string">"- arg: "</span> + type.getName());
-<a class="jxr_linenumber" name="349" href="#349">349</a>                     }
-<a class="jxr_linenumber" name="350" href="#350">350</a>                 }
-<a class="jxr_linenumber" name="351" href="#351">351</a>                 Constructor&lt;?&gt; construct = <strong class="jxr_keyword">null</strong>;
-<a class="jxr_linenumber" name="352" href="#352">352</a>                 Class&lt;?&gt; declaringClass = field.getType().getDeclaringClass();
-<a class="jxr_linenumber" name="353" href="#353">353</a>                 <strong class="jxr_keyword">if</strong>( declaringClass != <strong class="jxr_keyword">null</strong> ){
-<a class="jxr_linenumber" name="354" href="#354">354</a>                     construct = field.getType().getConstructor(declaringClass,Window.<strong class="jxr_keyword">class</strong>,Win32Locator.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="355" href="#355">355</a>                     getLogger().debug(<span class="jxr_string">"Constructor created"</span>);
-<a class="jxr_linenumber" name="356" href="#356">356</a>                     field.set(win, construct.newInstance(win,win, locator)); 
-<a class="jxr_linenumber" name="357" href="#357">357</a>                 }
-<a class="jxr_linenumber" name="358" href="#358">358</a>                 <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="359" href="#359">359</a>                     construct = field.getType().getConstructor(Window.<strong class="jxr_keyword">class</strong>,Win32Locator.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="360" href="#360">360</a>                     getLogger().debug(<span class="jxr_string">"Constructor created"</span>);
-<a class="jxr_linenumber" name="361" href="#361">361</a>                     field.set(win, construct.newInstance(win, locator));                    
-<a class="jxr_linenumber" name="362" href="#362">362</a>                 }
-<a class="jxr_linenumber" name="363" href="#363">363</a>                 getLogger().debug(<span class="jxr_string">"Field is set"</span>);
-<a class="jxr_linenumber" name="364" href="#364">364</a>             }
-<a class="jxr_linenumber" name="365" href="#365">365</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
-<a class="jxr_linenumber" name="366" href="#366">366</a>             e.printStackTrace();
-<a class="jxr_linenumber" name="367" href="#367">367</a>         }
+<a class="jxr_linenumber" name="328" href="#328">328</a>         Field[] fields = clazz.getFields();
+<a class="jxr_linenumber" name="329" href="#329">329</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="330" href="#330">330</a>             <strong class="jxr_keyword">for</strong> (Field field : fields) {
+<a class="jxr_linenumber" name="331" href="#331">331</a>                 getLogger().debug(String.format(<span class="jxr_string">"Field %s"</span>, field.getName()));
+<a class="jxr_linenumber" name="332" href="#332">332</a>                 <a href="../../../../../org/sirius/client/win32/annotations/Locator.html">Locator</a> tag = field.getAnnotation(Locator.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="333" href="#333">333</a>                 <strong class="jxr_keyword">if</strong>(tag == <strong class="jxr_keyword">null</strong>){
+<a class="jxr_linenumber" name="334" href="#334">334</a>                     getLogger().debug(<span class="jxr_string">"No annotations found"</span>);
+<a class="jxr_linenumber" name="335" href="#335">335</a>                     <strong class="jxr_keyword">continue</strong>;
+<a class="jxr_linenumber" name="336" href="#336">336</a>                 }
+<a class="jxr_linenumber" name="337" href="#337">337</a>                 getLogger().debug(String.format(<span class="jxr_string">"Locator found: (%s,%s,%d)"</span>, tag.winClass(),tag.caption(),tag.index()));
+<a class="jxr_linenumber" name="338" href="#338">338</a>                 
+<a class="jxr_linenumber" name="339" href="#339">339</a>                 <a href="../../../../../org/sirius/client/win32/types/Win32Locator.html">Win32Locator</a> locator = <strong class="jxr_keyword">new</strong> <a href="../../../../../org/sirius/client/win32/types/Win32Locator.html">Win32Locator</a>(tag.winClass(),
+<a class="jxr_linenumber" name="340" href="#340">340</a>                         tag.caption(), tag.index());
+<a class="jxr_linenumber" name="341" href="#341">341</a>                 getLogger().debug(<span class="jxr_string">"Creating object"</span>);
+<a class="jxr_linenumber" name="342" href="#342">342</a>                 <em class="jxr_comment">//Window object = new Window(win.getClient(), win, locator);</em>
+<a class="jxr_linenumber" name="343" href="#343">343</a>                 
+<a class="jxr_linenumber" name="344" href="#344">344</a>                 <strong class="jxr_keyword">for</strong>(Constructor&lt;?&gt; construct:field.getType().getConstructors()){
+<a class="jxr_linenumber" name="345" href="#345">345</a>                     getLogger().debug(<span class="jxr_string">"Constructor: "</span> + construct.getName());
+<a class="jxr_linenumber" name="346" href="#346">346</a>                     <strong class="jxr_keyword">for</strong>(Class&lt;?&gt; type:construct.getParameterTypes()){
+<a class="jxr_linenumber" name="347" href="#347">347</a>                         getLogger().debug(<span class="jxr_string">"- arg: "</span> + type.getName());
+<a class="jxr_linenumber" name="348" href="#348">348</a>                     }
+<a class="jxr_linenumber" name="349" href="#349">349</a>                 }
+<a class="jxr_linenumber" name="350" href="#350">350</a>                 Constructor&lt;?&gt; construct = <strong class="jxr_keyword">null</strong>;
+<a class="jxr_linenumber" name="351" href="#351">351</a>                 Class&lt;?&gt; declaringClass = field.getType().getDeclaringClass();
+<a class="jxr_linenumber" name="352" href="#352">352</a>                 <strong class="jxr_keyword">if</strong>( declaringClass != <strong class="jxr_keyword">null</strong> ){
+<a class="jxr_linenumber" name="353" href="#353">353</a>                     construct = field.getType().getConstructor(declaringClass,Window.<strong class="jxr_keyword">class</strong>,Win32Locator.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="354" href="#354">354</a>                     getLogger().debug(<span class="jxr_string">"Constructor created"</span>);
+<a class="jxr_linenumber" name="355" href="#355">355</a>                     field.set(win, construct.newInstance(win,win, locator)); 
+<a class="jxr_linenumber" name="356" href="#356">356</a>                 }
+<a class="jxr_linenumber" name="357" href="#357">357</a>                 <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="358" href="#358">358</a>                     construct = field.getType().getConstructor(Window.<strong class="jxr_keyword">class</strong>,Win32Locator.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="359" href="#359">359</a>                     getLogger().debug(<span class="jxr_string">"Constructor created"</span>);
+<a class="jxr_linenumber" name="360" href="#360">360</a>                     field.set(win, construct.newInstance(win, locator));                    
+<a class="jxr_linenumber" name="361" href="#361">361</a>                 }
+<a class="jxr_linenumber" name="362" href="#362">362</a>                 getLogger().debug(<span class="jxr_string">"Field is set"</span>);
+<a class="jxr_linenumber" name="363" href="#363">363</a>             }
+<a class="jxr_linenumber" name="364" href="#364">364</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
+<a class="jxr_linenumber" name="365" href="#365">365</a>             e.printStackTrace();
+<a class="jxr_linenumber" name="366" href="#366">366</a>         }
+<a class="jxr_linenumber" name="367" href="#367">367</a>         Aliases.set(win);
 <a class="jxr_linenumber" name="368" href="#368">368</a>     }
 <a class="jxr_linenumber" name="369" href="#369">369</a> 
 <a class="jxr_linenumber" name="370" href="#370">370</a>     <em class="jxr_javadoccomment">/**</em>

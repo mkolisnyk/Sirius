@@ -8,8 +8,8 @@
     <language>en-us</language>
     <copyright>&#169;2013</copyright>
     <item>
-      <title>File: 306,
-             Errors: 5601,
+      <title>File: 308,
+             Errors: 5642,
              Warnings: 0,
              Infos: 0
       </title>
@@ -925,20 +925,6 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Win32/checkstyle.html#main.java.org.sirius.client.win32.core.controls.button.Button.java">main/java/org/sirius/client/win32/core/controls/button/Button.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  10
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Win32/checkstyle.html#main.java.org.sirius.client.win32.core.classes.dialog.DialogService.java">main/java/org/sirius/client/win32/core/classes/dialog/DialogService.java</a>
                 </td>
                 <td>
@@ -949,6 +935,20 @@
                 </td>
                 <td>
                   7
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Win32/checkstyle.html#main.java.org.sirius.client.win32.core.controls.button.Button.java">main/java/org/sirius/client/win32/core/controls/button/Button.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  10
                 </td>
               </tr>
                           <tr>
@@ -2124,7 +2124,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  13
                 </td>
               </tr>
                           <tr>
@@ -2236,7 +2236,7 @@
                   0
                 </td>
                 <td>
-                  53
+                  54
                 </td>
               </tr>
                           <tr>
@@ -2521,6 +2521,20 @@
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Win32/checkstyle.html#org.sirius.client.win32.classes.Aliases.java">org/sirius/client/win32/classes/Aliases.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Win32/checkstyle.html#META-INF.maven.org.apache.maven.archetype.archetype-descriptor.pom.properties">META-INF/maven/org.apache.maven.archetype/archetype-descriptor/pom.properties</a>
                 </td>
                 <td>
@@ -2769,6 +2783,20 @@
                 </td>
                 <td>
                   0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Win32/checkstyle.html#main.java.org.sirius.client.win32.classes.Aliases.java">main/java/org/sirius/client/win32/classes/Aliases.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  27
                 </td>
               </tr>
                           <tr>
