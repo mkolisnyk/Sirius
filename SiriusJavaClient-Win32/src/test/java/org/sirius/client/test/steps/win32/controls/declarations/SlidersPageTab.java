@@ -13,6 +13,15 @@ import org.sirius.client.win32.types.Win32Locator;
  */
 public class SlidersPageTab extends Window {
 
+    /*sliderMap.put("Horizontal", 
+            new Win32Locator("msctls_trackbar32",
+            "Slider1", 0));
+    public Slider sldHorizontal;
+    
+    sliderMap.put("Vertical", new Win32Locator("msctls_trackbar32",
+            "Slider2", 0));
+    public Slider sldVertical;*/
+    
     /**
      * @param clientValue
      * @param locatorValue

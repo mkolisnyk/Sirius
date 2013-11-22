@@ -4,8 +4,10 @@
 package org.sirius.client.test.steps.win32.controls.declarations;
 
 import org.sirius.client.win32.Win32Client;
+import org.sirius.client.win32.annotations.Alias;
 import org.sirius.client.win32.annotations.Locator;
 import org.sirius.client.win32.classes.MainWindow;
+import org.sirius.client.win32.classes.controls.Button;
 import org.sirius.client.win32.core.controls.tabcontrol.TabControl;
 import org.sirius.client.win32.types.Win32Locator;
 
@@ -33,6 +35,10 @@ public class CommonControlsExamplesWindow extends MainWindow {
     @Locator(winClass="#32770",caption="Sliders")
     public SlidersPageTab dSliders;
     
+    @Alias(name="Close") 
+    @Locator(winClass="Button",caption="Close",index=0)
+    public Button btnClose;
+    
     /**
      * @param client
      * @param locator
@@ -41,4 +47,5 @@ public class CommonControlsExamplesWindow extends MainWindow {
         super(client, locator);
     }
 
+    
 }

@@ -19,8 +19,7 @@ import cucumber.api.junit.Cucumber;
                 "usage:target/cucumber-usage.json"
                 },
         features = {"src/test/java/org/sirius/server/test/features/win32/controls"},
-        glue = {"org/sirius/server/test/steps/win32/controls"},
-        tags = {"@debug"}
+        glue = {"org/sirius/server/test/steps/win32/controls"}
 )
 public class Win32ControlTest {
     

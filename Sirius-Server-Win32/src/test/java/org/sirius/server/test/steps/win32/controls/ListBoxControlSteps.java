@@ -12,7 +12,6 @@ import org.sirius.server.win32.Win32Utils;
 import org.sirius.server.win32.classes.controls.ListBox;
 import org.sirius.server.win32.classes.controls.TabControl;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
