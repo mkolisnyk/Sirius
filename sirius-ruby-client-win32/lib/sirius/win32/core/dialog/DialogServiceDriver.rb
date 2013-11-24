@@ -1,73 +1,72 @@
-require 'sirius/win32/core/dialog/DialogService.rb'
-require 'sirius/win32/core/dialog/DialogServiceMappingRegistry.rb'
+require 'DialogService.rb'
+require 'DialogServiceMappingRegistry.rb'
 require 'soap/rpc/driver'
 
 module Sirius::Client::Win32::Core::Dialog
 
 
-class Dialog < ::SOAP::RPC::Driver
-  DefaultEndpointUrl = "http:localhost:21212/win32/dialog"
+class Dialog < ::SOAP::RPC::Driver  DefaultEndpointUrl = "http:localhost:21212/win32/dialog"
   Methods = [
     [ "",
       "getDlgCtrlID",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "getDlgCtrlID"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "getDlgCtrlIDResponse"]] ],
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:classes.win32.server.sirius.org/", "getDlgCtrlID"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:classes.win32.server.sirius.org/", "getDlgCtrlIDResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "getDlgItem",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "getDlgItem"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "getDlgItemResponse"]] ],
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:classes.win32.server.sirius.org/", "getDlgItem"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:classes.win32.server.sirius.org/", "getDlgItemResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "getDialogBaseUnits",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "getDialogBaseUnits"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "getDialogBaseUnitsResponse"]] ],
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:classes.win32.server.sirius.org/", "getDialogBaseUnits"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:classes.win32.server.sirius.org/", "getDialogBaseUnitsResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "getDlgItemInt",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "getDlgItemInt"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "getDlgItemIntResponse"]] ],
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:classes.win32.server.sirius.org/", "getDlgItemInt"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:classes.win32.server.sirius.org/", "getDlgItemIntResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "getDlgItemTextA",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "getDlgItemTextA"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "getDlgItemTextAResponse"]] ],
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:classes.win32.server.sirius.org/", "getDlgItemTextA"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:classes.win32.server.sirius.org/", "getDlgItemTextAResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "isDlgButtonChecked",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "isDlgButtonChecked"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "isDlgButtonCheckedResponse"]] ],
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:classes.win32.server.sirius.org/", "isDlgButtonChecked"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:classes.win32.server.sirius.org/", "isDlgButtonCheckedResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "setDlgItemInt",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "setDlgItemInt"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "setDlgItemIntResponse"]] ],
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:classes.win32.server.sirius.org/", "setDlgItemInt"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:classes.win32.server.sirius.org/", "setDlgItemIntResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "setDlgItemText",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "setDlgItemText"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http://classes.win32.server.sirius.org/", "setDlgItemTextResponse"]] ],
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:classes.win32.server.sirius.org/", "setDlgItemText"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:classes.win32.server.sirius.org/", "setDlgItemTextResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
@@ -78,7 +77,7 @@ class Dialog < ::SOAP::RPC::Driver
     super(endpoint_url, nil)
     self.mapping_registry = DialogServiceMappingRegistry::EncodedRegistry
     self.literal_mapping_registry = DialogServiceMappingRegistry::LiteralRegistry
-    init_methods
+    init_methods
   end
 private
 
@@ -99,7 +98,7 @@ private
               end
             end
 
-  end
+  end
 end
 
 end

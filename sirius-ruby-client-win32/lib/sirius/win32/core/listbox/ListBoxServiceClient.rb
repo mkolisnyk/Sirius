@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-require 'sirius/win32/core/listbox/ListBoxServiceDriver.rb'
+require 'ListBoxServiceDriver.rb'
+
 
 Sirius::Client::Win32::Core::Listbox
 
@@ -10,207 +11,186 @@ obj = ListBox.new(endpoint_url)
 obj.wiredump_dev = STDERR if $DEBUG
 
 # SYNOPSIS
-#   getCount(parameters)
+#   addSelectionByIndex(parameters)
 #
 # ARGS
-#   parameters      GetCount - {http://controls.classes.win32.server.sirius.org/}GetCount
+#   parameters      AddSelectionByIndex - {http://controls.classes.win32.server.sirius.org/}addSelectionByIndex
 #
 # RETURNS
-#   parameters      GetCountResponse - {http://controls.classes.win32.server.sirius.org/}GetCountResponse
+#   parameters      AddSelectionByIndexResponse - {http://controls.classes.win32.server.sirius.org/}addSelectionByIndexResponse
 #
 parameters = nil
-puts obj.getCount(parameters)
+puts obj.addSelectionByIndex(parameters)
 
 # SYNOPSIS
-#   findString(parameters)
+#   addSelectionByName(parameters)
 #
 # ARGS
-#   parameters      FindString - {http://controls.classes.win32.server.sirius.org/}FindString
+#   parameters      AddSelectionByName - {http://controls.classes.win32.server.sirius.org/}addSelectionByName
 #
 # RETURNS
-#   parameters      FindStringResponse - {http://controls.classes.win32.server.sirius.org/}FindStringResponse
+#   parameters      AddSelectionByNameResponse - {http://controls.classes.win32.server.sirius.org/}addSelectionByNameResponse
 #
 parameters = nil
-puts obj.findString(parameters)
+puts obj.addSelectionByName(parameters)
 
 # SYNOPSIS
-#   getCurSel(parameters)
+#   getItemsCount(parameters)
 #
 # ARGS
-#   parameters      GetCurSel - {http://controls.classes.win32.server.sirius.org/}GetCurSel
+#   parameters      GetItemsCount - {http://controls.classes.win32.server.sirius.org/}getItemsCount
 #
 # RETURNS
-#   parameters      GetCurSelResponse - {http://controls.classes.win32.server.sirius.org/}GetCurSelResponse
+#   parameters      GetItemsCountResponse - {http://controls.classes.win32.server.sirius.org/}getItemsCountResponse
 #
 parameters = nil
-puts obj.getCurSel(parameters)
+puts obj.getItemsCount(parameters)
 
 # SYNOPSIS
-#   getText(parameters)
+#   getSelectedItems(parameters)
 #
 # ARGS
-#   parameters      GetText - {http://controls.classes.win32.server.sirius.org/}GetText
+#   parameters      GetSelectedItems - {http://controls.classes.win32.server.sirius.org/}getSelectedItems
 #
 # RETURNS
-#   parameters      GetTextResponse - {http://controls.classes.win32.server.sirius.org/}GetTextResponse
+#   parameters      GetSelectedItemsResponse - {http://controls.classes.win32.server.sirius.org/}getSelectedItemsResponse
 #
 parameters = nil
-puts obj.getText(parameters)
+puts obj.getSelectedItems(parameters)
 
 # SYNOPSIS
-#   selectString(parameters)
+#   selectByIndex(parameters)
 #
 # ARGS
-#   parameters      SelectString - {http://controls.classes.win32.server.sirius.org/}SelectString
+#   parameters      SelectByIndex - {http://controls.classes.win32.server.sirius.org/}selectByIndex
 #
 # RETURNS
-#   parameters      SelectStringResponse - {http://controls.classes.win32.server.sirius.org/}SelectStringResponse
+#   parameters      SelectByIndexResponse - {http://controls.classes.win32.server.sirius.org/}selectByIndexResponse
 #
 parameters = nil
-puts obj.selectString(parameters)
+puts obj.selectByIndex(parameters)
 
 # SYNOPSIS
-#   setCurSel(parameters)
+#   getEndpoint(parameters)
 #
 # ARGS
-#   parameters      SetCurSel - {http://controls.classes.win32.server.sirius.org/}SetCurSel
+#   parameters      GetEndpoint - {http://controls.classes.win32.server.sirius.org/}getEndpoint
 #
 # RETURNS
-#   parameters      SetCurSelResponse - {http://controls.classes.win32.server.sirius.org/}SetCurSelResponse
+#   parameters      GetEndpointResponse - {http://controls.classes.win32.server.sirius.org/}getEndpointResponse
 #
 parameters = nil
-puts obj.setCurSel(parameters)
+puts obj.getEndpoint(parameters)
 
 # SYNOPSIS
-#   getSel(parameters)
+#   removeSelectionByIndex(parameters)
 #
 # ARGS
-#   parameters      GetSel - {http://controls.classes.win32.server.sirius.org/}GetSel
+#   parameters      RemoveSelectionByIndex - {http://controls.classes.win32.server.sirius.org/}removeSelectionByIndex
 #
 # RETURNS
-#   parameters      GetSelResponse - {http://controls.classes.win32.server.sirius.org/}GetSelResponse
+#   parameters      RemoveSelectionByIndexResponse - {http://controls.classes.win32.server.sirius.org/}removeSelectionByIndexResponse
 #
 parameters = nil
-puts obj.getSel(parameters)
+puts obj.removeSelectionByIndex(parameters)
 
 # SYNOPSIS
-#   setSel(parameters)
+#   removeSelectionByName(parameters)
 #
 # ARGS
-#   parameters      SetSel - {http://controls.classes.win32.server.sirius.org/}SetSel
+#   parameters      RemoveSelectionByName - {http://controls.classes.win32.server.sirius.org/}removeSelectionByName
 #
 # RETURNS
-#   parameters      SetSelResponse - {http://controls.classes.win32.server.sirius.org/}SetSelResponse
+#   parameters      RemoveSelectionByNameResponse - {http://controls.classes.win32.server.sirius.org/}removeSelectionByNameResponse
 #
 parameters = nil
-puts obj.setSel(parameters)
+puts obj.removeSelectionByName(parameters)
 
 # SYNOPSIS
-#   getSelCount(parameters)
+#   deselectAll(parameters)
 #
 # ARGS
-#   parameters      GetSelCount - {http://controls.classes.win32.server.sirius.org/}GetSelCount
+#   parameters      DeselectAll - {http://controls.classes.win32.server.sirius.org/}deselectAll
 #
 # RETURNS
-#   parameters      GetSelCountResponse - {http://controls.classes.win32.server.sirius.org/}GetSelCountResponse
+#   parameters      DeselectAllResponse - {http://controls.classes.win32.server.sirius.org/}deselectAllResponse
 #
 parameters = nil
-puts obj.getSelCount(parameters)
+puts obj.deselectAll(parameters)
 
 # SYNOPSIS
-#   getTopIndex(parameters)
+#   getItemNames(parameters)
 #
 # ARGS
-#   parameters      GetTopIndex - {http://controls.classes.win32.server.sirius.org/}GetTopIndex
+#   parameters      GetItemNames - {http://controls.classes.win32.server.sirius.org/}getItemNames
 #
 # RETURNS
-#   parameters      GetTopIndexResponse - {http://controls.classes.win32.server.sirius.org/}GetTopIndexResponse
+#   parameters      GetItemNamesResponse - {http://controls.classes.win32.server.sirius.org/}getItemNamesResponse
 #
 parameters = nil
-puts obj.getTopIndex(parameters)
+puts obj.getItemNames(parameters)
 
 # SYNOPSIS
-#   selItemRange(parameters)
+#   selectByName(parameters)
 #
 # ARGS
-#   parameters      SelItemRange - {http://controls.classes.win32.server.sirius.org/}SelItemRange
+#   parameters      SelectByName - {http://controls.classes.win32.server.sirius.org/}selectByName
 #
 # RETURNS
-#   parameters      SelItemRangeResponse - {http://controls.classes.win32.server.sirius.org/}SelItemRangeResponse
+#   parameters      SelectByNameResponse - {http://controls.classes.win32.server.sirius.org/}selectByNameResponse
 #
 parameters = nil
-puts obj.selItemRange(parameters)
+puts obj.selectByName(parameters)
 
 # SYNOPSIS
-#   getTextLen(parameters)
+#   equals(parameters)
 #
 # ARGS
-#   parameters      GetTextLen - {http://controls.classes.win32.server.sirius.org/}GetTextLen
+#   parameters      Equals - {http://controls.classes.win32.server.sirius.org/}equals
 #
 # RETURNS
-#   parameters      GetTextLenResponse - {http://controls.classes.win32.server.sirius.org/}GetTextLenResponse
+#   parameters      EqualsResponse - {http://controls.classes.win32.server.sirius.org/}equalsResponse
 #
 parameters = nil
-puts obj.getTextLen(parameters)
+puts obj.equals(parameters)
 
 # SYNOPSIS
-#   getItemHeight(parameters)
+#   selectAll(parameters)
 #
 # ARGS
-#   parameters      GetItemHeight - {http://controls.classes.win32.server.sirius.org/}GetItemHeight
+#   parameters      SelectAll - {http://controls.classes.win32.server.sirius.org/}selectAll
 #
 # RETURNS
-#   parameters      GetItemHeightResponse - {http://controls.classes.win32.server.sirius.org/}GetItemHeightResponse
+#   parameters      SelectAllResponse - {http://controls.classes.win32.server.sirius.org/}selectAllResponse
 #
 parameters = nil
-puts obj.getItemHeight(parameters)
+puts obj.selectAll(parameters)
 
 # SYNOPSIS
-#   findStringExact(parameters)
+#   getSelectedIndex(parameters)
 #
 # ARGS
-#   parameters      FindStringExact - {http://controls.classes.win32.server.sirius.org/}FindStringExact
+#   parameters      GetSelectedIndex - {http://controls.classes.win32.server.sirius.org/}getSelectedIndex
 #
 # RETURNS
-#   parameters      FindStringExactResponse - {http://controls.classes.win32.server.sirius.org/}FindStringExactResponse
+#   parameters      GetSelectedIndexResponse - {http://controls.classes.win32.server.sirius.org/}getSelectedIndexResponse
 #
 parameters = nil
-puts obj.findStringExact(parameters)
+puts obj.getSelectedIndex(parameters)
 
 # SYNOPSIS
-#   getHorizontalExtent(parameters)
+#   getSelectedItem(parameters)
 #
 # ARGS
-#   parameters      GetHorizontalExtent - {http://controls.classes.win32.server.sirius.org/}GetHorizontalExtent
+#   parameters      GetSelectedItem - {http://controls.classes.win32.server.sirius.org/}getSelectedItem
 #
 # RETURNS
-#   parameters      GetHorizontalExtentResponse - {http://controls.classes.win32.server.sirius.org/}GetHorizontalExtentResponse
+#   parameters      GetSelectedItemResponse - {http://controls.classes.win32.server.sirius.org/}getSelectedItemResponse
 #
 parameters = nil
-puts obj.getHorizontalExtent(parameters)
+puts obj.getSelectedItem(parameters)
 
-# SYNOPSIS
-#   getCaretIndex(parameters)
-#
-# ARGS
-#   parameters      GetCaretIndex - {http://controls.classes.win32.server.sirius.org/}GetCaretIndex
-#
-# RETURNS
-#   parameters      GetCaretIndexResponse - {http://controls.classes.win32.server.sirius.org/}GetCaretIndexResponse
-#
-parameters = nil
-puts obj.getCaretIndex(parameters)
 
-# SYNOPSIS
-#   setCaretIndex(parameters)
-#
-# ARGS
-#   parameters      SetCaretIndex - {http://controls.classes.win32.server.sirius.org/}SetCaretIndex
-#
-# RETURNS
-#   parameters      SetCaretIndexResponse - {http://controls.classes.win32.server.sirius.org/}SetCaretIndexResponse
-#
-parameters = nil
-puts obj.setCaretIndex(parameters)
+
 
 Sirius::Client::Win32::Core::Listbox

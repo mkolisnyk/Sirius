@@ -19,6 +19,8 @@ module Sirius
           attr_accessor :listbox
           attr_accessor :menu
           attr_accessor :tabcontrol
+          attr_accessor :spin
+          attr_accessor :slider
           attr_accessor :window
 
           def initialize(host = 'localhost', port = '21212')
@@ -32,6 +34,12 @@ module Sirius
             @tabcontrol =
               Tabcontrol::TabControl.new(
                 "http://#{host}:#{port}/win32/tabcontrol")
+            @spin =
+              Spin::Spin.new(
+                "http://#{host}:#{port}/win32/spin")
+            @slider =
+              Slider::Slider.new(
+                "http://#{host}:#{port}/win32/slider")
             @window = Window::Window.new("http://#{host}:#{port}/win32/window")
           end
         end

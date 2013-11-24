@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-require 'sirius/win32/core/dialog/DialogServiceDriver.rb'
+require 'DialogServiceDriver.rb'
+
 
 Sirius::Client::Win32::Core::Dialog
 
@@ -104,5 +105,8 @@ puts obj.setDlgItemInt(parameters)
 #
 parameters = nil
 puts obj.setDlgItemText(parameters)
+
+
+
 
 Sirius::Client::Win32::Core::Dialog

@@ -1,41 +1,64 @@
-require 'sirius/win32/core/button/ButtonService.rb'
-require 'sirius/win32/core/button/ButtonServiceMappingRegistry.rb'
+require 'ButtonService.rb'
+require 'ButtonServiceMappingRegistry.rb'
 require 'soap/rpc/driver'
 
 module Sirius::Client::Win32::Core::Button
 
 
-class Button < ::SOAP::RPC::Driver
-  DefaultEndpointUrl = "http:localhost:21212/win32/button"
+class Button < ::SOAP::RPC::Driver  DefaultEndpointUrl = "http:localhost:21212/win32/button"
   Methods = [
     [ "",
-      "setState",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SetState"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SetStateResponse"]] ],
+      "getCheck",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "getCheck"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "getCheckResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "isPushed",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "isPushed"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "isPushedResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "isChecked",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "isChecked"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "isCheckedResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "setCheck",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SetCheck"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SetCheckResponse"]] ],
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "setCheck"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "setCheckResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "isIntermediate",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "isIntermediate"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "isIntermediateResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "getState",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetState"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetStateResponse"]] ],
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "getState"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "getStateResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
-      "getCheck",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetCheck"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetCheckResponse"]] ],
+      "setState",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "setState"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "setStateResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
@@ -46,7 +69,7 @@ class Button < ::SOAP::RPC::Driver
     super(endpoint_url, nil)
     self.mapping_registry = ButtonServiceMappingRegistry::EncodedRegistry
     self.literal_mapping_registry = ButtonServiceMappingRegistry::LiteralRegistry
-    init_methods
+    init_methods
   end
 private
 
@@ -67,7 +90,7 @@ private
               end
             end
 
-  end
+  end
 end
 
 end

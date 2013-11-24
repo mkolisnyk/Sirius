@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-require 'sirius/win32/core/edit/EditServiceDriver.rb'
+require 'EditServiceDriver.rb'
+
 
 Sirius::Client::Win32::Core::Edit
 
@@ -10,157 +11,13 @@ obj = Edit.new(endpoint_url)
 obj.wiredump_dev = STDERR if $DEBUG
 
 # SYNOPSIS
-#   getLineCount(parameters)
-#
-# ARGS
-#   parameters      GetLineCount - {http://controls.classes.win32.server.sirius.org/}GetLineCount
-#
-# RETURNS
-#   parameters      GetLineCountResponse - {http://controls.classes.win32.server.sirius.org/}GetLineCountResponse
-#
-parameters = nil
-puts obj.getLineCount(parameters)
-
-# SYNOPSIS
-#   lineLength(parameters)
-#
-# ARGS
-#   parameters      LineLength - {http://controls.classes.win32.server.sirius.org/}LineLength
-#
-# RETURNS
-#   parameters      LineLengthResponse - {http://controls.classes.win32.server.sirius.org/}LineLengthResponse
-#
-parameters = nil
-puts obj.lineLength(parameters)
-
-# SYNOPSIS
-#   setText(parameters)
-#
-# ARGS
-#   parameters      SetText - {http://controls.classes.win32.server.sirius.org/}SetText
-#
-# RETURNS
-#   parameters      SetTextResponse - {http://controls.classes.win32.server.sirius.org/}SetTextResponse
-#
-parameters = nil
-puts obj.setText(parameters)
-
-# SYNOPSIS
-#   scroll(parameters)
-#
-# ARGS
-#   parameters      Scroll - {http://controls.classes.win32.server.sirius.org/}Scroll
-#
-# RETURNS
-#   parameters      ScrollResponse - {http://controls.classes.win32.server.sirius.org/}ScrollResponse
-#
-parameters = nil
-puts obj.scroll(parameters)
-
-# SYNOPSIS
-#   canUndo(parameters)
-#
-# ARGS
-#   parameters      CanUndo - {http://controls.classes.win32.server.sirius.org/}CanUndo
-#
-# RETURNS
-#   parameters      CanUndoResponse - {http://controls.classes.win32.server.sirius.org/}CanUndoResponse
-#
-parameters = nil
-puts obj.canUndo(parameters)
-
-# SYNOPSIS
-#   getSel(parameters)
-#
-# ARGS
-#   parameters      GetSel - {http://controls.classes.win32.server.sirius.org/}GetSel
-#
-# RETURNS
-#   parameters      GetSelResponse - {http://controls.classes.win32.server.sirius.org/}GetSelResponse
-#
-parameters = nil
-puts obj.getSel(parameters)
-
-# SYNOPSIS
-#   setSel(parameters)
-#
-# ARGS
-#   parameters      SetSel - {http://controls.classes.win32.server.sirius.org/}SetSel
-#
-# RETURNS
-#   parameters      SetSelResponse - {http://controls.classes.win32.server.sirius.org/}SetSelResponse
-#
-parameters = nil
-puts obj.setSel(parameters)
-
-# SYNOPSIS
-#   replaceSel(parameters)
-#
-# ARGS
-#   parameters      ReplaceSel - {http://controls.classes.win32.server.sirius.org/}ReplaceSel
-#
-# RETURNS
-#   parameters      ReplaceSelResponse - {http://controls.classes.win32.server.sirius.org/}ReplaceSelResponse
-#
-parameters = nil
-puts obj.replaceSel(parameters)
-
-# SYNOPSIS
-#   lineIndex(parameters)
-#
-# ARGS
-#   parameters      LineIndex - {http://controls.classes.win32.server.sirius.org/}LineIndex
-#
-# RETURNS
-#   parameters      LineIndexResponse - {http://controls.classes.win32.server.sirius.org/}LineIndexResponse
-#
-parameters = nil
-puts obj.lineIndex(parameters)
-
-# SYNOPSIS
-#   lineFromChar(parameters)
-#
-# ARGS
-#   parameters      LineFromChar - {http://controls.classes.win32.server.sirius.org/}LineFromChar
-#
-# RETURNS
-#   parameters      LineFromCharResponse - {http://controls.classes.win32.server.sirius.org/}LineFromCharResponse
-#
-parameters = nil
-puts obj.lineFromChar(parameters)
-
-# SYNOPSIS
-#   getModify(parameters)
-#
-# ARGS
-#   parameters      GetModify - {http://controls.classes.win32.server.sirius.org/}GetModify
-#
-# RETURNS
-#   parameters      GetModifyResponse - {http://controls.classes.win32.server.sirius.org/}GetModifyResponse
-#
-parameters = nil
-puts obj.getModify(parameters)
-
-# SYNOPSIS
-#   scrollCaret(parameters)
-#
-# ARGS
-#   parameters      ScrollCaret - {http://controls.classes.win32.server.sirius.org/}ScrollCaret
-#
-# RETURNS
-#   parameters      ScrollCaretResponse - {http://controls.classes.win32.server.sirius.org/}ScrollCaretResponse
-#
-parameters = nil
-puts obj.scrollCaret(parameters)
-
-# SYNOPSIS
 #   emptyUndoBuffer(parameters)
 #
 # ARGS
-#   parameters      EmptyUndoBuffer - {http://controls.classes.win32.server.sirius.org/}EmptyUndoBuffer
+#   parameters      EmptyUndoBuffer - {http://controls.classes.win32.server.sirius.org/}emptyUndoBuffer
 #
 # RETURNS
-#   parameters      EmptyUndoBufferResponse - {http://controls.classes.win32.server.sirius.org/}EmptyUndoBufferResponse
+#   parameters      EmptyUndoBufferResponse - {http://controls.classes.win32.server.sirius.org/}emptyUndoBufferResponse
 #
 parameters = nil
 puts obj.emptyUndoBuffer(parameters)
@@ -169,10 +26,10 @@ puts obj.emptyUndoBuffer(parameters)
 #   getFirstVisibleLine(parameters)
 #
 # ARGS
-#   parameters      GetFirstVisibleLine - {http://controls.classes.win32.server.sirius.org/}GetFirstVisibleLine
+#   parameters      GetFirstVisibleLine - {http://controls.classes.win32.server.sirius.org/}getFirstVisibleLine
 #
 # RETURNS
-#   parameters      GetFirstVisibleLineResponse - {http://controls.classes.win32.server.sirius.org/}GetFirstVisibleLineResponse
+#   parameters      GetFirstVisibleLineResponse - {http://controls.classes.win32.server.sirius.org/}getFirstVisibleLineResponse
 #
 parameters = nil
 puts obj.getFirstVisibleLine(parameters)
@@ -181,10 +38,10 @@ puts obj.getFirstVisibleLine(parameters)
 #   getPasswordChar(parameters)
 #
 # ARGS
-#   parameters      GetPasswordChar - {http://controls.classes.win32.server.sirius.org/}GetPasswordChar
+#   parameters      GetPasswordChar - {http://controls.classes.win32.server.sirius.org/}getPasswordChar
 #
 # RETURNS
-#   parameters      GetPasswordCharResponse - {http://controls.classes.win32.server.sirius.org/}GetPasswordCharResponse
+#   parameters      GetPasswordCharResponse - {http://controls.classes.win32.server.sirius.org/}getPasswordCharResponse
 #
 parameters = nil
 puts obj.getPasswordChar(parameters)
@@ -193,24 +50,183 @@ puts obj.getPasswordChar(parameters)
 #   setPasswordChar(parameters)
 #
 # ARGS
-#   parameters      SetPasswordChar - {http://controls.classes.win32.server.sirius.org/}SetPasswordChar
+#   parameters      SetPasswordChar - {http://controls.classes.win32.server.sirius.org/}setPasswordChar
 #
 # RETURNS
-#   parameters      SetPasswordCharResponse - {http://controls.classes.win32.server.sirius.org/}SetPasswordCharResponse
+#   parameters      SetPasswordCharResponse - {http://controls.classes.win32.server.sirius.org/}setPasswordCharResponse
 #
 parameters = nil
 puts obj.setPasswordChar(parameters)
 
 # SYNOPSIS
+#   getSel(parameters)
+#
+# ARGS
+#   parameters      GetSel - {http://controls.classes.win32.server.sirius.org/}getSel
+#
+# RETURNS
+#   parameters      GetSelResponse - {http://controls.classes.win32.server.sirius.org/}getSelResponse
+#
+parameters = nil
+puts obj.getSel(parameters)
+
+# SYNOPSIS
+#   getModify(parameters)
+#
+# ARGS
+#   parameters      GetModify - {http://controls.classes.win32.server.sirius.org/}getModify
+#
+# RETURNS
+#   parameters      GetModifyResponse - {http://controls.classes.win32.server.sirius.org/}getModifyResponse
+#
+parameters = nil
+puts obj.getModify(parameters)
+
+# SYNOPSIS
+#   lineFromChar(parameters)
+#
+# ARGS
+#   parameters      LineFromChar - {http://controls.classes.win32.server.sirius.org/}lineFromChar
+#
+# RETURNS
+#   parameters      LineFromCharResponse - {http://controls.classes.win32.server.sirius.org/}lineFromCharResponse
+#
+parameters = nil
+puts obj.lineFromChar(parameters)
+
+# SYNOPSIS
+#   lineIndex(parameters)
+#
+# ARGS
+#   parameters      LineIndex - {http://controls.classes.win32.server.sirius.org/}lineIndex
+#
+# RETURNS
+#   parameters      LineIndexResponse - {http://controls.classes.win32.server.sirius.org/}lineIndexResponse
+#
+parameters = nil
+puts obj.lineIndex(parameters)
+
+# SYNOPSIS
+#   lineLength(parameters)
+#
+# ARGS
+#   parameters      LineLength - {http://controls.classes.win32.server.sirius.org/}lineLength
+#
+# RETURNS
+#   parameters      LineLengthResponse - {http://controls.classes.win32.server.sirius.org/}lineLengthResponse
+#
+parameters = nil
+puts obj.lineLength(parameters)
+
+# SYNOPSIS
+#   replaceSel(parameters)
+#
+# ARGS
+#   parameters      ReplaceSel - {http://controls.classes.win32.server.sirius.org/}replaceSel
+#
+# RETURNS
+#   parameters      ReplaceSelResponse - {http://controls.classes.win32.server.sirius.org/}replaceSelResponse
+#
+parameters = nil
+puts obj.replaceSel(parameters)
+
+# SYNOPSIS
+#   scrollCaret(parameters)
+#
+# ARGS
+#   parameters      ScrollCaret - {http://controls.classes.win32.server.sirius.org/}scrollCaret
+#
+# RETURNS
+#   parameters      ScrollCaretResponse - {http://controls.classes.win32.server.sirius.org/}scrollCaretResponse
+#
+parameters = nil
+puts obj.scrollCaret(parameters)
+
+# SYNOPSIS
+#   setSel(parameters)
+#
+# ARGS
+#   parameters      SetSel - {http://controls.classes.win32.server.sirius.org/}setSel
+#
+# RETURNS
+#   parameters      SetSelResponse - {http://controls.classes.win32.server.sirius.org/}setSelResponse
+#
+parameters = nil
+puts obj.setSel(parameters)
+
+# SYNOPSIS
+#   getText(parameters)
+#
+# ARGS
+#   parameters      GetText - {http://controls.classes.win32.server.sirius.org/}getText
+#
+# RETURNS
+#   parameters      GetTextResponse - {http://controls.classes.win32.server.sirius.org/}getTextResponse
+#
+parameters = nil
+puts obj.getText(parameters)
+
+# SYNOPSIS
+#   setText(parameters)
+#
+# ARGS
+#   parameters      SetText - {http://controls.classes.win32.server.sirius.org/}setText
+#
+# RETURNS
+#   parameters      SetTextResponse - {http://controls.classes.win32.server.sirius.org/}setTextResponse
+#
+parameters = nil
+puts obj.setText(parameters)
+
+# SYNOPSIS
 #   undo(parameters)
 #
 # ARGS
-#   parameters      Undo - {http://controls.classes.win32.server.sirius.org/}Undo
+#   parameters      Undo - {http://controls.classes.win32.server.sirius.org/}undo
 #
 # RETURNS
-#   parameters      UndoResponse - {http://controls.classes.win32.server.sirius.org/}UndoResponse
+#   parameters      UndoResponse - {http://controls.classes.win32.server.sirius.org/}undoResponse
 #
 parameters = nil
 puts obj.undo(parameters)
+
+# SYNOPSIS
+#   canUndo(parameters)
+#
+# ARGS
+#   parameters      CanUndo - {http://controls.classes.win32.server.sirius.org/}canUndo
+#
+# RETURNS
+#   parameters      CanUndoResponse - {http://controls.classes.win32.server.sirius.org/}canUndoResponse
+#
+parameters = nil
+puts obj.canUndo(parameters)
+
+# SYNOPSIS
+#   getLineCount(parameters)
+#
+# ARGS
+#   parameters      GetLineCount - {http://controls.classes.win32.server.sirius.org/}getLineCount
+#
+# RETURNS
+#   parameters      GetLineCountResponse - {http://controls.classes.win32.server.sirius.org/}getLineCountResponse
+#
+parameters = nil
+puts obj.getLineCount(parameters)
+
+# SYNOPSIS
+#   scroll(parameters)
+#
+# ARGS
+#   parameters      Scroll - {http://controls.classes.win32.server.sirius.org/}scroll
+#
+# RETURNS
+#   parameters      ScrollResponse - {http://controls.classes.win32.server.sirius.org/}scrollResponse
+#
+parameters = nil
+puts obj.scroll(parameters)
+
+
+
 
 Sirius::Client::Win32::Core::Edit

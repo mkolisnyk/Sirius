@@ -1,145 +1,152 @@
-require 'sirius/win32/core/edit/EditService.rb'
-require 'sirius/win32/core/edit/EditServiceMappingRegistry.rb'
+require 'EditService.rb'
+require 'EditServiceMappingRegistry.rb'
 require 'soap/rpc/driver'
 
 module Sirius::Client::Win32::Core::Edit
 
 
-class Edit < ::SOAP::RPC::Driver
-  DefaultEndpointUrl = "http:localhost:21212/win32/edit"
+class Edit < ::SOAP::RPC::Driver  DefaultEndpointUrl = "http:localhost:21212/win32/edit"
   Methods = [
     [ "",
-      "getLineCount",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetLineCount"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetLineCountResponse"]] ],
-      { :request_style =>  :document, :request_use =>  :literal,
-        :response_style => :document, :response_use => :literal,
-        :faults => {} }
-    ],
-    [ "",
-      "lineLength",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "LineLength"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "LineLengthResponse"]] ],
-      { :request_style =>  :document, :request_use =>  :literal,
-        :response_style => :document, :response_use => :literal,
-        :faults => {} }
-    ],
-    [ "",
-      "setText",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SetText"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SetTextResponse"]] ],
-      { :request_style =>  :document, :request_use =>  :literal,
-        :response_style => :document, :response_use => :literal,
-        :faults => {} }
-    ],
-    [ "",
-      "scroll",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "Scroll"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "ScrollResponse"]] ],
-      { :request_style =>  :document, :request_use =>  :literal,
-        :response_style => :document, :response_use => :literal,
-        :faults => {} }
-    ],
-    [ "",
-      "canUndo",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "CanUndo"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "CanUndoResponse"]] ],
-      { :request_style =>  :document, :request_use =>  :literal,
-        :response_style => :document, :response_use => :literal,
-        :faults => {} }
-    ],
-    [ "",
-      "getSel",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetSel"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetSelResponse"]] ],
-      { :request_style =>  :document, :request_use =>  :literal,
-        :response_style => :document, :response_use => :literal,
-        :faults => {} }
-    ],
-    [ "",
-      "setSel",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SetSel"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SetSelResponse"]] ],
-      { :request_style =>  :document, :request_use =>  :literal,
-        :response_style => :document, :response_use => :literal,
-        :faults => {} }
-    ],
-    [ "",
-      "replaceSel",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "ReplaceSel"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "ReplaceSelResponse"]] ],
-      { :request_style =>  :document, :request_use =>  :literal,
-        :response_style => :document, :response_use => :literal,
-        :faults => {} }
-    ],
-    [ "",
-      "lineIndex",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "LineIndex"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "LineIndexResponse"]] ],
-      { :request_style =>  :document, :request_use =>  :literal,
-        :response_style => :document, :response_use => :literal,
-        :faults => {} }
-    ],
-    [ "",
-      "lineFromChar",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "LineFromChar"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "LineFromCharResponse"]] ],
-      { :request_style =>  :document, :request_use =>  :literal,
-        :response_style => :document, :response_use => :literal,
-        :faults => {} }
-    ],
-    [ "",
-      "getModify",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetModify"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetModifyResponse"]] ],
-      { :request_style =>  :document, :request_use =>  :literal,
-        :response_style => :document, :response_use => :literal,
-        :faults => {} }
-    ],
-    [ "",
-      "scrollCaret",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "ScrollCaret"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "ScrollCaretResponse"]] ],
-      { :request_style =>  :document, :request_use =>  :literal,
-        :response_style => :document, :response_use => :literal,
-        :faults => {} }
-    ],
-    [ "",
       "emptyUndoBuffer",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "EmptyUndoBuffer"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "EmptyUndoBufferResponse"]] ],
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "emptyUndoBuffer"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "emptyUndoBufferResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "getFirstVisibleLine",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetFirstVisibleLine"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetFirstVisibleLineResponse"]] ],
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "getFirstVisibleLine"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "getFirstVisibleLineResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "getPasswordChar",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetPasswordChar"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetPasswordCharResponse"]] ],
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "getPasswordChar"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "getPasswordCharResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "setPasswordChar",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SetPasswordChar"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SetPasswordCharResponse"]] ],
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "setPasswordChar"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "setPasswordCharResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "getSel",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "getSel"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "getSelResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "getModify",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "getModify"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "getModifyResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "lineFromChar",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "lineFromChar"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "lineFromCharResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "lineIndex",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "lineIndex"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "lineIndexResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "lineLength",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "lineLength"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "lineLengthResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "replaceSel",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "replaceSel"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "replaceSelResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "scrollCaret",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "scrollCaret"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "scrollCaretResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "setSel",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "setSel"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "setSelResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "getText",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "getText"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "getTextResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "setText",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "setText"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "setTextResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "undo",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "Undo"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "UndoResponse"]] ],
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "undo"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "undoResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "canUndo",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "canUndo"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "canUndoResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "getLineCount",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "getLineCount"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "getLineCountResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "scroll",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "scroll"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "scrollResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
@@ -150,7 +157,7 @@ class Edit < ::SOAP::RPC::Driver
     super(endpoint_url, nil)
     self.mapping_registry = EditServiceMappingRegistry::EncodedRegistry
     self.literal_mapping_registry = EditServiceMappingRegistry::LiteralRegistry
-    init_methods
+    init_methods
   end
 private
 
@@ -171,7 +178,7 @@ private
               end
             end
 
-  end
+  end
 end
 
 end

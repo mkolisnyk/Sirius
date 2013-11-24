@@ -11,7 +11,8 @@ MKDIR lib\sirius\win32\core\combobox
 MKDIR lib\sirius\win32\core\edit
 MKDIR lib\sirius\win32\core\listbox
 MKDIR lib\sirius\win32\core\tabcontrol
-
+MKDIR lib\sirius\win32\core\slider
+MKDIR lib\sirius\win32\core\spin
 
 cd lib\sirius\win32\core\utils
 wsdl2ruby --wsdl http://localhost:21212/win32/utils?wsdl --type client --module_path Sirius::Client::Win32::Core::Utils
@@ -47,4 +48,12 @@ cd ..\..\..\..\..
 
 cd lib\sirius\win32\core\tabcontrol
 wsdl2ruby --wsdl http://localhost:21212/win32/tabcontrol?wsdl --type client --module_path Sirius::Client::Win32::Core::Tabcontrol
+cd ..\..\..\..\..
+
+cd lib\sirius\win32\core\slider
+wsdl2ruby --wsdl http://localhost:21212/win32/slider?wsdl --type client --module_path Sirius::Client::Win32::Core::Slider
+cd ..\..\..\..\..
+
+cd lib\sirius\win32\core\spin
+wsdl2ruby --wsdl http://localhost:21212/win32/spin?wsdl --type client --module_path Sirius::Client::Win32::Core::Spin
 cd ..\..\..\..\..

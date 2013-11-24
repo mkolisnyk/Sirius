@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-require 'sirius/win32/core/utils/Win32UtilsServiceDriver.rb'
+require 'Win32UtilsServiceDriver.rb'
+
 
 Sirius::Client::Win32::Core::Utils
 
@@ -8,6 +9,18 @@ obj = Win32Utils.new(endpoint_url)
 
 # run ruby with -d to see SOAP wiredumps.
 obj.wiredump_dev = STDERR if $DEBUG
+
+# SYNOPSIS
+#   searchSameThreadWindow(parameters)
+#
+# ARGS
+#   parameters      SearchSameThreadWindow - {http://win32.server.sirius.org/}searchSameThreadWindow
+#
+# RETURNS
+#   parameters      SearchSameThreadWindowResponse - {http://win32.server.sirius.org/}searchSameThreadWindowResponse
+#
+parameters = nil
+puts obj.searchSameThreadWindow(parameters)
 
 # SYNOPSIS
 #   searchWindow(parameters)
@@ -21,16 +34,7 @@ obj.wiredump_dev = STDERR if $DEBUG
 parameters = nil
 puts obj.searchWindow(parameters)
 
-# SYNOPSIS
-#   searchSameThreadWindow(parameters)
-#
-# ARGS
-#   parameters      SearchSameThreadWindow - {http://win32.server.sirius.org/}searchSameThreadWindow
-#
-# RETURNS
-#   parameters      SearchSameThreadWindowResponse - {http://win32.server.sirius.org/}searchSameThreadWindowResponse
-#
-parameters = nil
-puts obj.searchSameThreadWindow(parameters)
+
+
 
 Sirius::Client::Win32::Core::Utils

@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-require 'sirius/win32/core/button/ButtonServiceDriver.rb'
+require 'ButtonServiceDriver.rb'
+
 
 Sirius::Client::Win32::Core::Button
 
@@ -10,51 +11,90 @@ obj = Button.new(endpoint_url)
 obj.wiredump_dev = STDERR if $DEBUG
 
 # SYNOPSIS
-#   setState(parameters)
+#   getCheck(parameters)
 #
 # ARGS
-#   parameters      SetState - {http://controls.classes.win32.server.sirius.org/}SetState
+#   parameters      GetCheck - {http://controls.classes.win32.server.sirius.org/}getCheck
 #
 # RETURNS
-#   parameters      SetStateResponse - {http://controls.classes.win32.server.sirius.org/}SetStateResponse
+#   parameters      GetCheckResponse - {http://controls.classes.win32.server.sirius.org/}getCheckResponse
 #
 parameters = nil
-puts obj.setState(parameters)
+puts obj.getCheck(parameters)
+
+# SYNOPSIS
+#   isPushed(parameters)
+#
+# ARGS
+#   parameters      IsPushed - {http://controls.classes.win32.server.sirius.org/}isPushed
+#
+# RETURNS
+#   parameters      IsPushedResponse - {http://controls.classes.win32.server.sirius.org/}isPushedResponse
+#
+parameters = nil
+puts obj.isPushed(parameters)
+
+# SYNOPSIS
+#   isChecked(parameters)
+#
+# ARGS
+#   parameters      IsChecked - {http://controls.classes.win32.server.sirius.org/}isChecked
+#
+# RETURNS
+#   parameters      IsCheckedResponse - {http://controls.classes.win32.server.sirius.org/}isCheckedResponse
+#
+parameters = nil
+puts obj.isChecked(parameters)
 
 # SYNOPSIS
 #   setCheck(parameters)
 #
 # ARGS
-#   parameters      SetCheck - {http://controls.classes.win32.server.sirius.org/}SetCheck
+#   parameters      SetCheck - {http://controls.classes.win32.server.sirius.org/}setCheck
 #
 # RETURNS
-#   parameters      SetCheckResponse - {http://controls.classes.win32.server.sirius.org/}SetCheckResponse
+#   parameters      SetCheckResponse - {http://controls.classes.win32.server.sirius.org/}setCheckResponse
 #
 parameters = nil
 puts obj.setCheck(parameters)
 
 # SYNOPSIS
+#   isIntermediate(parameters)
+#
+# ARGS
+#   parameters      IsIntermediate - {http://controls.classes.win32.server.sirius.org/}isIntermediate
+#
+# RETURNS
+#   parameters      IsIntermediateResponse - {http://controls.classes.win32.server.sirius.org/}isIntermediateResponse
+#
+parameters = nil
+puts obj.isIntermediate(parameters)
+
+# SYNOPSIS
 #   getState(parameters)
 #
 # ARGS
-#   parameters      GetState - {http://controls.classes.win32.server.sirius.org/}GetState
+#   parameters      GetState - {http://controls.classes.win32.server.sirius.org/}getState
 #
 # RETURNS
-#   parameters      GetStateResponse - {http://controls.classes.win32.server.sirius.org/}GetStateResponse
+#   parameters      GetStateResponse - {http://controls.classes.win32.server.sirius.org/}getStateResponse
 #
 parameters = nil
 puts obj.getState(parameters)
 
 # SYNOPSIS
-#   getCheck(parameters)
+#   setState(parameters)
 #
 # ARGS
-#   parameters      GetCheck - {http://controls.classes.win32.server.sirius.org/}GetCheck
+#   parameters      SetState - {http://controls.classes.win32.server.sirius.org/}setState
 #
 # RETURNS
-#   parameters      GetCheckResponse - {http://controls.classes.win32.server.sirius.org/}GetCheckResponse
+#   parameters      SetStateResponse - {http://controls.classes.win32.server.sirius.org/}setStateResponse
 #
 parameters = nil
-puts obj.getCheck(parameters)
+puts obj.setState(parameters)
+
+
+
 
 Sirius::Client::Win32::Core::Button

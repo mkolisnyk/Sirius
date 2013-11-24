@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-require 'sirius/win32/core/menu/MenuServiceDriver.rb'
+require 'MenuServiceDriver.rb'
+
 
 Sirius::Client::Win32::Core::Menu
 
@@ -10,25 +11,13 @@ obj = Menu.new(endpoint_url)
 obj.wiredump_dev = STDERR if $DEBUG
 
 # SYNOPSIS
-#   isMenu(parameters)
-#
-# ARGS
-#   parameters      IsMenu - {http://classes.win32.server.sirius.org/}IsMenu
-#
-# RETURNS
-#   parameters      IsMenuResponse - {http://classes.win32.server.sirius.org/}IsMenuResponse
-#
-parameters = nil
-puts obj.isMenu(parameters)
-
-# SYNOPSIS
 #   getMenuInfo(parameters)
 #
 # ARGS
-#   parameters      GetMenuInfo - {http://classes.win32.server.sirius.org/}GetMenuInfo
+#   parameters      GetMenuInfo - {http://classes.win32.server.sirius.org/}getMenuInfo
 #
 # RETURNS
-#   parameters      GetMenuInfoResponse - {http://classes.win32.server.sirius.org/}GetMenuInfoResponse
+#   parameters      GetMenuInfoResponse - {http://classes.win32.server.sirius.org/}getMenuInfoResponse
 #
 parameters = nil
 puts obj.getMenuInfo(parameters)
@@ -37,10 +26,10 @@ puts obj.getMenuInfo(parameters)
 #   getMenuState(parameters)
 #
 # ARGS
-#   parameters      GetMenuState - {http://classes.win32.server.sirius.org/}GetMenuState
+#   parameters      GetMenuState - {http://classes.win32.server.sirius.org/}getMenuState
 #
 # RETURNS
-#   parameters      GetMenuStateResponse - {http://classes.win32.server.sirius.org/}GetMenuStateResponse
+#   parameters      GetMenuStateResponse - {http://classes.win32.server.sirius.org/}getMenuStateResponse
 #
 parameters = nil
 puts obj.getMenuState(parameters)
@@ -49,85 +38,25 @@ puts obj.getMenuState(parameters)
 #   getSubMenu(parameters)
 #
 # ARGS
-#   parameters      GetSubMenu - {http://classes.win32.server.sirius.org/}GetSubMenu
+#   parameters      GetSubMenu - {http://classes.win32.server.sirius.org/}getSubMenu
 #
 # RETURNS
-#   parameters      GetSubMenuResponse - {http://classes.win32.server.sirius.org/}GetSubMenuResponse
+#   parameters      GetSubMenuResponse - {http://classes.win32.server.sirius.org/}getSubMenuResponse
 #
 parameters = nil
 puts obj.getSubMenu(parameters)
 
 # SYNOPSIS
-#   getMenuItemRect(parameters)
+#   isMenu(parameters)
 #
 # ARGS
-#   parameters      GetMenuItemRect - {http://classes.win32.server.sirius.org/}GetMenuItemRect
+#   parameters      IsMenu - {http://classes.win32.server.sirius.org/}isMenu
 #
 # RETURNS
-#   parameters      GetMenuItemRectResponse - {http://classes.win32.server.sirius.org/}GetMenuItemRectResponse
+#   parameters      IsMenuResponse - {http://classes.win32.server.sirius.org/}isMenuResponse
 #
 parameters = nil
-puts obj.getMenuItemRect(parameters)
-
-# SYNOPSIS
-#   getMenuDefaultItem(parameters)
-#
-# ARGS
-#   parameters      GetMenuDefaultItem - {http://classes.win32.server.sirius.org/}GetMenuDefaultItem
-#
-# RETURNS
-#   parameters      GetMenuDefaultItemResponse - {http://classes.win32.server.sirius.org/}GetMenuDefaultItemResponse
-#
-parameters = nil
-puts obj.getMenuDefaultItem(parameters)
-
-# SYNOPSIS
-#   getMenuItemCount(parameters)
-#
-# ARGS
-#   parameters      GetMenuItemCount - {http://classes.win32.server.sirius.org/}GetMenuItemCount
-#
-# RETURNS
-#   parameters      GetMenuItemCountResponse - {http://classes.win32.server.sirius.org/}GetMenuItemCountResponse
-#
-parameters = nil
-puts obj.getMenuItemCount(parameters)
-
-# SYNOPSIS
-#   getMenuItemID(parameters)
-#
-# ARGS
-#   parameters      GetMenuItemID - {http://classes.win32.server.sirius.org/}GetMenuItemID
-#
-# RETURNS
-#   parameters      GetMenuItemIDResponse - {http://classes.win32.server.sirius.org/}GetMenuItemIDResponse
-#
-parameters = nil
-puts obj.getMenuItemID(parameters)
-
-# SYNOPSIS
-#   getMenuItemInfo(parameters)
-#
-# ARGS
-#   parameters      GetMenuItemInfo - {http://classes.win32.server.sirius.org/}GetMenuItemInfo
-#
-# RETURNS
-#   parameters      GetMenuItemInfoResponse - {http://classes.win32.server.sirius.org/}GetMenuItemInfoResponse
-#
-parameters = nil
-puts obj.getMenuItemInfo(parameters)
-
-# SYNOPSIS
-#   getMenuString(parameters)
-#
-# ARGS
-#   parameters      GetMenuString - {http://classes.win32.server.sirius.org/}GetMenuString
-#
-# RETURNS
-#   parameters      GetMenuStringResponse - {http://classes.win32.server.sirius.org/}GetMenuStringResponse
-#
-parameters = nil
-puts obj.getMenuString(parameters)
+puts obj.isMenu(parameters)
 
 # SYNOPSIS
 #   pickItem(parameters)
@@ -140,5 +69,80 @@ puts obj.getMenuString(parameters)
 #
 parameters = nil
 puts obj.pickItem(parameters)
+
+# SYNOPSIS
+#   getMenuDefaultItem(parameters)
+#
+# ARGS
+#   parameters      GetMenuDefaultItem - {http://classes.win32.server.sirius.org/}getMenuDefaultItem
+#
+# RETURNS
+#   parameters      GetMenuDefaultItemResponse - {http://classes.win32.server.sirius.org/}getMenuDefaultItemResponse
+#
+parameters = nil
+puts obj.getMenuDefaultItem(parameters)
+
+# SYNOPSIS
+#   getMenuItemCount(parameters)
+#
+# ARGS
+#   parameters      GetMenuItemCount - {http://classes.win32.server.sirius.org/}getMenuItemCount
+#
+# RETURNS
+#   parameters      GetMenuItemCountResponse - {http://classes.win32.server.sirius.org/}getMenuItemCountResponse
+#
+parameters = nil
+puts obj.getMenuItemCount(parameters)
+
+# SYNOPSIS
+#   getMenuItemID(parameters)
+#
+# ARGS
+#   parameters      GetMenuItemID - {http://classes.win32.server.sirius.org/}getMenuItemID
+#
+# RETURNS
+#   parameters      GetMenuItemIDResponse - {http://classes.win32.server.sirius.org/}getMenuItemIDResponse
+#
+parameters = nil
+puts obj.getMenuItemID(parameters)
+
+# SYNOPSIS
+#   getMenuItemInfo(parameters)
+#
+# ARGS
+#   parameters      GetMenuItemInfo - {http://classes.win32.server.sirius.org/}getMenuItemInfo
+#
+# RETURNS
+#   parameters      GetMenuItemInfoResponse - {http://classes.win32.server.sirius.org/}getMenuItemInfoResponse
+#
+parameters = nil
+puts obj.getMenuItemInfo(parameters)
+
+# SYNOPSIS
+#   getMenuItemRect(parameters)
+#
+# ARGS
+#   parameters      GetMenuItemRect - {http://classes.win32.server.sirius.org/}getMenuItemRect
+#
+# RETURNS
+#   parameters      GetMenuItemRectResponse - {http://classes.win32.server.sirius.org/}getMenuItemRectResponse
+#
+parameters = nil
+puts obj.getMenuItemRect(parameters)
+
+# SYNOPSIS
+#   getMenuString(parameters)
+#
+# ARGS
+#   parameters      GetMenuString - {http://classes.win32.server.sirius.org/}getMenuString
+#
+# RETURNS
+#   parameters      GetMenuStringResponse - {http://classes.win32.server.sirius.org/}getMenuStringResponse
+#
+parameters = nil
+puts obj.getMenuString(parameters)
+
+
+
 
 Sirius::Client::Win32::Core::Menu

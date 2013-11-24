@@ -1,81 +1,112 @@
-require 'sirius/win32/core/tabcontrol/TabControlService.rb'
-require 'sirius/win32/core/tabcontrol/TabControlServiceMappingRegistry.rb'
+require 'TabControlService.rb'
+require 'TabControlServiceMappingRegistry.rb'
 require 'soap/rpc/driver'
 
 module Sirius::Client::Win32::Core::Tabcontrol
 
 
-class TabControl < ::SOAP::RPC::Driver
-  DefaultEndpointUrl = "http:localhost:21212/win32/tabcontrol"
+class TabControl < ::SOAP::RPC::Driver  DefaultEndpointUrl = "http:localhost:21212/win32/tabcontrol"
   Methods = [
     [ "",
+      "getSelectedItem",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetSelectedItem"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetSelectedItemResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "selectByIndex",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SelectByIndex"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SelectByIndexResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "getItemNames",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetItemNames"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetItemNamesResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
       "getCurSel",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetCurSel"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetCurSelResponse"]] ],
-      { :request_style =>  :document, :request_use =>  :literal,
-        :response_style => :document, :response_use => :literal,
-        :faults => {} }
-    ],
-    [ "",
-      "setCurSel",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SetCurSel"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SetCurSelResponse"]] ],
-      { :request_style =>  :document, :request_use =>  :literal,
-        :response_style => :document, :response_use => :literal,
-        :faults => {} }
-    ],
-    [ "",
-      "getItemCount",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetItemCount"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetItemCountResponse"]] ],
-      { :request_style =>  :document, :request_use =>  :literal,
-        :response_style => :document, :response_use => :literal,
-        :faults => {} }
-    ],
-    [ "",
-      "getCurFocus",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetCurFocus"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetCurFocusResponse"]] ],
-      { :request_style =>  :document, :request_use =>  :literal,
-        :response_style => :document, :response_use => :literal,
-        :faults => {} }
-    ],
-    [ "",
-      "hitTest",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "HitTest"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "HitTestResponse"]] ],
-      { :request_style =>  :document, :request_use =>  :literal,
-        :response_style => :document, :response_use => :literal,
-        :faults => {} }
-    ],
-    [ "",
-      "getRowCount",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetRowCount"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetRowCountResponse"]] ],
-      { :request_style =>  :document, :request_use =>  :literal,
-        :response_style => :document, :response_use => :literal,
-        :faults => {} }
-    ],
-    [ "",
-      "getItemRect",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetItemRect"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetItemRectResponse"]] ],
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetCurSel"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetCurSelResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "setCurFocus",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SetCurFocus"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SetCurFocusResponse"]] ],
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SetCurFocus"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SetCurFocusResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "getItemRect",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetItemRect"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetItemRectResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "setCurSel",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SetCurSel"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SetCurSelResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "getCurFocus",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetCurFocus"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetCurFocusResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "select",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "Select"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "SelectResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "hitTest",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "HitTest"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "HitTestResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "getItemCount",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetItemCount"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetItemCountResponse"]] ],
+      { :request_style =>  :document, :request_use =>  :literal,
+        :response_style => :document, :response_use => :literal,
+        :faults => {} }
+    ],
+    [ "",
+      "getRowCount",
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetRowCount"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetRowCountResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
     [ "",
       "getItem",
-      [ [SOAP::RPC::SOAPMethod::IN, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetItem"]],
-        [SOAP::RPC::SOAPMethod::OUT, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetItemResponse"]] ],
+      [ [:in, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetItem"]],
+        [:out, "parameters", ["::SOAP::SOAPElement", "http:controls.classes.win32.server.sirius.org/", "GetItemResponse"]] ],
       { :request_style =>  :document, :request_use =>  :literal,
         :response_style => :document, :response_use => :literal,
         :faults => {} }
@@ -86,7 +117,7 @@ class TabControl < ::SOAP::RPC::Driver
     super(endpoint_url, nil)
     self.mapping_registry = TabControlServiceMappingRegistry::EncodedRegistry
     self.literal_mapping_registry = TabControlServiceMappingRegistry::LiteralRegistry
-    init_methods
+    init_methods
   end
 private
 
@@ -107,7 +138,7 @@ private
               end
             end
 
-  end
+  end
 end
 
 end

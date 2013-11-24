@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-require 'sirius/win32/core/window/WindowServiceDriver.rb'
+require 'WindowServiceDriver.rb'
+
 
 Sirius::Client::Win32::Core::Window
 
@@ -8,42 +9,6 @@ obj = Window.new(endpoint_url)
 
 # run ruby with -d to see SOAP wiredumps.
 obj.wiredump_dev = STDERR if $DEBUG
-
-# SYNOPSIS
-#   getWindowPlacement(parameters)
-#
-# ARGS
-#   parameters      GetWindowPlacement - {http://classes.win32.server.sirius.org/}getWindowPlacement
-#
-# RETURNS
-#   parameters      GetWindowPlacementResponse - {http://classes.win32.server.sirius.org/}getWindowPlacementResponse
-#
-parameters = nil
-puts obj.getWindowPlacement(parameters)
-
-# SYNOPSIS
-#   getSystemMenu(parameters)
-#
-# ARGS
-#   parameters      GetSystemMenu - {http://classes.win32.server.sirius.org/}getSystemMenu
-#
-# RETURNS
-#   parameters      GetSystemMenuResponse - {http://classes.win32.server.sirius.org/}getSystemMenuResponse
-#
-parameters = nil
-puts obj.getSystemMenu(parameters)
-
-# SYNOPSIS
-#   getClientRect(parameters)
-#
-# ARGS
-#   parameters      GetClientRect - {http://classes.win32.server.sirius.org/}getClientRect
-#
-# RETURNS
-#   parameters      GetClientRectResponse - {http://classes.win32.server.sirius.org/}getClientRectResponse
-#
-parameters = nil
-puts obj.getClientRect(parameters)
 
 # SYNOPSIS
 #   doubleClick(parameters)
@@ -56,18 +21,6 @@ puts obj.getClientRect(parameters)
 #
 parameters = nil
 puts obj.doubleClick(parameters)
-
-# SYNOPSIS
-#   keyPress(parameters)
-#
-# ARGS
-#   parameters      KeyPress - {http://classes.win32.server.sirius.org/}keyPress
-#
-# RETURNS
-#   parameters      KeyPressResponse - {http://classes.win32.server.sirius.org/}keyPressResponse
-#
-parameters = nil
-puts obj.keyPress(parameters)
 
 # SYNOPSIS
 #   getRect(parameters)
@@ -130,6 +83,18 @@ parameters = nil
 puts obj.isWindow(parameters)
 
 # SYNOPSIS
+#   keyPress(parameters)
+#
+# ARGS
+#   parameters      KeyPress - {http://classes.win32.server.sirius.org/}keyPress
+#
+# RETURNS
+#   parameters      KeyPressResponse - {http://classes.win32.server.sirius.org/}keyPressResponse
+#
+parameters = nil
+puts obj.keyPress(parameters)
+
+# SYNOPSIS
 #   sizeTo(parameters)
 #
 # ARGS
@@ -140,6 +105,54 @@ puts obj.isWindow(parameters)
 #
 parameters = nil
 puts obj.sizeTo(parameters)
+
+# SYNOPSIS
+#   getClientRect(parameters)
+#
+# ARGS
+#   parameters      GetClientRect - {http://classes.win32.server.sirius.org/}getClientRect
+#
+# RETURNS
+#   parameters      GetClientRectResponse - {http://classes.win32.server.sirius.org/}getClientRectResponse
+#
+parameters = nil
+puts obj.getClientRect(parameters)
+
+# SYNOPSIS
+#   getDesktopWindow(parameters)
+#
+# ARGS
+#   parameters      GetDesktopWindow - {http://classes.win32.server.sirius.org/}getDesktopWindow
+#
+# RETURNS
+#   parameters      GetDesktopWindowResponse - {http://classes.win32.server.sirius.org/}getDesktopWindowResponse
+#
+parameters = nil
+puts obj.getDesktopWindow(parameters)
+
+# SYNOPSIS
+#   getWindowPlacement(parameters)
+#
+# ARGS
+#   parameters      GetWindowPlacement - {http://classes.win32.server.sirius.org/}getWindowPlacement
+#
+# RETURNS
+#   parameters      GetWindowPlacementResponse - {http://classes.win32.server.sirius.org/}getWindowPlacementResponse
+#
+parameters = nil
+puts obj.getWindowPlacement(parameters)
+
+# SYNOPSIS
+#   getSystemMenu(parameters)
+#
+# ARGS
+#   parameters      GetSystemMenu - {http://classes.win32.server.sirius.org/}getSystemMenu
+#
+# RETURNS
+#   parameters      GetSystemMenuResponse - {http://classes.win32.server.sirius.org/}getSystemMenuResponse
+#
+parameters = nil
+puts obj.getSystemMenu(parameters)
 
 # SYNOPSIS
 #   start(parameters)
@@ -356,5 +369,8 @@ puts obj.getMenu(parameters)
 #
 parameters = nil
 puts obj.isNormal(parameters)
+
+
+
 
 Sirius::Client::Win32::Core::Window

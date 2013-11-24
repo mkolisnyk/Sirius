@@ -3,7 +3,10 @@ module Sirius
     module Win32
       module Classes
         module Controls
-          class RadioButton
+          class RadioButton < Control
+            def initialize(locator, parent = nil)
+              super(locator, parent)
+            end
           end
         end
       end
