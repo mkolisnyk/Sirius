@@ -170,11 +170,17 @@ public class Starter {
 
 				String packageFile = findMatchingFile(option
 						.get_packageLocation());
+				
+				logger.info("Matching location found:"
+                        + packageFile);
+				
 				File location = new File(packageFile);
 
 				URL[] url = {
 						location.getAbsoluteFile().toURI().toURL()
 				};
+                logger.info("Matching location URL:"
+                        + url[0]);
 				loader = new URLClassLoader(url, this.getClass()
 						.getClassLoader());
 			} else {

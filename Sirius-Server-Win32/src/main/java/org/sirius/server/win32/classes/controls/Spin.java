@@ -5,6 +5,8 @@ package org.sirius.server.win32.classes.controls;
 
 import java.rmi.RemoteException;
 
+import javax.jws.WebService;
+
 import org.sirius.server.win32.classes.Common;
 import org.sirius.server.win32lib.controls.Win32LibControlsClient;
 
@@ -12,9 +14,10 @@ import org.sirius.server.win32lib.controls.Win32LibControlsClient;
  * @author Myk Kolisnyk
  *
  */
+@WebService
 public class Spin  extends Common {
 
-    Win32LibControlsClient win32lib;    
+    private final Win32LibControlsClient win32lib;    
     
     /**
      * 

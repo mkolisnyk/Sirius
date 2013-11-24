@@ -7,7 +7,7 @@
 	<name>sirius.client.web</name>
 	<url>https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Web</url>
 	<description>Sirius Java Web client</description>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
@@ -394,7 +394,7 @@
 					<encoding>Cp1251</encoding>
 				</configuration>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>findbugs-maven-plugin</artifactId>
 				<version>2.5.2</version>
@@ -433,7 +433,7 @@
 						</reports>
 					</reportSet>
 				</reportSets>
-			</plugin>
+			</plugin>-->
 		</plugins>
 	</reporting>
 </project>

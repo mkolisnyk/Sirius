@@ -40,7 +40,7 @@ public class ComboBox extends Common implements IComboBoxConsts {
      * @param data .
      * @return .
      */
-    public final int findItemData(final long hwndCtl, final int indexStart,
+    public int findItemData(final long hwndCtl, final int indexStart,
             final LPARAM data) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(indexStart);
@@ -54,7 +54,7 @@ public class ComboBox extends Common implements IComboBoxConsts {
      * @param lpszFind .
      * @return .
      */
-    public final int findString(final long hwndCtl, final int indexStart,
+    public int findString(final long hwndCtl, final int indexStart,
             final String lpszFind) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(indexStart);
@@ -71,7 +71,7 @@ public class ComboBox extends Common implements IComboBoxConsts {
      * @param lpszFind .
      * @return .
      */
-    public final int findStringExact(final long hwndCtl, final int indexStart,
+    public int findStringExact(final long hwndCtl, final int indexStart,
             final String lpszFind) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(indexStart);
@@ -90,7 +90,7 @@ public class ComboBox extends Common implements IComboBoxConsts {
      * @param hwndCtl .
      * @return .
      */
-    public final int getCount(final long hwndCtl) {
+    public int getCount(final long hwndCtl) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(0);
         LPARAM lParam = new LPARAM(0);
@@ -102,7 +102,7 @@ public class ComboBox extends Common implements IComboBoxConsts {
      * @param hwndCtl .
      * @return .
      */
-    public final int getCurSel(final long hwndCtl) {
+    public int getCurSel(final long hwndCtl) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(0);
         LPARAM lParam = new LPARAM(0);
@@ -114,7 +114,7 @@ public class ComboBox extends Common implements IComboBoxConsts {
      * @param hwndCtl .
      * @return .
      */
-    public final int getDroppedState(final long hwndCtl) {
+    public int getDroppedState(final long hwndCtl) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(0);
         LPARAM lParam = new LPARAM(0);
@@ -130,7 +130,7 @@ public class ComboBox extends Common implements IComboBoxConsts {
      * @param hwndCtl .
      * @return .
      */
-    public final int getEditSel(final long hwndCtl) {
+    public int getEditSel(final long hwndCtl) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(0);
         LPARAM lParam = new LPARAM(0);
@@ -142,7 +142,7 @@ public class ComboBox extends Common implements IComboBoxConsts {
      * @param hwndCtl .
      * @return .
      */
-    public final int getExtendedUI(final long hwndCtl) {
+    public int getExtendedUI(final long hwndCtl) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(0);
         LPARAM lParam = new LPARAM(0);
@@ -155,7 +155,7 @@ public class ComboBox extends Common implements IComboBoxConsts {
      * @param index .
      * @return .
      */
-    public final int getItemData(final long hwndCtl, final int index) {
+    public int getItemData(final long hwndCtl, final int index) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(index);
         LPARAM lParam = new LPARAM(0);
@@ -168,7 +168,7 @@ public class ComboBox extends Common implements IComboBoxConsts {
      * @param hwndCtl .
      * @return .
      */
-    public final int getItemHeight(final long hwndCtl) {
+    public int getItemHeight(final long hwndCtl) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(0);
         LPARAM lParam = new LPARAM(0);
@@ -182,7 +182,7 @@ public class ComboBox extends Common implements IComboBoxConsts {
      * @param lpszBuffer .
      * @return .
      */
-    public final int getLBText(final long hwndCtl, final int index,
+    public int getLBText(final long hwndCtl, final int index,
             final String lpszBuffer) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(index);
@@ -198,7 +198,7 @@ public class ComboBox extends Common implements IComboBoxConsts {
      * @param index .
      * @return .
      */
-    public final int getLBTextLen(final long hwndCtl, final int index) {
+    public int getLBTextLen(final long hwndCtl, final int index) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(index);
         LPARAM lParam = new LPARAM(0);
@@ -210,7 +210,7 @@ public class ComboBox extends Common implements IComboBoxConsts {
      * @param hwndCtl .
      * @return .
      */
-    public final String getText(final long hwndCtl) {
+    public String getText(final long hwndCtl) {
         HWND hWnd = longToHwnd(hwndCtl);
         int length = getTextLength(hwndCtl);
         char[] buf = new char[length];
@@ -223,7 +223,7 @@ public class ComboBox extends Common implements IComboBoxConsts {
      * @param hwndCtl .
      * @return .
      */
-    public final int getTextLength(final long hwndCtl) {
+    public int getTextLength(final long hwndCtl) {
         HWND hWnd = longToHwnd(hwndCtl);
         return getUser32().GetWindowTextLength(hWnd);
     }
@@ -233,7 +233,7 @@ public class ComboBox extends Common implements IComboBoxConsts {
      * @param hwndCtl .
      * @return .
      */
-    public final int resetContent(final long hwndCtl) {
+    public int resetContent(final long hwndCtl) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(0);
         LPARAM lParam = new LPARAM(0);
@@ -247,7 +247,7 @@ public class ComboBox extends Common implements IComboBoxConsts {
      * @param lpszSelect .
      * @return .
      */
-    public final int selectString(final long hwndCtl, final int indexStart,
+    public int selectString(final long hwndCtl, final int indexStart,
             final String lpszSelect) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(indexStart);
@@ -264,7 +264,7 @@ public class ComboBox extends Common implements IComboBoxConsts {
      * @param index .
      * @return .
      */
-    public final int setCurSel(final long hwndCtl, final int index) {
+    public int setCurSel(final long hwndCtl, final int index) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(index);
         LPARAM lParam = new LPARAM(0);
@@ -278,7 +278,7 @@ public class ComboBox extends Common implements IComboBoxConsts {
      * @param ichEnd .
      * @return .
      */
-    public final int setEditSel(final long hwndCtl, final int ichStart,
+    public int setEditSel(final long hwndCtl, final int ichStart,
             final int ichEnd) {
         HWND hWnd = longToHwnd(hwndCtl);
         return getUser32().SendMessage(hWnd, CB_SETEDITSEL, new WPARAM(0L),
@@ -292,7 +292,7 @@ public class ComboBox extends Common implements IComboBoxConsts {
      * @param cyItem .
      * @return .
      */
-    public final int setItemHeight(final long hwndCtl, final int index,
+    public int setItemHeight(final long hwndCtl, final int index,
             final int cyItem) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(index);
@@ -305,7 +305,7 @@ public class ComboBox extends Common implements IComboBoxConsts {
      * @param hwndCtl .
      * @param lpsz .
      */
-    public final void setText(final long hwndCtl, final String lpsz) {
+    public void setText(final long hwndCtl, final String lpsz) {
         HWND hWnd = longToHwnd(hwndCtl);
         getUser32().SetWindowText(hWnd, lpsz.toCharArray());
     }
@@ -316,7 +316,7 @@ public class ComboBox extends Common implements IComboBoxConsts {
      * @param fShow .
      * @return .
      */
-    public final int showDropdown(final long hwndCtl, final boolean fShow) {
+    public int showDropdown(final long hwndCtl, final boolean fShow) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(fShow ? 1 : 0);
         LPARAM lParam = new LPARAM(0);

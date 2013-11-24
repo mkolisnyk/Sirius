@@ -10,6 +10,7 @@ import org.sirius.client.win32.core.controls.button.ButtonProxy;
 import org.sirius.client.win32.core.controls.combobox.ComboBoxProxy;
 import org.sirius.client.win32.core.controls.edit.EditProxy;
 import org.sirius.client.win32.core.controls.listbox.ListBoxProxy;
+import org.sirius.client.win32.core.controls.slider.SliderProxy;
 import org.sirius.client.win32.core.controls.tabcontrol.TabControlProxy;
 
 /**
@@ -50,7 +51,11 @@ public class Win32CoreClient {
      * .
      */
     private final TabControlProxy tabcontrol;
-
+    /**
+     * .
+     */
+    private final SliderProxy slider;
+    
     /**
      * .
      */
@@ -64,6 +69,7 @@ public class Win32CoreClient {
         edit = new EditProxy();
         listbox = new ListBoxProxy();
         tabcontrol = new TabControlProxy();
+        slider = new SliderProxy();
     }
 
     /**
@@ -114,6 +120,13 @@ public class Win32CoreClient {
      */
     public final TabControlProxy tabcontrol() {
         return tabcontrol;
+    }
+
+    /**
+     * @return the slider
+     */
+    public SliderProxy slider() {
+        return slider;
     }
 
     /**

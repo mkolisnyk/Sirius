@@ -30,7 +30,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * .
      * @param hwnd .
      */
-    public final void activate(final long hwnd) {
+    public void activate(final long hwnd) {
         HWND handle = longToHwnd(hwnd);
         getUser32().SetForegroundWindow(handle);
     }
@@ -45,7 +45,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param isAlt .
      * @param isShift .
      */
-    public final void click(final long hwnd, final int button, final int x,
+    public void click(final long hwnd, final int button, final int x,
             final int y, final boolean isControl, final boolean isAlt,
             final boolean isShift) {
         mouseDown(hwnd, button, x, y, isControl, isAlt, isShift);
@@ -56,7 +56,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * .
      * @param hwnd .
      */
-    public final void close(final long hwnd) {
+    public void close(final long hwnd) {
         HWND handle = longToHwnd(hwnd);
         WPARAM wParam = new WPARAM();
         LPARAM lParam = new LPARAM();
@@ -76,7 +76,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param isAlt .
      * @param isShift .
      */
-    public final void doubleClick(
+    public void doubleClick(
             final long hwnd,
             final int button,
             final int x,
@@ -115,14 +115,14 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param hwnd .
      * @return .
      */
-    public final RECT getClientRect(final long hwnd) {
+    public RECT getClientRect(final long hwnd) {
         RECT result = new RECT();
         HWND handle = longToHwnd(hwnd);
         getUser32().GetClientRect(handle, result);
         return result;
     }
 
-    public final long getDesktopWindow(){
+    public long getDesktopWindow(){
         return 0;
     }
     
@@ -131,7 +131,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param hwnd .
      * @return .
      */
-    public final long getMenu(final long hwnd) {
+    public long getMenu(final long hwnd) {
         HWND handle = longToHwnd(hwnd);
         HMENU hmenu = getUser32().GetMenu(handle);
         return Pointer.nativeValue(hmenu.getPointer());
@@ -142,7 +142,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param hwnd .
      * @return .
      */
-    public final RECT getRect(final long hwnd) {
+    public RECT getRect(final long hwnd) {
         RECT result = new RECT();
         HWND handle = longToHwnd(hwnd);
         getUser32().GetWindowRect(handle, result);
@@ -155,7 +155,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param revert .
      * @return .
      */
-    public final long getSystemMenu(final long hwnd, final boolean revert) {
+    public long getSystemMenu(final long hwnd, final boolean revert) {
         HWND handle = longToHwnd(hwnd);
         HMENU hmenu = getUser32().GetSystemMenu(handle, revert);
         return Pointer.nativeValue(hmenu.getPointer());
@@ -166,7 +166,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param hwnd .
      * @return .
      */
-    public final String getText(final long hwnd) {
+    public String getText(final long hwnd) {
         HWND handle = longToHwnd(hwnd);
         int length = getUser32().GetWindowTextLength(handle) + 1;
         char[] buf = new char[length];
@@ -182,7 +182,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param placement .
      * @return .
      */
-    public final boolean getWindowPlacement(final long hwnd,
+    public boolean getWindowPlacement(final long hwnd,
             final WINDOWPLACEMENT placement) {
         HWND handle = longToHwnd(hwnd);
         return getUser32().GetWindowPlacement(handle, placement);
@@ -193,7 +193,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param hwnd .
      * @return .
      */
-    public final boolean isEnabled(final long hwnd) {
+    public boolean isEnabled(final long hwnd) {
         HWND handle = longToHwnd(hwnd);
         return getUser32().IsWindowEnabled(handle);
     }
@@ -203,7 +203,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param hwnd .
      * @return .
      */
-    public final boolean isMaximized(final long hwnd) {
+    public boolean isMaximized(final long hwnd) {
         HWND handle = longToHwnd(hwnd);
         WINDOWPLACEMENT placement = new WINDOWPLACEMENT();
         getUser32().GetWindowPlacement(handle, placement);
@@ -215,7 +215,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param hwnd .
      * @return .
      */
-    public final boolean isMinimized(final long hwnd) {
+    public boolean isMinimized(final long hwnd) {
         HWND handle = longToHwnd(hwnd);
         WINDOWPLACEMENT placement = new WINDOWPLACEMENT();
         getUser32().GetWindowPlacement(handle, placement);
@@ -227,7 +227,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param hwnd .
      * @return .
      */
-    public final boolean isNormal(final long hwnd) {
+    public boolean isNormal(final long hwnd) {
         HWND handle = longToHwnd(hwnd);
         WINDOWPLACEMENT placement = new WINDOWPLACEMENT();
         getUser32().GetWindowPlacement(handle, placement);
@@ -239,7 +239,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param hwnd .
      * @return .
      */
-    public final boolean isUnicode(final long hwnd) {
+    public boolean isUnicode(final long hwnd) {
         HWND handle = longToHwnd(hwnd);
         return getUser32().IsWindowUnicode(handle);
     }
@@ -249,7 +249,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param hwnd .
      * @return .
      */
-    public final boolean isVisible(final long hwnd) {
+    public boolean isVisible(final long hwnd) {
         HWND handle = longToHwnd(hwnd);
         return getUser32().IsWindowVisible(handle);
     }
@@ -259,7 +259,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param hwnd .
      * @return .
      */
-    public final boolean isWindow(final long hwnd) {
+    public boolean isWindow(final long hwnd) {
         HWND handle = longToHwnd(hwnd);
         return getUser32().IsWindow(handle);
     }
@@ -269,7 +269,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param hwnd .
      * @param key .
      */
-    public final void keyDown(final long hwnd, final int key) {
+    public void keyDown(final long hwnd, final int key) {
         sendMessage(hwnd, WM_KEYDOWN, key, 0);
     }
 
@@ -278,7 +278,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param hwnd .
      * @param key .
      */
-    public final void keyPress(final long hwnd, final int key) {
+    public void keyPress(final long hwnd, final int key) {
         sendMessage(hwnd, WM_CHAR, key, 0);
     }
 
@@ -287,7 +287,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param hwnd .
      * @param key .
      */
-    public final void keyUp(final long hwnd, final int key) {
+    public void keyUp(final long hwnd, final int key) {
         sendMessage(hwnd, WM_KEYUP, key, 0);
     }
 
@@ -295,7 +295,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * .
      * @param hwnd .
      */
-    public final void maximize(final long hwnd) {
+    public void maximize(final long hwnd) {
         HWND handle = longToHwnd(hwnd);
         getUser32().ShowWindow(handle, SW_MAXIMIZE);
     }
@@ -304,7 +304,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * .
      * @param hwnd .
      */
-    public final void minimize(final long hwnd) {
+    public void minimize(final long hwnd) {
         HWND handle = longToHwnd(hwnd);
         getUser32().ShowWindow(handle, SW_MINIMIZE);
     }
@@ -319,7 +319,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param isAlt .
      * @param isShift .
      */
-    public final void mouseDown(final long hwnd, final int button, final int x,
+    public void mouseDown(final long hwnd, final int button, final int x,
             final int y, final boolean isControl, final boolean isAlt,
             final boolean isShift) {
         int message = 0;
@@ -358,7 +358,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param isAlt .
      * @param isShift .
      */
-    public final void mouseUp(final long hwnd, final int button, final int x,
+    public void mouseUp(final long hwnd, final int button, final int x,
             final int y, final boolean isControl, final boolean isAlt,
             final boolean isShift) {
         int message = 0;
@@ -395,7 +395,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param width .
      * @param height .
      */
-    public final void move(final long hwnd, final int x, final int y,
+    public void move(final long hwnd, final int x, final int y,
             final int width, final int height) {
         moveTo(hwnd, x, y);
         sizeTo(hwnd, width, height);
@@ -407,7 +407,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param x .
      * @param y .
      */
-    public final void moveTo(final long hwnd, final int x, final int y) {
+    public void moveTo(final long hwnd, final int x, final int y) {
         HWND handle = longToHwnd(hwnd);
         RECT rc = getRect(hwnd);
         getUser32().MoveWindow(
@@ -423,7 +423,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * .
      * @param hwnd .
      */
-    public final void restore(final long hwnd) {
+    public void restore(final long hwnd) {
         HWND handle = longToHwnd(hwnd);
         getUser32().ShowWindow(handle, SW_SHOWNORMAL);
     }
@@ -434,7 +434,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param width .
      * @param height .
      */
-    public final void sizeTo(
+    public void sizeTo(
             final long hwnd,
             final int width,
             final int height) {
@@ -450,7 +450,7 @@ public class Window extends Common implements IWMConsts, IMKConsts {
      * @param params .
      * @param workingDir .
      */
-    public final void start(
+    public void start(
             final long hwnd,
             final String command,
             final String params,

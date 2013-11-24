@@ -3,10 +3,13 @@
  */
 package org.sirius.server.win32.classes.controls;
 
+import javax.jws.WebService;
+
 /**
  * @author Myk Kolisnyk
  * 
  */
+@WebService
 public class ListView {
 
     /**

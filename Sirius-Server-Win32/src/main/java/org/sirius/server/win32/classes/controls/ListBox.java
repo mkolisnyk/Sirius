@@ -26,7 +26,7 @@ import com.sun.jna.platform.win32.WinDef.WPARAM;
 public class ListBox extends Common implements IListBoxConsts {
 
     
-    Win32LibControlsClient win32lib;
+    private final Win32LibControlsClient win32lib;
     
     /**
 	 * 
@@ -73,14 +73,6 @@ public class ListBox extends Common implements IListBoxConsts {
      */
     public String getEndpoint() {
         return win32lib.listBox().getEndpoint();
-    }
-
-    /**
-     * @return
-     * @see org.sirius.server.win32lib.controls.listbox.IListBoxContractProxy#getIListBoxContract()
-     */
-    public IListBoxContract getIListBoxContract() {
-        return win32lib.listBox().getIListBoxContract();
     }
 
     /**

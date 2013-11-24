@@ -4,7 +4,46 @@
 	<groupId>com.github.mkolisnyk</groupId>
 	<artifactId>sirius.server.web</artifactId>
 	<version>${package.version}</version>
-	<name>Sirius-Server-Web</name>
+	<inceptionYear>2012</inceptionYear>
+	<name>Sirius Web Server</name>
+	<url>https://github.com/mkolisnyk/Sirius/tree/master/Sirius-Server-Win32</url>
+	<description>
+	This is the part of the Sirius Test Automation Platform. 
+	It is responsible for Server Side handling of Win32 related operations.
+	</description>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<id>mkolisnyk</id>
+			<name>Myk Kolisnyk</name>
+			<email>kolesnik.nickolay@gmail.com</email>
+			<url>http://mkolisnyk.blogspot.com/</url>
+			<roles>
+				<role>Project Coordinator</role>
+				<role>Developer</role>
+				<role>System Architect</role>
+				<role>QA</role>
+			</roles>
+		</developer>
+	</developers>
+	<issueManagement>
+		<system>GitHub issue tracker</system>
+		<url>https://github.com/mkolisnyk/Sirius/issues</url>
+	</issueManagement>
+	<prerequisites>
+		<maven>2.0</maven>
+	</prerequisites>
+	<scm>
+		<connection>scm:svn:https://sirius-platform.googlecode.com/svn/trunk/Sirius-Server-Web/</connection>
+		<developerConnection>scm:svn:https://sirius-platform.googlecode.com/svn/trunk/Sirius-Server-Web/</developerConnection>
+		<url>https://sirius-platform.googlecode.com/svn</url>
+	</scm>
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
 		<testSourceDirectory>src/test/java</testSourceDirectory>
@@ -88,7 +127,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.3.2</version>
+				<version>2.4</version>
 				<configuration>
 					<excludes>
 						<exclude>*</exclude>
@@ -100,6 +139,8 @@
 						<exclude>junit/**/*</exclude>
 						<exclude>licenses/**/*</exclude>
 						<exclude>META-INF/maven/**/*</exclude>
+						<exclude>META-INF/**/*.RSA</exclude>
+						<exclude>META-INF/**/*.SF</exclude>
 						<exclude>org/codehaus/**/*</exclude>
 						<exclude>org/hamcrest/**/*</exclude>
 						<exclude>org/jbehave/**/*</exclude>
@@ -108,7 +149,18 @@
 						<exclude>org/xmlpull/**/*</exclude>
 						<exclude>stories/**/*</exclude>
 						<exclude>style/**/*</exclude>
-						<exclude>tests/**/*</exclude>
+						<exclude>test/**/*</exclude>
+						<exclude>themes/**/*</exclude>
+						<exclude>templates/**/*</exclude>
+						<exclude>gherkin/**/*</exclude>
+						<exclude>site/**/*</exclude>
+						<exclude>images/**/*</exclude>
+						<exclude>antlr/**/*</exclude>
+						<exclude>charts/**/*</exclude>
+						<exclude>net/masterthought/**/*</exclude>
+						<exclude>sirius/**/*</exclude>
+						<exclude>cucumber/**/*</exclude>
+						<exclude>com/googlecode/totallylazy/**/*</exclude>
 					</excludes>
 					<archive>
 						<manifest>
@@ -117,6 +169,7 @@
 							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
 							<addExtensions>true</addExtensions>
 							<classpathLayoutType>repository</classpathLayoutType>
+							<mainClass>org.sirius.server.Starter</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -132,6 +185,7 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.7</version>
 				<executions>
 					<execution>
 						<id>unpack-dependencies</id>
@@ -315,7 +369,7 @@
 					<encoding>Cp1251</encoding>
 				</configuration>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>findbugs-maven-plugin</artifactId>
 				<version>2.5.2</version>
@@ -354,7 +408,7 @@
 						</reports>
 					</reportSet>
 				</reportSets>
-			</plugin>
+			</plugin>-->
 		</plugins>
 	</reporting>
 </project>

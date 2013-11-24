@@ -3,6 +3,7 @@
  */
 package org.sirius.server.win32;
 
+import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 import org.sirius.server.win32.classes.Common;
@@ -119,7 +120,7 @@ public class Win32Utils extends Common {
      * @param locator .
      * @return .
      */
-    public final long searchSameThreadWindow(final long baseHwnd,
+    public long searchSameThreadWindow(final long baseHwnd,
             final Win32Locator locator) {
         User32Ext user32 = User32Ext.INSTANCE;
 
@@ -143,7 +144,7 @@ public class Win32Utils extends Common {
      * @param locator .
      * @return .
      */
-    public final long searchWindow(final Win32Locator locator) {
+    public long searchWindow(final Win32Locator locator) {
         User32Ext user32 = User32Ext.INSTANCE;
 
         locator.setHwnd(0L);

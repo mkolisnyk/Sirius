@@ -5,6 +5,8 @@ package org.sirius.server.win32.classes.controls;
 
 import java.rmi.RemoteException;
 
+import javax.jws.WebService;
+
 import org.sirius.server.win32lib.controls.Win32LibControlsClient;
 import org.sirius.server.win32lib.controls.scrollbar.IScrollBarContractProxy;
 
@@ -12,6 +14,7 @@ import org.sirius.server.win32lib.controls.scrollbar.IScrollBarContractProxy;
  * @author Myk Kolisnyk
  * 
  */
+@WebService
 public class ScrollBar {
 
     private final Win32LibControlsClient win32lib;

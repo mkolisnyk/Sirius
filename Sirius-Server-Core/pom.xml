@@ -63,7 +63,7 @@
 			</resource>
 		</resources>
 		<plugins>
-			<plugin>
+			<!-- <plugin>
 				<groupId>com.github.github</groupId>
 				<artifactId>site-maven-plugin</artifactId>
 				<version>0.8</version>
@@ -84,7 +84,7 @@
 						<phase>site</phase>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin>-->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>javancss-maven-plugin</artifactId>
@@ -345,7 +345,7 @@
 	</dependencies>
 	<reporting>
 		<plugins>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
 				<version>2.9.1</version>
@@ -376,7 +376,7 @@
 				<configuration>
 					<encoding>Cp1251</encoding>
 				</configuration>
-			</plugin>
+			</plugin>-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
@@ -385,7 +385,7 @@
 					<encoding>Cp1251</encoding>
 				</configuration>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>findbugs-maven-plugin</artifactId>
 				<version>2.5.2</version>
@@ -401,11 +401,11 @@
 				<configuration>
 					<encoding>Cp1251</encoding>
 				</configuration>
-			</plugin>
+			</plugin>-->
 			<plugin>
 				<groupId>com.github.mkolisnyk</groupId>
 				<artifactId>sirius-maven-plugin</artifactId>
-				<version>1.1</version>
+				<version>1.2-SNAPSHOT</version>
 				<configuration>
 					<repository>Sirius</repository>
 					<groups>System</groups>

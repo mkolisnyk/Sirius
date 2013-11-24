@@ -7,7 +7,7 @@
 	<name>SiriusJavaClient-Win32</name>
 	<url>https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient-Win32</url>
 	<description>Sirius Java Win32 client</description>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
@@ -388,7 +388,7 @@
 					<encoding>Cp1251</encoding>
 				</configuration>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>findbugs-maven-plugin</artifactId>
 				<version>2.5.2</version>
@@ -427,7 +427,7 @@
 						</reports>
 					</reportSet>
 				</reportSets>
-			</plugin>
+			</plugin>-->
 		</plugins>
 	</reporting>
 </project>

@@ -34,7 +34,7 @@ public class Menu extends Common implements IMenuFlag, IWMConsts, WinDef {
      * @param gmdiFlags .
      * @return .
      */
-    public final int getMenuDefaultItem(final long hMenu, final int fByPos,
+    public int getMenuDefaultItem(final long hMenu, final int fByPos,
             final int gmdiFlags) {
         HMENU handle = longToHmenu(hMenu);
         return getUser32().GetMenuDefaultItem(handle, fByPos, gmdiFlags);
@@ -46,7 +46,7 @@ public class Menu extends Common implements IMenuFlag, IWMConsts, WinDef {
      * @param lpcmi .
      * @return .
      */
-    public final boolean getMenuInfo(final long hmenu, final MENUINFO lpcmi) {
+    public boolean getMenuInfo(final long hmenu, final MENUINFO lpcmi) {
         HMENU handle = longToHmenu(hmenu);
         return getUser32().GetMenuInfo(handle, lpcmi);
     }
@@ -56,7 +56,7 @@ public class Menu extends Common implements IMenuFlag, IWMConsts, WinDef {
      * @param hMenu .
      * @return .
      */
-    public final int getMenuItemCount(final long hMenu) {
+    public int getMenuItemCount(final long hMenu) {
         HMENU handle = longToHmenu(hMenu);
         return getUser32().GetMenuItemCount(handle);
     }
@@ -67,7 +67,7 @@ public class Menu extends Common implements IMenuFlag, IWMConsts, WinDef {
      * @param nPos .
      * @return .
      */
-    public final int getMenuItemID(final long hMenu, final int nPos) {
+    public int getMenuItemID(final long hMenu, final int nPos) {
         HMENU handle = longToHmenu(hMenu);
         return getUser32().GetMenuItemID(handle, nPos);
     }
@@ -80,7 +80,7 @@ public class Menu extends Common implements IMenuFlag, IWMConsts, WinDef {
      * @param lpmii .
      * @return .
      */
-    public final boolean getMenuItemInfo(final long hMenu, final int uItem,
+    public boolean getMenuItemInfo(final long hMenu, final int uItem,
             final boolean fByPosition, final MENUITEMINFO lpmii) {
         HMENU handle = longToHmenu(hMenu);
         return getUser32().GetMenuItemInfo(handle, uItem, fByPosition, lpmii);
@@ -94,7 +94,7 @@ public class Menu extends Common implements IMenuFlag, IWMConsts, WinDef {
      * @param rect .
      * @return .
      */
-    public final boolean getMenuItemRect(final long hWnd, final long hMenu,
+    public boolean getMenuItemRect(final long hWnd, final long hMenu,
             final int uItem, final RECT rect) {
         HWND handle = longToHwnd(hWnd);
         HMENU menuHandle = longToHmenu(hMenu);
@@ -108,7 +108,7 @@ public class Menu extends Common implements IMenuFlag, IWMConsts, WinDef {
      * @param uFlags .
      * @return .
      */
-    public final int getMenuState(
+    public int getMenuState(
             final long hMenu,
             final int uId,
             final int uFlags) {
@@ -125,7 +125,7 @@ public class Menu extends Common implements IMenuFlag, IWMConsts, WinDef {
      * @param uFlag .
      * @return .
      */
-    public final int getMenuString(
+    public int getMenuString(
             final long hMenu,
             final int uIDItem,
             final char[] lpString,
@@ -142,7 +142,7 @@ public class Menu extends Common implements IMenuFlag, IWMConsts, WinDef {
      * @param nPos .
      * @return .
      */
-    public final long getSubMenu(final long hMenu, final int nPos) {
+    public long getSubMenu(final long hMenu, final int nPos) {
         HMENU handle = longToHmenu(hMenu);
         return Pointer
                 .nativeValue(getUser32().GetSubMenu(handle, nPos).getPointer());
@@ -153,7 +153,7 @@ public class Menu extends Common implements IMenuFlag, IWMConsts, WinDef {
      * @param hMenu .
      * @return .
      */
-    public final boolean isMenu(final long hMenu) {
+    public boolean isMenu(final long hMenu) {
         HMENU handle = longToHmenu(hMenu);
         return getUser32().IsMenu(handle);
     }
@@ -165,7 +165,7 @@ public class Menu extends Common implements IMenuFlag, IWMConsts, WinDef {
      * @param iPos .
      * @return .
      */
-    public final boolean pickItem(
+    public boolean pickItem(
             final long hwnd,
             final long hMenu,
             final int iPos) {

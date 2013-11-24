@@ -39,7 +39,7 @@ public class Edit extends Common implements IEditConsts {
      * @param hwndCtl .
      * @return .
      */
-    public final int canUndo(final long hwndCtl) {
+    public int canUndo(final long hwndCtl) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(0);
         LPARAM lParam = new LPARAM(0);
@@ -51,7 +51,7 @@ public class Edit extends Common implements IEditConsts {
      * @param hwndCtl .
      * @return .
      */
-    public final int emptyUndoBuffer(final long hwndCtl) {
+    public int emptyUndoBuffer(final long hwndCtl) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(0);
         LPARAM lParam = new LPARAM(0);
@@ -67,7 +67,7 @@ public class Edit extends Common implements IEditConsts {
      * @param hwndCtl .
      * @return .
      */
-    public final int getFirstVisibleLine(final long hwndCtl) {
+    public int getFirstVisibleLine(final long hwndCtl) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(0);
         LPARAM lParam = new LPARAM(0);
@@ -83,7 +83,7 @@ public class Edit extends Common implements IEditConsts {
      * @param hwndCtl .
      * @return .
      */
-    public final int getLineCount(final long hwndCtl) {
+    public int getLineCount(final long hwndCtl) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(0);
         LPARAM lParam = new LPARAM(0);
@@ -95,7 +95,7 @@ public class Edit extends Common implements IEditConsts {
      * @param hwndCtl .
      * @return .
      */
-    public final int getModify(final long hwndCtl) {
+    public int getModify(final long hwndCtl) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(0);
         LPARAM lParam = new LPARAM(0);
@@ -107,7 +107,7 @@ public class Edit extends Common implements IEditConsts {
      * @param hwndCtl .
      * @return .
      */
-    public final int getPasswordChar(final long hwndCtl) {
+    public int getPasswordChar(final long hwndCtl) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(0);
         LPARAM lParam = new LPARAM(0);
@@ -123,14 +123,14 @@ public class Edit extends Common implements IEditConsts {
      * @param hwndCtl .
      * @return .
      */
-    public final int getSel(final long hwndCtl) {
+    public int getSel(final long hwndCtl) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(0);
         LPARAM lParam = new LPARAM(0);
         return getUser32().SendMessage(hWnd, EM_GETSEL, wParam, lParam);
     }
 
-    public final String getText(final long hwndCtl) throws RemoteException{
+    public String getText(final long hwndCtl) throws RemoteException{
         System.out.println("Getting text for the " + hwndCtl + " handle");
         return win32lib.edit().getText((int)hwndCtl);
     }
@@ -141,7 +141,7 @@ public class Edit extends Common implements IEditConsts {
      * @param ich .
      * @return .
      */
-    public final int lineFromChar(final long hwndCtl, final int ich) {
+    public int lineFromChar(final long hwndCtl, final int ich) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(ich);
         LPARAM lParam = new LPARAM(0);
@@ -154,7 +154,7 @@ public class Edit extends Common implements IEditConsts {
      * @param line .
      * @return .
      */
-    public final int lineIndex(final long hwndCtl, final int line) {
+    public int lineIndex(final long hwndCtl, final int line) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(line);
         LPARAM lParam = new LPARAM(0);
@@ -167,7 +167,7 @@ public class Edit extends Common implements IEditConsts {
      * @param line .
      * @return .
      */
-    public final int lineLength(final long hwndCtl, final int line) {
+    public int lineLength(final long hwndCtl, final int line) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(line);
         LPARAM lParam = new LPARAM(0);
@@ -180,7 +180,7 @@ public class Edit extends Common implements IEditConsts {
      * @param lpszReplace .
      * @return .
      */
-    public final int replaceSel(final long hwndCtl, final String lpszReplace) {
+    public int replaceSel(final long hwndCtl, final String lpszReplace) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(0);
         Pointer pt = new Pointer(0);
@@ -196,7 +196,7 @@ public class Edit extends Common implements IEditConsts {
      * @param dh .
      * @return .
      */
-    public final int scroll(final long hwndCtl, final int dv, final int dh) {
+    public int scroll(final long hwndCtl, final int dv, final int dh) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(dh);
         LPARAM lParam = new LPARAM(dv);
@@ -208,7 +208,7 @@ public class Edit extends Common implements IEditConsts {
      * @param hwndCtl .
      * @return .
      */
-    public final boolean scrollCaret(final long hwndCtl) {
+    public boolean scrollCaret(final long hwndCtl) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(0);
         LPARAM lParam = new LPARAM(0);
@@ -228,7 +228,7 @@ public class Edit extends Common implements IEditConsts {
      * @param ch .
      * @return .
      */
-    public final int setPasswordChar(final long hwndCtl, final int ch) {
+    public int setPasswordChar(final long hwndCtl, final int ch) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(ch);
         LPARAM lParam = new LPARAM(0);
@@ -246,7 +246,7 @@ public class Edit extends Common implements IEditConsts {
      * @param ichEnd .
      * @return .
      */
-    public final int setSel(
+    public int setSel(
             final long hwndCtl,
             final int ichStart,
             final int ichEnd) {
@@ -263,7 +263,7 @@ public class Edit extends Common implements IEditConsts {
      * @return .
      * @throws RemoteException 
      */
-    public final boolean setText(final long hwndCtl, final String lpsz) throws RemoteException {
+    public boolean setText(final long hwndCtl, final String lpsz) throws RemoteException {
         HWND hWnd = longToHwnd(hwndCtl);
         win32lib.edit().setText((int)hwndCtl, lpsz);
         return true;
@@ -274,7 +274,7 @@ public class Edit extends Common implements IEditConsts {
      * @param hwndCtl .
      * @return .
      */
-    public final int undo(final long hwndCtl) {
+    public int undo(final long hwndCtl) {
         HWND hWnd = longToHwnd(hwndCtl);
         WPARAM wParam = new WPARAM(0);
         LPARAM lParam = new LPARAM(0);

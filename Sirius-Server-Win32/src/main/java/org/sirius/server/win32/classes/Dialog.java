@@ -26,7 +26,7 @@ public class Dialog extends Common {
      * .
      * @return .
      */
-    public final long getDialogBaseUnits() {
+    public long getDialogBaseUnits() {
         return this.getDlg32().GetDialogBaseUnits();
     }
 
@@ -35,7 +35,7 @@ public class Dialog extends Common {
      * @param hWnd .
      * @return .
      */
-    public final int getDlgCtrlID(final long hWnd) {
+    public int getDlgCtrlID(final long hWnd) {
         HWND handle = this.longToHwnd(hWnd);
         return this.getDlg32().GetDlgCtrlID(handle);
     }
@@ -46,7 +46,7 @@ public class Dialog extends Common {
      * @param itemId .
      * @return .
      */
-    public final long getDlgItem(final long hWnd, final int itemId) {
+    public long getDlgItem(final long hWnd, final int itemId) {
         HWND handle = this.longToHwnd(hWnd);
         return Pointer.nativeValue(this.getDlg32().GetDlgItem(handle, itemId)
                 .getPointer());
@@ -60,7 +60,7 @@ public class Dialog extends Common {
      * @param flag2 .
      * @return .
      */
-    public final int getDlgItemInt(final long hWnd, final int itemId,
+    public int getDlgItemInt(final long hWnd, final int itemId,
             final boolean pbool, final boolean flag2) {
         HWND handle = this.longToHwnd(hWnd);
         return this.getDlg32().GetDlgItemInt(handle, itemId, pbool, flag2);
@@ -72,7 +72,7 @@ public class Dialog extends Common {
      * @param itemId .
      * @return .
      */
-    public final String getDlgItemTextA(final long hWnd, final int itemId) {
+    public String getDlgItemTextA(final long hWnd, final int itemId) {
         HWND handle = this.longToHwnd(hWnd);
 
         int length = 255;
@@ -89,7 +89,7 @@ public class Dialog extends Common {
      * @param itemId .
      * @return .
      */
-    public final int isDlgButtonChecked(final long hWnd, final int itemId) {
+    public int isDlgButtonChecked(final long hWnd, final int itemId) {
         HWND handle = this.longToHwnd(hWnd);
         return getDlg32().IsDlgButtonChecked(handle, itemId);
     }
@@ -102,7 +102,7 @@ public class Dialog extends Common {
      * @param flag .
      * @return .
      */
-    public final boolean setDlgItemInt(final long hWnd, final int itenId,
+    public boolean setDlgItemInt(final long hWnd, final int itenId,
             final int intValue, final boolean flag) {
         HWND handle = this.longToHwnd(hWnd);
         return getDlg32().SetDlgItemInt(handle, itenId, intValue, flag);
@@ -115,7 +115,7 @@ public class Dialog extends Common {
      * @param text .
      * @return .
      */
-    public final boolean setDlgItemText(final long hWnd, final int itemId,
+    public boolean setDlgItemText(final long hWnd, final int itemId,
             final String text) {
         HWND handle = this.longToHwnd(hWnd);
         return getDlg32().SetDlgItemTextA(handle, itemId, text.toCharArray());

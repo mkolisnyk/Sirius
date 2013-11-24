@@ -31,7 +31,7 @@ public class Button extends Common implements IButtonConsts {
      * @param hwndCtl .
      * @return .
      */
-    public final int getCheck(final long hwndCtl) {
+    public int getCheck(final long hwndCtl) {
         HWND handle = this.longToHwnd(hwndCtl);
         return getUser32().SendMessage(handle, BM_GETCHECK, new WPARAM(0),
                 new LPARAM(0));
@@ -42,7 +42,7 @@ public class Button extends Common implements IButtonConsts {
      * @param hwndCtl .
      * @return .
      */
-    public final int getState(final long hwndCtl) {
+    public int getState(final long hwndCtl) {
         HWND handle = this.longToHwnd(hwndCtl);
         return getUser32().SendMessage(handle, BM_GETSTATE, new WPARAM(0),
                 new LPARAM(0));
@@ -55,15 +55,15 @@ public class Button extends Common implements IButtonConsts {
     int BST_FOCUS         = 8;
     int BST_PUSHED        = 4;*/
     
-    public final boolean isChecked(final long hwndCtl){
+    public boolean isChecked(final long hwndCtl){
         return (getState(hwndCtl) & BST_CHECKED) == BST_CHECKED; 
     }
     
-    public final boolean isIntermediate(final long hwndCtl){
+    public boolean isIntermediate(final long hwndCtl){
         return (getState(hwndCtl) & BST_INDETERMINATE) == BST_INDETERMINATE;
     }
     
-    public final boolean isPushed(final long hwndCtl){
+    public boolean isPushed(final long hwndCtl){
         return (getState(hwndCtl) & BST_PUSHED) == BST_PUSHED;
     }
 
@@ -72,7 +72,7 @@ public class Button extends Common implements IButtonConsts {
      * @param hwndCtl .
      * @param check .
      */
-    public final void setCheck(final long hwndCtl, final int check) {
+    public void setCheck(final long hwndCtl, final int check) {
         HWND handle = this.longToHwnd(hwndCtl);
         getUser32().SendMessage(handle, BM_SETCHECK, new WPARAM(check),
                 new LPARAM(0));
@@ -83,7 +83,7 @@ public class Button extends Common implements IButtonConsts {
      * @param hwndCtl .
      * @param state .
      */
-    public final void setState(final long hwndCtl, final int state) {
+    public void setState(final long hwndCtl, final int state) {
         HWND handle = this.longToHwnd(hwndCtl);
         getUser32().SendMessage(handle, BM_SETSTATE, new WPARAM(state),
                 new LPARAM(0));
