@@ -7,6 +7,8 @@ require 'sirius/win32/core/menu/MenuServiceDriver.rb'
 require 'sirius/win32/core/tabcontrol/TabControlServiceDriver.rb'
 require 'sirius/win32/core/utils/Win32UtilsServiceDriver.rb'
 require 'sirius/win32/core/window/WindowServiceDriver.rb'
+require 'sirius/win32/core/spin/SpinServiceDriver.rb'
+require 'sirius/win32/core/slider/SliderServiceDriver.rb'
 
 module Sirius
   module Client

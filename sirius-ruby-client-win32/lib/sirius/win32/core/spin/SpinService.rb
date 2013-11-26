@@ -11,22 +11,23 @@ class Decrement
     def initialize(arg0 = nil)  @arg0 = arg0
   end
 end
+
 # {http:controls.classes.win32.server.sirius.org/}decrementResponse
 class DecrementResponse  
     def initialize
   end
 end
+
 # {http:controls.classes.win32.server.sirius.org/}getPosition
-#   arg0 - SOAP::SOAPInt
-class GetPosition    
+#   arg0 - SOAP::SOAPIntclass GetPosition    
   attr_accessor :arg0
 
     def initialize(arg0 = nil)  @arg0 = arg0
   end
 end
+
 # {http:controls.classes.win32.server.sirius.org/}getPositionResponse
-#   m_return - SOAP::SOAPDouble
-class GetPositionResponse  
+#   m_return - SOAP::SOAPDoubleclass GetPositionResponse  
     def m_return
       @v_return
   end
@@ -37,10 +38,10 @@ class GetPositionResponse
     def initialize(v_return = nil)  @v_return = v_return
   end
 end
+
 # {http:controls.classes.win32.server.sirius.org/}setText
 #   arg0 - SOAP::SOAPInt
-#   arg1 - SOAP::SOAPString
-class SetText    
+#   arg1 - SOAP::SOAPStringclass SetText    
   attr_accessor :arg0    
   attr_accessor :arg1
 
@@ -132,17 +133,17 @@ class GetLowerBoundResponse
     def initialize(v_return = nil)  @v_return = v_return
   end
 end
+
 # {http:controls.classes.win32.server.sirius.org/}getUpperBound
-#   arg0 - SOAP::SOAPInt
-class GetUpperBound    
+#   arg0 - SOAP::SOAPIntclass GetUpperBound    
   attr_accessor :arg0
 
     def initialize(arg0 = nil)  @arg0 = arg0
   end
 end
+
 # {http:controls.classes.win32.server.sirius.org/}getUpperBoundResponse
-#   m_return - SOAP::SOAPDouble
-class GetUpperBoundResponse  
+#   m_return - SOAP::SOAPDoubleclass GetUpperBoundResponse  
     def m_return
       @v_return
   end
@@ -153,17 +154,17 @@ class GetUpperBoundResponse
     def initialize(v_return = nil)  @v_return = v_return
   end
 end
+
 # {http:controls.classes.win32.server.sirius.org/}getText
-#   arg0 - SOAP::SOAPInt
-class GetText    
+#   arg0 - SOAP::SOAPIntclass GetText    
   attr_accessor :arg0
 
     def initialize(arg0 = nil)  @arg0 = arg0
   end
 end
+
 # {http:controls.classes.win32.server.sirius.org/}getTextResponse
-#   m_return - SOAP::SOAPString
-class GetTextResponse  
+#   m_return - SOAP::SOAPStringclass GetTextResponse  
     def m_return
       @v_return
   end
@@ -174,16 +175,16 @@ class GetTextResponse
     def initialize(v_return = nil)  @v_return = v_return
   end
 end
+
 # {http:controls.classes.win32.server.sirius.org/}increment
-#   arg0 - SOAP::SOAPInt
-class Increment    
+#   arg0 - SOAP::SOAPIntclass Increment    
   attr_accessor :arg0
 
     def initialize(arg0 = nil)  @arg0 = arg0
   end
 end
-# {http:controls.classes.win32.server.sirius.org/}incrementResponse
-class IncrementResponse  
+
+# {http:controls.classes.win32.server.sirius.org/}incrementResponseclass IncrementResponse  
     def initialize
   end
 end

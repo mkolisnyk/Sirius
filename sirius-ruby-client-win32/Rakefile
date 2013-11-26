@@ -4,6 +4,7 @@ require 'cucumber'
 require 'cucumber/rake/task'
 require 'rake/testtask'
 require 'fileutils'
+require 'github_api'
 
 spec = Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
@@ -41,6 +42,43 @@ Rake::TestTask.new(:install_test) do |task|
 end
 
 Gem::PackageTask.new(spec) do |pkg|
+end
+
+task :issue_get do |t|
+  github = Github.new do |config|
+    config.repo        = 'Sirius'
+    config.user        = 'mkolisnyk'
+    config.oauth_token = '6cbcb8e3d8031bdd0637256be9da89c57ea26949'
+    config.adapter     = :net_http
+    config.ssl         = {:verify => false}
+  end
+  
+  FileList['./tests/features/**/*.feature'].each do |x|
+    File.delete(x)
+  end
+    
+  github.issues.list( :labels=>"Win32") do |issue|
+    feature_name = "#{issue.title.gsub(/[ :]/,'')}.feature"
+    puts "Writing #{feature_name}"
+    unless File.exists?("./tests/features/#{feature_name}")
+      file = File.open("./tests/features/#{feature_name}","a")
+      file.puts("# Requirement: #{issue.milestone.title}")
+      file.write("# #{issue.milestone.description.gsub("\n","\n# ").gsub("\r",'')}")
+      file.close  
+    end
+    
+    file = File.open("./tests/features/#{feature_name}","a")
+    file.puts("")
+    issue.labels.each do |label|
+      file.write("@#{label.name} ")
+    end
+    file.puts("")
+    file.puts("Feature: #{issue.title}")
+    file.puts("")
+    file.puts("#{issue.body.gsub("\r",'').gsub('**Scenario:**','Scenario:')}")
+    file.close
+  end
+  puts 'done'
 end
 
 Cucumber::Rake::Task.new(:test) do |t|
