@@ -89,4 +89,4 @@ task :push => [:package] do |t|
   sh "call gem push -V pkg/#{spec.name}-#{spec.version}.gem"
 end
 
-task :all => [:clean,:rubocop,:package,:install_test]
+task :all => [:clean,:rubocop,:package,:install_test,:issue_get,:test]

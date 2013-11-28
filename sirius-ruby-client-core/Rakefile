@@ -33,6 +33,43 @@ task :rubocop do |t|
   end
 end
 
+task :issue_get do |t|
+  github = Github.new do |config|
+    config.repo        = 'Sirius'
+    config.user        = 'mkolisnyk'
+    config.oauth_token = '6cbcb8e3d8031bdd0637256be9da89c57ea26949'
+    config.adapter     = :net_http
+    config.ssl         = {:verify => false}
+  end
+  
+  FileList['./tests/features/**/*.feature'].each do |x|
+    File.delete(x)
+  end
+    
+  github.issues.list( :labels=>"System") do |issue|
+    feature_name = "#{issue.title.gsub(/[ :]/,'')}.feature"
+    puts "Writing #{feature_name}"
+    unless File.exists?("./tests/features/#{feature_name}")
+      file = File.open("./tests/features/#{feature_name}","a")
+      file.puts("# Requirement: #{issue.milestone.title}")
+      file.write("# #{issue.milestone.description.gsub("\n","\n# ").gsub("\r",'')}")
+      file.close  
+    end
+    
+    file = File.open("./tests/features/#{feature_name}","a")
+    file.puts("")
+    issue.labels.each do |label|
+      file.write("@#{label.name} ")
+    end
+    file.puts("")
+    file.puts("Feature: #{issue.title}")
+    file.puts("")
+    file.puts("#{issue.body.gsub("\r",'').gsub('**Scenario:**','Scenario:')}")
+    file.close
+  end
+  puts 'done'
+end
+
 Rake::TestTask.new(:install_test) do |task|
   task.name = 'install_test'
   task.libs << "test"
@@ -51,4 +88,4 @@ task :push => [:package] do |t|
   sh "call gem push -V pkg/#{spec.name}-#{spec.version}.gem"
 end
 
-task :all => [:clean,:rubocop,:package,:install_test]
+task :all => [:clean,:rubocop,:package,:install_test,:issue_get,:test]
