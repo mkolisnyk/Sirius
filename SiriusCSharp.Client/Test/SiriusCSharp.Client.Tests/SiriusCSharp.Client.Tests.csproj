@@ -74,11 +74,11 @@
     <Compile Include="Tests\Win32Lib\TabControlTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sirius.Win32.Lib\Sirius.Win32.Lib.csproj">
+    <ProjectReference Include="..\..\Libs\Sirius.Win32.Lib\Sirius.Win32.Lib.csproj">
       <Project>{ED9B6BF9-D11A-4B1E-A903-CC91F9584E4B}</Project>
       <Name>Sirius.Win32.Lib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SiriusClient\SiriusClient.csproj">
+    <ProjectReference Include="..\..\Client\SiriusClient\SiriusClient.csproj">
       <Project>{666725AE-A44E-4E83-8314-BE186F223C0E}</Project>
       <Name>SiriusClient</Name>
     </ProjectReference>

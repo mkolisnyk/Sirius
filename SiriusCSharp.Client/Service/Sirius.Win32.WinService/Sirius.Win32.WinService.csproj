@@ -182,7 +182,7 @@
     <Content Include="Sirius.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sirius.Win32.Lib\Sirius.Win32.Lib.csproj">
+    <ProjectReference Include="..\..\Libs\Sirius.Win32.Lib\Sirius.Win32.Lib.csproj">
       <Project>{ED9B6BF9-D11A-4B1E-A903-CC91F9584E4B}</Project>
       <Name>Sirius.Win32.Lib</Name>
     </ProjectReference>

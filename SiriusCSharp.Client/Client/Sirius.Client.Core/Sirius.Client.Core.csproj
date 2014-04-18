@@ -40,6 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core.System\DirectoryOperationsService.cs" />
+    <Compile Include="Core.System\FileOperationsService.cs" />
+    <Compile Include="Core.System\ProcessOperationsService.cs" />
+    <Compile Include="Core.System\SystemOperationsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
