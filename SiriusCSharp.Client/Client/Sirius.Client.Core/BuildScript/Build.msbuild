@@ -54,11 +54,11 @@
 		<CreateItem Include="$(SolutionDirAbs)\bin\$(Configuration)\*.*">
 			<Output TaskParameter="Include" ItemName="ClientBinaries"/>
 		</CreateItem>
-		<Copy SourceFiles="@(ClientBinaries)" DestinationFolder="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package\lib\%(ClientBinaries.RecursiveDir)" ContinueOnError="true"/>
+		<Copy SourceFiles="@(ClientBinaries)" DestinationFolder="$(SolutionDirAbs)\..\..\Install\Sirius.CSharp.Client.Package\lib\%(ClientBinaries.RecursiveDir)" ContinueOnError="true"/>
 		<Copy SourceFiles="$(SolutionDirAbs)\Package.nuspec" DestinationFolder="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package" OverwriteReadOnlyFiles="true" />
-		<Exec Command="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package\BuildPublishPackage.cmd $(ProductVersion)" WorkingDirectory="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package" />
+		<Exec Command="$(SolutionDirAbs)\..\..\Install\Sirius.CSharp.Client.Package\BuildPublishPackage.cmd $(ProductVersion)" WorkingDirectory="$(SolutionDirAbs)\..\..\Install\Sirius.CSharp.Client.Package" />
 	</Target>
 	<Target Name="Publish" DependsOnTargets="Build">
-		<Exec Command="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package\nuget.exe push $(ProductName).$(ProductVersion).nupkg" WorkingDirectory="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package" />
+		<Exec Command="$(SolutionDirAbs)\..\..\Install\Sirius.CSharp.Client.Package\nuget.exe push $(ProductName).$(ProductVersion).nupkg" WorkingDirectory="$(SolutionDirAbs)\..\..\Install\Sirius.CSharp.Client.Package" />
 	</Target>
 </Project>
