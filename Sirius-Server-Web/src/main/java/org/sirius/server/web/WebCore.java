@@ -3,19 +3,18 @@
  */
 package org.sirius.server.web;
 
-import java.util.HashMap;
-
 import javax.jws.WebService;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.safari.SafariDriver;
+
+import com.opera.core.systems.OperaDriver;
 
 /**
  * @author Myk Kolisnyk
@@ -29,6 +28,7 @@ public class WebCore extends WebHelper {
 	public final String FIREFOX_UNSECURED = "chrome";
 	public final String CHROME = "googlechrome";
 	public final String OPERA = "opera";
+	public final String SAFARI = "safari";
 	public final String HTMLUNIT = "htmlunit";
 
 	/**
@@ -47,7 +47,12 @@ public class WebCore extends WebHelper {
 			driver = new ChromeDriver();
 		} else if (browser.equalsIgnoreCase(HTMLUNIT)) {
 			driver = new HtmlUnitDriver();
+		} else if(browser.equalsIgnoreCase(OPERA)){
+			driver = new OperaDriver();
+		} else if(browser.equalsIgnoreCase(SAFARI)){
+			driver = new SafariDriver();
 		}
+		
 
 		if (driver != null) {
 			DriverMap.drivers.put(driver.toString(), driver);

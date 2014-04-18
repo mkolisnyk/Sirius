@@ -67,7 +67,8 @@
 				<artifactId>site-maven-plugin</artifactId>
 				<version>0.8</version>
 				<configuration>
-					<message>Creating site for ${project.groupId}:${project.artifactId}:${project.version}</message>
+					<message>Creating site for
+						${project.groupId}:${project.artifactId}:${project.version}</message>
 					<oauth2Token>6cbcb8e3d8031bdd0637256be9da89c57ea26949</oauth2Token>
 					<repositoryName>Sirius</repositoryName>
 					<repositoryOwner>mkolisnyk</repositoryOwner>
@@ -324,7 +325,12 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>2.5.0</version>
+			<version>2.39.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.opera</groupId>
+			<artifactId>operadriver</artifactId>
+			<version>1.5</version>
 		</dependency>
 	</dependencies>
 	<reporting>
@@ -369,46 +375,18 @@
 					<encoding>Cp1251</encoding>
 				</configuration>
 			</plugin>
-			<!-- <plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>findbugs-maven-plugin</artifactId>
-				<version>2.5.2</version>
-				<configuration>
-					<onlyAnalyze>org.sirius.server.system.*</onlyAnalyze>
-					<encoding>Cp1251</encoding>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>cobertura-maven-plugin</artifactId>
-				<version>2.6</version>
-				<configuration>
-					<encoding>Cp1251</encoding>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>com.github.mkolisnyk</groupId>
-				<artifactId>sirius-maven-plugin</artifactId>
-				<version>1.1</version>
-				<configuration>
-					<repository>Sirius</repository>
-					<groups>Win32</groups>
-					<outputType>mvn-trace</outputType>
-					<outputLocation>target/site</outputLocation>
-					<jsonFile>target/cucumber.json</jsonFile>
-					<jsonUsageFile>target/cucumber-usage.json</jsonUsageFile>
-				</configuration>
-				<reportSets>
-					<reportSet>
-						<configuration />
-						<reports>
-							<report>trace</report>
-							<report>cucumber</report>
-							<report>cucumber-usage</report>
-						</reports>
-					</reportSet>
-				</reportSets>
-			</plugin>-->
+			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>findbugs-maven-plugin</artifactId> 
+				<version>2.5.2</version> <configuration> <onlyAnalyze>org.sirius.server.system.*</onlyAnalyze> 
+				<encoding>Cp1251</encoding> </configuration> </plugin> <plugin> <groupId>org.codehaus.mojo</groupId> 
+				<artifactId>cobertura-maven-plugin</artifactId> <version>2.6</version> <configuration> 
+				<encoding>Cp1251</encoding> </configuration> </plugin> <plugin> <groupId>com.github.mkolisnyk</groupId> 
+				<artifactId>sirius-maven-plugin</artifactId> <version>1.1</version> <configuration> 
+				<repository>Sirius</repository> <groups>Win32</groups> <outputType>mvn-trace</outputType> 
+				<outputLocation>target/site</outputLocation> <jsonFile>target/cucumber.json</jsonFile> 
+				<jsonUsageFile>target/cucumber-usage.json</jsonUsageFile> </configuration> 
+				<reportSets> <reportSet> <configuration /> <reports> <report>trace</report> 
+				<report>cucumber</report> <report>cucumber-usage</report> </reports> </reportSet> 
+				</reportSets> </plugin> -->
 		</plugins>
 	</reporting>
 </project>
