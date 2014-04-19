@@ -5,9 +5,9 @@
 	<artifactId>sirius.java.client</artifactId>
 	<version>1.5.70-SNAPSHOT</version>
 	<name>Sirius Java Client</name>
-	<url>https://github.com/mkolisnyk/Sirius/tree/master/SiriusJavaClient</url>
+	<url>https://github.com/mkolisnyk/Sirius/tree/master/sirius.java.client</url>
 	<description>Sirius Java main client</description>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
@@ -30,9 +30,9 @@
 	</parent>
 
 	<scm>
-		<connection>scm:svn:https://sirius-platform.googlecode.com/svn/trunk/SiriusJavaClient/</connection>
-		<developerConnection>scm:svn:https://sirius-platform.googlecode.com/svn/trunk/SiriusJavaClient/</developerConnection>
-		<url>https://sirius-platform.googlecode.com/svn</url>
+		<connection>scm:svn:https://github.com/mkolisnyk/Sirius/trunk/sirius.java.client/</connection>
+		<developerConnection>scm:svn:https://github.com/mkolisnyk/Sirius/trunk/sirius.java.client</developerConnection>
+		<url>https://github.com/mkolisnyk/Sirius</url>
 	</scm>
 
 	<build>
@@ -159,7 +159,7 @@
 				<configuration>
 					<tagNameFormat>sirius.java.client-@{project.version}</tagNameFormat>
 					<configuration>
-						<tagBase>https://sirius-platform.googlecode.com/svn/tags/releases</tagBase>
+						<tagBase>https://github.com/mkolisnyk/Sirius/tags</tagBase>
 					</configuration>
 				</configuration>
 			</plugin>
