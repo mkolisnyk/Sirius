@@ -48,3 +48,7 @@ Release
 Debug
 
 /SiriusCSharp.Client/Sirius.Win32.WinService/Packages
+Packages
+/SiriusCSharp.Client/Client/SiriusClient/StyleCop.xml
+/SiriusCSharp.Client/Client/SiriusClient/UpgradeLog.htm
+/SiriusCSharp.Client/UpgradeLog.htm
