@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Automation;
 using log4net;
+using Sirius.Win32.Lib.Common;
 
 namespace Sirius.Win32.Lib.Controls
 {
@@ -21,7 +22,8 @@ namespace Sirius.Win32.Lib.Controls
             AutomationElement element = Find(hwnd);
             TogglePattern toggle = element.GetCurrentPattern(TogglePattern.Pattern) as TogglePattern;
             logger.Debug("");
-            return toggle.Current.ToggleState.HasFlag(ToggleState.On);
+            return EnumExtensions.HasFlag(toggle.Current.ToggleState, ToggleState.On);
+            //return toggle.Current.ToggleState.HasFlag(ToggleState.On);
         }
 
         public bool IsIntermediate(int hwnd)
@@ -29,7 +31,8 @@ namespace Sirius.Win32.Lib.Controls
             AutomationElement element = Find(hwnd);
             TogglePattern toggle = element.GetCurrentPattern(TogglePattern.Pattern) as TogglePattern;
             logger.Debug("");
-            return toggle.Current.ToggleState.HasFlag(ToggleState.Indeterminate);
+            return EnumExtensions.HasFlag(toggle.Current.ToggleState, ToggleState.Indeterminate);
+            //return toggle.Current.ToggleState.HasFlag(ToggleState.Indeterminate);
         }
 
         public bool IsPressed(int hwnd)

@@ -12,6 +12,7 @@
     <AssemblyName>Sirius.Win32.Lib</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -54,6 +55,7 @@
     <Reference Include="UIAutomationTypes" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\EnumExtensions.cs" />
     <Compile Include="Controls\Button.cs" />
     <Compile Include="Controls\ComboBox.cs" />
     <Compile Include="Controls\Control.cs" />

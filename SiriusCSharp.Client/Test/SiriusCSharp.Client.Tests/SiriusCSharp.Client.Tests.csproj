@@ -74,9 +74,9 @@
     <Compile Include="Tests\Win32Lib\TabControlTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Client\Sirius.Client.Core\Sirius.Client.Core.csproj">
+    <ProjectReference Include="..\..\Client\Sirius.Client.Core\Sirius.CSharp.Client.Core.csproj">
       <Project>{a642abec-a66c-4011-92bc-85fc92cd3e3f}</Project>
-      <Name>Sirius.Client.Core</Name>
+      <Name>Sirius.CSharp.Client.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Libs\Sirius.Win32.Lib\Sirius.Win32.Lib.csproj">
       <Project>{ED9B6BF9-D11A-4B1E-A903-CC91F9584E4B}</Project>

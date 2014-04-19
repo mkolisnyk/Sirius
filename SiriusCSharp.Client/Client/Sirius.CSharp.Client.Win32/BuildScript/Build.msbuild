@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-	<Import Project="$(ProgramFiles)\MSBuild\StyleCop\v4.7\StyleCop.targets" /> 
+	<Import Project="ProjectInfo.msbuild" />
+	<Import Project="$(ProgramFiles)\MSBuild\StyleCop\v4.7\StyleCop.targets" />
 
 	<PropertyGroup>
 		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-		<Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-		<ProductName>Sirius.CSharp.Client.Win32</ProductName>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 		<ProductVersion Condition="'$(ProductVersion)'==''">0.0.0</ProductVersion>
 		<SolutionDir>..</SolutionDir>
 
@@ -19,8 +19,9 @@
 	<ItemGroup>
 		<StyleCopFiles Include="$(SolutionDir)\\**\*.cs" />
 	</ItemGroup>
-
 	<Target Name="Clean">
+        <Message Text="MSBuildToolsVersion: $(MSBuildToolsVersion)" />
+        <Message Text="MSBuildToolsPath:    $(MSBuildToolsPath)" />
 		<ConvertToAbsolutePath Paths="$(SolutionDir)">
 			<Output TaskParameter="AbsolutePaths" PropertyName="SolutionDirAbs"/>
 		</ConvertToAbsolutePath>
@@ -44,20 +45,34 @@
 		<Delete Files="@(Packages)" />
 		<Delete Files="@(Lib)" />
 	</Target>
-	<Target Name="Build"  DependsOnTargets="Clean;StyleCop">
+	<Target Name="NuGet">
+	</Target>
+	<Target Name="Build"  DependsOnTargets="Clean"><!--;StyleCop">-->
 		<ConvertToAbsolutePath Paths="$(SolutionDir)">
 			<Output TaskParameter="AbsolutePaths" PropertyName="SolutionDirAbs"/>
 		</ConvertToAbsolutePath>
-		<MSBuild Projects="$(SolutionDirAbs)\Sirius.CSharp.Client.Win32.csproj" />
-
+		<MSBuild Projects="$(SolutionDirAbs)\$(ProductName).csproj" />
+	</Target>
+	<Target Name="CleanPackage">
+		<ConvertToAbsolutePath Paths="$(SolutionDir)">
+			<Output TaskParameter="AbsolutePaths" PropertyName="SolutionDirAbs"/>
+		</ConvertToAbsolutePath>
+		<RemoveDir Directories="$(SolutionDirAbs)\..\..\Install\Sirius.CSharp.Client.Package\lib" />
+	</Target>
+	<Target Name="PreparePackage" DependsOnTargets="Build">
+		<ConvertToAbsolutePath Paths="$(SolutionDir)">
+			<Output TaskParameter="AbsolutePaths" PropertyName="SolutionDirAbs"/>
+		</ConvertToAbsolutePath>
 		<CreateItem Include="$(SolutionDirAbs)\bin\$(Configuration)\*.*">
 			<Output TaskParameter="Include" ItemName="ClientBinaries"/>
 		</CreateItem>
-		<Copy SourceFiles="@(ClientBinaries)" DestinationFolder="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package\lib\%(ClientBinaries.RecursiveDir)" ContinueOnError="true"/>
-		<Copy SourceFiles="$(SolutionDirAbs)\Package.nuspec" DestinationFolder="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package" OverwriteReadOnlyFiles="true" />
-		<Exec Command="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package\BuildPublishPackage.cmd $(ProductVersion)" WorkingDirectory="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package" />
+		<Copy SourceFiles="@(ClientBinaries)" DestinationFolder="$(SolutionDirAbs)\..\..\Install\Sirius.CSharp.Client.Package\lib\$(MSBuildToolsVersion)\%(ClientBinaries.RecursiveDir)" ContinueOnError="true"/>
+		<Copy SourceFiles="$(SolutionDirAbs)\Package.nuspec" DestinationFolder="$(SolutionDirAbs)\..\..\Install\Sirius.CSharp.Client.Package" />
 	</Target>
-	<Target Name="Publish" DependsOnTargets="Build">
-		<Exec Command="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package\nuget.exe push $(ProductName).$(ProductVersion).nupkg" WorkingDirectory="$(SolutionDirAbs)\..\Sirius.CSharp.Client.Package" />
+	<Target Name="Package" DependsOnTargets="PreparePackage">
+		<Exec Command="$(SolutionDirAbs)\..\..\Install\Sirius.CSharp.Client.Package\BuildPublishPackage.cmd $(ProductVersion)" WorkingDirectory="$(SolutionDirAbs)\..\..\Install\Sirius.CSharp.Client.Package" />
+	</Target>
+	<Target Name="Publish" DependsOnTargets="Package">
+		<Exec Command="$(SolutionDirAbs)\..\..\Install\Sirius.CSharp.Client.Package\nuget.exe push $(ProductName).$(ProductVersion).nupkg" WorkingDirectory="$(SolutionDirAbs)\..\..\Install\Sirius.CSharp.Client.Package" />
 	</Target>
 </Project>
