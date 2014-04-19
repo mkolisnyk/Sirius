@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Sirius.CSharp.Client</id>
+    <version>1.0.0</version>
+    <authors>Myk Kolisnyk</authors>
+    <owners>Myk Kolisnyk</owners>
+    <projectUrl>https://github.com/mkolisnyk/Sirius</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      CSharp client for Sirius platform
+    </description>
+    <releaseNotes>
+    </releaseNotes>
+    <tags></tags>
+    <dependencies>
+      <dependency id="Sirius.CSharp.Client.Core" version="1.0.0" />
+      <dependency id="Sirius.CSharp.Client.Win32" version="1.0.0" />
+      <dependency id="Sirius.CSharp.Client.Web" version="1.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="lib\**" target="lib" />
+  </files>
+</package>
