@@ -13,10 +13,11 @@ mkdir .\Server
 
 echo "Building server modules"
 cd ..
-call mvn -f Server/pom.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom.xml -Dpackaging=jar -DgeneratePom=true clean package
-call mvn -f Sirius-Server-Core/pom.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom.xml -Dpackaging=jar -DgeneratePom=true clean package
-call mvn -f Sirius-Server-Win32/pom.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom.xml -Dpackaging=jar -DgeneratePom=true clean package
-call mvn -f Sirius-Server-Web/pom.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom.xml -Dpackaging=jar -DgeneratePom=true clean package
+call mvn -f sirius.server.core/pom.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom.xml -Dpackaging=jar -DgeneratePom=true clean package
+call mvn -f sirius.server.engine/pom.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom.xml -Dpackaging=jar -DgeneratePom=true clean package
+call mvn -f sirius.server.web/pom.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom.xml -Dpackaging=jar -DgeneratePom=true clean package
+call mvn -f sirius.server.win32/pom.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom.xml -Dpackaging=jar -DgeneratePom=true clean package
+
 cd .\Publish
 FOR /f %%i IN ('dir /B /S ..\sirius.server*%1.jar') DO copy /Y %%i .\Server
 copy ..\Server\modules.csv .\Server

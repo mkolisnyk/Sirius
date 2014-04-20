@@ -12,27 +12,16 @@ mkdir .\Java-Client
 mkdir .\Ruby-Client
 mkdir .\CSharp-Client
 
-rem echo "Building server modules"
-rem cd ..
-rem call mvn -f Server/pom.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom.xml -Dpackaging=jar -DgeneratePom=true clean package
-rem call mvn -f Sirius-Server-Core/pom.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom.xml -Dpackaging=jar -DgeneratePom=true clean package
-rem call mvn -f Sirius-Server-Win32/pom.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom.xml -Dpackaging=jar -DgeneratePom=true clean package
-rem call mvn -f Sirius-Server-Web/pom.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom.xml -Dpackaging=jar -DgeneratePom=true clean package
-rem cd .\Publish
-rem FOR /f %%i IN ('dir /B /S ..\sirius.server*%1.jar') DO copy /Y %%i .\Server
-rem copy ..\Server\modules.csv .\Server
-rem copy ..\Server\log4j.xml .\Server
-rem copy ..\Server\log4j.dtd .\Server
-
+echo "Building server modules"
 call installsvc.cmd %1
 
 echo "Building Java client modules"
 
 cd ..
-call mvn -f SiriusJavaClient/pom_local.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom_local.xml -Dpackaging=jar -DgeneratePom=true clean package
-call mvn -f SiriusJavaClient-Core/pom_local.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom_local.xml -Dpackaging=jar -DgeneratePom=true clean package
-call mvn -f SiriusJavaClient-Web/pom_local.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom_local.xml -Dpackaging=jar -DgeneratePom=true clean package
-call mvn -f SiriusJavaClient-Win32/pom_local.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom_local.xml -Dpackaging=jar -DgeneratePom=true clean package
+call mvn -f sirius.java.client/pom_local.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom_local.xml -Dpackaging=jar -DgeneratePom=true clean package
+call mvn -f sirius.java.client.core/pom_local.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom_local.xml -Dpackaging=jar -DgeneratePom=true clean package
+call mvn -f sirius.java.client.web/pom_local.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom_local.xml -Dpackaging=jar -DgeneratePom=true clean package
+call mvn -f sirius.java.client.win32/pom_local.xml -Dpackage.version=%1 -Dversion=%1 -DpomFile=pom_local.xml -Dpackaging=jar -DgeneratePom=true clean package
 cd .\Publish
 FOR /f %%i IN ('dir /B /S ..\*client*%1.jar') DO copy /Y %%i .\Java-Client
 
@@ -84,10 +73,11 @@ FOR /f %%i IN ('dir /B /S ..\SiriusCSharp.Client\*%1.nupkg') DO copy /Y %%i .\CS
 
 echo "Publishing Java Maven artifacts"
 cd ..
-call mvn -f SiriusJavaClient/pom.xml release:clean release:prepare release:perform -Dpackage.version=%1-SNAPSHOT -Dtag=sirius.java.client-%1 -DreleaseVersion=%1 -DdevelopmentVersion=%1-SNAPSHOT
-call mvn -f SiriusJavaClient-Core/pom.xml release:clean release:prepare release:perform -Dpackage.version=%1-SNAPSHOT -Dtag=sirius.client.core-%1 -DreleaseVersion=%1 -DdevelopmentVersion=%1-SNAPSHOT
-call mvn -f SiriusJavaClient-Web/pom.xml  release:clean release:prepare release:perform -Dpackage.version=%1-SNAPSHOT -Dtag=sirius.client.web-%1 -DreleaseVersion=%1 -DdevelopmentVersion=%1-SNAPSHOT
-call mvn -f SiriusJavaClient-Win32/pom.xml  release:clean release:prepare release:perform -Dpackage.version=%1-SNAPSHOT -Dtag=sirius.client.win32-%1 -DreleaseVersion=%1 -DdevelopmentVersion=%1-SNAPSHOT
+call mvn -f sirius.java.client/pom.xml release:clean release:prepare release:perform -Dpackage.version=%1-SNAPSHOT -Dtag=sirius.java.client-%1 -DreleaseVersion=%1 -DdevelopmentVersion=%1-SNAPSHOT
+call mvn -f sirius.java.client.core/pom.xml release:clean release:prepare release:perform -Dpackage.version=%1-SNAPSHOT -Dtag=sirius.java.client-%1 -DreleaseVersion=%1 -DdevelopmentVersion=%1-SNAPSHOT
+call mvn -f sirius.java.client.web/pom.xml release:clean release:prepare release:perform -Dpackage.version=%1-SNAPSHOT -Dtag=sirius.java.client-%1 -DreleaseVersion=%1 -DdevelopmentVersion=%1-SNAPSHOT
+call mvn -f sirius.java.client.win32/pom.xml release:clean release:prepare release:perform -Dpackage.version=%1-SNAPSHOT -Dtag=sirius.java.client-%1 -DreleaseVersion=%1 -DdevelopmentVersion=%1-SNAPSHOT
+
 cd .\Publish
 
 echo "Publishing Ruby client"
