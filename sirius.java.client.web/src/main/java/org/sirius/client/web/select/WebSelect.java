@@ -8,43 +8,47 @@
 package org.sirius.client.web.select;
 
 public interface WebSelect extends java.rmi.Remote {
-    public boolean isMultiple(java.lang.String arg0, java.lang.String arg1,
-            java.lang.String arg2) throws java.rmi.RemoteException;
+	public void selectByIndex(java.lang.String token,
+			java.lang.String parentLocator, java.lang.String locator, int index)
+			throws java.rmi.RemoteException;
 
-    public void deselectAll(java.lang.String arg0, java.lang.String arg1,
-            java.lang.String arg2) throws java.rmi.RemoteException;
+	public void deselectAll(java.lang.String token,
+			java.lang.String parentLocator, java.lang.String locator)
+			throws java.rmi.RemoteException;
 
-    public void deselectByIndex(java.lang.String arg0, java.lang.String arg1,
-            java.lang.String arg2, int arg3) throws java.rmi.RemoteException;
+	public boolean isMultiple(java.lang.String token,
+			java.lang.String parentLocator, java.lang.String locator)
+			throws java.rmi.RemoteException;
 
-    public void deselectByValue(java.lang.String arg0, java.lang.String arg1,
-            java.lang.String arg2, java.lang.String arg3)
-            throws java.rmi.RemoteException;
+	public void selectByValue(java.lang.String token,
+			java.lang.String parentLocator, java.lang.String locator,
+			java.lang.String value) throws java.rmi.RemoteException;
 
-    public java.lang.String[] getAllOptions(java.lang.String arg0,
-            java.lang.String arg1, java.lang.String arg2)
-            throws java.rmi.RemoteException;
+	public java.lang.String[] getAllOptions(java.lang.String token,
+			java.lang.String parentLocator, java.lang.String locator)
+			throws java.rmi.RemoteException;
 
-    public void selectByIndex(java.lang.String arg0, java.lang.String arg1,
-            java.lang.String arg2, int arg3) throws java.rmi.RemoteException;
+	public java.lang.String[] getAllSelectedOptions(java.lang.String token,
+			java.lang.String parentLocator, java.lang.String locator)
+			throws java.rmi.RemoteException;
 
-    public void selectByValue(java.lang.String arg0, java.lang.String arg1,
-            java.lang.String arg2, java.lang.String arg3)
-            throws java.rmi.RemoteException;
+	public void deselectByValue(java.lang.String token,
+			java.lang.String parentLocator, java.lang.String locator,
+			java.lang.String value) throws java.rmi.RemoteException;
 
-    public void selectByVisibleText(java.lang.String arg0,
-            java.lang.String arg1, java.lang.String arg2, java.lang.String arg3)
-            throws java.rmi.RemoteException;
+	public java.lang.String getFirstSelectedOption(java.lang.String token,
+			java.lang.String parentLocator, java.lang.String locator)
+			throws java.rmi.RemoteException;
 
-    public void deselectByVisibleText(java.lang.String arg0,
-            java.lang.String arg1, java.lang.String arg2, java.lang.String arg3)
-            throws java.rmi.RemoteException;
+	public void selectByVisibleText(java.lang.String token,
+			java.lang.String parentLocator, java.lang.String locator,
+			java.lang.String text) throws java.rmi.RemoteException;
 
-    public java.lang.String[] getAllSelectedOptions(java.lang.String arg0,
-            java.lang.String arg1, java.lang.String arg2)
-            throws java.rmi.RemoteException;
+	public void deselectByIndex(java.lang.String token,
+			java.lang.String parentLocator, java.lang.String locator, int index)
+			throws java.rmi.RemoteException;
 
-    public java.lang.String getFirstSelectedOption(java.lang.String arg0,
-            java.lang.String arg1, java.lang.String arg2)
-            throws java.rmi.RemoteException;
+	public void deselectByVisibleText(java.lang.String token,
+			java.lang.String parentLocator, java.lang.String locator,
+			java.lang.String text) throws java.rmi.RemoteException;
 }

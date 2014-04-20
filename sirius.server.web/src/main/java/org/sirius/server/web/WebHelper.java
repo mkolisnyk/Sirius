@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 
 /**
  * @author Myk Kolisnyk
- *
+ * 
  */
 public class WebHelper {
 
@@ -64,7 +64,8 @@ public class WebHelper {
 	 * @param locator
 	 * @return
 	 */
-	protected WebElement getElement(String token, String startFrom, String locator) {
+	protected WebElement getElement(String token, String startFrom,
+			String locator) {
 		if (startFrom != null) {
 			return driver(token).findElement(toLocator(startFrom)).findElement(
 					toLocator(locator));

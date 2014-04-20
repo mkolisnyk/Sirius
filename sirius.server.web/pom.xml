@@ -289,11 +289,8 @@
 			<artifactId>javax.wsdl</artifactId>
 			<version>1.5.1</version>
 		</dependency>
-		<dependency>
-			<groupId>net.java.dev.jna</groupId>
-			<artifactId>platform</artifactId>
-			<version>3.5.1</version>
-		</dependency>
+		<!-- <dependency> <groupId>net.java.dev.jna</groupId> <artifactId>platform</artifactId> 
+			<version>3.5.1</version> </dependency> -->
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-picocontainer</artifactId>

@@ -8,11 +8,11 @@
 package org.sirius.client.web.core;
 
 public interface WebCoreService extends javax.xml.rpc.Service {
-    public java.lang.String getWebCorePortAddress();
+	public java.lang.String getWebCorePortAddress();
 
-    public org.sirius.client.web.core.WebCore getWebCorePort()
-            throws javax.xml.rpc.ServiceException;
+	public org.sirius.client.web.core.WebCore getWebCorePort()
+			throws javax.xml.rpc.ServiceException;
 
-    public org.sirius.client.web.core.WebCore getWebCorePort(
-            java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
+	public org.sirius.client.web.core.WebCore getWebCorePort(
+			java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
 }

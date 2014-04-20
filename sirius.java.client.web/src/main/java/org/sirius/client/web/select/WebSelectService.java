@@ -8,11 +8,11 @@
 package org.sirius.client.web.select;
 
 public interface WebSelectService extends javax.xml.rpc.Service {
-    public java.lang.String getWebSelectPortAddress();
+	public java.lang.String getWebSelectPortAddress();
 
-    public org.sirius.client.web.select.WebSelect getWebSelectPort()
-            throws javax.xml.rpc.ServiceException;
+	public org.sirius.client.web.select.WebSelect getWebSelectPort()
+			throws javax.xml.rpc.ServiceException;
 
-    public org.sirius.client.web.select.WebSelect getWebSelectPort(
-            java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
+	public org.sirius.client.web.select.WebSelect getWebSelectPort(
+			java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
 }

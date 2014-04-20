@@ -5,10 +5,8 @@
     "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
 
 <suppressions>
-    <suppress checks="DesignForExtensionCheck"
-              files="Window.java"
-              lines="1-500"/>
-    <suppress checks="MagicNumberCheck"
-              files="JavadocStyleCheck.java"
-              lines="221"/>
+	<suppress checks="DesignForExtensionCheck" files="Window.java"
+		lines="1-500" />
+	<suppress checks="MagicNumberCheck" files="JavadocStyleCheck.java"
+		lines="221" />
 </suppressions>

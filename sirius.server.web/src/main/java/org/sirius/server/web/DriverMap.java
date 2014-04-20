@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 
 /**
  * @author Myk Kolisnyk
- *
+ * 
  */
 public class DriverMap {
 
