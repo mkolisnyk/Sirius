@@ -20,12 +20,21 @@ public class WebHelper {
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * 
+	 * @param token
+	 * @return
+	 */
 	protected WebDriver driver(String token) {
 		WebDriver driver = DriverMap.drivers.get(token);
 		return driver;
 	}
 
-	// WebElement wrappers
+	/**
+	 * 
+	 * @param locator
+	 * @return
+	 */
 	protected By toLocator(String locator) {
 		String prefix = locator.split("=")[0];
 		String value = locator.substring(locator.indexOf("=") + 1);
@@ -48,6 +57,13 @@ public class WebHelper {
 		return null;
 	}
 
+	/**
+	 * 
+	 * @param token
+	 * @param startFrom
+	 * @param locator
+	 * @return
+	 */
 	protected WebElement getElement(String token, String startFrom, String locator) {
 		if (startFrom != null) {
 			return driver(token).findElement(toLocator(startFrom)).findElement(

@@ -13,5 +13,8 @@ import org.openqa.selenium.WebDriver;
  */
 public class DriverMap {
 
+	/**
+	 * .
+	 */
 	public static HashMap<String, WebDriver> drivers = new HashMap<String, WebDriver>();
 }
