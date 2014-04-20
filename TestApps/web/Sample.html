@@ -1,0 +1,209 @@
+<html>
+	<head>
+		<style>
+	.active {
+		background-color:gold;
+	}
+	.regular {
+		background-color:Azure;
+	}
+		</style>
+		<script type="text/javascript">
+
+      function activateTab(pageId) {
+          var tabCtrl = document.getElementById('tabCtrl');
+          var pageToActivate = document.getElementById(pageId);
+          for (var i = 0; i < tabCtrl.childNodes.length; i++) {
+              var node = tabCtrl.childNodes[i];
+              if (node.nodeType == 1) { /* Element */
+                  node.style.display = (node == pageToActivate) ? 'block' : 'none';
+              }
+          }
+		  for (var i = 0; i < h_menu.childNodes.length; i++) {
+              var node = h_menu.childNodes[i];
+              if (node.nodeType == 1) { /* Element */
+                  node.setAttribute("class",(node.id == ('h_' + pageId)) ? 'active' : 'regular');
+              }
+		  }
+      }
+		</script>
+	</head>
+	<body>
+		<table>
+			<tr id="h_menu">
+				<th id="h_static" class="active">
+					<a href="javascript:activateTab('static')">Static Text</a>
+				</th>
+				<th id="h_edit" class="regular">
+					<a href="javascript:activateTab('edit')">Edit Control</a>
+				</th>
+				<th id="h_button" class="regular">
+					<a href="javascript:activateTab('button')">Button Control</a>
+				</th>
+				<th id="h_link" class="regular">
+					<a href="javascript:activateTab('link')">Link Control</a>
+				</th>
+				<th id="h_check" class="regular">
+					<a href="javascript:activateTab('check')">Check Box Control</a>
+				</th>
+				<th id="h_radio" class="regular">
+					<a href="javascript:activateTab('radio')">Radio Button Control</a>
+				</th>
+				<th id="h_list" class="regular">
+					<a href="javascript:activateTab('list')">List Box Control</a>
+				</th>
+				<th id="h_frame" class="regular">
+					<a href="javascript:activateTab('frame')">Frame Control</a>
+				</th>
+				<th id="h_dialog" class="regular">
+					<a href="javascript:activateTab('dialog')">Dialog Boxes</a>
+				</th>
+				<th id="h_modal" class="regular">
+					<a href="javascript:activateTab('modal')">Modal Windows</a>
+				</th>
+			</tr>
+			<tr>
+				<td colspan="10">
+					<div id="tabCtrl">
+						<div id="static" style="display: block;">
+							<fieldset>
+								<legend>Static</legend>
+								<ul>
+								<li> This is regular static text
+								<li> <b>This is text in bold</b>
+								<li> <i>This is text in italic</i>
+								<li> <u>This is text with underline</u>
+								<li> <s>This is stroke text</s>
+								<li> <b>This i</b><i>s combi</i><u>ned foma</u>tting text
+								<li> <font color="red">This is colored static text</font>
+								</ul>
+							</fieldset>
+						</div>
+						<div id="edit" style="display: none;">
+							<fieldset>
+								<legend>Edit</legend>
+								<table border="0">
+								<tr><td><label for="simple_text">Simple input:</label></td><td><input type="text" id="simple_text" /></td></tr>
+								<tr><td><label for="simple_pass">Password input:</label></td><td><input type="password" id="simple_pass" /></td></tr>
+								<tr><td><label for="multi_text">Simple input:</label></td><td><textarea rows="10" cols="50">This is multiline text</textarea></td></tr>
+								</table>
+							</fieldset>
+						</div>
+						<div id="button" style="display: none;">
+							<fieldset>
+								<legend>Button</legend>
+								<table border="0">
+								<tr><td><label for="simple_button">Simple button:</label></td><td><input type="button" id="simple_button" value="Sample Button" /></td></tr>
+								<tr><td><label for="simple_reset">Reset button:</label></td><td><input type="reset" id="simple_reset" value="Reset Button" /></td></tr>
+								<tr><td><label for="custom_button">Simple input:</label></td>
+									<td>
+										<button id="custom_btn">Custom Button<input type="checkbox" id="custom_check" value="checked"/></button>
+									</td>
+								</tr>
+								</table>
+							</fieldset>
+						</div>
+						<div id="link" style="display: none;">
+							<fieldset>
+								<legend>Link</legend>
+								<table border="0">
+								<tr><td>Simple link:</td><td><a href="http://google.com">Sample</a></td></tr>
+								<tr><td>Link with hint:</td><td><a href="http://google.com" title="Sample Hint">Sample Hint Link</a></td></tr>
+								<tr><td>Link with target:</td>
+									<td>
+										<a href="http://google.com" target="aframe" title="Sample Hint">Sample Link with target</a>
+									</td>
+								</tr>
+								</table>
+							</fieldset>
+						</div>
+						<div id="check" style="display: none;">
+							<fieldset>
+								<legend>Check</legend>
+								<table border="0">
+								<tr><td><label for="simple_checked">Simple Checked:</label></td><td><input type="checkbox" id="simple_checked" checked /></td></tr>
+								<tr><td><label for="simple_unchecked">Simple Unchecked:</label></td><td><input type="checkbox" id="simple_unchecked" /></td></tr>
+								<tr><td><label for="simple_disabled">Simple Disabled:</label></td>
+									<td>
+										<input type="checkbox" id="simple_disabled" disabled />
+									</td>
+								</tr>
+								<tr>
+					<td valign=top><label for="ev_check_box">Check box with event:</td>
+					<td><input type=checkbox name="ev_check_box" onclick="deactivated_btn.disabled=!this.checked;" 
+
+					/></td>
+						</tr>
+								<tr><td colspan="2"><button id="deactivated_btn" disabled onclick="alert('Deactivated button click was done!!!')">Deactivated Button</td></tr>
+								</table>
+							</fieldset>
+						</div>
+						<div id="radio" style="display: none;">
+							<fieldset>
+								<legend>Radio</legend>
+								<table border="0">
+								<tr><td><label for="simple_radio1">Simple Item 1:</label></td><td><input type="radio" id="simple_radio1" name="sample_radio" checked /></td></tr>
+								<tr><td><label for="simple_radio2">Simple Item 2:</label></td><td><input type="radio" id="simple_radio2" name="sample_radio" /></td></tr>
+								<tr><td><label for="simple_radio3">Simple Item 3:</label></td><td><input type="radio" id="simple_radio3" name="sample_radio" /></td><tr>
+								</table>
+							</fieldset>
+						</div>
+						<div id="list" style="display: none;">
+							<fieldset>
+								<legend>List</legend>
+							<table border="0">
+								<tr><td><label for="simple_popup">Simple Popup:</label></td>
+								<td>
+									<select id="simple_popup">
+										<option value="simple_item1" SELECTED >Item 1</option>
+										<option value="simple_item2"><b>Item 2</b></option>
+										<option value="simple_item3"><font color="red"><i>Item 3</i></font></option>
+									</select>
+								</td>
+								</tr>
+								<tr>
+								<td>
+									<label for="multi_popup">Multi select Popup:</label>
+								</td>
+								<td>
+									<select id="multi_popup" multiple size="3">
+										<option value="multi_item1" SELECTED >Item 1</option>
+										<option value="multi_item2"><b>Item 2</b></option>
+										<option value="multi_item3"><font color="red"><i>Item 3</i></font></option>
+										<option value="multi_item4"><b>Item 4</b></option>
+									</select>
+								</td>
+								</tr>
+							</table>
+							</fieldset>
+						</div>
+						<div id="frame" style="display: none;">
+							<fieldset>
+								<legend>Frame</legend>
+								<iframe src="./SubPage.html"></iframe>
+							</fieldset>
+						</div>
+						<div id="dialog" style="display: none;">
+							<fieldset>
+								<legend>Dialog</legend>
+								<table>
+				<tr>
+					<td>
+						<input type=button id="alert_btn" value="Call Alert"onclick="alert('This is Alert');"/>
+						<input type=button id="conf_btn" value="Call Confirmation"  onclick="confirm('This is confirmation');"/>
+						<input type=button id="prompt_btn" value="Call Prompt"  onclick="prompt('Enter prompt text')"/></td>
+				</tr>
+			</table>
+							</fieldset>
+						</div>
+						<div id="modal" style="display: none;">
+							<fieldset>
+								<legend>Modal</legend>
+							</fieldset>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
