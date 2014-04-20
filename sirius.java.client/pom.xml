@@ -30,9 +30,9 @@
 	</parent>
 
 	<scm>
-		<connection>scm:svn:https://github.com/mkolisnyk/Sirius/tags/sirius.java.client-2.0.0</connection>
-		<developerConnection>scm:svn:https://github.com/mkolisnyk/Sirius/tags/sirius.java.client-2.0.0</developerConnection>
-		<url>https://github.com/mkolisnyk/Sirius/tags/sirius.java.client-2.0.0</url>
+		<connection>scm:svn:https://github.com/mkolisnyk/Sirius</connection>
+		<developerConnection>scm:svn:https://github.com/mkolisnyk/Sirius</developerConnection>
+		<url>https://github.com/mkolisnyk/Sirius</url>
 	</scm>
 
 	<build>
