@@ -52,6 +52,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWpfApp", "Test\TestWpfA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiriusCSharp.Client.Tests", "Test\SiriusCSharp.Client.Tests\SiriusCSharp.Client.Tests.csproj", "{68789BB2-8F13-486B-BAE9-8E1992E88C6E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirius.Service.Starter", "Service\Sirius.Service.Starter\Sirius.Service.Starter.csproj", "{9E94DC24-F29D-4885-B248-77C8FB9A6548}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -188,6 +190,18 @@ Global
 		{68789BB2-8F13-486B-BAE9-8E1992E88C6E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{68789BB2-8F13-486B-BAE9-8E1992E88C6E}.Release|Win32.ActiveCfg = Release|Any CPU
 		{68789BB2-8F13-486B-BAE9-8E1992E88C6E}.Release|x86.ActiveCfg = Release|Any CPU
+		{9E94DC24-F29D-4885-B248-77C8FB9A6548}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E94DC24-F29D-4885-B248-77C8FB9A6548}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E94DC24-F29D-4885-B248-77C8FB9A6548}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9E94DC24-F29D-4885-B248-77C8FB9A6548}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9E94DC24-F29D-4885-B248-77C8FB9A6548}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{9E94DC24-F29D-4885-B248-77C8FB9A6548}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9E94DC24-F29D-4885-B248-77C8FB9A6548}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E94DC24-F29D-4885-B248-77C8FB9A6548}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E94DC24-F29D-4885-B248-77C8FB9A6548}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9E94DC24-F29D-4885-B248-77C8FB9A6548}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9E94DC24-F29D-4885-B248-77C8FB9A6548}.Release|Win32.ActiveCfg = Release|Any CPU
+		{9E94DC24-F29D-4885-B248-77C8FB9A6548}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -202,6 +216,7 @@ Global
 		{ED9B6BF9-D11A-4B1E-A903-CC91F9584E4B} = {3C278B77-CC5A-4A87-9D75-E416B9B79112}
 		{57762A4F-08D0-46E2-ACD3-83145378A382} = {D85D45B9-B2C8-446A-90E9-B61E12431209}
 		{81573CF8-A713-4594-B3E3-D62C73DF66CB} = {D85D45B9-B2C8-446A-90E9-B61E12431209}
+		{9E94DC24-F29D-4885-B248-77C8FB9A6548} = {D85D45B9-B2C8-446A-90E9-B61E12431209}
 		{672B13D2-F8FF-41DF-9F1F-E3D2418F28DC} = {72CBE1A2-0A79-43BE-86BA-3184931EE0FE}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
