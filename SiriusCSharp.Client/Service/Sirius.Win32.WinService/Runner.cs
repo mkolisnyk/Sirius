@@ -68,7 +68,7 @@ namespace Sirius.Win32.WinService
 
         public void Initialize(RunnerOptions options) 
         {
-            XmlConfigurator.Configure();
+            XmlConfigurator.Configure(); 
             logger.Info("Starting service");
 
             logger.Info("Getting Base URL");
@@ -89,6 +89,8 @@ namespace Sirius.Win32.WinService
                 logger.Fatal("Error while starting service", e);
                 throw e;
             }
+            logger.Info(String.Format("Base URL:{0}",BaseURL));
+
             try
             {
                 if (options.IsService != null)
@@ -105,7 +107,7 @@ namespace Sirius.Win32.WinService
                 logger.Fatal("Error while starting service", e);
                 throw e;
             }
-            logger.Info(String.Format("Base URL is: {0}", BaseURL));
+            logger.Info(String.Format("Running as service: {0}", IsService));
         }
 
         public void StartServices() 
