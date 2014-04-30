@@ -54,6 +54,12 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Build.cmd" />
+    <None Include="BuildScript\Build.msbuild">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BuildScript\ProjectInfo.msbuild" />
+    <None Include="Package.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Sirius.ico" />

@@ -59,6 +59,7 @@
     <None Include="BuildScript\Build.msbuild">
       <SubType>Designer</SubType>
     </None>
+    <None Include="BuildScript\ProjectInfo.msbuild" />
     <None Include="GenClient.cmd" />
     <None Include="Package.nuspec" />
     <None Include="Sirius.Client\Win32.Core\Button\output.config" />

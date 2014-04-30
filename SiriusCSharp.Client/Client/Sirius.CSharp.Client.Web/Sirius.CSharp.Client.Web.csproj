@@ -66,6 +66,7 @@
     <None Include="BuildScript\Build.msbuild">
       <SubType>Designer</SubType>
     </None>
+    <None Include="BuildScript\ProjectInfo.msbuild" />
     <None Include="Core\output.config" />
     <None Include="GenClient.cmd" />
     <None Include="Package.nuspec" />

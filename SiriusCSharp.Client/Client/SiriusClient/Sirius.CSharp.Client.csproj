@@ -52,6 +52,7 @@
     <None Include="BuildScript\Build.msbuild">
       <SubType>Designer</SubType>
     </None>
+    <None Include="BuildScript\ProjectInfo.msbuild" />
     <None Include="Package.nuspec" />
   </ItemGroup>
   <ItemGroup />

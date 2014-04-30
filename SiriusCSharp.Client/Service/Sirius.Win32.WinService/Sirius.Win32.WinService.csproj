@@ -156,6 +156,7 @@
     <None Include="BuildScript\Build.msbuild">
       <SubType>Designer</SubType>
     </None>
+    <None Include="BuildScript\ProjectInfo.msbuild" />
     <None Include="Package.nuspec" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
