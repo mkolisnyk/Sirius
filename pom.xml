@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.github.mkolisnyk</groupId>
+    <artifactId>paremt-pom</artifactId>
+    <version>0.0.2</version>
+  </parent>
+  <groupId>com.github.mkolisnyk</groupId>
+  <artifactId>sirius</artifactId>
+  <version>2015.1-SNAPSHOT</version>
+  <name>Sirius</name>
+  <description>Sirius Test Automation Platform</description>
+  <packaging>pom</packaging>
+  	<scm>
+		<connection>scm:git:git@github.com:mkolisnyk/Sirius.git</connection>
+		<developerConnection>scm:git:git@github.com:mkolisnyk/Sirius.git</developerConnection>
+		<url>https://github.com/mkolisnyk/Sirius.git</url>
+		<tag>HEAD</tag>
+	</scm>
+  	<modules>
+  		<module>sirius-java-client</module>
+  	</modules>
+</project>
