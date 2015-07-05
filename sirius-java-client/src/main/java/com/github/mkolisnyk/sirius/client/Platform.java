@@ -13,5 +13,6 @@ public enum Platform {
 	ANDROID_WEB,
 	IOS_WEB,
 	WIN_APP,
-	WIN_PHONE
+	WIN_PHONE,
+	NONE
 }

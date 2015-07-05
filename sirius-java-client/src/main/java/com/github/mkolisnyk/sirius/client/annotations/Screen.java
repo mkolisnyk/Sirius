@@ -9,4 +9,5 @@ import java.lang.annotation.Target;
 @Target({ElementType.FIELD})
 public @interface Screen {
 	String value();
+	String url() default "";
 }

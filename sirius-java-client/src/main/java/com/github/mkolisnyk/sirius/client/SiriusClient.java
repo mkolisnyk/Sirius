@@ -38,8 +38,10 @@ public class SiriusClient {
 			put(Platform.IOS_WEB, IOSDriver.class );
 			put(Platform.WIN_APP, RemoteWebDriver.class );
 			put(Platform.WIN_PHONE, RemoteWebDriver.class );
+			put(Platform.NONE, NullDriver.class );
 		}
 	};
+	private Configuration configuration;
 	public SiriusClient() throws Exception {
 		this.driver = (WebDriver) driverMap.get(Platform.REMOTE).getConstructor().newInstance();
 	}
@@ -61,20 +63,23 @@ public class SiriusClient {
 				Constructor<?> constructor = null;
 				try {
 					constructor = driverMap.get(value).getConstructor(URL.class, Capabilities.class);
+                    this.driver = (WebDriver) constructor.newInstance(url, capabilities);
 				} catch (NoSuchMethodException e) {
-					;
-				}
-				if (constructor == null) {
-					constructor = driverMap.get(value).getConstructor(Capabilities.class);
-					this.driver = (WebDriver) constructor.newInstance(capabilities);
-				} else {
-					this.driver = (WebDriver) constructor.newInstance(url, capabilities);
+                    constructor = driverMap.get(value).getConstructor(Capabilities.class);
+                    this.driver = (WebDriver) constructor.newInstance(capabilities);
 				}
 				return;
 			}
 		}
+		this.driver = new NullDriver();
 	}
 	public final WebDriver getDriver() {
 		return driver;
 	}
+    public final Configuration getConfiguration() {
+        return configuration;
+    }
+    public final void setConfiguration(Configuration configuration) {
+        this.configuration = configuration;
+    }
 }
