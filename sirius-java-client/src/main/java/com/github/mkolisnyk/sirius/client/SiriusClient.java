@@ -20,6 +20,7 @@ import org.openqa.selenium.safari.SafariDriver;
 
 public class SiriusClient {
 
+    private Platform platform;
 	private WebDriver driver;
 	private Map<Platform, Class<?>> driverMap = new HashMap<Platform, Class<?>>() {
 		private static final long serialVersionUID = 1L;
@@ -44,15 +45,21 @@ public class SiriusClient {
 	private Configuration configuration;
 	public SiriusClient() throws Exception {
 		this.driver = (WebDriver) driverMap.get(Platform.REMOTE).getConstructor().newInstance();
+		this.configuration = new Configuration();
+		this.platform = Platform.REMOTE;
 	}
 	public SiriusClient(WebDriver customDriver) {
 		this.driver = customDriver;
+		this.platform = Platform.REMOTE;
+		this.configuration = new Configuration();
 	}
 	public SiriusClient(String platform) throws Exception {
 		super();
+        this.configuration = new Configuration();
 		for (Platform value : Platform.values()) {
 			if (value.name().equalsIgnoreCase(platform.trim())) {
 				this.driver = (WebDriver) driverMap.get(value).getConstructor().newInstance();
+				this.platform = value;
 				return;
 			}
 		}
@@ -64,9 +71,11 @@ public class SiriusClient {
 				try {
 					constructor = driverMap.get(value).getConstructor(URL.class, Capabilities.class);
                     this.driver = (WebDriver) constructor.newInstance(url, capabilities);
+                    this.platform = value;
 				} catch (NoSuchMethodException e) {
                     constructor = driverMap.get(value).getConstructor(Capabilities.class);
                     this.driver = (WebDriver) constructor.newInstance(capabilities);
+                    this.platform = value;
 				}
 				return;
 			}
@@ -81,5 +90,11 @@ public class SiriusClient {
     }
     public final void setConfiguration(Configuration configuration) {
         this.configuration = configuration;
+    }
+    public final Platform getPlatform() {
+        return platform;
+    }
+    public void stop() {
+        this.getDriver().quit();
     }
 }

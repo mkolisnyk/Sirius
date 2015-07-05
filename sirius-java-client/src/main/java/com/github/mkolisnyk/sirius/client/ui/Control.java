@@ -10,21 +10,18 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Control {
+    private String name;
     private Page parent;
     private String locatorText;
     private By locator;
     private WebElement element;
-    private Class<? extends Page> nextPageClass;
+    private Class<? extends Page> onClickPage;
     private boolean excludeFromSearch = false;
     
     public Control(Page parentValue, String locatorValue) {
-        this(parentValue, locatorValue, parentValue.getClass());
-    }
-    public Control(Page parentValue, String locatorValue, Class<? extends Page> nextPageClassValue) {
         this.parent = parentValue;
         this.locatorText = locatorValue;
         this.locator = locatorFromString(locatorValue);
-        this.nextPageClass = nextPageClassValue;
     }
     private By locatorFromString(String locatorValue) {
         if (locatorValue.startsWith("id=")) {
@@ -56,6 +53,12 @@ public class Control {
     }
     public final void setExcludeFromSearch(boolean excludeFromSearch) {
         this.excludeFromSearch = excludeFromSearch;
+    }
+    public final String getName() {
+        return name;
+    }
+    public final void setName(String name) {
+        this.name = name;
     }
     public final WebElement getElement() {
         if (element == null && !exists()) {
@@ -116,26 +119,30 @@ public class Control {
     public boolean isHidden() {
         return isHidden(parent.getDriver().getConfiguration().getTimeout());
     }
-    public Page getNextPage() throws Exception {
-        if (this.nextPageClass.equals(this.getParent().getClass())) {
+    public Page getOnClickPage() throws Exception {
+        if (this.onClickPage.equals(this.getParent().getClass()) || this.onClickPage.equals(Page.class)) {
             return this.getParent();
         }
-        return PageFactory.create(this.getParent().getDriver(), this.nextPageClass);
+        return PageFactory.create(this.getParent().getDriver(), this.onClickPage);
+    }
+    public final void setOnClickPage(Class<? extends Page> onClickPageValue) {
+        this.onClickPage = onClickPageValue;
     }
     public Page click() throws Exception {
         if (this.getElement() == null || !this.isVisible()) {
             return null;
         }
         this.getElement().click();
-        return getNextPage();
+        return getOnClickPage();
     }
     public Page sendKeys(String keys) throws Exception {
         if (this.getElement() == null || !this.isVisible()) {
             return null;
         }
         this.getElement().sendKeys(keys);
-        return getNextPage();
+        return getOnClickPage();
     }
+    
     public String getAttribute(String attributeName) {
         return this.getElement().getAttribute(attributeName);
     }
@@ -152,5 +159,13 @@ public class Control {
                         + expected + "' entry. Actual value is: '" + actual + "'",
                 actual.contains(expected));
         return this;
+    }
+    public String getText() {
+        this.exists();
+        return this.getElement().getText();
+    }
+    public Page shouldHaveText(String expected) {
+        Assert.assertEquals("Unexpected field text found.", expected, this.getText());
+        return this.getParent();
     }
 }

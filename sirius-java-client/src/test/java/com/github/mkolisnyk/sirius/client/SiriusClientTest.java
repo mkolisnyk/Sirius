@@ -31,7 +31,7 @@ public class SiriusClientTest {
     @Parameters(name = "Test read input record: {0}")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
-        		{"", Platform.ANDROID_NATIVE, "http://127.0.0.1:4723/wd/hub", 
+        		{"Firefox", Platform.FIREFOX,"file:///C:/Dev/Work/sirius/sirius-java-client/src/test/resources/test_home_page.html", 
         			new DesiredCapabilities() {
         				{
         					setCapability("deviceName", "test");
