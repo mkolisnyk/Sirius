@@ -8,7 +8,9 @@ import com.github.mkolisnyk.sirius.client.annotations.Alias;
 import com.github.mkolisnyk.sirius.client.annotations.FindBy;
 import com.github.mkolisnyk.sirius.client.annotations.Screen;
 
-public class PageFactory {
+public final class PageFactory {
+    private PageFactory() {
+    }
     public static Page create(SiriusClient client, Class<?> clazz) throws Exception {
         Page page = (Page) clazz.getConstructor(SiriusClient.class).newInstance(client);
         Screen screen = clazz.getAnnotation(Screen.class);
@@ -24,17 +26,19 @@ public class PageFactory {
                     if (annotation.platform().equals(Platform.NONE)
                             || annotation.platform().equals(client.getPlatform())) {
                         field.set(
-                                page, 
+                                page,
                                 field.getType()
                                     .getConstructor(Page.class, String.class)
                                     .newInstance(page, annotation.locator()
                                 )
                         );
-                        field.getType().getMethod("setOnClickPage", Class.class).invoke(clazz.getField(field.getName()).get(page), annotation.onClick()); 
+                        field.getType().getMethod("setOnClickPage", Class.class)
+                            .invoke(clazz.getField(field.getName()).get(page), annotation.onClick());
                     }
                 }
                 if (alias != null) {
-                    field.getType().getMethod("setName", String.class).invoke(clazz.getField(field.getName()).get(page), alias.value()); 
+                    field.getType().getMethod("setName", String.class)
+                        .invoke(clazz.getField(field.getName()).get(page), alias.value());
                 }
             }
         }

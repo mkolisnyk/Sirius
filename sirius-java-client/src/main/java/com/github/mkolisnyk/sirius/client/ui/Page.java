@@ -11,7 +11,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
 import org.reflections.Reflections;
 
-import com.github.mkolisnyk.sirius.client.Configuration;
 import com.github.mkolisnyk.sirius.client.SiriusClient;
 import com.github.mkolisnyk.sirius.client.annotations.Screen;
 
@@ -25,14 +24,14 @@ public class Page {
     public final String getScreenName() {
         return screenName;
     }
-    public final void setScreenName(String screenName) {
-        this.screenName = screenName;
+    public final void setScreenName(String screenNameValue) {
+        this.screenName = screenNameValue;
     }
     public final String getUrl() {
         return url;
     }
-    public final void setUrl(String url) {
-        this.url = url;
+    public final void setUrl(String urlValue) {
+        this.url = urlValue;
     }
     public final SiriusClient getDriver() {
         return driver;
@@ -101,9 +100,7 @@ public class Page {
         return this;
     }
     public Page shouldBeCurrent() throws Exception {
-        SiriusClient _driver = this.getDriver();
-        Configuration _config = _driver.getConfiguration();
-        int timeout = _config.getTimeout();
+        int timeout = this.getDriver().getConfiguration().getTimeout();
         return shouldBeCurrent(timeout);
     }
     public Control control(String name) throws Exception {
@@ -148,5 +145,17 @@ public class Page {
     }
     public Page backTo(String pageName) throws Exception {
         return this.back().page(pageName).shouldBeCurrent();
+    }
+    public Page refresh() throws Exception {
+        this.getDriver().getDriver().navigate().refresh();
+        for (Field field : this.getClass().getFields()) {
+            if (Control.class.isAssignableFrom(field.getType())) {
+                ((Control) field.get(this)).reset();
+            }
+        }
+        return this;
+    }
+    public Page refresh(String name) throws Exception {
+        return this.refresh().page(name).shouldBeCurrent();
     }
 }

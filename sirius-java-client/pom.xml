@@ -9,7 +9,38 @@
 	<artifactId>sirius-java-client</artifactId>
 	<name>Sirius Java Client</name>
 	<description>Java Client Library for Sirius Platform</description>
+	<properties>
+		<fail.coverage>false</fail.coverage>
+	</properties>
 	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.13</version>
+				<configuration>
+					<configLocation>./sun_checks.xml</configLocation>
+					<suppressionsLocation>./checkstyle-suppressions.xml</suppressionsLocation>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>3.0.1</version>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<failOnError>true</failOnError>
+					<excludeFilterFile>findBugsExclude.xml</excludeFilterFile>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 	<dependencies>
 		<dependency>
